@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/toolbar.gd" id="1_toolbar"]
+[ext_resource type="Texture2D" path="res://assets/game/characters/tools.png" id="2_icons"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot"]
+bg_color = Color(0.09, 0.08, 0.07, 0.75)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.96, 0.91, 0.74, 0.9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoe"]
+atlas = ExtResource("2_icons")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_can"]
+atlas = ExtResource("2_icons")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seeds"]
+atlas = ExtResource("2_icons")
+region = Rect2(48, 0, 16, 16)
+
+[node name="Toolbar" type="HBoxContainer"]
+offset_left = 126.0
+offset_top = 154.0
+theme_override_constants/separation = 4
+script = ExtResource("1_toolbar")
+
+[node name="Hoe" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Icon" type="TextureRect" parent="Hoe"]
+texture = SubResource("AtlasTexture_hoe")
+stretch_mode = 3
+mouse_filter = 2
+
+[node name="WateringCan" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Icon" type="TextureRect" parent="WateringCan"]
+texture = SubResource("AtlasTexture_can")
+stretch_mode = 3
+mouse_filter = 2
+
+[node name="Seeds" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Icon" type="TextureRect" parent="Seeds"]
+texture = SubResource("AtlasTexture_seeds")
+stretch_mode = 3
+mouse_filter = 2

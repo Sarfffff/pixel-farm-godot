@@ -1,0 +1,44 @@
+---
+description: 使用 godot-ai MCP 工具操作运行中的 Godot 编辑器（场景、节点、脚本、运行与日志）的工作流
+alwaysApply: false
+enabled: true
+---
+
+# Godot AI MCP 工作流
+
+本项目已通过 `addons/godot_ai`（Godot AI v4.3.1）把 Godot 编辑器接入了 MCP：CodeBuddy 的 MCP 条目 `godot-ai` 位于 `~/.codebuddy/mcp.json`，以 stdio 方式启动 `godot-ai attach --port 8000 --ws-port 9500`，日志中会打印 `MCP | connected`。
+
+## 使用前提
+
+- Godot 编辑器已打开本项目，且插件 Godot AI 已启用（`project.godot` 的 `editor_plugins/enabled` 已包含它），底部 **Godot AI** 面板显示服务已连接。
+- MCP 工具名以 `session_activate`、`editor_state`、`scene_*`、`node_*`、`script_*`、`project_run` 等出现在工具列表里；若工具列表为空，说明编辑器未启动或端口被占用，先提示用户检查面板状态，再回退到直接改文件。
+
+## 标准流程
+
+1. **对齐会话**：先调用 `session_activate` 激活当前编辑器会话，再用 `editor_state` 确认当前打开的场景、编辑模式与运行状态。
+2. **读后改**：任何场景改动前先 `scene_open` + `scene_get_hierarchy`（或 `node_find` + `node_get_properties`）读取真实结构，禁止凭记忆写节点路径。
+3. **结构化修改**：加节点用 `node_create`，改属性用 `node_set_property`，批量重复操作用 `batch_execute`，避免一次性重写整个 `.tscn`。
+4. **脚本改动**：新建用 `script_create` + `script_attach`；修改已有脚本优先 `script_patch` 做定向替换，只有整体重写才用 `script_manage`，且改完必须校验语法。
+5. **保存**：场景修改完成后调用 `scene_save`；脚本/资源保存后确认 `.tscn` 的 `owner` 与 `ext_resource` 引用完整。
+6. **验证**：`project_run` 启动游戏，`logs_read` 拉取运行日志，必要时 `editor_screenshot` 截图确认画面；`test_run` 跑栅栏测试。发现问题先修再交付。
+
+## 领域工具速查
+
+| 需求 | 工具 |
+| --- | --- |
+| 编辑器状态 / 打开场景 / 保存 | `editor_state`、`scene_open`、`scene_save`、`scene_manage` |
+| 层级 / 查找 / 属性 | `scene_get_hierarchy`、`node_find`、`node_get_properties` |
+| 建节点 / 改属性 / 删除重排 | `node_create`、`node_set_property`、`node_manage` |
+| 脚本 | `script_create`、`script_patch`、`script_attach`、`script_manage` |
+| 资源 / 材质 / 主题 | `resource_manage`、`material_manage`、`theme_manage` |
+| 输入 / 动画 / 音频 | `input_map_manage`、`animation_create`、`animation_manage`、`audio_manage` |
+| 2D 瓦片 / 3D 网格 | `tilemap_manage`、`tileset_manage`、`gridmap_manage` |
+| 运行 / 日志 / 截图 / 测试 | `project_run`、`logs_read`、`editor_screenshot`、`test_run` |
+| 文件读写 | `filesystem_manage` |
+
+## 约定
+
+- 不做破坏性操作（删除节点、覆盖场景、清空资源）前，先说明影响并取得确认。
+- 一次只推进一个可验证的改动单元：改 → 保存 → 运行 → 读日志，再进入下一步。
+- MCP 调用失败时不要静默改用文本编辑：先报告失败原因（编辑器未开 / 端口冲突 / 工具被禁用），再说明用哪种回退方案。
+- 可通过 `client_manage` 检查 CodeBuddy 配置状态（`configured` / `not_configured` / `configured_mismatch`），配置漂移时提示用户在 Godot AI 面板点 **Configure** 重新写入。

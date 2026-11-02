@@ -1,0 +1,40 @@
+---
+description: Godot 4.7 项目核心规范：GDScript 语法、目录结构、场景与资源编辑红线
+alwaysApply: true
+enabled: true
+---
+
+# Godot 项目核心规范
+
+## 项目事实
+
+- 引擎：Godot 4.7（Forward+ / Jolt Physics / Windows 上使用 D3D12 驱动），**只写 Godot 4.x 语法**。
+- 根目录：`project.godot`、`icon.svg`，业务代码请放在新建的 `scenes/`、`scripts/`、`assets/` 等目录，不要污染 `addons/`。
+- `addons/godot_ai/` 是第三方插件（Godot AI MCP，v4.3.1），**只读**；除非明确要求修复插件本身，否则不要修改其中任何文件。
+- `.godot/` 是引擎缓存，不要编辑、不要提交、不要作为搜索目标。
+- Autoload：`_mcp_game_helper`（`res://addons/godot_ai/runtime/game_helper.gd`），支撑 MCP 与运行中游戏通信，不要删除或改名。
+
+## GDScript 规范
+
+- 强制使用 Godot 4 语法：`@export`、`@onready`、`signal`、`await`、`Callable`、`@tool`；禁止 `export var`、`yield`、`instance()`、`onready var` 等 Godot 3 写法。
+- 全量静态类型：变量、参数、返回值都标注类型（`: int`、`-> void`、`Array[Node]`），新增代码不要留下无类型签名。
+- 命名：文件/变量/函数 `snake_case`，类 `class_name` 用 `PascalCase`，常量 `UPPER_SNAKE_CASE`，私有成员前缀 `_`。
+- 缩进用 **Tab**（与 Godot 官方风格一致），单文件保持在 500 行以内，超了就拆分为组合式节点或工具类。
+- 节点引用优先 `@onready var label: Label = %Label`（场景唯一名），其次 `$Path/To/Node`；不要用字符串路径反复 `get_node()`。
+- 信号连接用 `node.signal_name.connect(_on_signal_name)`，回调命名 `_on_<节点>_<信号>`；不要用已废弃的字符串形式 `connect("sig", self, "method")`。
+- 逻辑放脚本、数据放 `Resource`：可复用配置写成自定义 `Resource`（`class_name XxxData extends Resource`）并用 `@export` 暴露，而不是散落的常量。
+- `_process` 只做每帧必要逻辑，用 `delta` 做时间无关计算；重活放 `_physics_process`、`Timer` 或 `await get_tree().create_timer()`。
+- 资源加载：固定资源用 `const X := preload("res://...")`，运行时动态资源才用 `load()` / `ResourceLoader.load_threaded_request()`。
+
+## 场景与资源编辑红线
+
+- 手工编辑 `.tscn` / `.tres` 时只做小范围改动，保留原格式与 `ext_resource` 顺序；优先通过 Godot AI MCP 工具（见另一条规则）操作场景。
+- 节点路径、`unique_name_in_owner`、`groups`、`owner` 关系不能随意改动，改前先读现状。
+- 修改 `project.godot` 前先读文件；新增设置用最小改动方式插入，不要整体重写，也不要改 `config_version`。
+- `physics/3d/physics_engine`（Jolt）、`rendering_device/driver.windows`（d3d12）、`display/window/stretch/*` 属于已定决策，改动必须先说明理由并取得确认。
+- 新增第三方插件只放 `addons/<plugin_id>/`，并同步 `project.godot` 的 `editor_plugins/enabled`。
+
+## 验收标准
+
+- 改完脚本必须无解析错误：可用 `godot --headless --check-only --script <file>` 或 MCP 的 `script_manage` 校验。
+- 功能改动需实际运行验证（MCP `project_run` + `logs_read`），并检查控制台是否出现 `SCRIPT ERROR` / `ERROR`。

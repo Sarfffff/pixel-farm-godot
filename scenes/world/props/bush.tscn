@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_base"]
+size = Vector2(24, 8)
+
+[node name="Bush" type="Sprite2D"]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(0, 48, 32, 16)
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="Base" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_base")
