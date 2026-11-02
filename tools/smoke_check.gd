@@ -20,7 +20,7 @@ const EXPECTED_BINDINGS := {
 
 ## 只检查存在性（按键可自定义，不锁死具体键位）
 const REQUIRED_ACTIONS: Array[StringName] = [
-	&"use_tool", &"mouse_use", &"tool_prev", &"tool_next", &"tool_1", &"tool_2", &"tool_3",
+	&"use_tool", &"mouse_use", &"tool_prev", &"tool_next", &"tool_1", &"tool_2", &"tool_3", &"tool_4",
 ]
 
 ## 必须有碰撞体的道具（蘑菇是纯装饰，不在此列）
@@ -79,8 +79,8 @@ func _check_player_frames() -> void:
 		_fail("无法加载 %s" % PLAYER_FRAMES)
 		return
 	var names := frames.get_animation_names()
-	if names.size() != 8:
-		_fail("动画数量应为 8，实际 %d（%s）" % [names.size(), names])
+	if names.size() != 20:
+		_fail("动画数量应为 20，实际 %d（%s）" % [names.size(), names])
 	for direction in ["down", "up", "left", "right"]:
 		for prefix in ["idle", "walk"]:
 			var animation: StringName = StringName("%s_%s" % [prefix, direction])
@@ -89,6 +89,13 @@ func _check_player_frames() -> void:
 			elif frames.get_frame_count(animation) != (1 if prefix == "idle" else 4):
 				_fail("%s 帧数异常：%d" % [animation, frames.get_frame_count(animation)])
 	print("[smoke_check] 玩家动画检查完成")
+	for tool in ["hoe", "watering_can", "axe"]:
+		for direction in ["down", "up", "left", "right"]:
+			var action := StringName("%s_%s" % [tool, direction])
+			if not frames.has_animation(action):
+				_fail("缺少工具动画 %s" % action)
+			elif frames.get_frame_count(action) != 4 or frames.get_animation_loop(action):
+				_fail("工具动画应为四帧且不循环：%s" % action)
 
 
 func _check_player_scene() -> void:

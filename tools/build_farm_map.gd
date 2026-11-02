@@ -1,26 +1,30 @@
 extends SceneTree
-## 农场地图生成器（V0.3）
+## 农场地图生成器：固定布局、连续水系、可通行木桥与原素材草坡。
 ##
 ## 用途：从零构建 40×30 的农场场景并保存为 scenes/world/farm.tscn，
-## 包含地形分层、池塘与岸线、苗圃、地面装饰、道具摆放、边界墙与水体碰撞。
+## 包含地形分层、河流与池塘、圆角岸线、双桥、小路、草坡及水体/护栏碰撞。
 ## 固定随机种子，保证每次生成结果一致，便于对比与回滚。
 ##
 ## 运行方式（编辑器打开本项目时也可执行）：
 ##   godot --headless --path e:/my-ai-game --script res://tools/build_farm_map.gd
 ##
-## 约定：瓦片 16×16；source 0=草地，1=耕地，2=水面。
+## 约定：瓦片 16×16；source 0=草地，1=耕地，2=水面，3=岸线，4=小路，5=坡地，6=桥。
 ## 场景结构（生成结果）：
 ##   Farm
 ##    ├─ Ground            草地底纹（z 0）
-##    ├─ Water             池塘水面（z 1，不参与碰撞）
-##    ├─ Overlay           岸线圆角 + 苗圃（z 3）
+##    ├─ Water             四帧水面动画（z 1，不参与碰撞）
+##    ├─ Overlay / Hills   岸线圆角与草坡（z 3）
+##    ├─ Paths / Bridges   木板小路（z 4）与加宽桥面（z 7）
 ##    ├─ Detail            地面小装饰（z 4）
 ##    ├─ WaterCollision    水体碰撞（z -1，藏在草地下，只提供碰撞）
 ##    ├─ World (y_sort)    所有会遮挡的物件与角色都放这里（z 10）
-##    └─ Bounds            地图外圈静态墙
+##    ├─ Bounds            地图外圈静态墙
+##    └─ BridgeRails / CliffCollision  桥护栏与坡地碰撞
 
 const FARM_SCENE := "res://scenes/world/farm.tscn"
 const TERRAIN_PATH := "res://assets/tilesets/farm_terrain.tres"
+const Landscape := preload("res://tools/farm_landscape.gd")
+const TerrainTiles := preload("res://tools/terrain_tiles.gd")
 ## World 容器挂载的遮挡淡出脚本
 const OCCLUSION_SCRIPT := "res://scripts/world/occlusion_fader.gd"
 ## 耕地系统脚本与面前格高亮场景
@@ -60,8 +64,6 @@ const BLOB_TOP_RIGHT := Vector2i(2, 0)
 const BLOB_BOTTOM_LEFT := Vector2i(0, 2)
 const BLOB_BOTTOM_RIGHT := Vector2i(2, 2)
 
-## 池塘（含水面的矩形，岸线瓦片覆盖其外圈）
-const POND := Rect2i(25, 19, 10, 7)
 ## 苗圃：4 块 4×3 的耕地，块与块之间留 1 格草地通道。
 ## 瓦片由 farm_tiller.gd 运行时绘制，这里只用于排除地面装饰。
 const PLOTS: Array[Rect2i] = [
@@ -81,6 +83,9 @@ const LAYER_SPECS: Array = [
 	["Ground", 0, false],
 	["Water", 1, false],
 	["Overlay", 3, false],
+	["Paths", 4, false],
+	["Hills", 3, false],
+	["Bridges", 7, false],
 	["Detail", 4, false],
 	["SoilFringe", 5, false],
 	["Soil", 5, false],
@@ -98,7 +103,7 @@ const PROP_TABLE: Array = [
 	["res://scenes/world/props/rock.tscn", Vector2(264, 152)],
 	["res://scenes/world/props/tree_big.tscn", Vector2(40, 72)],
 	["res://scenes/world/props/tree_big.tscn", Vector2(104, 56)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(168, 72)],
+	["res://scenes/world/props/tree_small.tscn", Vector2(88, 64)],
 	["res://scenes/world/props/tree_fruit.tscn", Vector2(232, 56)],
 	["res://scenes/world/props/tree_big.tscn", Vector2(296, 72)],
 	["res://scenes/world/props/tree_small.tscn", Vector2(360, 56)],
@@ -115,17 +120,18 @@ const PROP_TABLE: Array = [
 	["res://scenes/world/props/tree_big.tscn", Vector2(616, 176)],
 	["res://scenes/world/props/bush.tscn", Vector2(592, 240)],
 	["res://scenes/world/props/tree_big.tscn", Vector2(632, 336)],
-	["res://scenes/world/props/rock.tscn", Vector2(600, 408)],
+	["res://scenes/world/props/rock.tscn", Vector2(600, 440)],
 	["res://scenes/world/props/tree_small.tscn", Vector2(624, 456)],
 	["res://scenes/world/props/tree_big.tscn", Vector2(136, 448)],
 	["res://scenes/world/props/bush.tscn", Vector2(216, 432)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(336, 456)],
-	["res://scenes/world/props/log.tscn", Vector2(472, 424)],
-	["res://scenes/world/props/rock.tscn", Vector2(376, 320)],
+	["res://scenes/world/props/tree_small.tscn", Vector2(304, 464)],
+	["res://scenes/world/props/log.tscn", Vector2(488, 456)],
+	["res://scenes/world/props/rock.tscn", Vector2(376, 288)],
 	["res://scenes/world/props/mushroom.tscn", Vector2(392, 424)],
 	["res://scenes/world/props/bush.tscn", Vector2(560, 432)],
-	["res://scenes/world/props/mushroom.tscn", Vector2(232, 296)],
-	["res://scenes/world/props/bush.tscn", Vector2(168, 336)],
+	["res://scenes/world/props/mushroom.tscn", Vector2(280, 296)],
+	["res://scenes/world/props/bush.tscn", Vector2(104, 320)],
+	["res://scenes/world/props/tree_small.tscn", Vector2(64, 120)],
 ]
 
 
@@ -139,21 +145,27 @@ func _init() -> void:
 		push_error("[build_farm_map] 瓦片校验失败，已中止生成")
 		quit(1)
 		return
+	var terrain_uid: int = ResourceLoader.get_resource_uid(TERRAIN_PATH)
+	terrain = TerrainTiles.make_tileset(terrain)
+	var terrain_error: Error = ResourceSaver.save(terrain, TERRAIN_PATH)
+	if terrain_error == OK and terrain_uid != ResourceUID.INVALID_ID:
+		terrain_error = ResourceSaver.set_uid(TERRAIN_PATH, terrain_uid)
+	if terrain_error != OK:
+		push_error("[build_farm_map] 保存地形资源失败：%d" % terrain_error)
+		quit(1)
+		return
 
 	var rng := RandomNumberGenerator.new()
 	rng.seed = RNG_SEED
 
 	var farm := _build_farm(terrain)
 	var ground := farm.get_node("Ground") as TileMapLayer
-	var water := farm.get_node("Water") as TileMapLayer
-	var water_collision := farm.get_node("WaterCollision") as TileMapLayer
-	var overlay := farm.get_node("Overlay") as TileMapLayer
 	var detail := farm.get_node("Detail") as TileMapLayer
 	var world := farm.get_node("World") as Node2D
 
 	_paint_ground(ground, rng)
-	_paint_pond(water, water_collision, overlay)
-	_paint_detail(detail, rng)
+	Landscape.paint(farm)
+	_paint_detail(detail, rng, farm)
 
 	var prop_count := _place_props(world, farm)
 
@@ -302,42 +314,14 @@ func _paint_ground(layer: TileMapLayer, rng: RandomNumberGenerator) -> void:
 				layer.set_cell(Vector2i(x, y), SRC_GRASS, variant)
 
 
-## 池塘：水面矩形 + 外圈草地圆角边，缺口露出水面形成自然岸线。
-## 碰撞只铺在内圈，让岸边一格仍可站立（视觉上是浅滩）。
-func _paint_pond(
-	water: TileMapLayer,
-	water_collision: TileMapLayer,
-	overlay: TileMapLayer
-) -> void:
-	for y in range(POND.position.y, POND.end.y):
-		for x in range(POND.position.x, POND.end.x):
-			water.set_cell(Vector2i(x, y), SRC_WATER, Vector2i(0, 0))
-
-	var inner := POND.grow(-1)
-	for y in range(inner.position.y, inner.end.y):
-		for x in range(inner.position.x, inner.end.x):
-			water_collision.set_cell(Vector2i(x, y), SRC_WATER, Vector2i(0, 0))
-
-	for x in range(POND.position.x, POND.end.x):
-		overlay.set_cell(Vector2i(x, POND.position.y), SRC_GRASS, BLOB_BOTTOM_EDGE)
-		overlay.set_cell(Vector2i(x, POND.end.y - 1), SRC_GRASS, BLOB_TOP_EDGE)
-	for y in range(POND.position.y + 1, POND.end.y - 1):
-		overlay.set_cell(Vector2i(POND.position.x, y), SRC_GRASS, BLOB_RIGHT_EDGE)
-		overlay.set_cell(Vector2i(POND.end.x - 1, y), SRC_GRASS, BLOB_LEFT_EDGE)
-
-	# 池塘四角沿用上/下边瓦片，避免圆角瓦片在水面上留下竖向"尖刺"。
-	overlay.set_cell(Vector2i(POND.position.x, POND.position.y), SRC_GRASS, BLOB_BOTTOM_EDGE)
-	overlay.set_cell(Vector2i(POND.end.x - 1, POND.position.y), SRC_GRASS, BLOB_BOTTOM_EDGE)
-	overlay.set_cell(Vector2i(POND.position.x, POND.end.y - 1), SRC_GRASS, BLOB_TOP_EDGE)
-	overlay.set_cell(Vector2i(POND.end.x - 1, POND.end.y - 1), SRC_GRASS, BLOB_TOP_EDGE)
-
-
 ## 地面装饰：只在草地格上撒小花/碎石，避开池塘与农田。
-func _paint_detail(layer: TileMapLayer, rng: RandomNumberGenerator) -> void:
+func _paint_detail(layer: TileMapLayer, rng: RandomNumberGenerator, farm: Node2D) -> void:
+	var water: TileMapLayer = farm.get_node("Water") as TileMapLayer
+	var paths: TileMapLayer = farm.get_node("Paths") as TileMapLayer
 	for y in MAP_H:
 		for x in MAP_W:
 			var cell := Vector2i(x, y)
-			if POND.has_point(cell) or _in_plot(cell):
+			if water.get_cell_source_id(cell) != -1 or paths.get_cell_source_id(cell) != -1 or Landscape.BLUFF.has_point(cell) or Landscape.on_bridge(cell) or _in_plot(cell):
 				continue
 			if rng.randf() < DECOR_CHANCE:
 				var tile: Vector2i = GRASS_DECOR[rng.randi_range(0, GRASS_DECOR.size() - 1)]

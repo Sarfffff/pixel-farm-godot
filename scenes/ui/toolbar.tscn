@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/toolbar.gd" id="1_toolbar"]
 [ext_resource type="Texture2D" path="res://assets/game/characters/tools.png" id="2_icons"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/carrot_seeds.png" id="3_seeds"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot"]
 bg_color = Color(0.09, 0.08, 0.07, 0.75)
@@ -23,13 +24,20 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("2_icons")
 region = Rect2(48, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_axe"]
+atlas = ExtResource("2_icons")
+region = Rect2(0, 32, 16, 16)
+
 [node name="Toolbar" type="HBoxContainer"]
-offset_left = 126.0
-offset_top = 154.0
+offset_left = 114.0
+offset_top = 148.0
 theme_override_constants/separation = 4
 script = ExtResource("1_toolbar")
+mouse_filter = 2
 
 [node name="Hoe" type="PanelContainer" parent="."]
+tooltip_text = "1 · 锄头"
+mouse_filter = 2
 custom_minimum_size = Vector2(20, 20)
 theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
 
@@ -39,6 +47,8 @@ stretch_mode = 3
 mouse_filter = 2
 
 [node name="WateringCan" type="PanelContainer" parent="."]
+tooltip_text = "2 · 水壶"
+mouse_filter = 2
 custom_minimum_size = Vector2(20, 20)
 theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
 
@@ -48,10 +58,23 @@ stretch_mode = 3
 mouse_filter = 2
 
 [node name="Seeds" type="PanelContainer" parent="."]
+tooltip_text = "3 · 种子（待开放）"
+mouse_filter = 2
 custom_minimum_size = Vector2(20, 20)
 theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
 
 [node name="Icon" type="TextureRect" parent="Seeds"]
-texture = SubResource("AtlasTexture_seeds")
+texture = ExtResource("3_seeds")
+stretch_mode = 3
+mouse_filter = 2
+
+[node name="Axe" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+tooltip_text = "4 · 斧头"
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Icon" type="TextureRect" parent="Axe"]
+texture = SubResource("AtlasTexture_axe")
 stretch_mode = 3
 mouse_filter = 2

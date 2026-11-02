@@ -45,6 +45,9 @@ func _physics_process(_delta: float) -> void:
 	var feet: Vector2 = _player.global_position
 
 	for sprite: Sprite2D in _occluder_bounds.keys():
+		if sprite.get_meta(&"felled", false):
+			_apply_alpha(sprite, 1.0)
+			continue
 		var occluding: bool = sprite.global_position.y > feet.y
 		var covered: bool = _occlusion_rect(sprite).has_point(feet)
 		_apply_alpha(sprite, FADE_ALPHA if (occluding and covered) else 1.0)

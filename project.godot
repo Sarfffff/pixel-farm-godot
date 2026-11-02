@@ -94,6 +94,11 @@ tool_3={
 ]
 }
 
+tool_4={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":52,"unicode":52)]
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
