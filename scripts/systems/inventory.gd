@@ -8,9 +8,14 @@ extends Node
 signal changed
 ## 成功放入物品时发出，供飘字提示使用（溢出时也只报实际放入的数量）。
 signal item_added(id: StringName, count: int)
+signal hotbar_changed
+signal active_item_changed(id: StringName)
 
 const ITEM_DIR: String = "res://data/items"
-const SLOT_COUNT: int = 24
+const SLOT_COUNT: int = 30
+const HOTBAR_SIZE: int = 8
+const TOOL_IDS: Array[StringName] = [&"hoe", &"watering_can", &"axe", &"stone_pickaxe"]
+const DEFAULT_HOTBAR: Array[StringName] = [&"hoe", &"watering_can", &"carrot_seeds", &"axe", &"stone_pickaxe", &"", &"", &""]
 ## 开局随身携带的物品，[id, 数量]；播种玩法接入后改为从商店购买。
 const STARTING_ITEMS: Array = [[&"carrot_seeds", 5]]
 
@@ -19,6 +24,8 @@ var _definitions: Dictionary[StringName, ItemData] = {}
 var _slots: Array[Dictionary] = []
 ## 今天收进背包的件数（睡觉后清零），日报用。
 var today_collected: int = 0
+var hotbar: Array[StringName] = []
+var active_slot: int = 0
 
 
 func _ready() -> void:
@@ -29,6 +36,8 @@ func _ready() -> void:
 		_slots[index] = {}
 	for entry: Array in STARTING_ITEMS:
 		add_item(entry[0] as StringName, int(entry[1]))
+	_ensure_tools()
+	hotbar.assign(DEFAULT_HOTBAR)
 	# 开局赠品不算今日收获
 	today_collected = 0
 	_connect_time.call_deferred()
@@ -84,6 +93,8 @@ func add_item(id: StringName, count: int) -> int:
 func remove_item(id: StringName, count: int) -> bool:
 	if count <= 0:
 		return true
+	if TOOL_IDS.has(id):
+		return false
 	if count_of(id) < count:
 		return false
 	var remaining: int = count
@@ -152,6 +163,17 @@ func definition(id: StringName) -> ItemData:
 	return _definitions.get(id)
 
 
+func matches_category(id: StringName, filter: StringName) -> bool:
+	var item: ItemData = definition(id)
+	if item == null:
+		return false
+	if filter == &"all":
+		return true
+	if filter == &"crop":
+		return item.category in [&"crop", &"fish", &"forage", &"artisan", &"food", &"animal"]
+	return item.category == filter
+
+
 ## 物品表里的全部定义，供商店等外部系统展示商品（按 id 排序，界面顺序稳定）。
 func definitions() -> Array[ItemData]:
 	var ids: Array[StringName] = []
@@ -172,7 +194,7 @@ func to_dict() -> Dictionary:
 			slots.append({})
 		else:
 			slots.append({&"id": String(slot[&"id"]), &"count": int(slot[&"count"])})
-	return {&"slots": slots}
+	return {&"slots": slots, &"hotbar": hotbar.duplicate(), &"active_slot": active_slot}
 
 
 ## 读档：未知物品、越界槽位、数量异常都跳过，保证坏档也能进游戏。
@@ -190,7 +212,106 @@ func from_dict(data: Dictionary) -> void:
 		if count <= 0 or not _definitions.has(id):
 			continue
 		_slots[index] = {&"id": id, &"count": mini(count, _definitions[id].max_stack)}
+	# 旧版最多 24 格，新版 30 格，补回永久工具不会挤掉旧物品。
+	_ensure_tools()
+	hotbar.assign(DEFAULT_HOTBAR)
+	if data.has("hotbar"):
+		var saved_hotbar: Array = data.get("hotbar", [])
+		var assigned: Array[StringName] = []
+		for index in HOTBAR_SIZE:
+			var id := StringName(str(saved_hotbar[index])) if index < saved_hotbar.size() else &""
+			if id != &"" and (not _definitions.has(id) or assigned.has(id)):
+				id = &""
+			hotbar[index] = id
+			assigned.append(id)
+	active_slot = clampi(int(data.get("active_slot", 0)), 0, HOTBAR_SIZE - 1)
 	changed.emit()
+	hotbar_changed.emit()
+	active_item_changed.emit(active_item())
+
+
+func _ensure_tools() -> void:
+	for id: StringName in TOOL_IDS:
+		if count_of(id) > 0 or not _definitions.has(id):
+			continue
+		var index: int = _first_empty()
+		if index >= 0:
+			_slots[index] = {&"id": id, &"count": 1}
+
+
+func active_item() -> StringName:
+	return hotbar[active_slot] if hotbar.size() == HOTBAR_SIZE else &""
+
+
+func select_hotbar(index: int) -> void:
+	if hotbar.size() != HOTBAR_SIZE:
+		return
+	active_slot = posmod(index, HOTBAR_SIZE)
+	active_item_changed.emit(active_item())
+	hotbar_changed.emit()
+
+
+## 快捷位只存物品 id，不复制数量；重复物品移位时交换快捷位。
+func assign_hotbar(index: int, id: StringName) -> bool:
+	if index < 0 or index >= HOTBAR_SIZE or hotbar.size() != HOTBAR_SIZE:
+		return false
+	if id != &"" and (not _definitions.has(id) or count_of(id) <= 0):
+		return false
+	var previous: int = hotbar.find(id) if id != &"" else -1
+	if previous >= 0 and previous != index:
+		hotbar[previous] = hotbar[index]
+	hotbar[index] = id
+	hotbar_changed.emit()
+	active_item_changed.emit(active_item())
+	return true
+
+
+func swap_hotbar(first: int, second: int) -> bool:
+	if first < 0 or second < 0 or first >= HOTBAR_SIZE or second >= HOTBAR_SIZE:
+		return false
+	var previous: StringName = hotbar[first]
+	hotbar[first] = hotbar[second]
+	hotbar[second] = previous
+	hotbar_changed.emit()
+	active_item_changed.emit(active_item())
+	return true
+
+
+func swap_slots(first: int, second: int) -> bool:
+	if first < 0 or second < 0 or first >= _slots.size() or second >= _slots.size():
+		return false
+	var previous: Dictionary = _slots[first]
+	_slots[first] = _slots[second]
+	_slots[second] = previous
+	changed.emit()
+	return true
+
+
+func find_item(id: StringName) -> int:
+	for index in _slots.size():
+		if not _slots[index].is_empty() and _slots[index][&"id"] == id:
+			return index
+	return -1
+
+
+func item_name(id: StringName) -> String:
+	var item: ItemData = definition(id)
+	if item == null:
+		return "空快捷位"
+	var upgrades := get_tree().get_first_node_in_group(&"upgrades") if is_inside_tree() else null
+	if id == &"watering_can" and upgrades != null and upgrades.watering_level > 0:
+		return upgrades.WATERING.display_name
+	return item.display_name
+
+
+func item_icon(id: StringName) -> Texture2D:
+	var item: ItemData = definition(id)
+	if item == null:
+		return null
+	var upgrades := get_tree().get_first_node_in_group(&"upgrades") if is_inside_tree() else null
+	if id == &"watering_can" and upgrades != null and upgrades.watering_level > 0 and item.upgraded_icon != null:
+		return item.upgraded_icon
+	return item.icon
 
 
 func _first_empty() -> int:

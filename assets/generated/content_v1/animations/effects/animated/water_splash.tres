@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/water_splash/f0.png" id="1_61ay5"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/water_splash/f1.png" id="2_dbeel"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/water_splash/f2.png" id="3_8fw0m"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/water_splash/f3.png" id="4_nk3bn"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_61ay5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dbeel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8fw0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nk3bn")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crow/attack.png" id="1_ipeg1"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crow/idle.png" id="2_tpce7"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crow/move_a.png" id="3_ut8et"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crow/move_b.png" id="4_esl6x"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ipeg1")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tpce7")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ut8et")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_esl6x")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

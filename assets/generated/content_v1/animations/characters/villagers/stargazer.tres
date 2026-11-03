@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/down_a.png" id="1_cnhd6"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/down_b.png" id="2_44ptm"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/left_a.png" id="3_uj0qt"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/left_b.png" id="4_0urr0"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/right_a.png" id="5_6cesc"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/right_b.png" id="6_lmhxm"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/up_a.png" id="7_8a8al"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/stargazer/up_b.png" id="8_qvgnb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cnhd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_44ptm")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uj0qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0urr0")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6cesc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lmhxm")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8a8al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qvgnb")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

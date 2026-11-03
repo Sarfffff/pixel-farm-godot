@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/down_a.png" id="1_358up"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/down_b.png" id="2_krs6s"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/left_a.png" id="3_ghap0"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/left_b.png" id="4_pp07i"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/right_a.png" id="5_4korl"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/right_b.png" id="6_dghxe"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/up_a.png" id="7_6w8gd"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/regional_envoy/up_b.png" id="8_g6ggs"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_358up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_krs6s")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ghap0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pp07i")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4korl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dghxe")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6w8gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g6ggs")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

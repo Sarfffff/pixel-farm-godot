@@ -13,10 +13,18 @@ var _base_y: float
 
 func _ready() -> void:
 	_base_y = position.y
+	get_viewport().size_changed.connect(_update_position)
+	_update_position()
 	modulate.a = 0.0
 	var inventory := get_tree().get_first_node_in_group(&"inventory")
 	if inventory != null and inventory.has_signal(&"item_added"):
 		inventory.item_added.connect(_on_item_added)
+
+
+func _update_position() -> void:
+	# 与快捷栏一起锚定底部，不随基础视口变化跑到屏幕左上。
+	_base_y = get_viewport_rect().size.y - 79.0
+	position = Vector2(roundf((get_viewport_rect().size.x - size.x) * 0.5), _base_y)
 
 
 ## 立刻收起当前提示（打开背包等面板时调用，避免飘字压住面板）。

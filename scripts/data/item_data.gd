@@ -10,6 +10,7 @@ extends Resource
 @export var display_name: String = ""
 @export_multiline var description: String = ""
 @export var icon: Texture2D
+@export var upgraded_icon: Texture2D
 ## 单格上限；数量超过后自动占用下一格。
 @export var max_stack: int = 99
 ## 卖给商店的单价。

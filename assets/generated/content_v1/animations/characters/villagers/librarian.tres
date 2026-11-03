@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/down_a.png" id="1_2ufd6"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/down_b.png" id="2_pit7u"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/left_a.png" id="3_edy86"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/left_b.png" id="4_ik8oi"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/right_a.png" id="5_w3nru"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/right_b.png" id="6_2u8g4"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/up_a.png" id="7_1oiix"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/librarian/up_b.png" id="8_e5gr0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2ufd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pit7u")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_edy86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ik8oi")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_w3nru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2u8g4")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1oiix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e5gr0")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

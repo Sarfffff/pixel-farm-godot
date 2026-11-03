@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/tool_upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "铜水壶"
+coin_cost = 600
+wood_cost = 6
+stone_cost = 4
+width = 3
+stamina_cost = 3

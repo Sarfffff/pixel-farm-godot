@@ -1,0 +1,1281 @@
+{
+	"items": [
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				0,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "laughing",
+			"id": "portraits/trail_runner/laughing",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) laughing",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/trail_runner/laughing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				229,
+				232
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				64,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "worried",
+			"id": "portraits/trail_runner/worried",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) worried",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/trail_runner/worried.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				229,
+				0,
+				229,
+				232
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				128,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "determined",
+			"id": "portraits/trail_runner/determined",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) determined",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/trail_runner/determined.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				458,
+				0,
+				229,
+				232
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				192,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "tired",
+			"id": "portraits/trail_runner/tired",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) tired",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/trail_runner/tired.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				687,
+				0,
+				229,
+				232
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				256,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "embarrassed",
+			"id": "portraits/trail_runner/embarrassed",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) embarrassed",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/trail_runner/embarrassed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				916,
+				0,
+				229,
+				232
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				320,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "crying",
+			"id": "portraits/trail_runner/crying",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) crying",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/trail_runner/crying.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				1145,
+				0,
+				229,
+				232
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "flower_vendor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				0,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "laughing",
+			"id": "portraits/flower_vendor/laughing",
+			"mode": "sprite",
+			"name": "flower vendor (teal coat and tan curly hair) laughing",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/flower_vendor/laughing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				232,
+				229,
+				225
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "flower_vendor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				64,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "worried",
+			"id": "portraits/flower_vendor/worried",
+			"mode": "sprite",
+			"name": "flower vendor (teal coat and tan curly hair) worried",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/flower_vendor/worried.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				229,
+				232,
+				229,
+				225
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "flower_vendor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				128,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "determined",
+			"id": "portraits/flower_vendor/determined",
+			"mode": "sprite",
+			"name": "flower vendor (teal coat and tan curly hair) determined",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/flower_vendor/determined.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				458,
+				232,
+				229,
+				225
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "flower_vendor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				192,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "tired",
+			"id": "portraits/flower_vendor/tired",
+			"mode": "sprite",
+			"name": "flower vendor (teal coat and tan curly hair) tired",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/flower_vendor/tired.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				687,
+				232,
+				229,
+				225
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "flower_vendor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				256,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "embarrassed",
+			"id": "portraits/flower_vendor/embarrassed",
+			"mode": "sprite",
+			"name": "flower vendor (teal coat and tan curly hair) embarrassed",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/flower_vendor/embarrassed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				916,
+				232,
+				229,
+				225
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "flower_vendor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				320,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "crying",
+			"id": "portraits/flower_vendor/crying",
+			"mode": "sprite",
+			"name": "flower vendor (teal coat and tan curly hair) crying",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/flower_vendor/crying.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				1145,
+				232,
+				229,
+				225
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_doctor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				0,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "laughing",
+			"id": "portraits/village_doctor/laughing",
+			"mode": "sprite",
+			"name": "village doctor (cream tunic and brown ponytail) laughing",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_doctor/laughing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				457,
+				229,
+				230
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_doctor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				64,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "worried",
+			"id": "portraits/village_doctor/worried",
+			"mode": "sprite",
+			"name": "village doctor (cream tunic and brown ponytail) worried",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_doctor/worried.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				229,
+				457,
+				229,
+				230
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_doctor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				128,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "determined",
+			"id": "portraits/village_doctor/determined",
+			"mode": "sprite",
+			"name": "village doctor (cream tunic and brown ponytail) determined",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_doctor/determined.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				458,
+				457,
+				229,
+				230
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_doctor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				192,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "tired",
+			"id": "portraits/village_doctor/tired",
+			"mode": "sprite",
+			"name": "village doctor (cream tunic and brown ponytail) tired",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_doctor/tired.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				687,
+				457,
+				229,
+				230
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_doctor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				256,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "embarrassed",
+			"id": "portraits/village_doctor/embarrassed",
+			"mode": "sprite",
+			"name": "village doctor (cream tunic and brown ponytail) embarrassed",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_doctor/embarrassed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				916,
+				457,
+				229,
+				230
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_doctor",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				320,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "crying",
+			"id": "portraits/village_doctor/crying",
+			"mode": "sprite",
+			"name": "village doctor (cream tunic and brown ponytail) crying",
+			"opaque_bounds": [
+				3,
+				2,
+				58,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_doctor/crying.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				1145,
+				457,
+				229,
+				230
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_teacher",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				0,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "laughing",
+			"id": "portraits/village_teacher/laughing",
+			"mode": "sprite",
+			"name": "village teacher (plum jacket and short sandy hair) laughing",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_teacher/laughing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				687,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_teacher",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				64,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "worried",
+			"id": "portraits/village_teacher/worried",
+			"mode": "sprite",
+			"name": "village teacher (plum jacket and short sandy hair) worried",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_teacher/worried.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				229,
+				687,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_teacher",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				128,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "determined",
+			"id": "portraits/village_teacher/determined",
+			"mode": "sprite",
+			"name": "village teacher (plum jacket and short sandy hair) determined",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_teacher/determined.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				458,
+				687,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_teacher",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				192,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "tired",
+			"id": "portraits/village_teacher/tired",
+			"mode": "sprite",
+			"name": "village teacher (plum jacket and short sandy hair) tired",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_teacher/tired.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				687,
+				687,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_teacher",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				256,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "embarrassed",
+			"id": "portraits/village_teacher/embarrassed",
+			"mode": "sprite",
+			"name": "village teacher (plum jacket and short sandy hair) embarrassed",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_teacher/embarrassed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				916,
+				687,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "village_teacher",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				320,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "crying",
+			"id": "portraits/village_teacher/crying",
+			"mode": "sprite",
+			"name": "village teacher (plum jacket and short sandy hair) crying",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/village_teacher/crying.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				1145,
+				687,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "orchard_helper",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				0,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "laughing",
+			"id": "portraits/orchard_helper/laughing",
+			"mode": "sprite",
+			"name": "orchard helper (cream tunic and brown ponytail) laughing",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/orchard_helper/laughing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				0,
+				916,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "orchard_helper",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				64,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "worried",
+			"id": "portraits/orchard_helper/worried",
+			"mode": "sprite",
+			"name": "orchard helper (cream tunic and brown ponytail) worried",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/orchard_helper/worried.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				229,
+				916,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "orchard_helper",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				128,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "determined",
+			"id": "portraits/orchard_helper/determined",
+			"mode": "sprite",
+			"name": "orchard helper (cream tunic and brown ponytail) determined",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/orchard_helper/determined.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				458,
+				916,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "orchard_helper",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				192,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "tired",
+			"id": "portraits/orchard_helper/tired",
+			"mode": "sprite",
+			"name": "orchard helper (cream tunic and brown ponytail) tired",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/orchard_helper/tired.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				687,
+				916,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "orchard_helper",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				256,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "embarrassed",
+			"id": "portraits/orchard_helper/embarrassed",
+			"mode": "sprite",
+			"name": "orchard helper (cream tunic and brown ponytail) embarrassed",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/orchard_helper/embarrassed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				916,
+				916,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "orchard_helper",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+			"atlas_region": [
+				320,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "crying",
+			"id": "portraits/orchard_helper/crying",
+			"mode": "sprite",
+			"name": "orchard helper (cream tunic and brown ponytail) crying",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/orchard_helper/crying.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				1145,
+				916,
+				229,
+				229
+			],
+			"source_sheet": "portraits_extra_1"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "b684a35e4a2625b0928da7064487143978ea23aa15ed9504f29fc7d075d04f95",
+	"sheet": {
+		"category": "portraits",
+		"cell_size": [
+			64,
+			64
+		],
+		"columns": 6,
+		"count": 30,
+		"id": "portraits_extra_1",
+		"mode": "sprite",
+		"path": "res://assets/generated/content_v1/atlases/portraits_extra_1.png",
+		"rows": 5,
+		"source": "res://assets/generated/sources/content_v1/portraits_extra_1.png"
+	},
+	"source_hash": "4af8e98fe53a27ffefc8d40465cdaa17"
+}

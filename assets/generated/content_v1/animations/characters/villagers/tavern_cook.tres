@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/down_a.png" id="1_8tf7v"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/down_b.png" id="2_6wcke"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/left_a.png" id="3_bk6tx"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/left_b.png" id="4_jgwf7"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/right_a.png" id="5_pof4c"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/right_b.png" id="6_e2sr6"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/up_a.png" id="7_hgiqo"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/tavern_cook/up_b.png" id="8_c4pq4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8tf7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6wcke")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bk6tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jgwf7")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pof4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e2sr6")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hgiqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c4pq4")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

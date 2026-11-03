@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crystal_moth/attack.png" id="1_1u6oj"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crystal_moth/idle.png" id="2_jcsrs"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crystal_moth/move_a.png" id="3_ttlod"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/crystal_moth/move_b.png" id="4_asl7t"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1u6oj")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jcsrs")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ttlod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_asl7t")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

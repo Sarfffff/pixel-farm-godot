@@ -1,0 +1,1365 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_serpent",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/cave_serpent/idle",
+			"mode": "sprite",
+			"name": "friendly stylized cave serpent idle",
+			"opaque_bounds": [
+				5,
+				5,
+				22,
+				25
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_serpent/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				1,
+				17,
+				254,
+				184
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_serpent",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/cave_serpent/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized cave serpent move a",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				22
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_serpent/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				255,
+				17,
+				264,
+				184
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_serpent",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/cave_serpent/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized cave serpent move b",
+			"opaque_bounds": [
+				3,
+				6,
+				25,
+				24
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_serpent/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				519,
+				17,
+				242,
+				184
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_serpent",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/cave_serpent/attack",
+			"mode": "sprite",
+			"name": "friendly stylized cave serpent attack",
+			"opaque_bounds": [
+				4,
+				3,
+				24,
+				27
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_serpent/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				761,
+				17,
+				263,
+				184
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_brute",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/shadow_brute/idle",
+			"mode": "sprite",
+			"name": "friendly stylized shadow brute idle",
+			"opaque_bounds": [
+				2,
+				8,
+				27,
+				22
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_brute/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				1,
+				201,
+				254,
+				192
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_brute",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/shadow_brute/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized shadow brute move a",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				21
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_brute/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				255,
+				201,
+				264,
+				192
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_brute",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/shadow_brute/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized shadow brute move b",
+			"opaque_bounds": [
+				3,
+				9,
+				25,
+				21
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_brute/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				519,
+				201,
+				242,
+				192
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_brute",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/shadow_brute/attack",
+			"mode": "sprite",
+			"name": "friendly stylized shadow brute attack",
+			"opaque_bounds": [
+				2,
+				7,
+				27,
+				23
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_brute/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				761,
+				201,
+				263,
+				192
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_wisp",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/shadow_wisp/idle",
+			"mode": "sprite",
+			"name": "friendly stylized shadow wisp idle",
+			"opaque_bounds": [
+				7,
+				8,
+				17,
+				22
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_wisp/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				1,
+				393,
+				254,
+				175
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_wisp",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/shadow_wisp/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized shadow wisp move a",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				21
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_wisp/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				255,
+				393,
+				264,
+				175
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_wisp",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/shadow_wisp/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized shadow wisp move b",
+			"opaque_bounds": [
+				6,
+				5,
+				20,
+				25
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_wisp/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				519,
+				393,
+				242,
+				175
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_wisp",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/shadow_wisp/attack",
+			"mode": "sprite",
+			"name": "friendly stylized shadow wisp attack",
+			"opaque_bounds": [
+				3,
+				6,
+				26,
+				24
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_wisp/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				761,
+				393,
+				263,
+				175
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_shaman",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/shadow_shaman/idle",
+			"mode": "sprite",
+			"name": "friendly stylized shadow shaman idle",
+			"opaque_bounds": [
+				4,
+				4,
+				24,
+				26
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_shaman/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				1,
+				568,
+				254,
+				210
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_shaman",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/shadow_shaman/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized shadow shaman move a",
+			"opaque_bounds": [
+				2,
+				5,
+				27,
+				25
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_shaman/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				255,
+				568,
+				264,
+				210
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_shaman",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/shadow_shaman/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized shadow shaman move b",
+			"opaque_bounds": [
+				2,
+				3,
+				27,
+				27
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_shaman/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				519,
+				568,
+				242,
+				210
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "shadow_shaman",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/shadow_shaman/attack",
+			"mode": "sprite",
+			"name": "friendly stylized shadow shaman attack",
+			"opaque_bounds": [
+				2,
+				2,
+				27,
+				28
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/shadow_shaman/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				761,
+				568,
+				263,
+				210
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/skeleton/idle",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton idle",
+			"opaque_bounds": [
+				3,
+				6,
+				25,
+				24
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				1,
+				778,
+				254,
+				188
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/skeleton/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton move a",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				255,
+				778,
+				264,
+				188
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/skeleton/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton move b",
+			"opaque_bounds": [
+				3,
+				6,
+				25,
+				24
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				519,
+				778,
+				242,
+				188
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/skeleton/attack",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton attack",
+			"opaque_bounds": [
+				3,
+				5,
+				25,
+				25
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				761,
+				778,
+				263,
+				188
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton_mage",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/skeleton_mage/idle",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton mage idle",
+			"opaque_bounds": [
+				4,
+				5,
+				24,
+				25
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton_mage/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				1,
+				966,
+				254,
+				198
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton_mage",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/skeleton_mage/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton mage move a",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton_mage/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				255,
+				966,
+				264,
+				198
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton_mage",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/skeleton_mage/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton mage move b",
+			"opaque_bounds": [
+				3,
+				6,
+				25,
+				24
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton_mage/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				519,
+				966,
+				242,
+				198
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "skeleton_mage",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/skeleton_mage/attack",
+			"mode": "sprite",
+			"name": "friendly stylized skeleton mage attack",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/skeleton_mage/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				761,
+				966,
+				263,
+				198
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "thorn_spiker",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/thorn_spiker/idle",
+			"mode": "sprite",
+			"name": "friendly stylized thorn spiker idle",
+			"opaque_bounds": [
+				2,
+				7,
+				27,
+				23
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/thorn_spiker/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				1,
+				1164,
+				254,
+				182
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "thorn_spiker",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/thorn_spiker/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized thorn spiker move a",
+			"opaque_bounds": [
+				2,
+				8,
+				27,
+				22
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/thorn_spiker/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				255,
+				1164,
+				264,
+				182
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "thorn_spiker",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/thorn_spiker/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized thorn spiker move b",
+			"opaque_bounds": [
+				2,
+				7,
+				27,
+				23
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/thorn_spiker/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				519,
+				1164,
+				242,
+				182
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "thorn_spiker",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/thorn_spiker/attack",
+			"mode": "sprite",
+			"name": "friendly stylized thorn spiker attack",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/thorn_spiker/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				761,
+				1164,
+				263,
+				182
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_squid",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/cave_squid/idle",
+			"mode": "sprite",
+			"name": "friendly stylized cave squid idle",
+			"opaque_bounds": [
+				6,
+				9,
+				20,
+				21
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_squid/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				1,
+				1346,
+				254,
+				190
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_squid",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/cave_squid/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized cave squid move a",
+			"opaque_bounds": [
+				5,
+				11,
+				21,
+				19
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_squid/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				255,
+				1346,
+				264,
+				190
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_squid",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/cave_squid/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized cave squid move b",
+			"opaque_bounds": [
+				6,
+				10,
+				19,
+				20
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_squid/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				519,
+				1346,
+				242,
+				190
+			],
+			"source_sheet": "cave_creatures_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_squid",
+			"atlas": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/cave_squid/attack",
+			"mode": "sprite",
+			"name": "friendly stylized cave squid attack",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				21
+			],
+			"path": "res://assets/generated/content_v1/characters/monsters/cave_squid/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				761,
+				1346,
+				263,
+				190
+			],
+			"source_sheet": "cave_creatures_3"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "619a04a243ebbffd3061674bbeae0dcfa157cbc3bdeaf50445398b5346d199f3",
+	"sheet": {
+		"category": "characters/monsters",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 4,
+		"count": 32,
+		"id": "cave_creatures_3",
+		"mode": "sprite",
+		"path": "res://assets/generated/content_v1/atlases/cave_creatures_3.png",
+		"rows": 8,
+		"source": "res://assets/generated/sources/content_v1/cave_creatures_3.png"
+	},
+	"source_hash": "f908e7954e392119489c5a9392402757"
+}

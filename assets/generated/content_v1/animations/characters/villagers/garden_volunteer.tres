@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/down_a.png" id="1_rqodl"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/down_b.png" id="2_rv1gd"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/left_a.png" id="3_q382c"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/left_b.png" id="4_j5p2r"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/right_a.png" id="5_78x3v"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/right_b.png" id="6_tkwxa"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/up_a.png" id="7_0np2d"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/garden_volunteer/up_b.png" id="8_w4jmf"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rqodl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rv1gd")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q382c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j5p2r")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_78x3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tkwxa")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0np2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w4jmf")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/down_a.png" id="1_m3r5h"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/down_b.png" id="2_8stgi"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/left_a.png" id="3_a81ue"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/left_b.png" id="4_wdd43"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/right_a.png" id="5_y3rtg"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/right_b.png" id="6_qybbi"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/up_a.png" id="7_g1n4w"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/festival_dancer/up_b.png" id="8_bq2q6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m3r5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8stgi")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a81ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wdd43")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y3rtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qybbi")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_g1n4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bq2q6")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/down_a.png" id="1_x34kp"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/down_b.png" id="2_1j1wq"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/left_a.png" id="3_31di2"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/left_b.png" id="4_dteve"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/right_a.png" id="5_wiexw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/right_b.png" id="6_pgsdk"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/up_a.png" id="7_mlgr0"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/textile_artist/up_b.png" id="8_scdm2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x34kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1j1wq")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_31di2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dteve")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wiexw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pgsdk")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mlgr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_scdm2")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

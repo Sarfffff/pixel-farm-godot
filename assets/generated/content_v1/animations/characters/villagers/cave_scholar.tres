@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/down_a.png" id="1_8y8mi"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/down_b.png" id="2_ryuqv"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/left_a.png" id="3_ux06i"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/left_b.png" id="4_o0mpa"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/right_a.png" id="5_1e8hb"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/right_b.png" id="6_hlkcw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/up_a.png" id="7_30pg5"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/cave_scholar/up_b.png" id="8_kwg0l"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8y8mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ryuqv")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ux06i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o0mpa")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1e8hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hlkcw")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_30pg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kwg0l")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

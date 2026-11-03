@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/down_a.png" id="1_7vflv"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/down_b.png" id="2_jqo0h"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/left_a.png" id="3_gp4q6"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/left_b.png" id="4_xvu5r"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/right_a.png" id="5_xsrmu"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/right_b.png" id="6_14dcp"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/up_a.png" id="7_7xc5v"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/repair_robot/up_b.png" id="8_54kwi"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7vflv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jqo0h")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gp4q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xvu5r")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xsrmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_14dcp")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7xc5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_54kwi")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

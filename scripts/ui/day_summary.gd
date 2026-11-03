@@ -7,11 +7,15 @@ extends Control
 @onready var _lines: Label = %Lines
 @onready var _sleep_button: Button = %SleepButton
 @onready var _overlay: ColorRect = $Overlay
+var _forced: bool = false
 
 
 func _ready() -> void:
 	_overlay.gui_input.connect(_on_overlay_gui_input)
 	_sleep_button.pressed.connect(_sleep)
+	var time := get_tree().get_first_node_in_group(&"time")
+	if time != null:
+		time.day_over.connect(_on_day_over)
 	hide()
 
 
@@ -27,6 +31,8 @@ func _input(event: InputEvent) -> void:
 
 
 func set_open(open: bool) -> void:
+	if not open and _forced:
+		return
 	visible = open
 	var player := get_tree().get_first_node_in_group(&"player")
 	if player != null and player.has_method(&"set_input_locked"):
@@ -36,6 +42,10 @@ func set_open(open: bool) -> void:
 		toolbar.set_ui_visible(not open)
 	if not open:
 		return
+	for panel_name: String in ["DialoguePanel", "HelpPanel", "OrderPanel", "CommunityPanel"]:
+		var panel := get_node_or_null("../%s" % panel_name) as Control
+		if panel != null and panel.visible:
+			panel.set_open(false)
 	var bag := get_node_or_null("../InventoryPanel") as Control
 	if bag != null and bag.visible:
 		bag.call(&"set_open", false)
@@ -57,10 +67,14 @@ func _refresh() -> void:
 	_lines.text = "今日收获 %d 件 · 今日收入 %d 金币\n金币余额 %d\n\n明天是第 %d 天，作物会按浇水情况生长一阶。" % [
 		collected, income, coins, day + 1,
 	]
+	var activities: Node = get_tree().get_first_node_in_group(&"farm_activities")
+	if activities != null:
+		_lines.text = "今日收获 %d 件 · 今日收入 %d 金币\n金币余额 %d\n\n%s" % [collected, income, coins, activities.tomorrow_text()]
 
 
 ## 睡觉：推进一天（作物结算）、关面板、自动存档。
 func _sleep() -> void:
+	_forced = false
 	set_open(false)
 	var time := get_tree().get_first_node_in_group(&"time")
 	if time == null or not time.has_method(&"sleep"):
@@ -69,6 +83,12 @@ func _sleep() -> void:
 	var save := get_tree().get_first_node_in_group(&"save")
 	if save != null and save.has_method(&"save_game"):
 		save.save_game()
+
+
+func _on_day_over() -> void:
+	_forced = true
+	set_open(true)
+	_title.text = "夜深了 · 该休息了"
 
 
 func _on_overlay_gui_input(event: InputEvent) -> void:

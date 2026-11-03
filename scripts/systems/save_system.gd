@@ -166,6 +166,10 @@ func collect() -> Dictionary:
 	var stamina := get_tree().get_first_node_in_group(&"stamina")
 	if stamina != null and stamina.has_method(&"to_dict"):
 		data[&"stamina"] = stamina.to_dict()
+	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities"]:
+		var system := get_tree().get_first_node_in_group(group)
+		if system != null:
+			data[group] = system.to_dict()
 	return data
 
 
@@ -181,6 +185,7 @@ func apply(data: Dictionary) -> void:
 		time.minutes = clampi(
 			int(clock.get("minutes", TimeScript.START_MINUTES)), 0, TimeScript.CLOSE_MINUTES
 		)
+		time.reset_clock()
 		time.time_changed.emit(time.day, time.minutes)
 
 	var economy := get_tree().get_first_node_in_group(&"economy") as Economy
@@ -232,6 +237,10 @@ func apply(data: Dictionary) -> void:
 	var stamina_data: Dictionary = data.get("stamina", {})
 	if stamina != null and stamina.has_method(&"from_dict") and not stamina_data.is_empty():
 		stamina.from_dict(stamina_data)
+	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities"]:
+		var system := get_tree().get_first_node_in_group(group)
+		if system != null:
+			system.from_dict(data.get(String(group), {}))
 
 
 ## 只改存档里的农场名，其余字段原样保留；槽位为空时返回 false。

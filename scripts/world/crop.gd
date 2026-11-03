@@ -11,18 +11,33 @@ var data: CropData
 var stage: int = 0
 ## 当天是否已经浇过水：浇过的作物在推进前不再响应水壶。
 var watered: bool = false
+var stage_age: int = 0
+var regrowing: bool = false
 
 
 func setup(crop_data: CropData) -> void:
 	data = crop_data
 	stage = 0
 	watered = false
+	stage_age = 0
+	regrowing = false
 	offset = STAGE_OFFSET
 	apply_stage()
 
 
 func is_mature() -> bool:
 	return data != null and stage >= data.last_stage()
+
+
+func watered_nights_remaining() -> int:
+	if data == null or is_mature():
+		return 0
+	if regrowing:
+		return maxi(0, data.regrow_days - stage_age)
+	var nights: int = -stage_age
+	for index: int in range(stage, data.last_stage()):
+		nights += data.days_at_stage(index)
+	return maxi(0, nights)
 
 
 ## 浇水：只打上"今天浇过"的标记，生长留到睡觉结算，返回是否真的标记成功。
@@ -37,7 +52,26 @@ func water() -> bool:
 func grow_if_watered() -> bool:
 	if data == null or not watered or is_mature():
 		return false
-	stage = mini(stage + 1, data.last_stage())
+	stage_age += 1
+	var required: int = maxi(1, data.regrow_days) if regrowing else data.days_at_stage(stage)
+	if stage_age < required:
+		return false
+	stage_age = 0
+	stage = data.last_stage() if regrowing else mini(stage + 1, data.last_stage())
+	regrowing = false
+	apply_stage()
+	_play_grow_pop()
+	return true
+
+
+## 复收作物保留根系；一次性作物仍由耕地系统移除。
+func regrow_after_harvest() -> bool:
+	if data == null or data.regrow_days <= 0:
+		return false
+	stage = maxi(0, data.last_stage() - 1)
+	stage_age = 0
+	regrowing = true
+	watered = false
 	apply_stage()
 	_play_grow_pop()
 	return true
@@ -60,7 +94,7 @@ func harvest_amount() -> int:
 func play_harvest() -> void:
 	var tween := create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "scale", Vector2(1.25, 1.25), 0.12)
+	tween.tween_property(self, "scale", Vector2.ONE * data.visual_scale * 1.25, 0.12)
 	tween.tween_property(self, "modulate:a", 0.0, 0.12)
 	tween.set_parallel(false)
 	tween.tween_callback(queue_free)
@@ -71,10 +105,11 @@ func apply_stage() -> void:
 	if data == null or data.stages.is_empty():
 		return
 	texture = data.stages[clampi(stage, 0, data.last_stage())]
+	scale = Vector2.ONE * data.visual_scale
 
 
 ## 生长时轻微弹一下，给"长了一阶"一个视觉反馈。
 func _play_grow_pop() -> void:
 	var tween := create_tween()
-	tween.tween_property(self, "scale", Vector2(1.08, 0.94), 0.08)
-	tween.tween_property(self, "scale", Vector2.ONE, 0.12)
+	tween.tween_property(self, "scale", Vector2(1.08, 0.94) * data.visual_scale, 0.08)
+	tween.tween_property(self, "scale", Vector2.ONE * data.visual_scale, 0.12)

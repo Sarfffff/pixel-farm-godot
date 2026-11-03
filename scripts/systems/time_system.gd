@@ -25,6 +25,7 @@ var running: bool = true
 
 var _last_emitted: int = -1
 var _closed_today: bool = false
+var _minute_fraction: float = 0.0
 
 
 func _ready() -> void:
@@ -44,8 +45,15 @@ func _connect_farm() -> void:
 func _process(delta: float) -> void:
 	if not running:
 		return
+	if is_inside_tree():
+		var player := get_tree().get_first_node_in_group(&"player")
+		if player != null and player.input_locked:
+			return
 	var before: int = minutes
-	minutes = mini(minutes + int(delta * MINUTES_PER_REAL_SECOND), CLOSE_MINUTES)
+	_minute_fraction += maxf(delta, 0.0) * MINUTES_PER_REAL_SECOND
+	var elapsed: int = int(floor(_minute_fraction + 0.000001))
+	_minute_fraction = maxf(0.0, _minute_fraction - elapsed)
+	minutes = mini(minutes + elapsed, CLOSE_MINUTES)
 	if minutes != before and minutes != _last_emitted:
 		_last_emitted = minutes
 		time_changed.emit(day, minutes)
@@ -58,10 +66,16 @@ func _process(delta: float) -> void:
 func sleep() -> void:
 	day += 1
 	minutes = START_MINUTES
-	_last_emitted = -1
-	_closed_today = false
+	reset_clock()
 	time_changed.emit(day, minutes)
 	day_started.emit(day)
+
+
+## 睡觉和读档都清掉上一局的小数余量与收工标记。
+func reset_clock() -> void:
+	_minute_fraction = 0.0
+	_last_emitted = -1
+	_closed_today = false
 
 
 func clock_text() -> String:

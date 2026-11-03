@@ -48,6 +48,9 @@ func _input(event: InputEvent) -> void:
 
 ## 其他面板开着时 Esc 归面板自己处理，不弹暂停。
 func can_pause() -> bool:
+	for panel: Node in get_tree().get_nodes_in_group(&"modal_ui"):
+		if panel is Control and panel.visible:
+			return false
 	for panel_name: String in ["InventoryPanel", "ShopPanel", "DaySummary", "DialoguePanel", "HelpPanel", "OrderPanel", "CommunityPanel"]:
 		var panel := get_node_or_null("../%s" % panel_name) as Control
 		if panel != null and panel.visible:

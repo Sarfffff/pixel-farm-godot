@@ -36,10 +36,14 @@ godot --headless --path . --script res://tools/<子目录>/<脚本>.gd
 | `prepare_expansion_art.gd` | 扩展素材：6 种作物、12 种鱼、8 件渔具、6 种动物的透明 PNG 与 16×16 图标 |
 | `preview_farm_art.gd` | 渲染已接入素材的验收页 |
 | `preview_expansion_art.gd` | 渲染扩展素材的验收页 |
+| `prepare_content_art.gd` | 原创全品类素材：实际网格识别、统一色板、分类切片、图标与 SpriteFrames |
+| `preview_content_art.gd` | 渲染原创全品类素材库的总览和分类页 |
 
 原始生成图固定在 `assets/generated/sources/`（含 `.gdignore`，不参与引擎导入），脚本用 `Image.load_from_file()` 直接读文件，产物写到 `assets/generated/` 对应子目录。
 
 ## check · 回归自检
+
+新增 `check_farm_activities.gd`：验证木箱、采集、加工、差异作物与复收、社区摆设、基础钓鱼、JSON 存档和模态输入。直接运行不读写玩家存档；去掉 `--headless` 并加 `-- --preview` 会输出 `docs/screenshots/activities-*.png`。
 
 | 脚本 | 覆盖内容 |
 | --- | --- |
@@ -49,6 +53,7 @@ godot --headless --path . --script res://tools/<子目录>/<脚本>.gd
 | `check_inventory.gd` | 堆叠、溢出、满包、面板联动 |
 | `check_crops.gd` | 播种、浇水推进、成熟、收获、满包保留 |
 | `check_audio.gd` | 曲目加载与循环点、交叉淡入淡出、昼夜换曲、标题曲目、暂停不中断 |
+| `check_content_art.gd` | 原创素材清单到齐、来源约束、唯一 ID、尺寸、透明度和图集像素一致性 |
 
 `check_farm_interactions.gd` 与 `check_farm_terrain.gd` 追加 `-- --preview` 可在有窗口模式下输出截图到 `user://farm_previews/`。
 
@@ -58,8 +63,13 @@ godot --headless --path . --script res://tools/<子目录>/<脚本>.gd
 | --- | --- |
 | `farm_landscape.gd` | 河流、池塘、岸线、桥、草坡的格子数据，保证画面与碰撞同源 |
 | `terrain_tiles.gd` | 岸线/桥梁图集的拼接算法与输出路径 |
+| `content_art_utils.gd` | 独立生成图的网格定位、去杂边、最近邻整理与 48 色统一色板 |
 
 ## 常用组合
+
+`check/check_inventory_hotbar_camera.gd` 验证分类、数字绑定、快捷位拖放、库存同步、满旧档迁移及镜头边界。`art/build_tool_icons.gd` 从可编辑像素轮廓生成统一工具图标。窗口显示基准现为 640×360。
+
+新增 `check/check_progression.gd` 验证本轮完整循环（时钟、自然采集纤维、跨天订单、引导、铜水壶、存档兼容与强制收工）。运行：`godot --headless --path . --script res://tools/check/check_progression.gd`。检查会写入测试存档，请在独立用户数据目录执行。
 
 ```bash
 # 改了地形布局

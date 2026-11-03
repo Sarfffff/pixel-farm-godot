@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/down_a.png" id="1_0llrv"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/down_b.png" id="2_ne3lu"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/left_a.png" id="3_gy6nr"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/left_b.png" id="4_gtty7"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/right_a.png" id="5_fr65e"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/right_b.png" id="6_dbrdf"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/up_a.png" id="7_bebsv"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/botanist/up_b.png" id="8_a3plt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0llrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ne3lu")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gy6nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gtty7")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fr65e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dbrdf")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bebsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a3plt")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

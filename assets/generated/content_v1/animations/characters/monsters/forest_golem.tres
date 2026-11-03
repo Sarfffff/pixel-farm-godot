@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/forest_golem/attack.png" id="1_5aj1n"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/forest_golem/idle.png" id="2_r0312"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/forest_golem/move_a.png" id="3_a2kg3"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/forest_golem/move_b.png" id="4_mip8i"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5aj1n")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r0312")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a2kg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mip8i")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

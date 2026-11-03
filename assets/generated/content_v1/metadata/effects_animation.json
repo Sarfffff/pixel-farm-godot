@@ -1,0 +1,2709 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "smoke",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/smoke/f0",
+			"mode": "sprite",
+			"name": "smoke animation phase 1 of 4",
+			"opaque_bounds": [
+				8,
+				9,
+				15,
+				13
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/smoke/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "smoke",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/smoke/f1",
+			"mode": "sprite",
+			"name": "smoke animation phase 2 of 4",
+			"opaque_bounds": [
+				4,
+				6,
+				23,
+				20
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/smoke/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				222,
+				0,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "smoke",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/smoke/f2",
+			"mode": "sprite",
+			"name": "smoke animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				3,
+				28,
+				25
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/smoke/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				444,
+				0,
+				221,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "smoke",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/smoke/f3",
+			"mode": "sprite",
+			"name": "smoke animation phase 4 of 4",
+			"opaque_bounds": [
+				5,
+				8,
+				22,
+				15
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/smoke/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				665,
+				0,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "steam",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/steam/f0",
+			"mode": "sprite",
+			"name": "steam animation phase 1 of 4",
+			"opaque_bounds": [
+				9,
+				5,
+				13,
+				22
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/steam/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				112,
+				222,
+				108
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "steam",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/steam/f1",
+			"mode": "sprite",
+			"name": "steam animation phase 2 of 4",
+			"opaque_bounds": [
+				10,
+				3,
+				12,
+				25
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/steam/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				222,
+				112,
+				222,
+				108
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "steam",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/steam/f2",
+			"mode": "sprite",
+			"name": "steam animation phase 3 of 4",
+			"opaque_bounds": [
+				6,
+				2,
+				20,
+				28
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/steam/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				444,
+				112,
+				221,
+				108
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "steam",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/steam/f3",
+			"mode": "sprite",
+			"name": "steam animation phase 4 of 4",
+			"opaque_bounds": [
+				12,
+				6,
+				8,
+				20
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/steam/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				665,
+				112,
+				222,
+				108
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "flame",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/flame/f0",
+			"mode": "sprite",
+			"name": "flame animation phase 1 of 4",
+			"opaque_bounds": [
+				8,
+				7,
+				16,
+				17
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/flame/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				220,
+				222,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "flame",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/flame/f1",
+			"mode": "sprite",
+			"name": "flame animation phase 2 of 4",
+			"opaque_bounds": [
+				5,
+				4,
+				21,
+				23
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/flame/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				222,
+				220,
+				222,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "flame",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/flame/f2",
+			"mode": "sprite",
+			"name": "flame animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				27
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/flame/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				444,
+				220,
+				221,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "flame",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/flame/f3",
+			"mode": "sprite",
+			"name": "flame animation phase 4 of 4",
+			"opaque_bounds": [
+				7,
+				5,
+				17,
+				21
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/flame/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				665,
+				220,
+				222,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "water_splash",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/water_splash/f0",
+			"mode": "sprite",
+			"name": "water splash animation phase 1 of 4",
+			"opaque_bounds": [
+				13,
+				12,
+				6,
+				7
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/water_splash/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				338,
+				222,
+				107
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "water_splash",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/water_splash/f1",
+			"mode": "sprite",
+			"name": "water splash animation phase 2 of 4",
+			"opaque_bounds": [
+				4,
+				10,
+				23,
+				12
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/water_splash/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				222,
+				338,
+				222,
+				107
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "water_splash",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/water_splash/f2",
+			"mode": "sprite",
+			"name": "water splash animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				16
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/water_splash/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				444,
+				338,
+				221,
+				107
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "water_splash",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/water_splash/f3",
+			"mode": "sprite",
+			"name": "water splash animation phase 4 of 4",
+			"opaque_bounds": [
+				12,
+				13,
+				7,
+				6
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/water_splash/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				665,
+				338,
+				222,
+				107
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "harvest_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/harvest_sparkle/f0",
+			"mode": "sprite",
+			"name": "harvest sparkle animation phase 1 of 4",
+			"opaque_bounds": [
+				9,
+				9,
+				14,
+				14
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/harvest_sparkle/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				0,
+				445,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "harvest_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/harvest_sparkle/f1",
+			"mode": "sprite",
+			"name": "harvest sparkle animation phase 2 of 4",
+			"opaque_bounds": [
+				5,
+				6,
+				21,
+				20
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/harvest_sparkle/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				222,
+				445,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "harvest_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/harvest_sparkle/f2",
+			"mode": "sprite",
+			"name": "harvest sparkle animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				19
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/harvest_sparkle/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				444,
+				445,
+				221,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "harvest_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/harvest_sparkle/f3",
+			"mode": "sprite",
+			"name": "harvest sparkle animation phase 4 of 4",
+			"opaque_bounds": [
+				12,
+				12,
+				7,
+				8
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/harvest_sparkle/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				665,
+				445,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "wood_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/wood_chips/f0",
+			"mode": "sprite",
+			"name": "wood chips animation phase 1 of 4",
+			"opaque_bounds": [
+				8,
+				10,
+				16,
+				12
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/wood_chips/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				0,
+				559,
+				222,
+				104
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "wood_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/wood_chips/f1",
+			"mode": "sprite",
+			"name": "wood chips animation phase 2 of 4",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				15
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/wood_chips/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				222,
+				559,
+				222,
+				104
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "wood_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/wood_chips/f2",
+			"mode": "sprite",
+			"name": "wood chips animation phase 3 of 4",
+			"opaque_bounds": [
+				5,
+				5,
+				22,
+				21
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/wood_chips/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				444,
+				559,
+				221,
+				104
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "wood_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/wood_chips/f3",
+			"mode": "sprite",
+			"name": "wood chips animation phase 4 of 4",
+			"opaque_bounds": [
+				11,
+				11,
+				9,
+				9
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/wood_chips/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				665,
+				559,
+				222,
+				104
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "stone_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/stone_chips/f0",
+			"mode": "sprite",
+			"name": "stone chips animation phase 1 of 4",
+			"opaque_bounds": [
+				10,
+				11,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/stone_chips/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				0,
+				663,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "stone_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/stone_chips/f1",
+			"mode": "sprite",
+			"name": "stone chips animation phase 2 of 4",
+			"opaque_bounds": [
+				10,
+				10,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/stone_chips/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				222,
+				663,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "stone_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/stone_chips/f2",
+			"mode": "sprite",
+			"name": "stone chips animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				17
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/stone_chips/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				444,
+				663,
+				221,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "stone_chips",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/stone_chips/f3",
+			"mode": "sprite",
+			"name": "stone chips animation phase 4 of 4",
+			"opaque_bounds": [
+				12,
+				12,
+				7,
+				7
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/stone_chips/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				665,
+				663,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "grass_clippings",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/grass_clippings/f0",
+			"mode": "sprite",
+			"name": "grass clippings animation phase 1 of 4",
+			"opaque_bounds": [
+				9,
+				10,
+				13,
+				11
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/grass_clippings/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				0,
+				775,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "grass_clippings",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/grass_clippings/f1",
+			"mode": "sprite",
+			"name": "grass clippings animation phase 2 of 4",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				13
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/grass_clippings/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				222,
+				775,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "grass_clippings",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/grass_clippings/f2",
+			"mode": "sprite",
+			"name": "grass clippings animation phase 3 of 4",
+			"opaque_bounds": [
+				3,
+				7,
+				26,
+				18
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/grass_clippings/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				444,
+				775,
+				221,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "grass_clippings",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/grass_clippings/f3",
+			"mode": "sprite",
+			"name": "grass clippings animation phase 4 of 4",
+			"opaque_bounds": [
+				11,
+				13,
+				9,
+				6
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/grass_clippings/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				665,
+				775,
+				222,
+				112
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "rain_drop",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				256,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/rain_drop/f0",
+			"mode": "sprite",
+			"name": "rain drop animation phase 1 of 4",
+			"opaque_bounds": [
+				11,
+				10,
+				9,
+				12
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/rain_drop/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				8
+			],
+			"source_region": [
+				0,
+				887,
+				222,
+				113
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "rain_drop",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				256,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/rain_drop/f1",
+			"mode": "sprite",
+			"name": "rain drop animation phase 2 of 4",
+			"opaque_bounds": [
+				11,
+				7,
+				9,
+				18
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/rain_drop/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				8
+			],
+			"source_region": [
+				222,
+				887,
+				222,
+				113
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "rain_drop",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				256,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/rain_drop/f2",
+			"mode": "sprite",
+			"name": "rain drop animation phase 3 of 4",
+			"opaque_bounds": [
+				4,
+				8,
+				24,
+				15
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/rain_drop/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				8
+			],
+			"source_region": [
+				444,
+				887,
+				221,
+				113
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "rain_drop",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				256,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/rain_drop/f3",
+			"mode": "sprite",
+			"name": "rain drop animation phase 4 of 4",
+			"opaque_bounds": [
+				2,
+				11,
+				28,
+				10
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/rain_drop/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				8
+			],
+			"source_region": [
+				665,
+				887,
+				222,
+				113
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "snow_flake",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				288,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/snow_flake/f0",
+			"mode": "sprite",
+			"name": "snow flake animation phase 1 of 4",
+			"opaque_bounds": [
+				9,
+				8,
+				14,
+				15
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/snow_flake/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				9
+			],
+			"source_region": [
+				0,
+				1000,
+				222,
+				111
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "snow_flake",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				288,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/snow_flake/f1",
+			"mode": "sprite",
+			"name": "snow flake animation phase 2 of 4",
+			"opaque_bounds": [
+				4,
+				4,
+				24,
+				24
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/snow_flake/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				9
+			],
+			"source_region": [
+				222,
+				1000,
+				222,
+				111
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "snow_flake",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				288,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/snow_flake/f2",
+			"mode": "sprite",
+			"name": "snow flake animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				2,
+				27,
+				28
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/snow_flake/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				9
+			],
+			"source_region": [
+				444,
+				1000,
+				221,
+				111
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "snow_flake",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				288,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/snow_flake/f3",
+			"mode": "sprite",
+			"name": "snow flake animation phase 4 of 4",
+			"opaque_bounds": [
+				12,
+				13,
+				7,
+				6
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/snow_flake/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				9
+			],
+			"source_region": [
+				665,
+				1000,
+				222,
+				111
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "explosion_puff",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				320,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/explosion_puff/f0",
+			"mode": "sprite",
+			"name": "explosion puff animation phase 1 of 4",
+			"opaque_bounds": [
+				11,
+				11,
+				10,
+				9
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/explosion_puff/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				10
+			],
+			"source_region": [
+				0,
+				1111,
+				222,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "explosion_puff",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				320,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/explosion_puff/f1",
+			"mode": "sprite",
+			"name": "explosion puff animation phase 2 of 4",
+			"opaque_bounds": [
+				7,
+				9,
+				18,
+				14
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/explosion_puff/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				10
+			],
+			"source_region": [
+				222,
+				1111,
+				222,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "explosion_puff",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				320,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/explosion_puff/f2",
+			"mode": "sprite",
+			"name": "explosion puff animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				17
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/explosion_puff/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				10
+			],
+			"source_region": [
+				444,
+				1111,
+				221,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "explosion_puff",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				320,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/explosion_puff/f3",
+			"mode": "sprite",
+			"name": "explosion puff animation phase 4 of 4",
+			"opaque_bounds": [
+				10,
+				11,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/explosion_puff/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				10
+			],
+			"source_region": [
+				665,
+				1111,
+				222,
+				118
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "healing_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				352,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/healing_sparkle/f0",
+			"mode": "sprite",
+			"name": "healing sparkle animation phase 1 of 4",
+			"opaque_bounds": [
+				7,
+				7,
+				18,
+				17
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/healing_sparkle/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				11
+			],
+			"source_region": [
+				0,
+				1229,
+				222,
+				96
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "healing_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				352,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/healing_sparkle/f1",
+			"mode": "sprite",
+			"name": "healing sparkle animation phase 2 of 4",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				24
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/healing_sparkle/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				11
+			],
+			"source_region": [
+				222,
+				1229,
+				222,
+				96
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "healing_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				352,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/healing_sparkle/f2",
+			"mode": "sprite",
+			"name": "healing sparkle animation phase 3 of 4",
+			"opaque_bounds": [
+				4,
+				5,
+				23,
+				22
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/healing_sparkle/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				11
+			],
+			"source_region": [
+				444,
+				1229,
+				221,
+				96
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "healing_sparkle",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				352,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/healing_sparkle/f3",
+			"mode": "sprite",
+			"name": "healing sparkle animation phase 4 of 4",
+			"opaque_bounds": [
+				9,
+				9,
+				13,
+				14
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/healing_sparkle/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				11
+			],
+			"source_region": [
+				665,
+				1229,
+				222,
+				96
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "leaf_swirl",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				384,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/leaf_swirl/f0",
+			"mode": "sprite",
+			"name": "leaf swirl animation phase 1 of 4",
+			"opaque_bounds": [
+				3,
+				5,
+				25,
+				22
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/leaf_swirl/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				12
+			],
+			"source_region": [
+				0,
+				1325,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "leaf_swirl",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				384,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/leaf_swirl/f1",
+			"mode": "sprite",
+			"name": "leaf swirl animation phase 2 of 4",
+			"opaque_bounds": [
+				3,
+				4,
+				26,
+				24
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/leaf_swirl/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				12
+			],
+			"source_region": [
+				222,
+				1325,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "leaf_swirl",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				384,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/leaf_swirl/f2",
+			"mode": "sprite",
+			"name": "leaf swirl animation phase 3 of 4",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/leaf_swirl/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				12
+			],
+			"source_region": [
+				444,
+				1325,
+				221,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "leaf_swirl",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				384,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/leaf_swirl/f3",
+			"mode": "sprite",
+			"name": "leaf swirl animation phase 4 of 4",
+			"opaque_bounds": [
+				9,
+				10,
+				13,
+				12
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/leaf_swirl/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				12
+			],
+			"source_region": [
+				665,
+				1325,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "dust_cloud",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				416,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/dust_cloud/f0",
+			"mode": "sprite",
+			"name": "dust cloud animation phase 1 of 4",
+			"opaque_bounds": [
+				10,
+				12,
+				12,
+				7
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/dust_cloud/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				13
+			],
+			"source_region": [
+				0,
+				1439,
+				222,
+				120
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "dust_cloud",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				416,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/dust_cloud/f1",
+			"mode": "sprite",
+			"name": "dust cloud animation phase 2 of 4",
+			"opaque_bounds": [
+				6,
+				10,
+				19,
+				11
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/dust_cloud/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				13
+			],
+			"source_region": [
+				222,
+				1439,
+				222,
+				120
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "dust_cloud",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				416,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/dust_cloud/f2",
+			"mode": "sprite",
+			"name": "dust cloud animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				15
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/dust_cloud/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				13
+			],
+			"source_region": [
+				444,
+				1439,
+				221,
+				120
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "dust_cloud",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				416,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/dust_cloud/f3",
+			"mode": "sprite",
+			"name": "dust cloud animation phase 4 of 4",
+			"opaque_bounds": [
+				9,
+				10,
+				14,
+				11
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/dust_cloud/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				13
+			],
+			"source_region": [
+				665,
+				1439,
+				222,
+				120
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "fishing_ripple",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				448,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/fishing_ripple/f0",
+			"mode": "sprite",
+			"name": "fishing ripple animation phase 1 of 4",
+			"opaque_bounds": [
+				10,
+				13,
+				12,
+				6
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/fishing_ripple/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				14
+			],
+			"source_region": [
+				0,
+				1559,
+				222,
+				101
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "fishing_ripple",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				448,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/fishing_ripple/f1",
+			"mode": "sprite",
+			"name": "fishing ripple animation phase 2 of 4",
+			"opaque_bounds": [
+				6,
+				12,
+				20,
+				8
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/fishing_ripple/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				14
+			],
+			"source_region": [
+				222,
+				1559,
+				222,
+				101
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "fishing_ripple",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				448,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/fishing_ripple/f2",
+			"mode": "sprite",
+			"name": "fishing ripple animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				12,
+				28,
+				8
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/fishing_ripple/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				14
+			],
+			"source_region": [
+				444,
+				1559,
+				221,
+				101
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "fishing_ripple",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				448,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/fishing_ripple/f3",
+			"mode": "sprite",
+			"name": "fishing ripple animation phase 4 of 4",
+			"opaque_bounds": [
+				12,
+				15,
+				7,
+				1
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/fishing_ripple/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				14
+			],
+			"source_region": [
+				665,
+				1559,
+				222,
+				101
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "magic_spark",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				0,
+				480,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f0",
+			"id": "effects/animated/magic_spark/f0",
+			"mode": "sprite",
+			"name": "magic spark animation phase 1 of 4",
+			"opaque_bounds": [
+				11,
+				10,
+				10,
+				11
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/magic_spark/f0.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				0,
+				15
+			],
+			"source_region": [
+				0,
+				1660,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "magic_spark",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				32,
+				480,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f1",
+			"id": "effects/animated/magic_spark/f1",
+			"mode": "sprite",
+			"name": "magic spark animation phase 2 of 4",
+			"opaque_bounds": [
+				5,
+				6,
+				21,
+				20
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/magic_spark/f1.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				1,
+				15
+			],
+			"source_region": [
+				222,
+				1660,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "magic_spark",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				64,
+				480,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f2",
+			"id": "effects/animated/magic_spark/f2",
+			"mode": "sprite",
+			"name": "magic spark animation phase 3 of 4",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				21
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/magic_spark/f2.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				2,
+				15
+			],
+			"source_region": [
+				444,
+				1660,
+				221,
+				114
+			],
+			"source_sheet": "effects_animation"
+		},
+		{
+			"anchor": [
+				16,
+				16
+			],
+			"animation_group": "magic_spark",
+			"atlas": "res://assets/generated/content_v1/atlases/effects_animation.png",
+			"atlas_region": [
+				96,
+				480,
+				32,
+				32
+			],
+			"category": "effects/animated",
+			"frame": "f3",
+			"id": "effects/animated/magic_spark/f3",
+			"mode": "sprite",
+			"name": "magic spark animation phase 4 of 4",
+			"opaque_bounds": [
+				13,
+				13,
+				6,
+				6
+			],
+			"path": "res://assets/generated/content_v1/effects/animated/magic_spark/f3.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/effects_animation.png",
+			"source_grid_cell": [
+				3,
+				15
+			],
+			"source_region": [
+				665,
+				1660,
+				222,
+				114
+			],
+			"source_sheet": "effects_animation"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "2bdce1043d477d5878de96440ce514183ac8f5625808239a277ccb00adb92afc",
+	"sheet": {
+		"category": "effects/animated",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 4,
+		"count": 64,
+		"id": "effects_animation",
+		"mode": "sprite",
+		"path": "res://assets/generated/content_v1/atlases/effects_animation.png",
+		"rows": 16,
+		"source": "res://assets/generated/sources/content_v1/effects_animation.png"
+	},
+	"source_hash": "f0fa3cead9f222d42fa612168045d823"
+}

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/tool_watering_can.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/tool_copper_watering_can.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+id = &"watering_can"
+display_name = "水壶"
+description = "为作物浇水，普通水壶消耗 2 体力。商店升级后一次浇三格、消耗 3 体力。"
+icon = ExtResource("2")
+upgraded_icon = ExtResource("3")
+max_stack = 1
+category = &"tool"

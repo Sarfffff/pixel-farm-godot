@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_serpent/attack.png" id="1_cgmc8"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_serpent/idle.png" id="2_g7ubv"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_serpent/move_a.png" id="3_s16kw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_serpent/move_b.png" id="4_ypxe2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cgmc8")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g7ubv")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s16kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ypxe2")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

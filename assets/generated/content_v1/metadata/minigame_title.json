@@ -1,0 +1,501 @@
+{
+	"items": [
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				0,
+				0,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/title_landscape",
+			"mode": "background",
+			"name": "title landscape",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/title_landscape.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				160,
+				0,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/intro_farm_arrival",
+			"mode": "background",
+			"name": "intro farm arrival",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/intro_farm_arrival.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				362,
+				0,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				320,
+				0,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/cooperative_logo",
+			"mode": "background",
+			"name": "cooperative logo",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/cooperative_logo.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				724,
+				0,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				480,
+				0,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/title_clouds",
+			"mode": "background",
+			"name": "title clouds",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/title_clouds.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				1086,
+				0,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				0,
+				96,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/minecart_track",
+			"mode": "background",
+			"name": "minecart track",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/minecart_track.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				362,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				160,
+				96,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/minecart_vehicle",
+			"mode": "background",
+			"name": "minecart vehicle",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/minecart_vehicle.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				362,
+				362,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				320,
+				96,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/main_menu_panel",
+			"mode": "background",
+			"name": "main menu panel",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/main_menu_panel.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				724,
+				362,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				480,
+				96,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/intro_cottage",
+			"mode": "background",
+			"name": "intro cottage",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/intro_cottage.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				1086,
+				362,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				0,
+				192,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/company_leaflet",
+			"mode": "background",
+			"name": "company leaflet",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/company_leaflet.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				724,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				160,
+				192,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/board_game",
+			"mode": "background",
+			"name": "board game",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/board_game.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				362,
+				724,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				320,
+				192,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/village_notice_board",
+			"mode": "background",
+			"name": "village notice board",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/village_notice_board.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				724,
+				724,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		},
+		{
+			"anchor": [
+				80,
+				48
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/minigame_title.png",
+			"atlas_region": [
+				480,
+				192,
+				160,
+				96
+			],
+			"category": "minigames",
+			"id": "minigames/cow_wall_painting",
+			"mode": "background",
+			"name": "cow wall painting",
+			"opaque_bounds": [
+				0,
+				0,
+				160,
+				96
+			],
+			"path": "res://assets/generated/content_v1/minigames/cow_wall_painting.png",
+			"size": [
+				160,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/minigame_title.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				1086,
+				724,
+				362,
+				362
+			],
+			"source_sheet": "minigame_title"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "0883e1ad4fc6b41397123b3e9996f80b7fa7d23c805708bf5782cba9c97b7046",
+	"sheet": {
+		"category": "minigames",
+		"cell_size": [
+			160,
+			96
+		],
+		"columns": 4,
+		"count": 12,
+		"id": "minigame_title",
+		"mode": "background",
+		"path": "res://assets/generated/content_v1/atlases/minigame_title.png",
+		"rows": 3,
+		"source": "res://assets/generated/sources/content_v1/minigame_title.png"
+	},
+	"source_hash": "ad1b5d9bad965707af3f97b80cbd0af5"
+}

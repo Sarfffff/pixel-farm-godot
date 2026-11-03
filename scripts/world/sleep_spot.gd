@@ -15,10 +15,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	var time := get_tree().get_first_node_in_group(&"time")
-	if time == null:
-		return "按 E 回屋睡觉"
-	return "按 E 回屋睡觉 · 今天第 %d 天 %s" % [time.day, time.clock_text()]
+	return "[E] 回屋睡觉"
 
 
 func interact(_cell: Vector2i) -> void:

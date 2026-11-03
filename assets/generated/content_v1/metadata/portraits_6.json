@@ -1,0 +1,1533 @@
+{
+	"items": [
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "stargazer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				0,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/stargazer/neutral",
+			"mode": "sprite",
+			"name": "stargazer (gray braid and green shawl) neutral",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/stargazer/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				11,
+				209,
+				208
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "stargazer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				64,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/stargazer/happy",
+			"mode": "sprite",
+			"name": "stargazer (gray braid and green shawl) happy",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/stargazer/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				209,
+				11,
+				210,
+				208
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "stargazer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				128,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/stargazer/sad",
+			"mode": "sprite",
+			"name": "stargazer (gray braid and green shawl) sad",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/stargazer/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				419,
+				11,
+				211,
+				208
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "stargazer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				192,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/stargazer/annoyed",
+			"mode": "sprite",
+			"name": "stargazer (gray braid and green shawl) annoyed",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/stargazer/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				630,
+				11,
+				210,
+				208
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "stargazer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				256,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/stargazer/surprised",
+			"mode": "sprite",
+			"name": "stargazer (gray braid and green shawl) surprised",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/stargazer/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				840,
+				11,
+				211,
+				208
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "stargazer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				320,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/stargazer/blushing",
+			"mode": "sprite",
+			"name": "stargazer (gray braid and green shawl) blushing",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/stargazer/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				1051,
+				11,
+				210,
+				208
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "underground_miner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				0,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/underground_miner/neutral",
+			"mode": "sprite",
+			"name": "underground miner (moss overalls and straw hat) neutral",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/underground_miner/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				219,
+				209,
+				212
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "underground_miner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				64,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/underground_miner/happy",
+			"mode": "sprite",
+			"name": "underground miner (moss overalls and straw hat) happy",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/underground_miner/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				209,
+				219,
+				210,
+				212
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "underground_miner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				128,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/underground_miner/sad",
+			"mode": "sprite",
+			"name": "underground miner (moss overalls and straw hat) sad",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/underground_miner/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				419,
+				219,
+				211,
+				212
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "underground_miner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				192,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/underground_miner/annoyed",
+			"mode": "sprite",
+			"name": "underground miner (moss overalls and straw hat) annoyed",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/underground_miner/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				630,
+				219,
+				210,
+				212
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "underground_miner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				256,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/underground_miner/surprised",
+			"mode": "sprite",
+			"name": "underground miner (moss overalls and straw hat) surprised",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/underground_miner/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				840,
+				219,
+				211,
+				212
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "underground_miner",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				320,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/underground_miner/blushing",
+			"mode": "sprite",
+			"name": "underground miner (moss overalls and straw hat) blushing",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/underground_miner/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				1051,
+				219,
+				210,
+				212
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "marsh_spirit",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				0,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/marsh_spirit/neutral",
+			"mode": "sprite",
+			"name": "marsh spirit (sage apron and dark cropped hair) neutral",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/marsh_spirit/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				431,
+				209,
+				204
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "marsh_spirit",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				64,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/marsh_spirit/happy",
+			"mode": "sprite",
+			"name": "marsh spirit (sage apron and dark cropped hair) happy",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/marsh_spirit/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				209,
+				431,
+				210,
+				204
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "marsh_spirit",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				128,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/marsh_spirit/sad",
+			"mode": "sprite",
+			"name": "marsh spirit (sage apron and dark cropped hair) sad",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/marsh_spirit/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				419,
+				431,
+				211,
+				204
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "marsh_spirit",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				192,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/marsh_spirit/annoyed",
+			"mode": "sprite",
+			"name": "marsh spirit (sage apron and dark cropped hair) annoyed",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/marsh_spirit/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				630,
+				431,
+				210,
+				204
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "marsh_spirit",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				256,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/marsh_spirit/surprised",
+			"mode": "sprite",
+			"name": "marsh spirit (sage apron and dark cropped hair) surprised",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/marsh_spirit/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				840,
+				431,
+				211,
+				204
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "marsh_spirit",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				320,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/marsh_spirit/blushing",
+			"mode": "sprite",
+			"name": "marsh spirit (sage apron and dark cropped hair) blushing",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/marsh_spirit/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				1051,
+				431,
+				210,
+				204
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "leaf_sprite",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				0,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/leaf_sprite/neutral",
+			"mode": "sprite",
+			"name": "leaf sprite (terracotta vest and cream cap) neutral",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/leaf_sprite/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				635,
+				209,
+				201
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "leaf_sprite",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				64,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/leaf_sprite/happy",
+			"mode": "sprite",
+			"name": "leaf sprite (terracotta vest and cream cap) happy",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/leaf_sprite/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				209,
+				635,
+				210,
+				201
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "leaf_sprite",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				128,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/leaf_sprite/sad",
+			"mode": "sprite",
+			"name": "leaf sprite (terracotta vest and cream cap) sad",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/leaf_sprite/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				419,
+				635,
+				211,
+				201
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "leaf_sprite",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				192,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/leaf_sprite/annoyed",
+			"mode": "sprite",
+			"name": "leaf sprite (terracotta vest and cream cap) annoyed",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/leaf_sprite/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				630,
+				635,
+				210,
+				201
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "leaf_sprite",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				256,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/leaf_sprite/surprised",
+			"mode": "sprite",
+			"name": "leaf sprite (terracotta vest and cream cap) surprised",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/leaf_sprite/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				840,
+				635,
+				211,
+				201
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "leaf_sprite",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				320,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/leaf_sprite/blushing",
+			"mode": "sprite",
+			"name": "leaf sprite (terracotta vest and cream cap) blushing",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/leaf_sprite/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				1051,
+				635,
+				210,
+				201
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "night_astronomer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				0,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/night_astronomer/neutral",
+			"mode": "sprite",
+			"name": "night astronomer (teal coat and tan curly hair) neutral",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/night_astronomer/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				0,
+				836,
+				209,
+				198
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "night_astronomer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				64,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/night_astronomer/happy",
+			"mode": "sprite",
+			"name": "night astronomer (teal coat and tan curly hair) happy",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/night_astronomer/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				209,
+				836,
+				210,
+				198
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "night_astronomer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				128,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/night_astronomer/sad",
+			"mode": "sprite",
+			"name": "night astronomer (teal coat and tan curly hair) sad",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/night_astronomer/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				419,
+				836,
+				211,
+				198
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "night_astronomer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				192,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/night_astronomer/annoyed",
+			"mode": "sprite",
+			"name": "night astronomer (teal coat and tan curly hair) annoyed",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/night_astronomer/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				630,
+				836,
+				210,
+				198
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "night_astronomer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				256,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/night_astronomer/surprised",
+			"mode": "sprite",
+			"name": "night astronomer (teal coat and tan curly hair) surprised",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/night_astronomer/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				840,
+				836,
+				211,
+				198
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "night_astronomer",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				320,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/night_astronomer/blushing",
+			"mode": "sprite",
+			"name": "night astronomer (teal coat and tan curly hair) blushing",
+			"opaque_bounds": [
+				2,
+				2,
+				60,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/night_astronomer/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				1051,
+				836,
+				210,
+				198
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "forest_bear",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				0,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/forest_bear/neutral",
+			"mode": "sprite",
+			"name": "forest bear (cream tunic and brown ponytail) neutral",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/forest_bear/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				0,
+				1034,
+				209,
+				207
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "forest_bear",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				64,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/forest_bear/happy",
+			"mode": "sprite",
+			"name": "forest bear (cream tunic and brown ponytail) happy",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/forest_bear/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				209,
+				1034,
+				210,
+				207
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "forest_bear",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				128,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/forest_bear/sad",
+			"mode": "sprite",
+			"name": "forest bear (cream tunic and brown ponytail) sad",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/forest_bear/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				419,
+				1034,
+				211,
+				207
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "forest_bear",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				192,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/forest_bear/annoyed",
+			"mode": "sprite",
+			"name": "forest bear (cream tunic and brown ponytail) annoyed",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/forest_bear/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				630,
+				1034,
+				210,
+				207
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "forest_bear",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				256,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/forest_bear/surprised",
+			"mode": "sprite",
+			"name": "forest bear (cream tunic and brown ponytail) surprised",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/forest_bear/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				840,
+				1034,
+				211,
+				207
+			],
+			"source_sheet": "portraits_6"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "forest_bear",
+			"atlas": "res://assets/generated/content_v1/atlases/portraits_6.png",
+			"atlas_region": [
+				320,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/forest_bear/blushing",
+			"mode": "sprite",
+			"name": "forest bear (cream tunic and brown ponytail) blushing",
+			"opaque_bounds": [
+				3,
+				2,
+				57,
+				60
+			],
+			"path": "res://assets/generated/content_v1/portraits/forest_bear/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://assets/generated/sources/content_v1/portraits_6.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				1051,
+				1034,
+				210,
+				207
+			],
+			"source_sheet": "portraits_6"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "4b49ef2dfa4eea0d8feb9f7a001a47922f682ea24063df3b8dc9c8db58ecd954",
+	"sheet": {
+		"category": "portraits",
+		"cell_size": [
+			64,
+			64
+		],
+		"columns": 6,
+		"count": 36,
+		"id": "portraits_6",
+		"mode": "sprite",
+		"path": "res://assets/generated/content_v1/atlases/portraits_6.png",
+		"rows": 6,
+		"source": "res://assets/generated/sources/content_v1/portraits_6.png"
+	},
+	"source_hash": "d67afb9dd6ff744ddb56e8c38927657e"
+}

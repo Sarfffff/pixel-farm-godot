@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/tool_hoe.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"hoe"
+display_name = "锄头"
+description = "开垦种植区的草地，每次消耗 4 体力。永久工具，可拖到快捷位，不会被出售或消耗。"
+icon = ExtResource("2")
+max_stack = 1
+category = &"tool"

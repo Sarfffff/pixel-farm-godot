@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/down_a.png" id="1_oegku"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/down_b.png" id="2_0oepn"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/left_a.png" id="3_2b2x5"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/left_b.png" id="4_48yim"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/right_a.png" id="5_4irgf"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/right_b.png" id="6_w4ltd"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/up_a.png" id="7_frao5"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/orchard_helper/up_b.png" id="8_3r3gu"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oegku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0oepn")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2b2x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_48yim")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4irgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w4ltd")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_frao5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3r3gu")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

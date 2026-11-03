@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/items/food_forage/blackberry.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"wild_blackberry"
+display_name = "野黑莓"
+description = "从田边采到的黑莓，可以出售。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 9
+buy_price = 0
+category = &"forage"
+unlock_stage = 0

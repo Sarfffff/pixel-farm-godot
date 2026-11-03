@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/down_a.png" id="1_upfgv"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/down_b.png" id="2_ot8m1"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/left_a.png" id="3_si8tw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/left_b.png" id="4_jywq7"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/right_a.png" id="5_1rijy"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/right_b.png" id="6_1ahr2"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/up_a.png" id="7_qgrvp"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/forest_bear/up_b.png" id="8_irq5s"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_upfgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ot8m1")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_si8tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jywq7")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1rijy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1ahr2")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qgrvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_irq5s")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

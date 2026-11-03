@@ -1,0 +1,32 @@
+{
+  "policy": "Runtime text only; no copied or generated CJK bitmap font pages.",
+  "theme": "res://assets/generated/content_v1/ui/fonts/font_roles.tres",
+  "fallback": [
+    "Microsoft YaHei",
+    "Noto Sans CJK SC",
+    "Arial"
+  ],
+  "roles": {
+    "smooth": {
+      "size": 12,
+      "outline": 0
+    },
+    "border": {
+      "size": 12,
+      "outline": 1
+    },
+    "small": {
+      "size": 10,
+      "outline": 0
+    },
+    "sprite_title": {
+      "size": 18,
+      "outline": 1
+    },
+    "tiny_numbers": {
+      "size": 8,
+      "outline": 0
+    }
+  },
+  "localization": "Use the same original blank panel texture and runtime translated Label text."
+}

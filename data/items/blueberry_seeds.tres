@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/icons/crops/blueberry/seed_packet.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"blueberry_seeds"
+display_name = "蓝莓种子"
+description = "首次 5 天，复收 2 天；每次两份蓝莓。修好围栏后上架。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 15
+buy_price = 75
+category = &"seed"
+unlock_stage = 1

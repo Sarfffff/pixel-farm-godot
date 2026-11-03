@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/down_a.png" id="1_ymrr8"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/down_b.png" id="2_pr6rn"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/left_a.png" id="3_q2shg"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/left_b.png" id="4_l4mrw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/right_a.png" id="5_ir6ea"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/right_b.png" id="6_hw3qb"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/up_a.png" id="7_hlgbd"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/school_girl/up_b.png" id="8_cjwhh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ymrr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pr6rn")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q2shg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l4mrw")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ir6ea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hw3qb")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hlgbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cjwhh")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

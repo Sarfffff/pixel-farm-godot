@@ -126,7 +126,7 @@ func _run() -> void:
 		var slot: Dictionary = _inventory.item_at(index)
 		if not slot.is_empty():
 			_inventory.remove_item(slot[&"id"], int(slot[&"count"]))
-	_check(_inventory.add_item(&"wood", 99 * 24) == 0, "bag filled to the brim")
+	_check(_inventory.add_item(&"wood", 99 * (_inventory.slot_count() - Inventory.TOOL_IDS.size())) == 0, "all cargo slots filled, permanent tools retained")
 	var carrot_before: int = _inventory.count_of(&"carrot")
 	_tiller.interact(TEST_CELL)
 	_check(_tiller._crops.has(TEST_CELL), "full bag keeps the crop on the field")

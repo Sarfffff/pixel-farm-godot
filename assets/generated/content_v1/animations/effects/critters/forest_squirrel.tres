@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f0.png" id="1_228tr"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f1.png" id="2_aek8s"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f2.png" id="3_ovagu"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f3.png" id="4_rg2el"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f4.png" id="5_5gdhu"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f5.png" id="6_dsdk0"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f6.png" id="7_igc6s"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/critters/forest_squirrel/f7.png" id="8_g0yod"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_228tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aek8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ovagu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rg2el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5gdhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dsdk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_igc6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g0yod")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

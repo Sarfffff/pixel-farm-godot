@@ -27,12 +27,37 @@ var _facing: StringName = &"down"
 var _action_tool: StringName
 var _action_cell: Vector2i
 var _impact_sent: bool = false
+var _inventory: Inventory
 
 
 func _ready() -> void:
 	_sprite.frame_changed.connect(_on_sprite_frame_changed)
 	_sprite.animation_finished.connect(_on_sprite_animation_finished)
 	_update_animation(false)
+	_bind_inventory.call_deferred()
+
+
+func _bind_inventory() -> void:
+	_inventory = get_tree().get_first_node_in_group(&"inventory") as Inventory
+	if _inventory != null:
+		_inventory.active_item_changed.connect(_sync_active_item)
+		_sync_active_item()
+
+
+func _sync_active_item(_id: StringName = &"") -> void:
+	if _inventory == null or is_acting:
+		return
+	var item: ItemData = _inventory.definition(_inventory.active_item())
+	var next_tool: StringName = &"none"
+	if item != null:
+		if item.category == &"tool" and TOOLS.has(item.id):
+			next_tool = item.id
+		elif item.category == &"seed":
+			next_tool = &"seeds"
+	if next_tool != current_tool:
+		current_tool = next_tool
+		_update_animation(velocity.length_squared() > 0.01 and not input_locked)
+		tool_changed.emit(current_tool)
 
 
 func _physics_process(delta: float) -> void:
@@ -61,16 +86,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event.is_action_pressed(&"tool_next"):
 		if not _cycle_seed(1):
-			_select_tool(TOOLS.find(current_tool) + 1)
+			_cycle_hotbar(1)
 	elif event.is_action_pressed(&"tool_prev"):
 		if not _cycle_seed(-1):
-			_select_tool(TOOLS.find(current_tool) - 1)
+			_cycle_hotbar(-1)
 	elif event.is_action_pressed(&"next_day"):
 		day_advanced.emit()
 	else:
-		for index in TOOLS.size():
+		for index in Inventory.HOTBAR_SIZE:
 			if event.is_action_pressed(StringName("tool_%d" % (index + 1))):
-				_select_tool(index)
+				_select_hotbar(index)
 				return
 		if event.is_action_pressed(&"use_tool") or event.is_action_pressed(&"mouse_use"):
 			_start_action()
@@ -80,10 +105,31 @@ func _unhandled_input(event: InputEvent) -> void:
 func set_input_locked(locked: bool) -> void:
 	input_locked = locked
 	if not locked:
+		_refresh_modal_lock()
+	if not input_locked:
 		return
 	velocity = Vector2.ZERO
 	if not is_acting:
 		_update_animation(false)
+
+
+## 面板互斥关闭时不能把刚打开的另一个面板解锁。
+func _refresh_modal_lock() -> void:
+	if get_tree().current_scene == null:
+		return
+	var ui := get_tree().current_scene.get_node_or_null("UI")
+	if ui == null:
+		return
+	input_locked = false
+	for panel_name: String in ["InventoryPanel", "ShopPanel", "DaySummary", "DialoguePanel", "HelpPanel", "OrderPanel", "CommunityPanel", "PauseMenu"]:
+		var panel := ui.get_node_or_null(panel_name) as Control
+		if panel != null and panel.visible:
+			input_locked = true
+			break
+	for panel: Node in get_tree().get_nodes_in_group(&"modal_ui"):
+		if panel is Control and panel.visible:
+			input_locked = true
+			break
 
 
 func facing_vector() -> Vector2i:
@@ -108,14 +154,45 @@ func _select_tool(index: int) -> void:
 	if is_acting:
 		return
 	var next_tool: StringName = TOOLS[posmod(index, TOOLS.size())]
+	# 程序内仍可按工具类型选择；玩家输入则按快捷位选择。
+	if _inventory != null:
+		var id: StringName = &"carrot_seeds" if next_tool == &"seeds" else next_tool
+		if next_tool == &"seeds":
+			for entry: StringName in _inventory.hotbar:
+				var item: ItemData = _inventory.definition(entry)
+				if item != null and item.category == &"seed":
+					id = entry
+					break
+		var slot: int = _inventory.hotbar.find(id)
+		if slot < 0 and _inventory.assign_hotbar(_inventory.active_slot, id):
+			slot = _inventory.active_slot
+		if slot >= 0:
+			_inventory.select_hotbar(slot)
+			return
 	if next_tool != current_tool:
 		current_tool = next_tool
 		_update_animation(velocity.length_squared() > 0.01 and not input_locked)
 		tool_changed.emit(current_tool)
 
 
+func _select_hotbar(index: int) -> void:
+	if is_acting:
+		return
+	if _inventory != null:
+		_inventory.select_hotbar(index)
+	elif index < TOOLS.size():
+		_select_tool(index)
+
+
+func _cycle_hotbar(direction: int) -> void:
+	if _inventory != null:
+		_select_hotbar(_inventory.active_slot + direction)
+	else:
+		_select_tool(TOOLS.find(current_tool) + direction)
+
+
 func _start_action() -> void:
-	if is_acting or input_locked or not is_instance_valid(interaction):
+	if is_acting or input_locked or current_tool == &"none" or not is_instance_valid(interaction):
 		return
 	var cell: Vector2i = _resolve_target(current_tool)
 	if not interaction.can_use(current_tool, cell):
@@ -204,6 +281,7 @@ func _on_sprite_frame_changed() -> void:
 func _on_sprite_animation_finished() -> void:
 	if is_acting:
 		is_acting = false
+		_sync_active_item()
 		_update_animation(false)
 
 

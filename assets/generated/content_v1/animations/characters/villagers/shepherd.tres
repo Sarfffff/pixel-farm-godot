@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/down_a.png" id="1_7deh6"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/down_b.png" id="2_hidh6"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/left_a.png" id="3_lmuel"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/left_b.png" id="4_i658c"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/right_a.png" id="5_u15ob"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/right_b.png" id="6_0i5tf"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/up_a.png" id="7_hg8c8"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/shepherd/up_b.png" id="8_s533c"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7deh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hidh6")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lmuel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i658c")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u15ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0i5tf")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hg8c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s533c")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

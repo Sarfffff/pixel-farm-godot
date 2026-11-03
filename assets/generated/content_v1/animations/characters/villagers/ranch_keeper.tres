@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/down_a.png" id="1_xj3mm"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/down_b.png" id="2_bclca"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/left_a.png" id="3_gsvmb"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/left_b.png" id="4_exdrt"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/right_a.png" id="5_5on6y"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/right_b.png" id="6_nbqld"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/up_a.png" id="7_xypmn"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ranch_keeper/up_b.png" id="8_juwwr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xj3mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bclca")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gsvmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_exdrt")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5on6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nbqld")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xypmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_juwwr")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

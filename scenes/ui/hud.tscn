@@ -1,11 +1,8 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hud"]
-[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
-[ext_resource type="Texture2D" path="res://assets/generated/items/coin.png" id="3_coin"]
-
-[sub_resource type="SystemFont" id="SystemFont_ui"]
-font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1"]
+[ext_resource type="Theme" path="res://assets/generated/ui/farm_hud.tres" id="2"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/coin.png" id="3"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -15,131 +12,168 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("2_theme")
-script = ExtResource("1_hud")
+theme = ExtResource("2")
+script = ExtResource("1")
 
 [node name="TimePanel" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -78.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = 17.0
+offset_left = -96.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 39.0
 grow_horizontal = 0
 mouse_filter = 2
-theme_type_variation = &"InventoryDetails"
 
-[node name="Row" type="HBoxContainer" parent="TimePanel"]
+[node name="Contents" type="VBoxContainer" parent="TimePanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Row" type="HBoxContainer" parent="TimePanel/Contents"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 4
-alignment = 1
 
-[node name="TimeLabel" type="Label" parent="TimePanel/Row"]
-unique_name_in_owner = true
+[node name="TimeLabel" type="Label" parent="TimePanel/Contents/Row"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.29, 0.2, 0.13, 1)
-theme_override_fonts/font = SubResource("SystemFont_ui")
-theme_override_font_sizes/font_size = 6
 text = "第 1 天 06:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="WeatherLabel" type="Label" parent="TimePanel/Row"]
+theme_override_font_sizes/font_size = 7
 unique_name_in_owner = true
+size_flags_horizontal = 3
+
+[node name="WeatherLabel" type="Label" parent="TimePanel/Contents/Row"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.35, 0.26, 0.18, 1)
-theme_override_fonts/font = SubResource("SystemFont_ui")
-theme_override_font_sizes/font_size = 6
 text = "晴"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StaminaPanel" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -60.0
-offset_right = -4.0
-offset_bottom = -4.0
-grow_horizontal = 0
-grow_vertical = 0
-mouse_filter = 2
-
-[node name="StaminaText" type="Label" parent="StaminaPanel"]
+theme_override_font_sizes/font_size = 7
 unique_name_in_owner = true
-layout_mode = 0
-offset_right = 12.0
-offset_bottom = 8.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
-theme_override_colors/font_outline_color = Color(0.09, 0.08, 0.07, 0.9)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = SubResource("SystemFont_ui")
-theme_override_font_sizes/font_size = 6
-text = "100"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="BarBack" type="ColorRect" parent="StaminaPanel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 9.0
-offset_bottom = 52.0
-mouse_filter = 2
-color = Color(0.09, 0.08, 0.07, 0.72)
-
-[node name="Fill" type="ColorRect" parent="StaminaPanel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 9.0
-offset_bottom = 52.0
-mouse_filter = 2
-color = Color(0.55, 0.78, 0.42, 1)
-
-[node name="CoinPanel" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -48.0
-offset_top = 22.0
-offset_right = -4.0
-offset_bottom = 35.0
-grow_horizontal = 0
-mouse_filter = 2
-theme_type_variation = &"InventoryDetails"
-
-[node name="Row" type="HBoxContainer" parent="CoinPanel"]
+[node name="CoinPanel" type="HBoxContainer" parent="TimePanel/Contents"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 3
 
-[node name="CoinIcon" type="TextureRect" parent="CoinPanel/Row"]
-custom_minimum_size = Vector2(12, 12)
+[node name="CoinIcon" type="TextureRect" parent="TimePanel/Contents/CoinPanel"]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-size_flags_vertical = 4
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
 mouse_filter = 2
-texture = ExtResource("3_coin")
-stretch_mode = 4
 
-[node name="Amount" type="Label" parent="CoinPanel/Row"]
-unique_name_in_owner = true
+[node name="CoinTitle" type="Label" parent="TimePanel/Contents/CoinPanel"]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.29, 0.2, 0.13, 1)
-theme_override_fonts/font = SubResource("SystemFont_ui")
+text = "金币"
 theme_override_font_sizes/font_size = 7
+
+[node name="Amount" type="Label" parent="TimePanel/Contents/CoinPanel"]
+layout_mode = 2
 text = "500"
+theme_override_font_sizes/font_size = 7
+unique_name_in_owner = true
+size_flags_horizontal = 3
 horizontal_alignment = 2
-vertical_alignment = 1
+
+[node name="StaminaPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_top = 42.0
+offset_right = -5.0
+offset_bottom = 64.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="StaminaPanel"]
+layout_mode = 2
+custom_minimum_size = Vector2(81, 16)
+mouse_filter = 2
+
+[node name="StaminaText" type="Label" parent="StaminaPanel/Content"]
+unique_name_in_owner = true
+offset_right = 81.0
+offset_bottom = 10.0
+text = "体力 100/100"
+mouse_filter = 2
+
+[node name="BarBack" type="ColorRect" parent="StaminaPanel/Content"]
+unique_name_in_owner = true
+offset_top = 12.0
+offset_right = 81.0
+offset_bottom = 16.0
+color = Color(0.40, 0.34, 0.24, 1)
+mouse_filter = 2
+
+[node name="Fill" type="ColorRect" parent="StaminaPanel/Content"]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 80.0
+offset_bottom = 15.0
+color = Color(0.38, 0.58, 0.33, 1)
+mouse_filter = 2
+
+[node name="Journal" type="PanelContainer" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 133.0
+mouse_filter = 1
+
+[node name="VBox" type="VBoxContainer" parent="Journal"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/separation = 2
+
+[node name="Toggle" type="Button" parent="Journal/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+alignment = 0
+text = "农场手记   [J] 收起"
+
+[node name="Body" type="VBoxContainer" parent="Journal/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="GuideTitle" type="Label" parent="Journal/VBox/Body"]
+visible = false
+layout_mode = 2
+text = "第一次耕作"
+theme_override_font_sizes/font_size = 7
+theme_override_colors/font_color = Color(0.40, 0.46, 0.24, 1)
+
+[node name="GuideHint" type="Label" parent="Journal/VBox/Body"]
+layout_mode = 2
+text = "[1] 锄头 · 在左侧田边按空格开垦"
+theme_override_font_sizes/font_size = 6
+custom_minimum_size = Vector2(118, 0)
+autowrap_mode = 3
+
+[node name="CommunityGoal" type="Label" parent="Journal/VBox/Body"]
+layout_mode = 2
+text = "社区 · 木材 0/15 · 纤维 0/10"
+theme_override_font_sizes/font_size = 6
+
+[node name="OrderGoal" type="Label" parent="Journal/VBox/Body"]
+layout_mode = 2
+text = "订单 · 纤维 0/4 · 余5天"
+theme_override_font_sizes/font_size = 6
+
+[node name="CameraHint" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -14.0
+offset_right = -5.0
+offset_bottom = -4.0
+theme_override_font_sizes/font_size = 6
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_outline_color = Color(0.27, 0.20, 0.31, 1)
+theme_override_constants/outline_size = 1
+text = "滚轮缩放 · F11 全屏"
+horizontal_alignment = 2
+mouse_filter = 2

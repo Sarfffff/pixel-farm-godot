@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/burrowing_mole/attack.png" id="1_gumdj"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/burrowing_mole/idle.png" id="2_1vlf5"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/burrowing_mole/move_a.png" id="3_4e8v8"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/burrowing_mole/move_b.png" id="4_31g2b"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gumdj")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1vlf5")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4e8v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_31g2b")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

@@ -36,10 +36,10 @@ func _run() -> void:
 	# HUD 上要有体力与天气
 	var hud := _main.get_node_or_null("UI/HUD")
 	_check(hud != null, "hud exists")
-	var stamina_text: Label = hud.get_node_or_null("StaminaPanel/StaminaText") as Label
-	var stamina_fill: ColorRect = hud.get_node_or_null("StaminaPanel/Fill") as ColorRect
-	var bar_back: ColorRect = hud.get_node_or_null("StaminaPanel/BarBack") as ColorRect
-	var weather_label: Label = hud.get_node_or_null("TimePanel/Row/WeatherLabel") as Label
+	var stamina_text: Label = hud.get_node_or_null("%StaminaText") as Label
+	var stamina_fill: ColorRect = hud.get_node_or_null("%Fill") as ColorRect
+	var bar_back: ColorRect = hud.get_node_or_null("%BarBack") as ColorRect
+	var weather_label: Label = hud.get_node_or_null("%WeatherLabel") as Label
 	_check(stamina_text != null and stamina_fill != null, "hud shows a stamina bar")
 	_check(weather_label != null and not weather_label.text.is_empty(), "hud shows the weather")
 
@@ -51,8 +51,8 @@ func _run() -> void:
 		_check(String(stamina_text.text).contains("70"), "hud follows the stamina value")
 	if stamina_fill != null and bar_back != null:
 		_check(
-			absf(stamina_fill.size.y - bar_back.size.y * 0.7) < 0.6,
-			"bar height follows the ratio"
+			absf(stamina_fill.size.x - (bar_back.size.x - 2.0) * 0.7) < 1.0,
+			"bar width follows the ratio"
 		)
 	_check(not bool(stamina.call("spend", 500)), "overspending is rejected")
 	_check(int(stamina.value) == 70, "a rejected spend changes nothing")

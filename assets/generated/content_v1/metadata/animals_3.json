@@ -1,0 +1,2709 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/pig/idle_down",
+			"mode": "sprite",
+			"name": "pig idle down",
+			"opaque_bounds": [
+				4,
+				8,
+				24,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				26,
+				22,
+				151,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/pig/idle_up",
+			"mode": "sprite",
+			"name": "pig idle up",
+			"opaque_bounds": [
+				4,
+				6,
+				23,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				177,
+				22,
+				141,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/pig/idle_left",
+			"mode": "sprite",
+			"name": "pig idle left",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				318,
+				22,
+				161,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/pig/idle_right",
+			"mode": "sprite",
+			"name": "pig idle right",
+			"opaque_bounds": [
+				2,
+				9,
+				27,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				479,
+				22,
+				151,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/pig/walk_left_a",
+			"mode": "sprite",
+			"name": "pig walk left a",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				630,
+				22,
+				151,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/pig/walk_left_b",
+			"mode": "sprite",
+			"name": "pig walk left b",
+			"opaque_bounds": [
+				2,
+				9,
+				27,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				781,
+				22,
+				157,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/pig/graze_left_a",
+			"mode": "sprite",
+			"name": "pig graze left a",
+			"opaque_bounds": [
+				2,
+				9,
+				27,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				938,
+				22,
+				153,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "pig",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				0,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/pig/graze_left_b",
+			"mode": "sprite",
+			"name": "pig graze left b",
+			"opaque_bounds": [
+				2,
+				9,
+				27,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/pig/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1091,
+				22,
+				154,
+				169
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/piglet/idle_down",
+			"mode": "sprite",
+			"name": "piglet idle down",
+			"opaque_bounds": [
+				4,
+				8,
+				23,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				26,
+				191,
+				151,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/piglet/idle_up",
+			"mode": "sprite",
+			"name": "piglet idle up",
+			"opaque_bounds": [
+				4,
+				7,
+				24,
+				23
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				177,
+				191,
+				141,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/piglet/idle_left",
+			"mode": "sprite",
+			"name": "piglet idle left",
+			"opaque_bounds": [
+				2,
+				10,
+				27,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				318,
+				191,
+				161,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/piglet/idle_right",
+			"mode": "sprite",
+			"name": "piglet idle right",
+			"opaque_bounds": [
+				3,
+				10,
+				26,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				479,
+				191,
+				151,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/piglet/walk_left_a",
+			"mode": "sprite",
+			"name": "piglet walk left a",
+			"opaque_bounds": [
+				2,
+				10,
+				27,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				630,
+				191,
+				151,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/piglet/walk_left_b",
+			"mode": "sprite",
+			"name": "piglet walk left b",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				781,
+				191,
+				157,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/piglet/graze_left_a",
+			"mode": "sprite",
+			"name": "piglet graze left a",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				938,
+				191,
+				153,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "piglet",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				32,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/piglet/graze_left_b",
+			"mode": "sprite",
+			"name": "piglet graze left b",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/piglet/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1091,
+				191,
+				154,
+				133
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/rabbit/idle_down",
+			"mode": "sprite",
+			"name": "rabbit idle down",
+			"opaque_bounds": [
+				6,
+				2,
+				20,
+				28
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				26,
+				324,
+				151,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/rabbit/idle_up",
+			"mode": "sprite",
+			"name": "rabbit idle up",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				177,
+				324,
+				141,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/rabbit/idle_left",
+			"mode": "sprite",
+			"name": "rabbit idle left",
+			"opaque_bounds": [
+				2,
+				4,
+				27,
+				26
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				318,
+				324,
+				161,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/rabbit/idle_right",
+			"mode": "sprite",
+			"name": "rabbit idle right",
+			"opaque_bounds": [
+				4,
+				3,
+				24,
+				27
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				479,
+				324,
+				151,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/rabbit/walk_left_a",
+			"mode": "sprite",
+			"name": "rabbit walk left a",
+			"opaque_bounds": [
+				2,
+				4,
+				27,
+				26
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				630,
+				324,
+				151,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/rabbit/walk_left_b",
+			"mode": "sprite",
+			"name": "rabbit walk left b",
+			"opaque_bounds": [
+				3,
+				4,
+				25,
+				26
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				781,
+				324,
+				157,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/rabbit/graze_left_a",
+			"mode": "sprite",
+			"name": "rabbit graze left a",
+			"opaque_bounds": [
+				3,
+				9,
+				25,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				938,
+				324,
+				153,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				64,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/rabbit/graze_left_b",
+			"mode": "sprite",
+			"name": "rabbit graze left b",
+			"opaque_bounds": [
+				3,
+				9,
+				25,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/rabbit/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1091,
+				324,
+				154,
+				171
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/baby_rabbit/idle_down",
+			"mode": "sprite",
+			"name": "baby rabbit idle down",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				26,
+				495,
+				151,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/baby_rabbit/idle_up",
+			"mode": "sprite",
+			"name": "baby rabbit idle up",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				177,
+				495,
+				141,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/baby_rabbit/idle_left",
+			"mode": "sprite",
+			"name": "baby rabbit idle left",
+			"opaque_bounds": [
+				2,
+				5,
+				27,
+				25
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				318,
+				495,
+				161,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/baby_rabbit/idle_right",
+			"mode": "sprite",
+			"name": "baby rabbit idle right",
+			"opaque_bounds": [
+				3,
+				4,
+				25,
+				26
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				479,
+				495,
+				151,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/baby_rabbit/walk_left_a",
+			"mode": "sprite",
+			"name": "baby rabbit walk left a",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				630,
+				495,
+				151,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/baby_rabbit/walk_left_b",
+			"mode": "sprite",
+			"name": "baby rabbit walk left b",
+			"opaque_bounds": [
+				2,
+				6,
+				27,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				781,
+				495,
+				157,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/baby_rabbit/graze_left_a",
+			"mode": "sprite",
+			"name": "baby rabbit graze left a",
+			"opaque_bounds": [
+				2,
+				9,
+				27,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				938,
+				495,
+				153,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "baby_rabbit",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				96,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/baby_rabbit/graze_left_b",
+			"mode": "sprite",
+			"name": "baby rabbit graze left b",
+			"opaque_bounds": [
+				3,
+				9,
+				26,
+				21
+			],
+			"path": "res://assets/generated/content_v1/animals/baby_rabbit/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1091,
+				495,
+				154,
+				141
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/duck/idle_down",
+			"mode": "sprite",
+			"name": "duck idle down",
+			"opaque_bounds": [
+				5,
+				4,
+				22,
+				26
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				26,
+				636,
+				151,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/duck/idle_up",
+			"mode": "sprite",
+			"name": "duck idle up",
+			"opaque_bounds": [
+				6,
+				4,
+				20,
+				26
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				177,
+				636,
+				141,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/duck/idle_left",
+			"mode": "sprite",
+			"name": "duck idle left",
+			"opaque_bounds": [
+				2,
+				6,
+				27,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				318,
+				636,
+				161,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/duck/idle_right",
+			"mode": "sprite",
+			"name": "duck idle right",
+			"opaque_bounds": [
+				3,
+				5,
+				26,
+				25
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				479,
+				636,
+				151,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/duck/walk_left_a",
+			"mode": "sprite",
+			"name": "duck walk left a",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				630,
+				636,
+				151,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/duck/walk_left_b",
+			"mode": "sprite",
+			"name": "duck walk left b",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				781,
+				636,
+				157,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/duck/graze_left_a",
+			"mode": "sprite",
+			"name": "duck graze left a",
+			"opaque_bounds": [
+				2,
+				11,
+				28,
+				19
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				938,
+				636,
+				153,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duck",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				128,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/duck/graze_left_b",
+			"mode": "sprite",
+			"name": "duck graze left b",
+			"opaque_bounds": [
+				2,
+				11,
+				27,
+				19
+			],
+			"path": "res://assets/generated/content_v1/animals/duck/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1091,
+				636,
+				154,
+				152
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/duckling/idle_down",
+			"mode": "sprite",
+			"name": "duckling idle down",
+			"opaque_bounds": [
+				5,
+				6,
+				22,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				26,
+				788,
+				151,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/duckling/idle_up",
+			"mode": "sprite",
+			"name": "duckling idle up",
+			"opaque_bounds": [
+				5,
+				6,
+				22,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				177,
+				788,
+				141,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/duckling/idle_left",
+			"mode": "sprite",
+			"name": "duckling idle left",
+			"opaque_bounds": [
+				3,
+				7,
+				25,
+				23
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				318,
+				788,
+				161,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/duckling/idle_right",
+			"mode": "sprite",
+			"name": "duckling idle right",
+			"opaque_bounds": [
+				4,
+				7,
+				24,
+				23
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				479,
+				788,
+				151,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/duckling/walk_left_a",
+			"mode": "sprite",
+			"name": "duckling walk left a",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				630,
+				788,
+				151,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/duckling/walk_left_b",
+			"mode": "sprite",
+			"name": "duckling walk left b",
+			"opaque_bounds": [
+				2,
+				8,
+				27,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				781,
+				788,
+				157,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/duckling/graze_left_a",
+			"mode": "sprite",
+			"name": "duckling graze left a",
+			"opaque_bounds": [
+				2,
+				11,
+				27,
+				19
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				938,
+				788,
+				153,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "duckling",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				160,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/duckling/graze_left_b",
+			"mode": "sprite",
+			"name": "duckling graze left b",
+			"opaque_bounds": [
+				2,
+				11,
+				27,
+				19
+			],
+			"path": "res://assets/generated/content_v1/animals/duckling/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1091,
+				788,
+				154,
+				122
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/tiny_dinosaur/idle_down",
+			"mode": "sprite",
+			"name": "tiny dinosaur idle down",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				26,
+				910,
+				151,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/tiny_dinosaur/idle_up",
+			"mode": "sprite",
+			"name": "tiny dinosaur idle up",
+			"opaque_bounds": [
+				8,
+				6,
+				16,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				177,
+				910,
+				141,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/tiny_dinosaur/idle_left",
+			"mode": "sprite",
+			"name": "tiny dinosaur idle left",
+			"opaque_bounds": [
+				2,
+				8,
+				27,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				318,
+				910,
+				161,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/tiny_dinosaur/idle_right",
+			"mode": "sprite",
+			"name": "tiny dinosaur idle right",
+			"opaque_bounds": [
+				3,
+				8,
+				25,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				479,
+				910,
+				151,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/tiny_dinosaur/walk_left_a",
+			"mode": "sprite",
+			"name": "tiny dinosaur walk left a",
+			"opaque_bounds": [
+				2,
+				10,
+				27,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				630,
+				910,
+				151,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/tiny_dinosaur/walk_left_b",
+			"mode": "sprite",
+			"name": "tiny dinosaur walk left b",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				781,
+				910,
+				157,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/tiny_dinosaur/graze_left_a",
+			"mode": "sprite",
+			"name": "tiny dinosaur graze left a",
+			"opaque_bounds": [
+				2,
+				13,
+				27,
+				17
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				938,
+				910,
+				153,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tiny_dinosaur",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				192,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/tiny_dinosaur/graze_left_b",
+			"mode": "sprite",
+			"name": "tiny dinosaur graze left b",
+			"opaque_bounds": [
+				2,
+				13,
+				27,
+				17
+			],
+			"path": "res://assets/generated/content_v1/animals/tiny_dinosaur/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1091,
+				910,
+				154,
+				155
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_down",
+			"id": "animals/barn_cat/idle_down",
+			"mode": "sprite",
+			"name": "barn cat idle down",
+			"opaque_bounds": [
+				5,
+				6,
+				22,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/idle_down.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				26,
+				1065,
+				151,
+				162
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_up",
+			"id": "animals/barn_cat/idle_up",
+			"mode": "sprite",
+			"name": "barn cat idle up",
+			"opaque_bounds": [
+				5,
+				6,
+				22,
+				24
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/idle_up.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				177,
+				1065,
+				141,
+				162
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_left",
+			"id": "animals/barn_cat/idle_left",
+			"mode": "sprite",
+			"name": "barn cat idle left",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/idle_left.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				318,
+				1065,
+				161,
+				162
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "idle_right",
+			"id": "animals/barn_cat/idle_right",
+			"mode": "sprite",
+			"name": "barn cat idle right",
+			"opaque_bounds": [
+				3,
+				7,
+				25,
+				23
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/idle_right.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				479,
+				1065,
+				151,
+				162
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				128,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_a",
+			"id": "animals/barn_cat/walk_left_a",
+			"mode": "sprite",
+			"name": "barn cat walk left a",
+			"opaque_bounds": [
+				2,
+				8,
+				27,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				630,
+				1065,
+				151,
+				162
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				160,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "walk_left_b",
+			"id": "animals/barn_cat/walk_left_b",
+			"mode": "sprite",
+			"name": "barn cat walk left b",
+			"opaque_bounds": [
+				2,
+				7,
+				27,
+				23
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				781,
+				1065,
+				157,
+				162
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				192,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_a",
+			"id": "animals/barn_cat/graze_left_a",
+			"mode": "sprite",
+			"name": "barn cat graze left a",
+			"opaque_bounds": [
+				2,
+				8,
+				27,
+				22
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/graze_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				938,
+				1065,
+				153,
+				162
+			],
+			"source_sheet": "animals_3"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "barn_cat",
+			"atlas": "res://assets/generated/content_v1/atlases/animals_3.png",
+			"atlas_region": [
+				224,
+				224,
+				32,
+				32
+			],
+			"category": "animals",
+			"frame": "graze_left_b",
+			"id": "animals/barn_cat/graze_left_b",
+			"mode": "sprite",
+			"name": "barn cat graze left b",
+			"opaque_bounds": [
+				2,
+				7,
+				27,
+				23
+			],
+			"path": "res://assets/generated/content_v1/animals/barn_cat/graze_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/content_v1/animals_3.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1091,
+				1065,
+				154,
+				162
+			],
+			"source_sheet": "animals_3"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "e43f13d615b9d3a2cc9c2e6bf4cb1550eaef60448e83cb1f9015c9b0c0bce363",
+	"sheet": {
+		"category": "animals",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 8,
+		"count": 64,
+		"id": "animals_3",
+		"mode": "sprite",
+		"path": "res://assets/generated/content_v1/atlases/animals_3.png",
+		"rows": 8,
+		"source": "res://assets/generated/sources/content_v1/animals_3.png"
+	},
+	"source_hash": "545b9dc2159e5d04571ad1b21523f73b"
+}

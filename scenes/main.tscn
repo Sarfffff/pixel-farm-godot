@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7wc8txipc2lq"]
 
 [ext_resource type="Script" uid="uid://sufjf3mdjgqs" path="res://scripts/world/camera_follow.gd" id="1_camera"]
-[ext_resource type="PackedScene" uid="uid://dl88tmqg12gen" path="res://scenes/world/farm.tscn" id="2_farm"]
+[ext_resource type="PackedScene" path="res://scenes/world/farm.tscn" id="2_farm"]
 [ext_resource type="PackedScene" uid="uid://qly8j3hq62mf" path="res://scenes/ui/toolbar.tscn" id="4_toolbar"]
 [ext_resource type="Script" uid="uid://chlcelndge05w" path="res://scripts/systems/inventory.gd" id="5_inventory"]
 [ext_resource type="PackedScene" uid="uid://dr0afcyde7i1p" path="res://scenes/ui/inventory_panel.tscn" id="6_panel"]
@@ -30,6 +30,10 @@
 [ext_resource type="PackedScene" path="res://scenes/world/chicken.tscn" id="21_chicken"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/order_bin.tscn" id="25_bin"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/community_building.tscn" id="26_building"]
+[ext_resource type="Script" path="res://scripts/world/forage.gd" id="32_forage"]
+[ext_resource type="Script" path="res://scripts/systems/upgrades.gd" id="33_upgrades"]
+[ext_resource type="Script" path="res://scripts/systems/tutorial.gd" id="34_tutorial"]
+[ext_resource type="Script" path="res://scripts/systems/farm_activities.gd" id="35_activities"]
 
 [node name="Main" type="Node2D" unique_id=1709259568]
 
@@ -61,6 +65,9 @@ position = Vector2(480, 40)
 
 [node name="Player" parent="Farm/World" instance=ExtResource("3_player")]
 position = Vector2(472, 174)
+
+[node name="Forage" type="Node2D" parent="Farm/World"]
+script = ExtResource("32_forage")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1529148448]
 position = Vector2(472, 166)
@@ -95,6 +102,15 @@ script = ExtResource("31_weather")
 
 [node name="BGM" type="Node" parent="Systems" unique_id=1082598219 groups=["bgm"]]
 script = ExtResource("29_bgm")
+
+[node name="Upgrades" type="Node" parent="Systems" groups=["upgrades"]]
+script = ExtResource("33_upgrades")
+
+[node name="Tutorial" type="Node" parent="Systems" groups=["tutorial"]]
+script = ExtResource("34_tutorial")
+
+[node name="FarmActivities" type="Node" parent="Systems"]
+script = ExtResource("35_activities")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1232170097]
 

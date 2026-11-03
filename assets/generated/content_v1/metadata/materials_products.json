@@ -1,0 +1,2901 @@
+{
+	"items": [
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/copper_ore.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/copper_ore",
+			"mode": "sprite",
+			"name": "copper ore",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/copper_ore.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				8,
+				23,
+				163,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/iron_ore.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/iron_ore",
+			"mode": "sprite",
+			"name": "iron ore",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/iron_ore.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				171,
+				23,
+				149,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/gold_ore.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/gold_ore",
+			"mode": "sprite",
+			"name": "gold ore",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/gold_ore.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				320,
+				23,
+				158,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/iridium_ore.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/iridium_ore",
+			"mode": "sprite",
+			"name": "iridium ore",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/iridium_ore.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				478,
+				23,
+				150,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/coal.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/coal",
+			"mode": "sprite",
+			"name": "coal",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/coal.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				628,
+				23,
+				153,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/clay.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/clay",
+			"mode": "sprite",
+			"name": "clay",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/items/materials/clay.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				781,
+				23,
+				156,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/hardwood.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/hardwood",
+			"mode": "sprite",
+			"name": "hardwood",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/hardwood.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				937,
+				23,
+				160,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				0,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/sap.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/sap",
+			"mode": "sprite",
+			"name": "sap",
+			"opaque_bounds": [
+				3,
+				2,
+				9,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/sap.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1097,
+				23,
+				151,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/quartz.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/quartz",
+			"mode": "sprite",
+			"name": "quartz",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/quartz.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				8,
+				178,
+				163,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/fire_quartz.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/fire_quartz",
+			"mode": "sprite",
+			"name": "fire quartz",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/fire_quartz.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				171,
+				178,
+				149,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/frozen_tear.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/frozen_tear",
+			"mode": "sprite",
+			"name": "frozen tear",
+			"opaque_bounds": [
+				3,
+				2,
+				9,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/frozen_tear.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				320,
+				178,
+				158,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/earth_crystal.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/earth_crystal",
+			"mode": "sprite",
+			"name": "earth crystal",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/earth_crystal.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				478,
+				178,
+				150,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/amethyst.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/amethyst",
+			"mode": "sprite",
+			"name": "amethyst",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/amethyst.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				628,
+				178,
+				153,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/topaz.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/topaz",
+			"mode": "sprite",
+			"name": "topaz",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/topaz.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				781,
+				178,
+				156,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/emerald.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/emerald",
+			"mode": "sprite",
+			"name": "emerald",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/emerald.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				937,
+				178,
+				160,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				16,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/jade.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/jade",
+			"mode": "sprite",
+			"name": "jade",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/jade.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1097,
+				178,
+				151,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/aquamarine.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/aquamarine",
+			"mode": "sprite",
+			"name": "aquamarine",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/aquamarine.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				8,
+				330,
+				163,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/ruby.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/ruby",
+			"mode": "sprite",
+			"name": "ruby",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/ruby.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				171,
+				330,
+				149,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/diamond.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/diamond",
+			"mode": "sprite",
+			"name": "diamond",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/diamond.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				320,
+				330,
+				158,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/prismatic_crystal.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/prismatic_crystal",
+			"mode": "sprite",
+			"name": "prismatic crystal",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/prismatic_crystal.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				478,
+				330,
+				150,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/copper_bar.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/copper_bar",
+			"mode": "sprite",
+			"name": "copper bar",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/copper_bar.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				628,
+				330,
+				153,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/iron_bar.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/iron_bar",
+			"mode": "sprite",
+			"name": "iron bar",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/iron_bar.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				781,
+				330,
+				156,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/gold_bar.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/gold_bar",
+			"mode": "sprite",
+			"name": "gold bar",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/gold_bar.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				937,
+				330,
+				160,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				32,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/iridium_bar.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/iridium_bar",
+			"mode": "sprite",
+			"name": "iridium bar",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/iridium_bar.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1097,
+				330,
+				151,
+				152
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/battery_pack.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/battery_pack",
+			"mode": "sprite",
+			"name": "battery pack",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/battery_pack.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				8,
+				482,
+				163,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/slime_gel.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/slime_gel",
+			"mode": "sprite",
+			"name": "slime gel",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/items/materials/slime_gel.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				171,
+				482,
+				149,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/bat_wing.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/bat_wing",
+			"mode": "sprite",
+			"name": "bat wing",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/bat_wing.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				320,
+				482,
+				158,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/bug_meat.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/bug_meat",
+			"mode": "sprite",
+			"name": "bug meat",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/items/materials/bug_meat.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				478,
+				482,
+				150,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/bone_fragment.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/bone_fragment",
+			"mode": "sprite",
+			"name": "bone fragment",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/bone_fragment.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				628,
+				482,
+				153,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/fabric.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/fabric",
+			"mode": "sprite",
+			"name": "fabric",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/fabric.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				781,
+				482,
+				156,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/wool.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/wool",
+			"mode": "sprite",
+			"name": "wool",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/wool.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				937,
+				482,
+				160,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				48,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/leather.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/leather",
+			"mode": "sprite",
+			"name": "leather",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/leather.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1097,
+				482,
+				151,
+				148
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/milk.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/milk",
+			"mode": "sprite",
+			"name": "milk",
+			"opaque_bounds": [
+				4,
+				2,
+				7,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/milk.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				8,
+				630,
+				163,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/large_milk.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/large_milk",
+			"mode": "sprite",
+			"name": "large milk",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/large_milk.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				171,
+				630,
+				149,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/goat_milk.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/goat_milk",
+			"mode": "sprite",
+			"name": "goat milk",
+			"opaque_bounds": [
+				4,
+				2,
+				7,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/goat_milk.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				320,
+				630,
+				158,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/goat_cheese.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/goat_cheese",
+			"mode": "sprite",
+			"name": "goat cheese",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/goat_cheese.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				478,
+				630,
+				150,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/white_egg.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/white_egg",
+			"mode": "sprite",
+			"name": "white egg",
+			"opaque_bounds": [
+				3,
+				2,
+				10,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/white_egg.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				628,
+				630,
+				153,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/brown_egg.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/brown_egg",
+			"mode": "sprite",
+			"name": "brown egg",
+			"opaque_bounds": [
+				3,
+				2,
+				10,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/brown_egg.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				781,
+				630,
+				156,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/blue_egg.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/blue_egg",
+			"mode": "sprite",
+			"name": "blue egg",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/blue_egg.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				937,
+				630,
+				160,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				64,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/dark_egg.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/dark_egg",
+			"mode": "sprite",
+			"name": "dark egg",
+			"opaque_bounds": [
+				3,
+				2,
+				10,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/dark_egg.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1097,
+				630,
+				151,
+				158
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/duck_egg.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/duck_egg",
+			"mode": "sprite",
+			"name": "duck egg",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/duck_egg.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				8,
+				788,
+				163,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/dinosaur_egg.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/dinosaur_egg",
+			"mode": "sprite",
+			"name": "dinosaur egg",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/dinosaur_egg.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				171,
+				788,
+				149,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/duck_feather.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/duck_feather",
+			"mode": "sprite",
+			"name": "duck feather",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/duck_feather.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				320,
+				788,
+				158,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/rabbit_foot.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/rabbit_foot",
+			"mode": "sprite",
+			"name": "rabbit foot",
+			"opaque_bounds": [
+				3,
+				2,
+				10,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/rabbit_foot.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				478,
+				788,
+				150,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/truffle.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/truffle",
+			"mode": "sprite",
+			"name": "truffle",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/truffle.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				628,
+				788,
+				153,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/honey.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/honey",
+			"mode": "sprite",
+			"name": "honey",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/honey.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				781,
+				788,
+				156,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/beeswax.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/beeswax",
+			"mode": "sprite",
+			"name": "beeswax",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/beeswax.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				937,
+				788,
+				160,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				80,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/cheese.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/cheese",
+			"mode": "sprite",
+			"name": "cheese",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/cheese.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1097,
+				788,
+				151,
+				155
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/mayonnaise.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/mayonnaise",
+			"mode": "sprite",
+			"name": "mayonnaise",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/mayonnaise.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				8,
+				943,
+				163,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/duck_mayonnaise.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/duck_mayonnaise",
+			"mode": "sprite",
+			"name": "duck mayonnaise",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/duck_mayonnaise.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				171,
+				943,
+				149,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/butter.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/butter",
+			"mode": "sprite",
+			"name": "butter",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				8
+			],
+			"path": "res://assets/generated/content_v1/items/materials/butter.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				320,
+				943,
+				158,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/yogurt.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/yogurt",
+			"mode": "sprite",
+			"name": "yogurt",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/items/materials/yogurt.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				478,
+				943,
+				150,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/oil.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/oil",
+			"mode": "sprite",
+			"name": "oil",
+			"opaque_bounds": [
+				3,
+				2,
+				9,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/oil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				628,
+				943,
+				153,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/truffle_oil.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/truffle_oil",
+			"mode": "sprite",
+			"name": "truffle oil",
+			"opaque_bounds": [
+				3,
+				2,
+				9,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/truffle_oil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				781,
+				943,
+				156,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/tea_leaves.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/tea_leaves",
+			"mode": "sprite",
+			"name": "tea leaves",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/tea_leaves.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				937,
+				943,
+				160,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				96,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/coffee_beans.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/coffee_beans",
+			"mode": "sprite",
+			"name": "coffee beans",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/coffee_beans.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1097,
+				943,
+				151,
+				147
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				0,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/flour.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/flour",
+			"mode": "sprite",
+			"name": "flour",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/flour.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				8,
+				1090,
+				163,
+				145
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				16,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/sugar.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/sugar",
+			"mode": "sprite",
+			"name": "sugar",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/sugar.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				171,
+				1090,
+				149,
+				145
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				32,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/rice.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/rice",
+			"mode": "sprite",
+			"name": "rice",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/rice.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				320,
+				1090,
+				158,
+				145
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				48,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/salt.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/salt",
+			"mode": "sprite",
+			"name": "salt",
+			"opaque_bounds": [
+				3,
+				2,
+				9,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/salt.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				478,
+				1090,
+				150,
+				145
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				64,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/vinegar.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/vinegar",
+			"mode": "sprite",
+			"name": "vinegar",
+			"opaque_bounds": [
+				3,
+				2,
+				10,
+				12
+			],
+			"path": "res://assets/generated/content_v1/items/materials/vinegar.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				628,
+				1090,
+				153,
+				145
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				80,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/yeast.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/yeast",
+			"mode": "sprite",
+			"name": "yeast",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/yeast.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				781,
+				1090,
+				156,
+				145
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				96,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/hay.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/hay",
+			"mode": "sprite",
+			"name": "hay",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/items/materials/hay.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				937,
+				1090,
+				160,
+				145
+			],
+			"source_sheet": "materials_products"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/materials_products.png",
+			"atlas_region": [
+				112,
+				112,
+				16,
+				16
+			],
+			"category": "items/materials",
+			"icon": "res://assets/generated/content_v1/icons/items/materials/animal_feed.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "items/materials/animal_feed",
+			"mode": "sprite",
+			"name": "animal feed",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/items/materials/animal_feed.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/materials_products.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1097,
+				1090,
+				151,
+				145
+			],
+			"source_sheet": "materials_products"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "c554717ac30bff2512225dc27d274526936d2d83c7fc126f1b69695529c42fbd",
+	"sheet": {
+		"category": "items/materials",
+		"cell_size": [
+			16,
+			16
+		],
+		"columns": 8,
+		"count": 64,
+		"id": "materials_products",
+		"mode": "sprite",
+		"path": "res://assets/generated/content_v1/atlases/materials_products.png",
+		"rows": 8,
+		"source": "res://assets/generated/sources/content_v1/materials_products.png"
+	},
+	"source_hash": "f5d2dbe59ebb4ee6b6584f65bc7348d0"
+}

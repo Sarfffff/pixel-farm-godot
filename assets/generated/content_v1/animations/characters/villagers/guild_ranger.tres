@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/down_a.png" id="1_1lslw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/down_b.png" id="2_w3v81"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/left_a.png" id="3_7ucms"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/left_b.png" id="4_2pbpu"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/right_a.png" id="5_j5g6y"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/right_b.png" id="6_pmfte"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/up_a.png" id="7_7u5vw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/guild_ranger/up_b.png" id="8_eqd5a"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1lslw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w3v81")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7ucms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2pbpu")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j5g6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pmfte")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7u5vw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eqd5a")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

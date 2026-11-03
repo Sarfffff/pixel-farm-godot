@@ -1,0 +1,291 @@
+{
+	"items": [
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/farm_buildings_1.png",
+			"atlas_region": [
+				0,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/generated/content_v1/icons/buildings/farm/coop.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/coop",
+			"mode": "sprite",
+			"name": "coop",
+			"opaque_bounds": [
+				2,
+				9,
+				92,
+				85
+			],
+			"path": "res://assets/generated/content_v1/buildings/farm/coop.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/farm_buildings_1.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				431,
+				482
+			],
+			"source_sheet": "farm_buildings_1"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/farm_buildings_1.png",
+			"atlas_region": [
+				96,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/generated/content_v1/icons/buildings/farm/big_coop.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/big_coop",
+			"mode": "sprite",
+			"name": "big coop",
+			"opaque_bounds": [
+				2,
+				8,
+				92,
+				86
+			],
+			"path": "res://assets/generated/content_v1/buildings/farm/big_coop.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/farm_buildings_1.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				431,
+				0,
+				523,
+				482
+			],
+			"source_sheet": "farm_buildings_1"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/farm_buildings_1.png",
+			"atlas_region": [
+				192,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/generated/content_v1/icons/buildings/farm/deluxe_coop.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/deluxe_coop",
+			"mode": "sprite",
+			"name": "deluxe coop",
+			"opaque_bounds": [
+				2,
+				9,
+				92,
+				85
+			],
+			"path": "res://assets/generated/content_v1/buildings/farm/deluxe_coop.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/farm_buildings_1.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				954,
+				0,
+				582,
+				482
+			],
+			"source_sheet": "farm_buildings_1"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/farm_buildings_1.png",
+			"atlas_region": [
+				0,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/generated/content_v1/icons/buildings/farm/barn.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/barn",
+			"mode": "sprite",
+			"name": "barn",
+			"opaque_bounds": [
+				2,
+				5,
+				92,
+				89
+			],
+			"path": "res://assets/generated/content_v1/buildings/farm/barn.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/farm_buildings_1.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				482,
+				431,
+				539
+			],
+			"source_sheet": "farm_buildings_1"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/farm_buildings_1.png",
+			"atlas_region": [
+				96,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/generated/content_v1/icons/buildings/farm/big_barn.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/big_barn",
+			"mode": "sprite",
+			"name": "big barn",
+			"opaque_bounds": [
+				2,
+				5,
+				92,
+				89
+			],
+			"path": "res://assets/generated/content_v1/buildings/farm/big_barn.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/farm_buildings_1.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				431,
+				482,
+				523,
+				539
+			],
+			"source_sheet": "farm_buildings_1"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/farm_buildings_1.png",
+			"atlas_region": [
+				192,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/generated/content_v1/icons/buildings/farm/deluxe_barn.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/deluxe_barn",
+			"mode": "sprite",
+			"name": "deluxe barn",
+			"opaque_bounds": [
+				2,
+				3,
+				92,
+				91
+			],
+			"path": "res://assets/generated/content_v1/buildings/farm/deluxe_barn.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://assets/generated/sources/content_v1/farm_buildings_1.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				954,
+				482,
+				582,
+				539
+			],
+			"source_sheet": "farm_buildings_1"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "eadde9b00cc98f6f511551acd6fe1777c2c11e002d036de22657d7bde5836bbd",
+	"sheet": {
+		"category": "buildings/farm",
+		"cell_size": [
+			96,
+			96
+		],
+		"columns": 3,
+		"count": 6,
+		"id": "farm_buildings_1",
+		"mode": "sprite",
+		"path": "res://assets/generated/content_v1/atlases/farm_buildings_1.png",
+		"rows": 2,
+		"source": "res://assets/generated/sources/content_v1/farm_buildings_1.png"
+	},
+	"source_hash": "98e38334d11e0549e3ea2d376f98799f"
+}

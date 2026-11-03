@@ -1,0 +1,1941 @@
+{
+	"items": [
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				0,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/grass",
+			"mode": "tile",
+			"name": "spring grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				16,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/flower_grass",
+			"mode": "tile",
+			"name": "spring flower grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/flower_grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				181,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				32,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/bare_dirt",
+			"mode": "tile",
+			"name": "spring bare dirt",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/bare_dirt.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				362,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				48,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/dry_tilled_soil",
+			"mode": "tile",
+			"name": "spring dry tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/dry_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				543,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				64,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/wet_tilled_soil",
+			"mode": "tile",
+			"name": "spring wet tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/wet_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				724,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				80,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/stone_path",
+			"mode": "tile",
+			"name": "spring stone path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/stone_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				905,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				96,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/wood_path",
+			"mode": "tile",
+			"name": "spring wood path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/wood_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				1086,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				112,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/brick_path",
+			"mode": "tile",
+			"name": "spring brick path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/brick_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1267,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				128,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/river_water",
+			"mode": "tile",
+			"name": "spring river water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/river_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				8,
+				0
+			],
+			"source_region": [
+				1448,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				144,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/pond_water",
+			"mode": "tile",
+			"name": "spring pond water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/pond_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				9,
+				0
+			],
+			"source_region": [
+				1629,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				160,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/beach_sand",
+			"mode": "tile",
+			"name": "spring beach sand",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/beach_sand.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				10,
+				0
+			],
+			"source_region": [
+				1810,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				176,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/spring/rocky_ground",
+			"mode": "tile",
+			"name": "spring rocky ground",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/spring/rocky_ground.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				11,
+				0
+			],
+			"source_region": [
+				1991,
+				0,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				0,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/grass",
+			"mode": "tile",
+			"name": "summer grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				16,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/flower_grass",
+			"mode": "tile",
+			"name": "summer flower grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/flower_grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				181,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				32,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/bare_dirt",
+			"mode": "tile",
+			"name": "summer bare dirt",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/bare_dirt.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				362,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				48,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/dry_tilled_soil",
+			"mode": "tile",
+			"name": "summer dry tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/dry_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				543,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				64,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/wet_tilled_soil",
+			"mode": "tile",
+			"name": "summer wet tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/wet_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				724,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				80,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/stone_path",
+			"mode": "tile",
+			"name": "summer stone path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/stone_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				905,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				96,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/wood_path",
+			"mode": "tile",
+			"name": "summer wood path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/wood_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				1086,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				112,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/brick_path",
+			"mode": "tile",
+			"name": "summer brick path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/brick_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1267,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				128,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/river_water",
+			"mode": "tile",
+			"name": "summer river water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/river_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				8,
+				1
+			],
+			"source_region": [
+				1448,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				144,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/pond_water",
+			"mode": "tile",
+			"name": "summer pond water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/pond_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				9,
+				1
+			],
+			"source_region": [
+				1629,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				160,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/beach_sand",
+			"mode": "tile",
+			"name": "summer beach sand",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/beach_sand.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				10,
+				1
+			],
+			"source_region": [
+				1810,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				176,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/summer/rocky_ground",
+			"mode": "tile",
+			"name": "summer rocky ground",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/summer/rocky_ground.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				11,
+				1
+			],
+			"source_region": [
+				1991,
+				181,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				0,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/grass",
+			"mode": "tile",
+			"name": "autumn grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				16,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/flower_grass",
+			"mode": "tile",
+			"name": "autumn flower grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/flower_grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				181,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				32,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/bare_dirt",
+			"mode": "tile",
+			"name": "autumn bare dirt",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/bare_dirt.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				362,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				48,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/dry_tilled_soil",
+			"mode": "tile",
+			"name": "autumn dry tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/dry_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				543,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				64,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/wet_tilled_soil",
+			"mode": "tile",
+			"name": "autumn wet tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/wet_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				724,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				80,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/stone_path",
+			"mode": "tile",
+			"name": "autumn stone path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/stone_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				905,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				96,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/wood_path",
+			"mode": "tile",
+			"name": "autumn wood path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/wood_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				1086,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				112,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/brick_path",
+			"mode": "tile",
+			"name": "autumn brick path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/brick_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1267,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				128,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/river_water",
+			"mode": "tile",
+			"name": "autumn river water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/river_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				8,
+				2
+			],
+			"source_region": [
+				1448,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				144,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/pond_water",
+			"mode": "tile",
+			"name": "autumn pond water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/pond_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				9,
+				2
+			],
+			"source_region": [
+				1629,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				160,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/beach_sand",
+			"mode": "tile",
+			"name": "autumn beach sand",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/beach_sand.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				10,
+				2
+			],
+			"source_region": [
+				1810,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				176,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/autumn/rocky_ground",
+			"mode": "tile",
+			"name": "autumn rocky ground",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/autumn/rocky_ground.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				11,
+				2
+			],
+			"source_region": [
+				1991,
+				362,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				0,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/grass",
+			"mode": "tile",
+			"name": "winter grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				16,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/flower_grass",
+			"mode": "tile",
+			"name": "winter flower grass",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/flower_grass.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				181,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				32,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/bare_dirt",
+			"mode": "tile",
+			"name": "winter bare dirt",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/bare_dirt.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				362,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				48,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/dry_tilled_soil",
+			"mode": "tile",
+			"name": "winter dry tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/dry_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				543,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				64,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/wet_tilled_soil",
+			"mode": "tile",
+			"name": "winter wet tilled soil",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/wet_tilled_soil.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				724,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				80,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/stone_path",
+			"mode": "tile",
+			"name": "winter stone path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/stone_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				905,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				96,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/wood_path",
+			"mode": "tile",
+			"name": "winter wood path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/wood_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				1086,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				112,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/brick_path",
+			"mode": "tile",
+			"name": "winter brick path",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/brick_path.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1267,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				128,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/river_water",
+			"mode": "tile",
+			"name": "winter river water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/river_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				8,
+				3
+			],
+			"source_region": [
+				1448,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				144,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/pond_water",
+			"mode": "tile",
+			"name": "winter pond water",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/pond_water.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				9,
+				3
+			],
+			"source_region": [
+				1629,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				160,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/beach_sand",
+			"mode": "tile",
+			"name": "winter beach sand",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/beach_sand.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				10,
+				3
+			],
+			"source_region": [
+				1810,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+			"atlas_region": [
+				176,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/seasons",
+			"id": "terrain/seasons/winter/rocky_ground",
+			"mode": "tile",
+			"name": "winter rocky ground",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/seasons/winter/rocky_ground.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/seasonal_ground.png",
+			"source_grid_cell": [
+				11,
+				3
+			],
+			"source_region": [
+				1991,
+				543,
+				181,
+				181
+			],
+			"source_sheet": "seasonal_ground"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "09ce8eda4f2a81c157cc0c55e90ffd632ce9d890da7e9669b2a5531d73be6240",
+	"sheet": {
+		"category": "terrain/seasons",
+		"cell_size": [
+			16,
+			16
+		],
+		"columns": 12,
+		"count": 48,
+		"id": "seasonal_ground",
+		"mode": "tile",
+		"path": "res://assets/generated/content_v1/atlases/seasonal_ground.png",
+		"rows": 4,
+		"source": "res://assets/generated/sources/content_v1/seasonal_ground.png"
+	},
+	"source_hash": "ef1acfe7d4d9bb5384eab1ff8509ceb2"
+}

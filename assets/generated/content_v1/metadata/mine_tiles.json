@@ -1,0 +1,2901 @@
+{
+	"items": [
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/floor",
+			"mode": "tile",
+			"name": "stone cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/back_wall",
+			"mode": "tile",
+			"name": "stone cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				165,
+				0,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/side_wall",
+			"mode": "tile",
+			"name": "stone cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				331,
+				0,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/ore_node",
+			"mode": "sprite",
+			"name": "stone cave ore node",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				8
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				496,
+				0,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/stalagmite",
+			"mode": "sprite",
+			"name": "stone cave stalagmite",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				661,
+				0,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/quartz_cluster",
+			"mode": "sprite",
+			"name": "stone cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				826,
+				0,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/cave_plant",
+			"mode": "sprite",
+			"name": "stone cave cave plant",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				992,
+				0,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				0,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone/diggable_wall",
+			"mode": "tile",
+			"name": "stone cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1157,
+				0,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/floor",
+			"mode": "tile",
+			"name": "stone dark cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				132,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/back_wall",
+			"mode": "tile",
+			"name": "stone dark cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				165,
+				132,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/side_wall",
+			"mode": "tile",
+			"name": "stone dark cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				331,
+				132,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/ore_node",
+			"mode": "sprite",
+			"name": "stone dark cave ore node",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				8
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				496,
+				132,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/stalagmite",
+			"mode": "sprite",
+			"name": "stone dark cave stalagmite",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				661,
+				132,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/quartz_cluster",
+			"mode": "sprite",
+			"name": "stone dark cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				826,
+				132,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/cave_plant",
+			"mode": "sprite",
+			"name": "stone dark cave cave plant",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				992,
+				132,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				16,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/stone_dark/diggable_wall",
+			"mode": "tile",
+			"name": "stone dark cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/stone_dark/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1157,
+				132,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/floor",
+			"mode": "tile",
+			"name": "desert cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				264,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/back_wall",
+			"mode": "tile",
+			"name": "desert cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				165,
+				264,
+				166,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/side_wall",
+			"mode": "tile",
+			"name": "desert cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				331,
+				264,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/ore_node",
+			"mode": "sprite",
+			"name": "desert cave ore node",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				7
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				496,
+				264,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/stalagmite",
+			"mode": "sprite",
+			"name": "desert cave stalagmite",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				661,
+				264,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/quartz_cluster",
+			"mode": "sprite",
+			"name": "desert cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				826,
+				264,
+				166,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/cave_plant",
+			"mode": "sprite",
+			"name": "desert cave cave plant",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				8
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				992,
+				264,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				32,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert/diggable_wall",
+			"mode": "tile",
+			"name": "desert cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1157,
+				264,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/floor",
+			"mode": "tile",
+			"name": "desert dark cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				397,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/back_wall",
+			"mode": "tile",
+			"name": "desert dark cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				165,
+				397,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/side_wall",
+			"mode": "tile",
+			"name": "desert dark cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				331,
+				397,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/ore_node",
+			"mode": "sprite",
+			"name": "desert dark cave ore node",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				7
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				496,
+				397,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/stalagmite",
+			"mode": "sprite",
+			"name": "desert dark cave stalagmite",
+			"opaque_bounds": [
+				3,
+				3,
+				11,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				661,
+				397,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/quartz_cluster",
+			"mode": "sprite",
+			"name": "desert dark cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				826,
+				397,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/cave_plant",
+			"mode": "sprite",
+			"name": "desert dark cave cave plant",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				992,
+				397,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				48,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/desert_dark/diggable_wall",
+			"mode": "tile",
+			"name": "desert dark cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/desert_dark/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1157,
+				397,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/floor",
+			"mode": "tile",
+			"name": "frost cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				0,
+				529,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/back_wall",
+			"mode": "tile",
+			"name": "frost cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				165,
+				529,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/side_wall",
+			"mode": "tile",
+			"name": "frost cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				331,
+				529,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/ore_node",
+			"mode": "sprite",
+			"name": "frost cave ore node",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				7
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				496,
+				529,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/stalagmite",
+			"mode": "sprite",
+			"name": "frost cave stalagmite",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				661,
+				529,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/quartz_cluster",
+			"mode": "sprite",
+			"name": "frost cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				826,
+				529,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/cave_plant",
+			"mode": "sprite",
+			"name": "frost cave cave plant",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				8
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				992,
+				529,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				64,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost/diggable_wall",
+			"mode": "tile",
+			"name": "frost cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1157,
+				529,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/floor",
+			"mode": "tile",
+			"name": "frost dark cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				0,
+				661,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/back_wall",
+			"mode": "tile",
+			"name": "frost dark cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				165,
+				661,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/side_wall",
+			"mode": "tile",
+			"name": "frost dark cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				331,
+				661,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/ore_node",
+			"mode": "sprite",
+			"name": "frost dark cave ore node",
+			"opaque_bounds": [
+				2,
+				4,
+				12,
+				8
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				496,
+				661,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/stalagmite",
+			"mode": "sprite",
+			"name": "frost dark cave stalagmite",
+			"opaque_bounds": [
+				3,
+				3,
+				10,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				661,
+				661,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/quartz_cluster",
+			"mode": "sprite",
+			"name": "frost dark cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				826,
+				661,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/cave_plant",
+			"mode": "sprite",
+			"name": "frost dark cave cave plant",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				992,
+				661,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				80,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/frost_dark/diggable_wall",
+			"mode": "tile",
+			"name": "frost dark cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/frost_dark/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1157,
+				661,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/floor",
+			"mode": "tile",
+			"name": "lava cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				0,
+				793,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/back_wall",
+			"mode": "tile",
+			"name": "lava cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				165,
+				793,
+				166,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/side_wall",
+			"mode": "tile",
+			"name": "lava cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				331,
+				793,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/ore_node",
+			"mode": "sprite",
+			"name": "lava cave ore node",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				496,
+				793,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/stalagmite",
+			"mode": "sprite",
+			"name": "lava cave stalagmite",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				661,
+				793,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/quartz_cluster",
+			"mode": "sprite",
+			"name": "lava cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				10
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				826,
+				793,
+				166,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/cave_plant",
+			"mode": "sprite",
+			"name": "lava cave cave plant",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				992,
+				793,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				96,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava/diggable_wall",
+			"mode": "tile",
+			"name": "lava cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1157,
+				793,
+				165,
+				133
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/floor",
+			"mode": "tile",
+			"name": "lava dark cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				0,
+				926,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/back_wall",
+			"mode": "tile",
+			"name": "lava dark cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				165,
+				926,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/side_wall",
+			"mode": "tile",
+			"name": "lava dark cave side wall",
+			"opaque_bounds": [
+				0,
+				3,
+				16,
+				13
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				331,
+				926,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/ore_node",
+			"mode": "sprite",
+			"name": "lava dark cave ore node",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				496,
+				926,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/stalagmite",
+			"mode": "sprite",
+			"name": "lava dark cave stalagmite",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				661,
+				926,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/quartz_cluster",
+			"mode": "sprite",
+			"name": "lava dark cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				826,
+				926,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/cave_plant",
+			"mode": "sprite",
+			"name": "lava dark cave cave plant",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				992,
+				926,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				112,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/lava_dark/diggable_wall",
+			"mode": "tile",
+			"name": "lava dark cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/lava_dark/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1157,
+				926,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				0,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/floor",
+			"mode": "tile",
+			"name": "slime cave floor",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/floor.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				0,
+				8
+			],
+			"source_region": [
+				0,
+				1058,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				16,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/back_wall",
+			"mode": "tile",
+			"name": "slime cave back wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/back_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				1,
+				8
+			],
+			"source_region": [
+				165,
+				1058,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				32,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/side_wall",
+			"mode": "tile",
+			"name": "slime cave side wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/side_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				2,
+				8
+			],
+			"source_region": [
+				331,
+				1058,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				48,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/ore_node",
+			"mode": "sprite",
+			"name": "slime cave ore node",
+			"opaque_bounds": [
+				2,
+				3,
+				12,
+				9
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/ore_node.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				3,
+				8
+			],
+			"source_region": [
+				496,
+				1058,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				64,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/stalagmite",
+			"mode": "sprite",
+			"name": "slime cave stalagmite",
+			"opaque_bounds": [
+				2,
+				2,
+				11,
+				12
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/stalagmite.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				4,
+				8
+			],
+			"source_region": [
+				661,
+				1058,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				80,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/quartz_cluster",
+			"mode": "sprite",
+			"name": "slime cave quartz cluster",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				12
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/quartz_cluster.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				5,
+				8
+			],
+			"source_region": [
+				826,
+				1058,
+				166,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				96,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/cave_plant",
+			"mode": "sprite",
+			"name": "slime cave cave plant",
+			"opaque_bounds": [
+				2,
+				2,
+				12,
+				11
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/cave_plant.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				6,
+				8
+			],
+			"source_region": [
+				992,
+				1058,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		},
+		{
+			"anchor": [
+				8,
+				8
+			],
+			"atlas": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+			"atlas_region": [
+				112,
+				128,
+				16,
+				16
+			],
+			"category": "terrain/mines",
+			"id": "terrain/mines/slime/diggable_wall",
+			"mode": "tile",
+			"name": "slime cave diggable wall",
+			"opaque_bounds": [
+				0,
+				0,
+				16,
+				16
+			],
+			"path": "res://assets/generated/content_v1/terrain/mines/slime/diggable_wall.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/content_v1/mine_tiles.png",
+			"source_grid_cell": [
+				7,
+				8
+			],
+			"source_region": [
+				1157,
+				1058,
+				165,
+				132
+			],
+			"source_sheet": "mine_tiles"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "3ce3fc272a1f68a624a5b3558481794c9719d9a4ba68b68f979e02c8500a3df9",
+	"sheet": {
+		"category": "terrain/mines",
+		"cell_size": [
+			16,
+			16
+		],
+		"columns": 8,
+		"count": 72,
+		"id": "mine_tiles",
+		"mode": "tile",
+		"path": "res://assets/generated/content_v1/atlases/mine_tiles.png",
+		"rows": 9,
+		"source": "res://assets/generated/sources/content_v1/mine_tiles.png"
+	},
+	"source_hash": "287aa64fd378da94e879cceb67596405"
+}

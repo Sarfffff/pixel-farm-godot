@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CropData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/crop_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/crops/blueberry/sprout.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/crops/blueberry/young.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/crops/blueberry/growing.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/crops/blueberry/mature.png" id="5"]
+
+[resource]
+script = ExtResource("1")
+id = &"blueberry"
+display_name = "蓝莓"
+stages = Array[Texture2D]([ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5")])
+seed_item = &"blueberry_seeds"
+harvest_item = &"blueberry"
+harvest_count = 2
+stage_days = Array[int]([1, 2, 2])
+regrow_days = 2
+visual_scale = 0.5

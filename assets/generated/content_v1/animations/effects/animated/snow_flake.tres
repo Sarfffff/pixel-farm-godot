@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/snow_flake/f0.png" id="1_hllqw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/snow_flake/f1.png" id="2_qbxn3"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/snow_flake/f2.png" id="3_6m17e"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/effects/animated/snow_flake/f3.png" id="4_0a6hx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hllqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qbxn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6m17e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0a6hx")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

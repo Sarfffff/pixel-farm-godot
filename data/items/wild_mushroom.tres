@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/items/food_forage/common_mushroom.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"wild_mushroom"
+display_name = "野蘑菇"
+description = "田边和林下的可食蘑菇，可以出售。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 10
+buy_price = 0
+category = &"forage"
+unlock_stage = 0

@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/down_a.png" id="1_pp1bw"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/down_b.png" id="2_mewww"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/left_a.png" id="3_x2jdu"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/left_b.png" id="4_apftp"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/right_a.png" id="5_ofsrk"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/right_b.png" id="6_2gp5h"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/up_a.png" id="7_uj8wf"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/wedding_guest/up_b.png" id="8_v55qo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pp1bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mewww")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2jdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_apftp")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ofsrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2gp5h")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uj8wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v55qo")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

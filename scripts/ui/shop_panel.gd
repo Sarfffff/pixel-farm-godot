@@ -5,12 +5,14 @@ extends Control
 ## 打开时锁玩家输入并收起工具栏；Esc / 点空白关闭。
 
 const MAX_BUY_PER_CLICK: int = 99
+signal item_sold(id: StringName, count: int)
 
 @onready var _buy_list: VBoxContainer = %BuyList
 @onready var _sell_list: VBoxContainer = %SellList
 @onready var _coins: Label = %Coins
 @onready var _message: Label = %Message
 @onready var _overlay: ColorRect = $Overlay
+@onready var _upgrade_button: Button = %UpgradeButton
 
 var _inventory: Inventory
 var _economy: Economy
@@ -36,6 +38,10 @@ func _ready() -> void:
 	_economy.changed.connect(_on_coins_changed)
 	_inventory.changed.connect(_rebuild)
 	_overlay.gui_input.connect(_on_overlay_gui_input)
+	_upgrade_button.pressed.connect(_purchase_upgrade)
+	var upgrades := get_tree().get_first_node_in_group(&"upgrades")
+	if upgrades != null:
+		upgrades.changed.connect(_refresh_upgrade)
 	hide()
 
 
@@ -119,6 +125,7 @@ func _rebuild() -> void:
 		_sell_list.add_child(empty)
 	_selected = clampi(_selected, 0, maxi(_rows.size() - 1, 0))
 	_apply_styles()
+	_refresh_upgrade()
 
 
 func _add_row(parent: VBoxContainer, item: ItemData, buy: bool, price: int, owned: int) -> void:
@@ -207,6 +214,10 @@ func _trade(index: int, all: bool) -> void:
 	var price: int = row[&"price"]
 	var name: String = row[&"name"]
 	if bool(row[&"buy"]):
+		var item: ItemData = _inventory.definition(id)
+		if item != null and item.category == &"tool" and _inventory.count_of(id) > 0:
+			_set_message("已拥有%s，无需重复购买" % name)
+			return
 		var wanted: int = MAX_BUY_PER_CLICK if all else 1
 		var bought: int = _buy(id, price, wanted)
 		if bought <= 0:
@@ -227,6 +238,9 @@ func _trade(index: int, all: bool) -> void:
 func _buy(id: StringName, price: int, wanted: int) -> int:
 	var bought: int = 0
 	for step in mini(wanted, MAX_BUY_PER_CLICK):
+		var item: ItemData = _inventory.definition(id)
+		if item != null and item.category == &"tool" and _inventory.count_of(id) > 0:
+			break
 		if not _economy.can_afford(price):
 			break
 		if _inventory.add_item(id, 1) > 0:
@@ -241,12 +255,44 @@ func _sell(id: StringName, price: int, wanted: int) -> int:
 	if count <= 0 or not _inventory.remove_item(id, count):
 		return 0
 	_economy.earn(price * count)
+	item_sold.emit(id, count)
 	return count
 
 
 func _on_coins_changed(coins: int) -> void:
 	if _coins != null:
 		_coins.text = str(coins)
+	_refresh_upgrade()
+
+
+func _refresh_upgrade() -> void:
+	if not is_instance_valid(_upgrade_button):
+		return
+	var upgrades := get_tree().get_first_node_in_group(&"upgrades")
+	if upgrades == null:
+		_upgrade_button.disabled = true
+		return
+	if upgrades.watering_level > 0:
+		_upgrade_button.text = "铜水壶已升级 · 一次三格 / 体力 3"
+		_upgrade_button.disabled = true
+		return
+	var config: Resource = upgrades.WATERING
+	_upgrade_button.text = "升级铜水壶 · %d 金 / 木%d / 石%d" % [config.coin_cost, config.wood_cost, config.stone_cost]
+	_upgrade_button.disabled = false
+
+
+func _purchase_upgrade() -> void:
+	var upgrades := get_tree().get_first_node_in_group(&"upgrades")
+	if upgrades == null:
+		return
+	if upgrades.purchase():
+		_set_message("升级完成！水壶一次浇三格，消耗 3 体力")
+	else:
+		var config: Resource = upgrades.WATERING
+		_set_message("需要 %d/%d 金 · 木材 %d/%d · 石头 %d/%d" % [
+			_economy.coins, config.coin_cost, _inventory.count_of(&"wood"), config.wood_cost,
+			_inventory.count_of(&"stone"), config.stone_cost])
+	_refresh_upgrade()
 
 
 func _set_message(text: String) -> void:

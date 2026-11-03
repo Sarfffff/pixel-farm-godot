@@ -57,7 +57,7 @@ func _refresh() -> void:
 	_icon.texture = order.get(&"icon", null)
 	_item_name.text = String(order.get(&"name", "货物"))
 	_progress.text = "%d / %d" % [int(orders.owned()), int(orders.required())]
-	_reward.text = "报酬 %d 金币" % int(orders.reward())
+	_reward.text = "报酬 %d 金币 · 含今天剩 %d 天" % [int(orders.reward()), int(orders.days_left())]
 	_deliver.disabled = not orders.can_deliver()
 	_deliver.text = "交付" if not _deliver.disabled else "货物不够"
 	_message.text = "" if _deliver.disabled else "按 E 或点按钮交付"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/icons/items/food_forage/pickles.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"pickled_tomato"
+display_name = "番茄腌菜"
+description = "三份番茄腌制一夜得到，售价高于原料。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 140
+buy_price = 0
+category = &"artisan"
+unlock_stage = 0

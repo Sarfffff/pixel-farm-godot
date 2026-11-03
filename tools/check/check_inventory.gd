@@ -35,18 +35,18 @@ func _run() -> void:
 	_toolbar = _main.get_node("UI/Toolbar") as Control
 
 	_check(_inventory != null, "inventory node exists")
-	_check(_inventory.slot_count() == 24, "24 slots")
+	_check(_inventory.slot_count() == 30, "30 slots including permanent tools")
 	_check(_inventory.count_of(&"carrot_seeds") == 5, "starting carrot seeds")
 	_check(_inventory.item_at(0)[&"id"] == &"carrot_seeds", "starting item sits in first slot")
 
 	# 同 id 追加到已有堆叠
 	_check(_inventory.add_item(&"wood", 3) == 0, "wood accepted")
 	_check(_inventory.count_of(&"wood") == 3, "wood stacked")
-	_check(_inventory.total_items() == 8, "total items count")
+	_check(_inventory.total_items() == 12, "total items count includes four tools")
 
 	# 未定义的 id 全部退回，不写入背包
 	_check(_inventory.add_item(&"no_such_item", 2) == 2, "unknown id rejected")
-	_check(_inventory.total_items() == 8, "unknown id leaves inventory untouched")
+	_check(_inventory.total_items() == 12, "unknown id leaves inventory untouched")
 
 	# 超过单格上限时自动开新格：3 + 200 = 203 -> 99 + 99 + 5
 	_check(_inventory.add_item(&"wood", 200) == 0, "wood over one stack accepted")
@@ -60,8 +60,8 @@ func _run() -> void:
 
 	# 满包：先清空初始种子，24 格 × 99 后再放入应返回溢出数量
 	_inventory.remove_item(&"carrot_seeds", _inventory.count_of(&"carrot_seeds"))
-	_check(_inventory.total_items() == 0, "bag emptied before fill test")
-	_check(_inventory.add_item(&"wood", 99 * 24) == 0, "fill all slots")
+	_check(_inventory.total_items() == 4, "only permanent tools remain before fill test")
+	_check(_inventory.add_item(&"wood", 99 * (_inventory.slot_count() - Inventory.TOOL_IDS.size())) == 0, "fill all cargo slots")
 	_check(_inventory.add_item(&"stone", 1) == 1, "full bag reports overflow")
 	_check(_inventory.count_of(&"stone") == 0, "overflow item not stored")
 
@@ -113,10 +113,10 @@ func _run() -> void:
 func _check_inventory_art() -> void:
 	var grid: GridContainer = _panel.get_node("%Grid") as GridContainer
 	var frame: PanelContainer = _panel.get_node("Frame") as PanelContainer
-	_check(grid.get_child_count() == 24, "24 visual slots")
+	_check(grid.get_child_count() == 30, "30 visual slots")
 	_check(grid.columns == 6, "6 visual columns")
-	_check(frame.get_theme_stylebox("panel") is StyleBoxTexture, "wooden nine-slice panel")
-	_check(frame.size.y <= 180.0, "panel fits native viewport height")
+	_check(frame.get_theme_stylebox("panel") is StyleBoxFlat, "shared paper and wood palette")
+	_check(frame.size.y <= frame.get_viewport_rect().size.y, "panel fits native viewport height")
 	_check(frame.get_viewport_rect().encloses(frame.get_global_rect()), "panel stays inside viewport")
 	_check(frame.global_position.is_equal_approx(frame.global_position.round()), "panel aligned to whole pixels")
 	_check(_panel.get_node_or_null("Overlay") is ColorRect, "full-screen overlay for click-to-close")
@@ -141,7 +141,7 @@ func _check_inventory_art() -> void:
 	var click: InputEventMouseButton = InputEventMouseButton.new()
 	click.button_index = MOUSE_BUTTON_LEFT
 	click.pressed = true
-	first.gui_input.emit(click)
+	first._gui_input(click)
 	_check(first.get_theme_stylebox("panel") == selected, "click changes highlighted slot")
 	second.mouse_entered.emit()
 	_panel.set_open(false)
@@ -151,9 +151,9 @@ func _check_inventory_art() -> void:
 		var slot: Panel = child as Panel
 		var icon: TextureRect = slot.get_node("Icon") as TextureRect
 		var count: Label = slot.get_node("Count") as Label
-		_check(slot.size == Vector2(18, 18), "18px slot preserved")
+		_check(slot.size == Vector2(22, 22), "22px slot shared with hotbar")
 		_check(icon.size == Vector2(16, 16), "16px icon preserved")
-		_check(count.text == "99", "two-digit stack count shown")
+		_check(count.text == ("99" if slot.item_id == &"wood" else ""), "cargo counts shown, permanent tools have no count")
 		_check(Rect2(Vector2.ZERO, slot.size).encloses(count.get_rect()), "count stays inside slot: %s" % count.get_rect())
 		_check(icon.mouse_filter == Control.MOUSE_FILTER_IGNORE, "icon does not block clicks")
 		_check(count.mouse_filter == Control.MOUSE_FILTER_IGNORE, "count does not block clicks")

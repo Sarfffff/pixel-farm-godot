@@ -1,114 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://qly8j3hq62mf"]
+[gd_scene format=3 uid="uid://qly8j3hq62mf"]
 
-[ext_resource type="Script" uid="uid://6sbp4ex0a183" path="res://scripts/ui/toolbar.gd" id="1_toolbar"]
-[ext_resource type="Texture2D" uid="uid://b21i2rvq6yjx2" path="res://assets/game/characters/tools.png" id="2_icons"]
-[ext_resource type="Texture2D" uid="uid://cvn4ru2bw4tuc" path="res://assets/generated/items/carrot_seeds.png" id="3_seeds"]
-[ext_resource type="Texture2D" uid="uid://cpe1767lswtwd" path="res://assets/generated/items/stone_pickaxe.png" id="4_j4jut"]
-[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="5_theme"]
-[ext_resource type="Texture2D" path="res://assets/generated/ui/inventory/panel.png" id="6_panel"]
-[ext_resource type="Texture2D" path="res://assets/generated/ui/inventory/slot_idle.png" id="7_idle"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frame"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-texture = ExtResource("6_panel")
-texture_margin_left = 5.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_slot"]
-texture = ExtResource("7_idle")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hoe"]
-atlas = ExtResource("2_icons")
-region = Rect2(0, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_can"]
-atlas = ExtResource("2_icons")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_axe"]
-atlas = ExtResource("2_icons")
-region = Rect2(0, 32, 16, 16)
+[ext_resource type="Script" path="res://scripts/ui/toolbar.gd" id="1"]
+[ext_resource type="Theme" path="res://assets/generated/ui/farm_hud.tres" id="2"]
 
 [node name="Toolbar" type="PanelContainer"]
-offset_left = 101.0
-offset_top = 148.0
-offset_right = 219.0
-offset_bottom = 178.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -39.0
+offset_right = 100.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
 mouse_filter = 2
-theme = ExtResource("5_theme")
-theme_override_styles/panel = SubResource("StyleBoxTexture_frame")
-script = ExtResource("1_toolbar")
+theme = ExtResource("2")
+script = ExtResource("1")
 
 [node name="Slots" type="HBoxContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 2
-
-[node name="Hoe" type="PanelContainer" parent="Slots"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-mouse_filter = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_slot")
-
-[node name="Icon" type="TextureRect" parent="Slots/Hoe"]
-layout_mode = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_hoe")
-stretch_mode = 3
-
-[node name="WateringCan" type="PanelContainer" parent="Slots"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-mouse_filter = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_slot")
-
-[node name="Icon" type="TextureRect" parent="Slots/WateringCan"]
-layout_mode = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_can")
-stretch_mode = 3
-
-[node name="Seeds" type="PanelContainer" parent="Slots"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-mouse_filter = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_slot")
-
-[node name="Icon" type="TextureRect" parent="Slots/Seeds"]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("3_seeds")
-stretch_mode = 3
-
-[node name="Axe" type="PanelContainer" parent="Slots"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-mouse_filter = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_slot")
-
-[node name="Icon" type="TextureRect" parent="Slots/Axe"]
-layout_mode = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_axe")
-stretch_mode = 3
-
-[node name="StonePickaxe" type="PanelContainer" parent="Slots"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-mouse_filter = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_slot")
-
-[node name="Icon" type="TextureRect" parent="Slots/StonePickaxe"]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("4_j4jut")
-stretch_mode = 3

@@ -8,9 +8,16 @@ const ROWS: Array[Array] = [
 	["交互 · 收获 · 捡蛋", "E"],
 	["和杂货铺老板说话", "E（走近他）"],
 	["使用当前工具", "空格 / 鼠标左键"],
-	["切换工具", "1–5 · Q / E · 也可点工具栏格子"],
+	["快捷栏", "1–8 / 点击格子，Q/E 切换"],
 	["换种子", "拿种子袋时 Q / E"],
 	["背包", "B"],
+	["背包分类与绑定", "分类页签；选物品按 1–8 / 拖拽"],
+	["镜头与窗口", "滚轮 / +/- 缩放，Home 复位，F11 全屏"],
+	["清理田边杂草", "靠近按 E，获得纤维"],
+	["农场手记", "J 展开 / 收起"],
+	["铜水壶升级", "商店底部 · 升级后一次浇三格"],
+	["木箱 / 腌制台", "屋右 E；番茄×3 过夜腌制"],
+	["采集 / 钓鱼", "野外 E / 竹竿在池塘北岸使用"],
 	["暂停菜单", "Esc"],
 	["按键说明", "F1"],
 ]
@@ -66,6 +73,9 @@ func set_open(open: bool) -> void:
 
 ## 背包/商店/日报/对话/暂停开着时，F1 先交给它们处理。
 func _can_open() -> bool:
+	for panel: Node in get_tree().get_nodes_in_group(&"modal_ui"):
+		if panel is Control and panel.visible:
+			return false
 	for panel_name: String in ["InventoryPanel", "ShopPanel", "DaySummary", "DialoguePanel", "PauseMenu", "OrderPanel", "CommunityPanel"]:
 		var panel := get_node_or_null("../%s" % panel_name) as Control
 		if panel != null and panel.visible:
@@ -83,7 +93,7 @@ func _build_rows() -> void:
 		action.text = String(row[0])
 		action.custom_minimum_size = Vector2(96, 0)
 		action.add_theme_font_override("font", font)
-		action.add_theme_font_size_override("font_size", 7)
+		action.add_theme_font_size_override("font_size", 6)
 		action.add_theme_color_override("font_color", Color(0.88, 0.82, 0.66, 1))
 		line.add_child(action)
 
@@ -91,7 +101,7 @@ func _build_rows() -> void:
 		keys.text = String(row[1])
 		keys.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		keys.add_theme_font_override("font", font)
-		keys.add_theme_font_size_override("font_size", 7)
+		keys.add_theme_font_size_override("font_size", 6)
 		keys.add_theme_color_override("font_color", Color(0.96, 0.91, 0.74, 1))
 		line.add_child(keys)
 

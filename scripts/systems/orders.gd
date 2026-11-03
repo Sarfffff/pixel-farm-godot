@@ -1,8 +1,8 @@
 extends Node
-## 每日订单：每天一张，交指定数量的农产品换一笔奖金。
+## 多日订单：未完成的订单保留五天；完成后次日发新单。
 ##
 ## 订单池 = 已解锁（`unlock_stage <= 社区阶段`）且有卖价的农产品，
-## 奖金按卖价上浮，让"交订单"比"直接卖商店"更划算。
+## 首单改用田边可采到的纤维；其他订单奖金按卖价上浮。
 
 signal order_changed
 
@@ -10,6 +10,7 @@ const MIN_COUNT: int = 3
 const MAX_COUNT: int = 6
 ## 奖金 = 卖价 × 数量 × 这个系数
 const REWARD_RATE: float = 1.7
+const DURATION_DAYS: int = 5
 
 ## { item, name, icon, count, reward, done, day }
 var order: Dictionary = {}
@@ -25,7 +26,10 @@ func _ready() -> void:
 
 
 func _on_day_started(day: int) -> void:
-	refresh(day)
+	if not has_order() or day > int(order.get(&"due_day", day)):
+		refresh(day)
+	else:
+		order_changed.emit()
 
 
 ## 换一张订单；同一天内重复调用会重掷，所以只在切天或初始化时用。
@@ -46,6 +50,10 @@ func refresh(day: int) -> void:
 		return
 	var pick: ItemData = candidates[randi() % candidates.size()]
 	var count: int = randi_range(MIN_COUNT, MAX_COUNT)
+	# 首单让新人当天能完成，顺路认识社区需要的纤维来源。
+	if day == 1:
+		pick = inventory.definition(&"fiber")
+		count = 4
 	order = {
 		&"item": pick.id,
 		&"name": pick.display_name,
@@ -54,6 +62,7 @@ func refresh(day: int) -> void:
 		&"reward": int(round(float(pick.sell_price) * float(count) * REWARD_RATE)),
 		&"done": false,
 		&"day": day,
+		&"due_day": day + DURATION_DAYS - 1,
 	}
 	order_changed.emit()
 
@@ -72,6 +81,12 @@ func required() -> int:
 
 func reward() -> int:
 	return int(order.get(&"reward", 0))
+
+
+func days_left() -> int:
+	var time := get_tree().get_first_node_in_group(&"time")
+	var day: int = int(time.day) if time != null else 1
+	return maxi(0, int(order.get(&"due_day", day)) - day + 1)
 
 
 ## 背包里现有的数量，最多显示到需求量。
@@ -113,6 +128,7 @@ func to_dict() -> Dictionary:
 		&"reward": reward(),
 		&"done": bool(order.get(&"done", false)),
 		&"day": int(order.get(&"day", 1)),
+		&"due_day": int(order.get(&"due_day", 1)),
 	}
 
 
@@ -140,5 +156,6 @@ func from_dict(data: Dictionary) -> void:
 		&"reward": maxi(0, int(data.get(&"reward", 0))),
 		&"done": bool(data.get(&"done", false)),
 		&"day": maxi(1, int(data.get(&"day", 1))),
+		&"due_day": maxi(1, int(data.get(&"due_day", int(data.get(&"day", 1)) + DURATION_DAYS - 1))),
 	}
 	order_changed.emit()

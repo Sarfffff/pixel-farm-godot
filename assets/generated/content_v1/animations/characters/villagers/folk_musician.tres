@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/down_a.png" id="1_w0nww"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/down_b.png" id="2_wkxpq"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/left_a.png" id="3_c1qhl"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/left_b.png" id="4_y0d25"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/right_a.png" id="5_wi6r2"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/right_b.png" id="6_nw7d3"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/up_a.png" id="7_hqmt5"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/folk_musician/up_b.png" id="8_34xyr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w0nww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wkxpq")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c1qhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y0d25")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wi6r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nw7d3")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hqmt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_34xyr")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

@@ -1,0 +1,204 @@
+{
+  "source_document": "res://docs/13-星露谷素材清单.md",
+  "scope": "Semantic content library with original layout; not a binary/frame-layout replica.",
+  "sections": [
+    {
+      "reference_section": "Animals",
+      "reference_file_count": 26,
+      "job_ids": [
+        "animals_1",
+        "animals_2",
+        "animals_3",
+        "animals_4"
+      ],
+      "note": "32 original animal variants, including juvenile animals, sheared sheep, pets, dinosaur and horse; four idle directions, two left walking frames, two grazing frames."
+    },
+    {
+      "reference_section": "Buildings",
+      "reference_file_count": 17,
+      "job_ids": [
+        "farm_buildings_1",
+        "farm_buildings_2",
+        "farm_buildings_3",
+        "farm_buildings_4"
+      ],
+      "note": "24 independently designed farm exteriors: all farm building functions, obelisks and four farmhouse upgrade stages; new designs and emblems."
+    },
+    {
+      "reference_section": "Characters/NPC",
+      "reference_file_count": 64,
+      "job_ids": [
+        "villagers_1",
+        "villagers_2",
+        "villagers_3",
+        "villagers_4",
+        "villagers_5",
+        "villagers_6",
+        "villagers_7",
+        "villagers_8"
+      ],
+      "note": "64 original role-based villagers, eight poses each; no identities copied from existing named characters."
+    },
+    {
+      "reference_section": "Characters/Monsters",
+      "reference_file_count": 30,
+      "job_ids": [
+        "cave_creatures_1",
+        "cave_creatures_2",
+        "cave_creatures_3",
+        "cave_creatures_4"
+      ],
+      "note": "32 original creatures, four poses each; includes all documented monster types plus two original additions."
+    },
+    {
+      "reference_section": "Characters/Farmer",
+      "reference_file_count": 8,
+      "job_ids": [
+        "farmer_customization",
+        "player_actions_1",
+        "player_actions_2"
+      ],
+      "note": "Original male/female farmer action drafts and cosmetic layers. New frame layout, not a replacement for the external game's layered rendering system."
+    },
+    {
+      "reference_section": "Fonts",
+      "reference_file_count": 35,
+      "job_ids": [],
+      "runtime_files": [
+        "ui/fonts/font_roles.tres",
+        "ui/fonts/font_roles.json"
+      ],
+      "note": "Use Godot runtime system-font fallback and five text style roles instead of generating unreliable CJK bitmap pages. No external font image copied."
+    },
+    {
+      "reference_section": "LooseSprites",
+      "reference_file_count": 69,
+      "job_ids": [
+        "ui_panels",
+        "ui_icons",
+        "light_masks",
+        "critters_shadows",
+        "world_maps_skies",
+        "minigame_title"
+      ],
+      "note": "Blank UI backgrounds and runtime labels, cursors/states/emotes/buffs, lighting, shadows, map/noticeboard/sky equivalents; localizations deduplicated."
+    },
+    {
+      "reference_section": "Maps/four_seasons",
+      "reference_file_count": 12,
+      "job_ids": [
+        "seasonal_ground",
+        "seasonal_town",
+        "seasonal_beach"
+      ],
+      "note": "Same seasonal columns for spring/summer/autumn/winter; original ground textures, street modules and beach props."
+    },
+    {
+      "reference_section": "Maps/mines_and_Mines_duplicates",
+      "reference_file_count": 12,
+      "job_ids": [
+        "mine_tiles"
+      ],
+      "note": "Nine mine biome/light variants with eight tile/prop types; root Mines duplicates represented once."
+    },
+    {
+      "reference_section": "Maps/interiors_and_special_scenes",
+      "job_ids": [
+        "interior_modules",
+        "scene_backdrops_1",
+        "scene_backdrops_2",
+        "scene_backdrops_3",
+        "scene_backdrops_4",
+        "world_maps_skies"
+      ],
+      "note": "Modular interior surfaces plus original environment/story backdrops. Scene panels are backgrounds, not prebuilt playable maps.",
+      "reference_count_note": "Part of the documented Maps/ total of 126 files; localized duplicates are not counted as separate content."
+    },
+    {
+      "reference_section": "MiniGames",
+      "reference_file_count": 20,
+      "job_ids": [
+        "minigame_title",
+        "world_maps_skies",
+        "scene_backdrops_3",
+        "scene_backdrops_4"
+      ],
+      "note": "Original title/intro/cloud/logo/leaflet/cart/board-game artwork and backgrounds; text remains runtime data."
+    },
+    {
+      "reference_section": "Portraits",
+      "reference_file_count": 44,
+      "job_ids": [
+        "portraits_1",
+        "portraits_2",
+        "portraits_3",
+        "portraits_4",
+        "portraits_5",
+        "portraits_6",
+        "portraits_7",
+        "portraits_8",
+        "portraits_extra_1",
+        "portraits_extra_2",
+        "portraits_extra_3"
+      ],
+      "note": "44 original characters with six base expressions and extra expressions for the high-expression groups (up to twelve)."
+    },
+    {
+      "reference_section": "TerrainFeatures",
+      "reference_file_count": 30,
+      "job_ids": [
+        "seasonal_trees",
+        "tree_growth",
+        "fruit_trees",
+        "seasonal_ground",
+        "mine_tiles",
+        "interior_modules",
+        "ui_icons"
+      ],
+      "note": "Trees/seasons/stumps/growth, orchard stages, soil/floors, cave walls/stalagmites/crystals/plants and status symbols."
+    },
+    {
+      "reference_section": "TileSheets",
+      "reference_file_count": 18,
+      "job_ids": [
+        "crop_growth_1",
+        "crop_growth_2",
+        "crop_growth_3",
+        "fruit_trees",
+        "craftable_objects",
+        "furniture",
+        "tools_equipment",
+        "weapons_projectiles",
+        "materials_products",
+        "food_forage",
+        "effects_animation",
+        "critters_shadows",
+        "ui_icons"
+      ],
+      "generated_library_refs": [
+        "res://assets/generated/manifest.json",
+        "res://assets/generated/expansion_v1/catalog.json",
+        "res://assets/generated/buildings/catalog.json",
+        "res://assets/generated/trees/catalog.json"
+      ],
+      "note": "24 additional crops with six stages, six fruit tree types, 64 machines, 64 furnishings, tools/weapons/materials/food/forage/effects; existing original fish and crop libraries referenced, never the external pack. The source 816-cell sheet includes variants/empty slots; this is a semantic library, not 816 guessed item IDs."
+    },
+    {
+      "reference_section": "Root localized and duplicate images",
+      "reference_file_count": 95,
+      "job_ids": [
+        "ui_panels",
+        "ui_icons",
+        "minigame_title",
+        "seasonal_ground",
+        "seasonal_town",
+        "seasonal_beach",
+        "scene_backdrops_1",
+        "scene_backdrops_2",
+        "scene_backdrops_3",
+        "scene_backdrops_4"
+      ],
+      "note": "56 localized copies and repeated map images are consolidated into original unlabelled artwork plus Godot localized text."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/expansion_v1/icons/bamboo_rod.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"bamboo_rod"
+display_name = "竹鱼竿"
+description = "在池塘北岸按 E 钓鱼，每天最多投竿三次。"
+icon = ExtResource("2")
+max_stack = 1
+sell_price = 0
+buy_price = 80
+category = &"tool"
+unlock_stage = 0

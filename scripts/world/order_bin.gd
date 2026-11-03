@@ -17,8 +17,8 @@ func player_in_range(player: Node2D) -> bool:
 func hint() -> String:
 	var orders := get_tree().get_first_node_in_group(&"orders")
 	if orders != null and orders.has_method(&"has_order") and not orders.has_order():
-		return "按 E 看今日订单（今天已交付）"
-	return "按 E 看今日订单"
+		return "[E] 订单箱 · 已交付"
+	return "[E] 查看订单"
 
 
 func interact(_cell: Vector2i) -> void:

@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_bat/attack.png" id="1_4d5s0"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_bat/idle.png" id="2_5wbxr"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_bat/move_a.png" id="3_tlebd"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_bat/move_b.png" id="4_eqn5y"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4d5s0")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5wbxr")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tlebd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eqn5y")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

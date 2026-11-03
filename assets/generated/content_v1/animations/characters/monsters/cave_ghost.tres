@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_ghost/attack.png" id="1_kvwpg"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_ghost/idle.png" id="2_ppdv3"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_ghost/move_a.png" id="3_hnnr4"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/monsters/cave_ghost/move_b.png" id="4_qdeqw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kvwpg")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ppdv3")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hnnr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qdeqw")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

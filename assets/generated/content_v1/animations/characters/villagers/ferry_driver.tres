@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/down_a.png" id="1_o2h2m"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/down_b.png" id="2_vfg3i"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/left_a.png" id="3_da81m"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/left_b.png" id="4_c6y6x"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/right_a.png" id="5_hmcq4"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/right_b.png" id="6_81c1q"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/up_a.png" id="7_wndfh"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/characters/villagers/ferry_driver/up_b.png" id="8_61k2w"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o2h2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vfg3i")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_da81m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c6y6x")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hmcq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_81c1q")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wndfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_61k2w")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
