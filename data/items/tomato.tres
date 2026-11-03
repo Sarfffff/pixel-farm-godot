@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/tomato.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"tomato"
+display_name = "番茄"
+description = "熟透的番茄，是镇上收购价最高的作物之一。"
+icon = ExtResource("2_icon")
+max_stack = 99
+sell_price = 35
+category = &"crop"

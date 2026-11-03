@@ -51,7 +51,7 @@
 		],
 		"status": "art ready; growth gameplay pending"
 	},
-	"generator": "built-in image_gen; technical preparation: tools/prepare_farm_art.gd",
+	"generator": "built-in image_gen; technical preparation: tools/art/prepare_farm_art.gd",
 	"items": {
 		"cell": [
 			16,

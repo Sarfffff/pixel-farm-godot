@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/community_building.gd" id="1_community"]
+[ext_resource type="Texture2D" path="res://assets/generated/buildings/facilities/community_center.png" id="2_building"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_house"]
+size = Vector2(92, 34)
+
+[node name="CommunityBuilding" type="Node2D"]
+script = ExtResource("1_community")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_building")
+offset = Vector2(0, -40)
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_house")

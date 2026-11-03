@@ -1,23 +1,121 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene format=3 uid="uid://b7wc8txipc2lq"]
 
-[ext_resource type="Script" path="res://scripts/world/camera_follow.gd" id="1_camera"]
-[ext_resource type="PackedScene" path="res://scenes/world/farm.tscn" id="2_farm"]
+[ext_resource type="Script" uid="uid://sufjf3mdjgqs" path="res://scripts/world/camera_follow.gd" id="1_camera"]
+[ext_resource type="PackedScene" uid="uid://dl88tmqg12gen" path="res://scenes/world/farm.tscn" id="2_farm"]
+[ext_resource type="PackedScene" uid="uid://qly8j3hq62mf" path="res://scenes/ui/toolbar.tscn" id="4_toolbar"]
+[ext_resource type="Script" uid="uid://chlcelndge05w" path="res://scripts/systems/inventory.gd" id="5_inventory"]
+[ext_resource type="PackedScene" uid="uid://dr0afcyde7i1p" path="res://scenes/ui/inventory_panel.tscn" id="6_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/toast.tscn" id="7_toast"]
+[ext_resource type="Script" uid="uid://bn2ahcdxrlwol" path="res://scripts/systems/economy.gd" id="8_economy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="9_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/shop_panel.tscn" id="10_shop"]
+[ext_resource type="Script" uid="uid://d3pjn8e0rcb6o" path="res://scripts/systems/time_system.gd" id="12_time"]
+[ext_resource type="Script" uid="uid://d1kc7xjet1i51" path="res://scripts/systems/save_system.gd" id="13_save"]
+[ext_resource type="PackedScene" path="res://scenes/ui/day_summary.tscn" id="14_summary"]
+[ext_resource type="Script" uid="uid://bnmwj2bydfami" path="res://scripts/world/day_night_tint.gd" id="16_tint"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="17_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue_panel.tscn" id="19_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/help_panel.tscn" id="22_help"]
+[ext_resource type="Script" uid="uid://ctmj2srqw7kom" path="res://scripts/systems/community_center.gd" id="23_community"]
+[ext_resource type="Script" uid="uid://qr76lqkssyo" path="res://scripts/systems/orders.gd" id="24_orders"]
+[ext_resource type="PackedScene" path="res://scenes/ui/order_panel.tscn" id="27_orderpanel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/community_panel.tscn" id="28_communitypanel"]
+[ext_resource type="Script" uid="uid://byrxs011kfd71" path="res://scripts/world/bgm_controller.gd" id="29_bgm"]
+[ext_resource type="Script" path="res://scripts/systems/stamina.gd" id="30_stamina"]
+[ext_resource type="Script" path="res://scripts/systems/weather.gd" id="31_weather"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3_player"]
-[ext_resource type="PackedScene" path="res://scenes/ui/toolbar.tscn" id="4_toolbar"]
+[ext_resource type="PackedScene" path="res://scenes/world/sleep_spot.tscn" id="15_sleep"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/shopkeeper.tscn" id="18_shopkeeper"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/chicken_coop.tscn" id="20_coop"]
+[ext_resource type="PackedScene" path="res://scenes/world/chicken.tscn" id="21_chicken"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/order_bin.tscn" id="25_bin"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/community_building.tscn" id="26_building"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1709259568]
 
-[node name="Farm" parent="." instance=ExtResource("2_farm")]
+[node name="DayNightTint" type="CanvasModulate" parent="." unique_id=981245375]
+script = ExtResource("16_tint")
+
+[node name="Farm" parent="." unique_id=1404619021 instance=ExtResource("2_farm")]
+
+[node name="SleepSpot" parent="Farm/World" instance=ExtResource("15_sleep")]
+position = Vector2(472, 158)
+
+[node name="Shopkeeper" parent="Farm/World" instance=ExtResource("18_shopkeeper")]
+position = Vector2(502, 160)
+
+[node name="ChickenCoop" parent="Farm/World" instance=ExtResource("20_coop")]
+position = Vector2(520, 264)
+
+[node name="Chicken1" parent="Farm/World" instance=ExtResource("21_chicken")]
+position = Vector2(500, 268)
+
+[node name="Chicken2" parent="Farm/World" instance=ExtResource("21_chicken")]
+position = Vector2(540, 270)
+
+[node name="OrderBin" parent="Farm/World" instance=ExtResource("25_bin")]
+position = Vector2(440, 168)
+
+[node name="CommunityBuilding" parent="Farm/World" instance=ExtResource("26_building")]
+position = Vector2(480, 40)
 
 [node name="Player" parent="Farm/World" instance=ExtResource("3_player")]
-position = Vector2(472, 176)
+position = Vector2(472, 174)
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=1529148448]
 position = Vector2(472, 166)
 script = ExtResource("1_camera")
 target_path = NodePath("../Farm/World/Player")
-world_bounds = Rect2(0, 0, 640, 480)
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="Systems" type="Node" parent="." unique_id=1876502725]
 
-[node name="Toolbar" parent="UI" instance=ExtResource("4_toolbar")]
+[node name="Inventory" type="Node" parent="Systems" unique_id=1772420099 groups=["inventory"]]
+script = ExtResource("5_inventory")
+
+[node name="Economy" type="Node" parent="Systems" unique_id=332785618 groups=["economy"]]
+script = ExtResource("8_economy")
+
+[node name="Time" type="Node" parent="Systems" unique_id=467527275 groups=["time"]]
+script = ExtResource("12_time")
+
+[node name="Save" type="Node" parent="Systems" unique_id=1292896847 groups=["save"]]
+script = ExtResource("13_save")
+
+[node name="CommunityCenter" type="Node" parent="Systems" unique_id=1731805501 groups=["community"]]
+script = ExtResource("23_community")
+
+[node name="Orders" type="Node" parent="Systems" unique_id=2143887020 groups=["orders"]]
+script = ExtResource("24_orders")
+
+[node name="Stamina" type="Node" parent="Systems" groups=["stamina"]]
+script = ExtResource("30_stamina")
+
+[node name="Weather" type="Node" parent="Systems" groups=["weather"]]
+script = ExtResource("31_weather")
+
+[node name="BGM" type="Node" parent="Systems" unique_id=1082598219 groups=["bgm"]]
+script = ExtResource("29_bgm")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1232170097]
+
+[node name="HUD" parent="UI" unique_id=1866143306 instance=ExtResource("9_hud")]
+
+[node name="Toolbar" parent="UI" unique_id=1676044899 instance=ExtResource("4_toolbar")]
+
+[node name="InventoryPanel" parent="UI" unique_id=1183053338 instance=ExtResource("6_panel")]
+
+[node name="ShopPanel" parent="UI" unique_id=289682299 instance=ExtResource("10_shop")]
+
+[node name="DialoguePanel" parent="UI" unique_id=886853238 instance=ExtResource("19_dialogue")]
+
+[node name="DaySummary" parent="UI" unique_id=1940756685 instance=ExtResource("14_summary")]
+
+[node name="PauseMenu" parent="UI" unique_id=1642878756 instance=ExtResource("17_pause")]
+
+[node name="Toast" parent="UI" unique_id=660406832 instance=ExtResource("7_toast")]
+
+[node name="HelpPanel" parent="UI" unique_id=620490476 instance=ExtResource("22_help")]
+
+[node name="OrderPanel" parent="UI" unique_id=1072895820 instance=ExtResource("27_orderpanel")]
+
+[node name="CommunityPanel" parent="UI" unique_id=868963767 instance=ExtResource("28_communitypanel")]

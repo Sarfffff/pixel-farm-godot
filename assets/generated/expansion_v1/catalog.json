@@ -1,7 +1,7 @@
 {
 	"alpha": "original sources preserved; runtime sprites use binary alpha",
 	"filter": "nearest; no mipmaps",
-	"generator": "built-in image_gen; technical preparation: tools/prepare_expansion_art.gd",
+	"generator": "built-in image_gen; technical preparation: tools/art/prepare_expansion_art.gd",
 	"items": [
 		{
 			"atlas": "atlases/fish.png",

@@ -1,6 +1,6 @@
 # 钓鱼、作物与动物素材包 v1
 
-通过内置 ImageGen 生成，并由 `tools/prepare_expansion_art.gd` 切片、最近邻缩小和统一落脚点。对应项目现有的低分辨率像素画、柔和农场配色和透明贴图规格。此次只补充美术资源，尚未接入钓鱼、作物生长或动物 AI。
+通过内置 ImageGen 生成，并由 `tools/art/prepare_expansion_art.gd` 切片、最近邻缩小和统一落脚点。对应项目现有的低分辨率像素画、柔和农场配色和透明贴图规格。此次只补充美术资源，尚未接入钓鱼、作物生长或动物 AI。
 
 ![素材总览](preview.png)
 
@@ -46,9 +46,9 @@
 完整生成提示词及工具模式见 `prompts.json`。原图保留生成时的 Alpha；运行时切片与已有素材处理器一致，采用最近邻缩小、硬边透明度，不使用平滑插值。切片时还会移除远离主体的相邻格碎片，避免碎片改变缩放比例或混入其他方向。
 
 ```bash
-godot --headless --path . --script res://tools/prepare_expansion_art.gd
+godot --headless --path . --script res://tools/art/prepare_expansion_art.gd
 godot --headless --path . --editor --import
-godot --path . --script res://tools/preview_expansion_art.gd
+godot --path . --script res://tools/art/preview_expansion_art.gd
 ```
 
 最后一条会用 Godot 实际渲染素材并更新本目录 `preview.png`。

@@ -20,9 +20,10 @@
 | Y 轴遮挡 | 已完成 | 走到树/屋后面时角色被正确遮挡，挡视线时道具淡出到 55% |
 | 锄地 / 浇水 | 已完成 | 四向角色动作、命中帧生效；种植区虚线、原因提示、方格耕地自动连片 |
 | 砍树 | 已完成 | 独立横向挥斧，小树 2 次、大树与果树 3 次；摇晃、木屑、倒树，树桩保留碰撞 |
-| 工具栏 | 已完成 | 锄头 / 水壶 / 种子（待开放）/ 斧头四格，选中项高亮 |
-| 播种 · 作物生长 | 待做 | V0.5 |
-| 背包 · 商店 · 金币 | 待做 | V0.6 |
+| 工具栏 | 已完成 | 锄头 / 水壶 / 种子 / 斧头四格，选中项高亮 |
+| 播种 · 作物生长 | 已完成 | 胡萝卜、番茄两种作物；浇水推进一步，成熟后收获入包 |
+| 背包 | 已完成 | 24 格堆叠、`B` 开关面板、入包飘字提示 |
+| 商店 · 金币 | 待做 | V0.6 |
 | 昼夜 · 存档 | 待做 | V0.7 |
 
 ## 操作
@@ -31,9 +32,10 @@
 | --- | --- |
 | `W A S D` / 方向键 | 移动 |
 | `空格` / 鼠标左键 | 使用当前工具（对面前那一格） |
-| `Q` / `E` | 上一个 / 下一个工具 |
-| `1` `2` `3` | 直接切换 锄头 / 水壶 / 种子 |
-| `4` | 切换斧头，面向树干后使用 |
+| `Q` / `E` | 上一个 / 下一个工具；面前或身边有成熟作物时 `E` 优先收获 |
+| `1` `2` `3` `4` | 直接切换 锄头 / 水壶 / 种子 / 斧头 |
+| `B` | 打开 / 关闭背包 |
+| `N` | 推进一天（调试入口，V0.7 由时间系统接管） |
 
 工具一次作用于面前一格，鼠标左键与空格使用同一目标。浅黄色框表示可操作，水壶为浅蓝色；暗红色表示当前格不可操作。动作期间锁定朝向、目标和工具，命中帧才改变地块或伤害树木；无效操作不会空挥。种植区内允许独立开新田，建筑、石头和树干会阻止开垦。
 
@@ -52,9 +54,11 @@ godot --path .          # 或用 Godot 编辑器打开 project.godot
 命令行自检（退出码 0 即全部通过，不弹窗口）：
 
 ```bash
-godot --headless --path . --script res://tools/smoke_check.gd
-godot --headless --path . --script res://tools/check_farm_interactions.gd
-godot --headless --path . --script res://tools/check_farm_terrain.gd
+godot --headless --path . --script res://tools/check/smoke_check.gd
+godot --headless --path . --script res://tools/check/check_farm_interactions.gd
+godot --headless --path . --script res://tools/check/check_farm_terrain.gd
+godot --headless --path . --script res://tools/check/check_inventory.gd
+godot --headless --path . --script res://tools/check/check_crops.gd
 ```
 
 ## 目录结构
@@ -63,22 +67,28 @@ godot --headless --path . --script res://tools/check_farm_terrain.gd
 .
 ├── project.godot              # 引擎配置：320×180 视口、Nearest 过滤、Jolt 物理、输入映射
 ├── scenes/
-│   ├── main.tscn              # 入口：农场 + 玩家 + 相机
+│   ├── main.tscn              # 入口：农场 + 玩家 + 相机 + UI + Systems
 │   ├── player/                # 玩家场景 + SpriteFrames（8 方向动画）
-│   ├── world/                 # farm.tscn（地图）、tile_cursor.tscn（面前格高亮）、props/ 可复用道具
-│   └── ui/toolbar.tscn        # 底部工具栏
+│   ├── world/                 # farm.tscn、crop.tscn、tile_cursor.tscn、props/ 可复用道具
+│   └── ui/                    # toolbar.tscn、inventory_panel.tscn、toast.tscn
 ├── scripts/
 │   ├── player/player.gd       # 移动、朝向记忆、动画切换、工具切换
-│   ├── world/camera_follow.gd # 相机平滑跟随 + 边界限制
-│   ├── world/farm_tiller.gd   # 耕地系统：高亮、锄地、浇水、自动连边
-│   └── world/occlusion_fader.gd
+│   ├── world/                 # 相机、遮挡淡出、耕地、作物、砍树、土壤连边、工具特效
+│   ├── systems/inventory.gd   # 背包：24 格堆叠、溢出返回、信号
+│   ├── ui/                    # 工具栏、背包面板、飘字
+│   └── data/                  # ItemData / CropData 两个 Resource 定义
+├── data/
+│   ├── items/                 # 物品数据（8 个 .tres，背包启动时扫描）
+│   └── crops/                 # 作物数据（作物表，耕地脚本扫描）
 ├── assets/
-│   ├── game/                  # 原始素材包（16×16 像素）
+│   ├── game/                  # 原始素材包（16×16 像素，只读）
+│   ├── generated/             # 生成产物：切片贴图、图集、UI 九宫格（sources/ 为原始大图，不导入）
 │   └── tilesets/farm_terrain.tres
-├── tools/                     # 生成器与自检脚本（无头运行）
-│   ├── build_farm_map.gd      # 改布局后跑一次，重建 farm.tscn
-│   ├── build_player_frames.gd # 切图集生成玩家动画帧
-│   └── smoke_check.gd         # 输入映射 / 动画 / 场景结构自检
+├── tools/                     # 离线工具脚本（详见 tools/README.md）
+│   ├── build/                 # 重建 farm.tscn 与玩家动画帧
+│   ├── art/                   # 素材切片、拼图集、预览页
+│   ├── check/                 # 无窗口回归自检
+│   └── lib/                   # 共用布局与瓦片数据
 ├── docs/                      # 流程、版本路线图、技术对照
 └── addons/godot_ai/           # Godot AI 插件（第三方，只读）
 ```
@@ -97,8 +107,8 @@ godot --headless --path . --script res://tools/check_farm_terrain.gd
 | --- | --- |
 | ✅ V0.1–V0.3 | 静态地图 → 能走路 → 能逛完整农场（遮挡、碰撞） |
 | ✅ V0.4 | 能改地形：锄地、浇水、工具切换 |
-| ⬜ V0.5 | 能种地：播种、作物分阶段生长 |
-| ⬜ V0.6 | 能赚钱：背包、商店、金币 —— 第一个真实可玩循环 |
+| ✅ V0.5 | 能种地：播种、作物分阶段生长、收获入包 |
+| 🟡 V0.6 | 背包已完成；商店与金币待做 —— 补上即第一个真实可玩循环 |
 | ⬜ V0.7 | 能长期玩：时钟天数、睡觉结算、存档读档 |
 | ⬜ V0.8–V0.9 | 养鸡产蛋线；引导与帮助界面 |
 | ⬜ V1.0 | 完整 7 天体验闭环、正式 UI 与音效 |
@@ -112,6 +122,9 @@ godot --headless --path . --script res://tools/check_farm_terrain.gd
 - `03-参考项目技术对照.md` —— 参考项目的逐项 Godot 4 实现对照
 - `04-工具交互与耕地美术.md` —— 同类游戏参考、当前交互取舍与验收方式
 - `05-河流与地形.md` —— 河流布局、原素材拼接、桥梁碰撞、地图预览与重建命令
+- `06-背包与物品.md` —— 格子与堆叠规则、物品 Resource、面板与飘字联动
+- `07-作物与收获.md` —— 作物数据、生长与浇水推进、收获结算
+- [`tools/README.md`](tools/README.md) —— 离线工具脚本索引与常用组合
 - `CODEBUDDY.md` —— 环境要求与常用命令
 
 ## 素材说明

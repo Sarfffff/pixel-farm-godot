@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/generated/characters/npcs_v1/shopkeeper_directions.png" id="1_sprite"]
+[ext_resource type="Script" path="res://scripts/npcs/shopkeeper.gd" id="2_keeper"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feet"]
+size = Vector2(10, 6)
+
+[node name="Shopkeeper" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_sprite")
+offset = Vector2(0, -8)
+hframes = 4
+script = ExtResource("2_keeper")
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="Feet" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_feet")

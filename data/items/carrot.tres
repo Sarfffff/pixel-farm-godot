@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/carrot.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"carrot"
+display_name = "胡萝卜"
+description = "刚出土的胡萝卜，带着一点泥土味。可以留作种薯，也可以卖。"
+icon = ExtResource("2_icon")
+max_stack = 99
+sell_price = 25
+category = &"crop"

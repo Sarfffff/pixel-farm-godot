@@ -1,0 +1,1449 @@
+{
+	"alpha": [
+		0,
+		255
+	],
+	"generator": "image_gen; technical preparation: tools/art/prepare_tree_art.gd",
+	"palette": [
+		"#302421",
+		"#654638",
+		"#936644",
+		"#dcb272",
+		"#f0e1b6",
+		"#344b3f",
+		"#596b4b",
+		"#839568",
+		"#a9ba85",
+		"#9c3848",
+		"#db6552",
+		"#ec9a48",
+		"#e4cb55",
+		"#51425f",
+		"#926da0",
+		"#607aa0"
+	],
+	"preparation": "Background removal, measured source cells, nearest resize, shared 16-color palette; young sprites cleaned of premature fruit, harvested foliage inpainted over fruit pixels to preserve mature silhouette; sapling icons derived from planted saplings.",
+	"preview": "res://assets/generated/trees/preview.png",
+	"root_collision_radius": [
+		4,
+		5
+	],
+	"sampling": "nearest, no mipmaps",
+	"status": "art only; no TreeData, gameplay, collision or inventory connections added",
+	"texture_count": 101,
+	"textures": [
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/apple_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/apple_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/apple_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/apple_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/apple.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/apple_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/pear_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/pear_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/pear_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/pear_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/pear.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/pear_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/peach_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/peach_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/peach_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/peach_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/peach.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/peach_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/cherry_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/cherry_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/cherry_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/cherry_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/cherry.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/cherry_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_a_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/orange_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/orange_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/orange_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/orange_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/orange.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/orange_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/lemon_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/lemon_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/lemon_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/lemon_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/lemon.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/lemon_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/fig_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/fig_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/fig_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/fig_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/fig.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/fig_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/persimmon_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/persimmon_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/persimmon_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/persimmon_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/persimmon.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/persimmon_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/orchard_b_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blueberry_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blueberry_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blueberry_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blueberry_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/blueberry.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/blueberry_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/raspberry_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/raspberry_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/raspberry_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/raspberry_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/raspberry.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/raspberry_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blackberry_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blackberry_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blackberry_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/blackberry_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/blackberry.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/blackberry_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/gooseberry_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/gooseberry_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/gooseberry_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/gooseberry_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/gooseberry.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/gooseberry_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/berry_shrubs_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/goji_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/goji_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/goji_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/goji_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/goji.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/goji_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/grape_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/grape_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/grape_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/grape_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/grape.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/grape_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/kiwi_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/kiwi_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/kiwi_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/kiwi_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/kiwi.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/kiwi_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/passionfruit_sapling.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/passionfruit_young.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/passionfruit_ripe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/passionfruit_bare.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/passionfruit.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": -1,
+			"grounded": false,
+			"path": "res://assets/generated/items/passionfruit_sapling.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/fruit_vines_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/trellis_empty.png",
+			"size": [
+				16,
+				32
+			],
+			"source": "res://assets/generated/sources/planting_props_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/trellis_vine.png",
+			"size": [
+				16,
+				32
+			],
+			"source": "res://assets/generated/sources/planting_props_v1.png"
+		},
+		{
+			"baseline": 31,
+			"grounded": true,
+			"path": "res://assets/generated/trees/trellis_ripe.png",
+			"size": [
+				16,
+				32
+			],
+			"source": "res://assets/generated/sources/planting_props_v1.png"
+		},
+		{
+			"baseline": 15,
+			"grounded": true,
+			"path": "res://assets/generated/field/planting_hole.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/planting_props_v1.png"
+		},
+		{
+			"baseline": 15,
+			"grounded": true,
+			"path": "res://assets/generated/field/sapling_stake.png",
+			"size": [
+				16,
+				16
+			],
+			"source": "res://assets/generated/sources/planting_props_v1.png"
+		}
+	],
+	"varieties": [
+		{
+			"category": "orchard",
+			"display_name": "苹果",
+			"id": "apple",
+			"paths": {
+				"bare": "res://assets/generated/trees/apple_bare.png",
+				"fruit_item": "res://assets/generated/items/apple.png",
+				"ripe": "res://assets/generated/trees/apple_ripe.png",
+				"sapling": "res://assets/generated/trees/apple_sapling.png",
+				"sapling_item": "res://assets/generated/items/apple_sapling.png",
+				"young": "res://assets/generated/trees/apple_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "orchard",
+			"display_name": "梨",
+			"id": "pear",
+			"paths": {
+				"bare": "res://assets/generated/trees/pear_bare.png",
+				"fruit_item": "res://assets/generated/items/pear.png",
+				"ripe": "res://assets/generated/trees/pear_ripe.png",
+				"sapling": "res://assets/generated/trees/pear_sapling.png",
+				"sapling_item": "res://assets/generated/items/pear_sapling.png",
+				"young": "res://assets/generated/trees/pear_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "orchard",
+			"display_name": "桃",
+			"id": "peach",
+			"paths": {
+				"bare": "res://assets/generated/trees/peach_bare.png",
+				"fruit_item": "res://assets/generated/items/peach.png",
+				"ripe": "res://assets/generated/trees/peach_ripe.png",
+				"sapling": "res://assets/generated/trees/peach_sapling.png",
+				"sapling_item": "res://assets/generated/items/peach_sapling.png",
+				"young": "res://assets/generated/trees/peach_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "orchard",
+			"display_name": "樱桃",
+			"id": "cherry",
+			"paths": {
+				"bare": "res://assets/generated/trees/cherry_bare.png",
+				"fruit_item": "res://assets/generated/items/cherry.png",
+				"ripe": "res://assets/generated/trees/cherry_ripe.png",
+				"sapling": "res://assets/generated/trees/cherry_sapling.png",
+				"sapling_item": "res://assets/generated/items/cherry_sapling.png",
+				"young": "res://assets/generated/trees/cherry_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "orchard",
+			"display_name": "橙子",
+			"id": "orange",
+			"paths": {
+				"bare": "res://assets/generated/trees/orange_bare.png",
+				"fruit_item": "res://assets/generated/items/orange.png",
+				"ripe": "res://assets/generated/trees/orange_ripe.png",
+				"sapling": "res://assets/generated/trees/orange_sapling.png",
+				"sapling_item": "res://assets/generated/items/orange_sapling.png",
+				"young": "res://assets/generated/trees/orange_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "orchard",
+			"display_name": "柠檬",
+			"id": "lemon",
+			"paths": {
+				"bare": "res://assets/generated/trees/lemon_bare.png",
+				"fruit_item": "res://assets/generated/items/lemon.png",
+				"ripe": "res://assets/generated/trees/lemon_ripe.png",
+				"sapling": "res://assets/generated/trees/lemon_sapling.png",
+				"sapling_item": "res://assets/generated/items/lemon_sapling.png",
+				"young": "res://assets/generated/trees/lemon_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "orchard",
+			"display_name": "无花果",
+			"id": "fig",
+			"paths": {
+				"bare": "res://assets/generated/trees/fig_bare.png",
+				"fruit_item": "res://assets/generated/items/fig.png",
+				"ripe": "res://assets/generated/trees/fig_ripe.png",
+				"sapling": "res://assets/generated/trees/fig_sapling.png",
+				"sapling_item": "res://assets/generated/items/fig_sapling.png",
+				"young": "res://assets/generated/trees/fig_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "orchard",
+			"display_name": "柿子",
+			"id": "persimmon",
+			"paths": {
+				"bare": "res://assets/generated/trees/persimmon_bare.png",
+				"fruit_item": "res://assets/generated/items/persimmon.png",
+				"ripe": "res://assets/generated/trees/persimmon_ripe.png",
+				"sapling": "res://assets/generated/trees/persimmon_sapling.png",
+				"sapling_item": "res://assets/generated/items/persimmon_sapling.png",
+				"young": "res://assets/generated/trees/persimmon_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				2,
+				2
+			]
+		},
+		{
+			"category": "berry",
+			"display_name": "蓝莓",
+			"id": "blueberry",
+			"paths": {
+				"bare": "res://assets/generated/trees/blueberry_bare.png",
+				"fruit_item": "res://assets/generated/items/blueberry.png",
+				"ripe": "res://assets/generated/trees/blueberry_ripe.png",
+				"sapling": "res://assets/generated/trees/blueberry_sapling.png",
+				"sapling_item": "res://assets/generated/items/blueberry_sapling.png",
+				"young": "res://assets/generated/trees/blueberry_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				1
+			]
+		},
+		{
+			"category": "berry",
+			"display_name": "覆盆子",
+			"id": "raspberry",
+			"paths": {
+				"bare": "res://assets/generated/trees/raspberry_bare.png",
+				"fruit_item": "res://assets/generated/items/raspberry.png",
+				"ripe": "res://assets/generated/trees/raspberry_ripe.png",
+				"sapling": "res://assets/generated/trees/raspberry_sapling.png",
+				"sapling_item": "res://assets/generated/items/raspberry_sapling.png",
+				"young": "res://assets/generated/trees/raspberry_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				1
+			]
+		},
+		{
+			"category": "berry",
+			"display_name": "黑莓",
+			"id": "blackberry",
+			"paths": {
+				"bare": "res://assets/generated/trees/blackberry_bare.png",
+				"fruit_item": "res://assets/generated/items/blackberry.png",
+				"ripe": "res://assets/generated/trees/blackberry_ripe.png",
+				"sapling": "res://assets/generated/trees/blackberry_sapling.png",
+				"sapling_item": "res://assets/generated/items/blackberry_sapling.png",
+				"young": "res://assets/generated/trees/blackberry_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				1
+			]
+		},
+		{
+			"category": "berry",
+			"display_name": "醋栗",
+			"id": "gooseberry",
+			"paths": {
+				"bare": "res://assets/generated/trees/gooseberry_bare.png",
+				"fruit_item": "res://assets/generated/items/gooseberry.png",
+				"ripe": "res://assets/generated/trees/gooseberry_ripe.png",
+				"sapling": "res://assets/generated/trees/gooseberry_sapling.png",
+				"sapling_item": "res://assets/generated/items/gooseberry_sapling.png",
+				"young": "res://assets/generated/trees/gooseberry_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				1
+			]
+		},
+		{
+			"category": "berry",
+			"display_name": "枸杞",
+			"id": "goji",
+			"paths": {
+				"bare": "res://assets/generated/trees/goji_bare.png",
+				"fruit_item": "res://assets/generated/items/goji.png",
+				"ripe": "res://assets/generated/trees/goji_ripe.png",
+				"sapling": "res://assets/generated/trees/goji_sapling.png",
+				"sapling_item": "res://assets/generated/items/goji_sapling.png",
+				"young": "res://assets/generated/trees/goji_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				1
+			]
+		},
+		{
+			"category": "vine",
+			"display_name": "葡萄",
+			"id": "grape",
+			"paths": {
+				"bare": "res://assets/generated/trees/grape_bare.png",
+				"fruit_item": "res://assets/generated/items/grape.png",
+				"ripe": "res://assets/generated/trees/grape_ripe.png",
+				"sapling": "res://assets/generated/trees/grape_sapling.png",
+				"sapling_item": "res://assets/generated/items/grape_sapling.png",
+				"young": "res://assets/generated/trees/grape_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				2
+			]
+		},
+		{
+			"category": "vine",
+			"display_name": "猕猴桃",
+			"id": "kiwi",
+			"paths": {
+				"bare": "res://assets/generated/trees/kiwi_bare.png",
+				"fruit_item": "res://assets/generated/items/kiwi.png",
+				"ripe": "res://assets/generated/trees/kiwi_ripe.png",
+				"sapling": "res://assets/generated/trees/kiwi_sapling.png",
+				"sapling_item": "res://assets/generated/items/kiwi_sapling.png",
+				"young": "res://assets/generated/trees/kiwi_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				2
+			]
+		},
+		{
+			"category": "vine",
+			"display_name": "百香果",
+			"id": "passionfruit",
+			"paths": {
+				"bare": "res://assets/generated/trees/passionfruit_bare.png",
+				"fruit_item": "res://assets/generated/items/passionfruit.png",
+				"ripe": "res://assets/generated/trees/passionfruit_ripe.png",
+				"sapling": "res://assets/generated/trees/passionfruit_sapling.png",
+				"sapling_item": "res://assets/generated/items/passionfruit_sapling.png",
+				"young": "res://assets/generated/trees/passionfruit_young.png"
+			},
+			"root": [
+				16,
+				31
+			],
+			"sprite_offset": [
+				0,
+				-16
+			],
+			"suggested_footprint": [
+				1,
+				2
+			]
+		}
+	],
+	"version": 1
+}

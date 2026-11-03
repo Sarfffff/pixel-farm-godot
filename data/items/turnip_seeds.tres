@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/generated/crops/turnip_seeds.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"turnip_seeds"
+display_name = "萝卜种子"
+description = "颗粒饱满的白萝卜种子。修好社区中心的第一阶段后才会摆上货架。"
+icon = ExtResource("2_icon")
+max_stack = 99
+sell_price = 8
+buy_price = 16
+category = &"seed"
+unlock_stage = 1
