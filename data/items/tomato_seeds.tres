@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/tomato_seeds.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"tomato_seeds"
+display_name = "番茄种子"
+description = "番茄种子。结果期比胡萝卜长一些，卖价也更高。"
+icon = ExtResource("2_icon")
+max_stack = 99
+sell_price = 6
+buy_price = 12
+category = &"seed"

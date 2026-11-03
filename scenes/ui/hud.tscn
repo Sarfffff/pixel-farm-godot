@@ -1,0 +1,145 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hud"]
+[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/coin.png" id="3_coin"]
+
+[sub_resource type="SystemFont" id="SystemFont_ui"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_hud")
+
+[node name="TimePanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 17.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_type_variation = &"InventoryDetails"
+
+[node name="Row" type="HBoxContainer" parent="TimePanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="TimeLabel" type="Label" parent="TimePanel/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.29, 0.2, 0.13, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 6
+text = "第 1 天 06:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WeatherLabel" type="Label" parent="TimePanel/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.26, 0.18, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 6
+text = "晴"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -60.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="StaminaText" type="Label" parent="StaminaPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 8.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_outline_color = Color(0.09, 0.08, 0.07, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 6
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BarBack" type="ColorRect" parent="StaminaPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 9.0
+offset_bottom = 52.0
+mouse_filter = 2
+color = Color(0.09, 0.08, 0.07, 0.72)
+
+[node name="Fill" type="ColorRect" parent="StaminaPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 9.0
+offset_bottom = 52.0
+mouse_filter = 2
+color = Color(0.55, 0.78, 0.42, 1)
+
+[node name="CoinPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = 22.0
+offset_right = -4.0
+offset_bottom = 35.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_type_variation = &"InventoryDetails"
+
+[node name="Row" type="HBoxContainer" parent="CoinPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="CoinIcon" type="TextureRect" parent="CoinPanel/Row"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_coin")
+stretch_mode = 4
+
+[node name="Amount" type="Label" parent="CoinPanel/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.29, 0.2, 0.13, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "500"
+horizontal_alignment = 2
+vertical_alignment = 1

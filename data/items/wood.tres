@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/wood.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"wood"
+display_name = "木材"
+description = "砍倒树木后得到的木料。之后可以做工具、修栅栏，也能直接卖掉换钱。"
+icon = ExtResource("2_icon")
+max_stack = 99
+sell_price = 8
+category = &"material"

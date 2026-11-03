@@ -1,0 +1,141 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/shop_panel.gd" id="1_shop"]
+[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
+
+[sub_resource type="SystemFont" id="SystemFont_ui"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
+
+[node name="ShopPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_shop")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+color = Color(0.06, 0.05, 0.04, 0.4)
+
+[node name="Frame" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -70.0
+offset_right = 95.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Frame"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Header" type="HBoxContainer" parent="Frame/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="Frame/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "农场商店"
+
+[node name="Spacer" type="Control" parent="Frame/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CoinLabel" type="Label" parent="Frame/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81, 0.73, 0.53, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "金币"
+
+[node name="Coins" type="Label" parent="Frame/VBox/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.84, 0.55, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "500"
+horizontal_alignment = 2
+
+[node name="CloseHint" type="Label" parent="Frame/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81, 0.73, 0.53, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "Esc 关闭"
+
+[node name="Columns" type="HBoxContainer" parent="Frame/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BuyColumn" type="VBoxContainer" parent="Frame/VBox/Columns"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BuyTitle" type="Label" parent="Frame/VBox/Columns/BuyColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81, 0.73, 0.53, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "买入"
+
+[node name="BuyScroll" type="ScrollContainer" parent="Frame/VBox/Columns/BuyColumn"]
+custom_minimum_size = Vector2(84, 90)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="BuyList" type="VBoxContainer" parent="Frame/VBox/Columns/BuyColumn/BuyScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="SellColumn" type="VBoxContainer" parent="Frame/VBox/Columns"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SellTitle" type="Label" parent="Frame/VBox/Columns/SellColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81, 0.73, 0.53, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "卖出"
+
+[node name="SellScroll" type="ScrollContainer" parent="Frame/VBox/Columns/SellColumn"]
+custom_minimum_size = Vector2(84, 90)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="SellList" type="VBoxContainer" parent="Frame/VBox/Columns/SellColumn/SellScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="Message" type="Label" parent="Frame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.79, 0.62, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "点击买入 / 卖出，Shift+点击一次处理整批"
+autowrap_mode = 3

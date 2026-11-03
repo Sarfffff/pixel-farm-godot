@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/order_bin.gd" id="1_order"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/shipping_sack.png" id="2_sack"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bin"]
+size = Vector2(12, 6)
+
+[node name="OrderBin" type="Node2D"]
+script = ExtResource("1_order")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_sack")
+offset = Vector2(0, -8)
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_bin")

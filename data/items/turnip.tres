@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/generated/crops/turnip_harvest.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"turnip"
+display_name = "白萝卜"
+description = "个头扎实的白萝卜，生吃清甜，卖价也比胡萝卜高。"
+icon = ExtResource("2_icon")
+max_stack = 99
+sell_price = 50
+category = &"crop"
+unlock_stage = 1

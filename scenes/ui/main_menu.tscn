@@ -1,0 +1,201 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://scripts/systems/save_system.gd" id="3_save"]
+
+[sub_resource type="SystemFont" id="SystemFont_ui"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16, 0.2, 0.14, 1)
+
+[node name="MainFrame" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -62.0
+offset_right = 86.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="MainFrame"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="MainFrame/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 14
+text = "小农场"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="MainFrame/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "种地 · 浇水 · 收获 · 卖钱"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="MainFrame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "继续游戏"
+
+[node name="NewButton" type="Button" parent="MainFrame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "新游戏"
+
+[node name="QuitButton" type="Button" parent="MainFrame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "退出"
+
+[node name="Hint" type="Label" parent="MainFrame/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.66, 0.5, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "方向键选择 · Enter 确认"
+horizontal_alignment = 1
+
+[node name="SlotFrame" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -68.0
+offset_right = 130.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="SlotFrame"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SlotTitle" type="Label" parent="SlotFrame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 9
+text = "继续哪个存档？"
+horizontal_alignment = 1
+
+[node name="SlotList" type="VBoxContainer" parent="SlotFrame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="BackButton" type="Button" parent="SlotFrame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "返回"
+
+[node name="NameFrame" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -38.0
+offset_right = 104.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="NameFrame"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="NameTitle" type="Label" parent="NameFrame/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 9
+text = "给农场起个名字"
+horizontal_alignment = 1
+
+[node name="NameInput" type="LineEdit" parent="NameFrame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/caret_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "我的农场"
+max_length = 16
+alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="NameFrame/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 6
+
+[node name="NameConfirm" type="Button" parent="NameFrame/VBox/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "确定"
+
+[node name="NameBack" type="Button" parent="NameFrame/VBox/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "返回"
+
+[node name="Save" type="Node" parent="." groups=["save"]]
+script = ExtResource("3_save")
+autoload_enabled = false

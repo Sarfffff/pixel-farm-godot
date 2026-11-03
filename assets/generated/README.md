@@ -1,8 +1,8 @@
 # 新增农场素材
 
-所有图片都已保存在本目录，原素材 `assets/game/` 未覆盖。角色、作物和物品采用内置 **image_gen** 生成，再由 `tools/prepare_farm_art.gd` 完成技术整理。完整提示词保存在 [prompts.json](prompts.json)，切片配置保存在 [manifest.json](manifest.json)。
+所有图片都已保存在本目录，原素材 `assets/game/` 未覆盖。角色、作物和物品采用内置 **image_gen** 生成，再由 `tools/art/prepare_farm_art.gd` 完成技术整理。完整提示词保存在 [prompts.json](prompts.json)，切片配置保存在 [manifest.json](manifest.json)。
 
-[素材预览](../../docs/screenshots/farm-assets-preview.png) 展示当前接入的两套动作和后续储备的作物、物品。可用 `godot --path . --script res://tools/preview_farm_art.gd` 重新渲染。
+[素材预览](../../docs/screenshots/farm-assets-preview.png) 展示当前接入的两套动作和后续储备的作物、物品。可用 `godot --path . --script res://tools/art/preview_farm_art.gd` 重新渲染。
 
 ## 当前使用与后续储备
 
@@ -12,8 +12,8 @@
 | `characters/hoe_*.png`、`axe_*.png` | 上述动作的单帧 PNG | 32×32 | 可独立复用 |
 | `items/carrot_seeds.png` | 有胡萝卜图案的牛皮纸种子袋 | 16×16 | 已用于数字键 3 |
 | `items/farm_items_v1.png` | 4 种种子袋、木材、石头、纤维、肥料、4 种收获物、单金币、金币堆、出货袋、木箱，共 16 项 | 64×64；每格 16×16 | 种子袋已用；其他储备 |
-| `crops/crop_growth_v1.png` | 胡萝卜、芜菁、番茄、小麦各 6 张，共 24 张 | 192×128；每格 32×32 | 图片已备，生长玩法待接入 |
-| `crops/<crop>_<stage>.png` | 四种作物的单阶段 PNG | 32×32 | 后续播种 / 生长 / 收获 |
+| `crops/crop_growth_v1.png` | 胡萝卜、芜菁、番茄、小麦各 6 张，共 24 张 | 192×128；每格 32×32 | 胡萝卜、番茄已接入生长玩法，另两种待配 `.tres` |
+| `crops/<crop>_<stage>.png` | 四种作物的单阶段 PNG | 32×32 | 已用于播种 / 生长 / 收获 |
 | `terrain/soil_dry_atlas.png` | 方形小切角干土、八邻域连边 | 256×256；256 格，每格 16×16 | 已用于耕地图集 |
 | `terrain/soil_wet_atlas.png` | 同轮廓湿土 | 256×256 | 湿土色彩参考；游戏用同干土轮廓加湿土色调 |
 
@@ -29,14 +29,14 @@
 
 ## 原图和版本
 
-`sources/` 保留原始生成图片。`farmer_actions_v2.png` 是首版候选，`farmer_actions_v3.png` 是纠正朝上工具方向和横向挥斧后的版本。游戏使用 **v3**；旧的 v2 图集保留用于对照，不再引用。作物与物品使用各自的 v1 原图。原图有近透明背景 RGB，不直接作为游戏贴图使用。
+`sources/` 保留原始生成图片，统一命名为 `<用途>_v<N>.png`；该目录带 `.gdignore`，不参与引擎导入，`tools/art/` 下的脚本用 `Image.load_from_file()` 直接读文件。`farmer_actions_v2.png` 是首版候选，`farmer_actions_v3.png` 是纠正朝上工具方向和横向挥斧后的版本。游戏使用 **v3**；旧的 v2 图集保留用于对照，不再引用。作物与物品使用各自的 v1 原图。原图有近透明背景 RGB，不直接作为游戏贴图使用。
 
 ## 重建
 
 ```powershell
-godot --headless --path . --script res://tools/prepare_farm_art.gd
+godot --headless --path . --script res://tools/art/prepare_farm_art.gd
 godot --headless --editor --path . --import
-godot --headless --path . --script res://tools/build_player_frames.gd
+godot --headless --path . --script res://tools/build/build_player_frames.gd
 ```
 
-此流程只整理已保存图片，不重新调用图片生成服务。后续接入播种、生长、背包、材料掉落与出售时，可直接使用单图或 manifest 指定的图集区域；这些系统当前尚未实现。
+此流程只整理已保存图片，不重新调用图片生成服务。播种、生长、背包与材料掉落已接入，可直接使用单图或 manifest 指定的图集区域；出售与金币尚未实现。

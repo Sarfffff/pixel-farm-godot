@@ -22,6 +22,9 @@ func _ready() -> void:
 		var palette: Array[Color] = [Color("b38b58"), Color("dbb980"), Color("90734c")]
 		if water:
 			palette = [Color("b8e1dc"), Color("88bdcb"), Color("e1eee0")]
+		elif kind == &"stone_pickaxe":
+			palette = [Color("747b88"), Color("aab1ba"), Color("d8d8ce")]
+			_velocities[index] += direction * rng.randf_range(8, 18)
 		_colors.append(palette[index % palette.size()])
 
 
@@ -37,6 +40,10 @@ func _process(delta: float) -> void:
 
 
 func _draw() -> void:
+	if kind == &"stone_pickaxe" and _age < 0.10:
+		var flash: Color = Color("f0e1b6")
+		draw_line(Vector2(-4, -4), Vector2(4, 4), flash, 1.0, false)
+		draw_line(Vector2(-4, 4), Vector2(4, -4), flash, 1.0, false)
 	for index in _particles.size():
 		if _age < 0.25 + float(index % 4) * 0.04:
 			draw_rect(Rect2(_particles[index].round(), Vector2(1, 2) if kind == &"watering_can" else Vector2.ONE), _colors[index])

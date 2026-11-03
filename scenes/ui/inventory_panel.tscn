@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dr0afcyde7i1p"]
+
+[ext_resource type="Theme" uid="uid://b555y5n525rwt" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://dsyewa4ywmac0" path="res://scripts/ui/inventory_panel.gd" id="2_panel"]
+
+[sub_resource type="SystemFont" id="SystemFont_ui"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
+
+[node name="InventoryPanel" type="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_panel")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+color = Color(0.06, 0.05, 0.04, 0.35)
+
+[node name="Frame" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -74.0
+offset_right = 66.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Frame"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Header" type="HBoxContainer" parent="Frame/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Frame/VBox/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "背包"
+
+[node name="Spacer" type="Control" parent="Frame/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseHint" type="Label" parent="Frame/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.80784315, 0.7294118, 0.53333336, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "B / Esc / 点空白关闭"
+
+[node name="Grid" type="GridContainer" parent="Frame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 6
+
+[node name="Info" type="PanelContainer" parent="Frame/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"InventoryDetails"
+
+[node name="InfoLines" type="VBoxContainer" parent="Frame/VBox/Info"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="ItemName" type="Label" parent="Frame/VBox/Info/InfoLines"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.16, 0.11, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "空槽位"
+
+[node name="ItemDescription" type="Label" parent="Frame/VBox/Info/InfoLines"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32, 0.23, 0.16, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "砍倒树木可以获得木材；种子已经放在背包里。"
+autowrap_mode = 3

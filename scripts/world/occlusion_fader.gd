@@ -36,6 +36,17 @@ func _ready() -> void:
 			continue
 		_occluder_bounds[sprite] = _global_bounds(sprite)
 		_target_alpha[sprite] = 1.0
+	child_exiting_tree.connect(_on_world_child_exiting_tree)
+
+
+func _on_world_child_exiting_tree(child: Node) -> void:
+	if _tweens.has(child):
+		var tween: Tween = _tweens[child] as Tween
+		if tween != null and tween.is_valid():
+			tween.kill()
+	_occluder_bounds.erase(child)
+	_target_alpha.erase(child)
+	_tweens.erase(child)
 
 
 func _physics_process(_delta: float) -> void:
