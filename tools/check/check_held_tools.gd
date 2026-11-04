@@ -38,6 +38,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_player = PLAYER.instantiate() as CharacterBody2D
 	root.add_child(_player)
 	current_scene = _player
@@ -55,7 +57,7 @@ func _run() -> void:
 	_interaction.queue_free()
 	await process_frame
 	print("[held_tools] %s; %d failures" % ["PASS" if _failures == 0 else "FAIL", _failures])
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 func _check_assets() -> void:
@@ -72,7 +74,7 @@ func _check_assets() -> void:
 			var steps: Dictionary[String, bool] = {}
 			for phase: int in count:
 				var atlas: AtlasTexture = frames.get_frame_texture(animation, phase) as AtlasTexture
-				_check(atlas != null and atlas.atlas.resource_path == "res://assets/game/characters/basic_charakter_spritesheet.png", "natural movement uses original character artwork")
+				_check(atlas != null and atlas.atlas.resource_path == "res://assets/textures/base/characters/basic_charakter_spritesheet.png", "natural movement uses original character artwork")
 				if atlas == null:
 					continue
 				var image: Image = atlas.get_image()

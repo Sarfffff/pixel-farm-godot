@@ -1,0 +1,121 @@
+{
+	"alpha": "binary",
+	"filter": "nearest",
+	"generator": "image_gen; tools/art/prepare_npc_art.gd",
+	"items": [
+		{
+			"directions": [
+				"down",
+				"up",
+				"left",
+				"right"
+			],
+			"display_name": "商店老板",
+			"feet": [
+				16,
+				24
+			],
+			"frame_size": [
+				32,
+				32
+			],
+			"id": "shopkeeper",
+			"scene": "res://scenes/npcs/shopkeeper.tscn",
+			"sheet": "res://assets/textures/characters/npcs_v1/shopkeeper_directions.png",
+			"views": {
+				"down": "res://assets/textures/characters/npcs_v1/shopkeeper_down.png",
+				"left": "res://assets/textures/characters/npcs_v1/shopkeeper_left.png",
+				"right": "res://assets/textures/characters/npcs_v1/shopkeeper_right.png",
+				"up": "res://assets/textures/characters/npcs_v1/shopkeeper_up.png"
+			}
+		},
+		{
+			"directions": [
+				"down",
+				"up",
+				"left",
+				"right"
+			],
+			"display_name": "园艺师",
+			"feet": [
+				16,
+				24
+			],
+			"frame_size": [
+				32,
+				32
+			],
+			"id": "gardener",
+			"scene": "res://scenes/npcs/gardener.tscn",
+			"sheet": "res://assets/textures/characters/npcs_v1/gardener_directions.png",
+			"views": {
+				"down": "res://assets/textures/characters/npcs_v1/gardener_down.png",
+				"left": "res://assets/textures/characters/npcs_v1/gardener_left.png",
+				"right": "res://assets/textures/characters/npcs_v1/gardener_right.png",
+				"up": "res://assets/textures/characters/npcs_v1/gardener_up.png"
+			}
+		},
+		{
+			"directions": [
+				"down",
+				"up",
+				"left",
+				"right"
+			],
+			"display_name": "木匠",
+			"feet": [
+				16,
+				24
+			],
+			"frame_size": [
+				32,
+				32
+			],
+			"id": "carpenter",
+			"scene": "res://scenes/npcs/carpenter.tscn",
+			"sheet": "res://assets/textures/characters/npcs_v1/carpenter_directions.png",
+			"views": {
+				"down": "res://assets/textures/characters/npcs_v1/carpenter_down.png",
+				"left": "res://assets/textures/characters/npcs_v1/carpenter_left.png",
+				"right": "res://assets/textures/characters/npcs_v1/carpenter_right.png",
+				"up": "res://assets/textures/characters/npcs_v1/carpenter_up.png"
+			}
+		},
+		{
+			"directions": [
+				"down",
+				"up",
+				"left",
+				"right"
+			],
+			"display_name": "渔夫",
+			"feet": [
+				16,
+				24
+			],
+			"frame_size": [
+				32,
+				32
+			],
+			"id": "fisherman",
+			"scene": "res://scenes/npcs/fisherman.tscn",
+			"sheet": "res://assets/textures/characters/npcs_v1/fisherman_directions.png",
+			"views": {
+				"down": "res://assets/textures/characters/npcs_v1/fisherman_down.png",
+				"left": "res://assets/textures/characters/npcs_v1/fisherman_left.png",
+				"right": "res://assets/textures/characters/npcs_v1/fisherman_right.png",
+				"up": "res://assets/textures/characters/npcs_v1/fisherman_up.png"
+			}
+		}
+	],
+	"palette": "19 warm muted colors",
+	"scene_frame_order": [
+		"down",
+		"up",
+		"left",
+		"right"
+	],
+	"source": "res://art/sources/npc_v1/Production_game_asset__a_preci_2026-11-03T08-32-40.png",
+	"status": "Four directional idle poses only; no walk cycles or new profession gameplay",
+	"version": 1
+}

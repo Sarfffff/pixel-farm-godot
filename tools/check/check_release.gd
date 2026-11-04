@@ -6,7 +6,7 @@ extends SceneTree
 
 const PRESET_PATH := "res://export_presets.cfg"
 const CREDITS_PATH := "res://CREDITS.md"
-const EXTERNAL_ART := "星露谷物语素材"
+const EXTERNAL_ART := "art/reference/stardew_valley"
 const REQUIRED_CREDIT_TOKENS: Array[String] = ["Godot", "MIT", "星露谷", "ConcernedApe"]
 
 var _failures: int = 0
@@ -28,6 +28,8 @@ func _note(message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_check_project()
 	_check_presets()
 	_check_credits()
@@ -67,7 +69,7 @@ func _check_presets() -> void:
 	_check(export_path.ends_with(".exe"), "export path ends with .exe (%s)" % export_path)
 
 	var exclude: String = String(config.get_value("preset.0", "exclude_filter", ""))
-	for pattern: String in ["tools/", "docs/", EXTERNAL_ART]:
+	for pattern: String in ["tools/", "docs/", "art/", "archive/", "build/"]:
 		_check(exclude.contains(pattern), "exclude_filter must skip %s" % pattern)
 
 	var product: String = String(config.get_value("preset.0.options", "application/product_name", ""))
@@ -144,4 +146,4 @@ func _finish() -> void:
 		print("[release] PASS")
 	else:
 		printerr("[release] FAIL，共 %d 项" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

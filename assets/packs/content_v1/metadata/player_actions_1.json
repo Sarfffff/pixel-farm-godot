@@ -1,0 +1,2709 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_down_a",
+			"id": "characters/player/farmer/walk_down_a",
+			"mode": "sprite",
+			"name": "same male farmer walk down a",
+			"opaque_bounds": [
+				9,
+				7,
+				14,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				42,
+				0,
+				171,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_down_b",
+			"id": "characters/player/farmer/walk_down_b",
+			"mode": "sprite",
+			"name": "same male farmer walk down b",
+			"opaque_bounds": [
+				9,
+				7,
+				14,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				213,
+				0,
+				193,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_up_a",
+			"id": "characters/player/farmer/walk_up_a",
+			"mode": "sprite",
+			"name": "same male farmer walk up a",
+			"opaque_bounds": [
+				9,
+				7,
+				13,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				406,
+				0,
+				151,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_up_b",
+			"id": "characters/player/farmer/walk_up_b",
+			"mode": "sprite",
+			"name": "same male farmer walk up b",
+			"opaque_bounds": [
+				9,
+				7,
+				13,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				557,
+				0,
+				178,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_left_a",
+			"id": "characters/player/farmer/walk_left_a",
+			"mode": "sprite",
+			"name": "same male farmer walk left a",
+			"opaque_bounds": [
+				9,
+				7,
+				14,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				735,
+				0,
+				141,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_left_b",
+			"id": "characters/player/farmer/walk_left_b",
+			"mode": "sprite",
+			"name": "same male farmer walk left b",
+			"opaque_bounds": [
+				8,
+				8,
+				15,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				876,
+				0,
+				188,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_right_a",
+			"id": "characters/player/farmer/walk_right_a",
+			"mode": "sprite",
+			"name": "same male farmer walk right a",
+			"opaque_bounds": [
+				8,
+				7,
+				15,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				1064,
+				0,
+				174,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_right_b",
+			"id": "characters/player/farmer/walk_right_b",
+			"mode": "sprite",
+			"name": "same male farmer walk right b",
+			"opaque_bounds": [
+				8,
+				7,
+				15,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/walk_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1238,
+				0,
+				198,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_down_a",
+			"id": "characters/player/farmer/hoe_down_a",
+			"mode": "sprite",
+			"name": "same male farmer hoe down a",
+			"opaque_bounds": [
+				9,
+				7,
+				13,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				42,
+				136,
+				171,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_down_b",
+			"id": "characters/player/farmer/hoe_down_b",
+			"mode": "sprite",
+			"name": "same male farmer hoe down b",
+			"opaque_bounds": [
+				9,
+				9,
+				13,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				213,
+				136,
+				193,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_up_a",
+			"id": "characters/player/farmer/hoe_up_a",
+			"mode": "sprite",
+			"name": "same male farmer hoe up a",
+			"opaque_bounds": [
+				6,
+				8,
+				20,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				406,
+				136,
+				151,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_up_b",
+			"id": "characters/player/farmer/hoe_up_b",
+			"mode": "sprite",
+			"name": "same male farmer hoe up b",
+			"opaque_bounds": [
+				5,
+				6,
+				22,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				557,
+				136,
+				178,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_left_a",
+			"id": "characters/player/farmer/hoe_left_a",
+			"mode": "sprite",
+			"name": "same male farmer hoe left a",
+			"opaque_bounds": [
+				7,
+				8,
+				18,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				735,
+				136,
+				141,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_left_b",
+			"id": "characters/player/farmer/hoe_left_b",
+			"mode": "sprite",
+			"name": "same male farmer hoe left b",
+			"opaque_bounds": [
+				5,
+				10,
+				22,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				876,
+				136,
+				188,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_right_a",
+			"id": "characters/player/farmer/hoe_right_a",
+			"mode": "sprite",
+			"name": "same male farmer hoe right a",
+			"opaque_bounds": [
+				7,
+				8,
+				17,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				1064,
+				136,
+				174,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_right_b",
+			"id": "characters/player/farmer/hoe_right_b",
+			"mode": "sprite",
+			"name": "same male farmer hoe right b",
+			"opaque_bounds": [
+				6,
+				11,
+				20,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/hoe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1238,
+				136,
+				198,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_down_a",
+			"id": "characters/player/farmer/axe_down_a",
+			"mode": "sprite",
+			"name": "same male farmer axe down a",
+			"opaque_bounds": [
+				9,
+				9,
+				14,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				42,
+				272,
+				171,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_down_b",
+			"id": "characters/player/farmer/axe_down_b",
+			"mode": "sprite",
+			"name": "same male farmer axe down b",
+			"opaque_bounds": [
+				9,
+				11,
+				13,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				213,
+				272,
+				193,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_up_a",
+			"id": "characters/player/farmer/axe_up_a",
+			"mode": "sprite",
+			"name": "same male farmer axe up a",
+			"opaque_bounds": [
+				6,
+				10,
+				20,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				406,
+				272,
+				151,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_up_b",
+			"id": "characters/player/farmer/axe_up_b",
+			"mode": "sprite",
+			"name": "same male farmer axe up b",
+			"opaque_bounds": [
+				5,
+				7,
+				22,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				557,
+				272,
+				178,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_left_a",
+			"id": "characters/player/farmer/axe_left_a",
+			"mode": "sprite",
+			"name": "same male farmer axe left a",
+			"opaque_bounds": [
+				7,
+				11,
+				18,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				735,
+				272,
+				141,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_left_b",
+			"id": "characters/player/farmer/axe_left_b",
+			"mode": "sprite",
+			"name": "same male farmer axe left b",
+			"opaque_bounds": [
+				5,
+				12,
+				21,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				876,
+				272,
+				188,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_right_a",
+			"id": "characters/player/farmer/axe_right_a",
+			"mode": "sprite",
+			"name": "same male farmer axe right a",
+			"opaque_bounds": [
+				9,
+				10,
+				15,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				1064,
+				272,
+				174,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_right_b",
+			"id": "characters/player/farmer/axe_right_b",
+			"mode": "sprite",
+			"name": "same male farmer axe right b",
+			"opaque_bounds": [
+				5,
+				12,
+				21,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/axe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1238,
+				272,
+				198,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_down_a",
+			"id": "characters/player/farmer/pickaxe_down_a",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe down a",
+			"opaque_bounds": [
+				9,
+				11,
+				14,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				42,
+				407,
+				171,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_down_b",
+			"id": "characters/player/farmer/pickaxe_down_b",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe down b",
+			"opaque_bounds": [
+				8,
+				13,
+				15,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				213,
+				407,
+				193,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_up_a",
+			"id": "characters/player/farmer/pickaxe_up_a",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe up a",
+			"opaque_bounds": [
+				5,
+				12,
+				21,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				406,
+				407,
+				151,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_up_b",
+			"id": "characters/player/farmer/pickaxe_up_b",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe up b",
+			"opaque_bounds": [
+				5,
+				8,
+				21,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				557,
+				407,
+				178,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_left_a",
+			"id": "characters/player/farmer/pickaxe_left_a",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe left a",
+			"opaque_bounds": [
+				6,
+				12,
+				19,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				735,
+				407,
+				141,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_left_b",
+			"id": "characters/player/farmer/pickaxe_left_b",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe left b",
+			"opaque_bounds": [
+				5,
+				13,
+				21,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				876,
+				407,
+				188,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_right_a",
+			"id": "characters/player/farmer/pickaxe_right_a",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe right a",
+			"opaque_bounds": [
+				7,
+				12,
+				17,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				1064,
+				407,
+				174,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_right_b",
+			"id": "characters/player/farmer/pickaxe_right_b",
+			"mode": "sprite",
+			"name": "same male farmer pickaxe right b",
+			"opaque_bounds": [
+				6,
+				13,
+				20,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/pickaxe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1238,
+				407,
+				198,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_down_a",
+			"id": "characters/player/farmer/watering_can_down_a",
+			"mode": "sprite",
+			"name": "same male farmer watering can down a",
+			"opaque_bounds": [
+				9,
+				11,
+				13,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				42,
+				543,
+				171,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_down_b",
+			"id": "characters/player/farmer/watering_can_down_b",
+			"mode": "sprite",
+			"name": "same male farmer watering can down b",
+			"opaque_bounds": [
+				9,
+				13,
+				14,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				213,
+				543,
+				193,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_up_a",
+			"id": "characters/player/farmer/watering_can_up_a",
+			"mode": "sprite",
+			"name": "same male farmer watering can up a",
+			"opaque_bounds": [
+				9,
+				12,
+				13,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				406,
+				543,
+				151,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_up_b",
+			"id": "characters/player/farmer/watering_can_up_b",
+			"mode": "sprite",
+			"name": "same male farmer watering can up b",
+			"opaque_bounds": [
+				7,
+				11,
+				17,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				557,
+				543,
+				178,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_left_a",
+			"id": "characters/player/farmer/watering_can_left_a",
+			"mode": "sprite",
+			"name": "same male farmer watering can left a",
+			"opaque_bounds": [
+				7,
+				12,
+				18,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				735,
+				543,
+				141,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_left_b",
+			"id": "characters/player/farmer/watering_can_left_b",
+			"mode": "sprite",
+			"name": "same male farmer watering can left b",
+			"opaque_bounds": [
+				6,
+				13,
+				18,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				876,
+				543,
+				188,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_right_a",
+			"id": "characters/player/farmer/watering_can_right_a",
+			"mode": "sprite",
+			"name": "same male farmer watering can right a",
+			"opaque_bounds": [
+				7,
+				12,
+				17,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				1064,
+				543,
+				174,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_right_b",
+			"id": "characters/player/farmer/watering_can_right_b",
+			"mode": "sprite",
+			"name": "same male farmer watering can right b",
+			"opaque_bounds": [
+				7,
+				14,
+				18,
+				16
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/watering_can_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1238,
+				543,
+				198,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_down_a",
+			"id": "characters/player/farmer/scythe_down_a",
+			"mode": "sprite",
+			"name": "same male farmer scythe down a",
+			"opaque_bounds": [
+				7,
+				9,
+				17,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				42,
+				679,
+				171,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_down_b",
+			"id": "characters/player/farmer/scythe_down_b",
+			"mode": "sprite",
+			"name": "same male farmer scythe down b",
+			"opaque_bounds": [
+				7,
+				12,
+				17,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				213,
+				679,
+				193,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_up_a",
+			"id": "characters/player/farmer/scythe_up_a",
+			"mode": "sprite",
+			"name": "same male farmer scythe up a",
+			"opaque_bounds": [
+				5,
+				10,
+				21,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				406,
+				679,
+				151,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_up_b",
+			"id": "characters/player/farmer/scythe_up_b",
+			"mode": "sprite",
+			"name": "same male farmer scythe up b",
+			"opaque_bounds": [
+				5,
+				8,
+				21,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				557,
+				679,
+				178,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_left_a",
+			"id": "characters/player/farmer/scythe_left_a",
+			"mode": "sprite",
+			"name": "same male farmer scythe left a",
+			"opaque_bounds": [
+				8,
+				11,
+				16,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				735,
+				679,
+				141,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_left_b",
+			"id": "characters/player/farmer/scythe_left_b",
+			"mode": "sprite",
+			"name": "same male farmer scythe left b",
+			"opaque_bounds": [
+				4,
+				13,
+				23,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				876,
+				679,
+				188,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_right_a",
+			"id": "characters/player/farmer/scythe_right_a",
+			"mode": "sprite",
+			"name": "same male farmer scythe right a",
+			"opaque_bounds": [
+				8,
+				11,
+				16,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				1064,
+				679,
+				174,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_right_b",
+			"id": "characters/player/farmer/scythe_right_b",
+			"mode": "sprite",
+			"name": "same male farmer scythe right b",
+			"opaque_bounds": [
+				6,
+				13,
+				20,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/scythe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1238,
+				679,
+				198,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_down_a",
+			"id": "characters/player/farmer/fishing_cast_down_a",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast down a",
+			"opaque_bounds": [
+				9,
+				9,
+				13,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				42,
+				815,
+				171,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_down_b",
+			"id": "characters/player/farmer/fishing_cast_down_b",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast down b",
+			"opaque_bounds": [
+				4,
+				9,
+				24,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				213,
+				815,
+				193,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_up_a",
+			"id": "characters/player/farmer/fishing_cast_up_a",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast up a",
+			"opaque_bounds": [
+				8,
+				9,
+				16,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				406,
+				815,
+				151,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_up_b",
+			"id": "characters/player/farmer/fishing_cast_up_b",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast up b",
+			"opaque_bounds": [
+				4,
+				8,
+				24,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				557,
+				815,
+				178,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_left_a",
+			"id": "characters/player/farmer/fishing_cast_left_a",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast left a",
+			"opaque_bounds": [
+				8,
+				9,
+				15,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				735,
+				815,
+				141,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_left_b",
+			"id": "characters/player/farmer/fishing_cast_left_b",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast left b",
+			"opaque_bounds": [
+				4,
+				11,
+				23,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				876,
+				815,
+				188,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_right_a",
+			"id": "characters/player/farmer/fishing_cast_right_a",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast right a",
+			"opaque_bounds": [
+				8,
+				9,
+				16,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				1064,
+				815,
+				174,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_right_b",
+			"id": "characters/player/farmer/fishing_cast_right_b",
+			"mode": "sprite",
+			"name": "same male farmer fishing cast right b",
+			"opaque_bounds": [
+				3,
+				10,
+				26,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/fishing_cast_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1238,
+				815,
+				198,
+				135
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_down_a",
+			"id": "characters/player/farmer/sit_sleep_faint_down_a",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint down a",
+			"opaque_bounds": [
+				8,
+				11,
+				16,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				42,
+				950,
+				171,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_down_b",
+			"id": "characters/player/farmer/sit_sleep_faint_down_b",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint down b",
+			"opaque_bounds": [
+				7,
+				12,
+				18,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				213,
+				950,
+				193,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_up_a",
+			"id": "characters/player/farmer/sit_sleep_faint_up_a",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint up a",
+			"opaque_bounds": [
+				8,
+				11,
+				15,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				406,
+				950,
+				151,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_up_b",
+			"id": "characters/player/farmer/sit_sleep_faint_up_b",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint up b",
+			"opaque_bounds": [
+				3,
+				18,
+				26,
+				12
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				557,
+				950,
+				178,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				128,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_left_a",
+			"id": "characters/player/farmer/sit_sleep_faint_left_a",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint left a",
+			"opaque_bounds": [
+				8,
+				12,
+				16,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				735,
+				950,
+				141,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				160,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_left_b",
+			"id": "characters/player/farmer/sit_sleep_faint_left_b",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint left b",
+			"opaque_bounds": [
+				2,
+				18,
+				28,
+				12
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				876,
+				950,
+				188,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				192,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_right_a",
+			"id": "characters/player/farmer/sit_sleep_faint_right_a",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint right a",
+			"opaque_bounds": [
+				6,
+				7,
+				19,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				1064,
+				950,
+				174,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+			"atlas_region": [
+				224,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_right_b",
+			"id": "characters/player/farmer/sit_sleep_faint_right_b",
+			"mode": "sprite",
+			"name": "same male farmer sit sleep faint right b",
+			"opaque_bounds": [
+				8,
+				9,
+				15,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer/sit_sleep_faint_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_1.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1238,
+				950,
+				198,
+				136
+			],
+			"source_sheet": "player_actions_1"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "735571329875db463b39e8f1d30d5e4785042ff7e0d215635c4f62ab0662b0f9",
+	"sheet": {
+		"category": "characters/player",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 8,
+		"count": 64,
+		"id": "player_actions_1",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/player_actions_1.png",
+		"rows": 8,
+		"source": "res://art/sources/content_v1/player_actions_1.png"
+	},
+	"source_hash": "65d10f94beb66dd96520d00248b08d39"
+}

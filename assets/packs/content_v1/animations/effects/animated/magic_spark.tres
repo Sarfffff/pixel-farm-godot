@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/magic_spark/f0.png" id="1_lboxo"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/magic_spark/f1.png" id="2_4dtr8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/magic_spark/f2.png" id="3_u8ero"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/magic_spark/f3.png" id="4_mk5ya"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lboxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4dtr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u8ero")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mk5ya")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

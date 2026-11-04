@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/graze_left_a.png" id="1_mh6cm"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/graze_left_b.png" id="2_4dl5a"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/idle_down.png" id="3_cicis"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/idle_left.png" id="4_pmjnh"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/idle_right.png" id="5_mmsh8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/idle_up.png" id="6_gne25"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/walk_left_a.png" id="7_yfimf"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/pig/walk_left_b.png" id="8_v5sru"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mh6cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4dl5a")
+}],
+"loop": 1,
+"name": &"graze_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cicis")
+}],
+"loop": 0,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pmjnh")
+}],
+"loop": 0,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mmsh8")
+}],
+"loop": 0,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gne25")
+}],
+"loop": 0,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yfimf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v5sru")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}]

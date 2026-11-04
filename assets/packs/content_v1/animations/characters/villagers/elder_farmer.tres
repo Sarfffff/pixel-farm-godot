@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/down_a.png" id="1_una17"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/down_b.png" id="2_avep6"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/left_a.png" id="3_mcsoc"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/left_b.png" id="4_8cfdo"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/right_a.png" id="5_av21m"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/right_b.png" id="6_qlira"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/up_a.png" id="7_twu1j"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/elder_farmer/up_b.png" id="8_uoded"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_una17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_avep6")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mcsoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8cfdo")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_av21m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qlira")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_twu1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uoded")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/down_a.png" id="1_fm11m"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/down_b.png" id="2_ru5tk"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/left_a.png" id="3_ljjs3"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/left_b.png" id="4_78mj5"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/right_a.png" id="5_d283b"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/right_b.png" id="6_faomt"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/up_a.png" id="7_dbply"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/old_mariner/up_b.png" id="8_jbbve"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fm11m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ru5tk")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ljjs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_78mj5")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d283b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_faomt")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_dbply")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jbbve")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

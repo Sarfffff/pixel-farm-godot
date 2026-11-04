@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_cfm2n"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/river_pebbles.png" id="2_p26f2"]
+
+[resource]
+script = ExtResource("1_cfm2n")
+id = &"river_pebbles"
+display_name = "河滩卵石"
+texture = ExtResource("2_p26f2")
+tool_hint = "拾取"
+planned_drop = &"stone"
+region_tags = Array[StringName]([&"wetland", &"beach"])

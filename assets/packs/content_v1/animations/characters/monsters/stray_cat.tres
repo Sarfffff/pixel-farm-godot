@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/stray_cat/attack.png" id="1_74xwq"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/stray_cat/idle.png" id="2_7iad6"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/stray_cat/move_a.png" id="3_rqb04"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/stray_cat/move_b.png" id="4_ksg2i"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_74xwq")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7iad6")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rqb04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ksg2i")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

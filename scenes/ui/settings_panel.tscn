@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://scripts/ui/settings_panel.gd" id="1_settings"]
-[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://scripts/ui/menus/settings_panel.gd" id="1_settings"]
+[ext_resource type="Theme" path="res://assets/ui/farm_hud.tres" id="2_theme"]
 
 [sub_resource type="SystemFont" id="SystemFont_ui"]
 font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
@@ -46,7 +46,7 @@ theme_override_constants/separation = 5
 
 [node name="Title" type="Label" parent="Frame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 9
 text = "设置"
@@ -59,7 +59,7 @@ theme_override_constants/separation = 4
 [node name="MusicLabel" type="Label" parent="Frame/VBox/MusicRow"]
 layout_mode = 2
 custom_minimum_size = Vector2(42, 0)
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "音乐"
@@ -77,7 +77,7 @@ value = 70.0
 unique_name_in_owner = true
 layout_mode = 2
 custom_minimum_size = Vector2(30, 0)
-theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "70%"
@@ -90,7 +90,7 @@ theme_override_constants/separation = 4
 [node name="SfxLabel" type="Label" parent="Frame/VBox/SfxRow"]
 layout_mode = 2
 custom_minimum_size = Vector2(42, 0)
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "音效"
@@ -108,7 +108,7 @@ value = 80.0
 unique_name_in_owner = true
 layout_mode = 2
 custom_minimum_size = Vector2(30, 0)
-theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "80%"
@@ -117,14 +117,14 @@ horizontal_alignment = 2
 [node name="WindowButton" type="Button" parent="Frame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 8
 text = "窗口模式：窗口"
 
 [node name="CloseButton" type="Button" parent="Frame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 8
 text = "返回"
@@ -132,7 +132,7 @@ text = "返回"
 [node name="Hint" type="Label" parent="Frame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "设置会立即生效并保存在本地"

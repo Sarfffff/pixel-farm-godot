@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/steam/f0.png" id="1_p47gn"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/steam/f1.png" id="2_py0jf"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/steam/f2.png" id="3_uc8c5"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/steam/f3.png" id="4_hg7or"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p47gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_py0jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uc8c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hg7or")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

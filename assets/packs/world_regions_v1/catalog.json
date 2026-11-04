@@ -1,0 +1,342 @@
+{
+	"alpha": "binary",
+	"entries": [
+		{
+			"path": "terrain/spring_grass.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/grass_variant.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/meadow_grass.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/forest_floor.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/bare_dirt.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/fertile_dirt.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/earth_path.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/cobblestone.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/sand.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/sand_variant.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/quarry_gravel.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/slate_gravel.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/shallow_water.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/deep_water.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/marsh_ground.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain/moist_earth.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "terrain_atlas.png",
+			"size": [
+				64,
+				64
+			]
+		},
+		{
+			"path": "resources/twig.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/branch_pile.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/stump.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/fallen_log.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/hardwood_stump.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/sapling.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/small_stone.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/field_rock.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/boulder.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/copper_node.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/iron_node.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/coal_node.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/weeds.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/fern.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/pasture_grass.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/pink_flower.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/yellow_flower.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/red_mushroom.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/brown_mushroom.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/wild_root.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/berry_bush.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/reeds.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/shell.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/river_pebbles.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "resources/oak_tree.png",
+			"size": [
+				64,
+				64
+			]
+		},
+		{
+			"path": "resources/pine_tree.png",
+			"size": [
+				64,
+				64
+			]
+		},
+		{
+			"path": "resources/birch_tree.png",
+			"size": [
+				64,
+				64
+			]
+		},
+		{
+			"path": "resources/willow_tree.png",
+			"size": [
+				64,
+				64
+			]
+		},
+		{
+			"path": "resources_atlas.png",
+			"size": [
+				192,
+				128
+			]
+		},
+		{
+			"path": "transition_atlas.png",
+			"size": [
+				1024,
+				1024
+			]
+		}
+	],
+	"generator": "built-in image_gen",
+  "ground_palette": "per-surface low-contrast palette",
+	"sprite_palette_size": 48,
+	"preparation": "tools/art/prepare_world_region_art.gd",
+	"resource_count": 28,
+	"source": "res://art/sources/world_regions_v1/",
+	"terrain_count": 16,
+	"tile_size": 16
+}

@@ -1,0 +1,2709 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_down_a",
+			"id": "characters/player/farmer_female/walk_down_a",
+			"mode": "sprite",
+			"name": "same female farmer walk down a",
+			"opaque_bounds": [
+				7,
+				5,
+				17,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				15,
+				11,
+				145,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_down_b",
+			"id": "characters/player/farmer_female/walk_down_b",
+			"mode": "sprite",
+			"name": "same female farmer walk down b",
+			"opaque_bounds": [
+				7,
+				5,
+				17,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				160,
+				11,
+				168,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_up_a",
+			"id": "characters/player/farmer_female/walk_up_a",
+			"mode": "sprite",
+			"name": "same female farmer walk up a",
+			"opaque_bounds": [
+				7,
+				5,
+				17,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				328,
+				11,
+				143,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_up_b",
+			"id": "characters/player/farmer_female/walk_up_b",
+			"mode": "sprite",
+			"name": "same female farmer walk up b",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				471,
+				11,
+				166,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_left_a",
+			"id": "characters/player/farmer_female/walk_left_a",
+			"mode": "sprite",
+			"name": "same female farmer walk left a",
+			"opaque_bounds": [
+				8,
+				7,
+				16,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				637,
+				11,
+				143,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_left_b",
+			"id": "characters/player/farmer_female/walk_left_b",
+			"mode": "sprite",
+			"name": "same female farmer walk left b",
+			"opaque_bounds": [
+				8,
+				6,
+				16,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				780,
+				11,
+				181,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_right_a",
+			"id": "characters/player/farmer_female/walk_right_a",
+			"mode": "sprite",
+			"name": "same female farmer walk right a",
+			"opaque_bounds": [
+				8,
+				6,
+				15,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				961,
+				11,
+				147,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				0,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "walk_right_b",
+			"id": "characters/player/farmer_female/walk_right_b",
+			"mode": "sprite",
+			"name": "same female farmer walk right b",
+			"opaque_bounds": [
+				8,
+				7,
+				15,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/walk_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1108,
+				11,
+				153,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_down_a",
+			"id": "characters/player/farmer_female/hoe_down_a",
+			"mode": "sprite",
+			"name": "same female farmer hoe down a",
+			"opaque_bounds": [
+				7,
+				5,
+				17,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				15,
+				160,
+				145,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_down_b",
+			"id": "characters/player/farmer_female/hoe_down_b",
+			"mode": "sprite",
+			"name": "same female farmer hoe down b",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				160,
+				160,
+				168,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_up_a",
+			"id": "characters/player/farmer_female/hoe_up_a",
+			"mode": "sprite",
+			"name": "same female farmer hoe up a",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				328,
+				160,
+				143,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_up_b",
+			"id": "characters/player/farmer_female/hoe_up_b",
+			"mode": "sprite",
+			"name": "same female farmer hoe up b",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				471,
+				160,
+				166,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_left_a",
+			"id": "characters/player/farmer_female/hoe_left_a",
+			"mode": "sprite",
+			"name": "same female farmer hoe left a",
+			"opaque_bounds": [
+				5,
+				7,
+				21,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				637,
+				160,
+				143,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_left_b",
+			"id": "characters/player/farmer_female/hoe_left_b",
+			"mode": "sprite",
+			"name": "same female farmer hoe left b",
+			"opaque_bounds": [
+				5,
+				5,
+				21,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				780,
+				160,
+				181,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_right_a",
+			"id": "characters/player/farmer_female/hoe_right_a",
+			"mode": "sprite",
+			"name": "same female farmer hoe right a",
+			"opaque_bounds": [
+				7,
+				7,
+				18,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				961,
+				160,
+				147,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				32,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "hoe_right_b",
+			"id": "characters/player/farmer_female/hoe_right_b",
+			"mode": "sprite",
+			"name": "same female farmer hoe right b",
+			"opaque_bounds": [
+				4,
+				5,
+				23,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/hoe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1108,
+				160,
+				153,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_down_a",
+			"id": "characters/player/farmer_female/axe_down_a",
+			"mode": "sprite",
+			"name": "same female farmer axe down a",
+			"opaque_bounds": [
+				7,
+				5,
+				17,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				15,
+				319,
+				145,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_down_b",
+			"id": "characters/player/farmer_female/axe_down_b",
+			"mode": "sprite",
+			"name": "same female farmer axe down b",
+			"opaque_bounds": [
+				6,
+				4,
+				19,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				160,
+				319,
+				168,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_up_a",
+			"id": "characters/player/farmer_female/axe_up_a",
+			"mode": "sprite",
+			"name": "same female farmer axe up a",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				328,
+				319,
+				143,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_up_b",
+			"id": "characters/player/farmer_female/axe_up_b",
+			"mode": "sprite",
+			"name": "same female farmer axe up b",
+			"opaque_bounds": [
+				6,
+				4,
+				19,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				471,
+				319,
+				166,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_left_a",
+			"id": "characters/player/farmer_female/axe_left_a",
+			"mode": "sprite",
+			"name": "same female farmer axe left a",
+			"opaque_bounds": [
+				6,
+				6,
+				19,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				637,
+				319,
+				143,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_left_b",
+			"id": "characters/player/farmer_female/axe_left_b",
+			"mode": "sprite",
+			"name": "same female farmer axe left b",
+			"opaque_bounds": [
+				5,
+				3,
+				21,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				780,
+				319,
+				181,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_right_a",
+			"id": "characters/player/farmer_female/axe_right_a",
+			"mode": "sprite",
+			"name": "same female farmer axe right a",
+			"opaque_bounds": [
+				7,
+				6,
+				18,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				961,
+				319,
+				147,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				64,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "axe_right_b",
+			"id": "characters/player/farmer_female/axe_right_b",
+			"mode": "sprite",
+			"name": "same female farmer axe right b",
+			"opaque_bounds": [
+				5,
+				4,
+				21,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/axe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1108,
+				319,
+				153,
+				163
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_down_a",
+			"id": "characters/player/farmer_female/pickaxe_down_a",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe down a",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				15,
+				482,
+				145,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_down_b",
+			"id": "characters/player/farmer_female/pickaxe_down_b",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe down b",
+			"opaque_bounds": [
+				6,
+				5,
+				19,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				160,
+				482,
+				168,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_up_a",
+			"id": "characters/player/farmer_female/pickaxe_up_a",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe up a",
+			"opaque_bounds": [
+				8,
+				7,
+				16,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				328,
+				482,
+				143,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_up_b",
+			"id": "characters/player/farmer_female/pickaxe_up_b",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe up b",
+			"opaque_bounds": [
+				6,
+				5,
+				19,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				471,
+				482,
+				166,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_left_a",
+			"id": "characters/player/farmer_female/pickaxe_left_a",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe left a",
+			"opaque_bounds": [
+				6,
+				7,
+				19,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				637,
+				482,
+				143,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_left_b",
+			"id": "characters/player/farmer_female/pickaxe_left_b",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe left b",
+			"opaque_bounds": [
+				6,
+				5,
+				20,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				780,
+				482,
+				181,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_right_a",
+			"id": "characters/player/farmer_female/pickaxe_right_a",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe right a",
+			"opaque_bounds": [
+				7,
+				8,
+				17,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				961,
+				482,
+				147,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				96,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "pickaxe_right_b",
+			"id": "characters/player/farmer_female/pickaxe_right_b",
+			"mode": "sprite",
+			"name": "same female farmer pickaxe right b",
+			"opaque_bounds": [
+				5,
+				5,
+				22,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1108,
+				482,
+				153,
+				159
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_down_a",
+			"id": "characters/player/farmer_female/watering_can_down_a",
+			"mode": "sprite",
+			"name": "same female farmer watering can down a",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				15,
+				641,
+				145,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_down_b",
+			"id": "characters/player/farmer_female/watering_can_down_b",
+			"mode": "sprite",
+			"name": "same female farmer watering can down b",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				160,
+				641,
+				168,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_up_a",
+			"id": "characters/player/farmer_female/watering_can_up_a",
+			"mode": "sprite",
+			"name": "same female farmer watering can up a",
+			"opaque_bounds": [
+				7,
+				6,
+				18,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				328,
+				641,
+				143,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_up_b",
+			"id": "characters/player/farmer_female/watering_can_up_b",
+			"mode": "sprite",
+			"name": "same female farmer watering can up b",
+			"opaque_bounds": [
+				7,
+				6,
+				17,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				471,
+				641,
+				166,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_left_a",
+			"id": "characters/player/farmer_female/watering_can_left_a",
+			"mode": "sprite",
+			"name": "same female farmer watering can left a",
+			"opaque_bounds": [
+				7,
+				7,
+				18,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				637,
+				641,
+				143,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_left_b",
+			"id": "characters/player/farmer_female/watering_can_left_b",
+			"mode": "sprite",
+			"name": "same female farmer watering can left b",
+			"opaque_bounds": [
+				6,
+				6,
+				20,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				780,
+				641,
+				181,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_right_a",
+			"id": "characters/player/farmer_female/watering_can_right_a",
+			"mode": "sprite",
+			"name": "same female farmer watering can right a",
+			"opaque_bounds": [
+				6,
+				7,
+				19,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				961,
+				641,
+				147,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				128,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "watering_can_right_b",
+			"id": "characters/player/farmer_female/watering_can_right_b",
+			"mode": "sprite",
+			"name": "same female farmer watering can right b",
+			"opaque_bounds": [
+				7,
+				7,
+				18,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/watering_can_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1108,
+				641,
+				153,
+				149
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_down_a",
+			"id": "characters/player/farmer_female/scythe_down_a",
+			"mode": "sprite",
+			"name": "same female farmer scythe down a",
+			"opaque_bounds": [
+				6,
+				6,
+				19,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				15,
+				790,
+				145,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_down_b",
+			"id": "characters/player/farmer_female/scythe_down_b",
+			"mode": "sprite",
+			"name": "same female farmer scythe down b",
+			"opaque_bounds": [
+				5,
+				7,
+				22,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				160,
+				790,
+				168,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_up_a",
+			"id": "characters/player/farmer_female/scythe_up_a",
+			"mode": "sprite",
+			"name": "same female farmer scythe up a",
+			"opaque_bounds": [
+				6,
+				7,
+				20,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				328,
+				790,
+				143,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_up_b",
+			"id": "characters/player/farmer_female/scythe_up_b",
+			"mode": "sprite",
+			"name": "same female farmer scythe up b",
+			"opaque_bounds": [
+				5,
+				6,
+				22,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				471,
+				790,
+				166,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_left_a",
+			"id": "characters/player/farmer_female/scythe_left_a",
+			"mode": "sprite",
+			"name": "same female farmer scythe left a",
+			"opaque_bounds": [
+				5,
+				7,
+				22,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				637,
+				790,
+				143,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_left_b",
+			"id": "characters/player/farmer_female/scythe_left_b",
+			"mode": "sprite",
+			"name": "same female farmer scythe left b",
+			"opaque_bounds": [
+				5,
+				6,
+				21,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				780,
+				790,
+				181,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_right_a",
+			"id": "characters/player/farmer_female/scythe_right_a",
+			"mode": "sprite",
+			"name": "same female farmer scythe right a",
+			"opaque_bounds": [
+				6,
+				7,
+				20,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				961,
+				790,
+				147,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				160,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "scythe_right_b",
+			"id": "characters/player/farmer_female/scythe_right_b",
+			"mode": "sprite",
+			"name": "same female farmer scythe right b",
+			"opaque_bounds": [
+				4,
+				6,
+				23,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/scythe_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1108,
+				790,
+				153,
+				155
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_down_a",
+			"id": "characters/player/farmer_female/fishing_cast_down_a",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast down a",
+			"opaque_bounds": [
+				7,
+				7,
+				18,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				15,
+				945,
+				145,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_down_b",
+			"id": "characters/player/farmer_female/fishing_cast_down_b",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast down b",
+			"opaque_bounds": [
+				4,
+				9,
+				23,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				160,
+				945,
+				168,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_up_a",
+			"id": "characters/player/farmer_female/fishing_cast_up_a",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast up a",
+			"opaque_bounds": [
+				7,
+				7,
+				17,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				328,
+				945,
+				143,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_up_b",
+			"id": "characters/player/farmer_female/fishing_cast_up_b",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast up b",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				471,
+				945,
+				166,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_left_a",
+			"id": "characters/player/farmer_female/fishing_cast_left_a",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast left a",
+			"opaque_bounds": [
+				8,
+				8,
+				15,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				637,
+				945,
+				143,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_left_b",
+			"id": "characters/player/farmer_female/fishing_cast_left_b",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast left b",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				780,
+				945,
+				181,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_right_a",
+			"id": "characters/player/farmer_female/fishing_cast_right_a",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast right a",
+			"opaque_bounds": [
+				8,
+				7,
+				15,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				961,
+				945,
+				147,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				192,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "fishing_cast_right_b",
+			"id": "characters/player/farmer_female/fishing_cast_right_b",
+			"mode": "sprite",
+			"name": "same female farmer fishing cast right b",
+			"opaque_bounds": [
+				3,
+				9,
+				25,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1108,
+				945,
+				153,
+				148
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_down_a",
+			"id": "characters/player/farmer_female/sit_sleep_faint_down_a",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint down a",
+			"opaque_bounds": [
+				7,
+				10,
+				17,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				15,
+				1093,
+				145,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_down_b",
+			"id": "characters/player/farmer_female/sit_sleep_faint_down_b",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint down b",
+			"opaque_bounds": [
+				7,
+				10,
+				18,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				160,
+				1093,
+				168,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_up_a",
+			"id": "characters/player/farmer_female/sit_sleep_faint_up_a",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint up a",
+			"opaque_bounds": [
+				7,
+				11,
+				17,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				328,
+				1093,
+				143,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_up_b",
+			"id": "characters/player/farmer_female/sit_sleep_faint_up_b",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint up b",
+			"opaque_bounds": [
+				6,
+				15,
+				20,
+				15
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				471,
+				1093,
+				166,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				128,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_left_a",
+			"id": "characters/player/farmer_female/sit_sleep_faint_left_a",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint left a",
+			"opaque_bounds": [
+				7,
+				11,
+				18,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				637,
+				1093,
+				143,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				160,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_left_b",
+			"id": "characters/player/farmer_female/sit_sleep_faint_left_b",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint left b",
+			"opaque_bounds": [
+				5,
+				16,
+				21,
+				14
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				780,
+				1093,
+				181,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				192,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_right_a",
+			"id": "characters/player/farmer_female/sit_sleep_faint_right_a",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint right a",
+			"opaque_bounds": [
+				8,
+				11,
+				15,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				961,
+				1093,
+				147,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "farmer_female",
+			"atlas": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+			"atlas_region": [
+				224,
+				224,
+				32,
+				32
+			],
+			"category": "characters/player",
+			"frame": "sit_sleep_faint_right_b",
+			"id": "characters/player/farmer_female/sit_sleep_faint_right_b",
+			"mode": "sprite",
+			"name": "same female farmer sit sleep faint right b",
+			"opaque_bounds": [
+				4,
+				9,
+				23,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/player_actions_2.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1108,
+				1093,
+				153,
+				146
+			],
+			"source_sheet": "player_actions_2"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "6d4307e931a9a0615fa0a0009c0f62605b7a04c9aa6628fb79fb57c763729e5e",
+	"sheet": {
+		"category": "characters/player",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 8,
+		"count": 64,
+		"id": "player_actions_2",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/player_actions_2.png",
+		"rows": 8,
+		"source": "res://art/sources/content_v1/player_actions_2.png"
+	},
+	"source_hash": "c685e6d5b54b089c7d00f1c454b11599"
+}

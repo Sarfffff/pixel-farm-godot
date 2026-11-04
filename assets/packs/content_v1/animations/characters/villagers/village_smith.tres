@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/down_a.png" id="1_l4805"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/down_b.png" id="2_m52rg"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/left_a.png" id="3_54t18"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/left_b.png" id="4_sg6ys"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/right_a.png" id="5_c4tv8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/right_b.png" id="6_ic1ix"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/up_a.png" id="7_mpd6b"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/village_smith/up_b.png" id="8_jbvpw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l4805")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m52rg")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_54t18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sg6ys")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c4tv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ic1ix")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mpd6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jbvpw")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

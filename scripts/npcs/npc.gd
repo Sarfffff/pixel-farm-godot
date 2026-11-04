@@ -2,11 +2,11 @@ class_name VillageNpc
 extends Sprite2D
 ## 会走路的村民：按日程在格坐标之间寻路，走到玩家身边按 E 多句对话。
 ##
-## 贴图是 4 帧四向表（0 下 / 1 上 / 2 左 / 3 右），与玩家图集同一套朝向约定。
+## 贴图是 3 列 × 4 行：列为站姿/左脚/右脚，行为下/上/左/右。
 ## 移动不走物理：沿 A* 路径逐点靠拢，避免静态碰撞体被"拖着走"造成推挤。
 ## NPC 不挡玩家（没有碰撞体），这是刻意的：小体量农场里被 NPC 堵路比穿过去更烦。
 ##
-## 依赖 Farm/Nav（scripts/world/nav_grid.gd）提供的网格寻路。
+## 依赖 Farm/Nav（scripts/world/navigation/nav_grid.gd）提供的网格寻路。
 
 const INTERACT_RADIUS: float = 26.0
 ## 帧序：0 下 / 1 上 / 2 左 / 3 右
@@ -16,6 +16,9 @@ const FRAME_LEFT: int = 2
 const FRAME_RIGHT: int = 3
 ## 距离路点小于这个值就认为到了
 const ARRIVE_EPSILON: float = 2.0
+## 按实际位移推进步态，慢走不会原地快速踏步；每四拍完成一次左右脚循环。
+const WALK_STEP_DISTANCE: float = 3.5
+const WALK_COLUMNS: Array[int] = [1, 0, 2, 0]
 
 @export var display_name: String = "村民"
 ## 好感度用的唯一 id（留空则不参与好感系统）
@@ -38,6 +41,9 @@ var _path_index: int = 0
 var _wait_left: float = 0.0
 var _route_index: int = -1
 var _rng := RandomNumberGenerator.new()
+var _facing: int = FRAME_DOWN
+var _walk_distance: float = 0.0
+var _walking: bool = false
 
 
 func _ready() -> void:
@@ -58,14 +64,18 @@ func _bind_nav() -> void:
 
 func _physics_process(delta: float) -> void:
 	if stationary or _nav == null:
+		_stop_walking()
 		return
 	if _is_interrupted():
+		_stop_walking()
 		return
 	if _wait_left > 0.0:
 		_wait_left -= delta
+		_stop_walking()
 		return
 	if _path.is_empty():
 		_plan_next_target()
+		_stop_walking()
 		return
 	_follow_path(delta)
 
@@ -110,29 +120,42 @@ func _repath_to(cell: Vector2i) -> void:
 
 
 func _follow_path(delta: float) -> void:
+	# 同一帧跳过已抵达路点，转弯时不插入一帧站姿。
+	while _path_index < _path.size() and global_position.distance_to(_path[_path_index]) <= ARRIVE_EPSILON:
+		_path_index += 1
 	if _path_index >= _path.size():
 		_path.clear()
 		_wait_left = wait_seconds
+		_stop_walking()
 		return
-	var target: Vector2 = _path[_path_index]
-	var to_target: Vector2 = target - global_position
-	if to_target.length() <= ARRIVE_EPSILON:
-		_path_index += 1
+	var to_target: Vector2 = _path[_path_index] - global_position
+	var distance: float = minf(maxf(move_speed, 0.0) * delta, to_target.length())
+	if distance <= 0.0:
+		_stop_walking()
 		return
 	_update_facing(to_target)
-	global_position += to_target.normalized() * minf(move_speed * delta, to_target.length())
+	global_position += to_target.normalized() * distance
+	_walking = true
+	_walk_distance = fposmod(_walk_distance + distance, WALK_STEP_DISTANCE * WALK_COLUMNS.size())
+	frame_coords = Vector2i(WALK_COLUMNS[int(_walk_distance / WALK_STEP_DISTANCE)], _facing)
 
 
 func _update_facing(direction: Vector2) -> void:
 	if absf(direction.x) >= absf(direction.y):
-		frame = FRAME_RIGHT if direction.x > 0.0 else FRAME_LEFT
+		_facing = FRAME_RIGHT if direction.x > 0.0 else FRAME_LEFT
 	else:
-		frame = FRAME_DOWN if direction.y > 0.0 else FRAME_UP
+		_facing = FRAME_DOWN if direction.y > 0.0 else FRAME_UP
+
+
+func _stop_walking() -> void:
+	_walking = false
+	_walk_distance = 0.0
+	frame_coords = Vector2i(0, _facing)
 
 
 ## 当前是否在沿路径移动（自检与调试用）。
 func is_walking() -> bool:
-	return not _path.is_empty() and _path_index < _path.size()
+	return _walking
 
 
 func player_in_range(player: Node2D) -> bool:

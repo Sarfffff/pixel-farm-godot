@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dr0afcyde7i1p"]
 
-[ext_resource type="Theme" path="res://assets/generated/ui/farm_hud.tres" id="1"]
-[ext_resource type="Script" path="res://scripts/ui/inventory_panel.gd" id="2"]
+[ext_resource type="Theme" path="res://assets/ui/farm_hud.tres" id="1"]
+[ext_resource type="Script" path="res://scripts/ui/panels/inventory_panel.gd" id="2"]
 
 [node name="InventoryPanel" type="Control"]
 visible = false

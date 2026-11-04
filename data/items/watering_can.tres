@@ -1,8 +1,8 @@
 [gd_resource type="Resource" format=3]
 
 [ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
-[ext_resource type="Texture2D" path="res://assets/generated/items/tool_watering_can.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/generated/items/tool_copper_watering_can.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/textures/items/tool_watering_can.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/textures/items/tool_copper_watering_can.png" id="3"]
 
 [resource]
 script = ExtResource("1")

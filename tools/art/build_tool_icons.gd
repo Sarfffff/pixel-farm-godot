@@ -42,7 +42,7 @@ func _init() -> void:
 				var code: String = rows[y][x]
 				if COLORS.has(code):
 					image.set_pixel(x, y, COLORS[code])
-		image.save_png("res://assets/generated/items/tool_%s.png" % id)
+		image.save_png("res://assets/textures/items/tool_%s.png" % id)
 		preview.blit_rect(image, Rect2i(0, 0, 16, 16), Vector2i(index * 16, 0))
 		if id == "watering_can":
 			var copper: Image = image.duplicate()
@@ -53,9 +53,9 @@ func _init() -> void:
 						copper.set_pixel(x, y, Color("936b49"))
 					elif color == COLORS["G"]:
 						copper.set_pixel(x, y, Color("d19a65"))
-			copper.save_png("res://assets/generated/items/tool_copper_watering_can.png")
+			copper.save_png("res://assets/textures/items/tool_copper_watering_can.png")
 		index += 1
-	var pickaxe := Image.load_from_file("res://assets/generated/items/stone_pickaxe.png")
+	var pickaxe := Image.load_from_file("res://assets/textures/items/stone_pickaxe.png")
 	preview.blit_rect(pickaxe, Rect2i(0, 0, 16, 16), Vector2i(48, 0))
 	preview.resize(768, 192, Image.INTERPOLATE_NEAREST)
 	# 预览目录不入库，先确保存在

@@ -1,8 +1,8 @@
 extends RefCounted
 ## 只拼接原素材的 8×8 象限，不重绘或缩放像素；256 邻域覆盖凹角与窄岸。
 
-const SHORE_PATH: String = "res://assets/generated/terrain/river_shore_atlas.png"
-const BRIDGE_PATH: String = "res://assets/generated/terrain/river_bridge_atlas.png"
+const SHORE_PATH: String = "res://assets/textures/terrain/river_shore_atlas.png"
+const BRIDGE_PATH: String = "res://assets/textures/terrain/river_bridge_atlas.png"
 const NEIGHBORS: Array[Vector2i] = [
 	Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT,
 	Vector2i(-1, -1), Vector2i(1, -1), Vector2i(1, 1), Vector2i(-1, 1),
@@ -10,7 +10,7 @@ const NEIGHBORS: Array[Vector2i] = [
 
 
 static func make_shore_image() -> Image:
-	var grass: Image = load("res://assets/game/tilesets/grass.png").get_image()
+	var grass: Image = load("res://assets/textures/base/tilesets/grass.png").get_image()
 	var atlas: Image = Image.create(256, 256, false, Image.FORMAT_RGBA8)
 	atlas.fill(Color.TRANSPARENT)
 	for mask: int in 256:
@@ -29,7 +29,7 @@ static func make_shore_image() -> Image:
 
 
 static func make_bridge_image() -> Image:
-	var original: Image = load("res://assets/game/objects/wood_bridge.png").get_image()
+	var original: Image = load("res://assets/textures/base/objects/wood_bridge.png").get_image()
 	var atlas: Image = Image.create(80, 48, false, Image.FORMAT_RGBA8)
 	atlas.fill(Color.TRANSPARENT)
 	# 原图的每行/列是独立的窄桥。保留两侧护栏，只重复内部木板来加宽。
@@ -50,7 +50,7 @@ static func make_tileset(base: TileSet) -> TileSet:
 		if result.has_source(id):
 			result.remove_source(id)
 	var water: TileSetAtlasSource = TileSetAtlasSource.new()
-	water.texture = load("res://assets/game/tilesets/water.png") as Texture2D
+	water.texture = load("res://assets/textures/base/tilesets/water.png") as Texture2D
 	water.create_tile(Vector2i.ZERO)
 	water.set_tile_animation_columns(Vector2i.ZERO, 4)
 	water.set_tile_animation_frames_count(Vector2i.ZERO, 4)
@@ -62,8 +62,8 @@ static func make_tileset(base: TileSet) -> TileSet:
 		Vector2(-8, -8), Vector2(8, -8), Vector2(8, 8), Vector2(-8, 8),
 	]))
 	_add_atlas(result, 3, SHORE_PATH)
-	_add_atlas(result, 4, "res://assets/game/objects/paths.png")
-	_add_atlas(result, 5, "res://assets/game/tilesets/hills.png")
+	_add_atlas(result, 4, "res://assets/textures/base/objects/paths.png")
+	_add_atlas(result, 5, "res://assets/textures/base/tilesets/hills.png")
 	_add_atlas(result, 6, BRIDGE_PATH)
 	return result
 

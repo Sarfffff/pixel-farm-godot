@@ -37,6 +37,8 @@ func _mouse(position: Vector2, pressed: int = -1) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	root.size = Vector2i(1600, 900)
 	root.content_scale_size = Vector2i(640, 360)
 	root.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
@@ -188,4 +190,4 @@ func _run() -> void:
 	_main.queue_free()
 	await _settle()
 	print("[hotbar_camera] shared items, categories, drag/drop, migration, camera; %d failures" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/shadow_wisp/attack.png" id="1_pucgi"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/shadow_wisp/idle.png" id="2_8ynqh"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/shadow_wisp/move_a.png" id="3_wb72t"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/shadow_wisp/move_b.png" id="4_gqom2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pucgi")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8ynqh")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wb72t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gqom2")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

@@ -9,7 +9,8 @@ extends SceneTree
 
 const OUT_SCENE := "res://scenes/world/house_interior.tscn"
 const TILESET := "res://assets/tilesets/house_terrain.tres"
-const ART := "res://assets/generated/content_v1/"
+const ART := "res://assets/packs/content_v1/"
+const PRESENTATION_ART := "res://assets/packs/presentation_v3/"
 
 ## 房屋尺寸（格）。27×19 = 432×304：
 ## 宽度刚好卡住相机的最小缩放（zoom≈1.5），高度比画面高一点，
@@ -89,7 +90,7 @@ func _init() -> void:
 func _build() -> Node2D:
 	var room := Node2D.new()
 	room.name = "HouseInterior"
-	room.set_script(load("res://scripts/world/interior_room.gd") as Script)
+	room.set_script(load("res://scripts/world/interiors/interior_room.gd") as Script)
 	room.set("camera_bounds", Rect2(0, 0, ROOM_W * 16, (ROOM_H + EXTRA_WALL_ROWS) * 16))
 
 	var floor_layer := _make_layer("Floor", 0)
@@ -126,7 +127,7 @@ func _build() -> Node2D:
 func _add_chest(room: Node2D) -> void:
 	var chest := Node2D.new()
 	chest.name = "Chest"
-	chest.set_script(load("res://scripts/world/chest_access.gd") as Script)
+	chest.set_script(load("res://scripts/world/interiors/chest_access.gd") as Script)
 	# 木箱贴图在 (152, 262)，交互点落在箱子上
 	chest.position = Vector2(152, 254)
 	room.add_child(chest)
@@ -137,7 +138,7 @@ func _add_chest(room: Node2D) -> void:
 func _add_sleep_spot(room: Node2D) -> void:
 	var spot := Node2D.new()
 	spot.name = "BedSpot"
-	spot.set_script(load("res://scripts/world/sleep_spot.gd") as Script)
+	spot.set_script(load("res://scripts/world/interiors/sleep_spot.gd") as Script)
 	# 床在 (56, 96)，脚底往下 10px 就是床脚站位（半径 24，离开床头就睡不了）
 	spot.position = Vector2(56, 106)
 	room.add_child(spot)
@@ -222,10 +223,20 @@ func _add_wall_body(room: Node2D) -> void:
 
 
 ## 地毯 / 地垫：固定 z 值，不参与 Y 排序，永远压在角色脚下。
+func _art_path(original: String) -> String:
+	if original == "objects/craftables/wood_chest.png":
+		return PRESENTATION_ART + "objects/chest_closed.png"
+	if original.begins_with("objects/furniture/"):
+		var name: String = original.get_file()
+		if name == "door_mat.png": name = "oval_rug.png"
+		return PRESENTATION_ART + "furniture/" + name
+	return ART + original
+
+
 func _add_flat_props(layer: Node2D, room: Node2D) -> void:
 	for entry: Array in FLOOR_PROPS:
 		var sprite := Sprite2D.new()
-		var path: String = ART + String(entry[0])
+		var path: String = _art_path(String(entry[0]))
 		sprite.name = String(entry[0]).get_file().get_basename().to_pascal_case()
 		sprite.texture = load(path) as Texture2D
 		if sprite.texture == null:
@@ -243,7 +254,7 @@ func _add_flat_props(layer: Node2D, room: Node2D) -> void:
 func _add_furniture(props: Node2D, room: Node2D) -> void:
 	for entry: Array in FURNITURE:
 		var sprite := Sprite2D.new()
-		var path: String = ART + String(entry[0])
+		var path: String = _art_path(String(entry[0]))
 		sprite.name = String(entry[0]).get_file().get_basename().to_pascal_case()
 		sprite.texture = load(path) as Texture2D
 		if sprite.texture == null:
@@ -283,7 +294,7 @@ func _add_blocker(sprite: Sprite2D, size: Vector2, room: Node2D) -> void:
 func _add_door(room: Node2D) -> void:
 	var door := Node2D.new()
 	door.name = "ExitDoor"
-	door.set_script(load("res://scripts/world/house_door.gd") as Script)
+	door.set_script(load("res://scripts/world/interiors/house_door.gd") as Script)
 	door.set("mode", &"exit")
 	door.position = Vector2(
 		(float(DOOR_COLUMNS[0]) + float(DOOR_COLUMNS.size()) * 0.5) * 16.0,

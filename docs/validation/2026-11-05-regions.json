@@ -1,0 +1,259 @@
+{
+  "date": "2026-11-05",
+  "scope": "Formal six-region travel, harvesting, ground drops, regeneration and optional save section",
+  "full_regression": {
+    "command": "pwsh -NoProfile -File tools/run_checks.ps1 -TimeoutSeconds 180",
+    "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_003ae25e625442e79c37051e823f5fc7",
+    "passed": 33,
+    "failed": 0,
+    "results": [
+      {
+        "Suite": "check_animals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_architecture",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_audio",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_basic_loop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_berries",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_calendar",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_compilation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_content_art",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_crops",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_activities",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_interactions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_terrain",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_friendship",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_goals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_held_tools",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_house",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_interior_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory_hotbar_camera",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_npcs",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pause",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pickaxe",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_presentation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_progression",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_region_gameplay",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_release",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_save_validation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_settings",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_shop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_survival",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_ui_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_world_regions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "smoke_check",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ],
+    "note": "Immutable snapshot before final tree-foot drop offset and legal edge coordinate clamp; those final changes are covered by the later native run."
+  },
+  "native_final": {
+    "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_region_gameplay,check_basic_loop -Windowed -Preview -TimeoutSeconds 180",
+    "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_2754f766f7574e438b27364b3556c8ee",
+    "renderer": "OpenGL Compatibility / NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "region_checks": 333,
+    "results": [
+      {
+        "Suite": "check_basic_loop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_region_gameplay",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ],
+    "screenshots": [
+      "docs/screenshots/regions/regions_ground_drop.png",
+      "docs/screenshots/regions/regions_quarry_restored.png",
+      "docs/screenshots/regions/regions_forest.png"
+    ],
+    "visual_review": "Three regional captures inspected: terrain, player, portals, region labels, toolbar and feedback readable."
+  },
+  "save_contract": {
+    "format": 2,
+    "optional_section": "regions",
+    "section_schema": 1,
+    "old_save": "Missing section resets new regions and returns to original farm without changing planted crop data",
+    "restored": [
+      "active region",
+      "regional position",
+      "original farm return point",
+      "resource damage",
+      "regeneration date",
+      "drop generation",
+      "uncollected ground bundles"
+    ],
+    "real_player_saves_accessed": false
+  },
+  "limitations": [
+    "Automated real-window control does not close B0 new-player keyboard/mouse acceptance",
+    "New regions currently open, with no story gates or new village services",
+    "Cultivation and sleep remain in the original farmhouse farm",
+    "Smelting, mineral consumption, equipment occupancy and seasonal regional pools remain planned"
+  ]
+}

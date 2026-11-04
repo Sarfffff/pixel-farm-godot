@@ -1,0 +1,40 @@
+{
+	"alpha": [
+		0,
+		255
+	],
+	"atlas": "res://assets/textures/characters/stone_pickaxe_actions_v1.png",
+	"colors": 16,
+	"columns": [
+		"ready",
+		"windup",
+		"overhead",
+		"impact",
+		"follow_through",
+		"recover"
+	],
+	"feet_y": 23,
+	"frame_size": [
+		32,
+		32
+	],
+	"icon": "res://assets/textures/items/stone_pickaxe.png",
+	"icon_size": [
+		16,
+		16
+	],
+	"impact_frame": 3,
+	"preparation": "Independent AI-drawn pickaxe poses, curated side sequence; left mirrors the new right sequence. No hoe or axe frames used.",
+	"rows": [
+		"down",
+		"up",
+		"left",
+		"right"
+	],
+	"sources": [
+		"stone_pickaxe_actions_source_v1.png",
+		"stone_pickaxe_up_source_v1.png",
+		"stone_pickaxe_side_source_v1.png",
+		"stone_pickaxe_icon_source_v1.png"
+	]
+}

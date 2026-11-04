@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/graze_left_a.png" id="1_8r4ke"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/graze_left_b.png" id="2_j6x1a"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/idle_down.png" id="3_jv504"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/idle_left.png" id="4_vw5su"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/idle_right.png" id="5_w1i0x"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/idle_up.png" id="6_vwfq0"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/walk_left_a.png" id="7_ylepj"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_hen/walk_left_b.png" id="8_oxfuh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8r4ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j6x1a")
+}],
+"loop": 1,
+"name": &"graze_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jv504")
+}],
+"loop": 0,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vw5su")
+}],
+"loop": 0,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_w1i0x")
+}],
+"loop": 0,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vwfq0")
+}],
+"loop": 0,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ylepj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oxfuh")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}]

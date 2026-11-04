@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f0.png" id="1_ip2kk"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f1.png" id="2_uy571"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f2.png" id="3_cxaa0"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f3.png" id="4_rttwb"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f4.png" id="5_d5tdr"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f5.png" id="6_nhwve"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f6.png" id="7_fw5qr"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/pond_frog/f7.png" id="8_tnh1k"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ip2kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uy571")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cxaa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rttwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d5tdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nhwve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fw5qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tnh1k")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

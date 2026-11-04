@@ -1,0 +1,25 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/world_region_data.gd" id="1_4xtyq"]
+
+[resource]
+script = ExtResource("1_4xtyq")
+id = &"forest"
+display_name = "林地与采集区"
+purpose = "木材、蘑菇、野菜、浆果"
+layout = &"forest"
+seed_value = 20261306
+resource_count = 62
+resource_weights = {
+"berry_bush": 4,
+"birch_tree": 2,
+"brown_mushroom": 4,
+"fallen_log": 2,
+"fern": 6,
+"hardwood_stump": 1,
+"oak_tree": 3,
+"pine_tree": 3,
+"red_mushroom": 3,
+"sapling": 3,
+"wild_root": 3
+}

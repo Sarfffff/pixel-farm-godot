@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_yroi1"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/iron_node.png" id="2_tfpew"]
+
+[resource]
+script = ExtResource("1_yroi1")
+id = &"iron_node"
+display_name = "铁矿石"
+texture = ExtResource("2_tfpew")
+blocks_movement = true
+tool_hint = "升级石镐"
+planned_drop = &"iron_ore"
+region_tags = Array[StringName]([&"quarry"])

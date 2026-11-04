@@ -1,0 +1,22 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/world_region_data.gd" id="1_xcx8g"]
+
+[resource]
+script = ExtResource("1_xcx8g")
+id = &"farm"
+display_name = "农田与荒地"
+purpose = "开垦、木石清理、生产扩张"
+layout = &"farm"
+resource_count = 44
+resource_weights = {
+"branch_pile": 3,
+"field_rock": 3,
+"oak_tree": 2,
+"pasture_grass": 5,
+"sapling": 2,
+"small_stone": 5,
+"stump": 2,
+"twig": 5,
+"weeds": 8
+}

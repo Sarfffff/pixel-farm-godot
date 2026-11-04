@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/graze_left_a.png" id="1_7r08u"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/graze_left_b.png" id="2_erty3"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/idle_down.png" id="3_m6wyk"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/idle_left.png" id="4_jgjc1"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/idle_right.png" id="5_r58o3"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/idle_up.png" id="6_cieft"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/walk_left_a.png" id="7_v6ddb"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/goat/walk_left_b.png" id="8_dcoty"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7r08u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_erty3")
+}],
+"loop": 1,
+"name": &"graze_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m6wyk")
+}],
+"loop": 0,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jgjc1")
+}],
+"loop": 0,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r58o3")
+}],
+"loop": 0,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cieft")
+}],
+"loop": 0,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_v6ddb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dcoty")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}]

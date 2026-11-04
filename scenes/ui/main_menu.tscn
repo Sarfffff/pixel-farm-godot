@@ -1,8 +1,8 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
-[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
-[ext_resource type="Script" path="res://scripts/systems/save_system.gd" id="3_save"]
+[ext_resource type="Script" path="res://scripts/ui/menus/main_menu.gd" id="1_menu"]
+[ext_resource type="Theme" path="res://assets/ui/farm_hud.tres" id="2_theme"]
+[ext_resource type="Script" path="res://scripts/persistence/save_system.gd" id="3_save"]
 
 [sub_resource type="SystemFont" id="SystemFont_ui"]
 font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
@@ -47,7 +47,7 @@ theme_override_constants/separation = 5
 
 [node name="Title" type="Label" parent="MainFrame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 14
 text = "小农场"
@@ -55,7 +55,7 @@ horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="MainFrame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "种地 · 浇水 · 收获 · 卖钱"
@@ -64,7 +64,7 @@ horizontal_alignment = 1
 [node name="ContinueButton" type="Button" parent="MainFrame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 8
 text = "继续游戏"
@@ -72,7 +72,7 @@ text = "继续游戏"
 [node name="NewButton" type="Button" parent="MainFrame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 8
 text = "新游戏"
@@ -80,14 +80,14 @@ text = "新游戏"
 [node name="QuitButton" type="Button" parent="MainFrame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 8
 text = "退出"
 
 [node name="Hint" type="Label" parent="MainFrame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.66, 0.5, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "方向键选择 · Enter 确认"
@@ -116,7 +116,7 @@ theme_override_constants/separation = 4
 [node name="SlotTitle" type="Label" parent="SlotFrame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 9
 text = "继续哪个存档？"
@@ -131,7 +131,7 @@ theme_override_constants/separation = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "返回"
@@ -158,7 +158,7 @@ theme_override_constants/separation = 4
 
 [node name="NameTitle" type="Label" parent="NameFrame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 9
 text = "给农场起个名字"
@@ -167,7 +167,7 @@ horizontal_alignment = 1
 [node name="NameInput" type="LineEdit" parent="NameFrame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_colors/caret_color = Color(0.94, 0.88, 0.68, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 8
@@ -183,7 +183,7 @@ theme_override_constants/separation = 6
 [node name="NameConfirm" type="Button" parent="NameFrame/VBox/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "确定"
@@ -191,7 +191,7 @@ text = "确定"
 [node name="NameBack" type="Button" parent="NameFrame/VBox/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "返回"

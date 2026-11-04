@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/down_a.png" id="1_5svug"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/down_b.png" id="2_vpu0q"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/left_a.png" id="3_nvulj"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/left_b.png" id="4_78l77"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/right_a.png" id="5_upv6y"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/right_b.png" id="6_3e2ml"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/up_a.png" id="7_a8vce"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/orchard_apprentice/up_b.png" id="8_go52k"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5svug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vpu0q")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nvulj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_78l77")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_upv6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3e2ml")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_a8vce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_go52k")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

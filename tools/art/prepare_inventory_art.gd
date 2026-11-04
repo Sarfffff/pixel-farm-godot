@@ -1,7 +1,7 @@
 extends SceneTree
 
-const SOURCE: String = "res://assets/generated/sources/inventory_ui_v1.png"
-const OUTPUT: String = "res://assets/generated/ui/inventory/"
+const SOURCE: String = "res://art/sources/base/inventory_ui_v1.png"
+const OUTPUT: String = "res://assets/ui/inventory/"
 const PALETTE: Array[Color] = [
 	Color("302421"), Color("392b2a"), Color("45352f"), Color("564034"),
 	Color("654638"), Color("79553f"), Color("936644"), Color("a7744f"),

@@ -1,5 +1,7 @@
 # CODEBUDDY.md
 
+后续功能开发先阅读 [`docs/04-后续开发总纲.md`](docs/04-后续开发总纲.md)，按第16节任务编号和依赖推进；实现、自动检查、人工验收分开记录。未来范围和优先级以总纲为准，旧版本路线图只作历史参考。
+
 Godot 4.7 小游戏项目（`My_ai_Game`），通过 **Godot AI** 插件（`addons/godot_ai`，v4.3.1）把 Godot 编辑器接入 CodeBuddy 的 MCP，让 AI 能直接读写场景、节点、脚本并运行游戏。
 
 ## 关键文件
@@ -12,47 +14,49 @@ Godot 4.7 小游戏项目（`My_ai_Game`），通过 **Godot AI** 插件（`addo
 | `scenes/world/props/` | 可复用道具场景（小屋、树、灌木、石头、蘑菇、原木），贴图取区见 `docs/01-开发流程与路线图.md` 的素材坐标备忘 |
 | `scenes/player/` | 玩家场景 + `player_frames.tres`（8 个方向动画） |
 | `scripts/player/player.gd` | 四向移动、朝向记忆、动画切换 |
-| `scripts/world/camera_follow.gd` | 相机平滑跟随 + 地图边界限制 |
-| `scripts/world/occlusion_fader.gd` | 角色被建筑/树遮挡时把道具淡到 55% 透明度（挂在 `World` 上） |
-| `scripts/world/farm_tiller.gd` | 耕地系统：面前格高亮、锄地、浇水、九宫格自动连边（挂在 `Farm/Tiller`） |
+| `scripts/presentation/camera_follow.gd` | 相机平滑跟随 + 地图边界限制 |
+| `scripts/presentation/occlusion_fader.gd` | 角色被建筑/树遮挡时把道具淡到 55% 透明度（挂在 `World` 上） |
+| `scripts/world/farming/farm_tiller.gd` | 耕地系统：面前格高亮、锄地、浇水、九宫格自动连边（挂在 `Farm/Tiller`） |
 | `scenes/world/tile_cursor.tscn` | 面前格白色高亮框 |
 | `scenes/ui/toolbar.tscn` | 底部工具栏（H/W/S 三格，订阅 `tool_changed`） |
 | `scripts/data/item_data.gd` + `data/items/` | 物品定义 Resource 与 8 个物品数据（背包扫描该目录） |
-| `scripts/systems/inventory.gd` | 背包系统：24 格堆叠、溢出返回、`changed` / `item_added` 信号（`Main/Systems/Inventory`） |
-| `scenes/ui/inventory_panel.tscn` | 背包面板（6×4 格，`B` 开关，打开时锁玩家输入并收起工具栏；九宫格主题见 `assets/generated/ui/inventory/`） |
+| `scripts/inventory/inventory.gd` | 背包系统：24 格堆叠、溢出返回、`changed` / `item_added` 信号（`Main/Systems/Inventory`） |
+| `scenes/ui/inventory_panel.tscn` | 背包面板（6×4 格，`B` 开关，打开时锁玩家输入并收起工具栏；九宫格主题见 `assets/ui/inventory/`） |
 | `scenes/ui/toast.tscn` | 入包飘字提示（订阅 `item_added`） |
 | `scripts/data/crop_data.gd` + `data/crops/` | 作物定义 Resource 与作物表（4 阶段贴图，耕地脚本扫描该目录） |
-| `scenes/world/crop.tscn` + `scripts/world/crop.gd` | 作物节点：阶段切换、浇水推进、成熟与收获动画 |
+| `scenes/world/crop.tscn` + `scripts/world/farming/crop.gd` | 作物节点：阶段切换、浇水推进、成熟与收获动画 |
 | `assets/tilesets/farm_terrain.tres` | 农场地形 TileSet（source 0 草地 / 1 耕地 / 2 水面） |
-| `assets/game/` | 原始素材包（16×16 像素，只读） |
-| `assets/generated/` | 生成产物：切片贴图、图集、背包 UI 九宫格；`sources/` 存 AI 原始大图，带 `.gdignore` 不参与导入 |
+| `assets/textures/base/` | 原始素材包（16×16 像素，只读） |
+| `assets/README.md` | 游戏资源入口：textures 分类贴图、packs 完整批次、ui 主题、audio、tilesets 和 shaders |
+| `art/README.md` | 原图与提示词、参考包和预览，不参与引擎导入或导出 |
+| `scripts/README.md` | 运行时代码按业务职责分类的索引 |
 | `tools/README.md` | 离线工具脚本索引（每个脚本的作用与运行命令） |
 | `tools/build/` | `build_farm_map.gd` 地图生成器、`build_player_frames.gd` 动画帧生成器、`build_bgm.gd` BGM 波表合成器 |
-| `scripts/systems/economy.gd` | 金币系统（初始 500、`spend` 不足不改数、`coins_gained` 飘字），挂在 `Main/Systems/Economy` |
+| `scripts/economy/economy.gd` | 金币系统（初始 500、`spend` 不足不改数、`coins_gained` 飘字），挂在 `Main/Systems/Economy` |
 | `scenes/ui/hud.tscn` | 右上角金币条（订阅 `economy`，收入飘 `+N`） |
 | `scenes/ui/shop_panel.tscn` | 农场商店：左买种子、右卖背包货，商品来自物品表 `buy_price`/`sell_price` |
 | `scenes/npcs/shopkeeper.tscn` + `scripts/npcs/shopkeeper.gd` | 杂货铺老板：脚底碰撞、固定朝下、靠近按 `E` 对话（`interactable` 组） |
-| `scenes/ui/dialogue_panel.tscn` + `scripts/ui/dialogue_panel.gd` | 通用对话框：说话人 + 台词 + 选项，选项回调 owner 的 `on_dialogue_option` |
-| `scripts/systems/time_system.gd` | 时间系统：天数/时:分、06:00 起 02:00 收工、`day_started` 驱动作物结算（`Main/Systems/Time`） |
-| `scripts/systems/save_system.gd` | 存档：`user://save_1.json`，含时间/金币/背包/耕地/作物/玩家位置，坏档自动隔离 |
-| `scripts/systems/stamina.gd` | 体力（100，干活扣、睡觉回满，`Main/Systems/Stamina`） |
-| `scripts/systems/weather.gd` | 天气（晴/阴/雨，雨天自动浇作物；`lock()` 可固定天气供回归用，`Main/Systems/Weather`） |
-| `scripts/systems/audio_manager.gd` | 背景音乐单例（autoload `AudioManager`）：双播放器交叉淡入淡出、强制首尾循环、音量与开关 |
-| `scripts/world/bgm_controller.gd` | 农场 BGM 昼夜切换（`Main/Systems/BGM`），17:00 切夜晚曲目 |
+| `scenes/ui/dialogue_panel.tscn` + `scripts/ui/panels/dialogue_panel.gd` | 通用对话框：说话人 + 台词 + 选项，选项回调 owner 的 `on_dialogue_option` |
+| `scripts/time/time_system.gd` | 时间系统：天数/时:分、06:00 起 02:00 收工、`day_started` 驱动作物结算（`Main/Systems/Time`） |
+| `scripts/persistence/save_system.gd` | 存档：`user://save_1.json`，含时间/金币/背包/耕地/作物/玩家位置，坏档自动隔离 |
+| `scripts/player/stamina.gd` | 体力（100，干活扣、睡觉回满，`Main/Systems/Stamina`） |
+| `scripts/time/weather.gd` | 天气（晴/阴/雨，雨天自动浇作物；`lock()` 可固定天气供回归用，`Main/Systems/Weather`） |
+| `scripts/platform/audio_manager.gd` | 背景音乐单例（autoload `AudioManager`）：双播放器交叉淡入淡出、强制首尾循环、音量与开关 |
+| `scripts/presentation/bgm_controller.gd` | 农场 BGM 昼夜切换（`Main/Systems/BGM`），17:00 切夜晚曲目 |
 | `assets/audio/bgm/` | 三首原创循环 BGM（`menu` / `farm_day` / `farm_night`），由 `tools/build/build_bgm.gd` 合成 |
 | `scenes/ui/day_summary.tscn` | 睡前日报：今日收获与收入，确认后睡觉并自动存档 |
 | `scenes/world/sleep_spot.tscn` | 木屋门口的睡觉点（靠近按 `E`） |
-| `scripts/world/day_night_tint.gd` | 昼夜色调（`CanvasModulate`，只暗化世界） |
+| `scripts/presentation/day_night_tint.gd` | 昼夜色调（`CanvasModulate`，只暗化世界） |
 | `scenes/ui/main_menu.tscn` | 标题界面（项目主场景）：继续 / 新游戏 / 退出 |
 | `scenes/ui/pause_menu.tscn` | 暂停菜单：`Esc` 暂停场景树，继续 / 保存 / 保存并返回标题 / 按键说明 |
-| `scenes/world/chicken.tscn` + `scripts/world/chicken.gd` | 鸡：`CharacterBody2D` 在出生点半径内随机踱步，撞障碍换点，左右各两帧走路 |
-| `scenes/world/props/chicken_coop.tscn` + `scripts/world/chicken_coop.gd` | 鸡窝：监听 `day_started` 每天下蛋（上限 3 颗），蛋坐标进存档 |
-| `scenes/world/egg.tscn` + `scripts/world/egg.gd` | 地上的鸡蛋：`interactable` 组，`E` 拾取，满包留在地上 |
-| `scenes/ui/help_panel.tscn` + `scripts/ui/help_panel.gd` | 按键说明：`F1` 或暂停菜单打开，打开时暂停游戏树 |
-| `scripts/systems/orders.gd` | 每日订单：按解锁阶段出单、交付发奖金、`day_started` 换新单 |
-| `scripts/systems/community_center.gd` | 社区中心：三阶段上缴，`unlocked_stage()` 决定商店卖哪些种子 |
-| `scripts/systems/stamina.gd` | 体力：干活消耗、睡觉回满，`spend()` 扣不动就拦住操作 |
-| `scripts/systems/weather.gd` | 天气：每天翻一次（晴/阴/雨），雨天自动浇水；`lock()` 供测试固定天气 |
+| `scenes/world/chicken.tscn` + `scripts/animals/chicken.gd` | 鸡：`CharacterBody2D` 在出生点半径内随机踱步，撞障碍换点，左右各两帧走路 |
+| `scenes/world/props/chicken_coop.tscn` + `scripts/animals/chicken_coop.gd` | 鸡窝：监听 `day_started` 每天下蛋（上限 3 颗），蛋坐标进存档 |
+| `scenes/world/egg.tscn` + `scripts/animals/egg.gd` | 地上的鸡蛋：`interactable` 组，`E` 拾取，满包留在地上 |
+| `scenes/ui/help_panel.tscn` + `scripts/ui/panels/help_panel.gd` | 按键说明：`F1` 或暂停菜单打开，打开时暂停游戏树 |
+| `scripts/progression/orders.gd` | 每日订单：按解锁阶段出单、交付发奖金、`day_started` 换新单 |
+| `scripts/progression/community_center.gd` | 社区中心：三阶段上缴，`unlocked_stage()` 决定商店卖哪些种子 |
+| `scripts/player/stamina.gd` | 体力：干活消耗、睡觉回满，`spend()` 扣不动就拦住操作 |
+| `scripts/time/weather.gd` | 天气：每天翻一次（晴/阴/雨），雨天自动浇水；`lock()` 供测试固定天气 |
 | `scenes/world/props/order_bin.tscn` + `order_bin.gd` | 木屋旁的订单箱（`interactable`，`E` 打开订单面板） |
 | `scenes/world/props/community_building.tscn` + `community_building.gd` | 社区中心建筑（左下空地，`E` 打开上缴面板） |
 | `scenes/ui/order_panel.tscn`、`scenes/ui/community_panel.tscn` | 订单与社区中心面板 |

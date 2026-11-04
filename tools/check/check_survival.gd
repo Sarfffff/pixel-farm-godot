@@ -16,6 +16,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_main = (load("res://scenes/main.tscn") as PackedScene).instantiate() as Node2D
 	_main.get_node("Systems/Save").set("autoload_enabled", false)
 	root.add_child(_main)
@@ -114,4 +116,4 @@ func _run() -> void:
 	_main.queue_free()
 	await process_frame
 	print("[survival] stamina, weather, rain watering; %d failures" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

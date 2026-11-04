@@ -26,6 +26,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_main = load(MAIN_SCENE).instantiate() as Node2D
 	root.add_child(_main)
 	current_scene = _main
@@ -105,11 +107,17 @@ func _run() -> void:
 	_check(_player.global_position.is_equal_approx(Vector2(300, 200)), "player position restored")
 
 	# 坏档：不能崩，文件被隔离
+	_check(_save.save_game(), "second completed write establishes recovery backup")
 	var file := FileAccess.open(_save.save_path(), FileAccess.WRITE)
 	file.store_string("{ this is not json")
 	file.close()
-	_check(not _save.load_game(), "broken save is rejected")
-	_check(not _save.has_save(), "broken save is quarantined")
+	_check(_save.load_game(), "broken primary recovers from last complete backup")
+	file = FileAccess.open(_save.save_path() + ".bak", FileAccess.WRITE)
+	file.store_string("{ invalid backup")
+	file.close()
+	_check(not _save.load_game(), "broken primary and backup are rejected")
+	_check(not FileAccess.file_exists(_save.save_path()), "broken primary is quarantined")
+	_save.delete_save()
 
 	# 缺字段的旧档：字段缺失走默认值
 	file = FileAccess.open(_save.save_path(), FileAccess.WRITE)
@@ -149,4 +157,4 @@ func _run() -> void:
 	print("[calendar] %s (%d failures)" % ["PASS" if _failures == 0 else "FAIL", _failures])
 	_main.queue_free()
 	await process_frame
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

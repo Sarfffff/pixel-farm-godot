@@ -1,0 +1,2901 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/oak_chair.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/oak_chair",
+			"mode": "sprite",
+			"name": "oak chair",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/oak_chair.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				19,
+				164,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/pine_chair.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/pine_chair",
+			"mode": "sprite",
+			"name": "pine chair",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/pine_chair.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				164,
+				19,
+				149,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/cushioned_chair.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/cushioned_chair",
+			"mode": "sprite",
+			"name": "cushioned chair",
+			"opaque_bounds": [
+				5,
+				2,
+				22,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/cushioned_chair.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				313,
+				19,
+				157,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/rocking_chair.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/rocking_chair",
+			"mode": "sprite",
+			"name": "rocking chair",
+			"opaque_bounds": [
+				5,
+				2,
+				22,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/rocking_chair.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				470,
+				19,
+				159,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/garden_bench.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/garden_bench",
+			"mode": "sprite",
+			"name": "garden bench",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/garden_bench.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				629,
+				19,
+				157,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wood_stool.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wood_stool",
+			"mode": "sprite",
+			"name": "wood stool",
+			"opaque_bounds": [
+				3,
+				2,
+				25,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wood_stool.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				786,
+				19,
+				159,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/armchair.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/armchair",
+			"mode": "sprite",
+			"name": "armchair",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/armchair.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				945,
+				19,
+				149,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				0,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/sofa.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/sofa",
+			"mode": "sprite",
+			"name": "sofa",
+			"opaque_bounds": [
+				2,
+				9,
+				28,
+				21
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/sofa.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1094,
+				19,
+				164,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/single_bed.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/single_bed",
+			"mode": "sprite",
+			"name": "single bed",
+			"opaque_bounds": [
+				5,
+				2,
+				22,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/single_bed.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				181,
+				164,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/double_bed.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/double_bed",
+			"mode": "sprite",
+			"name": "double bed",
+			"opaque_bounds": [
+				2,
+				2,
+				27,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/double_bed.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				164,
+				181,
+				149,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/child_bed.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/child_bed",
+			"mode": "sprite",
+			"name": "child bed",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/child_bed.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				313,
+				181,
+				157,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/bunk_bed.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/bunk_bed",
+			"mode": "sprite",
+			"name": "bunk bed",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/bunk_bed.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				470,
+				181,
+				159,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/round_table.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/round_table",
+			"mode": "sprite",
+			"name": "round table",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/round_table.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				629,
+				181,
+				157,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/square_table.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/square_table",
+			"mode": "sprite",
+			"name": "square table",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/square_table.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				786,
+				181,
+				159,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/dining_table.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/dining_table",
+			"mode": "sprite",
+			"name": "dining table",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/dining_table.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				945,
+				181,
+				149,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				32,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/coffee_table.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/coffee_table",
+			"mode": "sprite",
+			"name": "coffee table",
+			"opaque_bounds": [
+				2,
+				13,
+				28,
+				17
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/coffee_table.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1094,
+				181,
+				164,
+				163
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/writing_desk.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/writing_desk",
+			"mode": "sprite",
+			"name": "writing desk",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/writing_desk.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				344,
+				164,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/dressing_table.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/dressing_table",
+			"mode": "sprite",
+			"name": "dressing table",
+			"opaque_bounds": [
+				4,
+				2,
+				23,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/dressing_table.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				164,
+				344,
+				149,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/bedside_table.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/bedside_table",
+			"mode": "sprite",
+			"name": "bedside table",
+			"opaque_bounds": [
+				5,
+				2,
+				22,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/bedside_table.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				313,
+				344,
+				157,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/kitchen_table.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/kitchen_table",
+			"mode": "sprite",
+			"name": "kitchen table",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/kitchen_table.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				470,
+				344,
+				159,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/bookcase.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/bookcase",
+			"mode": "sprite",
+			"name": "bookcase",
+			"opaque_bounds": [
+				5,
+				2,
+				22,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/bookcase.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				629,
+				344,
+				157,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/cupboard.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/cupboard",
+			"mode": "sprite",
+			"name": "cupboard",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/cupboard.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				786,
+				344,
+				159,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wardrobe.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wardrobe",
+			"mode": "sprite",
+			"name": "wardrobe",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wardrobe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				945,
+				344,
+				149,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				64,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/display_cabinet.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/display_cabinet",
+			"mode": "sprite",
+			"name": "display cabinet",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/display_cabinet.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1094,
+				344,
+				164,
+				178
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/refrigerator.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/refrigerator",
+			"mode": "sprite",
+			"name": "refrigerator",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/refrigerator.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				522,
+				164,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/kitchen_stove.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/kitchen_stove",
+			"mode": "sprite",
+			"name": "kitchen stove",
+			"opaque_bounds": [
+				4,
+				2,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/kitchen_stove.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				164,
+				522,
+				149,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/brick_fireplace.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/brick_fireplace",
+			"mode": "sprite",
+			"name": "brick fireplace",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/brick_fireplace.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				313,
+				522,
+				157,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wood_heater.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wood_heater",
+			"mode": "sprite",
+			"name": "wood heater",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wood_heater.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				470,
+				522,
+				159,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/washbasin.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/washbasin",
+			"mode": "sprite",
+			"name": "washbasin",
+			"opaque_bounds": [
+				4,
+				2,
+				23,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/washbasin.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				629,
+				522,
+				157,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/bathtub.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/bathtub",
+			"mode": "sprite",
+			"name": "bathtub",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/bathtub.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				786,
+				522,
+				159,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/toilet.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/toilet",
+			"mode": "sprite",
+			"name": "toilet",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/toilet.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				945,
+				522,
+				149,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				96,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wash_tub.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wash_tub",
+			"mode": "sprite",
+			"name": "wash tub",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wash_tub.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1094,
+				522,
+				164,
+				170
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/oval_rug.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/oval_rug",
+			"mode": "sprite",
+			"name": "oval rug",
+			"opaque_bounds": [
+				2,
+				12,
+				28,
+				18
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/oval_rug.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				0,
+				692,
+				164,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/square_rug.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/square_rug",
+			"mode": "sprite",
+			"name": "square rug",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/square_rug.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				164,
+				692,
+				149,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/woven_runner.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/woven_runner",
+			"mode": "sprite",
+			"name": "woven runner",
+			"opaque_bounds": [
+				2,
+				18,
+				28,
+				12
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/woven_runner.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				313,
+				692,
+				157,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/door_mat.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/door_mat",
+			"mode": "sprite",
+			"name": "door mat",
+			"opaque_bounds": [
+				2,
+				16,
+				28,
+				14
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/door_mat.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				470,
+				692,
+				159,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/potted_fern.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/potted_fern",
+			"mode": "sprite",
+			"name": "potted fern",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/potted_fern.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				629,
+				692,
+				157,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/potted_flower.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/potted_flower",
+			"mode": "sprite",
+			"name": "potted flower",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/potted_flower.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				786,
+				692,
+				159,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/tall_potted_tree.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/tall_potted_tree",
+			"mode": "sprite",
+			"name": "tall potted tree",
+			"opaque_bounds": [
+				5,
+				2,
+				22,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/tall_potted_tree.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				945,
+				692,
+				149,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				128,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/hanging_plant.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/hanging_plant",
+			"mode": "sprite",
+			"name": "hanging plant",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/hanging_plant.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1094,
+				692,
+				164,
+				162
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/table_lamp.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/table_lamp",
+			"mode": "sprite",
+			"name": "table lamp",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/table_lamp.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				0,
+				854,
+				164,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/floor_lamp.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/floor_lamp",
+			"mode": "sprite",
+			"name": "floor lamp",
+			"opaque_bounds": [
+				8,
+				2,
+				16,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/floor_lamp.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				164,
+				854,
+				149,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wall_lamp.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wall_lamp",
+			"mode": "sprite",
+			"name": "wall lamp",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wall_lamp.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				313,
+				854,
+				157,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/candle_holder.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/candle_holder",
+			"mode": "sprite",
+			"name": "candle holder",
+			"opaque_bounds": [
+				2,
+				3,
+				28,
+				27
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/candle_holder.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				470,
+				854,
+				159,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/landscape_painting.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/landscape_painting",
+			"mode": "sprite",
+			"name": "landscape painting",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/landscape_painting.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				629,
+				854,
+				157,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/animal_painting.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/animal_painting",
+			"mode": "sprite",
+			"name": "animal painting",
+			"opaque_bounds": [
+				2,
+				3,
+				28,
+				27
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/animal_painting.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				786,
+				854,
+				159,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wall_clock.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wall_clock",
+			"mode": "sprite",
+			"name": "wall clock",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wall_clock.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				945,
+				854,
+				149,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				160,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/round_mirror.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/round_mirror",
+			"mode": "sprite",
+			"name": "round mirror",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/round_mirror.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1094,
+				854,
+				164,
+				136
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/curtain.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/curtain",
+			"mode": "sprite",
+			"name": "curtain",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/curtain.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				0,
+				990,
+				164,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wall_banner.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wall_banner",
+			"mode": "sprite",
+			"name": "wall banner",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wall_banner.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				164,
+				990,
+				149,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wall_shelf.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wall_shelf",
+			"mode": "sprite",
+			"name": "wall shelf",
+			"opaque_bounds": [
+				2,
+				11,
+				28,
+				19
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wall_shelf.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				313,
+				990,
+				157,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/coat_rack.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/coat_rack",
+			"mode": "sprite",
+			"name": "coat rack",
+			"opaque_bounds": [
+				8,
+				2,
+				15,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/coat_rack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				470,
+				990,
+				159,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/basket.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/basket",
+			"mode": "sprite",
+			"name": "basket",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/basket.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				629,
+				990,
+				157,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/wood_bucket.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/wood_bucket",
+			"mode": "sprite",
+			"name": "wood bucket",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/wood_bucket.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				786,
+				990,
+				159,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/vase.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/vase",
+			"mode": "sprite",
+			"name": "vase",
+			"opaque_bounds": [
+				6,
+				2,
+				20,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/vase.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				945,
+				990,
+				149,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				192,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/tea_set.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/tea_set",
+			"mode": "sprite",
+			"name": "tea set",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/tea_set.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1094,
+				990,
+				164,
+				128
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/fruit_bowl.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/fruit_bowl",
+			"mode": "sprite",
+			"name": "fruit bowl",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/fruit_bowl.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				0,
+				1118,
+				164,
+				129
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/flower_bouquet.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/flower_bouquet",
+			"mode": "sprite",
+			"name": "flower bouquet",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/flower_bouquet.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				164,
+				1118,
+				149,
+				129
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/toy_bear.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/toy_bear",
+			"mode": "sprite",
+			"name": "toy bear",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/toy_bear.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				313,
+				1118,
+				157,
+				129
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/globe.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/globe",
+			"mode": "sprite",
+			"name": "globe",
+			"opaque_bounds": [
+				4,
+				2,
+				23,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/globe.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				470,
+				1118,
+				159,
+				129
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				128,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/music_box.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/music_box",
+			"mode": "sprite",
+			"name": "music box",
+			"opaque_bounds": [
+				3,
+				2,
+				25,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/music_box.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				629,
+				1118,
+				157,
+				129
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				160,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/gramophone.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/gramophone",
+			"mode": "sprite",
+			"name": "gramophone",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/gramophone.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				786,
+				1118,
+				159,
+				129
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				192,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/telescope.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/telescope",
+			"mode": "sprite",
+			"name": "telescope",
+			"opaque_bounds": [
+				3,
+				2,
+				25,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/telescope.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				945,
+				1118,
+				149,
+				129
+			],
+			"source_sheet": "furniture"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/furniture.png",
+			"atlas_region": [
+				224,
+				224,
+				32,
+				32
+			],
+			"category": "objects/furniture",
+			"icon": "res://assets/packs/content_v1/icons/objects/furniture/aquarium.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/furniture/aquarium",
+			"mode": "sprite",
+			"name": "aquarium",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/furniture/aquarium.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/furniture.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1094,
+				1118,
+				164,
+				129
+			],
+			"source_sheet": "furniture"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "651870727ade6de8a8788201209529537336d4100db91da1337562a9b6525440",
+	"sheet": {
+		"category": "objects/furniture",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 8,
+		"count": 64,
+		"id": "furniture",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/furniture.png",
+		"rows": 8,
+		"source": "res://art/sources/content_v1/furniture.png"
+	},
+	"source_hash": "1fb6292d310e3f6f5ec9103c46921962"
+}

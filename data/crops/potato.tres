@@ -1,9 +1,9 @@
-﻿[gd_resource type="Resource" script_class="CropData" format=3]
+[gd_resource type="Resource" script_class="CropData" format=3]
 
 [ext_resource type="Script" path="res://scripts/data/crop_data.gd" id="1"]
-[ext_resource type="Texture2D" path="res://assets/generated/expansion_v1/crops/potato_sprout.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/generated/expansion_v1/crops/potato_young.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/generated/expansion_v1/crops/potato_mature.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/packs/farm_style_v2/crops/potato/sprout.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/packs/farm_style_v2/crops/potato/young.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/packs/farm_style_v2/crops/potato/mature.png" id="4"]
 
 [resource]
 script = ExtResource("1")
@@ -15,5 +15,5 @@ harvest_item = &"potato"
 harvest_count = 1
 stage_days = Array[int]([1, 1])
 regrow_days = 0
-visual_scale = 0.5
+visual_scale = 1.0
 seasons = Array[StringName]([&"spring", &"summer"])

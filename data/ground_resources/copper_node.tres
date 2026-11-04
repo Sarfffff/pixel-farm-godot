@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_kv4ja"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/copper_node.png" id="2_bp2db"]
+
+[resource]
+script = ExtResource("1_kv4ja")
+id = &"copper_node"
+display_name = "铜矿石"
+texture = ExtResource("2_bp2db")
+blocks_movement = true
+tool_hint = "石镐"
+planned_drop = &"copper_ore"
+region_tags = Array[StringName]([&"quarry"])

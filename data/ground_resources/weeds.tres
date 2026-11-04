@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_pwr3b"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/weeds.png" id="2_jnikk"]
+
+[resource]
+script = ExtResource("1_pwr3b")
+id = &"weeds"
+display_name = "杂草"
+texture = ExtResource("2_jnikk")
+tool_hint = "清理"
+planned_drop = &"fiber"
+region_tags = Array[StringName]([&"farm"])

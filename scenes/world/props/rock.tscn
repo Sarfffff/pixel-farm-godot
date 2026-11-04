@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhlvhu533xo2q"]
 
-[ext_resource type="Texture2D" uid="uid://mj044qguir3w" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_tex"]
-[ext_resource type="Script" uid="uid://dj4qawri4qpct" path="res://scripts/world/breakable_rock.gd" id="2_w4i4n"]
+[ext_resource type="Texture2D" uid="uid://mj044qguir3w" path="res://assets/textures/base/objects/basic_grass_biom_things.png" id="1_tex"]
+[ext_resource type="Script" uid="uid://dj4qawri4qpct" path="res://scripts/world/resources/breakable_rock.gd" id="2_w4i4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_base"]
 size = Vector2(24, 8)

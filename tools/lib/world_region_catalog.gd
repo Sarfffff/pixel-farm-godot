@@ -1,0 +1,41 @@
+extends RefCounted
+## 素材顺序必须与原图及 prompts.json 对齐。
+
+const RESOURCES: Array[Array] = [
+	["twig", "落枝", false, "斧头", "wood", Vector2i.ONE],
+	["branch_pile", "枯枝堆", true, "斧头", "wood", Vector2i.ONE],
+	["stump", "普通树桩", true, "斧头", "wood", Vector2i.ONE],
+	["fallen_log", "倒木", true, "升级斧头", "wood", Vector2i(2, 1)],
+	["hardwood_stump", "硬木树桩", true, "升级斧头", "hardwood", Vector2i(2, 2)],
+	["sapling", "幼树", false, "斧头", "wood", Vector2i.ONE],
+	["small_stone", "散落石块", false, "拾取", "stone", Vector2i.ONE],
+	["field_rock", "普通岩石", true, "石镐", "stone", Vector2i.ONE],
+	["boulder", "大岩石", true, "升级石镐", "stone", Vector2i(2, 2)],
+	["copper_node", "铜矿石", true, "石镐", "copper_ore", Vector2i.ONE],
+	["iron_node", "铁矿石", true, "升级石镐", "iron_ore", Vector2i.ONE],
+	["coal_node", "煤矿石", true, "石镐", "coal", Vector2i.ONE],
+	["weeds", "杂草", false, "清理", "fiber", Vector2i.ONE],
+	["fern", "林地蕨草", false, "清理", "fiber", Vector2i.ONE],
+	["pasture_grass", "牧草", false, "收割", "hay", Vector2i.ONE],
+	["pink_flower", "粉色野花", false, "拾取", "wild_flower", Vector2i.ONE],
+	["yellow_flower", "黄色野花", false, "拾取", "wild_flower", Vector2i.ONE],
+	["red_mushroom", "红蘑菇", false, "拾取", "red_mushroom", Vector2i.ONE],
+	["brown_mushroom", "野蘑菇", false, "拾取", "wild_mushroom", Vector2i.ONE],
+	["wild_root", "野生根菜", false, "拾取", "wild_root", Vector2i.ONE],
+	["berry_bush", "野浆果丛", true, "采摘", "wild_blackberry", Vector2i.ONE],
+	["reeds", "水边芦苇", false, "收割", "fiber", Vector2i.ONE],
+	["shell", "海螺贝壳", false, "拾取", "shell", Vector2i.ONE],
+	["river_pebbles", "河滩卵石", false, "拾取", "stone", Vector2i.ONE],
+	["oak_tree", "阔叶树", true, "斧头", "wood", Vector2i(2, 2)],
+	["pine_tree", "针叶树", true, "斧头", "wood", Vector2i(2, 2)],
+	["birch_tree", "白桦树", true, "斧头", "wood", Vector2i(2, 2)],
+	["willow_tree", "河岸柳树", true, "斧头", "wood", Vector2i(2, 2)],
+]
+const PROFILES: Array[Dictionary] = [
+	{"id": "farm", "name": "农田与荒地", "purpose": "开垦、木石清理、生产扩张", "count": 44, "weights": {"twig": 5, "branch_pile": 3, "stump": 2, "small_stone": 5, "field_rock": 3, "weeds": 8, "pasture_grass": 5, "sapling": 2, "oak_tree": 2}},
+	{"id": "village", "name": "村庄与集市", "purpose": "交易服务、集会、可读的主路", "count": 24, "weights": {"small_stone": 2, "pink_flower": 5, "yellow_flower": 5, "pasture_grass": 2, "birch_tree": 2}},
+	{"id": "forest", "name": "林地与采集区", "purpose": "木材、蘑菇、野菜、浆果", "count": 62, "weights": {"fallen_log": 2, "hardwood_stump": 1, "sapling": 3, "fern": 6, "red_mushroom": 3, "brown_mushroom": 4, "wild_root": 3, "berry_bush": 4, "oak_tree": 3, "pine_tree": 3, "birch_tree": 2}},
+	{"id": "wetland", "name": "河岸与湿地", "purpose": "水域、钓点、芦苇和湿地采集", "count": 42, "weights": {"reeds": 8, "pasture_grass": 4, "river_pebbles": 4, "brown_mushroom": 2, "wild_root": 2, "willow_tree": 3}},
+	{"id": "quarry", "name": "山地与采石区", "purpose": "普通石材、铜铁矿和煤的层级", "count": 54, "weights": {"small_stone": 7, "field_rock": 6, "boulder": 2, "copper_node": 4, "iron_node": 2, "coal_node": 3, "pine_tree": 1}},
+	{"id": "beach", "name": "海滩与浅水岸", "purpose": "沙地、海边采集和后续海钓", "count": 34, "weights": {"shell": 8, "river_pebbles": 3, "fallen_log": 2, "twig": 2, "reeds": 2}},
+]

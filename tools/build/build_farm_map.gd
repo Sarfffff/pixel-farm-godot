@@ -26,11 +26,11 @@ const TERRAIN_PATH := "res://assets/tilesets/farm_terrain.tres"
 const Landscape := preload("res://tools/lib/farm_landscape.gd")
 const TerrainTiles := preload("res://tools/lib/terrain_tiles.gd")
 ## World 容器挂载的遮挡淡出脚本
-const OCCLUSION_SCRIPT := "res://scripts/world/occlusion_fader.gd"
+const OCCLUSION_SCRIPT := "res://scripts/presentation/occlusion_fader.gd"
 ## 耕地系统脚本与面前格高亮场景
-const TILLER_SCRIPT := "res://scripts/world/farm_tiller.gd"
+const TILLER_SCRIPT := "res://scripts/world/farming/farm_tiller.gd"
 ## NPC 网格寻路脚本
-const NAV_SCRIPT := "res://scripts/world/nav_grid.gd"
+const NAV_SCRIPT := "res://scripts/world/navigation/nav_grid.gd"
 const CURSOR_SCENE := "res://scenes/world/tile_cursor.tscn"
 ## 耕地与湿土的压暗色调（素材本身偏亮，压一点更融进草地）
 const SOIL_TINT := Color(0.88, 0.82, 0.72)
@@ -80,7 +80,7 @@ const VARIANT_CHANCE := 0.22
 const DECOR_CHANCE := 0.035
 
 ## 地形分层：名称、z_index、是否参与碰撞
-## Soil / Watered 由 scripts/world/farm_tiller.gd 在运行时填瓦片（V0.4）
+## Soil / Watered 由 scripts/world/farming/farm_tiller.gd 在运行时填瓦片（V0.4）
 const LAYER_SPECS: Array = [
 	["Ground", 0, false],
 	["Water", 1, false],
@@ -95,46 +95,46 @@ const LAYER_SPECS: Array = [
 	["WaterCollision", -1, true],
 ]
 
-## 道具摆放：场景路径 + 脚底坐标（像素）
+## 道具摆放：场景路径 + 脚底坐标；可持久化道具的第三列是不可随位置/名字变化的固定 ID。
 const PROP_TABLE: Array = [
 	["res://scenes/world/props/cottage.tscn", Vector2(472, 144)],
 	["res://scenes/world/props/general_store.tscn", Vector2(488, 256)],
 	["res://scenes/world/props/bush.tscn", Vector2(520, 192)],
 	["res://scenes/world/props/mushroom.tscn", Vector2(536, 152)],
-	["res://scenes/world/props/tree_fruit.tscn", Vector2(552, 216)],
+	["res://scenes/world/props/tree_fruit.tscn", Vector2(552, 216), &"farm/tree/552/216"],
 	["res://scenes/world/props/log.tscn", Vector2(264, 208)],
-	["res://scenes/world/props/rock.tscn", Vector2(264, 152)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(40, 72)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(104, 56)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(88, 64)],
-	["res://scenes/world/props/tree_fruit.tscn", Vector2(232, 56)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(296, 72)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(360, 56)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(424, 72)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(520, 64)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(584, 72)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(632, 48)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(24, 168)],
+	["res://scenes/world/props/rock.tscn", Vector2(264, 152), &"farm/rock/264/152"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(40, 72), &"farm/tree/40/72"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(104, 56), &"farm/tree/104/56"],
+	["res://scenes/world/props/tree_small.tscn", Vector2(88, 64), &"farm/tree/88/64"],
+	["res://scenes/world/props/tree_fruit.tscn", Vector2(232, 56), &"farm/tree/232/56"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(296, 72), &"farm/tree/296/72"],
+	["res://scenes/world/props/tree_small.tscn", Vector2(360, 56), &"farm/tree/360/56"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(424, 72), &"farm/tree/424/72"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(520, 64), &"farm/tree/520/64"],
+	["res://scenes/world/props/tree_small.tscn", Vector2(584, 72), &"farm/tree/584/72"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(632, 48), &"farm/tree/632/48"],
+	["res://scenes/world/props/tree_small.tscn", Vector2(24, 168), &"farm/tree/24/168"],
 	["res://scenes/world/props/bush.tscn", Vector2(56, 232)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(32, 312)],
+	["res://scenes/world/props/tree_big.tscn", Vector2(32, 312), &"farm/tree/32/312"],
 	["res://scenes/world/props/mushroom.tscn", Vector2(64, 360)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(24, 424)],
-	["res://scenes/world/props/rock.tscn", Vector2(72, 464)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(616, 176)],
+	["res://scenes/world/props/tree_small.tscn", Vector2(24, 424), &"farm/tree/24/424"],
+	["res://scenes/world/props/rock.tscn", Vector2(72, 464), &"farm/rock/72/464"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(616, 176), &"farm/tree/616/176"],
 	["res://scenes/world/props/bush.tscn", Vector2(592, 240)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(632, 336)],
-	["res://scenes/world/props/rock.tscn", Vector2(600, 440)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(624, 456)],
-	["res://scenes/world/props/tree_big.tscn", Vector2(136, 448)],
+	["res://scenes/world/props/tree_big.tscn", Vector2(632, 336), &"farm/tree/632/336"],
+	["res://scenes/world/props/rock.tscn", Vector2(600, 440), &"farm/rock/600/440"],
+	["res://scenes/world/props/tree_small.tscn", Vector2(624, 456), &"farm/tree/624/456"],
+	["res://scenes/world/props/tree_big.tscn", Vector2(136, 448), &"farm/tree/136/448"],
 	["res://scenes/world/props/bush.tscn", Vector2(216, 432)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(304, 464)],
+	["res://scenes/world/props/tree_small.tscn", Vector2(304, 464), &"farm/tree/304/464"],
 	["res://scenes/world/props/log.tscn", Vector2(488, 456)],
-	["res://scenes/world/props/rock.tscn", Vector2(376, 288)],
+	["res://scenes/world/props/rock.tscn", Vector2(376, 288), &"farm/rock/376/288"],
 	["res://scenes/world/props/mushroom.tscn", Vector2(392, 424)],
 	["res://scenes/world/props/bush.tscn", Vector2(560, 432)],
 	["res://scenes/world/props/mushroom.tscn", Vector2(280, 296)],
 	["res://scenes/world/props/bush.tscn", Vector2(104, 320)],
-	["res://scenes/world/props/tree_small.tscn", Vector2(64, 120)],
+	["res://scenes/world/props/tree_small.tscn", Vector2(64, 120), &"farm/tree/64/120"],
 ]
 
 
@@ -302,7 +302,7 @@ func _validate_tileset(tile_set: TileSet) -> bool:
 	var ok := true
 	ok = _check_source(tile_set, SRC_GRASS, grass_tiles) and ok
 	ok = _check_source(tile_set, SRC_WATER, [Vector2i(0, 0)]) and ok
-	# 耕地图集由 scripts/world/farm_tiller.gd 自行校验（它才是使用方）
+	# 耕地图集由 scripts/world/farming/farm_tiller.gd 自行校验（它才是使用方）
 	return ok
 
 
@@ -368,6 +368,8 @@ func _place_props(world: Node2D, farm: Node2D) -> int:
 			continue
 		var inst := packed.instantiate() as Node2D
 		inst.position = foot
+		if inst.has_method(&"persistence_id"):
+			inst.persistent_id = entry[2]
 		inst.name = "%s%d" % [scene_path.get_file().get_basename().to_pascal_case(), count]
 		world.add_child(inst)
 		inst.owner = farm

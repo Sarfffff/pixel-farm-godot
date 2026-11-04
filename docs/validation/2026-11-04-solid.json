@@ -1,0 +1,258 @@
+{
+  "date": "2026-11-04",
+  "scope": "SOLID core refactor and functional regression",
+  "method": "29-suite full regression followed by targeted reruns after fixes; records below use the latest result for each suite",
+  "unique_suites": 29,
+  "passed": 29,
+  "failed": 0,
+  "native_window": {
+    "backend": "D3D12 Forward+",
+    "suite": "check_architecture",
+    "checks": 44,
+    "failures": 0,
+    "script_errors": 0
+  },
+  "unsafe_direct_invocation": {
+    "suite": "check_calendar",
+    "expected_exit_code": 2,
+    "refused": true
+  },
+  "unverified": [
+    "B0 real keyboard and mouse two-round playthrough with a new player",
+    "Full B1 stage acceptance and release build validation"
+  ],
+  "known_exit_warnings": "Some headless Dummy audio shutdowns report resources still in use; recorded separately in ExitResourceWarning and not claimed fixed.",
+  "results": [
+    {
+      "Suite": "check_animals",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_architecture",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "48fa1860941a467aa41e5e1563439ae4"
+    },
+    {
+      "Suite": "check_audio",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_basic_loop",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "6a3e234d098c4bbb9022767f089ccd9f"
+    },
+    {
+      "Suite": "check_berries",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_calendar",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_content_art",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_crops",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "6a3e234d098c4bbb9022767f089ccd9f"
+    },
+    {
+      "Suite": "check_farm_activities",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "6a3e234d098c4bbb9022767f089ccd9f"
+    },
+    {
+      "Suite": "check_farm_interactions",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "48fa1860941a467aa41e5e1563439ae4"
+    },
+    {
+      "Suite": "check_farm_terrain",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_friendship",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_goals",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "6a3e234d098c4bbb9022767f089ccd9f"
+    },
+    {
+      "Suite": "check_held_tools",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_house",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_interior_layout",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_inventory",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_inventory_hotbar_camera",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_npcs",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "48fa1860941a467aa41e5e1563439ae4"
+    },
+    {
+      "Suite": "check_pause",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_pickaxe",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "48fa1860941a467aa41e5e1563439ae4"
+    },
+    {
+      "Suite": "check_progression",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "6a3e234d098c4bbb9022767f089ccd9f"
+    },
+    {
+      "Suite": "check_release",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_settings",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_shop",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_survival",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_ui_layout",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "check_world_regions",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": true,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    },
+    {
+      "Suite": "smoke_check",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false,
+      "run_id": "483879b3f9144218b33a0d84187ae821"
+    }
+  ],
+  "core_sha256": {
+    "scripts/activities/fishing_session.gd": "6674044b113fa0ac9b8e4daa3aa51bc3d079f861ae21720a0557778cca82692c",
+    "scripts/animals/animal_state_machine.gd": "ecdd53fa3d981e8fc4c13cf45711ff248eac8988f6a59111b8891589ecd9f1c6",
+    "scripts/animals/farm_animal.gd": "150921f622c05bd0dd9c28436599e443e73c90ed056491cfe5b64032d6455ca3",
+    "scripts/animals/states/animal_state.gd": "ccc345fb998afc3721357a1189e7b8b08537cad89095d892bbc0125a70ee0605",
+    "scripts/animals/states/timed_animal_state.gd": "5ed9dff235f0ca24f7cf3bbc92c4e4e614541f009cf585ad16ca74ea3c099d53",
+    "scripts/animals/states/wander_animal_state.gd": "f63e1a1376cdc371e76cccf38aa52491e625bffeb9cefd6ca81ae5c2af07862b",
+    "scripts/core/daily_cycle.gd": "d71e712716b41302e83d6bdd8d2f84fe414b5182b05db025c0ebf7c89e1af369",
+    "scripts/core/game_session.gd": "4102c6688976e0c6cb3ddc2449bfa0c5b177ebd013d85ca0a8ec367d7756f25e",
+    "scripts/persistence/farm_snapshot_codec.gd": "2ae3774fddfaba5c9702b95db7f65bf73e187fefff5d1836494784398f3da645",
+    "scripts/persistence/json_save_store.gd": "648ea0317f4688856620cc0384da1cf4c859ab0f2319babca7fb253bf2641472",
+    "scripts/persistence/save_migrations.gd": "7348f50f759758d2ca23291773e716197a95401fb7f3bd08e575824592c536bb",
+    "scripts/persistence/save_store.gd": "71f4dbdaf00da8457197c0546ebcbe796986330077245c76fb21e7ed4aa0fbe2",
+    "scripts/persistence/snapshot_registry.gd": "cb95c4f320c2be82cb175fede1b6b0bc9d8be1437a8a0c390fbba40988701a20",
+    "scripts/persistence/world_objects.gd": "05b2553829ba91dc3858461805fb332f826867a099c6f1d4fdc8c012d9b4e092",
+    "scripts/presentation/world_presentation.gd": "f35370ce46421345ce885b372080df0027193b43693983243a3cdaed52e79fd9",
+    "scripts/activities/farm_activities.gd": "e7fb992d58a065fc50736f99562185307fc2b30f68f64de4092e26b2ee054d13",
+    "scripts/inventory/inventory.gd": "c9e27b8d6d2748a927f4a4b67d0e8a492f1901b698280f389e95831e12f8dba0",
+    "scripts/economy/trade_service.gd": "ec149a8e5e37c8409d505365de8b61845cb9adc6a6c58472232aff05e8b58813",
+    "scripts/progression/tutorial.gd": "a67b189b9c0862d7f5faf7c9a102ad00b098f27d37fe70066aa4511e103ed891",
+    "scripts/ui/common/modal_coordinator.gd": "b4f093261256b8b56219a7b09c5ebcb25eae537431825f7c2d2cd975ee9371fa",
+    "scripts/ui/common/modal_panel.gd": "740f57de2bc4b344a1e9f56443bf2d14933e2c06b1a8056fa19af8475a03c448",
+    "scripts/world/resources/breakable_rock.gd": "d7ecc1bfbd06591fede5e605891cbe4233b93512fa83c51a890828fbde3051f5",
+    "scripts/world/resources/choppable_tree.gd": "b39c0f6f8b9f6c10ce5e4efbfb552d38676dd8d506dc44f6499888b58e98c930",
+    "scripts/world/farming/crop.gd": "590303e57825fbb97f5142c2686ccac8d20e8a61026ec3fd3131de37a84fe298",
+    "scripts/world/farming/farm_tiller.gd": "5fdc98b5f785d0067f9809ce57b3d0ce5a2b5b6e515b224fd000833ba9bcdafa",
+    "scripts/world/navigation/nav_grid.gd": "600706b3c4e15bbb469208b06d8d27726792da8fb48109c39e7f36fab0659711"
+  }
+}

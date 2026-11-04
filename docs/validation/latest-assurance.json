@@ -1,0 +1,577 @@
+{
+  "verified_at": "2026-11-05T00:35:50+08:00",
+  "engine": "Godot 4.7.2 stable ed1daf0bf; Windows",
+  "scope": "SOLID refactor, functional regression, malformed saves, shutdown cleanup, exported PCK runtime",
+  "command": "pwsh -NoProfile -File tools/run_checks.ps1",
+  "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_6a986dd16a7f442aaf2cb59e9544c315",
+  "compilation": {
+    "scripts": 332,
+    "failures": 0,
+    "directories": [
+      "scripts",
+      "tools",
+      "addons"
+    ]
+  },
+  "regression": {
+    "suites": 34,
+    "passed": 34,
+    "failed": 0,
+    "script_errors": 0,
+    "engine_errors": 0,
+    "exit_resource_leaks": 0,
+    "results": [
+      {
+        "Suite": "check_animals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_architecture",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_audio",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_basic_loop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_berries",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_calendar",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_compilation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_content_art",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_crops",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_activities",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_interactions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_terrain",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_friendship",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_goals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_held_tools",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_house",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_interior_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory_hotbar_camera",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_npcs",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pause",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pickaxe",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_presentation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_progression",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_region_gameplay",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_release",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_save_validation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_settings",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_shop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_survival",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_ui_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_world_regions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "smoke_check",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_packaged_runtime",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ]
+  },
+  "packaged_runtime": {
+    "exported": true,
+    "resource_base": "empty directory; no workspace fallback",
+    "checks": 20,
+    "failures": 0,
+    "scope": [
+      "title scene",
+      "required actors survive binary scene conversion",
+      "logical item and crop discovery",
+      "plant-water-sleep-harvest-sell-reinvest",
+      "save and load wallet/inventory"
+    ]
+  },
+  "native_window": {
+    "backend": "D3D12 Forward+; NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "architecture_checks": 44,
+    "presentation_checks": 83,
+    "checks": [
+      {
+        "Name": "native_check_architecture",
+        "Passed": true,
+        "ExitCode": 0
+      },
+      {
+        "Name": "native_check_presentation",
+        "Passed": true,
+        "ExitCode": 0
+      },
+      {
+        "Name": "native_exit_game",
+        "Passed": true,
+        "ExitCode": 0
+      },
+      {
+        "Name": "native_exit_menu_close",
+        "Passed": true,
+        "ExitCode": 0
+      },
+      {
+        "Name": "native_exit_menu_button",
+        "Passed": true,
+        "ExitCode": 0
+      }
+    ],
+    "exit_persistence": "packed game window-close notification saved v2/day7/coins567; title close and quit button preserved the identical save bytes",
+    "input_method": "scripted production methods/notifications, not manual keyboard/mouse playthrough"
+  },
+  "source_integrity": {
+    "manifest_sha256": "13415952f6d719bb7e87eb18cc10b6651d15c6d9319c6976412eea64ddba8624",
+    "recorded_files": 7980,
+    "changed_recorded_files": [],
+    "generated_development_sidecars_after_snapshot": [
+      "tools/lib/packaged_smoke.gd.uid"
+    ],
+    "sidecar_note": "Godot generated UID for the external development probe; runtime source, scenes and resources unchanged"
+  },
+  "saves": {
+    "format": 2,
+    "v1_migration": true,
+    "tests_use_isolated_user_directories": true,
+    "player_slots_used_for_tests": false
+  },
+  "remaining_acceptance": [
+    "B0 real keyboard/mouse two-round playthrough and prolonged play",
+    "standalone Windows EXE export, clean-machine distribution and full B8 acceptance",
+    "B1 debug-switch acceptance and remaining stage gates"
+  ],
+  "log_evidence": {
+    "check_animals": {
+      "sha256": "b1e48ae000a3b38d8b51bb0ed73911d0b332ccf9017e45b467bd0434d3c610e2",
+      "terminal_lines": [
+        "[animals] shared state machine, chickens, eggs, save round trip; 117 checks, 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_architecture": {
+      "sha256": "981c0a96fdfe831a7cfcc13e1062d7b6625d3121d4280db453010556d86ad18e",
+      "terminal_lines": [
+        "[architecture] 44 checks, 0 failures; reached end=true",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_audio": {
+      "sha256": "b6da9ce6f00d90154f404e4469f53f8cf309d46dfbdd4150a1eb7541981c63dd",
+      "terminal_lines": [
+        "[audio] all checks passed",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_basic_loop": {
+      "sha256": "6f298590054a162d07455915e23f7b30b76778deaae3eac6fa8ed663f686f747",
+      "terminal_lines": [
+        "[basic_loop] PASS; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_berries": {
+      "sha256": "3f0ee16c228c84b89332bc0d8cd248d8f0ab69af6d32f7154129a94df038ce89",
+      "terminal_lines": [
+        "[berries] random scatter, seeds, planting, save round trip; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_calendar": {
+      "sha256": "db73e177c7fc5d981494de9d392c7c3571d293f6a9cd36f430098dadd1513419",
+      "terminal_lines": [
+        "[calendar] PASS (0 failures)",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_compilation": {
+      "sha256": "ea1a4f5188e305de2b5aba450ede0b18f99c1fc1f822c71390e0e27ed9a1c6fe",
+      "terminal_lines": [
+        "[compilation] 332 scripts compiled, 0 failures; reached end",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_content_art": {
+      "sha256": "f8378c841e6811ab8e8f17f6aa441c577bcee9e1eeab28045eed6a77c24f5300",
+      "terminal_lines": [
+        "[check_content_art] PASS: 2452 sprites / 2452 planned, 0 errors",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_crops": {
+      "sha256": "9166a56817dc9e2684486bf6d20f404933e5fd4fdac27e43b3f8f63588b036a9",
+      "terminal_lines": [
+        "[crops] PASS (0 failures)",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_farm_activities": {
+      "sha256": "8abe1066a7bcdd9df266f63b0149541f977a55cc5ddaa56bbc5b35962ef6238d",
+      "terminal_lines": [
+        "[activities] 121 checks, 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_farm_interactions": {
+      "sha256": "7bb149ae099480dbcae9a1525e930979a6ff75059c510e90e600b779534aa90a",
+      "terminal_lines": [
+        "[farm_interactions] PASS (0 failures, 27 impacts)",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_farm_terrain": {
+      "sha256": "f851f0ea2d0a1c918c2234d702445aa7c3ec2c5eede6f6f1dbc157288a34aa15",
+      "terminal_lines": [
+        "[farm_terrain] PASS (0 failures; 222 water cells)",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_friendship": {
+      "sha256": "da25d4530e0d985076f1b354ea5d421c3a0b2084f96d54ffa10313d3ed611e8b",
+      "terminal_lines": [
+        "[friendship] PASS",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_goals": {
+      "sha256": "937e83890659a5e4b497f96cf46f29f56ab7f80bff0d1c32aa020dc6feb46599",
+      "terminal_lines": [
+        "[goals] orders, community stages, unlocks; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_held_tools": {
+      "sha256": "6c365dd6835450912a6b5c5e073eea947c28eaa0d299ec115922d8d1e37426f2",
+      "terminal_lines": [
+        "[held_tools] PASS; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_house": {
+      "sha256": "a603282ddbcd193ab2981ea1f2d9343289d3d0793c42ec78eb6d6d57793084c0",
+      "terminal_lines": [
+        "[house] PASS",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_interior_layout": {
+      "sha256": "88caf9aba0bf29401a07bbc2712804e75d2949b2051d76d6c51380c62764c5a9",
+      "terminal_lines": [
+        "[interior] PASS",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_inventory_hotbar_camera": {
+      "sha256": "43b825c1847bbac5abc34693e2abc1594a63ad4d1b04ca68371d8584a171c921",
+      "terminal_lines": [
+        "[hotbar_camera] shared items, categories, drag/drop, migration, camera; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_inventory": {
+      "sha256": "62e8addf0bb719b1e124dc9b1a703bfcee99df7c77636742e792366074c61147",
+      "terminal_lines": [
+        "[inventory] PASS (0 failures)",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_npcs": {
+      "sha256": "9981967e712e9f3d83bce161d63a084877f7f2ec993243643a92436b264c6249",
+      "terminal_lines": [
+        "[npcs] 4 characters, 12 directional walk cycles, idle/dialogue/resume, shop integration; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_pause": {
+      "sha256": "d4b26d5cf458972d3ce2682d95638da43cde42e099583d02a6afe71acaf84c00",
+      "terminal_lines": [
+        "[pause] PASS (0 failures)",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_pickaxe": {
+      "sha256": "7aedac29387bc609dbd310817e586c7c168b4d3ea21f867b0ab1462b45c3bf35",
+      "terminal_lines": [
+        "[pickaxe] PASS; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_presentation": {
+      "sha256": "6eb938291f4689d43a7f5382090c4260cfad941772b8e989a1a892b09ed7b0fb",
+      "terminal_lines": [
+        "[presentation] 83 checks, 0 failures; reached end",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_progression": {
+      "sha256": "5d0e3847ea9f2b24da4dcff28e35e712fd6326adb14f4b655de4b2e8187393f3",
+      "terminal_lines": [
+        "[progression] clock, forage, deadlines, guide, upgrades, saves, bedtime; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_region_gameplay": {
+      "sha256": "5efd6b9d00f5a030da83488fe4bfde36dd54d0a29e37a14e5161ac3053cfd18e",
+      "terminal_lines": [
+        "[region_gameplay] PASS; 330 checks; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_release": {
+      "sha256": "bd7ddf3f0f25421d5fe27d43aa9dfb50d1289910151e2ccc9cb42ba780308849",
+      "terminal_lines": [
+        "[release] PASS",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_save_validation": {
+      "sha256": "e3519f538eceb46364e58f80f867623be575e0e366ca9011ab0ead1fe4d23cfa",
+      "terminal_lines": [
+        "[save_validation] 21 checks, 0 failures; reached end",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_settings": {
+      "sha256": "3ceb995996539ba1b5348e1111f21e35aeece89fe8bc4e6969465aba5d4efe51",
+      "terminal_lines": [
+        "[settings] PASS",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_shop": {
+      "sha256": "e8e8bf82e0e030fddb8a5cef5d33e78bae70c7e04b433fd5f8ded2e3142d0c1b",
+      "terminal_lines": [
+        "[shop] PASS (0 failures)",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_survival": {
+      "sha256": "2308107e0c5a906fdbf2d9d9c0739f6a6084801eaf5802961e698ef25d22c73e",
+      "terminal_lines": [
+        "[survival] stamina, weather, rain watering; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_ui_layout": {
+      "sha256": "f5aa8808542b0cdd8d9caaf7fb05ed03171890d18c798dca313805dd4a442417",
+      "terminal_lines": [
+        "[ui_layout] HUD, journal, modal panels, three resolutions; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_world_regions": {
+      "sha256": "d5b7e65486c8b716619753b15f1dd3df476dc7d0e2cd884471978212df111cf2",
+      "terminal_lines": [
+        "[world_regions] PASS; 0 failures",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "smoke_check": {
+      "sha256": "c696e15b4d51803c23a51ab7e05c6bc698a23503f6d581b90cd5e86731497fce",
+      "terminal_lines": [
+        "[smoke_check] PASS",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "check_packaged_runtime": {
+      "sha256": "6e8ba61f992136ef35f5d264c52b263c72ee59558baf61b36dee62bf5a967eea",
+      "terminal_lines": [
+        "[packaged_runtime] 20 checks, 0 failures; PASS",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "native_check_architecture": {
+      "sha256": "d561539d1c1539c91909eba02ef9233cf8c9fefcec3a46861efe154f4733b70f",
+      "terminal_lines": [
+        "[architecture] 44 checks, 0 failures; reached end=true",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "native_check_presentation": {
+      "sha256": "35bb1ded61db6edf621af2934c9515dd426cb721231a107f44613f40eeca6a53",
+      "terminal_lines": [
+        "[presentation] 83 checks, 0 failures; reached end",
+        "[checks] lifecycle complete; exit=0"
+      ]
+    },
+    "native_exit_game": {
+      "sha256": "6244d6d9f03cfa780afe2a5d7384b245947cd725dfdb23fd990843cc252625bf",
+      "terminal_lines": [
+        "[native_exit] reached actual exit request; gameplay=true"
+      ]
+    },
+    "native_exit_menu_close": {
+      "sha256": "a5cbf5a0b9e6b7c52a249a84c8cbfdb8540bd4f1366b7f76965cef5849be277e",
+      "terminal_lines": [
+        "[native_exit] reached actual exit request; gameplay=false"
+      ]
+    },
+    "native_exit_menu_button": {
+      "sha256": "a5cbf5a0b9e6b7c52a249a84c8cbfdb8540bd4f1366b7f76965cef5849be277e",
+      "terminal_lines": [
+        "[native_exit] reached actual exit request; gameplay=false"
+      ]
+    },
+    "import": {
+      "sha256": "4f62c3c81c15b2e3f08fb3c4db68bae646cba1ece3b5ae482c78dec576ffc803",
+      "errors": 0
+    },
+    "packaged_export": {
+      "sha256": "006618e6bc666e836c0e0322453fac10f202b5909f754850cca33da3236bddfa",
+      "errors": 0
+    }
+  }
+}

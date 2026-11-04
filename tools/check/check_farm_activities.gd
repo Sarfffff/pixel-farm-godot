@@ -41,6 +41,8 @@ func full_bag(extra: Array = []) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	root.size = Vector2i(1600, 900)
 	root.content_scale_size = Vector2i(640, 360)
 	root.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
@@ -87,7 +89,7 @@ func _run() -> void:
 	await create_timer(0.1).timeout
 	await settle()
 	print("[activities] %d checks, %d failures" % [checks, failures])
-	quit(0 if failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if failures == 0 else 1)
 
 
 func _test_storage() -> void:
@@ -169,7 +171,7 @@ func _test_crops() -> void:
 	tiller.interact(Vector2i(18, 6))
 	check(inventory.count_of(&"potato") == 1 and not tiller._crops.has(Vector2i(18, 6)), "potato is single harvest")
 	var crop: Crop = tiller._spawn_crop(Vector2i(19, 6), blueberry, 0, false)
-	check(crop.scale == Vector2(0.5, 0.5), "original crop art fits one sixteen-pixel plot")
+	check(crop.scale == Vector2.ONE and crop.texture.get_size() == Vector2(32, 32), "new crop art shares native pixel density with existing crops")
 	check(crop.watered_nights_remaining() == 5, "blueberry displays actual first-harvest duration")
 	clock.sleep()
 	check(crop.stage == 0 and crop.stage_age == 0, "unwatered crop does not age")

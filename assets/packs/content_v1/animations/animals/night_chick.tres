@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/graze_left_a.png" id="1_t6vec"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/graze_left_b.png" id="2_4fle0"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/idle_down.png" id="3_arsmm"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/idle_left.png" id="4_y8m2v"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/idle_right.png" id="5_wg00c"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/idle_up.png" id="6_tdnoy"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/walk_left_a.png" id="7_t6gcc"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/night_chick/walk_left_b.png" id="8_qiyux"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t6vec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4fle0")
+}],
+"loop": 1,
+"name": &"graze_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_arsmm")
+}],
+"loop": 0,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y8m2v")
+}],
+"loop": 0,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wg00c")
+}],
+"loop": 0,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tdnoy")
+}],
+"loop": 0,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_t6gcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qiyux")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}]

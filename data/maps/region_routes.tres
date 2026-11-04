@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/data/region_routes.gd" id="1"]
+[resource]
+script = ExtResource("1")
+connections = {
+"home": [["east", "farm", "west"]],
+"farm": [["west", "home", "east"], ["east", "village", "west"], ["north", "forest", "south"], ["south", "wetland", "north"]],
+"village": [["west", "farm", "east"], ["north", "quarry", "south"], ["south", "beach", "north"]],
+"forest": [["south", "farm", "north"], ["east", "quarry", "west"]],
+"wetland": [["north", "farm", "south"], ["east", "beach", "west"]],
+"quarry": [["west", "forest", "east"], ["south", "village", "north"]],
+"beach": [["north", "village", "south"], ["west", "wetland", "east"]]
+}

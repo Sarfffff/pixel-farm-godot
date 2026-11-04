@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/down_a.png" id="1_u4iw4"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/down_b.png" id="2_xtrgo"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/left_a.png" id="3_1akxx"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/left_b.png" id="4_skeqk"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/right_a.png" id="5_7imii"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/right_b.png" id="6_5y7hd"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/up_a.png" id="7_sletp"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/river_angler/up_b.png" id="8_7mn81"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u4iw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xtrgo")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1akxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_skeqk")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7imii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5y7hd")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sletp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7mn81")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

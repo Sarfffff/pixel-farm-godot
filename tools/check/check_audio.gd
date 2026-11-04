@@ -18,6 +18,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	var mgr := root.get_node_or_null("AudioManager")
 	_check(mgr != null, "AudioManager autoload exists")
 	if mgr == null:
@@ -25,7 +27,7 @@ func _run() -> void:
 		return
 
 	# 1. 三首曲子都能加载、长度合理、自动循环
-	var tracks: Dictionary = load("res://scripts/systems/audio_manager.gd").get_script_constant_map()["TRACKS"]
+	var tracks: Dictionary = load("res://scripts/platform/audio_manager.gd").get_script_constant_map()["TRACKS"]
 	_check(tracks.size() == 3, "three tracks registered")
 	for key in tracks:
 		var stream: AudioStreamWAV = load(str(tracks[key])) as AudioStreamWAV
@@ -110,7 +112,7 @@ func _run() -> void:
 	menu.queue_free()
 
 	# 8. 操作音效：都能加载、不循环、能播、不打断音乐
-	var sfx_names: Dictionary = load("res://scripts/systems/audio_manager.gd").get_script_constant_map()["SFX"]
+	var sfx_names: Dictionary = load("res://scripts/platform/audio_manager.gd").get_script_constant_map()["SFX"]
 	_check(sfx_names.size() >= 8, "sfx registered (%d)" % sfx_names.size())
 	for key in sfx_names:
 		var sfx: AudioStreamWAV = load(str(sfx_names[key])) as AudioStreamWAV
@@ -174,7 +176,7 @@ func _finish(main: Node = null) -> void:
 		main.queue_free()
 	if _failures == 0:
 		print("[audio] all checks passed")
-		quit(0)
+		preload("res://tools/lib/check_lifecycle.gd").finish(self, 0)
 	else:
 		printerr("[audio] %d check(s) failed" % _failures)
-		quit(1)
+		preload("res://tools/lib/check_lifecycle.gd").finish(self, 1)

@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f0.png" id="1_wuev7"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f1.png" id="2_qcypo"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f2.png" id="3_ljsbq"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f3.png" id="4_0vfrj"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f4.png" id="5_371w3"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f5.png" id="6_51rt1"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f6.png" id="7_6qyhw"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/lake_creature/f7.png" id="8_1l165"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wuev7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qcypo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ljsbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0vfrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_371w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_51rt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6qyhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1l165")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

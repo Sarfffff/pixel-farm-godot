@@ -2,16 +2,18 @@ extends SceneTree
 ## 验收真实成品、来源约束、尺寸、透明度、图集区域及完整清单覆盖。
 ## -- --allow-partial 可用于生成过程中的分批检查；默认必须全量到齐。
 
-const ROOT: String = "res://assets/generated/content_v1/"
+const ROOT: String = "res://assets/packs/content_v1/"
 var _failures: int = 0
 
 
 func _init() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "catalog.json"))
 	var plan: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "generation_plan.json"))
 	if catalog.is_empty() or plan.is_empty():
 		_check(false, "catalog or generation plan missing")
-		quit(1)
+		preload("res://tools/lib/check_lifecycle.gd").finish(self, 1)
 		return
 	var expected: int = 0
 	for job: Dictionary in plan["jobs"]:
@@ -32,7 +34,7 @@ func _init() -> void:
 		ids[id] = true
 		var path: String = str(item["path"])
 		_check(path.begins_with(ROOT) and ".." not in path, "output inside categorized library")
-		_check(str(item["source"]).begins_with("res://assets/generated/sources/content_v1/"), "independent generated source")
+		_check(str(item["source"]).begins_with("res://art/sources/content_v1/"), "independent generated source")
 		var image: Image = Image.load_from_file(ProjectSettings.globalize_path(path))
 		if image == null:
 			_check(false, "image readable: " + id)
@@ -60,7 +62,7 @@ func _init() -> void:
 		_check(atlas.get_region(rect).get_data() == image.get_data(), "atlas pixels match standalone: " + id)
 	_verify_resources()
 	print("[check_content_art] %s: %d sprites / %d planned, %d errors" % ["PASS" if _failures == 0 else "FAIL", ids.size(), expected, _failures])
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 func _verify_resources() -> void:

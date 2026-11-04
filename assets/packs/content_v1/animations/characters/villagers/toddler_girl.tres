@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/down_a.png" id="1_0vb84"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/down_b.png" id="2_a4lfn"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/left_a.png" id="3_i2qj5"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/left_b.png" id="4_5514a"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/right_a.png" id="5_evb7b"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/right_b.png" id="6_irmxk"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/up_a.png" id="7_kgvce"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/toddler_girl/up_b.png" id="8_q747m"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0vb84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a4lfn")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i2qj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5514a")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_evb7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_irmxk")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_kgvce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q747m")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/game/characters/egg_and_nest.png" id="1_tex"]
-[ext_resource type="Script" path="res://scripts/world/egg.gd" id="2_egg"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/characters/egg_and_nest.png" id="1_tex"]
+[ext_resource type="Script" path="res://scripts/animals/egg.gd" id="2_egg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egg"]
 atlas = ExtResource("1_tex")

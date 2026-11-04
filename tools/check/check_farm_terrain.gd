@@ -20,6 +20,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_main = load("res://scenes/main.tscn").instantiate() as Node2D
 	root.add_child(_main)
 	current_scene = _main
@@ -42,7 +44,10 @@ func _run() -> void:
 	_check(source.get_tile_animation_frames_count(Vector2i.ZERO) == 4, "four-frame native water animation")
 	_check(not _solid(Vector2(472, 176)), "spawn remains clear")
 	_check(_solid(Vector2(72, 120)), "raised bluff blocks walking")
-	for prop: Node2D in farm.get_node("World").get_children():
+	for child: Node in farm.get_node("World").get_children():
+		if not child is Node2D:
+			continue
+		var prop := child as Node2D
 		if prop == _player:
 			continue
 		# 浮标、钓线这类水面视觉物本就该在水里，不参与"脚下要干燥"的检查。
@@ -65,7 +70,7 @@ func _run() -> void:
 	print("[farm_terrain] %s (%d failures; %d water cells)" % ["PASS" if _failures == 0 else "FAIL", _failures, cells.size()])
 	_main.queue_free()
 	await process_frame
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 func _solid(point: Vector2) -> bool:

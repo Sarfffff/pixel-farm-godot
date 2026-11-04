@@ -1,0 +1,525 @@
+{
+	"items": [
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "cooperative_manager",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				0,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/cooperative_manager/neutral",
+			"mode": "sprite",
+			"name": "cooperative manager (teal coat and tan curly hair) neutral",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/cooperative_manager/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				2,
+				0,
+				361,
+				362
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "cooperative_manager",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				64,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/cooperative_manager/happy",
+			"mode": "sprite",
+			"name": "cooperative manager (teal coat and tan curly hair) happy",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/cooperative_manager/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				363,
+				0,
+				362,
+				362
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "cooperative_manager",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				128,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/cooperative_manager/sad",
+			"mode": "sprite",
+			"name": "cooperative manager (teal coat and tan curly hair) sad",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/cooperative_manager/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				725,
+				0,
+				362,
+				362
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "cooperative_manager",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				192,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/cooperative_manager/annoyed",
+			"mode": "sprite",
+			"name": "cooperative manager (teal coat and tan curly hair) annoyed",
+			"opaque_bounds": [
+				5,
+				2,
+				54,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/cooperative_manager/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				1087,
+				0,
+				363,
+				362
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "cooperative_manager",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				256,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/cooperative_manager/surprised",
+			"mode": "sprite",
+			"name": "cooperative manager (teal coat and tan curly hair) surprised",
+			"opaque_bounds": [
+				5,
+				2,
+				54,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/cooperative_manager/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				1450,
+				0,
+				362,
+				362
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "cooperative_manager",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				320,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/cooperative_manager/blushing",
+			"mode": "sprite",
+			"name": "cooperative manager (teal coat and tan curly hair) blushing",
+			"opaque_bounds": [
+				5,
+				2,
+				54,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/cooperative_manager/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				1812,
+				0,
+				360,
+				362
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "elder_farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				0,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/elder_farmer/neutral",
+			"mode": "sprite",
+			"name": "elder farmer (cream tunic and brown ponytail) neutral",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/elder_farmer/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				2,
+				362,
+				361,
+				360
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "elder_farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				64,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/elder_farmer/happy",
+			"mode": "sprite",
+			"name": "elder farmer (cream tunic and brown ponytail) happy",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/elder_farmer/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				363,
+				362,
+				362,
+				360
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "elder_farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				128,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/elder_farmer/sad",
+			"mode": "sprite",
+			"name": "elder farmer (cream tunic and brown ponytail) sad",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/elder_farmer/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				725,
+				362,
+				362,
+				360
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "elder_farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				192,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/elder_farmer/annoyed",
+			"mode": "sprite",
+			"name": "elder farmer (cream tunic and brown ponytail) annoyed",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/elder_farmer/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				1087,
+				362,
+				363,
+				360
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "elder_farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				256,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/elder_farmer/surprised",
+			"mode": "sprite",
+			"name": "elder farmer (cream tunic and brown ponytail) surprised",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/elder_farmer/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				1450,
+				362,
+				362,
+				360
+			],
+			"source_sheet": "portraits_8"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "elder_farmer",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_8.png",
+			"atlas_region": [
+				320,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/elder_farmer/blushing",
+			"mode": "sprite",
+			"name": "elder farmer (cream tunic and brown ponytail) blushing",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/elder_farmer/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_8.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				1812,
+				362,
+				360,
+				360
+			],
+			"source_sheet": "portraits_8"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "66c858bf885ebcc2bd71c669a089fbe7fbde97209a7f53520fa88b39c26b8ae0",
+	"sheet": {
+		"category": "portraits",
+		"cell_size": [
+			64,
+			64
+		],
+		"columns": 6,
+		"count": 12,
+		"id": "portraits_8",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/portraits_8.png",
+		"rows": 2,
+		"source": "res://art/sources/content_v1/portraits_8.png"
+	},
+	"source_hash": "101a603d531c34ececf7a57711b6326d"
+}

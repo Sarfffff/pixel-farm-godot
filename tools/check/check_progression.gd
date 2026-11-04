@@ -16,9 +16,11 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	# 不依赖渲染帧率：完整一分钟，30/60/144 FPS 的结果一致。
 	for fps: int in [30, 60, 144]:
-		var clock := preload("res://scripts/systems/time_system.gd").new()
+		var clock := preload("res://scripts/time/time_system.gd").new()
 		# 速率可配（默认星露谷 10 分钟 / 7 秒），期望值按当前速率算，不写死
 		var expected: int = 360 + int(floor(60.0 * clock.minutes_per_real_second + 0.000001))
 		for frame in fps * 60:
@@ -122,13 +124,13 @@ func _run() -> void:
 	tiller.interact(cell)
 	_check(tutorial.step == 5 and inventory.count_of(&"carrot") == 1, "harvest advances to first sale")
 	shop._sell(&"carrot", 25, 1)
-	_check(tutorial.step == 6, "selling an actual crop completes the guide")
+	_check(tutorial.step == 7, "first sale with an existing upgrade starts reinvestment")
 	# 普通存档往返包含所有新字段；旧档缺字段有默认值。
 	var snapshot: Dictionary = save.collect()
 	upgrades.from_dict({})
 	tutorial.from_dict({})
 	save.apply(snapshot)
-	_check(upgrades.watering_level == 1 and tutorial.step == 6, "upgrade and tutorial survive full save roundtrip")
+	_check(upgrades.watering_level == 1 and tutorial.step == 7, "upgrade and tutorial survive full save roundtrip")
 	_check(forage.to_dict() == snapshot[&"forage"], "forage state survives full save roundtrip")
 	var old_save: Dictionary = snapshot.duplicate(true)
 	for key: String in ["upgrades", "tutorial", "forage"]:
@@ -176,4 +178,4 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 	print("[progression] clock, forage, deadlines, guide, upgrades, saves, bedtime; %d failures" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

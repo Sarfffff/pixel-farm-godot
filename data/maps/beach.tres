@@ -1,0 +1,19 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/world_region_data.gd" id="1_w1qt2"]
+
+[resource]
+script = ExtResource("1_w1qt2")
+id = &"beach"
+display_name = "海滩与浅水岸"
+purpose = "沙地、海边采集和后续海钓"
+layout = &"beach"
+seed_value = 20261609
+resource_count = 34
+resource_weights = {
+"fallen_log": 2,
+"reeds": 2,
+"river_pebbles": 3,
+"shell": 8,
+"twig": 2
+}

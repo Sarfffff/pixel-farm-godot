@@ -1,7 +1,7 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/world/order_bin.gd" id="1_order"]
-[ext_resource type="Texture2D" path="res://assets/generated/items/shipping_sack.png" id="2_sack"]
+[ext_resource type="Script" path="res://scripts/world/interactions/order_bin.gd" id="1_order"]
+[ext_resource type="Texture2D" path="res://assets/textures/items/shipping_sack.png" id="2_sack"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bin"]
 size = Vector2(12, 6)

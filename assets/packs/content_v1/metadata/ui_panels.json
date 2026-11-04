@@ -1,0 +1,757 @@
+{
+	"items": [
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				0,
+				0,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/dialogue_panel",
+			"mode": "panel",
+			"name": "dialogue panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				3,
+				124,
+				89
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/dialogue_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				15,
+				13,
+				353,
+				260
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				128,
+				0,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/green_dialogue_panel",
+			"mode": "panel",
+			"name": "green dialogue panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				4,
+				124,
+				88
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/green_dialogue_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				368,
+				13,
+				353,
+				260
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				256,
+				0,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/chat_panel",
+			"mode": "panel",
+			"name": "chat panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				7,
+				124,
+				82
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/chat_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				721,
+				13,
+				352,
+				260
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				384,
+				0,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/hover_panel",
+			"mode": "panel",
+			"name": "hover panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				3,
+				124,
+				89
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/hover_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				1073,
+				13,
+				360,
+				260
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				0,
+				96,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/letter_sheet",
+			"mode": "panel",
+			"name": "letter sheet",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				3,
+				124,
+				90
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/letter_sheet.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				15,
+				273,
+				353,
+				268
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				128,
+				96,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/community_note",
+			"mode": "panel",
+			"name": "community note",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				6,
+				124,
+				83
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/community_note.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				368,
+				273,
+				353,
+				268
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				256,
+				96,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/inventory_panel",
+			"mode": "panel",
+			"name": "inventory panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				2,
+				124,
+				92
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/inventory_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				721,
+				273,
+				352,
+				268
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				384,
+				96,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/shop_panel",
+			"mode": "panel",
+			"name": "shop panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				7,
+				124,
+				81
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/shop_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				1073,
+				273,
+				360,
+				268
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				0,
+				192,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/quest_panel",
+			"mode": "panel",
+			"name": "quest panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				3,
+				124,
+				89
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/quest_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				15,
+				541,
+				353,
+				265
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				128,
+				192,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/settings_panel",
+			"mode": "panel",
+			"name": "settings panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				3,
+				124,
+				90
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/settings_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				368,
+				541,
+				353,
+				265
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				256,
+				192,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/save_slot",
+			"mode": "panel",
+			"name": "save slot",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				4,
+				124,
+				87
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/save_slot.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				721,
+				541,
+				352,
+				265
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				384,
+				192,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/calendar_panel",
+			"mode": "panel",
+			"name": "calendar panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				2,
+				124,
+				91
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/calendar_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				1073,
+				541,
+				360,
+				265
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				0,
+				288,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/map_frame",
+			"mode": "panel",
+			"name": "map frame",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				3,
+				124,
+				89
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/map_frame.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				15,
+				806,
+				353,
+				267
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				128,
+				288,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/skill_title_panel",
+			"mode": "panel",
+			"name": "skill title panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				4,
+				124,
+				87
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/skill_title_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				368,
+				806,
+				353,
+				267
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				256,
+				288,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/controller_help_panel",
+			"mode": "panel",
+			"name": "controller help panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				5,
+				124,
+				86
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/controller_help_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				721,
+				806,
+				352,
+				267
+			],
+			"source_sheet": "ui_panels"
+		},
+		{
+			"anchor": [
+				64,
+				48
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/ui_panels.png",
+			"atlas_region": [
+				384,
+				288,
+				128,
+				96
+			],
+			"category": "ui/panels",
+			"id": "ui/panels/placement_legal_panel",
+			"mode": "panel",
+			"name": "placement legal panel",
+			"nine_patch_margin": [
+				8,
+				8,
+				8,
+				8
+			],
+			"opaque_bounds": [
+				2,
+				5,
+				124,
+				86
+			],
+			"path": "res://assets/packs/content_v1/ui/panels/placement_legal_panel.png",
+			"size": [
+				128,
+				96
+			],
+			"source": "res://art/sources/content_v1/ui_panels.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				1073,
+				806,
+				360,
+				267
+			],
+			"source_sheet": "ui_panels"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "1e5525024fe99aec81d0f5128a46b72873d2add1ae25acf96d31419463f4b133",
+	"sheet": {
+		"category": "ui/panels",
+		"cell_size": [
+			128,
+			96
+		],
+		"columns": 4,
+		"count": 16,
+		"id": "ui_panels",
+		"mode": "panel",
+		"path": "res://assets/packs/content_v1/atlases/ui_panels.png",
+		"rows": 4,
+		"source": "res://art/sources/content_v1/ui_panels.png"
+	},
+	"source_hash": "6ee43a48f5726f64a245efd31d7cba7e"
+}

@@ -2,8 +2,8 @@ extends SceneTree
 ## 将 ImageGen 原图技术整理为透明像素素材；不覆盖现有作物或动物。
 ## godot --headless --path . --script res://tools/art/prepare_expansion_art.gd
 
-const ROOT: String = "res://assets/generated/expansion_v1/"
-const SOURCE: String = "res://assets/generated/sources/"
+const ROOT: String = "res://assets/packs/expansion_v1/"
+const SOURCE: String = "res://art/sources/base/"
 const FISH: Array[String] = [
 	"crucian_carp", "common_carp", "bluegill", "largemouth_bass",
 	"rainbow_trout", "perch", "catfish", "northern_pike",

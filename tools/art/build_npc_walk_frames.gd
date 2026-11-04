@@ -14,7 +14,7 @@ extends SceneTree
 ## 运行方式：
 ##   godot --headless --path e:/my-ai-game --script res://tools/art/build_npc_walk_frames.gd
 
-const INPUT_DIR := "res://assets/generated/characters/npcs_v1/"
+const INPUT_DIR := "res://assets/textures/characters/npcs_v1/"
 const IDS: Array[String] = ["shopkeeper", "gardener", "carpenter", "fisherman"]
 ## 脚掌起点行：贴图脚底在 y=24，y >= 22 才是分开的两只脚
 const FEET_TOP: int = 22

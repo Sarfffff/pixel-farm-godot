@@ -1,7 +1,8 @@
 extends SceneTree
 
-const ROOT: String = "res://assets/generated/"
-const SOURCE: String = ROOT + "sources/"
+const ROOT: String = "res://assets/textures/"
+const SOURCE: String = "res://art/sources/base/"
+const PREVIEW: String = "res://art/previews/trees/preview.png"
 const PALETTE: Array[Color] = [
 	Color("302421"), Color("654638"), Color("936644"), Color("dcb272"),
 	Color("f0e1b6"), Color("344b3f"), Color("596b4b"), Color("839568"),
@@ -66,7 +67,8 @@ func _init() -> void:
 	if _errors == 0:
 		_write_catalog()
 		_preview.resize(768, 2176, Image.INTERPOLATE_NEAREST)
-		var error: Error = _preview.save_png(ROOT + "trees/preview.png")
+		DirAccess.make_dir_recursive_absolute(PREVIEW.get_base_dir())
+		var error: Error = _preview.save_png(PREVIEW)
 		if error != OK:
 			_fail("Cannot save preview")
 	print("[tree_art] %d textures, %d varieties, %d errors" % [_entries.size(), _groups.size(), _errors])
@@ -387,7 +389,7 @@ func _write_catalog() -> void:
 		"version": 1, "generator": "image_gen; technical preparation: tools/art/prepare_tree_art.gd",
 		"status": "art only; no TreeData, gameplay, collision or inventory connections added",
 		"texture_count": _entries.size(), "palette": colors, "alpha": [0, 255],
-		"sampling": "nearest, no mipmaps", "preview": ROOT + "trees/preview.png",
+		"sampling": "nearest, no mipmaps", "preview": PREVIEW,
 		"root_collision_radius": [4, 5], "varieties": _groups, "textures": _entries,
 		"preparation": "Background removal, measured source cells, nearest resize, shared 16-color palette; young sprites cleaned of premature fruit, harvested foliage inpainted over fruit pixels to preserve mature silhouette; sapling icons derived from planted saplings.",
 	}, "\t") + "\n")

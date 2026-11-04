@@ -1,0 +1,2901 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/wood_chest.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/wood_chest",
+			"mode": "sprite",
+			"name": "wood chest",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/wood_chest.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				158,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/stone_chest.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/stone_chest",
+			"mode": "sprite",
+			"name": "stone chest",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/stone_chest.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				158,
+				0,
+				154,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/furnace.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/furnace",
+			"mode": "sprite",
+			"name": "furnace",
+			"opaque_bounds": [
+				3,
+				2,
+				25,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/furnace.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				312,
+				0,
+				161,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/large_furnace.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/large_furnace",
+			"mode": "sprite",
+			"name": "large furnace",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/large_furnace.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				473,
+				0,
+				158,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/scarecrow.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/scarecrow",
+			"mode": "sprite",
+			"name": "scarecrow",
+			"opaque_bounds": [
+				2,
+				2,
+				27,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/scarecrow.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				631,
+				0,
+				162,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/owl_scarecrow.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/owl_scarecrow",
+			"mode": "sprite",
+			"name": "owl scarecrow",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/owl_scarecrow.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				793,
+				0,
+				152,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/sprinkler.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/sprinkler",
+			"mode": "sprite",
+			"name": "sprinkler",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/sprinkler.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				945,
+				0,
+				158,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				0,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/quality_sprinkler.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/quality_sprinkler",
+			"mode": "sprite",
+			"name": "quality sprinkler",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/quality_sprinkler.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1103,
+				0,
+				157,
+				168
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/deluxe_sprinkler.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/deluxe_sprinkler",
+			"mode": "sprite",
+			"name": "deluxe sprinkler",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/deluxe_sprinkler.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				168,
+				158,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/preserves_jar.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/preserves_jar",
+			"mode": "sprite",
+			"name": "preserves jar",
+			"opaque_bounds": [
+				4,
+				2,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/preserves_jar.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				158,
+				168,
+				154,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/keg.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/keg",
+			"mode": "sprite",
+			"name": "keg",
+			"opaque_bounds": [
+				2,
+				3,
+				28,
+				27
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/keg.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				312,
+				168,
+				161,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/bee_house.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/bee_house",
+			"mode": "sprite",
+			"name": "bee house",
+			"opaque_bounds": [
+				4,
+				2,
+				23,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/bee_house.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				473,
+				168,
+				158,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/cheese_press.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/cheese_press",
+			"mode": "sprite",
+			"name": "cheese press",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/cheese_press.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				631,
+				168,
+				162,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/mayonnaise_machine.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/mayonnaise_machine",
+			"mode": "sprite",
+			"name": "mayonnaise machine",
+			"opaque_bounds": [
+				3,
+				2,
+				25,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/mayonnaise_machine.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				793,
+				168,
+				152,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/oil_press.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/oil_press",
+			"mode": "sprite",
+			"name": "oil press",
+			"opaque_bounds": [
+				4,
+				2,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/oil_press.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				945,
+				168,
+				158,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				32,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/loom.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/loom",
+			"mode": "sprite",
+			"name": "loom",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/loom.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1103,
+				168,
+				157,
+				161
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/seed_maker.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/seed_maker",
+			"mode": "sprite",
+			"name": "seed maker",
+			"opaque_bounds": [
+				2,
+				2,
+				27,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/seed_maker.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				329,
+				158,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/charcoal_kiln.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/charcoal_kiln",
+			"mode": "sprite",
+			"name": "charcoal kiln",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/charcoal_kiln.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				158,
+				329,
+				154,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/recycling_machine.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/recycling_machine",
+			"mode": "sprite",
+			"name": "recycling machine",
+			"opaque_bounds": [
+				3,
+				2,
+				25,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/recycling_machine.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				312,
+				329,
+				161,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/lightning_rod.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/lightning_rod",
+			"mode": "sprite",
+			"name": "lightning rod",
+			"opaque_bounds": [
+				6,
+				2,
+				20,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/lightning_rod.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				473,
+				329,
+				158,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/incubator.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/incubator",
+			"mode": "sprite",
+			"name": "incubator",
+			"opaque_bounds": [
+				4,
+				2,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/incubator.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				631,
+				329,
+				162,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/crystal_grower.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/crystal_grower",
+			"mode": "sprite",
+			"name": "crystal grower",
+			"opaque_bounds": [
+				4,
+				2,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/crystal_grower.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				793,
+				329,
+				152,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/worm_bin.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/worm_bin",
+			"mode": "sprite",
+			"name": "worm bin",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/worm_bin.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				945,
+				329,
+				158,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				64,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/tree_tapper.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/tree_tapper",
+			"mode": "sprite",
+			"name": "tree tapper",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/tree_tapper.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1103,
+				329,
+				157,
+				156
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/compost_bin.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/compost_bin",
+			"mode": "sprite",
+			"name": "compost bin",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/compost_bin.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				485,
+				158,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/cask.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/cask",
+			"mode": "sprite",
+			"name": "cask",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/cask.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				158,
+				485,
+				154,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/fish_smoker.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/fish_smoker",
+			"mode": "sprite",
+			"name": "fish smoker",
+			"opaque_bounds": [
+				5,
+				2,
+				22,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/fish_smoker.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				312,
+				485,
+				161,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/food_dehydrator.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/food_dehydrator",
+			"mode": "sprite",
+			"name": "food dehydrator",
+			"opaque_bounds": [
+				4,
+				2,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/food_dehydrator.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				473,
+				485,
+				158,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/solar_panel.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/solar_panel",
+			"mode": "sprite",
+			"name": "solar panel",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/solar_panel.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				631,
+				485,
+				162,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/wind_generator.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/wind_generator",
+			"mode": "sprite",
+			"name": "wind generator",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/wind_generator.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				793,
+				485,
+				152,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/shipping_bin.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/shipping_bin",
+			"mode": "sprite",
+			"name": "shipping bin",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/shipping_bin.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				945,
+				485,
+				158,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				96,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/water_trough.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/water_trough",
+			"mode": "sprite",
+			"name": "water trough",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/water_trough.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1103,
+				485,
+				157,
+				173
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/hay_feeder.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/hay_feeder",
+			"mode": "sprite",
+			"name": "hay feeder",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/hay_feeder.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				0,
+				658,
+				158,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/animal_heater.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/animal_heater",
+			"mode": "sprite",
+			"name": "animal heater",
+			"opaque_bounds": [
+				3,
+				2,
+				25,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/animal_heater.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				158,
+				658,
+				154,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/feed_silo.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/feed_silo",
+			"mode": "sprite",
+			"name": "feed silo",
+			"opaque_bounds": [
+				6,
+				2,
+				20,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/feed_silo.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				312,
+				658,
+				161,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/grinding_stone.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/grinding_stone",
+			"mode": "sprite",
+			"name": "grinding stone",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/grinding_stone.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				473,
+				658,
+				158,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/workbench.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/workbench",
+			"mode": "sprite",
+			"name": "workbench",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/workbench.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				631,
+				658,
+				162,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/campfire.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/campfire",
+			"mode": "sprite",
+			"name": "campfire",
+			"opaque_bounds": [
+				2,
+				3,
+				28,
+				27
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/campfire.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				793,
+				658,
+				152,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/standing_torch.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/standing_torch",
+			"mode": "sprite",
+			"name": "standing torch",
+			"opaque_bounds": [
+				10,
+				2,
+				11,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/standing_torch.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				945,
+				658,
+				158,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				128,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/garden_lantern.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/garden_lantern",
+			"mode": "sprite",
+			"name": "garden lantern",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/garden_lantern.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1103,
+				658,
+				157,
+				162
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/wood_gate.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/wood_gate",
+			"mode": "sprite",
+			"name": "wood gate",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/wood_gate.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				0,
+				820,
+				158,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/stone_gate.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/stone_gate",
+			"mode": "sprite",
+			"name": "stone gate",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/stone_gate.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				158,
+				820,
+				154,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/fence_post.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/fence_post",
+			"mode": "sprite",
+			"name": "fence post",
+			"opaque_bounds": [
+				9,
+				2,
+				13,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/fence_post.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				312,
+				820,
+				161,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/garden_planter.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/garden_planter",
+			"mode": "sprite",
+			"name": "garden planter",
+			"opaque_bounds": [
+				2,
+				12,
+				28,
+				18
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/garden_planter.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				473,
+				820,
+				158,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/bird_house.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/bird_house",
+			"mode": "sprite",
+			"name": "bird house",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/bird_house.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				631,
+				820,
+				162,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/rain_barrel.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/rain_barrel",
+			"mode": "sprite",
+			"name": "rain barrel",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/rain_barrel.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				793,
+				820,
+				152,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/sign_board.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/sign_board",
+			"mode": "sprite",
+			"name": "sign board",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/sign_board.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				945,
+				820,
+				158,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				160,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/mailbox.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/mailbox",
+			"mode": "sprite",
+			"name": "mailbox",
+			"opaque_bounds": [
+				4,
+				2,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/mailbox.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1103,
+				820,
+				157,
+				152
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/cooking_pot.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/cooking_pot",
+			"mode": "sprite",
+			"name": "cooking pot",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/cooking_pot.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				0,
+				972,
+				158,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/spinning_wheel.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/spinning_wheel",
+			"mode": "sprite",
+			"name": "spinning wheel",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/spinning_wheel.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				158,
+				972,
+				154,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/bread_oven.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/bread_oven",
+			"mode": "sprite",
+			"name": "bread oven",
+			"opaque_bounds": [
+				2,
+				4,
+				28,
+				26
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/bread_oven.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				312,
+				972,
+				161,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/water_pump.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/water_pump",
+			"mode": "sprite",
+			"name": "water pump",
+			"opaque_bounds": [
+				3,
+				2,
+				26,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/water_pump.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				473,
+				972,
+				158,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/well_crank.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/well_crank",
+			"mode": "sprite",
+			"name": "well crank",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/well_crank.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				631,
+				972,
+				162,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/grain_mill.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/grain_mill",
+			"mode": "sprite",
+			"name": "grain mill",
+			"opaque_bounds": [
+				2,
+				3,
+				28,
+				27
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/grain_mill.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				793,
+				972,
+				152,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/milk_churn.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/milk_churn",
+			"mode": "sprite",
+			"name": "milk churn",
+			"opaque_bounds": [
+				4,
+				2,
+				23,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/milk_churn.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				945,
+				972,
+				158,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				192,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/sugar_press.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/sugar_press",
+			"mode": "sprite",
+			"name": "sugar press",
+			"opaque_bounds": [
+				2,
+				2,
+				28,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/sugar_press.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1103,
+				972,
+				157,
+				142
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/tea_dryer.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/tea_dryer",
+			"mode": "sprite",
+			"name": "tea dryer",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/tea_dryer.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				0,
+				1114,
+				158,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/fermentation_vat.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/fermentation_vat",
+			"mode": "sprite",
+			"name": "fermentation vat",
+			"opaque_bounds": [
+				2,
+				2,
+				27,
+				28
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/fermentation_vat.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				158,
+				1114,
+				154,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/fish_pond.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/fish_pond",
+			"mode": "sprite",
+			"name": "fish pond",
+			"opaque_bounds": [
+				2,
+				11,
+				28,
+				19
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/fish_pond.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				312,
+				1114,
+				161,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/crab_pot.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/crab_pot",
+			"mode": "sprite",
+			"name": "crab pot",
+			"opaque_bounds": [
+				2,
+				12,
+				28,
+				18
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/crab_pot.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				473,
+				1114,
+				158,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				128,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/bait_station.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/bait_station",
+			"mode": "sprite",
+			"name": "bait station",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/bait_station.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				631,
+				1114,
+				162,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				160,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/mining_cart.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/mining_cart",
+			"mode": "sprite",
+			"name": "mining cart",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/mining_cart.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				793,
+				1114,
+				152,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				192,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/tool_rack.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/tool_rack",
+			"mode": "sprite",
+			"name": "tool rack",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/tool_rack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				945,
+				1114,
+				158,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+			"atlas_region": [
+				224,
+				224,
+				32,
+				32
+			],
+			"category": "objects/craftables",
+			"icon": "res://assets/packs/content_v1/icons/objects/craftables/storage_crate.png",
+			"icon_size": [
+				16,
+				16
+			],
+			"id": "objects/craftables/storage_crate",
+			"mode": "sprite",
+			"name": "storage crate",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				22
+			],
+			"path": "res://assets/packs/content_v1/objects/craftables/storage_crate.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/craftable_objects.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1103,
+				1114,
+				157,
+				133
+			],
+			"source_sheet": "craftable_objects"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "045b7f4feb146d2400b0b36e6da37fb9fb15699a072965295908a11da8578ec6",
+	"sheet": {
+		"category": "objects/craftables",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 8,
+		"count": 64,
+		"id": "craftable_objects",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/craftable_objects.png",
+		"rows": 8,
+		"source": "res://art/sources/content_v1/craftable_objects.png"
+	},
+	"source_hash": "c88b8dedae1621205aecab8eef07d659"
+}

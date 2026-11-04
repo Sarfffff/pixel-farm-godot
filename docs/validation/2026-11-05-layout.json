@@ -1,0 +1,267 @@
+{
+  "date": "2026-11-05",
+  "task": "A0-02 directory and resource organization",
+  "scope": "File locations, references and directory guides; no gameplay or save schema change.",
+  "migration": {
+    "moved_files": 8078,
+    "rewritten_text_files": 3885,
+    "binary_files_verified": 4295
+  },
+  "layout_audit": {
+    "passed": true,
+    "text_files_checked": 4021,
+    "literal_resource_paths_checked": 17957,
+    "script_uids_checked": 176,
+    "files_by_area_without_sidecars": {
+      "art": 778,
+      "assets": 3714,
+      "scripts": 109,
+      "scenes": 45,
+      "data": 91,
+      "tools": 74
+    },
+    "repaired_files": [],
+    "errors": []
+  },
+  "checks": {
+    "command": "pwsh -NoProfile -File tools/run_checks.ps1",
+    "first_pass": {
+      "suites": 33,
+      "passed": 32,
+      "failed": [
+        "check_release"
+      ],
+      "reason": "CREDITS Chinese game name omitted during reference-directory text rewrite"
+    },
+    "followup_command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_release",
+    "latest_results": [
+      {
+        "Suite": "check_animals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_architecture",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_audio",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_basic_loop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_berries",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_calendar",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_compilation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_content_art",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_crops",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_activities",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_interactions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_terrain",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_friendship",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_goals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_held_tools",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_house",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_interior_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory_hotbar_camera",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_npcs",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pause",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pickaxe",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_presentation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_progression",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_region_gameplay",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_release",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_save_validation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_settings",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_shop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_survival",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_ui_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_world_regions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "smoke_check",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ],
+    "all_latest_passed": true
+  },
+  "resource_import": {
+    "command": "godot --headless --editor --path . --import --quit",
+    "final_log": "build/organization/import_final.log",
+    "final_engine_errors": false,
+    "note": "Initial import saw old autoload UID paths during filesystem refresh; final import and isolated preflight clean."
+  },
+  "native_render": {
+    "command": "godot --path . --script res://tools/preview/preview_presentation.gd --quit-after 1000",
+    "captures": 20,
+    "renderer": "D3D12 / Forward+",
+    "log": "build/organization/preview.log",
+    "screenshots": "build/presentation-preview/",
+    "errors": false,
+    "inspection": "Farm and selected UI views inspected; no full keyboard/mouse farming playthrough."
+  },
+  "export": {
+    "pack": "build/organization/PixelFarm.pck",
+    "bytes": 13127316,
+    "export_log_file_entries": 8135,
+    "excluded_folder_entries": [],
+    "engine_errors": []
+  },
+  "known_limits": [
+    "Some existing headless suites report exit-time object/resource warnings; retained in per-suite results.",
+    "An editor game instance predating the migration was left running; restart that instance to use the new disk paths.",
+    "Parallel feature development was preserved; this record validates the tested snapshot and directory changes."
+  ],
+  "local_details": "build/organization/ (ignored output, includes text-before.zip and per-file migration map)"
+}

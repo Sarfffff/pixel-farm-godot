@@ -1,0 +1,897 @@
+{
+	"alpha": [
+		0,
+		255
+	],
+	"building_count": 20,
+	"buildings": [
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "residential",
+			"display_name": "原木小屋",
+			"exterior": "res://assets/textures/buildings/residential/timber_cottage.png",
+			"icon": "res://assets/textures/buildings/icons/timber_cottage.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "timber_cottage",
+			"opaque_bounds": [
+				2,
+				15,
+				60,
+				49
+			],
+			"preview_cell": [
+				0,
+				0
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_houses_a_v1.png",
+			"source_cell": [
+				0,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "residential",
+			"display_name": "石砌小屋",
+			"exterior": "res://assets/textures/buildings/residential/stone_cottage.png",
+			"icon": "res://assets/textures/buildings/icons/stone_cottage.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "stone_cottage",
+			"opaque_bounds": [
+				2,
+				17,
+				60,
+				47
+			],
+			"preview_cell": [
+				1,
+				0
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_houses_a_v1.png",
+			"source_cell": [
+				1,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "residential",
+			"display_name": "木梁民居",
+			"exterior": "res://assets/textures/buildings/residential/half_timber_house.png",
+			"icon": "res://assets/textures/buildings/icons/half_timber_house.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "half_timber_house",
+			"opaque_bounds": [
+				2,
+				4,
+				60,
+				60
+			],
+			"preview_cell": [
+				2,
+				0
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_houses_a_v1.png",
+			"source_cell": [
+				0,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "residential",
+			"display_name": "双层家庭住宅",
+			"exterior": "res://assets/textures/buildings/residential/family_house.png",
+			"icon": "res://assets/textures/buildings/icons/family_house.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "family_house",
+			"opaque_bounds": [
+				2,
+				5,
+				60,
+				59
+			],
+			"preview_cell": [
+				3,
+				0
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_houses_a_v1.png",
+			"source_cell": [
+				1,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				48,
+				79
+			],
+			"baseline": 79,
+			"canvas_tiles": [
+				6,
+				5
+			],
+			"category": "residential",
+			"display_name": "双户联排住宅",
+			"exterior": "res://assets/textures/buildings/residential/duplex_house.png",
+			"icon": "res://assets/textures/buildings/icons/duplex_house.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "duplex_house",
+			"opaque_bounds": [
+				6,
+				3,
+				84,
+				77
+			],
+			"preview_cell": [
+				4,
+				0
+			],
+			"size": [
+				96,
+				80
+			],
+			"source": "res://art/sources/base/village_houses_clinics_v1.png",
+			"source_cell": [
+				0,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-40
+			]
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"baseline": 95,
+			"canvas_tiles": [
+				6,
+				6
+			],
+			"category": "residential",
+			"display_name": "乡村大宅",
+			"exterior": "res://assets/textures/buildings/residential/country_manor.png",
+			"icon": "res://assets/textures/buildings/icons/country_manor.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "country_manor",
+			"opaque_bounds": [
+				2,
+				10,
+				92,
+				86
+			],
+			"preview_cell": [
+				0,
+				1
+			],
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/base/village_houses_clinics_v1.png",
+			"source_cell": [
+				1,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-48
+			]
+		},
+		{
+			"anchor": [
+				48,
+				79
+			],
+			"baseline": 79,
+			"canvas_tiles": [
+				6,
+				5
+			],
+			"category": "facilities",
+			"display_name": "村医院",
+			"exterior": "res://assets/textures/buildings/facilities/village_hospital.png",
+			"icon": "res://assets/textures/buildings/icons/village_hospital.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "village_hospital",
+			"opaque_bounds": [
+				4,
+				3,
+				88,
+				77
+			],
+			"preview_cell": [
+				1,
+				1
+			],
+			"size": [
+				96,
+				80
+			],
+			"source": "res://art/sources/base/village_houses_clinics_v1.png",
+			"source_cell": [
+				0,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-40
+			]
+		},
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "facilities",
+			"display_name": "兽医诊所",
+			"exterior": "res://assets/textures/buildings/facilities/veterinary_clinic.png",
+			"icon": "res://assets/textures/buildings/icons/veterinary_clinic.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "veterinary_clinic",
+			"opaque_bounds": [
+				2,
+				8,
+				60,
+				56
+			],
+			"preview_cell": [
+				2,
+				1
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_houses_clinics_v1.png",
+			"source_cell": [
+				1,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"baseline": 95,
+			"canvas_tiles": [
+				6,
+				6
+			],
+			"category": "facilities",
+			"display_name": "村学校",
+			"exterior": "res://assets/textures/buildings/facilities/village_school.png",
+			"icon": "res://assets/textures/buildings/icons/village_school.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "village_school",
+			"opaque_bounds": [
+				2,
+				3,
+				92,
+				93
+			],
+			"preview_cell": [
+				3,
+				1
+			],
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/base/village_services_v1.png",
+			"source_cell": [
+				0,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-48
+			]
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"baseline": 95,
+			"canvas_tiles": [
+				6,
+				6
+			],
+			"category": "facilities",
+			"display_name": "图书馆",
+			"exterior": "res://assets/textures/buildings/facilities/library.png",
+			"icon": "res://assets/textures/buildings/icons/library.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "library",
+			"opaque_bounds": [
+				2,
+				5,
+				92,
+				91
+			],
+			"preview_cell": [
+				4,
+				1
+			],
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/base/village_services_v1.png",
+			"source_cell": [
+				1,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-48
+			]
+		},
+		{
+			"anchor": [
+				48,
+				79
+			],
+			"baseline": 79,
+			"canvas_tiles": [
+				6,
+				5
+			],
+			"category": "facilities",
+			"display_name": "社区活动中心",
+			"exterior": "res://assets/textures/buildings/facilities/community_center.png",
+			"icon": "res://assets/textures/buildings/icons/community_center.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "community_center",
+			"opaque_bounds": [
+				2,
+				3,
+				92,
+				77
+			],
+			"preview_cell": [
+				0,
+				2
+			],
+			"size": [
+				96,
+				80
+			],
+			"source": "res://art/sources/base/village_services_v1.png",
+			"source_cell": [
+				0,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-40
+			]
+		},
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "facilities",
+			"display_name": "杂货店",
+			"exterior": "res://assets/textures/buildings/facilities/general_store.png",
+			"icon": "res://assets/textures/buildings/icons/general_store.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "general_store",
+			"opaque_bounds": [
+				2,
+				7,
+				60,
+				57
+			],
+			"preview_cell": [
+				1,
+				2
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_services_v1.png",
+			"source_cell": [
+				1,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "facilities",
+			"display_name": "种子园艺店",
+			"exterior": "res://assets/textures/buildings/facilities/seed_shop.png",
+			"icon": "res://assets/textures/buildings/icons/seed_shop.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "seed_shop",
+			"opaque_bounds": [
+				2,
+				7,
+				60,
+				57
+			],
+			"preview_cell": [
+				2,
+				2
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_workshops_v1.png",
+			"source_cell": [
+				0,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				48,
+				79
+			],
+			"baseline": 79,
+			"canvas_tiles": [
+				6,
+				5
+			],
+			"category": "facilities",
+			"display_name": "铁匠铺",
+			"exterior": "res://assets/textures/buildings/facilities/blacksmith.png",
+			"icon": "res://assets/textures/buildings/icons/blacksmith.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "blacksmith",
+			"opaque_bounds": [
+				4,
+				3,
+				88,
+				77
+			],
+			"preview_cell": [
+				3,
+				2
+			],
+			"size": [
+				96,
+				80
+			],
+			"source": "res://art/sources/base/village_workshops_v1.png",
+			"source_cell": [
+				1,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-40
+			]
+		},
+		{
+			"anchor": [
+				48,
+				79
+			],
+			"baseline": 79,
+			"canvas_tiles": [
+				6,
+				5
+			],
+			"category": "facilities",
+			"display_name": "木工坊",
+			"exterior": "res://assets/textures/buildings/facilities/carpenter.png",
+			"icon": "res://assets/textures/buildings/icons/carpenter.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "carpenter",
+			"opaque_bounds": [
+				6,
+				3,
+				84,
+				77
+			],
+			"preview_cell": [
+				4,
+				2
+			],
+			"size": [
+				96,
+				80
+			],
+			"source": "res://art/sources/base/village_workshops_v1.png",
+			"source_cell": [
+				0,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-40
+			]
+		},
+		{
+			"anchor": [
+				32,
+				63
+			],
+			"baseline": 63,
+			"canvas_tiles": [
+				4,
+				4
+			],
+			"category": "facilities",
+			"display_name": "面包店",
+			"exterior": "res://assets/textures/buildings/facilities/bakery.png",
+			"icon": "res://assets/textures/buildings/icons/bakery.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "bakery",
+			"opaque_bounds": [
+				2,
+				10,
+				60,
+				54
+			],
+			"preview_cell": [
+				0,
+				3
+			],
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/base/village_workshops_v1.png",
+			"source_cell": [
+				1,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-32
+			]
+		},
+		{
+			"anchor": [
+				48,
+				79
+			],
+			"baseline": 79,
+			"canvas_tiles": [
+				6,
+				5
+			],
+			"category": "facilities",
+			"display_name": "村餐馆",
+			"exterior": "res://assets/textures/buildings/facilities/restaurant.png",
+			"icon": "res://assets/textures/buildings/icons/restaurant.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "restaurant",
+			"opaque_bounds": [
+				7,
+				3,
+				82,
+				77
+			],
+			"preview_cell": [
+				1,
+				3
+			],
+			"size": [
+				96,
+				80
+			],
+			"source": "res://art/sources/base/village_life_v1.png",
+			"source_cell": [
+				0,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-40
+			]
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"baseline": 95,
+			"canvas_tiles": [
+				6,
+				6
+			],
+			"category": "facilities",
+			"display_name": "乡村旅馆",
+			"exterior": "res://assets/textures/buildings/facilities/country_inn.png",
+			"icon": "res://assets/textures/buildings/icons/country_inn.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "country_inn",
+			"opaque_bounds": [
+				2,
+				3,
+				92,
+				93
+			],
+			"preview_cell": [
+				2,
+				3
+			],
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/base/village_life_v1.png",
+			"source_cell": [
+				1,
+				0
+			],
+			"sprite_offset": [
+				0,
+				-48
+			]
+		},
+		{
+			"anchor": [
+				48,
+				79
+			],
+			"baseline": 79,
+			"canvas_tiles": [
+				6,
+				5
+			],
+			"category": "facilities",
+			"display_name": "公共浴场",
+			"exterior": "res://assets/textures/buildings/facilities/bathhouse.png",
+			"icon": "res://assets/textures/buildings/icons/bathhouse.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "bathhouse",
+			"opaque_bounds": [
+				8,
+				3,
+				79,
+				77
+			],
+			"preview_cell": [
+				3,
+				3
+			],
+			"size": [
+				96,
+				80
+			],
+			"source": "res://art/sources/base/village_life_v1.png",
+			"source_cell": [
+				0,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-40
+			]
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"baseline": 95,
+			"canvas_tiles": [
+				6,
+				6
+			],
+			"category": "facilities",
+			"display_name": "集市大厅",
+			"exterior": "res://assets/textures/buildings/facilities/market_hall.png",
+			"icon": "res://assets/textures/buildings/icons/market_hall.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "market_hall",
+			"opaque_bounds": [
+				2,
+				6,
+				92,
+				90
+			],
+			"preview_cell": [
+				4,
+				3
+			],
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/base/village_life_v1.png",
+			"source_cell": [
+				1,
+				1
+			],
+			"sprite_offset": [
+				0,
+				-48
+			]
+		}
+	],
+	"facility_count": 14,
+	"generator": "image_gen; technical preparation: tools/art/prepare_building_art.gd",
+	"map_tile_size": 16,
+	"palette": [
+		"#302421",
+		"#654638",
+		"#936644",
+		"#bc8757",
+		"#dcb272",
+		"#f0e1b6",
+		"#ceba88",
+		"#596b4b",
+		"#839568",
+		"#484f58",
+		"#747f86",
+		"#aab2b3",
+		"#415d76",
+		"#7fa8bc",
+		"#9c484b",
+		"#cc7c58"
+	],
+	"placement": "Centered Sprite2D with listed sprite_offset anchors the bottom at the node origin. Canvas tile dimensions are visual size, NOT collision footprint. Facade and doorway collisions must be authored later; do not block the whole roof rectangle.",
+	"preview": "res://art/previews/buildings/preview.png",
+	"residential_count": 6,
+	"sampling": "nearest, no mipmaps",
+	"status": "exterior art only; no interiors, door animation, scene placement, collision, NPCs or service logic",
+	"texture_count": 40,
+	"version": 1
+}

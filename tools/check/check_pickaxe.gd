@@ -14,6 +14,7 @@ var _failures: int = 0
 var _impacts: int = 0
 var _impact_frame: int = -1
 var _impact_cell: Vector2i
+var _real_rock_checked: bool = false
 
 
 func _init() -> void:
@@ -27,6 +28,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_main = MAIN.instantiate() as Node2D
 	_main.get_node("Systems/Save").autoload_enabled = false
 	root.add_child(_main)
@@ -47,10 +50,11 @@ func _run() -> void:
 	await _check_full_bag()
 	await _check_target_lock()
 	await _check_real_rock_and_save()
+	_check(_real_rock_checked, "real rock and save phase reached its final assertion")
 	_main.queue_free()
 	await process_frame
 	print("[pickaxe] %s; %d failures" % ["PASS" if _failures == 0 else "FAIL", _failures])
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 func _check_frames() -> void:
@@ -66,7 +70,7 @@ func _check_frames() -> void:
 			_check(atlas != null, "atlas frame exists")
 			if atlas == null:
 				continue
-			_check(atlas.atlas.resource_path == "res://assets/generated/characters/stone_pickaxe_actions_v1.png", "does not reuse hoe or axe art")
+			_check(atlas.atlas.resource_path == "res://assets/textures/characters/stone_pickaxe_actions_v1.png", "does not reuse hoe or axe art")
 			var image: Image = atlas.get_image()
 			_check(image.get_size() == Vector2i(32, 32), "32px action frame")
 			_check(image.get_used_rect().size != Vector2i.ZERO, "frame is not empty")
@@ -76,7 +80,7 @@ func _check_frames() -> void:
 					var alpha: float = image.get_pixel(x, y).a
 					_check(alpha == 0.0 or alpha == 1.0, "binary action alpha")
 		_check(unique.size() >= 5, "distinct windup, overhead, strike and recovery poses")
-	var icon: Texture2D = load("res://assets/generated/items/stone_pickaxe.png") as Texture2D
+	var icon: Texture2D = load("res://assets/textures/items/stone_pickaxe.png") as Texture2D
 	_check(icon != null and icon.get_size() == Vector2(16, 16), "16px independent tool icon")
 
 
@@ -207,13 +211,23 @@ func _check_target_lock() -> void:
 
 
 func _check_real_rock_and_save() -> void:
-	var rock: Sprite2D = _world.get_node("Rock5") as Sprite2D
-	var cell: Vector2i = Vector2i(16, 9)
+	var rocks: Array[Sprite2D] = []
+	for child: Node in _world.get_children():
+		if child is Sprite2D and child.is_in_group(&"breakable_rock"):
+			rocks.append(child as Sprite2D)
+	_check(rocks.size() >= 2, "map contains two rocks for save restoration")
+	if rocks.size() < 2:
+		return
+	var rock: Sprite2D = rocks[0]
+	var rock_name: String = String(rock.name)
+	var rock_key: String = String(rock.persistence_id())
+	var other_name: String = String(rocks[1].name)
+	var cell: Vector2i = Vector2i((rock.global_position - Vector2(0, 4)) / 16.0)
 	_place(cell, &"down")
 	_check(_tiller.can_use(&"stone_pickaxe", cell), "existing map rock is mineable")
 	rock.mine(Vector2i.DOWN)
 	var saved: Dictionary = _tiller.to_dict()
-	_check(int(saved[&"rocks"]["Rock5"]) == 2, "rock damage included in farm save")
+	_check(int(saved[&"rocks"][rock_key]) == 2, "rock damage included in farm save")
 	var restored: Sprite2D = _new_rock(Vector2i(17, 14), "RestoredRock")
 	restored.restore_state(2)
 	_check(restored.hits_remaining == 2, "partial damage restored")
@@ -227,16 +241,18 @@ func _check_real_rock_and_save() -> void:
 	_check(not is_instance_valid(rock), "real cached map rock safely deleted")
 	_check(_tiller.can_use(&"hoe", cell), "real map rock no longer blocks farming")
 	var states: Dictionary = _tiller.to_dict()[&"rocks"]
-	_check(int(states["Rock5"]) == 0, "removed map rock stays recorded")
+	_check(int(states[rock_key]) == 0, "removed map rock stays recorded")
 	var fresh: Node2D = MAIN.instantiate() as Node2D
 	fresh.get_node("Systems/Save").autoload_enabled = false
 	root.add_child(fresh)
 	fresh.get_node("Systems/Time").running = false
 	var fresh_tiller: Node2D = fresh.get_node("Farm/Tiller") as Node2D
-	fresh_tiller.from_dict({"rocks": {"Rock5": 0, "Rock21": 2}})
+	fresh_tiller.from_dict({"rocks": {rock_name: 0, other_name: 2}})
 	await process_frame
-	_check(not fresh.get_node("Farm/World").has_node("Rock5"), "cleared rock absent in reloaded map")
-	_check(fresh.get_node("Farm/World/Rock21").hits_remaining == 2, "other rock damage restored on fresh map")
+	_check(not fresh.get_node("Farm/World").has_node(rock_name), "cleared rock absent in reloaded map")
+	var other_rock := fresh.get_node("Farm/World").get_node_or_null(other_name) as Sprite2D
+	_check(other_rock != null and other_rock.hits_remaining == 2, "other rock damage restored on fresh map")
+	_real_rock_checked = true
 	fresh.queue_free()
 	await process_frame
 

@@ -16,6 +16,8 @@
 | 功能 | 状态 | 说明 |
 | --- | --- | --- |
 | 40×30 农场地图 | 已完成 | 弯曲河流连通池塘、四帧水面、圆角岸线、两座可通行木桥、木板小路与草坡 |
+| 六个野外区域 | 已接入，待人工验收 | 原农场东侧路标按 E，进入荒地、村庄、林地、湿地、采石区和海滩；共享玩家、日期、背包和金币 |
+| 野外资源与掉落 | 已接入，待人工验收 | 28类资源使用斧头、石镐或 E 采集，掉落后靠近按 E 拾取；满包保留，1–5天再生，损伤和地面物保存 |
 | 角色移动 | 已完成 | 四向移动 + 8 方向动画，镜头平滑跟随并限制在地图内 |
 | Y 轴遮挡 | 已完成 | 走到树/屋后面时角色被正确遮挡，挡视线时道具淡出到 55% |
 | 锄地 / 浇水 | 已完成 | 四向角色动作、命中帧生效；种植区虚线、原因提示、方格耕地自动连片 |
@@ -27,7 +29,7 @@
 | 昼夜 · 存档 | 已完成 | 星露谷节奏（10 游戏分钟 / 7 现实秒，一天约 14 分钟）；02:00 累倒：扣 10% 金币（上限 1000）、体力只回一半、次日早晨在床边/家门口醒来；睡觉自动保存，三个存档槽 |
 | 杂草 · 纤维 | 已完成 | 田边按 E 清理，每丛 2 纤维 / 2 体力，每天最多再生 3 丛 |
 | 订单 · 社区 | 已完成 | 首单收纤维；订单保留五天，社区分阶段上缴并解锁种子 |
-| 引导 · HUD | 已完成 | 可收起手记、首次种植至出售引导、统一状态牌和工具提示 |
+| 引导 · HUD | 已接入，待人工验收 | 可收起手记，贯穿首次收成、铜水壶升级、购种再生产及第二轮出售；统一状态牌和工具提示 |
 | 鸡蛋 · 天气 · 体力 | 已完成 | 每日产蛋，雨天自动浇水，干活耗体力、睡醒恢复 |
 | 木箱 · 采集 · 加工 | 已完成 | 屋右木箱存取，三种采集物每日补长，3 个番茄过夜腌制 |
 | 土豆 · 蓝莓 | 已完成 | 土豆 2 晚成熟；蓝莓首收 5 晚、复收 2 晚，每次产出 2 份 |
@@ -60,6 +62,8 @@
 
 工具一次作用于面前一格，鼠标左键与空格使用同一目标。浅黄色框表示可操作，水壶为浅蓝色；暗红色表示当前格不可操作。动作期间锁定朝向、目标和工具，命中帧才改变地块或伤害树木；无效操作不会空挥。种植区内允许独立开新田，建筑、石头和树干会阻止开垦。
 
+从原农场东侧路标按 `E` 出发，沿道路在各区路标旁按 `E` 切换。木材资源使用斧头，岩石和矿点使用石镐，花草、蘑菇、贝壳和散石直接按 `E`；采完后再靠近按 `E` 拾取掉落物。野外共享现有体力和时间，种植、商店和睡觉仍在原农舍农场。野外累倒会返回家门口；存档会保留所在区域、采集进度及未拾取物。路线和完整规则见 [地图类型与地面资源](docs/05-地图类型与地面资源.md)。
+
 选择锄头时淡显可种植区，工具栏上方说明当前操作。`3` 拿种子袋，`Q/E` 换种子，图标与库存同步。铜水壶在商店底部购买：600 金币、6 木材、4 石头；升级后覆盖目标与左右两格（按朝向旋转），一次消耗 3 体力。新内容与验收见 [系统设计 · 循环与界面改进](docs/02-系统设计.md)。
 
 ## 快速开始
@@ -79,15 +83,15 @@ godot --path .          # 或用 Godot 编辑器打开 project.godot
 命令行自检（退出码 0 即全部通过，不弹窗口）：
 
 ```bash
-godot --headless --path . --script res://tools/check/smoke_check.gd
-godot --headless --path . --script res://tools/check/check_farm_interactions.gd
-godot --headless --path . --script res://tools/check/check_farm_terrain.gd
-godot --headless --path . --script res://tools/check/check_inventory.gd
-godot --headless --path . --script res://tools/check/check_crops.gd
-godot --headless --path . --script res://tools/check/check_farm_activities.gd
+pwsh -NoProfile -File tools/run_checks.ps1 -Suites smoke_check
+pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_farm_interactions
+pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_farm_terrain
+pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_inventory
+pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_crops
+pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_farm_activities
 ```
 
-`tools/check/` 下共 23 个自检脚本（背包快捷键、商店、体力天气、订单进程、NPC、房屋进出、暂停、设置、音频、UI 布局、发行就绪等），完整清单与分组见 [`tools/README.md`](tools/README.md)。
+`tools/check/` 下的自检覆盖完整基础经营循环、背包快捷键、商店、体力天气、订单进程、NPC、房屋进出、暂停、设置、音频、UI 布局和发行配置等，完整清单与分组见 [`tools/README.md`](tools/README.md)。会写存档的检查须在独立用户目录运行。
 
 ## 打包发布
 
@@ -95,43 +99,53 @@ godot --headless --path . --script res://tools/check/check_farm_activities.gd
 
 ```bash
 # 版本号在 project.godot 的 application/config/version
-godot --headless --path . --script res://tools/check/check_release.gd   # 静态核对预设与版权文件
+pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_release   # 静态核对预设与版权文件
 godot --headless --path . --export-pack "Windows Desktop" build/PixelFarm.pck   # 无模板也能验证打包内容
 godot --headless --path . --export-release "Windows Desktop" build/PixelFarm.exe
 ```
 
-发行包会排除 `tools/`、`docs/` 与外部参考素材 `星露谷物语素材/`；素材与音频来源见 [`CREDITS.md`](CREDITS.md)。
+发行包会排除 `tools/`、`docs/` 与外部参考素材 `art/reference/stardew_valley/`；素材与音频来源见 [`CREDITS.md`](CREDITS.md)。
+
+## 架构与贡献
+
+代码遵守高内聚、低耦合与 SOLID 的扩展约定，使用场景组合根、独立用例、Resource 配置和小型注册接口。修改前阅读 [架构与开发规范](docs/06-架构与开发规范.md) 与根目录 `AGENTS.md`。完整隔离回归入口为 `pwsh -NoProfile -File tools/run_checks.ps1`。
 
 ## 目录结构
 
+完整规则与旧目录对照见 [目录与资源规范](docs/07-目录与资源规范.md)。找图先看 [assets 索引](assets/README.md)，改代码先看 [scripts 索引](scripts/README.md)。
+
 ```
 .
-├── project.godot              # 引擎配置：320×180 视口、Nearest 过滤、Jolt 物理、输入映射
-├── scenes/
-│   ├── main.tscn              # 入口：农场 + 玩家 + 相机 + UI + Systems
-│   ├── player/                # 玩家场景 + SpriteFrames（8 方向动画）
-│   ├── world/                 # farm.tscn、crop.tscn、tile_cursor.tscn、props/ 可复用道具
-│   └── ui/                    # toolbar.tscn、inventory_panel.tscn、toast.tscn
-├── scripts/
-│   ├── player/player.gd       # 移动、朝向记忆、动画切换、工具切换
-│   ├── world/                 # 相机、遮挡淡出、耕地、作物、砍树、土壤连边、工具特效
-│   ├── systems/inventory.gd   # 背包：30 格堆叠、8 格快捷位、溢出返回、信号
-│   ├── ui/                    # 工具栏、背包面板、飘字
-│   └── data/                  # ItemData / CropData 两个 Resource 定义
-├── data/
-│   ├── items/                 # 物品数据（28 个 .tres，背包启动时扫描）
-│   └── crops/                 # 作物数据（6 个 .tres，耕地脚本扫描）
+├── project.godot              # 引擎配置与 Autoload
+├── art/                      # 制作资料，不导入、不打包
+│   ├── sources/              # 原始生成图与提示词，按批次保留
+│   ├── previews/             # 素材总览和带标签的验收页
+│   └── reference/            # 外部内容对照
 ├── assets/
-│   ├── game/                  # 原始素材包（16×16 像素，只读）
-│   ├── generated/             # 生成产物：切片贴图、图集、UI 九宫格（sources/ 为原始大图，不导入）
-│   └── tilesets/farm_terrain.tres
-├── tools/                     # 离线工具脚本（详见 tools/README.md）
-│   ├── build/                 # 重建 farm.tscn 与玩家动画帧
-│   ├── art/                   # 素材切片、拼图集、预览页
-│   ├── check/                 # 无窗口回归自检
-│   └── lib/                   # 共用布局与瓦片数据
-├── docs/                      # 流程、版本路线图、技术对照
-└── addons/godot_ai/           # Godot AI 插件（第三方，只读）
+│   ├── textures/             # 分类基础贴图：角色、建筑、作物、地形、物品
+│   ├── packs/                # 完整原创批次，保留清单、动画和图集对应
+│   ├── ui/                   # 共享主题与控件图片
+│   ├── audio/                # bgm / sfx
+│   ├── tilesets/             # Godot TileSet
+│   └── shaders/              # 季节材质
+├── scenes/                   # 节点树、场景与 SpriteFrames
+├── data/                     # 物品、作物、地图等 Resource 配置
+├── scripts/                  # 运行代码：core / economy / inventory / time 等
+│   ├── world/                # farming / resources / interiors / navigation 等
+│   ├── ui/                   # common / panels / menus / hud
+│   ├── presentation/         # 相机、灯光、阴影、季节与视觉反馈
+│   └── persistence/          # 保存、迁移、存储和编解码
+├── tools/
+│   ├── art/                  # 原图整理、切片与量化
+│   ├── preview/              # 真实渲染与素材预览
+│   ├── build/                # 重建场景、动画和音频
+│   ├── check/                # 隔离回归
+│   ├── maintenance/          # 目录与资源路径检查
+│   └── lib/                  # 工具共用代码
+├── docs/                     # 总纲、架构、系统设计和素材说明
+├── archive/                  # 旧工具与旧说明，不导入、不打包
+├── build/                    # 本地导出、截图、日志和临时结果，不入库
+└── addons/godot_ai/           # 第三方插件，保持只读
 ```
 
 ## 工程约定
@@ -143,6 +157,8 @@ godot --headless --path . --export-release "Windows Desktop" build/PixelFarm.exe
 - **每个版本都要能跑**：改完必须实际运行并检查控制台，不留 `SCRIPT ERROR`。
 
 ## 开发路线
+
+后续开发统一按 [`docs/04-后续开发总纲.md`](docs/04-后续开发总纲.md) 推进。当前优先验证「收成 → 出售 → 铜水壶升级 → 购种再生产 → 保存继续」；完整主线、制作成长、探索、养殖与年度内容按 B1–B8 分阶段建设。下表为既有技术版本记录，不代表发布验收已经完成。
 
 | 版本 | 目标 |
 | --- | --- |
@@ -166,8 +182,8 @@ godot --headless --path . --export-release "Windows Desktop" build/PixelFarm.exe
 
 ## 素材说明
 
-按外部资源清单独立生成的本项目画风素材统一放在 [`assets/generated/content_v1/`](assets/generated/content_v1/README.md)，分类、内容对照与验收方式见 [`docs/03-素材与资产.md`](docs/03-素材与资产.md)。原始外部包只保留清单对照，并由 `.gdignore` 排除导入和导出。
+按外部资源清单独立生成的本项目画风素材统一放在 [`assets/packs/content_v1/`](assets/packs/content_v1/README.md)，分类、内容对照与验收方式见 [`docs/03-素材与资产.md`](docs/03-素材与资产.md)。原始外部包只保留清单对照，并由 `.gdignore` 排除导入和导出。
 
-新增的鱼类、鱼竿、六种作物生长阶段和六种动物四向站姿见 [`assets/generated/expansion_v1/README.md`](assets/generated/expansion_v1/README.md)，含独立透明 PNG、16×16 图标、合并图集、素材目录和生成提示词，供后续钓鱼与养殖功能使用。
+新增的鱼类、鱼竿、六种作物生长阶段和六种动物四向站姿见 [`assets/packs/expansion_v1/README.md`](assets/packs/expansion_v1/README.md)，含独立透明 PNG、16×16 图标、合并图集、素材目录和生成提示词，供后续钓鱼与养殖功能使用。
 
-`assets/game/` 下的像素素材为免费素材包，仅用于本项目的学习与演示；如需商用请自行确认原始授权。代码部分可自由参考。
+`assets/textures/base/` 下的像素素材为免费素材包，仅用于本项目的学习与演示；如需商用请自行确认原始授权。代码部分可自由参考。

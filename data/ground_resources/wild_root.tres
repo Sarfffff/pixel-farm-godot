@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_tv2kc"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/wild_root.png" id="2_m2jpw"]
+
+[resource]
+script = ExtResource("1_tv2kc")
+id = &"wild_root"
+display_name = "野生根菜"
+texture = ExtResource("2_m2jpw")
+tool_hint = "拾取"
+planned_drop = &"wild_root"
+region_tags = Array[StringName]([&"forest", &"wetland"])

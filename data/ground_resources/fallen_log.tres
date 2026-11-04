@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_3jbb5"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/fallen_log.png" id="2_w1gr1"]
+
+[resource]
+script = ExtResource("1_3jbb5")
+id = &"fallen_log"
+display_name = "倒木"
+texture = ExtResource("2_w1gr1")
+footprint = Vector2i(2, 1)
+blocks_movement = true
+tool_hint = "升级斧头"
+planned_drop = &"wood"
+region_tags = Array[StringName]([&"forest", &"beach"])

@@ -1,0 +1,1365 @@
+{
+	"items": [
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "oak",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				0,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/oak/seed",
+			"mode": "sprite",
+			"name": "oak seed",
+			"opaque_bounds": [
+				12,
+				34,
+				24,
+				28
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/oak/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				9,
+				41,
+				214,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "oak",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				0,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/oak/sapling",
+			"mode": "sprite",
+			"name": "oak sapling",
+			"opaque_bounds": [
+				6,
+				36,
+				35,
+				26
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/oak/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				223,
+				41,
+				204,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "oak",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				0,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/oak/young_tree",
+			"mode": "sprite",
+			"name": "oak young tree",
+			"opaque_bounds": [
+				2,
+				17,
+				44,
+				45
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/oak/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				427,
+				41,
+				235,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "oak",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				0,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/oak/stump",
+			"mode": "sprite",
+			"name": "oak stump",
+			"opaque_bounds": [
+				6,
+				36,
+				36,
+				26
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/oak/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				662,
+				41,
+				206,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "maple",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				64,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/maple/seed",
+			"mode": "sprite",
+			"name": "maple seed",
+			"opaque_bounds": [
+				6,
+				35,
+				36,
+				27
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/maple/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				9,
+				269,
+				214,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "maple",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				64,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/maple/sapling",
+			"mode": "sprite",
+			"name": "maple sapling",
+			"opaque_bounds": [
+				6,
+				33,
+				35,
+				29
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/maple/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				223,
+				269,
+				204,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "maple",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				64,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/maple/young_tree",
+			"mode": "sprite",
+			"name": "maple young tree",
+			"opaque_bounds": [
+				2,
+				17,
+				44,
+				45
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/maple/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				427,
+				269,
+				235,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "maple",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				64,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/maple/stump",
+			"mode": "sprite",
+			"name": "maple stump",
+			"opaque_bounds": [
+				5,
+				34,
+				37,
+				28
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/maple/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				662,
+				269,
+				206,
+				228
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "pine",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				128,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/pine/seed",
+			"mode": "sprite",
+			"name": "pine seed",
+			"opaque_bounds": [
+				14,
+				37,
+				20,
+				25
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/pine/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				9,
+				497,
+				214,
+				233
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "pine",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				128,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/pine/sapling",
+			"mode": "sprite",
+			"name": "pine sapling",
+			"opaque_bounds": [
+				9,
+				29,
+				30,
+				33
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/pine/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				223,
+				497,
+				204,
+				233
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "pine",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				128,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/pine/young_tree",
+			"mode": "sprite",
+			"name": "pine young tree",
+			"opaque_bounds": [
+				2,
+				9,
+				44,
+				53
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/pine/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				427,
+				497,
+				235,
+				233
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "pine",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				128,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/pine/stump",
+			"mode": "sprite",
+			"name": "pine stump",
+			"opaque_bounds": [
+				4,
+				33,
+				39,
+				29
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/pine/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				662,
+				497,
+				206,
+				233
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "palm",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				192,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/palm/seed",
+			"mode": "sprite",
+			"name": "palm seed",
+			"opaque_bounds": [
+				11,
+				37,
+				26,
+				25
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/palm/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				9,
+				730,
+				214,
+				220
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "palm",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				192,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/palm/sapling",
+			"mode": "sprite",
+			"name": "palm sapling",
+			"opaque_bounds": [
+				7,
+				36,
+				33,
+				26
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/palm/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				223,
+				730,
+				204,
+				220
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "palm",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				192,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/palm/young_tree",
+			"mode": "sprite",
+			"name": "palm young tree",
+			"opaque_bounds": [
+				2,
+				20,
+				44,
+				42
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/palm/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				427,
+				730,
+				235,
+				220
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "palm",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				192,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/palm/stump",
+			"mode": "sprite",
+			"name": "palm stump",
+			"opaque_bounds": [
+				8,
+				37,
+				31,
+				25
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/palm/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				662,
+				730,
+				206,
+				220
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "mushroom_tree",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				256,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/mushroom_tree/seed",
+			"mode": "sprite",
+			"name": "mushroom tree seed",
+			"opaque_bounds": [
+				12,
+				43,
+				23,
+				19
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/mushroom_tree/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				9,
+				950,
+				214,
+				212
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "mushroom_tree",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				256,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/mushroom_tree/sapling",
+			"mode": "sprite",
+			"name": "mushroom tree sapling",
+			"opaque_bounds": [
+				8,
+				38,
+				32,
+				24
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/mushroom_tree/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				223,
+				950,
+				204,
+				212
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "mushroom_tree",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				256,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/mushroom_tree/young_tree",
+			"mode": "sprite",
+			"name": "mushroom tree young tree",
+			"opaque_bounds": [
+				2,
+				21,
+				44,
+				41
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/mushroom_tree/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				427,
+				950,
+				235,
+				212
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "mushroom_tree",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				256,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/mushroom_tree/stump",
+			"mode": "sprite",
+			"name": "mushroom tree stump",
+			"opaque_bounds": [
+				5,
+				36,
+				38,
+				26
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/mushroom_tree/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				662,
+				950,
+				206,
+				212
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "berry_bush",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				320,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/berry_bush/seed",
+			"mode": "sprite",
+			"name": "berry bush seed",
+			"opaque_bounds": [
+				17,
+				48,
+				14,
+				14
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/berry_bush/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				9,
+				1162,
+				214,
+				189
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "berry_bush",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				320,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/berry_bush/sapling",
+			"mode": "sprite",
+			"name": "berry bush sapling",
+			"opaque_bounds": [
+				9,
+				36,
+				30,
+				26
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/berry_bush/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				223,
+				1162,
+				204,
+				189
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "berry_bush",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				320,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/berry_bush/young_tree",
+			"mode": "sprite",
+			"name": "berry bush young tree",
+			"opaque_bounds": [
+				2,
+				25,
+				44,
+				37
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/berry_bush/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				427,
+				1162,
+				235,
+				189
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "berry_bush",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				320,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/berry_bush/stump",
+			"mode": "sprite",
+			"name": "berry bush stump",
+			"opaque_bounds": [
+				8,
+				42,
+				31,
+				20
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/berry_bush/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				662,
+				1162,
+				206,
+				189
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "cypress",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				384,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/cypress/seed",
+			"mode": "sprite",
+			"name": "cypress seed",
+			"opaque_bounds": [
+				13,
+				36,
+				22,
+				26
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/cypress/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				9,
+				1351,
+				214,
+				213
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "cypress",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				384,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/cypress/sapling",
+			"mode": "sprite",
+			"name": "cypress sapling",
+			"opaque_bounds": [
+				10,
+				23,
+				28,
+				39
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/cypress/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				223,
+				1351,
+				204,
+				213
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "cypress",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				384,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/cypress/young_tree",
+			"mode": "sprite",
+			"name": "cypress young tree",
+			"opaque_bounds": [
+				8,
+				4,
+				31,
+				58
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/cypress/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				427,
+				1351,
+				235,
+				213
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "cypress",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				384,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/cypress/stump",
+			"mode": "sprite",
+			"name": "cypress stump",
+			"opaque_bounds": [
+				2,
+				31,
+				44,
+				31
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/cypress/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				662,
+				1351,
+				206,
+				213
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "birch",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				0,
+				448,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "seed",
+			"id": "terrain/trees/birch/seed",
+			"mode": "sprite",
+			"name": "birch seed",
+			"opaque_bounds": [
+				16,
+				44,
+				16,
+				18
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/birch/seed.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				9,
+				1564,
+				214,
+				198
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "birch",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				48,
+				448,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "sapling",
+			"id": "terrain/trees/birch/sapling",
+			"mode": "sprite",
+			"name": "birch sapling",
+			"opaque_bounds": [
+				6,
+				35,
+				36,
+				27
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/birch/sapling.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				223,
+				1564,
+				204,
+				198
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "birch",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				96,
+				448,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "young_tree",
+			"id": "terrain/trees/birch/young_tree",
+			"mode": "sprite",
+			"name": "birch young tree",
+			"opaque_bounds": [
+				2,
+				16,
+				44,
+				46
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/birch/young_tree.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				427,
+				1564,
+				235,
+				198
+			],
+			"source_sheet": "tree_growth"
+		},
+		{
+			"anchor": [
+				24,
+				63
+			],
+			"animation_group": "birch",
+			"atlas": "res://assets/packs/content_v1/atlases/tree_growth.png",
+			"atlas_region": [
+				144,
+				448,
+				48,
+				64
+			],
+			"category": "terrain/trees",
+			"frame": "stump",
+			"id": "terrain/trees/birch/stump",
+			"mode": "sprite",
+			"name": "birch stump",
+			"opaque_bounds": [
+				5,
+				36,
+				38,
+				26
+			],
+			"path": "res://assets/packs/content_v1/terrain/trees/birch/stump.png",
+			"size": [
+				48,
+				64
+			],
+			"source": "res://art/sources/content_v1/tree_growth.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				662,
+				1564,
+				206,
+				198
+			],
+			"source_sheet": "tree_growth"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "32c013f85438b6f63dcafe4d0608603df06e1cfd73999d74bc2324e501c17bd7",
+	"sheet": {
+		"category": "terrain/trees",
+		"cell_size": [
+			48,
+			64
+		],
+		"columns": 4,
+		"count": 32,
+		"id": "tree_growth",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/tree_growth.png",
+		"rows": 8,
+		"source": "res://art/sources/content_v1/tree_growth.png"
+	},
+	"source_hash": "1c73ee4f4502086dad20709156cd3db2"
+}

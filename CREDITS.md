@@ -14,17 +14,20 @@
 
 ## 二、美术
 
-游戏内所有图片来自仓库的 `assets/generated/`，**全部为独立生成或手写整理，不含任何第三方素材的切片、复制或描摹**：
+本项目独立生成或手写整理的美术成品位于 `assets/textures/`、`assets/packs/` 和 `assets/ui/`；原始生成图与提示词在 `art/sources/`。这些原创成品不使用外部参考包的切片、复制或描摹：
 
 | 目录 | 内容 | 制作方式 |
 | --- | --- | --- |
-| `assets/generated/characters/` | 角色四向行走与工具动作、4 位 NPC | 内置 image_gen 生成 → `tools/art/prepare_*` 脚本做切片与像素对齐 |
-| `assets/generated/crops/` | 6 种作物的生长阶段 | 同上 |
-| `assets/generated/items/` | 种子、材料、收获物图标 | 同上 |
-| `assets/generated/buildings/` | 20 栋建筑外观（住宅 6 + 设施 14） | 同上 |
-| `assets/generated/content_v1/` | 全品类素材库：家具、室内、动物、特效、图标、头像 | 同上 |
-| `assets/generated/expansion_v1/` | 鱼类、渔具、加工品等扩展素材 | 同上 |
-| `assets/generated/ui/` | 界面贴图 | 同上 |
+| `assets/textures/characters/` | 角色四向行走与工具动作、4 位 NPC | 内置 image_gen 生成 → `tools/art/prepare_*` 脚本做切片与像素对齐 |
+| `assets/textures/crops/` | 6 种作物的生长阶段 | 同上 |
+| `assets/textures/items/` | 种子、材料、收获物图标 | 同上 |
+| `assets/textures/buildings/` | 20 栋建筑外观（住宅 6 + 设施 14） | 同上 |
+| `assets/packs/content_v1/` | 全品类素材库：家具、室内、动物、特效、图标、头像 | 同上 |
+| `assets/packs/expansion_v1/` | 鱼类、渔具、加工品等扩展素材 | 同上 |
+| `assets/packs/farm_style_v2/` | 作物、野浆果及物品图标的风格修订 | 内置 image_gen 生成与技术整理 |
+| `assets/packs/presentation_v3/` | 当前建筑、家具、设备状态、头像及季节地表 | 同上 |
+| `assets/packs/world_regions_v1/` | 区域地表、资源与过渡图集 | 同上 |
+| `assets/ui/` | 界面贴图 | 同上 |
 | `assets/tilesets/` | 耕地、地形、房屋室内瓦片集 | 由上述贴图编排 |
 | `icon.svg` | 应用图标 | 本项目绘制 |
 
@@ -54,7 +57,7 @@ godot --headless --path . --import
 
 ## 四、不参与发行的外部素材（重要）
 
-仓库根目录的 `星露谷物语素材/` 是《Stardew Valley》的解包美术资源，
+`art/reference/stardew_valley/` 是《Stardew Valley（星露谷物语）》的解包美术资源，
 版权归 **ConcernedApe** 所有，**仅作为"需要哪些内容"的清单对照**：
 
 - 该目录下的 `.gdignore` 使其被引擎完全忽略，不会被导入；
@@ -80,7 +83,7 @@ godot --headless --path . --import
 
 发行前请确认：
 
-- [ ] 导出包内不含 `星露谷物语素材/`、`tools/`、`docs/`
+- [ ] 导出包内不含 `art/reference/stardew_valley/`、`tools/`、`docs/`
 - [ ] `assets/audio/` 只有本文件第三节列出的 13 个 WAV
 - [ ] 本文件随发行包一起分发
 - [ ] 版本号与 `project.godot` 的 `config/version`、`export_presets.cfg` 的 `application/product_version` 一致

@@ -26,6 +26,8 @@ var current_tool: StringName = TOOLS[0]
 var is_acting: bool = false
 ## 打开背包等面板时置为 true：停止移动并忽略工具输入，避免面板背后的角色乱动。
 var input_locked: bool = false
+var _manual_input_locked: bool = false
+var _modal_input_locked: bool = false
 var interaction: Node
 var _facing: StringName = &"down"
 var _action_tool: StringName
@@ -111,33 +113,28 @@ func _unhandled_input(event: InputEvent) -> void:
 
 ## 面板打开（背包、商店等）时调用：立刻刹车并忽略移动/工具输入。
 func set_input_locked(locked: bool) -> void:
-	input_locked = locked
-	if not locked:
-		_refresh_modal_lock()
-	if not input_locked:
-		return
-	velocity = Vector2.ZERO
-	if not is_acting:
-		_update_animation(false)
+	_manual_input_locked = locked
+	_refresh_modal_lock()
+	_apply_input_lock()
 
 
-## 面板互斥关闭时不能把刚打开的另一个面板解锁。
+func set_modal_input_locked(locked: bool) -> void:
+	_modal_input_locked = locked
+	_apply_input_lock()
+
+
+func _apply_input_lock() -> void:
+	input_locked = _manual_input_locked or _modal_input_locked
+	if input_locked:
+		velocity = Vector2.ZERO
+		if not is_acting:
+			_update_animation(false)
+
+
 func _refresh_modal_lock() -> void:
-	if get_tree().current_scene == null:
-		return
-	var ui := get_tree().current_scene.get_node_or_null("UI")
-	if ui == null:
-		return
-	input_locked = false
-	for panel_name: String in ["InventoryPanel", "ShopPanel", "DaySummary", "DialoguePanel", "HelpPanel", "OrderPanel", "CommunityPanel", "PauseMenu"]:
-		var panel := ui.get_node_or_null(panel_name) as Control
-		if panel != null and panel.visible:
-			input_locked = true
-			break
-	for panel: Node in get_tree().get_nodes_in_group(&"modal_ui"):
-		if panel is Control and panel.visible:
-			input_locked = true
-			break
+	var modals := get_tree().get_first_node_in_group(&"modal_coordinator")
+	if modals != null:
+		_modal_input_locked = modals.has_open_panel()
 
 
 func facing_vector() -> Vector2i:
@@ -197,6 +194,15 @@ func _cycle_hotbar(direction: int) -> void:
 		_select_hotbar(_inventory.active_slot + direction)
 	else:
 		_select_tool(TOOLS.find(current_tool) + direction)
+
+
+## 跨区或强制送回农舍时取消未命中的旧动作，不能让旧目标命中新的世界。
+func cancel_action() -> void:
+	is_acting = false
+	_impact_sent = true
+	velocity = Vector2.ZERO
+	_sync_active_item()
+	_update_animation(false)
 
 
 func _start_action() -> void:

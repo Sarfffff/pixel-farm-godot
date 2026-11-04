@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/down_a.png" id="1_x7r8f"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/down_b.png" id="2_60o1x"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/left_a.png" id="3_to2px"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/left_b.png" id="4_iu6d0"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/right_a.png" id="5_php7x"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/right_b.png" id="6_tycyi"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/up_a.png" id="7_mavph"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/town_builder/up_b.png" id="8_uawht"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x7r8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_60o1x")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_to2px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iu6d0")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_php7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tycyi")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mavph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uawht")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

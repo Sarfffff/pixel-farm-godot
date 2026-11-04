@@ -1,10 +1,10 @@
 extends SceneTree
-## 独立全品类图集整理。只读取 generated/sources/content_v1，不读取外部资源包。
+## 独立全品类图集整理。只读取 art/sources/content_v1，不读取外部资源包。
 ## 支持增量处理；-- --require-all 验收完整批次；-- --resources-only 生成 SpriteFrames。
 
 const Utils := preload("res://tools/lib/content_art_utils.gd")
-const ROOT: String = "res://assets/generated/content_v1/"
-const SOURCE_ROOT: String = "res://assets/generated/sources/content_v1/"
+const ROOT: String = "res://assets/packs/content_v1/"
+const SOURCE_ROOT: String = "res://art/sources/content_v1/"
 const PLAN: String = ROOT + "generation_plan.json"
 var _errors: int = 0
 var _items: Array[Dictionary] = []

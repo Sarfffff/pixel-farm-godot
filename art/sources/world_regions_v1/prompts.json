@@ -1,0 +1,36 @@
+{
+  "generator": "built-in image_gen",
+  "generated_on": "2026-11-04",
+  "reference_role": "Project style references only; no Stardew Valley assets copied",
+  "jobs": [
+    {
+      "id": "terrain",
+      "source": "terrain_source.png",
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Generate a new original pixel-art terrain atlas for a Godot farming game. Attached images are style references only, not edit targets. Match soft pastel chartreuse and moss greens, dusty brown, muted turquoise, sparse low-detail clusters, crisp nearest-neighbor pixel edges. A fully opaque 1024x1024 square with exactly 4 columns and 4 rows of equal 256px cells touching edge to edge, NO gutters, grid, text, borders, shadows or padding. Every cell is a full-bleed seamless FLAT repeating ground surface, native logical 16x16 art enlarged 16x with hard square pixels. No isolated islands or objects. Exact row-major order: row1 spring grass, spring grass variation, meadow grass, mossy forest floor with tiny ochre leaf flecks; row2 warm ochre dirt, darker fertile unploughed dirt, worn beige dirt footpath, pale gray cobblestone path; row3 pale warm sand, sand variation, pale gray quarry gravel, dark bluish slate gravel; row4 shallow muted turquoise rippling water, deep teal rippling water, olive-brown damp marsh, dark moist earth. Keep texture sparse and subtle so large areas do not look tiled. Original art only, no copying Stardew Valley assets."
+    },
+    {
+      "id": "ground_resources",
+      "source": "resources_source.png",
+      "grid": [
+        6,
+        4
+      ],
+      "transparent_background": true,
+      "prompt": "Generate a new original production ground-resource pixel sprite atlas for a Godot farming game. Attached images are STYLE REFERENCES only. Match their low-detail tiny pixel language, soft muted chartreuse/moss greens, dusty mauve-brown thin outlines, ochre wood and gray-blue stone, flat two-tone shading. ONE 1536x1024 landscape image, TRUE transparent background, exactly 6 columns x4 rows of equal 256x256 square cells. Exactly one centered complete sprite per cell, pixel sprite native canvas32x32 enlarged8x with crisp square blocks, most sprite widths18-24 logical pixels. Each sprite sits on baseline y224 within its cell, with at least24px transparent margins. Top-down farming-game view with slight front face. NO scenery, checkerboard, grid, borders, text, shadows or realistic texture. Exact row-major order: row1 forked twig, fallen branch pile, cut stump with rings, horizontal fallen log, thick dark hardwood stump, small broadleaf sapling; row2 small rounded stone, medium field rock, large boulder, copper ore rock with orange flecks, iron ore rock with gray-blue flecks, charcoal coal node; row3 tangled weeds, fern weeds, pasture grass tuft, pink wildflowers, yellow wildflowers, two red mushrooms; row4 two tan mushrooms, edible root with leaves, compact blue berry bush, waterside reed tuft, ivory spiral shell, smooth river pebble cluster. Keep sprites fully inside their cells, few large color clusters, no dithering, no antialiasing, no gradients. Preserve actual alpha transparency. Original art, do not copy Stardew Valley sprites."
+    },
+    {
+      "id": "trees",
+      "source": "trees_source.png",
+      "grid": [
+        2,
+        2
+      ],
+      "transparent_background": true,
+      "prompt": "Create one new original game tree sprite sheet, matching the supplied existing farm sprites as STYLE REFERENCES ONLY. Cozy top-down 2D pixel farming game, soft muted chartreuse green foliage, dusty mauve brown one-pixel outlines, warm tan trunks, broad simple color clusters, same tiny-pixel detail density as reference. Exactly 2 columns by2 rows on1024x1024 transparent canvas, four equal512x512 cells. One complete mature tree centered in each cell, native logical64x64 pixel canvas enlarged8x nearest-neighbor, visible tree approximately36-44 logical pixels wide and48-56 high, trunk rooted at cell y480. Row1: round-canopied broadleaf oak; triangular layered conifer pine. Row2: light slender trunk birch with oval foliage canopy; gently drooping riverside willow. Clean full silhouettes and small visible trunks, no background or cast shadows, no labels or grid, no scenery, no isometric view, no texture gradients or dithering. TRUE alpha background, crisp square pixels, few large two/three-tone foliage clusters. Do not copy any Stardew Valley tree."
+    }
+  ]
+}

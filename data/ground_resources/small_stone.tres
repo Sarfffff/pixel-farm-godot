@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_128k8"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/small_stone.png" id="2_elc8b"]
+
+[resource]
+script = ExtResource("1_128k8")
+id = &"small_stone"
+display_name = "散落石块"
+texture = ExtResource("2_elc8b")
+tool_hint = "拾取"
+planned_drop = &"stone"
+region_tags = Array[StringName]([&"farm", &"village", &"quarry"])

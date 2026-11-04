@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_dl5c0"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/boulder.png" id="2_hj2ou"]
+
+[resource]
+script = ExtResource("1_dl5c0")
+id = &"boulder"
+display_name = "大岩石"
+texture = ExtResource("2_hj2ou")
+footprint = Vector2i(2, 2)
+blocks_movement = true
+tool_hint = "升级石镐"
+planned_drop = &"stone"
+region_tags = Array[StringName]([&"quarry"])

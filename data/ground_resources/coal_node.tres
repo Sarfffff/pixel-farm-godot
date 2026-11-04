@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_ruvqg"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/coal_node.png" id="2_a85m0"]
+
+[resource]
+script = ExtResource("1_ruvqg")
+id = &"coal_node"
+display_name = "煤矿石"
+texture = ExtResource("2_a85m0")
+blocks_movement = true
+tool_hint = "石镐"
+planned_drop = &"coal"
+region_tags = Array[StringName]([&"quarry"])

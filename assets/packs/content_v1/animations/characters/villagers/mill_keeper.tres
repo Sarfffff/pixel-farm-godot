@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/down_a.png" id="1_q4w3m"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/down_b.png" id="2_sskc1"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/left_a.png" id="3_n0kyt"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/left_b.png" id="4_bihrw"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/right_a.png" id="5_aw78l"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/right_b.png" id="6_h3to6"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/up_a.png" id="7_cj128"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/mill_keeper/up_b.png" id="8_b3tfl"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q4w3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sskc1")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n0kyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bihrw")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_aw78l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h3to6")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cj128")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b3tfl")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

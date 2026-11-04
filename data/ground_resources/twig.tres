@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_xwdta"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/twig.png" id="2_3vjg1"]
+
+[resource]
+script = ExtResource("1_xwdta")
+id = &"twig"
+display_name = "落枝"
+texture = ExtResource("2_3vjg1")
+tool_hint = "斧头"
+planned_drop = &"wood"
+region_tags = Array[StringName]([&"farm", &"beach"])

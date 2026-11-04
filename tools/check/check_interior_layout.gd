@@ -24,13 +24,15 @@ var _failures: int = 0
 
 
 func _init() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	for path: String in SCENES:
 		_audit(path)
 	if _failures == 0:
 		print("[interior] PASS")
 	else:
 		printerr("[interior] FAIL，共 %d 项" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 func _check(condition: bool, message: String) -> void:

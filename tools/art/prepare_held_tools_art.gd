@@ -1,8 +1,9 @@
 extends SceneTree
 
-const Painter: Script = preload("res://tools/art/held_tool_painter.gd")
-const CAT_SOURCE: String = "res://assets/game/characters/basic_charakter_spritesheet.png"
-const OUTPUT: String = "res://assets/generated/characters/"
+const Painter: Script = preload("res://tools/lib/held_tool_painter.gd")
+const CAT_SOURCE: String = "res://assets/textures/base/characters/basic_charakter_spritesheet.png"
+const OUTPUT: String = "res://assets/textures/characters/"
+const PREVIEW: String = "res://art/previews/characters/held_tools_preview.png"
 const TOOLS: Array[StringName] = [&"hoe", &"watering_can", &"seeds", &"axe", &"stone_pickaxe"]
 const DIRECTIONS: Array[StringName] = [&"down", &"up", &"left", &"right"]
 
@@ -33,7 +34,8 @@ func _init() -> void:
 	if atlas.save_png(OUTPUT + "held_tools_v1.png") != OK:
 		_errors += 1
 	preview.resize(960, 768, Image.INTERPOLATE_NEAREST)
-	if preview.save_png(OUTPUT + "held_tools_preview.png") != OK:
+	DirAccess.make_dir_recursive_absolute(PREVIEW.get_base_dir())
+	if preview.save_png(PREVIEW) != OK:
 		_errors += 1
 	var file: FileAccess = FileAccess.open(OUTPUT + "held_tools_catalog.json", FileAccess.WRITE)
 	if file == null:
@@ -42,7 +44,7 @@ func _init() -> void:
 		file.store_string(JSON.stringify({
 			"version": 2, "atlas": OUTPUT + "held_tools_v1.png", "frame_size": [32, 32], "columns": 4,
 			"tools": TOOLS, "directions": DIRECTIONS, "rows": entries,
-			"preview": OUTPUT + "held_tools_preview.png", "alpha": [0, 255], "colors": 16,
+			"preview": PREVIEW, "alpha": [0, 255], "colors": 16,
 			"preparation": "Native-resolution carry tools redrawn in held_tool_painter.gd. Upright long handles, outward-facing heads, short loads at waist. Connected arms follow the actual torso in each original walk frame, with at most one pixel lateral sway. Back view occludes tools behind body. Original face and feet retained. Action sprites unchanged.",
 		}, "\t") + "\n")
 	print("[held_tools_art] 20 directional grip poses, 80 frames, %d errors" % _errors)

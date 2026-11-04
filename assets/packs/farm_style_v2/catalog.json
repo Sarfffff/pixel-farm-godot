@@ -1,0 +1,234 @@
+{
+	"alpha": "binary",
+	"generator": "built-in image_gen",
+	"icon_canvas": [
+		16,
+		16
+	],
+	"items": [
+		{
+			"path": "crops/blueberry/sprout.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "crops/blueberry/young.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "crops/blueberry/growing.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "crops/blueberry/mature.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "crops/potato/sprout.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "crops/potato/young.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "crops/potato/growing.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "crops/potato/mature.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "items/blueberry.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/blackberry_variant.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/wild_mushroom.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/wild_flower.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/blueberry_seeds.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/potato_seeds.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/potato.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/pickled_tomato.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "berries/blackberry/sprout.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "berries/blackberry/bare.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "berries/blackberry/ripe.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "items/wild_blackberry.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "berries/raspberry/sprout.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "berries/raspberry/bare.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "berries/raspberry/ripe.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "items/wild_raspberry.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "berries/gooseberry/sprout.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "berries/gooseberry/bare.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "berries/gooseberry/ripe.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "items/wild_gooseberry.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/wild_blackberry_seeds.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/wild_raspberry_seeds.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "items/wild_gooseberry_seeds.png",
+			"size": [
+				16,
+				16
+			]
+		}
+	],
+	"preparation": "tools/art/prepare_farm_style_art.gd",
+	"root_pixel_y": 31,
+	"source": "res://art/sources/farm_style_v2/",
+	"world_canvas": [
+		32,
+		32
+	]
+}

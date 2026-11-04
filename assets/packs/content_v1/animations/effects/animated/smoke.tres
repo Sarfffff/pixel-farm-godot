@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/smoke/f0.png" id="1_qfwfm"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/smoke/f1.png" id="2_0t0gn"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/smoke/f2.png" id="3_vdjk8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/animated/smoke/f3.png" id="4_e2q07"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qfwfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0t0gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vdjk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e2q07")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

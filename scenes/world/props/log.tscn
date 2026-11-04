@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_tex"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/objects/basic_grass_biom_things.png" id="1_tex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_base"]
 size = Vector2(14, 8)

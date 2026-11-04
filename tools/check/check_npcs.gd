@@ -1,6 +1,6 @@
 extends SceneTree
 
-const ART: String = "res://assets/generated/characters/npcs_v1/"
+const ART: String = "res://assets/textures/characters/npcs_v1/"
 const IDS: Array[String] = ["shopkeeper", "gardener", "carpenter", "fisherman"]
 const DIRECTIONS: Array[String] = ["down", "up", "left", "right"]
 
@@ -18,6 +18,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	for id: String in IDS:
 		for direction: String in DIRECTIONS:
 			var image: Image = Image.load_from_file(ProjectSettings.globalize_path(ART + id + "_" + direction + ".png"))
@@ -44,8 +46,8 @@ func _run() -> void:
 		_check(sprite != null, "Sprite2D root")
 		if sprite == null:
 			continue
-		# 立绘有两代格式：早期四向图集（4×1）和后来的行走图集（3×4），都要求首帧朝下。
-		_check(sprite.hframes >= 3 and sprite.frame == 0, "%s has walk poses, front default" % id)
+		_check(sprite.hframes == 3 and sprite.vframes == 4 and sprite.frame == 0, "%s has 3x4 walk poses, front default" % id)
+		_check(sprite.texture != null and sprite.texture.resource_path.ends_with(id + "_walk.png"), id + " uses its walk sheet")
 		_check(sprite.offset == Vector2(0, -8), "foot origin matches player")
 		_check(sprite.texture_filter == CanvasItem.TEXTURE_FILTER_NEAREST, "nearest filtering")
 		var sheet: Vector2 = sprite.texture.get_size() if sprite.texture != null else Vector2.ZERO
@@ -59,7 +61,7 @@ func _run() -> void:
 	var main_packed: PackedScene = load("res://scenes/main.tscn") as PackedScene
 	_check(main_packed != null, "main scene loads")
 	if main_packed == null:
-		quit(1)
+		preload("res://tools/lib/check_lifecycle.gd").finish(self, 1)
 		return
 	var main: Node2D = main_packed.instantiate() as Node2D
 	main.get_node("Systems/Save").set("autoload_enabled", false)
@@ -134,11 +136,12 @@ func _run() -> void:
 		dialogue.call("close")
 
 	await _check_navigation(main)
+	_check_walk_animations(main)
 	await _check_villager_dialogue(main)
 	main.queue_free()
 	await process_frame
-	print("[npcs] 4 characters, 16 poses, shop integration; %d failures" % _failures)
-	quit(0 if _failures == 0 else 1)
+	print("[npcs] 4 characters, 12 directional walk cycles, idle/dialogue/resume, shop integration; %d failures" % _failures)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 ## 网格寻路：农场有 Nav 节点、可达路径、水面与边界不可走。
@@ -156,6 +159,51 @@ func _check_navigation(main: Node2D) -> void:
 	_check(bool(nav.call("is_walkable", Vector2i(20, 16))), "open grass is walkable")
 
 
+## 用真实村民节点推进移动，避免只检查素材存在却漏掉运行时没有播放动画。
+func _check_walk_animations(main: Node2D) -> void:
+	var directions: Array[Vector2] = [Vector2.DOWN, Vector2.UP, Vector2.LEFT, Vector2.RIGHT]
+	var dialogue := main.get_node("UI/DialoguePanel") as Control
+	for node_name: String in ["Gardener", "Carpenter", "Fisherman"]:
+		var npc := main.get_node("Farm/World/" + node_name) as VillageNpc
+		var original_position: Vector2 = npc.global_position
+		npc.set_physics_process(false)
+		for row: int in directions.size():
+			npc.global_position = original_position
+			npc._path = PackedVector2Array([original_position + directions[row] * 40.0])
+			npc._path_index = 0
+			npc._wait_left = 0.0
+			npc._stop_walking()
+			var columns: Dictionary = {}
+			for tick: int in 60:
+				npc._physics_process(1.0 / 60.0)
+				columns[npc.frame_coords.x] = true
+				_check(npc.frame_coords.y == row, "%s faces direction %d" % [node_name, row])
+			_check(columns.size() == 3, "%s animates all three columns in direction %d" % [node_name, row])
+			_check(npc.is_walking() and npc.global_position != original_position, node_name + " animates while actually moving")
+			# 素材本身也必须有不同的脚部像素，防止三列全是复制的站姿。
+			var sheet: Image = npc.texture.get_image()
+			var idle: PackedByteArray = sheet.get_region(Rect2i(0, row * 32, 32, 32)).get_data()
+			_check(idle != sheet.get_region(Rect2i(32, row * 32, 32, 32)).get_data(), node_name + " first step differs from idle")
+			_check(idle != sheet.get_region(Rect2i(64, row * 32, 32, 32)).get_data(), node_name + " second step differs from idle")
+
+		var before_dialogue: Vector2 = npc.global_position
+		npc.interact(Vector2i.ZERO)
+		npc._physics_process(0.2)
+		_check(not npc.is_walking() and npc.frame_coords.x == 0, node_name + " returns to idle during dialogue")
+		_check(npc.global_position == before_dialogue, node_name + " stands still during dialogue")
+		dialogue.call("close")
+		npc._physics_process(0.2)
+		_check(npc.is_walking() and npc.global_position != before_dialogue, node_name + " resumes after dialogue")
+
+		for tick: int in 120:
+			npc._physics_process(1.0 / 60.0)
+		_check(not npc.is_walking() and npc.frame_coords.x == 0, node_name + " stands idle on reaching destination")
+		npc.global_position = original_position
+		npc._path.clear()
+		npc._wait_left = 0.0
+		npc.set_physics_process(true)
+
+
 ## 村民：会走动、四向帧合法、多句对话能逐句推进。
 func _check_villager_dialogue(main: Node2D) -> void:
 	var gardener := main.get_node_or_null("Farm/World/Gardener") as Sprite2D
@@ -165,7 +213,7 @@ func _check_villager_dialogue(main: Node2D) -> void:
 	var start: Vector2 = gardener.global_position
 	await create_timer(1.4).timeout
 	_check(gardener.global_position.distance_to(start) > 4.0, "gardener walks along its routine")
-	_check(gardener.frame >= 0 and gardener.frame <= 3, "gardener uses a valid direction frame")
+	_check(gardener.frame_coords.y >= 0 and gardener.frame_coords.y <= 3 and gardener.frame_coords.x <= 2, "gardener uses a valid walk frame")
 
 	var dialogue := main.get_node("UI/DialoguePanel") as Control
 	gardener.call("interact", Vector2i.ZERO)

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_up8cl"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/pine_tree.png" id="2_3xeka"]
+
+[resource]
+script = ExtResource("1_up8cl")
+id = &"pine_tree"
+display_name = "针叶树"
+texture = ExtResource("2_3xeka")
+footprint = Vector2i(2, 2)
+visual_scale = 0.75
+blocks_movement = true
+tool_hint = "斧头"
+planned_drop = &"wood"
+region_tags = Array[StringName]([&"forest", &"quarry"])

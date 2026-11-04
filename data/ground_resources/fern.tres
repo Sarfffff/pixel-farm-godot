@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_fss58"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/fern.png" id="2_isuw1"]
+
+[resource]
+script = ExtResource("1_fss58")
+id = &"fern"
+display_name = "林地蕨草"
+texture = ExtResource("2_isuw1")
+tool_hint = "清理"
+planned_drop = &"fiber"
+region_tags = Array[StringName]([&"forest"])

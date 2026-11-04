@@ -9,7 +9,7 @@ extends SceneTree
 
 const OUT_SCENE := "res://scenes/world/shop_interior.tscn"
 const TILESET := "res://assets/tilesets/house_terrain.tres"
-const ART := "res://assets/generated/content_v1/"
+const ART := "res://assets/packs/content_v1/"
 
 const ROOM_W: int = 18
 const ROOM_H: int = 12
@@ -71,7 +71,7 @@ func _init() -> void:
 func _build() -> Node2D:
 	var room := Node2D.new()
 	room.name = "ShopInterior"
-	room.set_script(load("res://scripts/world/interior_room.gd") as Script)
+	room.set_script(load("res://scripts/world/interiors/interior_room.gd") as Script)
 	room.set("camera_bounds", Rect2(0, 0, ROOM_W * 16, (ROOM_H + EXTRA_WALL_ROWS) * 16))
 
 	var floor_layer := _make_layer("Floor", 0)
@@ -236,7 +236,7 @@ func _add_keeper(props: Node2D, room: Node2D) -> void:
 func _add_door(room: Node2D) -> void:
 	var door := Node2D.new()
 	door.name = "ExitDoor"
-	door.set_script(load("res://scripts/world/house_door.gd") as Script)
+	door.set_script(load("res://scripts/world/interiors/house_door.gd") as Script)
 	door.set("mode", &"exit")
 	door.position = Vector2(
 		(float(DOOR_COLUMNS[0]) + float(DOOR_COLUMNS.size()) * 0.5) * 16.0,

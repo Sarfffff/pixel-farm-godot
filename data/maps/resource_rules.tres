@@ -1,0 +1,36 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/region_resource_rules.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+rules = {
+"twig": {"tool": "axe", "hits": 1, "cost": 4, "item": "wood", "count": 1, "days": 2},
+"branch_pile": {"tool": "axe", "hits": 2, "cost": 4, "item": "wood", "count": 3, "days": 3},
+"stump": {"tool": "axe", "hits": 3, "cost": 6, "item": "wood", "count": 3, "days": 4},
+"fallen_log": {"tool": "axe", "hits": 4, "cost": 6, "item": "wood", "count": 5, "days": 4},
+"hardwood_stump": {"tool": "axe", "hits": 6, "cost": 6, "item": "hardwood", "count": 2, "days": 5},
+"sapling": {"tool": "axe", "hits": 1, "cost": 4, "item": "wood", "count": 1, "days": 3},
+"small_stone": {"tool": "", "hits": 1, "cost": 1, "item": "stone", "count": 1, "days": 2},
+"field_rock": {"tool": "stone_pickaxe", "hits": 3, "cost": 6, "item": "stone", "count": 3, "days": 3},
+"boulder": {"tool": "stone_pickaxe", "hits": 6, "cost": 6, "item": "stone", "count": 6, "days": 5},
+"copper_node": {"tool": "stone_pickaxe", "hits": 4, "cost": 6, "item": "copper_ore", "count": 3, "days": 3},
+"iron_node": {"tool": "stone_pickaxe", "hits": 6, "cost": 6, "item": "iron_ore", "count": 2, "days": 4},
+"coal_node": {"tool": "stone_pickaxe", "hits": 3, "cost": 6, "item": "coal", "count": 3, "days": 3},
+"weeds": {"tool": "", "hits": 1, "cost": 2, "item": "fiber", "count": 2, "days": 1},
+"fern": {"tool": "", "hits": 1, "cost": 2, "item": "fiber", "count": 2, "days": 2},
+"pasture_grass": {"tool": "", "hits": 1, "cost": 2, "item": "hay", "count": 2, "days": 1},
+"pink_flower": {"tool": "", "hits": 1, "cost": 1, "item": "wild_flower", "count": 1, "days": 2},
+"yellow_flower": {"tool": "", "hits": 1, "cost": 1, "item": "wild_flower", "count": 1, "days": 2},
+"red_mushroom": {"tool": "", "hits": 1, "cost": 1, "item": "red_mushroom", "count": 1, "days": 2},
+"brown_mushroom": {"tool": "", "hits": 1, "cost": 1, "item": "wild_mushroom", "count": 1, "days": 2},
+"wild_root": {"tool": "", "hits": 1, "cost": 1, "item": "wild_root", "count": 1, "days": 2},
+"berry_bush": {"tool": "", "hits": 1, "cost": 1, "item": "wild_blackberry", "count": 2, "days": 2},
+"reeds": {"tool": "", "hits": 1, "cost": 2, "item": "fiber", "count": 2, "days": 2},
+"shell": {"tool": "", "hits": 1, "cost": 1, "item": "shell", "count": 1, "days": 1},
+"river_pebbles": {"tool": "", "hits": 1, "cost": 1, "item": "stone", "count": 2, "days": 2},
+"oak_tree": {"tool": "axe", "hits": 4, "cost": 8, "item": "wood", "count": 6, "days": 5},
+"pine_tree": {"tool": "axe", "hits": 4, "cost": 8, "item": "wood", "count": 5, "days": 5},
+"birch_tree": {"tool": "axe", "hits": 4, "cost": 8, "item": "wood", "count": 5, "days": 5},
+"willow_tree": {"tool": "axe", "hits": 4, "cost": 8, "item": "wood", "count": 6, "days": 5}
+}

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AnimalProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/animal_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+species_id = &"chicken"
+move_speed = 16.0
+home_radius = 40.0
+vertical_range_scale = 0.6
+idle_min = 0.8
+idle_max = 2.4
+graze_chance = 0.35
+sleep_minutes = 1320
+wake_minutes = 360

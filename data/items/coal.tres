@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/coal_node.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"coal"
+display_name = "煤"
+description = "在野外区域采集，可带回杂货店出售。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 12
+category = &"material"

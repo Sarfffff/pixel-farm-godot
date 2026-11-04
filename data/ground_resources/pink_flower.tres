@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_3hjp7"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/pink_flower.png" id="2_u456o"]
+
+[resource]
+script = ExtResource("1_3hjp7")
+id = &"pink_flower"
+display_name = "粉色野花"
+texture = ExtResource("2_u456o")
+tool_hint = "拾取"
+planned_drop = &"wild_flower"
+region_tags = Array[StringName]([&"village"])

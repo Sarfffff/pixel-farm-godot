@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f0.png" id="1_y5vot"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f1.png" id="2_7milk"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f2.png" id="3_f256q"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f3.png" id="4_42c85"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f4.png" id="5_7400c"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f5.png" id="6_rd5ww"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f6.png" id="7_obfga"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/effects/critters/bat_flock/f7.png" id="8_dna63"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y5vot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7milk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f256q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_42c85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7400c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rd5ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_obfga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dna63")
+}],
+"loop": 1,
+"name": &"play",
+"speed": 5.0
+}]

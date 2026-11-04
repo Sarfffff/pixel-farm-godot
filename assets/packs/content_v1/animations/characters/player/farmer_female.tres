@@ -1,0 +1,421 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_down_a.png" id="1_0kufk"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_down_b.png" id="2_iir5u"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_left_a.png" id="3_cowtm"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_left_b.png" id="4_we1yj"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_right_a.png" id="5_6wgv0"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_right_b.png" id="6_dr3fl"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_up_a.png" id="7_62bvq"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/axe_up_b.png" id="8_u2j8d"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_down_a.png" id="9_f5bud"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_down_b.png" id="10_wvnjw"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_left_a.png" id="11_ev3hw"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_left_b.png" id="12_0qe2g"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_right_a.png" id="13_s2hjl"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_right_b.png" id="14_nepa0"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_up_a.png" id="15_8bjd6"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/fishing_cast_up_b.png" id="16_swjt5"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_down_a.png" id="17_u1oiu"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_down_b.png" id="18_fovw6"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_left_a.png" id="19_4nntj"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_left_b.png" id="20_bmwew"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_right_a.png" id="21_7aiq1"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_right_b.png" id="22_yfcxp"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_up_a.png" id="23_6mmtc"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/hoe_up_b.png" id="24_mo88o"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_down_a.png" id="25_ox6xp"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_down_b.png" id="26_xklnd"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_left_a.png" id="27_7hci6"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_left_b.png" id="28_dvgw8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_right_a.png" id="29_3a4h8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_right_b.png" id="30_aqb7m"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_up_a.png" id="31_d58va"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/pickaxe_up_b.png" id="32_1x0f5"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_down_a.png" id="33_2lpva"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_down_b.png" id="34_78n8w"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_left_a.png" id="35_b1nan"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_left_b.png" id="36_wxjml"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_right_a.png" id="37_vvpn3"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_right_b.png" id="38_gx8x8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_up_a.png" id="39_jhraq"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/scythe_up_b.png" id="40_uthjx"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_down_a.png" id="41_bu230"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_down_b.png" id="42_ht2ie"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_left_a.png" id="43_yf3u6"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_left_b.png" id="44_20vxs"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_right_a.png" id="45_8p5or"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_right_b.png" id="46_lfoms"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_up_a.png" id="47_0qp12"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/sit_sleep_faint_up_b.png" id="48_rkp8e"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_down_a.png" id="49_q8j4n"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_down_b.png" id="50_1x0lf"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_left_a.png" id="51_dxtk2"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_left_b.png" id="52_cjt5r"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_right_a.png" id="53_tvsxu"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_right_b.png" id="54_eqbld"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_up_a.png" id="55_c36ux"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/walk_up_b.png" id="56_uxi1l"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_down_a.png" id="57_h4ci8"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_down_b.png" id="58_a73k3"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_left_a.png" id="59_qacnh"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_left_b.png" id="60_q3bwp"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_right_a.png" id="61_tw2kr"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_right_b.png" id="62_tbvfv"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_up_a.png" id="63_ol3dg"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/player/farmer_female/watering_can_up_b.png" id="64_hmx62"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0kufk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iir5u")
+}],
+"loop": 0,
+"name": &"axe_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cowtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_we1yj")
+}],
+"loop": 0,
+"name": &"axe_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6wgv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dr3fl")
+}],
+"loop": 0,
+"name": &"axe_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_62bvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u2j8d")
+}],
+"loop": 0,
+"name": &"axe_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_f5bud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wvnjw")
+}],
+"loop": 0,
+"name": &"fishing_cast_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ev3hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0qe2g")
+}],
+"loop": 0,
+"name": &"fishing_cast_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_s2hjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nepa0")
+}],
+"loop": 0,
+"name": &"fishing_cast_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_8bjd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_swjt5")
+}],
+"loop": 0,
+"name": &"fishing_cast_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_u1oiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fovw6")
+}],
+"loop": 0,
+"name": &"hoe_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_4nntj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bmwew")
+}],
+"loop": 0,
+"name": &"hoe_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_7aiq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yfcxp")
+}],
+"loop": 0,
+"name": &"hoe_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_6mmtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mo88o")
+}],
+"loop": 0,
+"name": &"hoe_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ox6xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xklnd")
+}],
+"loop": 0,
+"name": &"pickaxe_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_7hci6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_dvgw8")
+}],
+"loop": 0,
+"name": &"pickaxe_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_3a4h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_aqb7m")
+}],
+"loop": 0,
+"name": &"pickaxe_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_d58va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1x0f5")
+}],
+"loop": 0,
+"name": &"pickaxe_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_2lpva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_78n8w")
+}],
+"loop": 0,
+"name": &"scythe_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_b1nan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_wxjml")
+}],
+"loop": 0,
+"name": &"scythe_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_vvpn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_gx8x8")
+}],
+"loop": 0,
+"name": &"scythe_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_jhraq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_uthjx")
+}],
+"loop": 0,
+"name": &"scythe_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_bu230")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ht2ie")
+}],
+"loop": 0,
+"name": &"sit_sleep_faint_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_yf3u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_20vxs")
+}],
+"loop": 0,
+"name": &"sit_sleep_faint_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_8p5or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lfoms")
+}],
+"loop": 0,
+"name": &"sit_sleep_faint_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_0qp12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_rkp8e")
+}],
+"loop": 0,
+"name": &"sit_sleep_faint_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_q8j4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1x0lf")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_dxtk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_cjt5r")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_tvsxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_eqbld")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_c36ux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_uxi1l")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_h4ci8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_a73k3")
+}],
+"loop": 0,
+"name": &"watering_can_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_qacnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_q3bwp")
+}],
+"loop": 0,
+"name": &"watering_can_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_tw2kr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_tbvfv")
+}],
+"loop": 0,
+"name": &"watering_can_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_ol3dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_hmx62")
+}],
+"loop": 0,
+"name": &"watering_can_up",
+"speed": 5.0
+}]

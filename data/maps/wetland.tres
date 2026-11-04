@@ -1,0 +1,20 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/world_region_data.gd" id="1_jgi6c"]
+
+[resource]
+script = ExtResource("1_jgi6c")
+id = &"wetland"
+display_name = "河岸与湿地"
+purpose = "水域、钓点、芦苇和湿地采集"
+layout = &"wetland"
+seed_value = 20261407
+resource_count = 42
+resource_weights = {
+"brown_mushroom": 2,
+"pasture_grass": 4,
+"reeds": 8,
+"river_pebbles": 4,
+"wild_root": 2,
+"willow_tree": 3
+}

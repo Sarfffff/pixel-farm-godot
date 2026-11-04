@@ -1,0 +1,1533 @@
+{
+	"items": [
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "gatekeeper",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				0,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/gatekeeper/neutral",
+			"mode": "sprite",
+			"name": "gatekeeper (ochre scarf and slate trousers) neutral",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/gatekeeper/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				2,
+				2,
+				211,
+				209
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "gatekeeper",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				64,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/gatekeeper/happy",
+			"mode": "sprite",
+			"name": "gatekeeper (ochre scarf and slate trousers) happy",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/gatekeeper/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				213,
+				2,
+				211,
+				209
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "gatekeeper",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				128,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/gatekeeper/sad",
+			"mode": "sprite",
+			"name": "gatekeeper (ochre scarf and slate trousers) sad",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/gatekeeper/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				424,
+				2,
+				211,
+				209
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "gatekeeper",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				192,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/gatekeeper/annoyed",
+			"mode": "sprite",
+			"name": "gatekeeper (ochre scarf and slate trousers) annoyed",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/gatekeeper/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				635,
+				2,
+				212,
+				209
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "gatekeeper",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				256,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/gatekeeper/surprised",
+			"mode": "sprite",
+			"name": "gatekeeper (ochre scarf and slate trousers) surprised",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/gatekeeper/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				847,
+				2,
+				212,
+				209
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "gatekeeper",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				320,
+				0,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/gatekeeper/blushing",
+			"mode": "sprite",
+			"name": "gatekeeper (ochre scarf and slate trousers) blushing",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/gatekeeper/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				1059,
+				2,
+				210,
+				209
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "bridge_guard",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				0,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/bridge_guard/neutral",
+			"mode": "sprite",
+			"name": "bridge guard (plum jacket and short sandy hair) neutral",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/bridge_guard/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				2,
+				211,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "bridge_guard",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				64,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/bridge_guard/happy",
+			"mode": "sprite",
+			"name": "bridge guard (plum jacket and short sandy hair) happy",
+			"opaque_bounds": [
+				4,
+				2,
+				55,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/bridge_guard/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				213,
+				211,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "bridge_guard",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				128,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/bridge_guard/sad",
+			"mode": "sprite",
+			"name": "bridge guard (plum jacket and short sandy hair) sad",
+			"opaque_bounds": [
+				4,
+				2,
+				55,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/bridge_guard/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				424,
+				211,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "bridge_guard",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				192,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/bridge_guard/annoyed",
+			"mode": "sprite",
+			"name": "bridge guard (plum jacket and short sandy hair) annoyed",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/bridge_guard/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				635,
+				211,
+				212,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "bridge_guard",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				256,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/bridge_guard/surprised",
+			"mode": "sprite",
+			"name": "bridge guard (plum jacket and short sandy hair) surprised",
+			"opaque_bounds": [
+				4,
+				2,
+				55,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/bridge_guard/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				847,
+				211,
+				212,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "bridge_guard",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				320,
+				64,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/bridge_guard/blushing",
+			"mode": "sprite",
+			"name": "bridge guard (plum jacket and short sandy hair) blushing",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/bridge_guard/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				1059,
+				211,
+				210,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "old_mariner",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				0,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/old_mariner/neutral",
+			"mode": "sprite",
+			"name": "old mariner (gray braid and green shawl) neutral",
+			"opaque_bounds": [
+				2,
+				3,
+				60,
+				58
+			],
+			"path": "res://assets/packs/content_v1/portraits/old_mariner/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				2,
+				417,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "old_mariner",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				64,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/old_mariner/happy",
+			"mode": "sprite",
+			"name": "old mariner (gray braid and green shawl) happy",
+			"opaque_bounds": [
+				2,
+				3,
+				60,
+				58
+			],
+			"path": "res://assets/packs/content_v1/portraits/old_mariner/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				213,
+				417,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "old_mariner",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				128,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/old_mariner/sad",
+			"mode": "sprite",
+			"name": "old mariner (gray braid and green shawl) sad",
+			"opaque_bounds": [
+				2,
+				3,
+				60,
+				58
+			],
+			"path": "res://assets/packs/content_v1/portraits/old_mariner/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				424,
+				417,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "old_mariner",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				192,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/old_mariner/annoyed",
+			"mode": "sprite",
+			"name": "old mariner (gray braid and green shawl) annoyed",
+			"opaque_bounds": [
+				2,
+				3,
+				60,
+				58
+			],
+			"path": "res://assets/packs/content_v1/portraits/old_mariner/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				635,
+				417,
+				212,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "old_mariner",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				256,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/old_mariner/surprised",
+			"mode": "sprite",
+			"name": "old mariner (gray braid and green shawl) surprised",
+			"opaque_bounds": [
+				2,
+				3,
+				60,
+				58
+			],
+			"path": "res://assets/packs/content_v1/portraits/old_mariner/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				847,
+				417,
+				212,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "old_mariner",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				320,
+				128,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/old_mariner/blushing",
+			"mode": "sprite",
+			"name": "old mariner (gray braid and green shawl) blushing",
+			"opaque_bounds": [
+				2,
+				3,
+				60,
+				58
+			],
+			"path": "res://assets/packs/content_v1/portraits/old_mariner/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				1059,
+				417,
+				210,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "guild_ranger",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				0,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/guild_ranger/neutral",
+			"mode": "sprite",
+			"name": "guild ranger (moss overalls and straw hat) neutral",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/guild_ranger/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				2,
+				623,
+				211,
+				207
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "guild_ranger",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				64,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/guild_ranger/happy",
+			"mode": "sprite",
+			"name": "guild ranger (moss overalls and straw hat) happy",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/guild_ranger/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				213,
+				623,
+				211,
+				207
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "guild_ranger",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				128,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/guild_ranger/sad",
+			"mode": "sprite",
+			"name": "guild ranger (moss overalls and straw hat) sad",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/guild_ranger/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				424,
+				623,
+				211,
+				207
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "guild_ranger",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				192,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/guild_ranger/annoyed",
+			"mode": "sprite",
+			"name": "guild ranger (moss overalls and straw hat) annoyed",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/guild_ranger/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				635,
+				623,
+				212,
+				207
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "guild_ranger",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				256,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/guild_ranger/surprised",
+			"mode": "sprite",
+			"name": "guild ranger (moss overalls and straw hat) surprised",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/guild_ranger/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				847,
+				623,
+				212,
+				207
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "guild_ranger",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				320,
+				192,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/guild_ranger/blushing",
+			"mode": "sprite",
+			"name": "guild ranger (moss overalls and straw hat) blushing",
+			"opaque_bounds": [
+				2,
+				2,
+				59,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/guild_ranger/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				1059,
+				623,
+				210,
+				207
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "museum_curator",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				0,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/museum_curator/neutral",
+			"mode": "sprite",
+			"name": "museum curator (sage apron and dark cropped hair) neutral",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/museum_curator/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				2,
+				830,
+				211,
+				204
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "museum_curator",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				64,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/museum_curator/happy",
+			"mode": "sprite",
+			"name": "museum curator (sage apron and dark cropped hair) happy",
+			"opaque_bounds": [
+				4,
+				2,
+				55,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/museum_curator/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				213,
+				830,
+				211,
+				204
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "museum_curator",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				128,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/museum_curator/sad",
+			"mode": "sprite",
+			"name": "museum curator (sage apron and dark cropped hair) sad",
+			"opaque_bounds": [
+				4,
+				2,
+				55,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/museum_curator/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				424,
+				830,
+				211,
+				204
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "museum_curator",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				192,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/museum_curator/annoyed",
+			"mode": "sprite",
+			"name": "museum curator (sage apron and dark cropped hair) annoyed",
+			"opaque_bounds": [
+				4,
+				2,
+				55,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/museum_curator/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				635,
+				830,
+				212,
+				204
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "museum_curator",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				256,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/museum_curator/surprised",
+			"mode": "sprite",
+			"name": "museum curator (sage apron and dark cropped hair) surprised",
+			"opaque_bounds": [
+				4,
+				2,
+				55,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/museum_curator/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				847,
+				830,
+				212,
+				204
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "museum_curator",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				320,
+				256,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/museum_curator/blushing",
+			"mode": "sprite",
+			"name": "museum curator (sage apron and dark cropped hair) blushing",
+			"opaque_bounds": [
+				4,
+				2,
+				56,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/museum_curator/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				1059,
+				830,
+				210,
+				204
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "regional_envoy",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				0,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "neutral",
+			"id": "portraits/regional_envoy/neutral",
+			"mode": "sprite",
+			"name": "regional envoy (terracotta vest and cream cap) neutral",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/regional_envoy/neutral.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				2,
+				1034,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "regional_envoy",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				64,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "happy",
+			"id": "portraits/regional_envoy/happy",
+			"mode": "sprite",
+			"name": "regional envoy (terracotta vest and cream cap) happy",
+			"opaque_bounds": [
+				6,
+				2,
+				52,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/regional_envoy/happy.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				213,
+				1034,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "regional_envoy",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				128,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "sad",
+			"id": "portraits/regional_envoy/sad",
+			"mode": "sprite",
+			"name": "regional envoy (terracotta vest and cream cap) sad",
+			"opaque_bounds": [
+				6,
+				2,
+				52,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/regional_envoy/sad.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				424,
+				1034,
+				211,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "regional_envoy",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				192,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "annoyed",
+			"id": "portraits/regional_envoy/annoyed",
+			"mode": "sprite",
+			"name": "regional envoy (terracotta vest and cream cap) annoyed",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/regional_envoy/annoyed.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				635,
+				1034,
+				212,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "regional_envoy",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				256,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "surprised",
+			"id": "portraits/regional_envoy/surprised",
+			"mode": "sprite",
+			"name": "regional envoy (terracotta vest and cream cap) surprised",
+			"opaque_bounds": [
+				5,
+				2,
+				53,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/regional_envoy/surprised.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				847,
+				1034,
+				212,
+				206
+			],
+			"source_sheet": "portraits_7"
+		},
+		{
+			"anchor": [
+				32,
+				32
+			],
+			"animation_group": "regional_envoy",
+			"atlas": "res://assets/packs/content_v1/atlases/portraits_7.png",
+			"atlas_region": [
+				320,
+				320,
+				64,
+				64
+			],
+			"category": "portraits",
+			"frame": "blushing",
+			"id": "portraits/regional_envoy/blushing",
+			"mode": "sprite",
+			"name": "regional envoy (terracotta vest and cream cap) blushing",
+			"opaque_bounds": [
+				6,
+				2,
+				52,
+				60
+			],
+			"path": "res://assets/packs/content_v1/portraits/regional_envoy/blushing.png",
+			"size": [
+				64,
+				64
+			],
+			"source": "res://art/sources/content_v1/portraits_7.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				1059,
+				1034,
+				210,
+				206
+			],
+			"source_sheet": "portraits_7"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "071bd0afa1e8aa5f665f6860a0c29507dee9bdb307ec1ed40b658106f25c7857",
+	"sheet": {
+		"category": "portraits",
+		"cell_size": [
+			64,
+			64
+		],
+		"columns": 6,
+		"count": 36,
+		"id": "portraits_7",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/portraits_7.png",
+		"rows": 6,
+		"source": "res://art/sources/content_v1/portraits_7.png"
+	},
+	"source_hash": "67318d8dbde5370684fcc861b12d34c9"
+}

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/world_region_data.gd" id="1_neib5"]
+
+[resource]
+script = ExtResource("1_neib5")
+id = &"village"
+display_name = "村庄与集市"
+purpose = "交易服务、集会、可读的主路"
+layout = &"village"
+seed_value = 20261205
+resource_count = 24
+resource_weights = {
+"birch_tree": 2,
+"pasture_grass": 2,
+"pink_flower": 5,
+"small_stone": 2,
+"yellow_flower": 5
+}

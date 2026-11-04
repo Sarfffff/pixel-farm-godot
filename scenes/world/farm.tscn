@@ -1,30 +1,30 @@
 [gd_scene format=4]
 
-[ext_resource type="Texture2D" path="res://assets/game/tilesets/grass.png" id="1_21ed0"]
-[ext_resource type="Texture2D" path="res://assets/game/tilesets/tilled_dirt_wide.png" id="2_y75u7"]
-[ext_resource type="Texture2D" path="res://assets/game/tilesets/water.png" id="3_gcox5"]
-[ext_resource type="Texture2D" path="res://assets/generated/terrain/river_shore_atlas.png" id="4_mrr1a"]
-[ext_resource type="Texture2D" path="res://assets/game/objects/paths.png" id="5_x1w4o"]
-[ext_resource type="Texture2D" path="res://assets/game/tilesets/hills.png" id="6_okm01"]
-[ext_resource type="Texture2D" path="res://assets/generated/terrain/river_bridge_atlas.png" id="7_jnifl"]
-[ext_resource type="Script" path="res://scripts/world/occlusion_fader.gd" id="8_tux60"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/tilesets/grass.png" id="1_21ed0"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/tilesets/tilled_dirt_wide.png" id="2_y75u7"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/tilesets/water.png" id="3_gcox5"]
+[ext_resource type="Texture2D" path="res://assets/textures/terrain/river_shore_atlas.png" id="4_mrr1a"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/objects/paths.png" id="5_x1w4o"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/tilesets/hills.png" id="6_okm01"]
+[ext_resource type="Texture2D" path="res://assets/textures/terrain/river_bridge_atlas.png" id="7_jnifl"]
+[ext_resource type="Script" path="res://scripts/presentation/occlusion_fader.gd" id="8_tux60"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/cottage.tscn" id="9_xkwga"]
-[ext_resource type="Texture2D" path="res://assets/game/objects/free_chicken_house.png" id="10_p5gyy"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/structures/farmhouse.png" id="10_p5gyy"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/general_store.tscn" id="11_nr0s7"]
-[ext_resource type="Texture2D" path="res://assets/generated/buildings/facilities/general_store.png" id="12_7cxhs"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/structures/general_store.png" id="12_7cxhs"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/bush.tscn" id="13_fqg11"]
-[ext_resource type="Texture2D" path="res://assets/game/objects/basic_grass_biom_things.png" id="14_molt4"]
+[ext_resource type="Texture2D" path="res://assets/textures/base/objects/basic_grass_biom_things.png" id="14_molt4"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/mushroom.tscn" id="15_pqgjg"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/tree_fruit.tscn" id="16_u66fl"]
-[ext_resource type="Script" path="res://scripts/world/choppable_tree.gd" id="17_dehgw"]
+[ext_resource type="Script" path="res://scripts/world/resources/choppable_tree.gd" id="17_dehgw"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/log.tscn" id="18_q007v"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/rock.tscn" id="19_sh0se"]
-[ext_resource type="Script" path="res://scripts/world/breakable_rock.gd" id="20_okik1"]
+[ext_resource type="Script" path="res://scripts/world/resources/breakable_rock.gd" id="20_okik1"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/tree_big.tscn" id="21_heqn4"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/tree_small.tscn" id="22_ocxk6"]
-[ext_resource type="Script" path="res://scripts/world/farm_tiller.gd" id="23_mva5p"]
+[ext_resource type="Script" path="res://scripts/world/farming/farm_tiller.gd" id="23_mva5p"]
 [ext_resource type="PackedScene" path="res://scenes/world/tile_cursor.tscn" id="24_bdt7l"]
-[ext_resource type="Script" path="res://scripts/world/nav_grid.gd" id="25_e3cdh"]
+[ext_resource type="Script" path="res://scripts/world/navigation/nav_grid.gd" id="25_e3cdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57n3t"]
 texture = ExtResource("1_21ed0")
@@ -594,12 +594,12 @@ script = ExtResource("8_tux60")
 [node name="Cottage0" type="Sprite2D" parent="World" unique_id=606304754 instance=ExtResource("9_xkwga")]
 position = Vector2(472, 144)
 texture = ExtResource("10_p5gyy")
-offset = Vector2(0, -24)
+offset = Vector2(0, -48)
 
 [node name="GeneralStore1" type="Sprite2D" parent="World" unique_id=325144483 instance=ExtResource("11_nr0s7")]
 position = Vector2(488, 256)
 texture = ExtResource("12_7cxhs")
-offset = Vector2(0, -32)
+offset = Vector2(0, -48)
 
 [node name="Bush2" type="Sprite2D" parent="World" unique_id=1912396040 instance=ExtResource("13_fqg11")]
 position = Vector2(520, 192)
@@ -622,6 +622,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(48, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/552/216"
 
 [node name="Log5" type="Sprite2D" parent="World" unique_id=218251821 instance=ExtResource("18_q007v")]
 position = Vector2(264, 208)
@@ -637,6 +638,7 @@ offset = Vector2(0, -8)
 region_enabled = true
 region_rect = Rect2(112, 16, 32, 16)
 script = ExtResource("20_okik1")
+persistent_id = &"farm/rock/264/152"
 
 [node name="TreeBig7" type="Sprite2D" parent="World" unique_id=317391486 instance=ExtResource("21_heqn4")]
 position = Vector2(40, 72)
@@ -645,6 +647,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/40/72"
 
 [node name="TreeBig8" type="Sprite2D" parent="World" unique_id=1254704729 instance=ExtResource("21_heqn4")]
 position = Vector2(104, 56)
@@ -653,6 +656,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/104/56"
 
 [node name="TreeSmall9" type="Sprite2D" parent="World" unique_id=1893898776 instance=ExtResource("22_ocxk6")]
 position = Vector2(88, 64)
@@ -662,6 +666,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/88/64"
 
 [node name="TreeFruit10" type="Sprite2D" parent="World" unique_id=1321074373 instance=ExtResource("16_u66fl")]
 position = Vector2(232, 56)
@@ -670,6 +675,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(48, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/232/56"
 
 [node name="TreeBig11" type="Sprite2D" parent="World" unique_id=269824854 instance=ExtResource("21_heqn4")]
 position = Vector2(296, 72)
@@ -678,6 +684,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/296/72"
 
 [node name="TreeSmall12" type="Sprite2D" parent="World" unique_id=2097210023 instance=ExtResource("22_ocxk6")]
 position = Vector2(360, 56)
@@ -687,6 +694,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/360/56"
 
 [node name="TreeBig13" type="Sprite2D" parent="World" unique_id=734442174 instance=ExtResource("21_heqn4")]
 position = Vector2(424, 72)
@@ -695,6 +703,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/424/72"
 
 [node name="TreeBig14" type="Sprite2D" parent="World" unique_id=1571005237 instance=ExtResource("21_heqn4")]
 position = Vector2(520, 64)
@@ -703,6 +712,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/520/64"
 
 [node name="TreeSmall15" type="Sprite2D" parent="World" unique_id=2021024853 instance=ExtResource("22_ocxk6")]
 position = Vector2(584, 72)
@@ -712,6 +722,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/584/72"
 
 [node name="TreeBig16" type="Sprite2D" parent="World" unique_id=355398178 instance=ExtResource("21_heqn4")]
 position = Vector2(632, 48)
@@ -720,6 +731,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/632/48"
 
 [node name="TreeSmall17" type="Sprite2D" parent="World" unique_id=532477021 instance=ExtResource("22_ocxk6")]
 position = Vector2(24, 168)
@@ -729,6 +741,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/24/168"
 
 [node name="Bush18" type="Sprite2D" parent="World" unique_id=861224804 instance=ExtResource("13_fqg11")]
 position = Vector2(56, 232)
@@ -744,6 +757,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/32/312"
 
 [node name="Mushroom20" type="Sprite2D" parent="World" unique_id=529817488 instance=ExtResource("15_pqgjg")]
 position = Vector2(64, 360)
@@ -760,6 +774,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/24/424"
 
 [node name="Rock22" type="Sprite2D" parent="World" unique_id=1903542120 instance=ExtResource("19_sh0se")]
 position = Vector2(72, 464)
@@ -768,6 +783,7 @@ offset = Vector2(0, -8)
 region_enabled = true
 region_rect = Rect2(112, 16, 32, 16)
 script = ExtResource("20_okik1")
+persistent_id = &"farm/rock/72/464"
 
 [node name="TreeBig23" type="Sprite2D" parent="World" unique_id=1500953336 instance=ExtResource("21_heqn4")]
 position = Vector2(616, 176)
@@ -776,6 +792,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/616/176"
 
 [node name="Bush24" type="Sprite2D" parent="World" unique_id=525179663 instance=ExtResource("13_fqg11")]
 position = Vector2(592, 240)
@@ -791,6 +808,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/632/336"
 
 [node name="Rock26" type="Sprite2D" parent="World" unique_id=1191269290 instance=ExtResource("19_sh0se")]
 position = Vector2(600, 440)
@@ -799,6 +817,7 @@ offset = Vector2(0, -8)
 region_enabled = true
 region_rect = Rect2(112, 16, 32, 16)
 script = ExtResource("20_okik1")
+persistent_id = &"farm/rock/600/440"
 
 [node name="TreeSmall27" type="Sprite2D" parent="World" unique_id=1177416916 instance=ExtResource("22_ocxk6")]
 position = Vector2(624, 456)
@@ -808,6 +827,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/624/456"
 
 [node name="TreeBig28" type="Sprite2D" parent="World" unique_id=1862580789 instance=ExtResource("21_heqn4")]
 position = Vector2(136, 448)
@@ -816,6 +836,7 @@ offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("17_dehgw")
+persistent_id = &"farm/tree/136/448"
 
 [node name="Bush29" type="Sprite2D" parent="World" unique_id=608903266 instance=ExtResource("13_fqg11")]
 position = Vector2(216, 432)
@@ -832,6 +853,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/304/464"
 
 [node name="Log31" type="Sprite2D" parent="World" unique_id=313352902 instance=ExtResource("18_q007v")]
 position = Vector2(488, 456)
@@ -847,6 +869,7 @@ offset = Vector2(0, -8)
 region_enabled = true
 region_rect = Rect2(112, 16, 32, 16)
 script = ExtResource("20_okik1")
+persistent_id = &"farm/rock/376/288"
 
 [node name="Mushroom33" type="Sprite2D" parent="World" unique_id=2034761807 instance=ExtResource("15_pqgjg")]
 position = Vector2(392, 424)
@@ -884,6 +907,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("17_dehgw")
 hits_required = 2
+persistent_id = &"farm/tree/64/120"
 
 [node name="Bounds" type="StaticBody2D" parent="." unique_id=1870145740]
 

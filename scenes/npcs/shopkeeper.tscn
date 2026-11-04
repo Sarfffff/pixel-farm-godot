@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="Texture2D" path="res://assets/generated/characters/npcs_v1/shopkeeper_walk.png" id="1_sprite"]
+[ext_resource type="Texture2D" path="res://assets/textures/characters/npcs_v1/shopkeeper_walk.png" id="1_sprite"]
 [ext_resource type="Script" path="res://scripts/npcs/shopkeeper.gd" id="2_keeper"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feet"]

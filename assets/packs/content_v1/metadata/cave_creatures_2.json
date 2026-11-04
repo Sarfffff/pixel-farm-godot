@@ -1,0 +1,1365 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "giant_slime",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/giant_slime/idle",
+			"mode": "sprite",
+			"name": "friendly stylized giant slime idle",
+			"opaque_bounds": [
+				3,
+				10,
+				26,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/giant_slime/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				5,
+				221,
+				235
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "giant_slime",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/giant_slime/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized giant slime move a",
+			"opaque_bounds": [
+				2,
+				11,
+				27,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/giant_slime/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				221,
+				5,
+				218,
+				235
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "giant_slime",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/giant_slime/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized giant slime move b",
+			"opaque_bounds": [
+				2,
+				12,
+				28,
+				18
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/giant_slime/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				439,
+				5,
+				220,
+				235
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "giant_slime",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/giant_slime/attack",
+			"mode": "sprite",
+			"name": "friendly stylized giant slime attack",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/giant_slime/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				659,
+				5,
+				228,
+				235
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "burrowing_mole",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/burrowing_mole/idle",
+			"mode": "sprite",
+			"name": "friendly stylized burrowing mole idle",
+			"opaque_bounds": [
+				4,
+				13,
+				24,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/burrowing_mole/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				240,
+				221,
+				210
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "burrowing_mole",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/burrowing_mole/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized burrowing mole move a",
+			"opaque_bounds": [
+				3,
+				13,
+				26,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/burrowing_mole/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				221,
+				240,
+				218,
+				210
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "burrowing_mole",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/burrowing_mole/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized burrowing mole move b",
+			"opaque_bounds": [
+				3,
+				14,
+				26,
+				16
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/burrowing_mole/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				439,
+				240,
+				220,
+				210
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "burrowing_mole",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/burrowing_mole/attack",
+			"mode": "sprite",
+			"name": "friendly stylized burrowing mole attack",
+			"opaque_bounds": [
+				2,
+				11,
+				28,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/burrowing_mole/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				659,
+				240,
+				228,
+				210
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "dust_sprite",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/dust_sprite/idle",
+			"mode": "sprite",
+			"name": "friendly stylized dust sprite idle",
+			"opaque_bounds": [
+				4,
+				9,
+				24,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/dust_sprite/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				0,
+				450,
+				221,
+				223
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "dust_sprite",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/dust_sprite/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized dust sprite move a",
+			"opaque_bounds": [
+				5,
+				9,
+				22,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/dust_sprite/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				221,
+				450,
+				218,
+				223
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "dust_sprite",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/dust_sprite/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized dust sprite move b",
+			"opaque_bounds": [
+				4,
+				11,
+				23,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/dust_sprite/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				439,
+				450,
+				220,
+				223
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "dust_sprite",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/dust_sprite/attack",
+			"mode": "sprite",
+			"name": "friendly stylized dust sprite attack",
+			"opaque_bounds": [
+				2,
+				7,
+				28,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/dust_sprite/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				659,
+				450,
+				228,
+				223
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_ghost",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/cave_ghost/idle",
+			"mode": "sprite",
+			"name": "friendly stylized cave ghost idle",
+			"opaque_bounds": [
+				4,
+				8,
+				24,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/cave_ghost/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				0,
+				673,
+				221,
+				221
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_ghost",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/cave_ghost/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized cave ghost move a",
+			"opaque_bounds": [
+				3,
+				8,
+				25,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/cave_ghost/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				221,
+				673,
+				218,
+				221
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_ghost",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/cave_ghost/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized cave ghost move b",
+			"opaque_bounds": [
+				3,
+				8,
+				26,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/cave_ghost/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				439,
+				673,
+				220,
+				221
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "cave_ghost",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/cave_ghost/attack",
+			"mode": "sprite",
+			"name": "friendly stylized cave ghost attack",
+			"opaque_bounds": [
+				2,
+				6,
+				28,
+				24
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/cave_ghost/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				659,
+				673,
+				228,
+				221
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lava_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/lava_crab/idle",
+			"mode": "sprite",
+			"name": "friendly stylized lava crab idle",
+			"opaque_bounds": [
+				3,
+				10,
+				25,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/lava_crab/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				0,
+				894,
+				221,
+				226
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lava_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/lava_crab/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized lava crab move a",
+			"opaque_bounds": [
+				3,
+				10,
+				25,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/lava_crab/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				221,
+				894,
+				218,
+				226
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lava_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/lava_crab/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized lava crab move b",
+			"opaque_bounds": [
+				3,
+				13,
+				25,
+				17
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/lava_crab/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				439,
+				894,
+				220,
+				226
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lava_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/lava_crab/attack",
+			"mode": "sprite",
+			"name": "friendly stylized lava crab attack",
+			"opaque_bounds": [
+				2,
+				10,
+				28,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/lava_crab/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				659,
+				894,
+				228,
+				226
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "stone_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/stone_crab/idle",
+			"mode": "sprite",
+			"name": "friendly stylized stone crab idle",
+			"opaque_bounds": [
+				3,
+				10,
+				25,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/stone_crab/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				0,
+				1120,
+				221,
+				208
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "stone_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/stone_crab/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized stone crab move a",
+			"opaque_bounds": [
+				4,
+				10,
+				23,
+				20
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/stone_crab/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				221,
+				1120,
+				218,
+				208
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "stone_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/stone_crab/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized stone crab move b",
+			"opaque_bounds": [
+				3,
+				11,
+				26,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/stone_crab/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				439,
+				1120,
+				220,
+				208
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "stone_crab",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/stone_crab/attack",
+			"mode": "sprite",
+			"name": "friendly stylized stone crab attack",
+			"opaque_bounds": [
+				2,
+				11,
+				28,
+				19
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/stone_crab/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				659,
+				1120,
+				228,
+				208
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "iron_sentinel",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/iron_sentinel/idle",
+			"mode": "sprite",
+			"name": "friendly stylized iron sentinel idle",
+			"opaque_bounds": [
+				2,
+				7,
+				27,
+				23
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/iron_sentinel/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				0,
+				1328,
+				221,
+				229
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "iron_sentinel",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/iron_sentinel/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized iron sentinel move a",
+			"opaque_bounds": [
+				3,
+				8,
+				25,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/iron_sentinel/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				221,
+				1328,
+				218,
+				229
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "iron_sentinel",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/iron_sentinel/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized iron sentinel move b",
+			"opaque_bounds": [
+				4,
+				8,
+				24,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/iron_sentinel/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				439,
+				1328,
+				220,
+				229
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "iron_sentinel",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/iron_sentinel/attack",
+			"mode": "sprite",
+			"name": "friendly stylized iron sentinel attack",
+			"opaque_bounds": [
+				2,
+				5,
+				28,
+				25
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/iron_sentinel/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				659,
+				1328,
+				228,
+				229
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "sand_mummy",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "idle",
+			"id": "characters/monsters/sand_mummy/idle",
+			"mode": "sprite",
+			"name": "friendly stylized sand mummy idle",
+			"opaque_bounds": [
+				3,
+				9,
+				25,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/sand_mummy/idle.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				0,
+				1557,
+				221,
+				217
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "sand_mummy",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_a",
+			"id": "characters/monsters/sand_mummy/move_a",
+			"mode": "sprite",
+			"name": "friendly stylized sand mummy move a",
+			"opaque_bounds": [
+				3,
+				8,
+				25,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/sand_mummy/move_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				221,
+				1557,
+				218,
+				217
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "sand_mummy",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "move_b",
+			"id": "characters/monsters/sand_mummy/move_b",
+			"mode": "sprite",
+			"name": "friendly stylized sand mummy move b",
+			"opaque_bounds": [
+				4,
+				9,
+				24,
+				21
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/sand_mummy/move_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				439,
+				1557,
+				220,
+				217
+			],
+			"source_sheet": "cave_creatures_2"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "sand_mummy",
+			"atlas": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "characters/monsters",
+			"frame": "attack",
+			"id": "characters/monsters/sand_mummy/attack",
+			"mode": "sprite",
+			"name": "friendly stylized sand mummy attack",
+			"opaque_bounds": [
+				2,
+				8,
+				28,
+				22
+			],
+			"path": "res://assets/packs/content_v1/characters/monsters/sand_mummy/attack.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/cave_creatures_2.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				659,
+				1557,
+				228,
+				217
+			],
+			"source_sheet": "cave_creatures_2"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "2d4ce543724ce882c0cb645dd1ddbe423b210eb171ee55163e457990ade0e409",
+	"sheet": {
+		"category": "characters/monsters",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 4,
+		"count": 32,
+		"id": "cave_creatures_2",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/cave_creatures_2.png",
+		"rows": 8,
+		"source": "res://art/sources/content_v1/cave_creatures_2.png"
+	},
+	"source_hash": "96ee5fda38a645c10f170840df3ae168"
+}

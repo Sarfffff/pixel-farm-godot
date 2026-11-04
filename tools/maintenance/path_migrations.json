@@ -1,0 +1,357 @@
+{
+  "description": "Known legacy path strings. Audit reads this map; --repair-legacy-paths updates references only. File moves are never repeated.",
+  "paths": [
+    {
+      "from": "assets/generated/sources/world_regions_v1",
+      "to": "art/sources/world_regions_v1"
+    },
+    {
+      "from": "assets/generated/sources/presentation_v3",
+      "to": "art/sources/presentation_v3"
+    },
+    {
+      "from": "assets/generated/sources/farm_style_v2",
+      "to": "art/sources/farm_style_v2"
+    },
+    {
+      "from": "scripts/world/region_preview_player.gd",
+      "to": "scripts/world/maps/region_preview_player.gd"
+    },
+    {
+      "from": "assets/generated/sources/content_v1",
+      "to": "art/sources/content_v1"
+    },
+    {
+      "from": "scripts/systems/community_center.gd",
+      "to": "scripts/progression/community_center.gd"
+    },
+    {
+      "from": "scripts/world/mining_interaction.gd",
+      "to": "scripts/world/resources/mining_interaction.gd"
+    },
+    {
+      "from": "scripts/world/community_building.gd",
+      "to": "scripts/world/interactions/community_building.gd"
+    },
+    {
+      "from": "scripts/ui/farm_activities_panel.gd",
+      "to": "scripts/ui/panels/farm_activities_panel.gd"
+    },
+    {
+      "from": "scripts/systems/farm_activities.gd",
+      "to": "scripts/activities/farm_activities.gd"
+    },
+    {
+      "from": "scripts/world/community_visuals.gd",
+      "to": "scripts/presentation/community_visuals.gd"
+    },
+    {
+      "from": "tools/art/preview_expansion_art.gd",
+      "to": "tools/preview/preview_expansion_art.gd"
+    },
+    {
+      "from": "tools/art/preview_world_regions.gd",
+      "to": "tools/preview/preview_world_regions.gd"
+    },
+    {
+      "from": "assets/generated/world_regions_v1",
+      "to": "assets/packs/world_regions_v1"
+    },
+    {
+      "from": "tools/art/preview_presentation.gd",
+      "to": "tools/preview/preview_presentation.gd"
+    },
+    {
+      "from": "assets/generated/presentation_v3",
+      "to": "assets/packs/presentation_v3"
+    },
+    {
+      "from": "scripts/systems/audio_manager.gd",
+      "to": "scripts/platform/audio_manager.gd"
+    },
+    {
+      "from": "scripts/systems/trade_service.gd",
+      "to": "scripts/economy/trade_service.gd"
+    },
+    {
+      "from": "scripts/systems/house_manager.gd",
+      "to": "scripts/world/interiors/house_manager.gd"
+    },
+    {
+      "from": "scripts/world/occlusion_fader.gd",
+      "to": "scripts/presentation/occlusion_fader.gd"
+    },
+    {
+      "from": "tools/art/preview_content_art.gd",
+      "to": "tools/preview/preview_content_art.gd"
+    },
+    {
+      "from": "assets/generated/sources/npc_v1",
+      "to": "art/sources/npc_v1"
+    },
+    {
+      "from": "scripts/systems/app_settings.gd",
+      "to": "scripts/platform/app_settings.gd"
+    },
+    {
+      "from": "scripts/world/choppable_tree.gd",
+      "to": "scripts/world/resources/choppable_tree.gd"
+    },
+    {
+      "from": "scripts/world/breakable_rock.gd",
+      "to": "scripts/world/resources/breakable_rock.gd"
+    },
+    {
+      "from": "scripts/world/region_preview.gd",
+      "to": "scripts/world/maps/region_preview.gd"
+    },
+    {
+      "from": "scripts/world/bgm_controller.gd",
+      "to": "scripts/presentation/bgm_controller.gd"
+    },
+    {
+      "from": "scripts/world/day_night_tint.gd",
+      "to": "scripts/presentation/day_night_tint.gd"
+    },
+    {
+      "from": "scripts/ui/modal_coordinator.gd",
+      "to": "scripts/ui/common/modal_coordinator.gd"
+    },
+    {
+      "from": "tools/art/preview_farm_style.gd",
+      "to": "tools/preview/preview_farm_style.gd"
+    },
+    {
+      "from": "assets/generated/farm_style_v2",
+      "to": "assets/packs/farm_style_v2"
+    },
+    {
+      "from": "scripts/systems/stack_store.gd",
+      "to": "scripts/inventory/stack_store.gd"
+    },
+    {
+      "from": "scripts/systems/save_system.gd",
+      "to": "scripts/persistence/save_system.gd"
+    },
+    {
+      "from": "scripts/systems/time_system.gd",
+      "to": "scripts/time/time_system.gd"
+    },
+    {
+      "from": "scripts/world/soil_autotile.gd",
+      "to": "scripts/world/farming/soil_autotile.gd"
+    },
+    {
+      "from": "scripts/world/interior_room.gd",
+      "to": "scripts/world/interiors/interior_room.gd"
+    },
+    {
+      "from": "scripts/world/activity_prop.gd",
+      "to": "scripts/world/interactions/activity_prop.gd"
+    },
+    {
+      "from": "scripts/world/region_layout.gd",
+      "to": "scripts/world/maps/region_layout.gd"
+    },
+    {
+      "from": "scripts/world/camera_follow.gd",
+      "to": "scripts/presentation/camera_follow.gd"
+    },
+    {
+      "from": "tools/art/held_tool_painter.gd",
+      "to": "tools/lib/held_tool_painter.gd"
+    },
+    {
+      "from": "assets/generated/expansion_v1",
+      "to": "assets/packs/expansion_v1"
+    },
+    {
+      "from": "scripts/systems/friendship.gd",
+      "to": "scripts/progression/friendship.gd"
+    },
+    {
+      "from": "scripts/world/forage_patch.gd",
+      "to": "scripts/world/resources/forage_patch.gd"
+    },
+    {
+      "from": "scripts/world/chicken_coop.gd",
+      "to": "scripts/animals/chicken_coop.gd"
+    },
+    {
+      "from": "scripts/world/chest_access.gd",
+      "to": "scripts/world/interiors/chest_access.gd"
+    },
+    {
+      "from": "scripts/ui/community_panel.gd",
+      "to": "scripts/ui/panels/community_panel.gd"
+    },
+    {
+      "from": "scripts/ui/inventory_panel.gd",
+      "to": "scripts/ui/panels/inventory_panel.gd"
+    },
+    {
+      "from": "tools/art/preview_farm_art.gd",
+      "to": "tools/preview/preview_farm_art.gd"
+    },
+    {
+      "from": "scripts/systems/inventory.gd",
+      "to": "scripts/inventory/inventory.gd"
+    },
+    {
+      "from": "scripts/world/farm_tiller.gd",
+      "to": "scripts/world/farming/farm_tiller.gd"
+    },
+    {
+      "from": "scripts/world/berry_grove.gd",
+      "to": "scripts/world/resources/berry_grove.gd"
+    },
+    {
+      "from": "scripts/world/tool_effect.gd",
+      "to": "scripts/presentation/tool_effect.gd"
+    },
+    {
+      "from": "scripts/ui/dialogue_panel.gd",
+      "to": "scripts/ui/panels/dialogue_panel.gd"
+    },
+    {
+      "from": "scripts/ui/settings_panel.gd",
+      "to": "scripts/ui/menus/settings_panel.gd"
+    },
+    {
+      "from": "assets/generated/content_v1",
+      "to": "assets/packs/content_v1"
+    },
+    {
+      "from": "scripts/systems/tutorial.gd",
+      "to": "scripts/progression/tutorial.gd"
+    },
+    {
+      "from": "scripts/systems/upgrades.gd",
+      "to": "scripts/progression/upgrades.gd"
+    },
+    {
+      "from": "scripts/world/berry_bush.gd",
+      "to": "scripts/world/resources/berry_bush.gd"
+    },
+    {
+      "from": "scripts/world/house_door.gd",
+      "to": "scripts/world/interiors/house_door.gd"
+    },
+    {
+      "from": "scripts/world/sleep_spot.gd",
+      "to": "scripts/world/interiors/sleep_spot.gd"
+    },
+    {
+      "from": "scripts/ui/coin_feedback.gd",
+      "to": "scripts/ui/hud/coin_feedback.gd"
+    },
+    {
+      "from": "scripts/systems/economy.gd",
+      "to": "scripts/economy/economy.gd"
+    },
+    {
+      "from": "scripts/systems/weather.gd",
+      "to": "scripts/time/weather.gd"
+    },
+    {
+      "from": "scripts/systems/stamina.gd",
+      "to": "scripts/player/stamina.gd"
+    },
+    {
+      "from": "scripts/world/order_bin.gd",
+      "to": "scripts/world/interactions/order_bin.gd"
+    },
+    {
+      "from": "scripts/systems/orders.gd",
+      "to": "scripts/progression/orders.gd"
+    },
+    {
+      "from": "scripts/world/nav_grid.gd",
+      "to": "scripts/world/navigation/nav_grid.gd"
+    },
+    {
+      "from": "scripts/ui/modal_panel.gd",
+      "to": "scripts/ui/common/modal_panel.gd"
+    },
+    {
+      "from": "scripts/ui/order_panel.gd",
+      "to": "scripts/ui/panels/order_panel.gd"
+    },
+    {
+      "from": "scripts/ui/day_summary.gd",
+      "to": "scripts/ui/hud/day_summary.gd"
+    },
+    {
+      "from": "scripts/ui/screen_fade.gd",
+      "to": "scripts/ui/hud/screen_fade.gd"
+    },
+    {
+      "from": "assets/generated/sources",
+      "to": "art/sources/base"
+    },
+    {
+      "from": "scripts/world/chicken.gd",
+      "to": "scripts/animals/chicken.gd"
+    },
+    {
+      "from": "scripts/ui/help_panel.gd",
+      "to": "scripts/ui/panels/help_panel.gd"
+    },
+    {
+      "from": "scripts/ui/shop_panel.gd",
+      "to": "scripts/ui/panels/shop_panel.gd"
+    },
+    {
+      "from": "scripts/ui/pause_menu.gd",
+      "to": "scripts/ui/menus/pause_menu.gd"
+    },
+    {
+      "from": "scripts/world/forage.gd",
+      "to": "scripts/world/resources/forage.gd"
+    },
+    {
+      "from": "scripts/ui/item_slot.gd",
+      "to": "scripts/ui/common/item_slot.gd"
+    },
+    {
+      "from": "scripts/ui/main_menu.gd",
+      "to": "scripts/ui/menus/main_menu.gd"
+    },
+    {
+      "from": "scripts/world/crop.gd",
+      "to": "scripts/world/farming/crop.gd"
+    },
+    {
+      "from": "scripts/ui/toolbar.gd",
+      "to": "scripts/ui/hud/toolbar.gd"
+    },
+    {
+      "from": "scripts/world/egg.gd",
+      "to": "scripts/animals/egg.gd"
+    },
+    {
+      "from": "assets/generated/ui",
+      "to": "assets/ui"
+    },
+    {
+      "from": "scripts/ui/toast.gd",
+      "to": "scripts/ui/hud/toast.gd"
+    },
+    {
+      "from": "scripts/ui/hud.gd",
+      "to": "scripts/ui/hud/hud.gd"
+    },
+    {
+      "from": "assets/generated",
+      "to": "assets/textures"
+    },
+    {
+      "from": "assets/game",
+      "to": "assets/textures/base"
+    },
+    {
+      "from": "星露谷物语素材",
+      "to": "art/reference/stardew_valley"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/graze_left_a.png" id="1_peo5w"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/graze_left_b.png" id="2_iybua"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/idle_down.png" id="3_sm66s"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/idle_left.png" id="4_rc8sg"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/idle_right.png" id="5_huyr1"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/idle_up.png" id="6_k3uru"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/walk_left_a.png" id="7_j1jv5"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/fluffy_rabbit/walk_left_b.png" id="8_popd3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_peo5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iybua")
+}],
+"loop": 1,
+"name": &"graze_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sm66s")
+}],
+"loop": 0,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rc8sg")
+}],
+"loop": 0,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_huyr1")
+}],
+"loop": 0,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_k3uru")
+}],
+"loop": 0,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_j1jv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_popd3")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}]

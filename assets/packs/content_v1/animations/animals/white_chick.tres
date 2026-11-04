@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/graze_left_a.png" id="1_lnbf1"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/graze_left_b.png" id="2_743kh"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/idle_down.png" id="3_ywsef"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/idle_left.png" id="4_fwofm"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/idle_right.png" id="5_8aqvp"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/idle_up.png" id="6_2i66v"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/walk_left_a.png" id="7_aydoy"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/animals/white_chick/walk_left_b.png" id="8_kmusp"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lnbf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_743kh")
+}],
+"loop": 1,
+"name": &"graze_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ywsef")
+}],
+"loop": 0,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fwofm")
+}],
+"loop": 0,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8aqvp")
+}],
+"loop": 0,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2i66v")
+}],
+"loop": 0,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aydoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kmusp")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}]

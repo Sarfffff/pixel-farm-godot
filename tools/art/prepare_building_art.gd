@@ -1,7 +1,8 @@
 extends SceneTree
 
-const ROOT: String = "res://assets/generated/buildings/"
-const SOURCE: String = "res://assets/generated/sources/"
+const ROOT: String = "res://assets/textures/buildings/"
+const SOURCE: String = "res://art/sources/base/"
+const PREVIEW: String = "res://art/previews/buildings/preview.png"
 const PALETTE: Array[Color] = [
 	Color("302421"), Color("654638"), Color("936644"), Color("bc8757"),
 	Color("dcb272"), Color("f0e1b6"), Color("ceba88"), Color("596b4b"),
@@ -56,7 +57,8 @@ func _init() -> void:
 	if _errors == 0:
 		_save_catalog()
 		_preview.resize(1680, 1344, Image.INTERPOLATE_NEAREST)
-		if _preview.save_png(ROOT + "preview.png") != OK:
+		DirAccess.make_dir_recursive_absolute(PREVIEW.get_base_dir())
+		if _preview.save_png(PREVIEW) != OK:
 			_fail("Cannot save preview")
 	print("[building_art] %d buildings, %d icons, %d errors" % [_entries.size(), _entries.size(), _errors])
 	quit(0 if _errors == 0 else 1)
@@ -214,7 +216,7 @@ func _save_catalog() -> void:
 		"building_count": _entries.size(), "texture_count": _entries.size() * 2,
 		"residential_count": 6, "facility_count": 14, "palette": palette,
 		"sampling": "nearest, no mipmaps", "alpha": [0, 255], "map_tile_size": 16,
-		"preview": ROOT + "preview.png", "buildings": _entries,
+		"preview": PREVIEW, "buildings": _entries,
 		"placement": "Centered Sprite2D with listed sprite_offset anchors the bottom at the node origin. Canvas tile dimensions are visual size, NOT collision footprint. Facade and doorway collisions must be authored later; do not block the whole roof rectangle.",
 	}, "\t") + "\n")
 

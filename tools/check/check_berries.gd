@@ -26,10 +26,13 @@ func _find_free_cell(grove: Node) -> Vector2i:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_main = (load("res://scenes/main.tscn") as PackedScene).instantiate() as Node2D
 	_main.get_node("Systems/Save").set(&"autoload_enabled", false)
 	root.add_child(_main)
 	current_scene = _main
+	_main.get_node("Systems/Save").remove_from_group(&"save")
 	await process_frame
 	await process_frame
 
@@ -63,6 +66,9 @@ func _run() -> void:
 		kinds[String(bush.get(&"kind"))] = true
 		_check(bush.is_in_group(&"interactable"), "bush is interactable")
 		_check(bool(bush.call(&"is_mature")), "wild bush starts mature")
+		var texture: Texture2D = bush.call("visual_texture") as Texture2D
+		_check(texture != null and texture.resource_path.ends_with("/ripe.png"), "ripe wild bush renders its pixel sprite")
+		_check(texture.get_size() == Vector2(32, 32), "world sprite uses native pixel canvas")
 	_check(bad_water == 0, "no bush grows on water (%d)" % bad_water)
 	_check(bad_bounds == 0, "every bush sits inside the scatter bounds (%d)" % bad_bounds)
 	_check(kinds.size() >= 2, "at least two berry kinds (%d)" % kinds.size())
@@ -83,6 +89,12 @@ func _run() -> void:
 	_check(int(stamina.value) == 99, "picking costs one stamina")
 	_check(not bool(first.call("has_berries")), "bush becomes bare")
 	_check(String(first.call("hint")).contains("天"), "bare hint mentions days")
+	_check((first.call("visual_texture") as Texture2D).resource_path.ends_with("/bare.png"), "harvesting immediately switches to bare sprite")
+	for id: StringName in [&"wild_blackberry", &"wild_raspberry", &"wild_gooseberry"]:
+		var fruit: Texture2D = inventory.definition(id).icon
+		var seed_texture: Texture2D = inventory.definition(StringName(String(id) + "_seeds")).icon
+		_check(fruit.get_size() == Vector2(16, 16) and seed_texture.get_size() == Vector2(16, 16), "fruit and seed packet fit inventory cells")
+		_check(fruit != seed_texture, "seed packet is visually distinct from harvested fruit")
 
 	# 用种子种一丛：先是幼苗，采不了
 	var cell := _find_free_cell(grove)
@@ -98,6 +110,7 @@ func _run() -> void:
 		_check(not bool(planted.call(&"is_mature")), "planted bush starts as a sprout")
 		_check(not bool(planted.call(&"has_berries")), "a sprout has no berries")
 		_check(String(planted.call("hint")).contains("幼苗"), "sprout hint says so")
+		_check((planted.call("visual_texture") as Texture2D).resource_path.ends_with("/sprout.png"), "planted seed starts with smaller sprout art")
 		var fruits_after_plant: int = inventory.count_of(kind)
 		planted.call("interact", Vector2i.ZERO)
 		await process_frame
@@ -111,6 +124,7 @@ func _run() -> void:
 		await process_frame
 		_check(bool(planted.call(&"is_mature")), "sprout matures after two days")
 		_check(bool(planted.call(&"has_berries")), "mature planted bush has berries")
+		_check((planted.call("visual_texture") as Texture2D).resource_path.ends_with("/ripe.png"), "growing overnight refreshes ripe art")
 		var seeds_before_pick: int = inventory.count_of(seed)
 		planted.call("interact", Vector2i.ZERO)
 		await process_frame
@@ -142,12 +156,18 @@ func _run() -> void:
 			var after_pos: Vector2 = (restored[index] as Node2D).global_position
 			_check(before_pos.is_equal_approx(after_pos), "bush position survives the save (%d)" % index)
 	_check(not bool(restored[0].call(&"has_berries")), "picked state survives the save")
+	_check((restored[0].call("visual_texture") as Texture2D).resource_path.ends_with("/bare.png"), "loading a picked bush restores its bare art")
 
 	_finish()
 
 
 func _finish() -> void:
 	_main.queue_free()
+	root.get_node("AudioManager").stop_music(0.0)
+	for audio: Node in root.get_node("AudioManager").get_children():
+		if audio is AudioStreamPlayer:
+			audio.stream = null
+	await create_timer(0.1).timeout
 	await process_frame
 	print("[berries] random scatter, seeds, planting, save round trip; %d failures" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

@@ -28,6 +28,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	var settings := root.get_node_or_null("AppSettings")
 	var audio := root.get_node_or_null("AudioManager")
 	_check(settings != null, "AppSettings autoload exists")
@@ -141,4 +143,4 @@ func _finish() -> void:
 		print("[settings] PASS")
 	else:
 		printerr("[settings] FAIL，共 %d 项" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

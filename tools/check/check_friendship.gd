@@ -18,6 +18,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	var main := load(MAIN_SCENE).instantiate() as Node2D
 	main.get_node("Systems/Save").set("autoload_enabled", false)
 	root.add_child(main)
@@ -119,4 +121,4 @@ func _finish() -> void:
 		print("[friendship] PASS")
 	else:
 		printerr("[friendship] FAIL，共 %d 项" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

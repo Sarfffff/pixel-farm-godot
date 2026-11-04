@@ -1,0 +1,378 @@
+{
+	"generator": "built-in image_gen",
+	"preparation": "tools/art/prepare_presentation_art.gd",
+	"source": "res://art/sources/presentation_v3/",
+	"sprites": [
+		{
+			"path": "furniture/single_bed.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/bedside_table.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/wardrobe.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/armchair.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/brick_fireplace.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/bookcase.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/floor_lamp.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/rocking_chair.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/wood_stool.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/coffee_table.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/wall_clock.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/dining_table.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/oak_chair.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/refrigerator.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/cupboard.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/kitchen_table.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/basket.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/wood_chest.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/display_cabinet.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/wall_shelf.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/tall_potted_tree.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/potted_fern.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/oval_rug.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "furniture/square_rug.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "structures/farmhouse.png",
+			"size": [
+				96,
+				96
+			]
+		},
+		{
+			"path": "structures/chicken_coop.png",
+			"size": [
+				96,
+				96
+			]
+		},
+		{
+			"path": "structures/general_store.png",
+			"size": [
+				96,
+				96
+			]
+		},
+		{
+			"path": "structures/community_center.png",
+			"size": [
+				96,
+				96
+			]
+		},
+		{
+			"path": "objects/chest_closed.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "objects/chest_open.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "objects/preserves_idle.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "objects/preserves_working.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "objects/preserves_ready.png",
+			"size": [
+				32,
+				32
+			]
+		},
+		{
+			"path": "portraits/shopkeeper_neutral.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/gardener_neutral.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/carpenter_neutral.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/fisherman_neutral.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/shopkeeper_happy.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/gardener_happy.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/carpenter_happy.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/fisherman_happy.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/shopkeeper_concerned.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/gardener_concerned.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/carpenter_concerned.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "portraits/fisherman_concerned.png",
+			"size": [
+				48,
+				48
+			]
+		},
+		{
+			"path": "tiles/wood_floor.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "tiles/wood_floor_alt.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "tiles/wallpaper.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "tiles/wood_wall.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "tiles/spring.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "tiles/summer.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "tiles/autumn.png",
+			"size": [
+				16,
+				16
+			]
+		},
+		{
+			"path": "tiles/winter.png",
+			"size": [
+				16,
+				16
+			]
+		}
+	]
+}

@@ -2,7 +2,8 @@ extends SceneTree
 ## 生成图的技术整理：均分切片、最近邻缩放、二值 Alpha、统一落脚点。
 ## 原始生成文件始终保存在 sources，不覆盖原素材。
 
-const ROOT := "res://assets/generated/"
+const ROOT := "res://assets/textures/"
+const SOURCE := "res://art/sources/base/"
 const DIRECTIONS: Array[String] = ["down", "up", "left", "right"]
 const CROPS: Array[String] = ["carrot", "turnip", "tomato", "wheat"]
 const STAGES: Array[String] = ["seeds", "sprout", "young", "growing", "mature", "harvest"]
@@ -15,9 +16,9 @@ const ITEMS: Array[String] = [
 
 
 func _init() -> void:
-	var actions: Image = Image.load_from_file(ProjectSettings.globalize_path(ROOT + "sources/farmer_actions_v3.png"))
-	var crops: Image = Image.load_from_file(ProjectSettings.globalize_path(ROOT + "sources/crop_growth_v1.png"))
-	var items: Image = Image.load_from_file(ProjectSettings.globalize_path(ROOT + "sources/farm_items_v1.png"))
+	var actions: Image = Image.load_from_file(ProjectSettings.globalize_path(SOURCE + "farmer_actions_v3.png"))
+	var crops: Image = Image.load_from_file(ProjectSettings.globalize_path(SOURCE + "crop_growth_v1.png"))
+	var items: Image = Image.load_from_file(ProjectSettings.globalize_path(SOURCE + "farm_items_v1.png"))
 	if actions == null or crops == null or items == null:
 		quit(1)
 		return
@@ -51,7 +52,7 @@ func _init() -> void:
 		item_atlas.blit_rect(aligned, Rect2i(0, 0, 16, 16), Vector2i(index % 4, index / 4) * 16)
 		aligned.save_png(ROOT + "items/%s.png" % ITEMS[index])
 	item_atlas.save_png(ROOT + "items/farm_items_v1.png")
-	var soil: Image = load("res://scripts/world/soil_autotile.gd").make_atlas_image()
+	var soil: Image = load("res://scripts/world/farming/soil_autotile.gd").make_atlas_image()
 	soil.save_png(ROOT + "terrain/soil_dry_atlas.png")
 	for y in soil.get_height():
 		for x in soil.get_width():
@@ -59,7 +60,7 @@ func _init() -> void:
 	soil.save_png(ROOT + "terrain/soil_wet_atlas.png")
 	var manifest := {
 		"generator": "built-in image_gen; technical preparation: tools/art/prepare_farm_art.gd",
-		"sources": "sources/* (original generated images, retained)",
+		"sources": SOURCE + "* (original generated images, retained)",
 		"actions": {"path": "characters/farmer_actions_v3.png", "cell": [32, 32], "columns": 4, "rows": ["hoe_down", "hoe_up", "hoe_left", "hoe_right", "axe_down", "axe_up", "axe_left", "axe_right"], "frames": ["ready", "anticipation", "impact", "recovery"], "feet": [16, 24]},
 		"crops": {"path": "crops/crop_growth_v1.png", "cell": [32, 32], "rows": CROPS, "columns": STAGES, "root_y": 31, "status": "art ready; growth gameplay pending"},
 		"items": {"path": "items/farm_items_v1.png", "cell": [16, 16], "columns": 4, "order": ITEMS, "status": "carrot_seeds used in toolbar; other icons reserved"},

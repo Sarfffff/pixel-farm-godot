@@ -1,8 +1,8 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1"]
-[ext_resource type="Theme" path="res://assets/generated/ui/farm_hud.tres" id="2"]
-[ext_resource type="Texture2D" path="res://assets/generated/items/coin.png" id="3"]
+[ext_resource type="Script" path="res://scripts/ui/hud/hud.gd" id="1"]
+[ext_resource type="Theme" path="res://assets/ui/farm_hud.tres" id="2"]
+[ext_resource type="Texture2D" path="res://assets/textures/items/coin.png" id="3"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -171,7 +171,7 @@ offset_top = -14.0
 offset_right = -5.0
 offset_bottom = -4.0
 theme_override_font_sizes/font_size = 6
-theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_color = Color(0.97, 0.94, 0.83, 1)
 theme_override_colors/font_outline_color = Color(0.27, 0.20, 0.31, 1)
 theme_override_constants/outline_size = 1
 text = "滚轮缩放 · F11 全屏"

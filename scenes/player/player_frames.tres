@@ -1,10 +1,10 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cogt3ur6l2aci"]
 
-[ext_resource type="Texture2D" uid="uid://5tjgev38mqyq" path="res://assets/generated/characters/farmer_actions_v3.png" id="1_82s38"]
-[ext_resource type="Texture2D" uid="uid://cwuhm5xhxiix2" path="res://assets/generated/characters/held_tools_v1.png" id="2_2hr4x"]
-[ext_resource type="Texture2D" uid="uid://dhskjsc0d3p8o" path="res://assets/game/characters/basic_charakter_spritesheet.png" id="3_xcrau"]
-[ext_resource type="Texture2D" uid="uid://c8rqwms06wwhe" path="res://assets/generated/characters/stone_pickaxe_actions_v1.png" id="4_8xe2l"]
-[ext_resource type="Texture2D" uid="uid://b0qmu2fqcyonm" path="res://assets/game/characters/basic_charakter_actions.png" id="5_7bmlc"]
+[ext_resource type="Texture2D" uid="uid://5tjgev38mqyq" path="res://assets/textures/characters/farmer_actions_v3.png" id="1_82s38"]
+[ext_resource type="Texture2D" uid="uid://cwuhm5xhxiix2" path="res://assets/textures/characters/held_tools_v1.png" id="2_2hr4x"]
+[ext_resource type="Texture2D" uid="uid://dhskjsc0d3p8o" path="res://assets/textures/base/characters/basic_charakter_spritesheet.png" id="3_xcrau"]
+[ext_resource type="Texture2D" uid="uid://c8rqwms06wwhe" path="res://assets/textures/characters/stone_pickaxe_actions_v1.png" id="4_8xe2l"]
+[ext_resource type="Texture2D" uid="uid://b0qmu2fqcyonm" path="res://assets/textures/base/characters/basic_charakter_actions.png" id="5_7bmlc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lus8d"]
 atlas = ExtResource("1_82s38")

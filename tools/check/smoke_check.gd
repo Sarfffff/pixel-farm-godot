@@ -35,6 +35,9 @@ var _failures: int = 0
 
 
 func _init() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
+	_check_crop_resources()
 	_check_input_map()
 	_check_player_frames()
 	_check_player_scene()
@@ -47,12 +50,36 @@ func _init() -> void:
 		print("[smoke_check] PASS")
 	else:
 		printerr("[smoke_check] FAIL，共 %d 项" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 func _fail(message: String) -> void:
 	_failures += 1
 	printerr("[smoke_check] 失败：%s" % message)
+
+
+## 资源头必须直接以 [ 开头；UTF-8 BOM 会让 Godot 报 Expected '['。
+func _check_crop_resources() -> void:
+	var directory: DirAccess = DirAccess.open("res://data/crops")
+	if directory == null:
+		_fail("缺少作物资源目录")
+		return
+	for filename: String in directory.get_files():
+		if not filename.ends_with(".tres"):
+			continue
+		var path: String = "res://data/crops/" + filename
+		var bytes: PackedByteArray = FileAccess.get_file_as_bytes(path)
+		if bytes.is_empty() or bytes[0] != 91:
+			_fail("作物资源须为无 BOM 的 UTF-8，并以 [gd_resource 开头：" + path)
+			continue
+		var crop: CropData = load(path) as CropData
+		if crop == null or crop.stages.is_empty():
+			_fail("作物定义无法加载或缺少生长阶段：" + path)
+			continue
+		for stage: Texture2D in crop.stages:
+			if stage == null:
+				_fail("作物阶段贴图无法加载：" + path)
+	print("[smoke_check] 作物编码、资源加载与阶段贴图检查完成")
 
 
 func _check_input_map() -> void:

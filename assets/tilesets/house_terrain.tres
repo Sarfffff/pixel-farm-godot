@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=6 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/generated/content_v1/terrain/interiors/wood_floor.png" id="1_floor"]
-[ext_resource type="Texture2D" path="res://assets/generated/content_v1/terrain/interiors/wallpaper.png" id="2_wallpaper"]
-[ext_resource type="Texture2D" path="res://assets/generated/content_v1/terrain/interiors/wood_wall.png" id="3_wood"]
-[ext_resource type="Texture2D" path="res://assets/generated/content_v1/terrain/interiors/wall_trim.png" id="4_trim"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wood_floor.png" id="1_floor"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wallpaper.png" id="2_wallpaper"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wood_wall.png" id="3_wood"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wood_wall.png" id="4_trim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_floor"]
 texture = ExtResource("1_floor")

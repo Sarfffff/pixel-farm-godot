@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/down_a.png" id="1_i2rqp"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/down_b.png" id="2_r7v7j"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/left_a.png" id="3_fthph"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/left_b.png" id="4_ssmqa"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/right_a.png" id="5_sb62l"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/right_b.png" id="6_d7v3v"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/up_a.png" id="7_asoqy"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/villagers/night_astronomer/up_b.png" id="8_kuswj"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i2rqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r7v7j")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fthph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ssmqa")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sb62l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d7v3v")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_asoqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kuswj")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]

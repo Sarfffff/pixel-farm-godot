@@ -32,6 +32,8 @@ func _key_event(key: Key) -> InputEventKey:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_main = load(MAIN_SCENE).instantiate() as Node2D
 	root.add_child(_main)
 	current_scene = _main
@@ -158,4 +160,4 @@ func _run() -> void:
 	print("[crops] %s (%d failures)" % ["PASS" if _failures == 0 else "FAIL", _failures])
 	_main.queue_free()
 	await process_frame
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

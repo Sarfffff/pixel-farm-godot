@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_nu8ku"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/reeds.png" id="2_xjh28"]
+
+[resource]
+script = ExtResource("1_nu8ku")
+id = &"reeds"
+display_name = "水边芦苇"
+texture = ExtResource("2_xjh28")
+tool_hint = "收割"
+planned_drop = &"fiber"
+region_tags = Array[StringName]([&"wetland", &"beach"])

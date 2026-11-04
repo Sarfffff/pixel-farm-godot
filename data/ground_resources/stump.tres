@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_nwf48"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/stump.png" id="2_88owf"]
+
+[resource]
+script = ExtResource("1_nwf48")
+id = &"stump"
+display_name = "普通树桩"
+texture = ExtResource("2_88owf")
+blocks_movement = true
+tool_hint = "斧头"
+planned_drop = &"wood"
+region_tags = Array[StringName]([&"farm"])

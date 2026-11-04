@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/iron_sentinel/attack.png" id="1_26d42"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/iron_sentinel/idle.png" id="2_gjeo3"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/iron_sentinel/move_a.png" id="3_8ebki"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/characters/monsters/iron_sentinel/move_b.png" id="4_6y0gj"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_26d42")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gjeo3")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8ebki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6y0gj")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]

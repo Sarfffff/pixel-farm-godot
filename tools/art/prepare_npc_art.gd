@@ -1,7 +1,7 @@
 extends SceneTree
 
-const SOURCE: String = "res://assets/generated/sources/npc_v1/Production_game_asset__a_preci_2026-11-03T08-32-40.png"
-const OUTPUT: String = "res://assets/generated/characters/npcs_v1/"
+const SOURCE: String = "res://art/sources/npc_v1/Production_game_asset__a_preci_2026-11-03T08-32-40.png"
+const OUTPUT: String = "res://assets/textures/characters/npcs_v1/"
 const IDS: Array[String] = ["shopkeeper", "gardener", "carpenter", "fisherman"]
 const NAMES: Array[String] = ["商店老板", "园艺师", "木匠", "渔夫"]
 const DIRECTIONS: Array[String] = ["down", "up", "left", "right"]
@@ -53,7 +53,10 @@ func _init() -> void:
 		for column: int in 4:
 			preview.blend_rect(atlas, Rect2i(Vector2i(column, row) * 32, Vector2i(32, 32)), Vector2i(column, row) * 40 + Vector2i(4, 4))
 	preview.resize(960, 960, Image.INTERPOLATE_NEAREST)
-	_save(preview, "npc_preview.png")
+	var preview_path: String = "res://art/previews/characters/npcs_v1/npc_preview.png"
+	DirAccess.make_dir_recursive_absolute(preview_path.get_base_dir())
+	if preview.save_png(preview_path) != OK:
+		_errors += 1
 	var file: FileAccess = FileAccess.open(OUTPUT + "catalog.json", FileAccess.WRITE)
 	if file == null:
 		_errors += 1

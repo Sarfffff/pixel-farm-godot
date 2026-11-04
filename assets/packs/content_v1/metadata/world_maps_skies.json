@@ -1,0 +1,181 @@
+{
+	"items": [
+		{
+			"anchor": [
+				160,
+				90
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/world_maps_skies.png",
+			"atlas_region": [
+				0,
+				0,
+				320,
+				180
+			],
+			"category": "maps/overview",
+			"id": "maps/overview/world_map",
+			"mode": "background",
+			"name": "world map",
+			"opaque_bounds": [
+				0,
+				0,
+				320,
+				180
+			],
+			"path": "res://assets/packs/content_v1/maps/overview/world_map.png",
+			"size": [
+				320,
+				180
+			],
+			"source": "res://art/sources/content_v1/world_maps_skies.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				0,
+				887,
+				444
+			],
+			"source_sheet": "world_maps_skies"
+		},
+		{
+			"anchor": [
+				160,
+				90
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/world_maps_skies.png",
+			"atlas_region": [
+				320,
+				0,
+				320,
+				180
+			],
+			"category": "maps/overview",
+			"id": "maps/overview/day_sky",
+			"mode": "background",
+			"name": "day sky",
+			"opaque_bounds": [
+				0,
+				0,
+				320,
+				180
+			],
+			"path": "res://assets/packs/content_v1/maps/overview/day_sky.png",
+			"size": [
+				320,
+				180
+			],
+			"source": "res://art/sources/content_v1/world_maps_skies.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				887,
+				0,
+				887,
+				444
+			],
+			"source_sheet": "world_maps_skies"
+		},
+		{
+			"anchor": [
+				160,
+				90
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/world_maps_skies.png",
+			"atlas_region": [
+				0,
+				180,
+				320,
+				180
+			],
+			"category": "maps/overview",
+			"id": "maps/overview/night_sky",
+			"mode": "background",
+			"name": "night sky",
+			"opaque_bounds": [
+				0,
+				0,
+				320,
+				180
+			],
+			"path": "res://assets/packs/content_v1/maps/overview/night_sky.png",
+			"size": [
+				320,
+				180
+			],
+			"source": "res://art/sources/content_v1/world_maps_skies.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				444,
+				887,
+				443
+			],
+			"source_sheet": "world_maps_skies"
+		},
+		{
+			"anchor": [
+				160,
+				90
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/world_maps_skies.png",
+			"atlas_region": [
+				320,
+				180,
+				320,
+				180
+			],
+			"category": "maps/overview",
+			"id": "maps/overview/farm_panorama",
+			"mode": "background",
+			"name": "farm panorama",
+			"opaque_bounds": [
+				0,
+				0,
+				320,
+				180
+			],
+			"path": "res://assets/packs/content_v1/maps/overview/farm_panorama.png",
+			"size": [
+				320,
+				180
+			],
+			"source": "res://art/sources/content_v1/world_maps_skies.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				887,
+				444,
+				887,
+				443
+			],
+			"source_sheet": "world_maps_skies"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "13e6d035a074d623ec6dd86c3c0a31adb765ce2a3024f7f2f7dfa6ff91f8af1f",
+	"sheet": {
+		"category": "maps/overview",
+		"cell_size": [
+			320,
+			180
+		],
+		"columns": 2,
+		"count": 4,
+		"id": "world_maps_skies",
+		"mode": "background",
+		"path": "res://assets/packs/content_v1/atlases/world_maps_skies.png",
+		"rows": 2,
+		"source": "res://art/sources/content_v1/world_maps_skies.png"
+	},
+	"source_hash": "cce81ff01344f2721e48ad539e67e26b"
+}

@@ -25,6 +25,8 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	_main = load("res://scenes/main.tscn").instantiate() as Node2D
 	root.add_child(_main)
 	current_scene = _main
@@ -241,7 +243,7 @@ func _run() -> void:
 	print("[farm_interactions] %s (%d failures, %d impacts)" % ["PASS" if _failures == 0 else "FAIL", _failures, _impacts])
 	_main.queue_free()
 	await process_frame
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
 
 
 func _place(cell: Vector2i, facing: StringName) -> void:

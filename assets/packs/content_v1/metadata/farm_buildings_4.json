@@ -1,0 +1,291 @@
+{
+	"items": [
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_4.png",
+			"atlas_region": [
+				0,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/farmhouse_large.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/farmhouse_large",
+			"mode": "sprite",
+			"name": "farmhouse large",
+			"opaque_bounds": [
+				2,
+				6,
+				92,
+				88
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/farmhouse_large.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_4.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				0,
+				10,
+				530,
+				500
+			],
+			"source_sheet": "farm_buildings_4"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_4.png",
+			"atlas_region": [
+				96,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/farmhouse_attic.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/farmhouse_attic",
+			"mode": "sprite",
+			"name": "farmhouse attic",
+			"opaque_bounds": [
+				2,
+				4,
+				92,
+				90
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/farmhouse_attic.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_4.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				530,
+				10,
+				486,
+				500
+			],
+			"source_sheet": "farm_buildings_4"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_4.png",
+			"atlas_region": [
+				192,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/greenhouse.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/greenhouse",
+			"mode": "sprite",
+			"name": "greenhouse",
+			"opaque_bounds": [
+				4,
+				2,
+				87,
+				92
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/greenhouse.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_4.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				1016,
+				10,
+				520,
+				500
+			],
+			"source_sheet": "farm_buildings_4"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_4.png",
+			"atlas_region": [
+				0,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/village_hall.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/village_hall",
+			"mode": "sprite",
+			"name": "village hall",
+			"opaque_bounds": [
+				2,
+				5,
+				92,
+				89
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/village_hall.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_4.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				0,
+				510,
+				530,
+				506
+			],
+			"source_sheet": "farm_buildings_4"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_4.png",
+			"atlas_region": [
+				96,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/canal_pump.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/canal_pump",
+			"mode": "sprite",
+			"name": "canal pump",
+			"opaque_bounds": [
+				2,
+				20,
+				92,
+				74
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/canal_pump.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_4.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				530,
+				510,
+				486,
+				506
+			],
+			"source_sheet": "farm_buildings_4"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_4.png",
+			"atlas_region": [
+				192,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/hill_workshop.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/hill_workshop",
+			"mode": "sprite",
+			"name": "hill workshop",
+			"opaque_bounds": [
+				2,
+				11,
+				92,
+				83
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/hill_workshop.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_4.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				1016,
+				510,
+				520,
+				506
+			],
+			"source_sheet": "farm_buildings_4"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "34cc2bec0c047946503f90ce2a4c261197f8db0119bd00541bb54bb7177407a2",
+	"sheet": {
+		"category": "buildings/farm",
+		"cell_size": [
+			96,
+			96
+		],
+		"columns": 3,
+		"count": 6,
+		"id": "farm_buildings_4",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/farm_buildings_4.png",
+		"rows": 2,
+		"source": "res://art/sources/content_v1/farm_buildings_4.png"
+	},
+	"source_hash": "35c4f99ee9e76247129a7ba3b42c27ab"
+}

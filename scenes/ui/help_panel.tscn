@@ -1,7 +1,7 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/ui/help_panel.gd" id="1_help"]
-[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://scripts/ui/panels/help_panel.gd" id="1_help"]
+[ext_resource type="Theme" path="res://assets/ui/farm_hud.tres" id="2_theme"]
 
 [sub_resource type="SystemFont" id="SystemFont_ui"]
 font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
@@ -46,7 +46,7 @@ theme_override_constants/separation = 2
 
 [node name="Title" type="Label" parent="Frame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 9
 text = "按键说明"
@@ -59,7 +59,7 @@ theme_override_constants/separation = 0
 
 [node name="Hint" type="Label" parent="Frame/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_colors/font_color = Color(0.32, 0.30, 0.25, 1)
 theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 7
 text = "F1 / Esc 关闭"

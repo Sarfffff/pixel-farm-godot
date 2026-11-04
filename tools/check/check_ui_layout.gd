@@ -27,6 +27,8 @@ func _fits(control: Control, message: String) -> void:
 
 
 func _run() -> void:
+	if not preload("res://tools/lib/check_safety.gd").require_isolated(self):
+		return
 	root.content_scale_size = Vector2i(640, 360)
 	root.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
@@ -40,6 +42,14 @@ func _run() -> void:
 		await _settle()
 		var hud := _main.get_node("UI/HUD")
 		var toolbar := _main.get_node("UI/Toolbar")
+		var tutorial := _main.get_node("Systems/Tutorial")
+		for goal_step: int in [6, 7, 8]:
+			tutorial.from_dict({"step": goal_step})
+			await _settle()
+			_fits(hud.get_node("Journal"), "extended goal %d fits at %s" % [goal_step, resolution])
+			_check(not hud.get_node("Journal").get_global_rect().intersects(hud.get_node("TimePanel").get_global_rect()), "extended goal does not overlap clock")
+		tutorial.from_dict({})
+		await _settle()
 		for path: String in ["TimePanel", "StaminaPanel", "Journal"]:
 			_fits(hud.get_node(path), "%s fits at %s" % [path, resolution])
 		_check(not hud.get_node("Journal").get_global_rect().intersects(hud.get_node("TimePanel").get_global_rect()), "journal and status do not overlap")
@@ -72,4 +82,4 @@ func _run() -> void:
 	_main.queue_free()
 	await _settle()
 	print("[ui_layout] HUD, journal, modal panels, three resolutions; %d failures" % _failures)
-	quit(0 if _failures == 0 else 1)
+	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)

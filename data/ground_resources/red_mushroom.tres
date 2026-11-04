@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ground_resource_data.gd" id="1_lp1qd"]
+[ext_resource type="Texture2D" path="res://assets/packs/world_regions_v1/resources/red_mushroom.png" id="2_qw4pc"]
+
+[resource]
+script = ExtResource("1_lp1qd")
+id = &"red_mushroom"
+display_name = "红蘑菇"
+texture = ExtResource("2_qw4pc")
+tool_hint = "拾取"
+planned_drop = &"red_mushroom"
+region_tags = Array[StringName]([&"forest"])

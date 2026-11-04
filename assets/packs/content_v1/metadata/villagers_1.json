@@ -1,0 +1,2709 @@
+{
+	"items": [
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/orchard_apprentice/down_a",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) down a",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				29,
+				8,
+				158,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/orchard_apprentice/down_b",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) down b",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				187,
+				8,
+				156,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/orchard_apprentice/up_a",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) up a",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				343,
+				8,
+				158,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/orchard_apprentice/up_b",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) up b",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				0
+			],
+			"source_region": [
+				501,
+				8,
+				156,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/orchard_apprentice/left_a",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) left a",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				0
+			],
+			"source_region": [
+				657,
+				8,
+				162,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/orchard_apprentice/left_b",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) left b",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				0
+			],
+			"source_region": [
+				819,
+				8,
+				158,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/orchard_apprentice/right_a",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) right a",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				0
+			],
+			"source_region": [
+				977,
+				8,
+				158,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "orchard_apprentice",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				0,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/orchard_apprentice/right_b",
+			"mode": "sprite",
+			"name": "orchard apprentice (sage apron and dark cropped hair) right b",
+			"opaque_bounds": [
+				7,
+				4,
+				17,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/orchard_apprentice/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				0
+			],
+			"source_region": [
+				1135,
+				8,
+				160,
+				150
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/trail_runner/down_a",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) down a",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				29,
+				158,
+				158,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/trail_runner/down_b",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) down b",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				187,
+				158,
+				156,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/trail_runner/up_a",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) up a",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				343,
+				158,
+				158,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/trail_runner/up_b",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) up b",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				1
+			],
+			"source_region": [
+				501,
+				158,
+				156,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/trail_runner/left_a",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) left a",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				1
+			],
+			"source_region": [
+				657,
+				158,
+				162,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/trail_runner/left_b",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) left b",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				1
+			],
+			"source_region": [
+				819,
+				158,
+				158,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/trail_runner/right_a",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) right a",
+			"opaque_bounds": [
+				8,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				1
+			],
+			"source_region": [
+				977,
+				158,
+				158,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "trail_runner",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				32,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/trail_runner/right_b",
+			"mode": "sprite",
+			"name": "trail runner (terracotta vest and cream cap) right b",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/trail_runner/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				1
+			],
+			"source_region": [
+				1135,
+				158,
+				160,
+				147
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/tea_grower/down_a",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) down a",
+			"opaque_bounds": [
+				6,
+				2,
+				19,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				2
+			],
+			"source_region": [
+				29,
+				305,
+				158,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/tea_grower/down_b",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) down b",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				2
+			],
+			"source_region": [
+				187,
+				305,
+				156,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/tea_grower/up_a",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) up a",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				2
+			],
+			"source_region": [
+				343,
+				305,
+				158,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/tea_grower/up_b",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) up b",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				2
+			],
+			"source_region": [
+				501,
+				305,
+				156,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/tea_grower/left_a",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) left a",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				2
+			],
+			"source_region": [
+				657,
+				305,
+				162,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/tea_grower/left_b",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) left b",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				2
+			],
+			"source_region": [
+				819,
+				305,
+				158,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/tea_grower/right_a",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) right a",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				2
+			],
+			"source_region": [
+				977,
+				305,
+				158,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "tea_grower",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				64,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/tea_grower/right_b",
+			"mode": "sprite",
+			"name": "tea grower (teal coat and tan curly hair) right b",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/tea_grower/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				2
+			],
+			"source_region": [
+				1135,
+				305,
+				160,
+				148
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/village_smith/down_a",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) down a",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				3
+			],
+			"source_region": [
+				29,
+				453,
+				158,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/village_smith/down_b",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) down b",
+			"opaque_bounds": [
+				6,
+				2,
+				19,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				3
+			],
+			"source_region": [
+				187,
+				453,
+				156,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/village_smith/up_a",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) up a",
+			"opaque_bounds": [
+				8,
+				3,
+				16,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				3
+			],
+			"source_region": [
+				343,
+				453,
+				158,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/village_smith/up_b",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) up b",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				3
+			],
+			"source_region": [
+				501,
+				453,
+				156,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/village_smith/left_a",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) left a",
+			"opaque_bounds": [
+				6,
+				4,
+				20,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				3
+			],
+			"source_region": [
+				657,
+				453,
+				162,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/village_smith/left_b",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) left b",
+			"opaque_bounds": [
+				6,
+				3,
+				20,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				3
+			],
+			"source_region": [
+				819,
+				453,
+				158,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/village_smith/right_a",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) right a",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				3
+			],
+			"source_region": [
+				977,
+				453,
+				158,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "village_smith",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				96,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/village_smith/right_b",
+			"mode": "sprite",
+			"name": "village smith (cream tunic and brown ponytail) right b",
+			"opaque_bounds": [
+				6,
+				4,
+				19,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/village_smith/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				3
+			],
+			"source_region": [
+				1135,
+				453,
+				160,
+				146
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/botanist/down_a",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) down a",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				4
+			],
+			"source_region": [
+				29,
+				599,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/botanist/down_b",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) down b",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				4
+			],
+			"source_region": [
+				187,
+				599,
+				156,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/botanist/up_a",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) up a",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				4
+			],
+			"source_region": [
+				343,
+				599,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/botanist/up_b",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) up b",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				4
+			],
+			"source_region": [
+				501,
+				599,
+				156,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/botanist/left_a",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) left a",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				4
+			],
+			"source_region": [
+				657,
+				599,
+				162,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/botanist/left_b",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) left b",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				4
+			],
+			"source_region": [
+				819,
+				599,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/botanist/right_a",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) right a",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				4
+			],
+			"source_region": [
+				977,
+				599,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "botanist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				128,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/botanist/right_b",
+			"mode": "sprite",
+			"name": "botanist (ochre scarf and slate trousers) right b",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/botanist/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				4
+			],
+			"source_region": [
+				1135,
+				599,
+				160,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/lakeside_writer/down_a",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) down a",
+			"opaque_bounds": [
+				6,
+				2,
+				19,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				5
+			],
+			"source_region": [
+				29,
+				744,
+				158,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/lakeside_writer/down_b",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) down b",
+			"opaque_bounds": [
+				6,
+				2,
+				19,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				5
+			],
+			"source_region": [
+				187,
+				744,
+				156,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/lakeside_writer/up_a",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) up a",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				5
+			],
+			"source_region": [
+				343,
+				744,
+				158,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/lakeside_writer/up_b",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) up b",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				5
+			],
+			"source_region": [
+				501,
+				744,
+				156,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/lakeside_writer/left_a",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) left a",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				5
+			],
+			"source_region": [
+				657,
+				744,
+				162,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/lakeside_writer/left_b",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) left b",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				5
+			],
+			"source_region": [
+				819,
+				744,
+				158,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/lakeside_writer/right_a",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) right a",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				5
+			],
+			"source_region": [
+				977,
+				744,
+				158,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "lakeside_writer",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				160,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/lakeside_writer/right_b",
+			"mode": "sprite",
+			"name": "lakeside writer (plum jacket and short sandy hair) right b",
+			"opaque_bounds": [
+				6,
+				3,
+				19,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/lakeside_writer/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				5
+			],
+			"source_region": [
+				1135,
+				744,
+				160,
+				142
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/textile_artist/down_a",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) down a",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				6
+			],
+			"source_region": [
+				29,
+				886,
+				158,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/textile_artist/down_b",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) down b",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				6
+			],
+			"source_region": [
+				187,
+				886,
+				156,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/textile_artist/up_a",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) up a",
+			"opaque_bounds": [
+				7,
+				2,
+				18,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				6
+			],
+			"source_region": [
+				343,
+				886,
+				158,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/textile_artist/up_b",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) up b",
+			"opaque_bounds": [
+				7,
+				2,
+				17,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				6
+			],
+			"source_region": [
+				501,
+				886,
+				156,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/textile_artist/left_a",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) left a",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				6
+			],
+			"source_region": [
+				657,
+				886,
+				162,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/textile_artist/left_b",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) left b",
+			"opaque_bounds": [
+				7,
+				3,
+				18,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				6
+			],
+			"source_region": [
+				819,
+				886,
+				158,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/textile_artist/right_a",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) right a",
+			"opaque_bounds": [
+				7,
+				3,
+				17,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				6
+			],
+			"source_region": [
+				977,
+				886,
+				158,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "textile_artist",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				192,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/textile_artist/right_b",
+			"mode": "sprite",
+			"name": "textile artist (gray braid and green shawl) right b",
+			"opaque_bounds": [
+				7,
+				4,
+				18,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/textile_artist/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				6
+			],
+			"source_region": [
+				1135,
+				886,
+				160,
+				144
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				0,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_a",
+			"id": "characters/villagers/elder_baker/down_a",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) down a",
+			"opaque_bounds": [
+				5,
+				2,
+				21,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/down_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				0,
+				7
+			],
+			"source_region": [
+				29,
+				1030,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				32,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "down_b",
+			"id": "characters/villagers/elder_baker/down_b",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) down b",
+			"opaque_bounds": [
+				6,
+				3,
+				20,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/down_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				1,
+				7
+			],
+			"source_region": [
+				187,
+				1030,
+				156,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				64,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_a",
+			"id": "characters/villagers/elder_baker/up_a",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) up a",
+			"opaque_bounds": [
+				5,
+				3,
+				21,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/up_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				2,
+				7
+			],
+			"source_region": [
+				343,
+				1030,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				96,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "up_b",
+			"id": "characters/villagers/elder_baker/up_b",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) up b",
+			"opaque_bounds": [
+				6,
+				2,
+				20,
+				28
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/up_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				3,
+				7
+			],
+			"source_region": [
+				501,
+				1030,
+				156,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				128,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_a",
+			"id": "characters/villagers/elder_baker/left_a",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) left a",
+			"opaque_bounds": [
+				6,
+				3,
+				20,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/left_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				4,
+				7
+			],
+			"source_region": [
+				657,
+				1030,
+				162,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				160,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "left_b",
+			"id": "characters/villagers/elder_baker/left_b",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) left b",
+			"opaque_bounds": [
+				6,
+				4,
+				20,
+				26
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/left_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				5,
+				7
+			],
+			"source_region": [
+				819,
+				1030,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				192,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_a",
+			"id": "characters/villagers/elder_baker/right_a",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) right a",
+			"opaque_bounds": [
+				6,
+				3,
+				20,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/right_a.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				6,
+				7
+			],
+			"source_region": [
+				977,
+				1030,
+				158,
+				145
+			],
+			"source_sheet": "villagers_1"
+		},
+		{
+			"anchor": [
+				16,
+				31
+			],
+			"animation_group": "elder_baker",
+			"atlas": "res://assets/packs/content_v1/atlases/villagers_1.png",
+			"atlas_region": [
+				224,
+				224,
+				32,
+				32
+			],
+			"category": "characters/villagers",
+			"frame": "right_b",
+			"id": "characters/villagers/elder_baker/right_b",
+			"mode": "sprite",
+			"name": "elder baker (moss overalls and straw hat) right b",
+			"opaque_bounds": [
+				6,
+				3,
+				20,
+				27
+			],
+			"path": "res://assets/packs/content_v1/characters/villagers/elder_baker/right_b.png",
+			"size": [
+				32,
+				32
+			],
+			"source": "res://art/sources/content_v1/villagers_1.png",
+			"source_grid_cell": [
+				7,
+				7
+			],
+			"source_region": [
+				1135,
+				1030,
+				160,
+				145
+			],
+			"source_sheet": "villagers_1"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "ecde9c74684a97881273a57500aa15f72a34544eaf1052682600072daecf569d",
+	"sheet": {
+		"category": "characters/villagers",
+		"cell_size": [
+			32,
+			32
+		],
+		"columns": 8,
+		"count": 64,
+		"id": "villagers_1",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/villagers_1.png",
+		"rows": 8,
+		"source": "res://art/sources/content_v1/villagers_1.png"
+	},
+	"source_hash": "2f1565f6034489373c125aa9490ec41c"
+}

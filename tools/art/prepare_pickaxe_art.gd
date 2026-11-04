@@ -1,7 +1,8 @@
 extends SceneTree
 
-const SOURCE: String = "res://assets/generated/sources/"
-const OUTPUT: String = "res://assets/generated/characters/"
+const SOURCE: String = "res://art/sources/base/"
+const OUTPUT: String = "res://assets/textures/characters/"
+const PREVIEW: String = "res://art/previews/characters/stone_pickaxe_preview.png"
 const DIRECTIONS: Array[String] = ["down", "up", "left", "right"]
 const PALETTE: Array[Color] = [
 	Color("47334f"), Color("6d526f"), Color("9b80a0"), Color("c9b5c4"),
@@ -41,10 +42,11 @@ func _init() -> void:
 	if atlas.save_png(OUTPUT + "stone_pickaxe_actions_v1.png") != OK:
 		_fail("Cannot save action atlas")
 	var icon: Image = _fit_icon(_clean(icon_source))
-	if icon.save_png("res://assets/generated/items/stone_pickaxe.png") != OK:
+	if icon.save_png("res://assets/textures/items/stone_pickaxe.png") != OK:
 		_fail("Cannot save icon")
 	atlas.resize(1152, 768, Image.INTERPOLATE_NEAREST)
-	if atlas.save_png(OUTPUT + "stone_pickaxe_preview.png") != OK:
+	DirAccess.make_dir_recursive_absolute(PREVIEW.get_base_dir())
+	if atlas.save_png(PREVIEW) != OK:
 		_fail("Cannot save preview")
 	var catalog: FileAccess = FileAccess.open(OUTPUT + "stone_pickaxe_catalog.json", FileAccess.WRITE)
 	if catalog == null:
@@ -54,7 +56,7 @@ func _init() -> void:
 			"atlas": OUTPUT + "stone_pickaxe_actions_v1.png", "frame_size": [32, 32],
 			"rows": DIRECTIONS, "columns": ["ready", "windup", "overhead", "impact", "follow_through", "recover"],
 			"impact_frame": 3, "feet_y": 23, "alpha": [0, 255], "colors": 16,
-			"icon": "res://assets/generated/items/stone_pickaxe.png", "icon_size": [16, 16],
+			"icon": "res://assets/textures/items/stone_pickaxe.png", "icon_size": [16, 16],
 			"sources": ["stone_pickaxe_actions_source_v1.png", "stone_pickaxe_up_source_v1.png", "stone_pickaxe_side_source_v1.png", "stone_pickaxe_icon_source_v1.png"],
 			"preparation": "Independent AI-drawn pickaxe poses, curated side sequence; left mirrors the new right sequence. No hoe or axe frames used.",
 		}, "\t") + "\n")

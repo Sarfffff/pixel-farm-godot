@@ -1,0 +1,21 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/world_region_data.gd" id="1_lv0r3"]
+
+[resource]
+script = ExtResource("1_lv0r3")
+id = &"quarry"
+display_name = "山地与采石区"
+purpose = "普通石材、铜铁矿和煤的层级"
+layout = &"quarry"
+seed_value = 20261508
+resource_count = 54
+resource_weights = {
+"boulder": 2,
+"coal_node": 3,
+"copper_node": 4,
+"field_rock": 6,
+"iron_node": 2,
+"pine_tree": 1,
+"small_stone": 7
+}

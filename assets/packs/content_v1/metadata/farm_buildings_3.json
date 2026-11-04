@@ -1,0 +1,291 @@
+{
+	"items": [
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_3.png",
+			"atlas_region": [
+				0,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/forest_spirit_hut.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/forest_spirit_hut",
+			"mode": "sprite",
+			"name": "forest spirit hut",
+			"opaque_bounds": [
+				5,
+				2,
+				86,
+				92
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/forest_spirit_hut.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_3.png",
+			"source_grid_cell": [
+				0,
+				0
+			],
+			"source_region": [
+				20,
+				0,
+				479,
+				514
+			],
+			"source_sheet": "farm_buildings_3"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_3.png",
+			"atlas_region": [
+				96,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/gold_clock.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/gold_clock",
+			"mode": "sprite",
+			"name": "gold clock",
+			"opaque_bounds": [
+				13,
+				2,
+				69,
+				92
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/gold_clock.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_3.png",
+			"source_grid_cell": [
+				1,
+				0
+			],
+			"source_region": [
+				499,
+				0,
+				491,
+				514
+			],
+			"source_sheet": "farm_buildings_3"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_3.png",
+			"atlas_region": [
+				192,
+				0,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/earth_obelisk.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/earth_obelisk",
+			"mode": "sprite",
+			"name": "earth obelisk",
+			"opaque_bounds": [
+				11,
+				2,
+				73,
+				92
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/earth_obelisk.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_3.png",
+			"source_grid_cell": [
+				2,
+				0
+			],
+			"source_region": [
+				990,
+				0,
+				546,
+				514
+			],
+			"source_sheet": "farm_buildings_3"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_3.png",
+			"atlas_region": [
+				0,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/water_obelisk.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/water_obelisk",
+			"mode": "sprite",
+			"name": "water obelisk",
+			"opaque_bounds": [
+				13,
+				2,
+				70,
+				92
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/water_obelisk.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_3.png",
+			"source_grid_cell": [
+				0,
+				1
+			],
+			"source_region": [
+				20,
+				514,
+				479,
+				510
+			],
+			"source_sheet": "farm_buildings_3"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_3.png",
+			"atlas_region": [
+				96,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/farmhouse_small.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/farmhouse_small",
+			"mode": "sprite",
+			"name": "farmhouse small",
+			"opaque_bounds": [
+				2,
+				7,
+				92,
+				87
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/farmhouse_small.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_3.png",
+			"source_grid_cell": [
+				1,
+				1
+			],
+			"source_region": [
+				499,
+				514,
+				491,
+				510
+			],
+			"source_sheet": "farm_buildings_3"
+		},
+		{
+			"anchor": [
+				48,
+				95
+			],
+			"atlas": "res://assets/packs/content_v1/atlases/farm_buildings_3.png",
+			"atlas_region": [
+				192,
+				96,
+				96,
+				96
+			],
+			"category": "buildings/farm",
+			"icon": "res://assets/packs/content_v1/icons/buildings/farm/farmhouse_medium.png",
+			"icon_size": [
+				32,
+				32
+			],
+			"id": "buildings/farm/farmhouse_medium",
+			"mode": "sprite",
+			"name": "farmhouse medium",
+			"opaque_bounds": [
+				2,
+				14,
+				92,
+				80
+			],
+			"path": "res://assets/packs/content_v1/buildings/farm/farmhouse_medium.png",
+			"size": [
+				96,
+				96
+			],
+			"source": "res://art/sources/content_v1/farm_buildings_3.png",
+			"source_grid_cell": [
+				2,
+				1
+			],
+			"source_region": [
+				990,
+				514,
+				546,
+				510
+			],
+			"source_sheet": "farm_buildings_3"
+		}
+	],
+	"pipeline_hash": "c80055a941be18941bc2373bf8da63854b96ec443bdc2c78f6ffd22d15710c34",
+	"plan_hash": "ae8594032f6a469689b6a9cdc52fe0c35d02a866dfc9fe573ead8540caf6f31d",
+	"sheet": {
+		"category": "buildings/farm",
+		"cell_size": [
+			96,
+			96
+		],
+		"columns": 3,
+		"count": 6,
+		"id": "farm_buildings_3",
+		"mode": "sprite",
+		"path": "res://assets/packs/content_v1/atlases/farm_buildings_3.png",
+		"rows": 2,
+		"source": "res://art/sources/content_v1/farm_buildings_3.png"
+	},
+	"source_hash": "3157ece91cdb90730a9be57718ce5d6e"
+}

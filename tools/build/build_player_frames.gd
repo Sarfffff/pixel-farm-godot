@@ -10,12 +10,12 @@ extends SceneTree
 ## 运行方式：
 ##   godot --headless --path e:/my-ai-game --script res://tools/build/build_player_frames.gd
 
-const SHEET_PATH := "res://assets/game/characters/basic_charakter_spritesheet.png"
+const SHEET_PATH := "res://assets/textures/base/characters/basic_charakter_spritesheet.png"
 const OUT_PATH := "res://scenes/player/player_frames.tres"
-const ACTION_SHEET := preload("res://assets/game/characters/basic_charakter_actions.png")
-const NEW_ACTIONS := preload("res://assets/generated/characters/farmer_actions_v3.png")
-const PICKAXE_ACTIONS: Texture2D = preload("res://assets/generated/characters/stone_pickaxe_actions_v1.png")
-const HELD_TOOLS: Texture2D = preload("res://assets/generated/characters/held_tools_v1.png")
+const ACTION_SHEET := preload("res://assets/textures/base/characters/basic_charakter_actions.png")
+const NEW_ACTIONS := preload("res://assets/textures/characters/farmer_actions_v3.png")
+const PICKAXE_ACTIONS: Texture2D = preload("res://assets/textures/characters/stone_pickaxe_actions_v1.png")
+const HELD_TOOLS: Texture2D = preload("res://assets/textures/characters/held_tools_v1.png")
 const TOOLS: Array[StringName] = [&"hoe", &"watering_can", &"seeds", &"axe", &"stone_pickaxe"]
 
 const ORIGIN := 16
