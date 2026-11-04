@@ -171,7 +171,7 @@ func collect() -> Dictionary:
 	var stamina := get_tree().get_first_node_in_group(&"stamina")
 	if stamina != null and stamina.has_method(&"to_dict"):
 		data[&"stamina"] = stamina.to_dict()
-	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities", &"friendship", &"berry_grove"]:
+	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities", &"friendship"]:
 		var system := get_tree().get_first_node_in_group(group)
 		if system != null:
 			data[group] = system.to_dict()
@@ -187,9 +187,8 @@ func apply(data: Dictionary) -> void:
 	if time != null:
 		var clock: Dictionary = data.get("time", {})
 		time.day = maxi(1, int(clock.get("day", 1)))
-		# 时间没有封顶（可以熬夜过 02:00），上限只用来拦住坏档里的荒谬数值
 		time.minutes = clampi(
-			int(clock.get("minutes", TimeScript.START_MINUTES)), 0, 48 * 60
+			int(clock.get("minutes", TimeScript.START_MINUTES)), 0, TimeScript.CLOSE_MINUTES
 		)
 		time.reset_clock()
 		time.time_changed.emit(time.day, time.minutes)
@@ -243,12 +242,7 @@ func apply(data: Dictionary) -> void:
 	var stamina_data: Dictionary = data.get("stamina", {})
 	if stamina != null and stamina.has_method(&"from_dict") and not stamina_data.is_empty():
 		stamina.from_dict(stamina_data)
-
-	var berries := get_tree().get_first_node_in_group(&"berry_grove")
-	var berry_data: Dictionary = data.get("berries", {})
-	if berries != null and berries.has_method(&"from_dict") and not berry_data.is_empty():
-		berries.from_dict(berry_data)
-	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities", &"friendship", &"berry_grove"]:
+	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities", &"friendship"]:
 		var system := get_tree().get_first_node_in_group(group)
 		if system != null:
 			system.from_dict(data.get(String(group), {}))

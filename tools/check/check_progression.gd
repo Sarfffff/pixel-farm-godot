@@ -138,7 +138,7 @@ func _run() -> void:
 	# 真正补通第一阶段的材料路径。
 	inventory.add_item(&"wood", 15)
 	_check(community.can_donate(), "naturally gathered fiber satisfies community requirement")
-	# 02:00 只把时间卡住，不主动弹面板：睡不睡由玩家自己走到床边决定。
+	# 到两点弹出不可取消的收工面板，确认后正常进入新一天。
 	player.set_input_locked(false)
 	await process_frame
 	time.running = true
@@ -147,27 +147,14 @@ func _run() -> void:
 	# 时间速率可配（默认 2 分钟/秒），给足 1 秒才会推进到收工时间
 	time._process(1.0)
 	var summary := _main.get_node("UI/DaySummary")
-	_check(not summary.visible, "02:00 does not shove the summary in the player's face")
-	_check(time.minutes >= time.CLOSE_MINUTES, "the clock reaches 02:00")
-	# 时间不停：再走一秒应该继续往前，而不是卡在 02:00
-	time._process(1.0)
-	_check(
-		time.minutes > time.CLOSE_MINUTES,
-		"the clock keeps running past 02:00 (%d)" % time.minutes
-	)
-	_check(not bool(player.get("input_locked")), "the player keeps control at 02:00")
-	# 玩家自己去床边睡：面板必须能由玩家关闭
-	summary.set_open(true)
-	await process_frame
-	_check(summary.visible, "the bed still opens the summary on demand")
+	_check(summary.visible, "02:00 opens the day summary")
 	summary.set_open(false)
-	_check(not summary.visible, "the player can back out of the summary")
+	_check(summary.visible, "forced bedtime cannot be dismissed")
 	var before_sleep: int = time.day
-	summary.set_open(true)
 	summary._sleep()
 	# 睡觉现在带黑屏过场（渐黑 0.45 + 停留 0.9 + 渐亮 0.5），等它跑完再断言。
 	await create_timer(2.2).timeout
-	_check(time.day == before_sleep + 1 and not summary.visible, "sleeping on demand completes")
+	_check(time.day == before_sleep + 1 and not summary.visible, "forced sleep completes and dismisses summary")
 	_main.queue_free()
 	await process_frame
 	await process_frame

@@ -9,17 +9,11 @@ extends Sprite2D
 ## 依赖 Farm/Nav（scripts/world/nav_grid.gd）提供的网格寻路。
 
 const INTERACT_RADIUS: float = 26.0
-## 方向行：0 下 / 1 上 / 2 左 / 3 右
+## 帧序：0 下 / 1 上 / 2 左 / 3 右
 const FRAME_DOWN: int = 0
 const FRAME_UP: int = 1
 const FRAME_LEFT: int = 2
 const FRAME_RIGHT: int = 3
-const DIRECTION_ROWS: int = 4
-## 每行 3 帧：0 待机 / 1 迈步 / 2 另一只脚（见 tools/art/build_npc_walk_frames.gd）
-const STEPS_PER_DIRECTION: int = 3
-const STEP_IDLE: int = 0
-## 摆动间隔（秒）：24px/s 的移动速度下大约每 3.6px 一步
-const STEP_INTERVAL: float = 0.15
 ## 距离路点小于这个值就认为到了
 const ARRIVE_EPSILON: float = 2.0
 
@@ -44,15 +38,11 @@ var _path_index: int = 0
 var _wait_left: float = 0.0
 var _route_index: int = -1
 var _rng := RandomNumberGenerator.new()
-## 当前朝向（行）与走路帧（列）
-var _facing: int = FRAME_DOWN
-var _step: int = STEP_IDLE
-var _step_time: float = 0.0
 
 
 func _ready() -> void:
 	add_to_group(&"interactable")
-	_apply_frame(STEP_IDLE)
+	frame = FRAME_DOWN
 	_rng.seed = hash(display_name) if not display_name.is_empty() else 1
 	# 导航节点在 Farm 上，用 call_deferred 避免 _ready 顺序问题。
 	_bind_nav.call_deferred()
@@ -68,18 +58,14 @@ func _physics_process(delta: float) -> void:
 	if stationary or _nav == null:
 		return
 	if _is_interrupted():
-		_set_step(STEP_IDLE)
 		return
 	if _wait_left > 0.0:
 		_wait_left -= delta
-		_set_step(STEP_IDLE)
 		return
 	if _path.is_empty():
-		_set_step(STEP_IDLE)
 		_plan_next_target()
 		return
 	_follow_path(delta)
-	_advance_step(delta)
 
 
 ## 对话/面板打开或暂停时 NPC 站住，避免玩家在读字时被推来推去。
@@ -136,39 +122,10 @@ func _follow_path(delta: float) -> void:
 
 
 func _update_facing(direction: Vector2) -> void:
-	var facing: int = FRAME_DOWN
 	if absf(direction.x) >= absf(direction.y):
-		facing = FRAME_RIGHT if direction.x > 0.0 else FRAME_LEFT
+		frame = FRAME_RIGHT if direction.x > 0.0 else FRAME_LEFT
 	else:
-		facing = FRAME_DOWN if direction.y > 0.0 else FRAME_UP
-	if facing == _facing:
-		return
-	_facing = facing
-	_apply_frame(_step)
-
-
-## 走路动画：迈步 1 → 迈步 2 交替，停下由 _set_step(STEP_IDLE) 复位。
-func _advance_step(delta: float) -> void:
-	_step_time += delta
-	if _step_time < STEP_INTERVAL:
-		return
-	_step_time -= STEP_INTERVAL
-	_set_step(2 if _step == 1 else 1)
-
-
-func _set_step(step: int) -> void:
-	if step == _step:
-		return
-	_step = step
-	_step_time = 0.0
-	_apply_frame(step)
-
-
-## 图集是「4 方向 × 3 帧」：帧序号 = 朝向 * 3 + 步态。
-func _apply_frame(step: int) -> void:
-	if hframes * vframes < DIRECTION_ROWS * STEPS_PER_DIRECTION:
-		return
-	frame = _facing * STEPS_PER_DIRECTION + step
+		frame = FRAME_DOWN if direction.y > 0.0 else FRAME_UP
 
 
 ## 当前是否在沿路径移动（自检与调试用）。

@@ -45,6 +45,9 @@ func _run() -> void:
 	for prop: Node2D in farm.get_node("World").get_children():
 		if prop == _player:
 			continue
+		# 浮标、钓线这类水面视觉物本就该在水里，不参与"脚下要干燥"的检查。
+		if prop.is_in_group(&"water_visual"):
+			continue
 		var cell: Vector2i = Vector2i((prop.position - Vector2(0, 1)) / 16)
 		_check(not cells.has(cell), "prop has dry feet: %s" % prop.name)
 	# 以实际玩家碰撞形状横穿两桥，分别测试两方向，且不能从桥侧下水。

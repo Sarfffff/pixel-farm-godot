@@ -1,6 +1,6 @@
-﻿[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/generated/characters/npcs_v1/gardener_walk.png" id="1_sprite"]
+[ext_resource type="Texture2D" path="res://assets/generated/characters/npcs_v1/gardener_directions.png" id="1_sprite"]
 [ext_resource type="Script" path="res://scripts/npcs/npc.gd" id="2_npc"]
 [ext_resource type="Resource" path="res://data/dialogues/gardener.tres" id="3_dialogue"]
 
@@ -8,12 +8,11 @@
 texture_filter = 1
 texture = ExtResource("1_sprite")
 offset = Vector2(0, -8)
-hframes = 3
-vframes = 4
+hframes = 4
 script = ExtResource("2_npc")
 display_name = "园艺师 琳"
 npc_id = &"gardener"
-liked_items = Array[StringName]([&"carrot", &"turnip", &"wild_flower"])
+liked_items = Array[StringName]([&"carrot", &"turnip", &"wild_flower", &"wild_raspberry"])
 dialogue = ExtResource("3_dialogue")
 routine = Array[Vector2i]([Vector2i(17, 14), Vector2i(21, 14), Vector2i(21, 16)])
 home_cell = Vector2i(19, 15)

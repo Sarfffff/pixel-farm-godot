@@ -7,10 +7,15 @@ extends Control
 @onready var _lines: Label = %Lines
 @onready var _sleep_button: Button = %SleepButton
 @onready var _overlay: ColorRect = $Overlay
+var _forced: bool = false
+
+
 func _ready() -> void:
 	_overlay.gui_input.connect(_on_overlay_gui_input)
 	_sleep_button.pressed.connect(_sleep)
-	# 深夜不主动弹窗：02:00 只是把时间卡住，睡不睡由玩家自己走到床边决定。
+	var time := get_tree().get_first_node_in_group(&"time")
+	if time != null:
+		time.day_over.connect(_on_day_over)
 	hide()
 
 
@@ -26,6 +31,8 @@ func _input(event: InputEvent) -> void:
 
 
 func set_open(open: bool) -> void:
+	if not open and _forced:
+		return
 	visible = open
 	var player := get_tree().get_first_node_in_group(&"player")
 	if player != null and player.has_method(&"set_input_locked"):
@@ -87,6 +94,7 @@ func _refresh() -> void:
 ## 睡觉：渐黑 → 角色躺下 → 推进一天 → 存档 → 天亮在床边醒来。
 ## 过程中要等黑屏与停留，所以是异步的；按钮回调直接 await 即可。
 func _sleep() -> void:
+	_forced = false
 	_play_sleep_sfx()
 	set_open(false)
 
@@ -156,6 +164,12 @@ func _play_sleep_sfx() -> void:
 	var audio := get_node_or_null("/root/AudioManager")
 	if audio != null:
 		audio.call(&"play_sfx", &"sleep")
+
+
+func _on_day_over() -> void:
+	_forced = true
+	set_open(true)
+	_title.text = "夜深了 · 该休息了"
 
 
 func _on_overlay_gui_input(event: InputEvent) -> void:

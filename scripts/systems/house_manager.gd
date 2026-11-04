@@ -24,10 +24,7 @@ var _player: Node2D
 var _farm: Node2D
 var _farm_world: Node2D
 var _camera: Camera2D
-## 当前所在的室内
 var _interior: Node2D
-## 已实例化的室内，按场景路径缓存：农舍和商店是两套不同的房间
-var _interiors: Dictionary = {}
 var _inside: bool = false
 var _saved_position: Vector2
 
@@ -57,26 +54,19 @@ func save_position() -> Vector2:
 func enter_house(scene: PackedScene) -> void:
 	if _inside or scene == null or _player == null:
 		return
-	var target := _ensure_interior(scene)
-	if target == null:
+	if _ensure_interior(scene) == null:
 		return
-	# 换房子时把上一间藏起来：农舍和商店互不干扰
-	if _interior != null and _interior != target:
-		_interior.visible = false
-	_interior = target
 	_saved_position = _player.global_position
 	_inside = true
 
 	_farm.visible = false
 	_interior.visible = true
 
-	# 玩家搬进室内的 Y 排序容器：家具 z_index 更高，
-	# 玩家若留在室内根节点会被地毯、椅子整片盖住。
+	# 玩家搬进室内：用局部坐标定位到 Spawn
 	var spawn := _interior.get_node_or_null("Spawn") as Node2D
 	var local: Vector2 = spawn.position if spawn != null else interior_bounds.size * 0.5
-	var layer := _y_sort_layer(_interior)
 	if _player.get_parent() != null:
-		_player.reparent(layer, false)
+		_player.reparent(_interior, false)
 	_player.position = local
 	_player.visible = true
 
@@ -164,27 +154,17 @@ func camera_follow_reset() -> void:
 		_camera.call(&"reset_smoothing")
 
 
-## 室内的可排序层：优先 Props（家具容器，y_sort 开启），找不到再退回室内根节点。
-func _y_sort_layer(interior: Node2D) -> Node2D:
-	var props := interior.get_node_or_null("Props") as Node2D
-	return props if props != null and props.y_sort_enabled else interior
-
-
 func _ensure_interior(scene: PackedScene) -> Node2D:
-	# 同一栋建筑复用实例；不同建筑（农舍 / 商店）各有一套
-	var key := scene.resource_path
-	if key.is_empty():
-		key = str(scene)
-	if _interiors.has(key):
-		return _interiors[key] as Node2D
-	var inst := scene.instantiate() as Node2D
-	if inst == null:
+	if _interior != null:
+		return _interior
+	_interior = scene.instantiate() as Node2D
+	if _interior == null:
 		push_warning("[house] 室内场景根节点不是 Node2D")
 		return null
-	_interiors[key] = inst
-	inst.visible = false
-	inst.position = INTERIOR_ORIGIN
+	_interior.name = "HouseInterior"
+	_interior.position = INTERIOR_ORIGIN
+	_interior.visible = false
 	# 挂在场景根（Main）下，而不是 Systems 下，方便按名字定位与调试。
 	var host: Node = get_tree().current_scene if get_tree().current_scene != null else get_parent()
-	host.add_child(inst)
-	return inst
+	host.add_child(_interior)
+	return _interior

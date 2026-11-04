@@ -1,6 +1,6 @@
 class_name TimeSystem
 extends Node
-## 游戏内时间：一天从 06:00 开始，02:00 之后照常走；睡觉进入第二天并结算作物。
+## 游戏内时间：一天从 06:00 开始，02:00 收工；睡觉进入第二天并结算作物。
 ##
 ## 加入 time 组，其他系统用 get_first_node_in_group(&"time") 访问。
 ## 只负责时间与日期，不做存档、不碰界面。
@@ -8,19 +8,18 @@ extends Node
 signal time_changed(day: int, minutes: int)
 ## 新的一天开始（睡觉结算完、日期已 +1），作物在这里统一生长。
 signal day_started(day: int)
-## 到次日 02:00：时间停住并发出一次，主场景据此执行"累倒"流程（星露谷规则）。
+## 到了收工时间（次日 02:00），由主场景决定弹结算还是直接睡。
 signal day_over
 ## 换季（跨过 28 天的整数倍）
 signal season_changed(season: StringName, year: int)
 
 ## 06:00 起床。
 const START_MINUTES: int = 6 * 60
-## 26:00 = 次日 02:00：星露谷式"累倒线"。
-## 走到这里时间停住并发一次 day_over，由 DaySummary 处理强制昏睡（扣钱、次日半体力）。
+## 26:00 = 次日 02:00，超过就强制收工。
 const CLOSE_MINUTES: int = 26 * 60
-## 星露谷节奏：10 游戏分钟 / 7 现实秒 ≈ 1.43 分钟每秒，
-## 06:00 → 02:00 共 1200 分钟 ≈ 14 分钟真实时间。
-const DEFAULT_MINUTES_PER_SECOND: float = 10.0 / 7.0
+## 默认 1 现实秒 = 2 游戏分钟：06:00 玩到 02:00 约 10 分钟真实时间。
+## 玩家可在设置里改成慢（1.5，约 13 分钟）或快（4.0，约 5 分钟）。
+const DEFAULT_MINUTES_PER_SECOND: float = 2.0
 ## 18:00 起算晚上：这时候上床才会进入下一天。
 const EVENING_MINUTES: int = 18 * 60
 ## 白天小睡醒来的时间。
@@ -80,7 +79,6 @@ func _process(delta: float) -> void:
 	_minute_fraction += maxf(delta, 0.0) * minutes_per_real_second
 	var elapsed: int = int(floor(_minute_fraction + 0.000001))
 	_minute_fraction = maxf(0.0, _minute_fraction - elapsed)
-	# 02:00 封顶：星露谷到点就累倒，钟停在 2:00 等昏睡流程跑完
 	minutes = mini(minutes + elapsed, CLOSE_MINUTES)
 	if minutes != before and minutes != _last_emitted:
 		_last_emitted = minutes

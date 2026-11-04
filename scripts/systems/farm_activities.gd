@@ -88,10 +88,13 @@ func _ready() -> void:
 	_bobber.texture = BOBBER_ART
 	_bobber.position = settings.fishing_target
 	_bobber.scale = Vector2.ONE * 0.3
+	# 浮标本来就浮在水面上，标一下组，别被"道具脚下不能有水深"这类检查误判。
+	_bobber.add_to_group(&"water_visual")
 	world.add_child(_bobber)
 	_line = Line2D.new()
 	_line.width = 1.0
 	_line.default_color = Color("eee3c2")
+	_line.add_to_group(&"water_visual")
 	world.add_child(_line)
 	_set_fishing_visual(false)
 	var clock: Node = _clock()
