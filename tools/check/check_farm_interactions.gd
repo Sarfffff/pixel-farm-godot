@@ -52,6 +52,16 @@ func _run() -> void:
 	_check(_tiller.can_use(&"hoe", Vector2i(16, 5)), "independent new plot allowed")
 	_check(not _tiller.can_use(&"hoe", Vector2i(15, 5)), "outside farming area blocked")
 	_check(not _tiller.can_use(&"hoe", Vector2i(16, 9)), "rock blocks tilling")
+
+	# 防回归：遮住格子的 NPC 不该把地锁死（曾经把走动的 NPC 当成树冠，整格不可锄）。
+	var gardener := _main.get_node_or_null("Farm/World/Gardener") as Sprite2D
+	if gardener != null:
+		gardener.set(&"stationary", true)
+		gardener.global_position = _tiller._soil.to_global(_tiller._soil.map_to_local(Vector2i(17, 14)))
+		await physics_frame
+		await physics_frame
+		_check(_tiller.can_use(&"hoe", Vector2i(17, 14)), "a standing NPC does not block tilling")
+		gardener.global_position = Vector2(400, 60)
 	_check(not _tiller.can_use(&"hoe", Vector2i(29, 8)), "cottage blocks tilling")
 	_check(not _tiller.can_use(&"hoe", Vector2i(18, 6)), "existing soil cannot be tilled twice")
 	_check(_tiller._block_reason(Vector2i(29, 11)) == &"ground", "planked path reports ground block")

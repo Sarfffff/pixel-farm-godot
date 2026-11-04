@@ -7,7 +7,8 @@ extends Control
 @onready var _lines: Label = %Lines
 @onready var _sleep_button: Button = %SleepButton
 @onready var _overlay: ColorRect = $Overlay
-var _forced: bool = false
+## 累倒流程进行中，避免同一晚触发两次
+var _passing_out: bool = false
 
 
 func _ready() -> void:
@@ -31,8 +32,6 @@ func _input(event: InputEvent) -> void:
 
 
 func set_open(open: bool) -> void:
-	if not open and _forced:
-		return
 	visible = open
 	var player := get_tree().get_first_node_in_group(&"player")
 	if player != null and player.has_method(&"set_input_locked"):
@@ -94,7 +93,6 @@ func _refresh() -> void:
 ## 睡觉：渐黑 → 角色躺下 → 推进一天 → 存档 → 天亮在床边醒来。
 ## 过程中要等黑屏与停留，所以是异步的；按钮回调直接 await 即可。
 func _sleep() -> void:
-	_forced = false
 	_play_sleep_sfx()
 	set_open(false)
 
@@ -166,10 +164,70 @@ func _play_sleep_sfx() -> void:
 		audio.call(&"play_sfx", &"sleep")
 
 
+## 凌晨 2:00 累倒（星露谷规则）：不弹面板，直接黑屏 → 罚款 → 进下一天 →
+## 体力只回一半 → 在床边（室外则在农舍门口）醒来 → 自动存档。
 func _on_day_over() -> void:
-	_forced = true
-	set_open(true)
-	_title.text = "夜深了 · 该休息了"
+	if _passing_out:
+		return
+	_passing_out = true
+	await _pass_out()
+	_passing_out = false
+
+
+func _pass_out() -> void:
+	var player := get_tree().get_first_node_in_group(&"player")
+	var house := get_tree().get_first_node_in_group(&"house")
+	var fade := get_tree().get_first_node_in_group(&"screen_fade")
+	var time := get_tree().get_first_node_in_group(&"time")
+	var economy := get_tree().get_first_node_in_group(&"economy")
+	var stamina := get_tree().get_first_node_in_group(&"stamina")
+	var indoors: bool = house != null and bool(house.call(&"is_inside"))
+
+	if player != null and player.has_method(&"set_input_locked"):
+		player.set_input_locked(true)
+
+	var lost: int = 0
+	if economy != null and economy.has_method(&"pass_out_fine"):
+		lost = int(economy.call(&"pass_out_fine"))
+
+	if fade != null:
+		await fade.call(&"fade_out", 0.6)
+	if indoors:
+		house.call(&"begin_sleep")
+	if fade != null:
+		fade.call(&"show_caption", "凌晨两点，你累倒了……")
+
+	if time != null and time.has_method(&"sleep"):
+		time.call(&"sleep")
+	# day_started 会把体力回满，这里再压回一半
+	if stamina != null and stamina.has_method(&"wake_weary"):
+		stamina.call(&"wake_weary")
+
+	var save := get_tree().get_first_node_in_group(&"save")
+	if save != null and save.has_method(&"save_game"):
+		save.save_game()
+
+	await get_tree().create_timer(1.0).timeout
+	if not indoors:
+		# 室外累倒：被人送回农舍门口
+		var door := get_tree().current_scene.get_node_or_null("Farm/World/CottageDoor") as Node2D
+		if door != null and player != null:
+			player.global_position = door.global_position + Vector2(0, 16)
+	if house != null and house.has_method(&"finish_sleep"):
+		await house.call(&"finish_sleep")
+		if not indoors and player != null and player.has_method(&"set_input_locked"):
+			player.set_input_locked(false)
+	elif fade != null:
+		if fade.has_method(&"hide_caption"):
+			fade.call(&"hide_caption")
+		await fade.call(&"fade_in", 0.5)
+		if player != null and player.has_method(&"set_input_locked"):
+			player.set_input_locked(false)
+
+	if fade != null and lost > 0 and fade.has_method(&"show_caption"):
+		fade.call(&"show_caption", "第 %d 天 · 早上好（被罚走 %d 金币）" % [_day(), lost])
+		await get_tree().create_timer(1.4).timeout
+		fade.call(&"hide_caption")
 
 
 func _on_overlay_gui_input(event: InputEvent) -> void:

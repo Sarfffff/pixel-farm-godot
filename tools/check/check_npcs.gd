@@ -86,7 +86,8 @@ func _run() -> void:
 		_check(bool(shop_door.call("player_in_range", player)), "standing at the shop door is in range")
 		shop_door.call("interact", Vector2i.ZERO)
 		await create_timer(0.9).timeout
-		var interior := main.get_node_or_null("HouseInterior") as Node2D
+		# 店铺有独立的室内场景（ShopInterior），不再复用农舍那间
+		var interior := main.get_node_or_null("ShopInterior") as Node2D
 		_check(interior != null, "shop interior loads")
 		if interior != null:
 			# 老板摆在室内场景的 Props 组下，按名字递归找，别写死路径。

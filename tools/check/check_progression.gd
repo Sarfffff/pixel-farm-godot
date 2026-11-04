@@ -19,8 +19,8 @@ func _run() -> void:
 	# 不依赖渲染帧率：完整一分钟，30/60/144 FPS 的结果一致。
 	for fps: int in [30, 60, 144]:
 		var clock := preload("res://scripts/systems/time_system.gd").new()
-		# 速率可配（默认 2 分钟/秒），期望值按当前速率算，不写死
-		var expected: int = 360 + int(round(60.0 * clock.minutes_per_real_second))
+		# 速率可配（默认星露谷 10 分钟 / 7 秒），期望值按当前速率算，不写死
+		var expected: int = 360 + int(floor(60.0 * clock.minutes_per_real_second + 0.000001))
 		for frame in fps * 60:
 			clock._process(1.0 / fps)
 		_check(clock.minutes == expected, "one minute matches the configured speed at %d FPS" % fps)
@@ -138,23 +138,40 @@ func _run() -> void:
 	# 真正补通第一阶段的材料路径。
 	inventory.add_item(&"wood", 15)
 	_check(community.can_donate(), "naturally gathered fiber satisfies community requirement")
-	# 到两点弹出不可取消的收工面板，确认后正常进入新一天。
+	# 凌晨两点累倒（星露谷规则）：不弹面板，自动进下一天、扣 10% 金币、体力只回一半。
 	player.set_input_locked(false)
 	await process_frame
 	time.running = true
 	time.minutes = time.CLOSE_MINUTES - 1
 	time.reset_clock()
-	# 时间速率可配（默认 2 分钟/秒），给足 1 秒才会推进到收工时间
+	stamina.refill()
+	var coins_before_passout: int = economy.coins
+	var day_before: int = time.day
+	# 时间速率可配，给足 1 秒才会推进到累倒线
 	time._process(1.0)
 	var summary := _main.get_node("UI/DaySummary")
-	_check(summary.visible, "02:00 opens the day summary")
-	summary.set_open(false)
-	_check(summary.visible, "forced bedtime cannot be dismissed")
-	var before_sleep: int = time.day
-	summary._sleep()
-	# 睡觉现在带黑屏过场（渐黑 0.45 + 停留 0.9 + 渐亮 0.5），等它跑完再断言。
-	await create_timer(2.2).timeout
-	_check(time.day == before_sleep + 1 and not summary.visible, "forced sleep completes and dismisses summary")
+	_check(not summary.visible, "02:00 does not open a prompt panel")
+	# 累倒流程：渐黑 0.6 + 停留 1.0 + 渐亮 0.5 + 罚款提示 1.4
+	await create_timer(4.2).timeout
+	_check(time.day == day_before + 1, "passing out advances to the next day")
+	# 醒来后时钟继续走，等待期间会推进几分钟
+	_check(
+		time.minutes >= time.START_MINUTES and time.minutes <= time.START_MINUTES + 30,
+		"waking up resets the clock to about 06:00 (got %d)" % time.minutes
+	)
+	var expected_fine: int = mini(int(floor(float(coins_before_passout) * 0.1)), 1000)
+	_check(
+		economy.coins == coins_before_passout - expected_fine,
+		"passing out costs 10%% gold (%d -> %d, expected fine %d)" % [
+			coins_before_passout, economy.coins, expected_fine
+		]
+	)
+	_check(
+		stamina.value == stamina.MAX_VALUE / 2,
+		"passing out leaves half stamina (%d)" % stamina.value
+	)
+	_check(not bool(player.get("input_locked")), "player control returns after passing out")
+	_check(not summary.visible, "the summary stays closed after passing out")
 	_main.queue_free()
 	await process_frame
 	await process_frame

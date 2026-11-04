@@ -44,6 +44,13 @@ func refill() -> void:
 	changed.emit(value)
 
 
+## 累倒醒来（星露谷规则）：当天只恢复一半体力。
+## 必须在 day_started 的回满之后调用。
+func wake_weary() -> void:
+	value = maxi(1, MAX_VALUE / 2)
+	changed.emit(value)
+
+
 func ratio() -> float:
 	return float(value) / float(MAX_VALUE)
 

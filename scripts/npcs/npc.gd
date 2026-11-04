@@ -42,6 +42,8 @@ var _rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
 	add_to_group(&"interactable")
+	# 会走动的角色：耕地的"贴图遮挡"判定要放过它们，否则 NPC 站过来就把地锁死了。
+	add_to_group(&"world_actor")
 	frame = FRAME_DOWN
 	_rng.seed = hash(display_name) if not display_name.is_empty() else 1
 	# 导航节点在 Farm 上，用 call_deferred 避免 _ready 顺序问题。

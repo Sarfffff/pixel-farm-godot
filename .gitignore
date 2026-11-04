@@ -16,3 +16,11 @@ Thumbs.db
 desktop.ini
 *.tmp
 *.log
+
+# 临时诊断脚本（下划线开头）：只是本地跑一次的小工具，不进仓库
+/tools/_*.gd
+/tools/_*.gd.uid
+/tools/check/_*.gd
+/tools/check/_*.gd.uid
+/tools/build/_*.gd
+/tools/build/_*.gd.uid

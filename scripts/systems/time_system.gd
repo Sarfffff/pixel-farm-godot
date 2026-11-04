@@ -8,18 +8,19 @@ extends Node
 signal time_changed(day: int, minutes: int)
 ## 新的一天开始（睡觉结算完、日期已 +1），作物在这里统一生长。
 signal day_started(day: int)
-## 到了收工时间（次日 02:00），由主场景决定弹结算还是直接睡。
+## 到次日 02:00：时间停住并发出一次，主场景执行"累倒"（星露谷规则）。
 signal day_over
 ## 换季（跨过 28 天的整数倍）
 signal season_changed(season: StringName, year: int)
 
 ## 06:00 起床。
 const START_MINUTES: int = 6 * 60
-## 26:00 = 次日 02:00，超过就强制收工。
+## 26:00 = 次日 02:00：星露谷式的"累倒线"。
+## 到点时间停住并发一次 day_over，由 DaySummary 执行累倒（扣钱、半体力、次日清晨醒来）。
 const CLOSE_MINUTES: int = 26 * 60
-## 默认 1 现实秒 = 2 游戏分钟：06:00 玩到 02:00 约 10 分钟真实时间。
-## 玩家可在设置里改成慢（1.5，约 13 分钟）或快（4.0，约 5 分钟）。
-const DEFAULT_MINUTES_PER_SECOND: float = 2.0
+## 星露谷节奏：10 游戏分钟 / 7 现实秒 ≈ 1.43 分钟每秒。
+## 06:00 → 02:00 共 1200 分钟 ≈ 14 分钟真实时间（与星露谷一致）。
+const DEFAULT_MINUTES_PER_SECOND: float = 10.0 / 7.0
 ## 18:00 起算晚上：这时候上床才会进入下一天。
 const EVENING_MINUTES: int = 18 * 60
 ## 白天小睡醒来的时间。

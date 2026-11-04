@@ -56,167 +56,167 @@ size = Vector2(16, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycrx3"]
 size = Vector2(288, 16)
 
-[node name="ShopInterior" type="Node2D" unique_id=642462962]
+[node name="ShopInterior" type="Node2D" unique_id=370934437]
 script = ExtResource("1_fq0mw")
 camera_bounds = Rect2(0, 0, 288, 240)
 
-[node name="Floor" type="TileMapLayer" parent="." unique_id=1985768414]
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1327668783]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAA=")
 tile_set = ExtResource("2_7d4k0")
 
-[node name="Walls" type="TileMapLayer" parent="." unique_id=2066685279]
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1838135222]
 z_index = 1
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAwAAAAAAAAABAAAAAgAAAAAAAAABAAEAAQAAAAAAAAABAAIAAwAAAAAAAAACAAAAAgAAAAAAAAACAAEAAQAAAAAAAAACAAIAAwAAAAAAAAADAAAAAgAAAAAAAAADAAEAAQAAAAAAAAADAAIAAwAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAwAAAAAAAAAFAAAAAgAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAwAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAwAAAAAAAAAHAAAAAgAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAwAAAAAAAAAIAAAAAgAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAwAAAAAAAAAJAAAAAgAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAwAAAAAAAAAKAAAAAgAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAwAAAAAAAAALAAAAAgAAAAAAAAALAAEAAQAAAAAAAAALAAIAAwAAAAAAAAAMAAAAAgAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAwAAAAAAAAANAAAAAgAAAAAAAAANAAEAAQAAAAAAAAANAAIAAwAAAAAAAAAOAAAAAgAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAwAAAAAAAAAPAAAAAgAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAwAAAAAAAAAQAAAAAgAAAAAAAAAQAAEAAQAAAAAAAAAQAAIAAwAAAAAAAAARAAAAAgAAAAAAAAARAAEAAQAAAAAAAAARAAIAAwAAAAAAAAAAAAMAAgAAAAAAAAARAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAARAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAARAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAARAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAARAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAARAAgAAgAAAAAAAAAAAAkAAgAAAAAAAAARAAkAAgAAAAAAAAAAAAoAAgAAAAAAAAARAAoAAgAAAAAAAAAAAAsAAgAAAAAAAAABAAsAAgAAAAAAAAACAAsAAgAAAAAAAAADAAsAAgAAAAAAAAAEAAsAAgAAAAAAAAAFAAsAAgAAAAAAAAAGAAsAAgAAAAAAAAAHAAsAAgAAAAAAAAAIAAsAAgAAAAAAAAAJAAsAAgAAAAAAAAAKAAsAAgAAAAAAAAALAAsAAgAAAAAAAAAMAAsAAgAAAAAAAAANAAsAAgAAAAAAAAAOAAsAAgAAAAAAAAAPAAsAAgAAAAAAAAAQAAsAAgAAAAAAAAARAAsAAgAAAAAAAAAAAAwAAgAAAAAAAAABAAwAAgAAAAAAAAACAAwAAgAAAAAAAAADAAwAAgAAAAAAAAAEAAwAAgAAAAAAAAAFAAwAAgAAAAAAAAAGAAwAAgAAAAAAAAAHAAwAAgAAAAAAAAAIAAwAAgAAAAAAAAAJAAwAAgAAAAAAAAAKAAwAAgAAAAAAAAALAAwAAgAAAAAAAAAMAAwAAgAAAAAAAAANAAwAAgAAAAAAAAAOAAwAAgAAAAAAAAAPAAwAAgAAAAAAAAAQAAwAAgAAAAAAAAARAAwAAgAAAAAAAAAAAA0AAgAAAAAAAAABAA0AAgAAAAAAAAACAA0AAgAAAAAAAAADAA0AAgAAAAAAAAAEAA0AAgAAAAAAAAAFAA0AAgAAAAAAAAAGAA0AAgAAAAAAAAAHAA0AAgAAAAAAAAAIAA0AAgAAAAAAAAAJAA0AAgAAAAAAAAAKAA0AAgAAAAAAAAALAA0AAgAAAAAAAAAMAA0AAgAAAAAAAAANAA0AAgAAAAAAAAAOAA0AAgAAAAAAAAAPAA0AAgAAAAAAAAAQAA0AAgAAAAAAAAARAA0AAgAAAAAAAAAAAA4AAgAAAAAAAAABAA4AAgAAAAAAAAACAA4AAgAAAAAAAAADAA4AAgAAAAAAAAAEAA4AAgAAAAAAAAAFAA4AAgAAAAAAAAAGAA4AAgAAAAAAAAAHAA4AAgAAAAAAAAAIAA4AAgAAAAAAAAAJAA4AAgAAAAAAAAAKAA4AAgAAAAAAAAALAA4AAgAAAAAAAAAMAA4AAgAAAAAAAAANAA4AAgAAAAAAAAAOAA4AAgAAAAAAAAAPAA4AAgAAAAAAAAAQAA4AAgAAAAAAAAARAA4AAgAAAAAAAAA=")
 tile_set = ExtResource("2_7d4k0")
 
-[node name="FloorProps" type="Node2D" parent="." unique_id=444414100]
+[node name="FloorProps" type="Node2D" parent="." unique_id=793398512]
 z_index = 2
 
-[node name="DoorMat" type="Sprite2D" parent="FloorProps" unique_id=94170940]
+[node name="DoorMat" type="Sprite2D" parent="FloorProps" unique_id=268506943]
 texture_filter = 1
 position = Vector2(136, 168)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_2wcc8")
 
-[node name="SquareRug" type="Sprite2D" parent="FloorProps" unique_id=1380826813]
+[node name="SquareRug" type="Sprite2D" parent="FloorProps" unique_id=1835025581]
 texture_filter = 1
 position = Vector2(192, 168)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_agn0v")
 
-[node name="Props" type="Node2D" parent="." unique_id=294402668]
+[node name="Props" type="Node2D" parent="." unique_id=1506576573]
 z_index = 5
 y_sort_enabled = true
 
-[node name="DisplayCabinet" type="Sprite2D" parent="Props" unique_id=1240339229]
+[node name="DisplayCabinet" type="Sprite2D" parent="Props" unique_id=1837640653]
 texture_filter = 1
 position = Vector2(136, 122)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_icw6d")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/DisplayCabinet" unique_id=764765932]
+[node name="Body" type="StaticBody2D" parent="Props/DisplayCabinet" unique_id=2062407156]
 collision_mask = 0
 
-[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="Props/DisplayCabinet/Body" unique_id=104311206]
+[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="Props/DisplayCabinet/Body" unique_id=19951983]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_rijfk")
 
-[node name="Bookcase" type="Sprite2D" parent="Props" unique_id=1071713286]
+[node name="Bookcase" type="Sprite2D" parent="Props" unique_id=1609177802]
 texture_filter = 1
 position = Vector2(40, 104)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_73rm3")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Bookcase" unique_id=62137567]
+[node name="Body" type="StaticBody2D" parent="Props/Bookcase" unique_id=1260358461]
 collision_mask = 0
 
-[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Props/Bookcase/Body" unique_id=1692831128]
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Props/Bookcase/Body" unique_id=1435588474]
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_14ej5")
 
-[node name="Cupboard" type="Sprite2D" parent="Props" unique_id=1937305330]
+[node name="Cupboard" type="Sprite2D" parent="Props" unique_id=267524273]
 texture_filter = 1
 position = Vector2(232, 104)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_r015x")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Cupboard" unique_id=1005372518]
+[node name="Body" type="StaticBody2D" parent="Props/Cupboard" unique_id=514635449]
 collision_mask = 0
 
-[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Props/Cupboard/Body" unique_id=1446476954]
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Props/Cupboard/Body" unique_id=1923763658]
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_6nuow")
 
-[node name="RoundTable" type="Sprite2D" parent="Props" unique_id=1049082282]
+[node name="RoundTable" type="Sprite2D" parent="Props" unique_id=2085366705]
 texture_filter = 1
 position = Vector2(200, 156)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_pkwxc")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/RoundTable" unique_id=1464423869]
+[node name="Body" type="StaticBody2D" parent="Props/RoundTable" unique_id=158779010]
 collision_mask = 0
 
-[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Props/RoundTable/Body" unique_id=1481350040]
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Props/RoundTable/Body" unique_id=510529911]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_n0e3l")
 
-[node name="OakChair" type="Sprite2D" parent="Props" unique_id=1234037901]
+[node name="OakChair" type="Sprite2D" parent="Props" unique_id=730137040]
 texture_filter = 1
 position = Vector2(174, 158)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_1xnk3")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/OakChair" unique_id=1506118095]
+[node name="Body" type="StaticBody2D" parent="Props/OakChair" unique_id=2022166949]
 collision_mask = 0
 
-[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Props/OakChair/Body" unique_id=684748559]
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Props/OakChair/Body" unique_id=1405559082]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_07wsf")
 
-[node name="PottedFern" type="Sprite2D" parent="Props" unique_id=1065007843]
+[node name="PottedFern" type="Sprite2D" parent="Props" unique_id=1747807742]
 texture_filter = 1
 position = Vector2(32, 168)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_se01r")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/PottedFern" unique_id=502112105]
+[node name="Body" type="StaticBody2D" parent="Props/PottedFern" unique_id=1753917387]
 collision_mask = 0
 
-[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Props/PottedFern/Body" unique_id=175665138]
+[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Props/PottedFern/Body" unique_id=1098003219]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_sjeb2")
 
-[node name="Basket" type="Sprite2D" parent="Props" unique_id=1894027528]
+[node name="Basket" type="Sprite2D" parent="Props" unique_id=113879782]
 texture_filter = 1
 position = Vector2(72, 168)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("11_llro0")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Basket" unique_id=305460496]
+[node name="Body" type="StaticBody2D" parent="Props/Basket" unique_id=753554313]
 collision_mask = 0
 
-[node name="@CollisionShape2D@8" type="CollisionShape2D" parent="Props/Basket/Body" unique_id=639349760]
+[node name="@CollisionShape2D@8" type="CollisionShape2D" parent="Props/Basket/Body" unique_id=374774731]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_pvoo5")
 
-[node name="TallPottedTree" type="Sprite2D" parent="Props" unique_id=1780433158]
+[node name="TallPottedTree" type="Sprite2D" parent="Props" unique_id=1434895228]
 texture_filter = 1
 position = Vector2(256, 160)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("12_qv08w")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/TallPottedTree" unique_id=1467050303]
+[node name="Body" type="StaticBody2D" parent="Props/TallPottedTree" unique_id=1219584434]
 collision_mask = 0
 
-[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="Props/TallPottedTree/Body" unique_id=262131212]
+[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="Props/TallPottedTree/Body" unique_id=1021371366]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_bgwtq")
 
-[node name="WallClock" type="Sprite2D" parent="Props" unique_id=1441526091]
+[node name="WallClock" type="Sprite2D" parent="Props" unique_id=465670948]
 texture_filter = 1
 position = Vector2(136, 56)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("13_sksbm")
 offset = Vector2(0, -16)
 
-[node name="WallShelf" type="Sprite2D" parent="Props" unique_id=527738090]
+[node name="WallShelf" type="Sprite2D" parent="Props" unique_id=548254998]
 texture_filter = 1
 position = Vector2(72, 56)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("14_l4w4p")
 offset = Vector2(0, -16)
 
-[node name="Shopkeeper" type="Sprite2D" parent="Props" unique_id=962485331 instance=ExtResource("15_47xpv")]
+[node name="Shopkeeper" type="Sprite2D" parent="Props" unique_id=189614909 instance=ExtResource("15_47xpv")]
 texture_filter = 1
 position = Vector2(136, 94)
 texture = ExtResource("16_01bqu")
@@ -225,34 +225,34 @@ hframes = 3
 vframes = 4
 script = ExtResource("17_nvh0f")
 
-[node name="WallBody" type="StaticBody2D" parent="." unique_id=798878240]
+[node name="WallBody" type="StaticBody2D" parent="." unique_id=1818829318]
 collision_mask = 0
 
-[node name="Wall0" type="CollisionShape2D" parent="WallBody" unique_id=1618332698]
+[node name="Wall0" type="CollisionShape2D" parent="WallBody" unique_id=549301696]
 position = Vector2(144, 24)
 shape = SubResource("RectangleShape2D_57i0w")
 
-[node name="Wall1" type="CollisionShape2D" parent="WallBody" unique_id=2022440781]
+[node name="Wall1" type="CollisionShape2D" parent="WallBody" unique_id=559178301]
 position = Vector2(8, 112)
 shape = SubResource("RectangleShape2D_2qwxe")
 
-[node name="Wall2" type="CollisionShape2D" parent="WallBody" unique_id=960694867]
+[node name="Wall2" type="CollisionShape2D" parent="WallBody" unique_id=1242180621]
 position = Vector2(280, 112)
 shape = SubResource("RectangleShape2D_ansue")
 
-[node name="Wall3" type="CollisionShape2D" parent="WallBody" unique_id=332231509]
+[node name="Wall3" type="CollisionShape2D" parent="WallBody" unique_id=2065474133]
 position = Vector2(144, 184)
 shape = SubResource("RectangleShape2D_ycrx3")
 
-[node name="ExitDoor" type="Node2D" parent="." unique_id=1875425802]
+[node name="ExitDoor" type="Node2D" parent="." unique_id=621384947]
 position = Vector2(136, 184)
 script = ExtResource("18_lgtoy")
 mode = "exit"
 
-[node name="Art" type="Sprite2D" parent="ExitDoor" unique_id=151135059]
+[node name="Art" type="Sprite2D" parent="ExitDoor" unique_id=28911078]
 z_index = 2
 texture_filter = 1
 texture = ExtResource("19_4qgdg")
 
-[node name="Spawn" type="Marker2D" parent="." unique_id=1172810414]
+[node name="Spawn" type="Marker2D" parent="." unique_id=846493777]
 position = Vector2(136, 152)

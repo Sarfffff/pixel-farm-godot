@@ -40,6 +40,17 @@ func spend(cost: int) -> bool:
 	return true
 
 
+## 累倒罚款（星露谷规则）：扣 10% 金币，单次上限 1000。
+## 返回实际扣掉的金额，供提示文案使用。
+func pass_out_fine(ratio: float = 0.1, cap: int = 1000) -> int:
+	var lost: int = mini(int(floor(float(coins) * ratio)), cap)
+	if lost <= 0:
+		return 0
+	coins -= lost
+	changed.emit(coins)
+	return lost
+
+
 ## 进账；负数或零直接忽略，避免调用方写错把金币扣掉。
 func earn(amount: int) -> void:
 	if amount <= 0:

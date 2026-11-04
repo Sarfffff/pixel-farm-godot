@@ -65,7 +65,10 @@ func _run() -> void:
 	# 时间流速：三档映射、写盘重读、与 TimeSystem 联动
 	_original_time_speed = int(settings.time_speed)
 	settings.set_time_speed(0)
-	_check(is_equal_approx(float(settings.minutes_per_second()), 1.5), "slow speed maps to 1.5 min/s")
+	_check(
+		is_equal_approx(float(settings.minutes_per_second()), 10.0 / 7.0),
+		"stardew speed maps to 10 min per 7 seconds"
+	)
 	settings.set_time_speed(2)
 	_check(is_equal_approx(float(settings.minutes_per_second()), 4.0), "fast speed maps to 4 min/s")
 	settings.set_time_speed(1)

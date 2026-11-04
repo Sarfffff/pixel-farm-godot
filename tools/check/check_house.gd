@@ -76,7 +76,12 @@ func _run() -> void:
 		_finish()
 		return
 
-	_check(player.get_parent() == interior, "player reparented into the interior")
+	# 玩家要进 Y 排序层，否则会被地毯、椅子盖住
+	var props := interior.get_node_or_null("Props") as Node2D
+	_check(
+		props != null and player.get_parent() == props,
+		"player reparented into the sorted props layer"
+	)
 	var spawn := interior.get_node_or_null("Spawn") as Node2D
 	_check(spawn != null, "interior has a spawn marker")
 	if spawn != null:
@@ -213,6 +218,29 @@ func _run() -> void:
 		tint != null and not tint.color.is_equal_approx(Color(0.97, 0.93, 0.85)),
 		"outdoor tint comes back after leaving"
 	)
+
+	# —— 换栋建筑：商店门进的是另一套室内，农舍那间保持隐藏 ——
+	var shop_door := main.get_node_or_null("Farm/World/ShopDoor") as Node2D
+	_check(shop_door != null, "shop door exists on the farm")
+	if shop_door != null:
+		player.global_position = shop_door.global_position + Vector2(0, 10)
+		shop_door.call("interact", Vector2i.ZERO)
+		await create_timer(DOOR_WAIT).timeout
+		var shop_room := main.get_node_or_null("ShopInterior") as Node2D
+		_check(shop_room != null, "shop door creates its own interior")
+		_check(shop_room != null and shop_room.visible, "shop interior visible")
+		_check(shop_room != null and shop_room != interior, "shop is a different room from the house")
+		_check(not interior.visible, "house interior stays hidden while in the shop")
+		_check(
+			shop_room == null or player.get_parent() == shop_room.get_node_or_null("Props"),
+			"player lands in the shop's props layer"
+		)
+		var shop_exit := shop_room.get_node_or_null("ExitDoor") as Node2D
+		if shop_exit != null:
+			player.global_position = shop_exit.global_position + Vector2(0, -6)
+			shop_exit.call("interact", Vector2i.ZERO)
+			await create_timer(DOOR_WAIT).timeout
+		_check(not bool(house.call("is_inside")), "exiting the shop works too")
 
 	main.queue_free()
 	await process_frame

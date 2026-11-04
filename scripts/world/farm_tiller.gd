@@ -340,9 +340,9 @@ func _has_prop_overlay(cell: Vector2i) -> bool:
 		# 作物生长在耕地上方，不属于阻挡开垦的道具。
 		if sprite == null or sprite is Crop or sprite.get_meta(&"felled", false):
 			continue
-		# 会走动的 NPC 只是路过，站过来一会儿就会走开，不该把这块地永久锁死；
-		# 判断依据用交互接口而不是属性名，改名或换脚本都不会失效。
-		if sprite.has_method(&"player_in_range"):
+		# 会走动的角色（NPC），站过来一会儿就会走开，不该把这块地永久锁死。
+		# 双重判断：组名 + 交互接口，任一命中就跳过，改脚本或改名都不会漏。
+		if sprite.is_in_group(&"world_actor") or sprite.has_method(&"player_in_range"):
 			continue
 		if _sprite_rect(sprite).intersects(cell_rect):
 			return true

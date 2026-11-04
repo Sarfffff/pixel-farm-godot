@@ -16,12 +16,12 @@ const SECTION_DISPLAY: String = "display"
 const SECTION_GAME: String = "game"
 
 ## 时间流速：每现实秒推进多少游戏分钟。06:00→02:00 共 1200 分钟。
-##   1.5 → 一天约 13 分钟（接近星露谷的节奏）
-##   2.0 → 一天约 10 分钟（默认）
-##   4.0 → 一天约 5 分钟（旧行为）
-const TIME_SPEEDS: Array[float] = [1.5, 2.0, 4.0]
-const TIME_SPEED_NAMES: Array[String] = ["慢", "标准", "快"]
-const DEFAULT_TIME_SPEED: int = 1
+##   1.43（10 分钟 / 7 秒）→ 星露谷节奏，一天约 14 分钟（默认）
+##   2.0 → 一天约 10 分钟
+##   4.0 → 一天约 5 分钟
+const TIME_SPEEDS: Array[float] = [10.0 / 7.0, 2.0, 4.0]
+const TIME_SPEED_NAMES: Array[String] = ["星露谷", "标准", "快"]
+const DEFAULT_TIME_SPEED: int = 0
 ## 窗口标题。项目名保持 `My_ai_Game`（改了会换掉 user:// 目录，老存档直接失联），
 ## 正式名称只在窗口标题和导出产品名上体现。
 const PRODUCT_TITLE: String = "Pixel Farm · 像素农场"

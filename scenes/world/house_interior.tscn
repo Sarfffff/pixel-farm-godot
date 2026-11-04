@@ -98,363 +98,363 @@ size = Vector2(16, 240)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcen8"]
 size = Vector2(432, 16)
 
-[node name="HouseInterior" type="Node2D" unique_id=1339593692]
+[node name="HouseInterior" type="Node2D" unique_id=1057968617]
 script = ExtResource("1_y5efi")
 
-[node name="Floor" type="TileMapLayer" parent="." unique_id=1832026481]
+[node name="Floor" type="TileMapLayer" parent="." unique_id=341547259]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAXAAMAAAAAAAAAAAAYAAMAAAAAAAAAAAAZAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAQAAAAAAAAAAAASAAQAAAAAAAAAAAATAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAVAAQAAAAAAAAAAAAWAAQAAAAAAAAAAAAXAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAZAAQAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAVAAUAAAAAAAAAAAAWAAUAAAAAAAAAAAAXAAUAAAAAAAAAAAAYAAUAAAAAAAAAAAAZAAUAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAYAAAAAAAAAAAASAAYAAAAAAAAAAAATAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAXAAYAAAAAAAAAAAAYAAYAAAAAAAAAAAAZAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAAAAAAAAAAUAAcAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAATAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAVAAgAAAAAAAAAAAAWAAgAAAAAAAAAAAAXAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAZAAgAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAYAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAASAAoAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAVAAoAAAAAAAAAAAAWAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAYAAoAAAAAAAAAAAAZAAoAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAZAAsAAAAAAAAAAAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAALAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAwAAAAAAAAAAAASAAwAAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAZAAwAAAAAAAAAAAABAA0AAAAAAAAAAAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAXAA0AAAAAAAAAAAAYAA0AAAAAAAAAAAAZAA0AAAAAAAAAAAABAA4AAAAAAAAAAAACAA4AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAALAA4AAAAAAAAAAAAMAA4AAAAAAAAAAAANAA4AAAAAAAAAAAAOAA4AAAAAAAAAAAAPAA4AAAAAAAAAAAAQAA4AAAAAAAAAAAARAA4AAAAAAAAAAAASAA4AAAAAAAAAAAATAA4AAAAAAAAAAAAUAA4AAAAAAAAAAAAVAA4AAAAAAAAAAAAWAA4AAAAAAAAAAAAXAA4AAAAAAAAAAAAYAA4AAAAAAAAAAAAZAA4AAAAAAAAAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAAZAA8AAAAAAAAAAAABABAAAAAAAAAAAAACABAAAAAAAAAAAAADABAAAAAAAAAAAAAEABAAAAAAAAAAAAAFABAAAAAAAAAAAAAGABAAAAAAAAAAAAAHABAAAAAAAAAAAAAIABAAAAAAAAAAAAAJABAAAAAAAAAAAAAKABAAAAAAAAAAAAALABAAAAAAAAAAAAAMABAAAAAAAAAAAAANABAAAAAAAAAAAAAOABAAAAAAAAAAAAAPABAAAAAAAAAAAAAQABAAAAAAAAAAAAARABAAAAAAAAAAAAASABAAAAAAAAAAAAATABAAAAAAAAAAAAAUABAAAAAAAAAAAAAVABAAAAAAAAAAAAAWABAAAAAAAAAAAAAXABAAAAAAAAAAAAAYABAAAAAAAAAAAAAZABAAAAAAAAAAAAABABEAAAAAAAAAAAACABEAAAAAAAAAAAADABEAAAAAAAAAAAAEABEAAAAAAAAAAAAFABEAAAAAAAAAAAAGABEAAAAAAAAAAAAHABEAAAAAAAAAAAAIABEAAAAAAAAAAAAJABEAAAAAAAAAAAAKABEAAAAAAAAAAAALABEAAAAAAAAAAAAMABEAAAAAAAAAAAANABEAAAAAAAAAAAAOABEAAAAAAAAAAAAPABEAAAAAAAAAAAAQABEAAAAAAAAAAAARABEAAAAAAAAAAAASABEAAAAAAAAAAAATABEAAAAAAAAAAAAUABEAAAAAAAAAAAAVABEAAAAAAAAAAAAWABEAAAAAAAAAAAAXABEAAAAAAAAAAAAYABEAAAAAAAAAAAAZABEAAAAAAAAAAAA=")
 tile_set = ExtResource("2_qrfs7")
 
-[node name="Walls" type="TileMapLayer" parent="." unique_id=1404370260]
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1731706788]
 z_index = 1
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAwAAAAAAAAABAAAAAgAAAAAAAAABAAEAAQAAAAAAAAABAAIAAwAAAAAAAAACAAAAAgAAAAAAAAACAAEAAQAAAAAAAAACAAIAAwAAAAAAAAADAAAAAgAAAAAAAAADAAEAAQAAAAAAAAADAAIAAwAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAwAAAAAAAAAFAAAAAgAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAwAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAwAAAAAAAAAHAAAAAgAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAwAAAAAAAAAIAAAAAgAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAwAAAAAAAAAJAAAAAgAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAwAAAAAAAAAKAAAAAgAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAwAAAAAAAAALAAAAAgAAAAAAAAALAAEAAQAAAAAAAAALAAIAAwAAAAAAAAAMAAAAAgAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAwAAAAAAAAANAAAAAgAAAAAAAAANAAEAAQAAAAAAAAANAAIAAwAAAAAAAAAOAAAAAgAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAwAAAAAAAAAPAAAAAgAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAwAAAAAAAAAQAAAAAgAAAAAAAAAQAAEAAQAAAAAAAAAQAAIAAwAAAAAAAAARAAAAAgAAAAAAAAARAAEAAQAAAAAAAAARAAIAAwAAAAAAAAASAAAAAgAAAAAAAAASAAEAAQAAAAAAAAASAAIAAwAAAAAAAAATAAAAAgAAAAAAAAATAAEAAQAAAAAAAAATAAIAAwAAAAAAAAAUAAAAAgAAAAAAAAAUAAEAAQAAAAAAAAAUAAIAAwAAAAAAAAAVAAAAAgAAAAAAAAAVAAEAAQAAAAAAAAAVAAIAAwAAAAAAAAAWAAAAAgAAAAAAAAAWAAEAAQAAAAAAAAAWAAIAAwAAAAAAAAAXAAAAAgAAAAAAAAAXAAEAAQAAAAAAAAAXAAIAAwAAAAAAAAAYAAAAAgAAAAAAAAAYAAEAAQAAAAAAAAAYAAIAAwAAAAAAAAAZAAAAAgAAAAAAAAAZAAEAAQAAAAAAAAAZAAIAAwAAAAAAAAAaAAAAAgAAAAAAAAAaAAEAAQAAAAAAAAAaAAIAAwAAAAAAAAAAAAMAAgAAAAAAAAAaAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAaAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAaAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAaAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAAaAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAAaAAgAAgAAAAAAAAAAAAkAAgAAAAAAAAAaAAkAAgAAAAAAAAAAAAoAAgAAAAAAAAAaAAoAAgAAAAAAAAAAAAsAAgAAAAAAAAAaAAsAAgAAAAAAAAAAAAwAAgAAAAAAAAAaAAwAAgAAAAAAAAAAAA0AAgAAAAAAAAAaAA0AAgAAAAAAAAAAAA4AAgAAAAAAAAAaAA4AAgAAAAAAAAAAAA8AAgAAAAAAAAAaAA8AAgAAAAAAAAAAABAAAgAAAAAAAAAaABAAAgAAAAAAAAAAABEAAgAAAAAAAAAaABEAAgAAAAAAAAAAABIAAgAAAAAAAAABABIAAgAAAAAAAAACABIAAgAAAAAAAAADABIAAgAAAAAAAAAEABIAAgAAAAAAAAAFABIAAgAAAAAAAAAGABIAAgAAAAAAAAAHABIAAgAAAAAAAAAIABIAAgAAAAAAAAAJABIAAgAAAAAAAAAKABIAAgAAAAAAAAALABIAAgAAAAAAAAAMABIAAgAAAAAAAAANABIAAgAAAAAAAAAOABIAAgAAAAAAAAAPABIAAgAAAAAAAAAQABIAAgAAAAAAAAARABIAAgAAAAAAAAASABIAAgAAAAAAAAATABIAAgAAAAAAAAAUABIAAgAAAAAAAAAVABIAAgAAAAAAAAAWABIAAgAAAAAAAAAXABIAAgAAAAAAAAAYABIAAgAAAAAAAAAZABIAAgAAAAAAAAAaABIAAgAAAAAAAAAAABMAAgAAAAAAAAABABMAAgAAAAAAAAACABMAAgAAAAAAAAADABMAAgAAAAAAAAAEABMAAgAAAAAAAAAFABMAAgAAAAAAAAAGABMAAgAAAAAAAAAHABMAAgAAAAAAAAAIABMAAgAAAAAAAAAJABMAAgAAAAAAAAAKABMAAgAAAAAAAAALABMAAgAAAAAAAAAMABMAAgAAAAAAAAANABMAAgAAAAAAAAAOABMAAgAAAAAAAAAPABMAAgAAAAAAAAAQABMAAgAAAAAAAAARABMAAgAAAAAAAAASABMAAgAAAAAAAAATABMAAgAAAAAAAAAUABMAAgAAAAAAAAAVABMAAgAAAAAAAAAWABMAAgAAAAAAAAAXABMAAgAAAAAAAAAYABMAAgAAAAAAAAAZABMAAgAAAAAAAAAaABMAAgAAAAAAAAAAABQAAgAAAAAAAAABABQAAgAAAAAAAAACABQAAgAAAAAAAAADABQAAgAAAAAAAAAEABQAAgAAAAAAAAAFABQAAgAAAAAAAAAGABQAAgAAAAAAAAAHABQAAgAAAAAAAAAIABQAAgAAAAAAAAAJABQAAgAAAAAAAAAKABQAAgAAAAAAAAALABQAAgAAAAAAAAAMABQAAgAAAAAAAAANABQAAgAAAAAAAAAOABQAAgAAAAAAAAAPABQAAgAAAAAAAAAQABQAAgAAAAAAAAARABQAAgAAAAAAAAASABQAAgAAAAAAAAATABQAAgAAAAAAAAAUABQAAgAAAAAAAAAVABQAAgAAAAAAAAAWABQAAgAAAAAAAAAXABQAAgAAAAAAAAAYABQAAgAAAAAAAAAZABQAAgAAAAAAAAAaABQAAgAAAAAAAAAAABUAAgAAAAAAAAABABUAAgAAAAAAAAACABUAAgAAAAAAAAADABUAAgAAAAAAAAAEABUAAgAAAAAAAAAFABUAAgAAAAAAAAAGABUAAgAAAAAAAAAHABUAAgAAAAAAAAAIABUAAgAAAAAAAAAJABUAAgAAAAAAAAAKABUAAgAAAAAAAAALABUAAgAAAAAAAAAMABUAAgAAAAAAAAANABUAAgAAAAAAAAAOABUAAgAAAAAAAAAPABUAAgAAAAAAAAAQABUAAgAAAAAAAAARABUAAgAAAAAAAAASABUAAgAAAAAAAAATABUAAgAAAAAAAAAUABUAAgAAAAAAAAAVABUAAgAAAAAAAAAWABUAAgAAAAAAAAAXABUAAgAAAAAAAAAYABUAAgAAAAAAAAAZABUAAgAAAAAAAAAaABUAAgAAAAAAAAA=")
 tile_set = ExtResource("2_qrfs7")
 
-[node name="FloorProps" type="Node2D" parent="." unique_id=871050634]
+[node name="FloorProps" type="Node2D" parent="." unique_id=1077649794]
 z_index = 2
 
-[node name="SquareRug" type="Sprite2D" parent="FloorProps" unique_id=1077468826]
+[node name="SquareRug" type="Sprite2D" parent="FloorProps" unique_id=1750066406]
 texture_filter = 1
 position = Vector2(96, 200)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_f36ke")
 
-[node name="OvalRug" type="Sprite2D" parent="FloorProps" unique_id=972262686]
+[node name="OvalRug" type="Sprite2D" parent="FloorProps" unique_id=1817806734]
 texture_filter = 1
 position = Vector2(112, 248)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_1htem")
 
-[node name="@Sprite2D@2" type="Sprite2D" parent="FloorProps" unique_id=2061693277]
+[node name="@Sprite2D@2" type="Sprite2D" parent="FloorProps" unique_id=1660349173]
 texture_filter = 1
 position = Vector2(240, 206)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_f36ke")
 
-[node name="DoorMat" type="Sprite2D" parent="FloorProps" unique_id=636672395]
+[node name="DoorMat" type="Sprite2D" parent="FloorProps" unique_id=1120423650]
 texture_filter = 1
 position = Vector2(208, 272)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_ksev0")
 
-[node name="Props" type="Node2D" parent="." unique_id=8926639]
+[node name="Props" type="Node2D" parent="." unique_id=1123926140]
 z_index = 5
 y_sort_enabled = true
 
-[node name="SingleBed" type="Sprite2D" parent="Props" unique_id=50913527]
+[node name="SingleBed" type="Sprite2D" parent="Props" unique_id=44799499]
 texture_filter = 1
 position = Vector2(56, 96)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_okhai")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/SingleBed" unique_id=1402906158]
+[node name="Body" type="StaticBody2D" parent="Props/SingleBed" unique_id=935936013]
 collision_mask = 0
 
-[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Props/SingleBed/Body" unique_id=1513442967]
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Props/SingleBed/Body" unique_id=1717694570]
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_lu4mv")
 
-[node name="BedsideTable" type="Sprite2D" parent="Props" unique_id=917194118]
+[node name="BedsideTable" type="Sprite2D" parent="Props" unique_id=1062351666]
 texture_filter = 1
 position = Vector2(88, 96)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_i6170")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/BedsideTable" unique_id=618752291]
+[node name="Body" type="StaticBody2D" parent="Props/BedsideTable" unique_id=511096070]
 collision_mask = 0
 
-[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Props/BedsideTable/Body" unique_id=763032603]
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Props/BedsideTable/Body" unique_id=1502334340]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_pfd7g")
 
-[node name="Wardrobe" type="Sprite2D" parent="Props" unique_id=1990370403]
+[node name="Wardrobe" type="Sprite2D" parent="Props" unique_id=611490241]
 texture_filter = 1
 position = Vector2(392, 96)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_4kaha")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Wardrobe" unique_id=555079827]
+[node name="Body" type="StaticBody2D" parent="Props/Wardrobe" unique_id=92097328]
 collision_mask = 0
 
-[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Props/Wardrobe/Body" unique_id=3210461]
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Props/Wardrobe/Body" unique_id=1095379723]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_fk35e")
 
-[node name="PottedFern" type="Sprite2D" parent="Props" unique_id=867271621]
+[node name="PottedFern" type="Sprite2D" parent="Props" unique_id=36811672]
 texture_filter = 1
 position = Vector2(40, 176)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_r4few")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/PottedFern" unique_id=1619120861]
+[node name="Body" type="StaticBody2D" parent="Props/PottedFern" unique_id=923801230]
 collision_mask = 0
 
-[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Props/PottedFern/Body" unique_id=252156871]
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Props/PottedFern/Body" unique_id=1464827369]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_uad3v")
 
-[node name="Armchair" type="Sprite2D" parent="Props" unique_id=1751450168]
+[node name="Armchair" type="Sprite2D" parent="Props" unique_id=875352098]
 texture_filter = 1
 position = Vector2(112, 232)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_lhqwb")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Armchair" unique_id=647575377]
+[node name="Body" type="StaticBody2D" parent="Props/Armchair" unique_id=1365498708]
 collision_mask = 0
 
-[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Props/Armchair/Body" unique_id=978957537]
+[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Props/Armchair/Body" unique_id=530684073]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_4pxwo")
 
-[node name="BrickFireplace" type="Sprite2D" parent="Props" unique_id=1302562468]
+[node name="BrickFireplace" type="Sprite2D" parent="Props" unique_id=364648930]
 texture_filter = 1
 position = Vector2(256, 72)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("11_8t0xm")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/BrickFireplace" unique_id=616291095]
+[node name="Body" type="StaticBody2D" parent="Props/BrickFireplace" unique_id=1166023160]
 collision_mask = 0
 
-[node name="@CollisionShape2D@8" type="CollisionShape2D" parent="Props/BrickFireplace/Body" unique_id=553741124]
+[node name="@CollisionShape2D@8" type="CollisionShape2D" parent="Props/BrickFireplace/Body" unique_id=1648050308]
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_sr3pu")
 
-[node name="Bookcase" type="Sprite2D" parent="Props" unique_id=1072103522]
+[node name="Bookcase" type="Sprite2D" parent="Props" unique_id=810574945]
 texture_filter = 1
 position = Vector2(352, 72)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("12_ctw3x")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Bookcase" unique_id=1685716341]
+[node name="Body" type="StaticBody2D" parent="Props/Bookcase" unique_id=1736223494]
 collision_mask = 0
 
-[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="Props/Bookcase/Body" unique_id=864737608]
+[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="Props/Bookcase/Body" unique_id=1563882018]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_gj8xi")
 
-[node name="FloorLamp" type="Sprite2D" parent="Props" unique_id=1144373981]
+[node name="FloorLamp" type="Sprite2D" parent="Props" unique_id=58028081]
 texture_filter = 1
 position = Vector2(312, 84)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("13_3eww1")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/FloorLamp" unique_id=172025703]
+[node name="Body" type="StaticBody2D" parent="Props/FloorLamp" unique_id=205854907]
 collision_mask = 0
 
-[node name="@CollisionShape2D@10" type="CollisionShape2D" parent="Props/FloorLamp/Body" unique_id=1616428557]
+[node name="@CollisionShape2D@10" type="CollisionShape2D" parent="Props/FloorLamp/Body" unique_id=1953882521]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_b65ap")
 
-[node name="RockingChair" type="Sprite2D" parent="Props" unique_id=832447960]
+[node name="RockingChair" type="Sprite2D" parent="Props" unique_id=993238760]
 texture_filter = 1
 position = Vector2(150, 150)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("14_hdtlq")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/RockingChair" unique_id=695815272]
+[node name="Body" type="StaticBody2D" parent="Props/RockingChair" unique_id=83282143]
 collision_mask = 0
 
-[node name="@CollisionShape2D@11" type="CollisionShape2D" parent="Props/RockingChair/Body" unique_id=799960153]
+[node name="@CollisionShape2D@11" type="CollisionShape2D" parent="Props/RockingChair/Body" unique_id=1696115429]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_ny125")
 
-[node name="WoodStool" type="Sprite2D" parent="Props" unique_id=1277576882]
+[node name="WoodStool" type="Sprite2D" parent="Props" unique_id=1648225533]
 texture_filter = 1
 position = Vector2(108, 150)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("15_ba4qk")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/WoodStool" unique_id=864523287]
+[node name="Body" type="StaticBody2D" parent="Props/WoodStool" unique_id=1308403383]
 collision_mask = 0
 
-[node name="@CollisionShape2D@12" type="CollisionShape2D" parent="Props/WoodStool/Body" unique_id=1600518420]
+[node name="@CollisionShape2D@12" type="CollisionShape2D" parent="Props/WoodStool/Body" unique_id=1952128248]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_ljdw1")
 
-[node name="CoffeeTable" type="Sprite2D" parent="Props" unique_id=2112051666]
+[node name="CoffeeTable" type="Sprite2D" parent="Props" unique_id=1301705911]
 texture_filter = 1
 position = Vector2(192, 168)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("16_nqihw")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/CoffeeTable" unique_id=1973224599]
+[node name="Body" type="StaticBody2D" parent="Props/CoffeeTable" unique_id=31429541]
 collision_mask = 0
 
-[node name="@CollisionShape2D@13" type="CollisionShape2D" parent="Props/CoffeeTable/Body" unique_id=2029455154]
+[node name="@CollisionShape2D@13" type="CollisionShape2D" parent="Props/CoffeeTable/Body" unique_id=1558808304]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_rkefd")
 
-[node name="WallClock" type="Sprite2D" parent="Props" unique_id=1976975232]
+[node name="WallClock" type="Sprite2D" parent="Props" unique_id=181657022]
 texture_filter = 1
 position = Vector2(330, 56)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("17_gmbpa")
 offset = Vector2(0, -16)
 
-[node name="DiningTable" type="Sprite2D" parent="Props" unique_id=1861656580]
+[node name="DiningTable" type="Sprite2D" parent="Props" unique_id=377492347]
 texture_filter = 1
 position = Vector2(240, 214)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("18_1j5ry")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/DiningTable" unique_id=1327422334]
+[node name="Body" type="StaticBody2D" parent="Props/DiningTable" unique_id=91846294]
 collision_mask = 0
 
-[node name="@CollisionShape2D@14" type="CollisionShape2D" parent="Props/DiningTable/Body" unique_id=1455968751]
+[node name="@CollisionShape2D@14" type="CollisionShape2D" parent="Props/DiningTable/Body" unique_id=1888626918]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_tu0ff")
 
-[node name="OakChair" type="Sprite2D" parent="Props" unique_id=1854554439]
+[node name="OakChair" type="Sprite2D" parent="Props" unique_id=323057636]
 texture_filter = 1
 position = Vector2(212, 212)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_di7t6")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/OakChair" unique_id=1042925136]
+[node name="Body" type="StaticBody2D" parent="Props/OakChair" unique_id=1452535284]
 collision_mask = 0
 
-[node name="@CollisionShape2D@15" type="CollisionShape2D" parent="Props/OakChair/Body" unique_id=694889519]
+[node name="@CollisionShape2D@15" type="CollisionShape2D" parent="Props/OakChair/Body" unique_id=1931247719]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_gewdd")
 
-[node name="@Sprite2D@16" type="Sprite2D" parent="Props" unique_id=1682718767]
+[node name="@Sprite2D@16" type="Sprite2D" parent="Props" unique_id=309832909]
 texture_filter = 1
 position = Vector2(268, 212)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_di7t6")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/@Sprite2D@16" unique_id=1013619350]
+[node name="Body" type="StaticBody2D" parent="Props/@Sprite2D@16" unique_id=1402857290]
 collision_mask = 0
 
-[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Props/@Sprite2D@16/Body" unique_id=2051430269]
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Props/@Sprite2D@16/Body" unique_id=1626189303]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_r4t6d")
 
-[node name="Refrigerator" type="Sprite2D" parent="Props" unique_id=2132861604]
+[node name="Refrigerator" type="Sprite2D" parent="Props" unique_id=909027617]
 texture_filter = 1
 position = Vector2(384, 236)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("20_hacdk")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Refrigerator" unique_id=904394713]
+[node name="Body" type="StaticBody2D" parent="Props/Refrigerator" unique_id=1059812508]
 collision_mask = 0
 
-[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Props/Refrigerator/Body" unique_id=2062354293]
+[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Props/Refrigerator/Body" unique_id=1019909400]
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_q88ny")
 
-[node name="Cupboard" type="Sprite2D" parent="Props" unique_id=1588634754]
+[node name="Cupboard" type="Sprite2D" parent="Props" unique_id=603936000]
 texture_filter = 1
 position = Vector2(344, 214)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("21_lmc61")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Cupboard" unique_id=639095339]
+[node name="Body" type="StaticBody2D" parent="Props/Cupboard" unique_id=930059080]
 collision_mask = 0
 
-[node name="@CollisionShape2D@19" type="CollisionShape2D" parent="Props/Cupboard/Body" unique_id=978705708]
+[node name="@CollisionShape2D@19" type="CollisionShape2D" parent="Props/Cupboard/Body" unique_id=1399618139]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_lahxg")
 
-[node name="KitchenTable" type="Sprite2D" parent="Props" unique_id=1618443435]
+[node name="KitchenTable" type="Sprite2D" parent="Props" unique_id=500945025]
 texture_filter = 1
 position = Vector2(312, 252)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("22_p7a2w")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/KitchenTable" unique_id=1435233112]
+[node name="Body" type="StaticBody2D" parent="Props/KitchenTable" unique_id=1391751565]
 collision_mask = 0
 
-[node name="@CollisionShape2D@20" type="CollisionShape2D" parent="Props/KitchenTable/Body" unique_id=402966069]
+[node name="@CollisionShape2D@20" type="CollisionShape2D" parent="Props/KitchenTable/Body" unique_id=354411843]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_p3rfl")
 
-[node name="Basket" type="Sprite2D" parent="Props" unique_id=1576583654]
+[node name="Basket" type="Sprite2D" parent="Props" unique_id=735011696]
 texture_filter = 1
 position = Vector2(392, 268)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("23_4om3x")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/Basket" unique_id=1756336943]
+[node name="Body" type="StaticBody2D" parent="Props/Basket" unique_id=1018105875]
 collision_mask = 0
 
-[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="Props/Basket/Body" unique_id=132126269]
+[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="Props/Basket/Body" unique_id=1647080573]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_77ui3")
 
-[node name="WoodChest" type="Sprite2D" parent="Props" unique_id=221923624]
+[node name="WoodChest" type="Sprite2D" parent="Props" unique_id=1481630205]
 texture_filter = 1
 position = Vector2(152, 262)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("24_kxtiw")
 offset = Vector2(0, -16)
 
-[node name="Body" type="StaticBody2D" parent="Props/WoodChest" unique_id=1635866661]
+[node name="Body" type="StaticBody2D" parent="Props/WoodChest" unique_id=1540625775]
 collision_mask = 0
 
-[node name="@CollisionShape2D@22" type="CollisionShape2D" parent="Props/WoodChest/Body" unique_id=1023195776]
+[node name="@CollisionShape2D@22" type="CollisionShape2D" parent="Props/WoodChest/Body" unique_id=1161830689]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_sihop")
 
-[node name="WallBody" type="StaticBody2D" parent="." unique_id=834111656]
+[node name="WallBody" type="StaticBody2D" parent="." unique_id=141620913]
 collision_mask = 0
 
-[node name="Wall0" type="CollisionShape2D" parent="WallBody" unique_id=298604024]
+[node name="Wall0" type="CollisionShape2D" parent="WallBody" unique_id=1021445990]
 position = Vector2(216, 24)
 shape = SubResource("RectangleShape2D_ox10y")
 
-[node name="Wall1" type="CollisionShape2D" parent="WallBody" unique_id=1042603922]
+[node name="Wall1" type="CollisionShape2D" parent="WallBody" unique_id=1308500243]
 position = Vector2(8, 168)
 shape = SubResource("RectangleShape2D_r5ono")
 
-[node name="Wall2" type="CollisionShape2D" parent="WallBody" unique_id=1639782578]
+[node name="Wall2" type="CollisionShape2D" parent="WallBody" unique_id=1516019265]
 position = Vector2(424, 168)
 shape = SubResource("RectangleShape2D_47eyf")
 
-[node name="Wall3" type="CollisionShape2D" parent="WallBody" unique_id=210086131]
+[node name="Wall3" type="CollisionShape2D" parent="WallBody" unique_id=825735240]
 position = Vector2(216, 296)
 shape = SubResource("RectangleShape2D_mcen8")
 
-[node name="ExitDoor" type="Node2D" parent="." unique_id=481861477]
+[node name="ExitDoor" type="Node2D" parent="." unique_id=1267600126]
 position = Vector2(216, 296)
 script = ExtResource("25_snipw")
 mode = "exit"
 
-[node name="Art" type="Sprite2D" parent="ExitDoor" unique_id=105707064]
+[node name="Art" type="Sprite2D" parent="ExitDoor" unique_id=575430269]
 z_index = 2
 texture_filter = 1
 texture = ExtResource("26_dukyb")
 
-[node name="BedSpot" type="Node2D" parent="." unique_id=35345774]
+[node name="BedSpot" type="Node2D" parent="." unique_id=1614455824]
 position = Vector2(56, 106)
 script = ExtResource("27_jq6s7")
 
-[node name="WakeSpot" type="Marker2D" parent="." unique_id=1916293922]
+[node name="WakeSpot" type="Marker2D" parent="." unique_id=1309984206]
 position = Vector2(80, 114)
 
-[node name="Chest" type="Node2D" parent="." unique_id=1773747195]
+[node name="Chest" type="Node2D" parent="." unique_id=276107543]
 position = Vector2(152, 254)
 script = ExtResource("28_dyxia")
 
-[node name="Spawn" type="Marker2D" parent="." unique_id=1510227317]
+[node name="Spawn" type="Marker2D" parent="." unique_id=1008308799]
 position = Vector2(216, 264)
