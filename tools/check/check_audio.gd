@@ -39,11 +39,20 @@ func _run() -> void:
 		_check(stream.loop_end >= int(round(length * float(stream.mix_rate))) - 1,
 			"%s loops whole track (%d)" % [key, stream.loop_end])
 
-	# 2. 两个播放器，暂停时也继续放
-	_check(mgr.get_child_count() == 2, "two players for crossfade")
+	# 2. 两个音乐播放器 + 一组音效播放器，暂停时都继续放
+	var music_players: int = 0
+	var sfx_players: int = 0
 	for child in mgr.get_children():
-		_check((child as AudioStreamPlayer).process_mode == Node.PROCESS_MODE_ALWAYS,
-			"player runs while paused")
+		var player := child as AudioStreamPlayer
+		if player == null:
+			continue
+		if String(player.name).begins_with("Music"):
+			music_players += 1
+		elif String(player.name).begins_with("Sfx"):
+			sfx_players += 1
+		_check(player.process_mode == Node.PROCESS_MODE_ALWAYS, "player runs while paused")
+	_check(music_players == 2, "two players for crossfade")
+	_check(sfx_players >= 4, "sfx pool exists")
 
 	# 3. 播放与切换
 	mgr.play_music(&"farm_day", 0.0)
@@ -100,7 +109,36 @@ func _run() -> void:
 	_check(mgr.current_track == &"menu", "title screen plays menu track")
 	menu.queue_free()
 
-	# 8. 停止
+	# 8. 操作音效：都能加载、不循环、能播、不打断音乐
+	var sfx_names: Dictionary = load("res://scripts/systems/audio_manager.gd").get_script_constant_map()["SFX"]
+	_check(sfx_names.size() >= 8, "sfx registered (%d)" % sfx_names.size())
+	for key in sfx_names:
+		var sfx: AudioStreamWAV = load(str(sfx_names[key])) as AudioStreamWAV
+		_check(sfx != null, "sfx loads: %s" % key)
+		if sfx == null:
+			continue
+		var sfx_length: float = sfx.get_length()
+		_check(sfx_length > 0.04 and sfx_length < 1.2, "%s sfx length sane (%.2fs)" % [key, sfx_length])
+		_check(sfx.loop_mode == AudioStreamWAV.LOOP_DISABLED, "%s sfx does not loop" % key)
+
+	mgr.play_sfx(&"hoe")
+	await process_frame
+	var playing_sfx: int = 0
+	for child in mgr.get_children():
+		var player := child as AudioStreamPlayer
+		if player != null and String(player.name).begins_with("Sfx") and player.playing:
+			playing_sfx += 1
+	_check(playing_sfx >= 1, "sfx actually plays")
+	_check(mgr.current_track == &"menu", "sfx does not disturb the music")
+	mgr.play_sfx(&"nope")
+	_check(mgr.current_track == &"menu", "unknown sfx is ignored")
+	mgr.set_sfx_enabled(false)
+	mgr.play_sfx(&"coin")
+	_check(not mgr.is_sfx_enabled(), "sfx can be muted")
+	mgr.set_sfx_enabled(true)
+	_check(mgr.is_sfx_enabled(), "sfx can be turned back on")
+
+	# 9. 停止
 	mgr.stop_music(0.0)
 	await process_frame
 	_check(not mgr.is_music_playing(), "stop_music silences")
@@ -108,12 +146,17 @@ func _run() -> void:
 	_finish(main)
 
 
+## 只看音乐播放器的音量，音效池在响也不影响判断。
 func _active_volume(mgr: Node) -> float:
-	var players: Array = mgr.get_children()
-	for child in players:
-		if (child as AudioStreamPlayer).playing:
-			return (child as AudioStreamPlayer).volume_db
-	return (players[0] as AudioStreamPlayer).volume_db
+	var music: Array[AudioStreamPlayer] = []
+	for child in mgr.get_children():
+		var player := child as AudioStreamPlayer
+		if player != null and String(player.name).begins_with("Music"):
+			music.append(player)
+	for player in music:
+		if player.playing:
+			return player.volume_db
+	return music[0].volume_db if not music.is_empty() else 0.0
 
 
 func _finish(main: Node = null) -> void:

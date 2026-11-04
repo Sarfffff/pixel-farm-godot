@@ -9,7 +9,7 @@ Godot 4.7 小游戏项目（`My_ai_Game`），通过 **Godot AI** 插件（`addo
 | `project.godot` | 引擎配置（Forward+、Jolt Physics、Windows D3D12、320×180 视口 + canvas_items 拉伸、Nearest 过滤） |
 | `scenes/main.tscn` | 入口场景：`Farm` + `Player` + 跟随相机 |
 | `scenes/world/farm.tscn` | 40×30 农场地图：Ground/Water/Overlay/Detail 四层 TileMapLayer + WaterCollision 水碰撞 + World(y_sort) 道具容器 + Bounds 边界墙 |
-| `scenes/world/props/` | 可复用道具场景（小屋、树、灌木、石头、蘑菇、原木），贴图取区见 `docs/02` 素材坐标备忘 |
+| `scenes/world/props/` | 可复用道具场景（小屋、树、灌木、石头、蘑菇、原木），贴图取区见 `docs/01-开发流程与路线图.md` 的素材坐标备忘 |
 | `scenes/player/` | 玩家场景 + `player_frames.tres`（8 个方向动画） |
 | `scripts/player/player.gd` | 四向移动、朝向记忆、动画切换 |
 | `scripts/world/camera_follow.gd` | 相机平滑跟随 + 地图边界限制 |
@@ -59,7 +59,7 @@ Godot 4.7 小游戏项目（`My_ai_Game`），通过 **Godot AI** 插件（`addo
 | `tools/check/` | `smoke_check.gd` 自检、`check_inventory.gd` 背包、`check_crops.gd` 作物、`check_shop.gd` 商店、`check_animals.gd` 鸡与蛋、`check_npcs.gd` NPC、`check_audio.gd` 背景音乐、`check_farm_*.gd` 耕地与地形回归 |
 | `tools/art/` | 素材整理脚本（角色动作、作物、物品、地形岸线、背包 UI 九宫格、预览页） |
 | `tools/lib/` | 地图脚本共用的格子数据（`farm_landscape.gd`、`terrain_tiles.gd`） |
-| `docs/` | 流程、路线图、参考项目对照文档 |
+| `docs/` | 三份整合文档：`01-开发流程与路线图.md`、`02-系统设计.md`、`03-素材与资产.md`（`screenshots/` 只作工具输出目录，带 `.gdignore`，不入库） |
 | `addons/godot_ai/` | Godot AI 插件（只读，勿改） |
 | `addons/godot_ai/runtime/game_helper.gd` | autoload `_mcp_game_helper`，运行期与 MCP 通信 |
 | `.codebuddy/rules/` | 项目规则（Godot 规范 + MCP 工作流） |

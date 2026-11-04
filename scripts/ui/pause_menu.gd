@@ -6,6 +6,8 @@ extends Control
 @onready var _buttons: VBoxContainer = %Buttons
 @onready var _hint: Label = %Hint
 @onready var _subtitle: Label = %Subtitle
+@onready var _music_button: Button = %MusicButton
+@onready var _sfx_button: Button = %SfxButton
 
 var _items: Array[Button] = []
 var _selected: int = 0
@@ -62,6 +64,7 @@ func open() -> void:
 	visible = true
 	_hint.text = "Esc 继续游戏"
 	_refresh_subtitle()
+	_refresh_audio_labels()
 	_select(0)
 	get_tree().paused = true
 	var player := get_tree().get_first_node_in_group(&"player")
@@ -90,6 +93,42 @@ func _on_button_pressed(index: int) -> void:
 		1: _save_game()
 		2: _back_to_title()
 		3: _open_help()
+		4: _toggle_music()
+		5: _toggle_sfx()
+
+
+## 音乐开关：关掉后切场景也不会突然响起来（开关状态只影响本次运行）。
+func _toggle_music() -> void:
+	var audio := get_node_or_null("/root/AudioManager")
+	if audio == null:
+		return
+	audio.call(&"set_music_enabled", not bool(audio.get(&"music_enabled")))
+	_refresh_audio_labels()
+
+
+func _toggle_sfx() -> void:
+	var audio := get_node_or_null("/root/AudioManager")
+	if audio == null:
+		return
+	var enabled := not bool(audio.get(&"sfx_enabled"))
+	audio.call(&"set_sfx_enabled", enabled)
+	_refresh_audio_labels()
+	if enabled:
+		# 打开时给一声反馈，同时验证真的响了。
+		audio.call(&"play_sfx", &"ui")
+
+
+func _refresh_audio_labels() -> void:
+	var audio := get_node_or_null("/root/AudioManager")
+	var music_on := true
+	var sfx_on := true
+	if audio != null:
+		music_on = bool(audio.get(&"music_enabled"))
+		sfx_on = bool(audio.get(&"sfx_enabled"))
+	if _music_button != null:
+		_music_button.text = "音乐：%s" % ("开" if music_on else "关")
+	if _sfx_button != null:
+		_sfx_button.text = "音效：%s" % ("开" if sfx_on else "关")
 
 
 ## 帮助面板会顺手把暂停菜单关掉，这里不用再 close 一次。

@@ -49,13 +49,26 @@ godot --headless --path . --script res://tools/<子目录>/<脚本>.gd
 | --- | --- |
 | `smoke_check.gd` | 输入映射、玩家动画与场景、地图结构、道具碰撞、主场景、背包装载 |
 | `check_farm_interactions.gd` | 目标锁定、动画命中时序、障碍阻挡、浇水、倒树碰撞 |
-| `check_farm_terrain.gd` | 地形分层、水体格子、岸线与桥梁数据一致性 |
-| `check_inventory.gd` | 堆叠、溢出、满包、面板联动 |
+| `check_farm_terrain.gd` | 地形分层、水体格子、岸线与桥梁数据一致性、坡地与全图可达性 |
+| `check_inventory.gd` | 堆叠、溢出、取出、满包、面板开关与输入锁 |
+| `check_inventory_hotbar_camera.gd` | 分类映射、快捷位引用与拖放、种子耗尽、旧档迁移、镜头缩放边界 |
 | `check_crops.gd` | 播种、浇水推进、成熟、收获、满包保留 |
+| `check_shop.gd` | 初始金币、买卖结算、金币不足、背包满、面板与 HUD 同步 |
+| `check_calendar.gd` | 日期推进、睡觉结算、存读档一致性、坏档容错 |
+| `check_progression.gd` | 采集、订单期限、引导、铜水壶三格浇水、旧档兼容（会写测试存档） |
+| `check_survival.gd` | 体力扣减与拦截、睡醒回满、雨天自动浇水、HUD 联动、存档往返 |
+| `check_goals.gd` | 每日订单、交付结算、社区阶段上缴、种子解锁、存档往返 |
+| `check_farm_activities.gd` | 木箱、采集、加工、差异作物与复收、社区摆设、基础钓鱼、JSON 存档、模态输入 |
+| `check_animals.gd` | 鸡的游走与每日下蛋、捡蛋、满包保留、存档往返、卖价 |
+| `check_npcs.gd` | 4 位 NPC 的素材与场景（四方向） |
+| `check_pickaxe.gd` | 石镐采矿与岩石四方向表现 |
+| `check_held_tools.gd` | 5 种手持工具 × 4 方向的显示 |
+| `check_pause.gd` | Esc 优先级、暂停/恢复、保存、标题界面继续按钮 |
+| `check_ui_layout.gd` | 不同比例下的 HUD 与模态窗口布局 |
 | `check_audio.gd` | 曲目加载与循环点、交叉淡入淡出、昼夜换曲、标题曲目、暂停不中断 |
-| `check_content_art.gd` | 原创素材清单到齐、来源约束、唯一 ID、尺寸、透明度和图集像素一致性 |
+| `check_content_art.gd` | 原创素材清单到齐、来源约束、唯一 ID、尺寸、透明度与图集像素一致性 |
 
-`check_farm_interactions.gd` 与 `check_farm_terrain.gd` 追加 `-- --preview` 可在有窗口模式下输出截图到 `user://farm_previews/`。
+`check_farm_interactions.gd`、`check_farm_terrain.gd`、`check_farm_activities.gd` 追加 `-- --preview` 可在有窗口模式下输出截图（前两者写 `user://farm_previews/` 等目录，后者写 `docs/screenshots/`）。`check_progression.gd` 会写入测试存档，建议用独立用户数据目录运行。
 
 ## lib · 共用模块
 

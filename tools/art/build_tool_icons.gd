@@ -58,6 +58,8 @@ func _init() -> void:
 	var pickaxe := Image.load_from_file("res://assets/generated/items/stone_pickaxe.png")
 	preview.blit_rect(pickaxe, Rect2i(0, 0, 16, 16), Vector2i(48, 0))
 	preview.resize(768, 192, Image.INTERPOLATE_NEAREST)
+	# 预览目录不入库，先确保存在
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://docs/screenshots"))
 	preview.save_png("res://docs/screenshots/tool-icons-unified.png")
 	print("[tool_icons] unified outlines, metal highlights and wooden handles")
 	quit()

@@ -16,19 +16,39 @@ const TRACKS: Dictionary = {
 	&"farm_day": "res://assets/audio/bgm/farm_day.wav",
 	&"farm_night": "res://assets/audio/bgm/farm_night.wav",
 }
+## 操作音效，同样是离线合成的原创素材（见 `tools/build/build_sfx.gd`）。
+const SFX: Dictionary = {
+	&"hoe": "res://assets/audio/sfx/hoe.wav",
+	&"water": "res://assets/audio/sfx/water.wav",
+	&"plant": "res://assets/audio/sfx/plant.wav",
+	&"harvest": "res://assets/audio/sfx/harvest.wav",
+	&"chop": "res://assets/audio/sfx/chop.wav",
+	&"mine": "res://assets/audio/sfx/mine.wav",
+	&"coin": "res://assets/audio/sfx/coin.wav",
+	&"ui": "res://assets/audio/sfx/ui.wav",
+	&"sleep": "res://assets/audio/sfx/sleep.wav",
+}
 ## 游戏内 BGM 基准音量，偏小一点给音效留空间。
 const VOLUME_DB: float = -10.0
 const SILENT_DB: float = -60.0
 const DEFAULT_FADE: float = 1.2
+## 音效比 BGM 响一些，短音才听得清。
+const SFX_VOLUME_DB: float = -5.0
+const SFX_POOL_SIZE: int = 6
 
 ## 当前曲目名，空 StringName 表示没在放。
 var current_track: StringName = &""
 var music_enabled: bool = true
+var sfx_enabled: bool = true
 
 var _players: Array[AudioStreamPlayer] = []
 var _tweens: Array[Tween] = []
 var _active: int = 0
 var _volume_db: float = VOLUME_DB
+var _sfx_players: Array[AudioStreamPlayer] = []
+var _sfx_streams: Dictionary = {}
+var _sfx_next: int = 0
+var _sfx_volume_db: float = SFX_VOLUME_DB
 
 
 func _ready() -> void:
@@ -42,6 +62,14 @@ func _ready() -> void:
 		add_child(player)
 		_players.append(player)
 		_tweens.append(null)
+	# 音效池：几个播放器轮转，连续操作不会互相打断。
+	for i in SFX_POOL_SIZE:
+		var sfx_player := AudioStreamPlayer.new()
+		sfx_player.name = "Sfx%d" % i
+		sfx_player.process_mode = Node.PROCESS_MODE_ALWAYS
+		sfx_player.bus = &"Master"
+		add_child(sfx_player)
+		_sfx_players.append(sfx_player)
 
 
 ## 切到指定曲目；同一首正在放时不会重播。
@@ -97,6 +125,50 @@ func is_music_playing() -> bool:
 	if _players.is_empty():
 		return false
 	return _players[_active].playing and _players[_active].stream != null
+
+
+## 播一个操作音效；未知名字只警告一次，不会打断音乐。
+func play_sfx(name: StringName, pitch: float = 1.0) -> void:
+	if not sfx_enabled or _sfx_players.is_empty():
+		return
+	var stream: AudioStreamWAV = _sfx_stream(name)
+	if stream == null:
+		return
+	var player: AudioStreamPlayer = _sfx_players[_sfx_next]
+	_sfx_next = (_sfx_next + 1) % _sfx_players.size()
+	player.stream = stream
+	player.pitch_scale = clampf(pitch, 0.5, 2.0)
+	player.volume_db = _sfx_volume_db
+	player.play()
+
+
+func set_sfx_volume(db: float) -> void:
+	_sfx_volume_db = clampf(db, SILENT_DB, 6.0)
+
+
+func set_sfx_enabled(enabled: bool) -> void:
+	sfx_enabled = enabled
+
+
+func is_sfx_enabled() -> bool:
+	return sfx_enabled
+
+
+## 音效流缓存：第一次用到才 load，之后复用。
+func _sfx_stream(name: StringName) -> AudioStreamWAV:
+	if _sfx_streams.has(name):
+		return _sfx_streams[name] as AudioStreamWAV
+	var path: String = str(SFX.get(name, ""))
+	if path.is_empty():
+		push_warning("[AudioManager] 未知音效：%s" % name)
+		_sfx_streams[name] = null
+		return null
+	var stream: AudioStreamWAV = load(path) as AudioStreamWAV
+	if stream != null:
+		# 音效是一次性的，别被导入设置带成循环。
+		stream.loop_mode = AudioStreamWAV.LOOP_DISABLED
+	_sfx_streams[name] = stream
+	return stream
 
 
 func _target_db() -> float:

@@ -48,3 +48,8 @@ func earn(amount: int) -> void:
 	today_income += amount
 	coins_gained.emit(amount)
 	changed.emit(coins)
+	# 金币叮当：音高按金额稍微变化，大单更亮。
+	var audio := get_node_or_null("/root/AudioManager")
+	if audio != null and audio.has_method(&"play_sfx"):
+		var pitch: float = clampf(1.0 + float(mini(amount, 400)) / 1600.0, 1.0, 1.25)
+		audio.call(&"play_sfx", &"coin", pitch)

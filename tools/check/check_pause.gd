@@ -92,12 +92,29 @@ func _run() -> void:
 		_check(not help.visible and not paused, "closing help resumes the game")
 		# 暂停菜单里的入口
 		_pause.open()
-		_check(_pause._items.size() == 4, "pause menu has a help entry")
+		_check(_pause._items.size() == 6, "pause menu has help and audio entries")
 		_pause._on_button_pressed(3)
 		await process_frame
 		_check(help.visible and not _pause.visible, "help opens from the pause menu")
 		help.call(&"set_open", false)
 		await process_frame
+
+	# 音乐 / 音效开关
+	var audio := root.get_node_or_null("AudioManager")
+	_check(audio != null, "AudioManager autoload present")
+	if audio != null:
+		_pause.open()
+		_check(_pause._music_button.text.contains("开"), "music label starts on")
+		_pause._on_button_pressed(4)
+		_check(not bool(audio.get(&"music_enabled")), "music toggles off")
+		_check(_pause._music_button.text.contains("关"), "music label follows")
+		_pause._on_button_pressed(4)
+		_check(bool(audio.get(&"music_enabled")), "music toggles back on")
+		_pause._on_button_pressed(5)
+		_check(not bool(audio.get(&"sfx_enabled")), "sfx toggles off")
+		_pause._on_button_pressed(5)
+		_check(bool(audio.get(&"sfx_enabled")), "sfx toggles back on")
+		_pause.close()
 
 	# 标题界面：无档时「继续」置灰，有档时可点
 	_save.delete_all()

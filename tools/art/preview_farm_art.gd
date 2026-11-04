@@ -41,6 +41,8 @@ func _run() -> void:
 	await process_frame
 	await RenderingServer.frame_post_draw
 	var path: String = "res://docs/screenshots/farm-assets-preview.png"
+	# 预览目录不入库，先确保存在
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(path.get_base_dir()))
 	viewport.get_texture().get_image().save_png(path)
 	print("[farm_art_preview] " + ProjectSettings.globalize_path(path))
 	quit(0)

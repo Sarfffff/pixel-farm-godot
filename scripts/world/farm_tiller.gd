@@ -18,6 +18,15 @@ const STAMINA_COST := {
 	&"stone_pickaxe": 6,
 	&"harvest": 2,
 }
+## 工具 -> 操作音效（音效由 `tools/build/build_sfx.gd` 离线合成）。
+const SFX_FOR_TOOL := {
+	&"hoe": &"hoe",
+	&"watering_can": &"water",
+	&"seeds": &"plant",
+	&"axe": &"chop",
+	&"stone_pickaxe": &"mine",
+	&"harvest": &"harvest",
+}
 ## 种植区允许独立开新田；建筑、水体、树干等障碍不允许开垦。
 const TILLABLE := Rect2i(16, 5, 14, 10)
 ## 道具贴图判定内缩量，避免贴图边缘刚好压在格线上时把相邻格也算成遮挡。
@@ -420,6 +429,8 @@ func _on_use_requested(tool: StringName, cell: Vector2i) -> void:
 		&"stone_pickaxe":
 			if is_instance_valid(_locked_tree) and _locked_tree.mine(_player.facing_vector()):
 				_spawn_effect(cell, tool)
+	# 真动手了才出声，和命中帧同步；音高轻微抖动，连续操作不机械。
+	_play_action_sfx(tool)
 
 
 func _refresh_region(cell: Vector2i) -> void:
@@ -472,10 +483,11 @@ func interact(cell: Vector2i) -> void:
 	if not crop.regrow_after_harvest():
 		_crops.erase(cell)
 		crop.play_harvest()
-	# 收完回到干燥的空耕地，可以直接补种。
-	_soil_state[cell] = false
-	_refresh_cell(cell)
-	_spawn_effect(cell, &"seeds")
+		# 收完回到干燥的空耕地，可以直接补种。
+		_soil_state[cell] = false
+		_refresh_cell(cell)
+		_spawn_effect(cell, &"seeds")
+		_play_action_sfx(&"harvest")
 
 
 ## 新的一天：浇过水的作物统一长一阶，然后清掉浇水标记、土变干。
@@ -519,6 +531,16 @@ func _show_toast(text: String) -> void:
 	var toast := get_tree().current_scene.get_node_or_null("UI/Toast")
 	if toast != null and toast.has_method(&"show_message"):
 		toast.show_message(text)
+
+
+## 工具 -> 音效名；收获单独传 &"harvest"。
+func _play_action_sfx(tool: StringName) -> void:
+	var sfx: StringName = SFX_FOR_TOOL.get(tool, &"")
+	if sfx == &"":
+		return
+	var audio := get_node_or_null("/root/AudioManager")
+	if audio != null and audio.has_method(&"play_sfx"):
+		audio.call(&"play_sfx", sfx, randf_range(0.94, 1.06))
 
 
 ## 体力：每次实际动手都要花，扣不动就挡住这次操作。

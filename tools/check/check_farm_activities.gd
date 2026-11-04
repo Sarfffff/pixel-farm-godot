@@ -330,6 +330,8 @@ func _test_modals() -> void:
 func _shot(name: String) -> void:
 	await settle()
 	await RenderingServer.frame_post_draw
+	# 输出目录不入库，clone 后可能不存在，先建出来
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://docs/screenshots"))
 	root.get_texture().get_image().save_png("res://docs/screenshots/activities-" + name + ".png")
 
 
