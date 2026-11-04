@@ -17,6 +17,8 @@ const SCENES: Array[String] = [
 const TILE: int = 16
 ## 家具贴图的标准边长
 const FURNITURE_SIZE: int = 32
+## 家具可见高度上限（玩家可见高度约 20px，家具不该再高出一截）
+const MAX_FURNITURE_HEIGHT: float = 22.0
 
 var _failures: int = 0
 
@@ -35,6 +37,14 @@ func _check(condition: bool, message: String) -> void:
 	if not condition:
 		_failures += 1
 		printerr("[interior] FAIL: " + message)
+
+
+## 这些家具必须挡路：能坐的、能站的、以及有实体的绿植与桶篮。
+func _needs_blocker(node_name: String) -> bool:
+	for keyword: String in ["Chair", "Stool", "Armchair", "Bench", "Fern", "Basket", "Table", "Bed"]:
+		if node_name.contains(keyword):
+			return true
+	return false
 
 
 func _audit(path: String) -> void:
@@ -82,7 +92,19 @@ func _audit(path: String) -> void:
 			sprite.position.x >= floor_rect.position.x and sprite.position.x <= floor_rect.end.x,
 			"%s/%s is inside the room (x=%.0f)" % [tag, sprite.name, sprite.position.x]
 		)
+		# 家具不能画得比玩家还高大（玩家可见高度约 20px）
+		var art_height: int = sprite.texture.get_image().get_used_rect().size.y
+		_check(
+			float(art_height) * sprite.scale.y <= MAX_FURNITURE_HEIGHT,
+			"%s/%s is not taller than the player (%.1fpx)" % [
+				tag, sprite.name, float(art_height) * sprite.scale.y
+			]
+		)
+
 		var body := sprite.get_node_or_null("Body") as StaticBody2D
+		# 座椅类必须有碰撞，玩家不能直接穿过去
+		if _needs_blocker(String(sprite.name)):
+			_check(body != null, "%s/%s cannot be walked through" % [tag, sprite.name])
 		if body == null:
 			continue
 		var shape := body.get_child(0) as CollisionShape2D
@@ -91,9 +113,10 @@ func _audit(path: String) -> void:
 		var box := shape.shape as RectangleShape2D
 		if box == null:
 			continue
+		# 碰撞块是家具的子节点，会跟着家具一起缩放
 		var rect := Rect2(
-			sprite.position + shape.position - box.size * 0.5,
-			box.size
+			sprite.position + shape.position * sprite.scale,
+			box.size * sprite.scale
 		)
 		_check(
 			floor_rect.encloses(rect),

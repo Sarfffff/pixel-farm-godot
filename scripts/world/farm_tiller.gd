@@ -192,6 +192,10 @@ func _tool_hint(tool: StringName, cell: Vector2i) -> String:
 				return "这里还未开垦 · 先使用锄头"
 			return "这片地还没有作物 · 先播种再浇水"
 		&"seeds":
+			if _berry_seed_kind() != &"":
+				if not _can_plant_berry(cell):
+					return "浆果要种在空草地上 · 别压着水面和道具"
+				return "种下%s · 两天后结果" % _seed_label()
 			if not _soil_state.has(cell):
 				return "先用锄头开垦这一格"
 			if _seed_id() == &"":
@@ -283,6 +287,9 @@ func can_use(tool: StringName, cell: Vector2i) -> bool:
 					return true
 			return false
 		&"seeds":
+			# 浆果种子走另一条线：种在草地，不进耕地。
+			if _berry_seed_kind() != &"":
+				return _can_plant_berry(cell)
 			return _can_plant(cell)
 		&"axe":
 			return _axe_target(cell) != null
@@ -339,6 +346,9 @@ func _has_prop_overlay(cell: Vector2i) -> bool:
 		var sprite := child as Sprite2D
 		# 作物生长在耕地上方，不属于阻挡开垦的道具。
 		if sprite == null or sprite is Crop or sprite.get_meta(&"felled", false):
+			continue
+		# NPC 会自己走开，站过来只是暂时的，不该把这块地永久锁死。
+		if sprite.get(&"npc_id") != null:
 			continue
 		if _sprite_rect(sprite).intersects(cell_rect):
 			return true
@@ -580,6 +590,44 @@ func _on_day_advanced() -> void:
 	begin_new_day()
 
 
+## 当前手持的是不是浆果种子；是的话返回对应浆果类型。
+func _berry_seed_kind() -> StringName:
+	var seed_id: StringName = _seed_id()
+	if seed_id == &"":
+		return &""
+	var grove := get_tree().get_first_node_in_group(&"berry_grove")
+	if grove == null or not grove.has_method(&"kind_for_seed"):
+		return &""
+	return StringName(grove.call(&"kind_for_seed", seed_id))
+
+
+## 浆果只能种在空草地：不占耕地、不压道具、不挨着别的丛。
+func _can_plant_berry(cell: Vector2i) -> bool:
+	if _soil_state.has(cell) or _crops.has(cell):
+		return false
+	var grove := get_tree().get_first_node_in_group(&"berry_grove")
+	if grove == null or not grove.has_method(&"can_plant_at"):
+		return false
+	return bool(grove.call(&"can_plant_at", cell))
+
+
+func _plant_berry(cell: Vector2i, kind: StringName) -> void:
+	if not _can_plant_berry(cell):
+		return
+	var inventory := _inventory()
+	var seed_id: StringName = _seed_id()
+	if inventory == null or not inventory.remove_item(seed_id, 1):
+		return
+	var grove := get_tree().get_first_node_in_group(&"berry_grove")
+	if grove == null:
+		return
+	var label := _seed_label()
+	grove.call(&"plant_at", cell, kind)
+	_spawn_effect(cell, &"seeds")
+	_show_toast("种下了%s · 两天后结果" % label)
+	action_completed.emit(&"seeds", cell)
+
+
 func _can_plant(cell: Vector2i) -> bool:
 	if not _soil_state.has(cell) or _crops.has(cell):
 		return false
@@ -606,6 +654,11 @@ func _season_name() -> String:
 
 
 func _plant(cell: Vector2i) -> void:
+	# 浆果种子不进耕地，直接种在草地上。
+	var berry_kind := _berry_seed_kind()
+	if berry_kind != &"":
+		_plant_berry(cell, berry_kind)
+		return
 	if not _can_plant(cell):
 		return
 	var crop_data: CropData = _seed_crop()

@@ -25,6 +25,10 @@ const SRC_WOOD := 2
 const SRC_TRIM := 3
 const TILE := Vector2i(0, 0)
 
+## 家具统一缩放：素材 32×32、可见内容约 28px，
+## 玩家只有 16×20，1:1 摆会显得家具比人还高。
+const FURNITURE_SCALE: float = 0.75
+
 ## 家具：[贴图, 脚底中心, 碰撞尺寸]。
 ## 只用 objects/furniture 的 32×32 素材：terrain/interiors 是 16×16 的贴图零件，
 ## 混进来会变成"小木箱"，和 32px 的玩家、NPC 比例对不上。
@@ -38,8 +42,8 @@ const FURNITURE: Array = [
 	["objects/furniture/round_table.png", Vector2(200, 156), Vector2(28, 16)],
 	["objects/furniture/oak_chair.png", Vector2(174, 158), Vector2(20, 12)],
 	# 角落陈设
-	["objects/furniture/potted_fern.png", Vector2(32, 168), Vector2.ZERO],
-	["objects/furniture/basket.png", Vector2(72, 168), Vector2.ZERO],
+	["objects/furniture/potted_fern.png", Vector2(32, 168), Vector2(14, 10)],
+	["objects/furniture/basket.png", Vector2(72, 168), Vector2(18, 10)],
 	["objects/furniture/tall_potted_tree.png", Vector2(256, 160), Vector2(20, 12)],
 	# 墙面挂件：贴在顶部墙面上，不占地面
 	["objects/furniture/wall_clock.png", Vector2(136, 56), Vector2.ZERO],
@@ -179,6 +183,7 @@ func _add_flat_props(layer: Node2D, room: Node2D) -> void:
 		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		# 平铺物以中心对齐格子，不做脚底锚点
 		sprite.offset = Vector2.ZERO
+		sprite.scale = Vector2.ONE * FURNITURE_SCALE
 		sprite.position = entry[1]
 		layer.add_child(sprite)
 		sprite.owner = room
@@ -194,8 +199,9 @@ func _add_furniture(props: Node2D, room: Node2D) -> void:
 			push_warning("[build_shop_interior] 缺少贴图 %s" % path)
 			continue
 		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-		# 贴图可能是 16×16 也可能是 32×32，脚底统一贴 position
+		# 32×32 的家具，脚底统一贴 position；offset 跟着 scale 一起缩
 		sprite.offset = Vector2(0, -sprite.texture.get_height() * 0.5)
+		sprite.scale = Vector2.ONE * FURNITURE_SCALE
 		sprite.position = entry[1]
 		props.add_child(sprite)
 		sprite.owner = room

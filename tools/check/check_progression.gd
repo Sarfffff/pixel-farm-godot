@@ -148,7 +148,13 @@ func _run() -> void:
 	time._process(1.0)
 	var summary := _main.get_node("UI/DaySummary")
 	_check(not summary.visible, "02:00 does not shove the summary in the player's face")
-	_check(time.minutes == time.CLOSE_MINUTES, "the clock stops at 02:00 until the player sleeps")
+	_check(time.minutes >= time.CLOSE_MINUTES, "the clock reaches 02:00")
+	# 时间不停：再走一秒应该继续往前，而不是卡在 02:00
+	time._process(1.0)
+	_check(
+		time.minutes > time.CLOSE_MINUTES,
+		"the clock keeps running past 02:00 (%d)" % time.minutes
+	)
 	_check(not bool(player.get("input_locked")), "the player keeps control at 02:00")
 	# 玩家自己去床边睡：面板必须能由玩家关闭
 	summary.set_open(true)

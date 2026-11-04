@@ -1,22 +1,34 @@
 extends Node2D
-## 野浆果丛：结果时按 E 采一把，采完要等两天才重新结果。
+## 野浆果丛 / 玩家种下的浆果灌木。
 ##
-## 视觉用 `_draw` 直接画，不依赖贴图：有果时灌木上缀几颗彩色果子，
-## 采完只剩绿叶，玩家一眼能看出还能不能采。
+## 和耕地作物刻意分开：
+##   - 长在草地上，不用锄地、不用浇水
+##   - 种一次就留着，采完隔两天再结果（多年生灌木）
+##   - 野外长的采完会掉一颗种子，玩家可以拿去自己种
+##
+## `wild` 只影响"采的时候掉不掉种子"，其余行为一样。
 
 const YIELD: int = 2
+const SEED_YIELD: int = 1
 const STAMINA_COST: int = 1
-## 采完隔两天重新结果（第 N 天采，第 N+2 天恢复）。
+## 采完隔两天重新结果。
 const REGROW_DAYS: int = 2
+## 种下到第一次结果。
+const GROW_DAYS: int = 2
 
-## 产物物品 id，由管理器按落点分配。
 var kind: StringName = &"wild_blackberry"
-## 果子颜色，与产物对应。
 var berry_color: Color = Color("3b2a45")
-var slot: int = 0
+## 管理器里的编号；野外随机生成的用 -1，由位置识别。
+var slot: int = -1
 var manager: Node
-## 0 = 有果；>0 = 到这一天（含）之后重新结果。
+## 0 = 幼苗（不能采），1 = 成株
+var stage: int = 1
+## true = 野外长的（采完掉种子）
+var wild: bool = true
+## 0 = 有果；>0 = 到这一天之后重新结果
 var regrow_day: int = 0
+## 幼苗成熟的日期；成株为 0
+var grow_day: int = 0
 
 var _display_name: String = "野果"
 
@@ -30,8 +42,16 @@ func _ready() -> void:
 		time.day_started.connect(_on_day_started)
 
 
+func is_mature() -> bool:
+	return stage >= 1
+
+
 func has_berries() -> bool:
-	return regrow_day == 0
+	return stage >= 1 and regrow_day == 0
+
+
+func seed_id() -> StringName:
+	return StringName("%s_seeds" % String(kind))
 
 
 func player_in_range(player: Node2D) -> bool:
@@ -39,19 +59,29 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
+	if not is_mature():
+		return "%s幼苗 · 再过 %d 天结果" % [_display_name, days_until_mature()]
 	if has_berries():
-		return "[E] 采%s ×%d · 体力 %d" % [_display_name, YIELD, STAMINA_COST]
+		var text := "[E] 采%s ×%d · 体力 %d" % [_display_name, YIELD, STAMINA_COST]
+		if wild:
+			text += " · 顺带收种子"
+		return text
 	return "%s 还没长好 · 再过 %d 天" % [_display_name, days_until_ripe()]
 
 
 func interact(_cell: Vector2i) -> void:
+	if not is_mature():
+		_message("%s 还是幼苗，过两天再来" % _display_name)
+		return
 	if not has_berries():
 		_message("%s 还没长好，过两天再来" % _display_name)
 		return
 	var inventory := get_tree().get_first_node_in_group(&"inventory")
 	if inventory == null:
 		return
-	if not inventory.has_space_for(kind, YIELD):
+	var seed: StringName = seed_id()
+	var seeds: int = SEED_YIELD if wild else 0
+	if not inventory.has_space_for(kind, YIELD) or (seeds > 0 and not inventory.has_space_for(seed, seeds)):
 		_message("背包已满 · 腾出空间再来采")
 		return
 	var stamina := get_tree().get_first_node_in_group(&"stamina")
@@ -59,16 +89,34 @@ func interact(_cell: Vector2i) -> void:
 		_message("体力不够 · 回屋睡一觉")
 		return
 	inventory.add_item(kind, YIELD)
+	if seeds > 0:
+		inventory.add_item(seed, seeds)
 	var audio := get_node_or_null("/root/AudioManager")
 	if audio != null and audio.has_method(&"play_sfx"):
 		audio.call(&"play_sfx", &"harvest", randf_range(0.98, 1.06))
-	_message("采到 %s ×%d" % [_display_name, YIELD])
+	if seeds > 0:
+		_message("采到 %s ×%d，还收到 %d 颗种子" % [_display_name, YIELD, seeds])
+	else:
+		_message("采到 %s ×%d" % [_display_name, YIELD])
 	_harvest()
 	if manager != null and manager.has_method(&"on_bush_changed"):
 		manager.call(&"on_bush_changed")
 
 
-## 采完进入"没果"状态，记下重新结果的日子。
+## 玩家用种子种下：进入幼苗期，过 GROW_DAYS 天结果。
+func plant(kind_id: StringName, color: Color) -> void:
+	kind = kind_id
+	berry_color = color
+	wild = false
+	stage = 0
+	regrow_day = 0
+	_display_name = _lookup_name()
+	var time := get_tree().get_first_node_in_group(&"time")
+	var day: int = int(time.day) if time != null else 1
+	grow_day = day + GROW_DAYS
+	queue_redraw()
+
+
 func _harvest() -> void:
 	var time := get_tree().get_first_node_in_group(&"time")
 	var day: int = int(time.day) if time != null else 1
@@ -79,12 +127,26 @@ func _harvest() -> void:
 func days_until_ripe() -> int:
 	if regrow_day <= 0:
 		return 0
-	var time := get_tree().get_first_node_in_group(&"time")
-	var day: int = int(time.day) if time != null else 1
+	var day: int = _today()
 	return maxi(regrow_day - day, 1)
 
 
+func days_until_mature() -> int:
+	if grow_day <= 0:
+		return 0
+	return maxi(grow_day - _today(), 1)
+
+
+func _today() -> int:
+	var time := get_tree().get_first_node_in_group(&"time")
+	return int(time.day) if time != null else 1
+
+
 func _on_day_started(day: int) -> void:
+	if stage < 1 and grow_day > 0 and day >= grow_day:
+		stage = 1
+		grow_day = 0
+		queue_redraw()
 	if regrow_day > 0 and day >= regrow_day:
 		regrow_day = 0
 		queue_redraw()
@@ -107,16 +169,27 @@ func _message(text: String) -> void:
 
 
 func to_dict() -> Dictionary:
-	return {&"slot": slot, &"kind": String(kind), &"regrow": regrow_day}
+	return {
+		&"x": global_position.x,
+		&"y": global_position.y,
+		&"kind": String(kind),
+		&"stage": stage,
+		&"wild": wild,
+		&"regrow": regrow_day,
+		&"grow": grow_day,
+	}
 
 
 func from_dict(data: Dictionary) -> void:
 	regrow_day = maxi(0, int(data.get(&"regrow", 0)))
+	grow_day = maxi(0, int(data.get(&"grow", 0)))
+	stage = clampi(int(data.get(&"stage", 1)), 0, 1)
+	wild = bool(data.get(&"wild", true))
 	queue_redraw()
 
 
 # --------------------------------------------------------------------------
-# 画一丛灌木：三团绿叶 + 落地阴影，结果时缀上浆果
+# 画法：幼苗只画一小团叶，成株画三团深浅叶 + 结果时缀浆果
 # --------------------------------------------------------------------------
 
 func _draw() -> void:
@@ -124,6 +197,12 @@ func _draw() -> void:
 	var dark := Color("3f6b35")
 	var mid := Color("4f8440")
 	var light := Color("69a24f")
+	if not is_mature():
+		# 幼苗：两片小叶子，一看就知道还没长成
+		draw_circle(Vector2(-1, -3), 2.6, dark)
+		draw_circle(Vector2(2, -4), 2.2, mid)
+		draw_circle(Vector2(0, -6), 1.6, light)
+		return
 	draw_circle(Vector2(-4, -6), 5.0, dark)
 	draw_circle(Vector2(4, -6), 5.0, dark)
 	draw_circle(Vector2(0, -10), 6.0, dark)

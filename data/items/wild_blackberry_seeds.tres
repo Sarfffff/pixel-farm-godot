@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/blackberry.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"wild_blackberry_seeds"
+display_name = "黑莓种子"
+description = "从野黑莓丛里采到的种子。种在草地上就会长成一丛灌木，不用浇水，两天后就能采。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 5
+buy_price = 0
+category = &"seed"
+unlock_stage = 0

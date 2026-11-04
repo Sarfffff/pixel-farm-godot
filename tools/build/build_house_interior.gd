@@ -32,6 +32,11 @@ const SRC_WOOD := 2
 const SRC_TRIM := 3
 const TILE := Vector2i(0, 0)
 
+## 家具统一缩放：素材是 32×32、可见内容约 28px，
+## 而玩家只有 16×20，直接 1:1 摆会显得家具比人还高。
+## 0.75 后椅子约 21px（略高于玩家身高），桌柜约 19~21px。
+const FURNITURE_SCALE: float = 0.75
+
 ## 家具：[贴图路径, 脚底中心, 碰撞尺寸]；碰撞尺寸为 Vector2.ZERO 表示能踩过去（地毯、椅子）。
 ## 床靠左墙、壁炉靠上墙、衣柜靠右墙，中间留出从门口到床边的走道。
 const FURNITURE: Array = [
@@ -39,25 +44,25 @@ const FURNITURE: Array = [
 	["objects/furniture/single_bed.png", Vector2(56, 96), Vector2(30, 28)],
 	["objects/furniture/bedside_table.png", Vector2(88, 96), Vector2(26, 16)],
 	["objects/furniture/wardrobe.png", Vector2(392, 96), Vector2(28, 20)],
-	["objects/furniture/potted_fern.png", Vector2(40, 176), Vector2.ZERO],
+	["objects/furniture/potted_fern.png", Vector2(40, 176), Vector2(14, 10)],
 	["objects/furniture/armchair.png", Vector2(112, 232), Vector2(28, 16)],
 	# —— 起居（中上）：壁炉 + 书柜 + 摇椅 ——
 	["objects/furniture/brick_fireplace.png", Vector2(256, 72), Vector2(30, 22)],
 	["objects/furniture/bookcase.png", Vector2(352, 72), Vector2(28, 20)],
-	["objects/furniture/floor_lamp.png", Vector2(312, 84), Vector2.ZERO],
+	["objects/furniture/floor_lamp.png", Vector2(312, 84), Vector2(10, 6)],
 	["objects/furniture/rocking_chair.png", Vector2(150, 150), Vector2(24, 16)],
-	["objects/furniture/wood_stool.png", Vector2(108, 150), Vector2.ZERO],
+	["objects/furniture/wood_stool.png", Vector2(108, 150), Vector2(18, 10)],
 	["objects/furniture/coffee_table.png", Vector2(192, 168), Vector2(26, 16)],
 	["objects/furniture/wall_clock.png", Vector2(330, 56), Vector2.ZERO],
 	# —— 餐厅（中）——
 	["objects/furniture/dining_table.png", Vector2(240, 214), Vector2(26, 16)],
-	["objects/furniture/oak_chair.png", Vector2(212, 212), Vector2.ZERO],
-	["objects/furniture/oak_chair.png", Vector2(268, 212), Vector2.ZERO],
+	["objects/furniture/oak_chair.png", Vector2(212, 212), Vector2(16, 10)],
+	["objects/furniture/oak_chair.png", Vector2(268, 212), Vector2(16, 10)],
 	# —— 厨房（右下）——
 	["objects/furniture/refrigerator.png", Vector2(384, 236), Vector2(28, 22)],
 	["objects/furniture/cupboard.png", Vector2(344, 214), Vector2(28, 20)],
 	["objects/furniture/kitchen_table.png", Vector2(312, 252), Vector2(26, 16)],
-	["objects/furniture/basket.png", Vector2(392, 268), Vector2.ZERO],
+	["objects/furniture/basket.png", Vector2(392, 268), Vector2(18, 10)],
 	# —— 储物（Chest 交互点见 _add_chest）——
 	["objects/craftables/wood_chest.png", Vector2(152, 262), Vector2(28, 20)],
 ]
@@ -231,6 +236,7 @@ func _add_flat_props(layer: Node2D, room: Node2D) -> void:
 		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		# 平铺物以中心对齐格子，不做脚底锚点
 		sprite.offset = Vector2.ZERO
+		sprite.scale = Vector2.ONE * FURNITURE_SCALE
 		sprite.position = entry[1]
 		layer.add_child(sprite)
 		sprite.owner = room
@@ -245,8 +251,9 @@ func _add_furniture(props: Node2D, room: Node2D) -> void:
 		if sprite.texture == null:
 			push_warning("[build_house_interior] 缺少贴图 %s" % path)
 		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-		# 32×32 的家具，脚底贴在 position 上
+		# 32×32 的家具，脚底贴在 position 上；offset 会跟着 scale 一起缩，锚点不变
 		sprite.offset = Vector2(0, -16)
+		sprite.scale = Vector2.ONE * FURNITURE_SCALE
 		sprite.position = entry[1]
 		props.add_child(sprite)
 		sprite.owner = room

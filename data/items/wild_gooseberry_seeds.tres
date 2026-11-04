@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/gooseberry.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"wild_gooseberry_seeds"
+display_name = "醋栗种子"
+description = "野醋栗留下的种子。种在草地上就能活，不用锄地也不用浇水。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 5
+buy_price = 0
+category = &"seed"
+unlock_stage = 0

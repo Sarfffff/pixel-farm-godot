@@ -187,8 +187,9 @@ func apply(data: Dictionary) -> void:
 	if time != null:
 		var clock: Dictionary = data.get("time", {})
 		time.day = maxi(1, int(clock.get("day", 1)))
+		# 时间没有封顶（可以熬夜过 02:00），上限只用来拦住坏档里的荒谬数值
 		time.minutes = clampi(
-			int(clock.get("minutes", TimeScript.START_MINUTES)), 0, TimeScript.CLOSE_MINUTES
+			int(clock.get("minutes", TimeScript.START_MINUTES)), 0, 48 * 60
 		)
 		time.reset_clock()
 		time.time_changed.emit(time.day, time.minutes)
