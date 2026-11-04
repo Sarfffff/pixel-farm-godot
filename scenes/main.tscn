@@ -33,7 +33,6 @@
 [ext_resource type="Script" path="res://scripts/systems/upgrades.gd" id="33_upgrades"]
 [ext_resource type="Script" path="res://scripts/systems/tutorial.gd" id="34_tutorial"]
 [ext_resource type="Script" path="res://scripts/systems/farm_activities.gd" id="35_activities"]
-[ext_resource type="Script" path="res://scripts/world/berry_grove.gd" id="36_berry"]
 [ext_resource type="PackedScene" path="res://scenes/ui/settings_panel.tscn" id="36_settings"]
 [ext_resource type="PackedScene" path="res://scenes/npcs/gardener.tscn" id="37_gardener"]
 [ext_resource type="PackedScene" path="res://scenes/npcs/carpenter.tscn" id="38_carpenter"]
@@ -44,6 +43,7 @@
 [ext_resource type="Script" path="res://scripts/ui/screen_fade.gd" id="43_fade"]
 [ext_resource type="PackedScene" path="res://scenes/world/shop_interior.tscn" id="44_shop"]
 [ext_resource type="Script" path="res://scripts/systems/friendship.gd" id="45_friendship"]
+[ext_resource type="Script" path="res://scripts/world/berry_grove.gd" id="46_berry"]
 
 [node name="Main" type="Node2D" unique_id=1709259568]
 
@@ -93,7 +93,7 @@ position = Vector2(472, 174)
 script = ExtResource("32_forage")
 
 [node name="BerryGrove" type="Node2D" parent="Farm/World"]
-script = ExtResource("36_berry")
+script = ExtResource("46_berry")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1529148448]
 position = Vector2(472, 166)

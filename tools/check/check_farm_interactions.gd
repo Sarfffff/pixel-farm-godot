@@ -139,6 +139,10 @@ func _run() -> void:
 			_player._select_tool(tool_index)
 			await physics_frame
 			await physics_frame
+			# 每一轮都补满体力：这套长序列只验证动画与命中，不该被体力拦住。
+			var stamina_now := get_first_node_in_group(&"stamina") as Node
+			if stamina_now != null:
+				stamina_now.set(&"value", 1_000_000)
 			before = _impacts
 			_player._start_action()
 			_check(_player.is_acting, "starts %s/%s" % [_player.current_tool, facing])

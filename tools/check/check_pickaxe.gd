@@ -152,6 +152,9 @@ func _check_four_directions() -> void:
 		_check(not is_instance_valid(rock), "rock removed after third strike")
 		_check(_inventory.count_of(&"stone") == stock + 3, "exactly three stone materials")
 		_check(not _tiller._has_body(cell), "broken rock collision removed")
+		var stamina_now := get_first_node_in_group(&"stamina") as Node
+		if stamina_now != null:
+			stamina_now.set(&"value", 1_000_000)
 		_check(_tiller.can_use(&"hoe", cell), "cleared grass can be tilled")
 		before = _impacts
 		_player._start_action()
