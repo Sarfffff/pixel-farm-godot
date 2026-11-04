@@ -24,7 +24,6 @@
 [ext_resource type="Script" path="res://scripts/systems/stamina.gd" id="30_stamina"]
 [ext_resource type="Script" path="res://scripts/systems/weather.gd" id="31_weather"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3_player"]
-[ext_resource type="PackedScene" path="res://scenes/world/sleep_spot.tscn" id="15_sleep"]
 [ext_resource type="PackedScene" path="res://scenes/npcs/shopkeeper.tscn" id="18_shopkeeper"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/chicken_coop.tscn" id="20_coop"]
 [ext_resource type="PackedScene" path="res://scenes/world/chicken.tscn" id="21_chicken"]
@@ -34,6 +33,17 @@
 [ext_resource type="Script" path="res://scripts/systems/upgrades.gd" id="33_upgrades"]
 [ext_resource type="Script" path="res://scripts/systems/tutorial.gd" id="34_tutorial"]
 [ext_resource type="Script" path="res://scripts/systems/farm_activities.gd" id="35_activities"]
+[ext_resource type="Script" path="res://scripts/world/berry_grove.gd" id="36_berry"]
+[ext_resource type="PackedScene" path="res://scenes/ui/settings_panel.tscn" id="36_settings"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/gardener.tscn" id="37_gardener"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/carpenter.tscn" id="38_carpenter"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/fisherman.tscn" id="39_fisherman"]
+[ext_resource type="Script" path="res://scripts/world/house_door.gd" id="40_door"]
+[ext_resource type="PackedScene" path="res://scenes/world/house_interior.tscn" id="41_interior"]
+[ext_resource type="Script" path="res://scripts/systems/house_manager.gd" id="42_house"]
+[ext_resource type="Script" path="res://scripts/ui/screen_fade.gd" id="43_fade"]
+[ext_resource type="PackedScene" path="res://scenes/world/shop_interior.tscn" id="44_shop"]
+[ext_resource type="Script" path="res://scripts/systems/friendship.gd" id="45_friendship"]
 
 [node name="Main" type="Node2D" unique_id=1709259568]
 
@@ -42,11 +52,24 @@ script = ExtResource("16_tint")
 
 [node name="Farm" parent="." unique_id=1404619021 instance=ExtResource("2_farm")]
 
-[node name="SleepSpot" parent="Farm/World" instance=ExtResource("15_sleep")]
-position = Vector2(472, 158)
+[node name="CottageDoor" type="Node2D" parent="Farm/World"]
+position = Vector2(472, 156)
+script = ExtResource("40_door")
+interior = ExtResource("41_interior")
 
-[node name="Shopkeeper" parent="Farm/World" instance=ExtResource("18_shopkeeper")]
-position = Vector2(502, 160)
+[node name="ShopDoor" type="Node2D" parent="Farm/World"]
+position = Vector2(488, 250)
+script = ExtResource("40_door")
+interior = ExtResource("44_shop")
+
+[node name="Gardener" parent="Farm/World" instance=ExtResource("37_gardener")]
+position = Vector2(312, 248)
+
+[node name="Carpenter" parent="Farm/World" instance=ExtResource("38_carpenter")]
+position = Vector2(248, 232)
+
+[node name="Fisherman" parent="Farm/World" instance=ExtResource("39_fisherman")]
+position = Vector2(456, 280)
 
 [node name="ChickenCoop" parent="Farm/World" instance=ExtResource("20_coop")]
 position = Vector2(520, 264)
@@ -68,6 +91,9 @@ position = Vector2(472, 174)
 
 [node name="Forage" type="Node2D" parent="Farm/World"]
 script = ExtResource("32_forage")
+
+[node name="BerryGrove" type="Node2D" parent="Farm/World"]
+script = ExtResource("36_berry")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1529148448]
 position = Vector2(472, 166)
@@ -109,8 +135,20 @@ script = ExtResource("33_upgrades")
 [node name="Tutorial" type="Node" parent="Systems" groups=["tutorial"]]
 script = ExtResource("34_tutorial")
 
+[node name="Friendship" type="Node" parent="Systems" groups=["friendship"]]
+script = ExtResource("45_friendship")
+
+[node name="HouseManager" type="Node" parent="Systems" groups=["house"]]
+script = ExtResource("42_house")
+player_path = NodePath("../../Farm/World/Player")
+farm_path = NodePath("../../Farm")
+camera_path = NodePath("../../Camera")
+
 [node name="FarmActivities" type="Node" parent="Systems"]
 script = ExtResource("35_activities")
+
+[node name="ScreenFade" type="CanvasLayer" parent="." groups=["screen_fade"]]
+script = ExtResource("43_fade")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1232170097]
 
@@ -135,3 +173,5 @@ script = ExtResource("35_activities")
 [node name="OrderPanel" parent="UI" unique_id=1072895820 instance=ExtResource("27_orderpanel")]
 
 [node name="CommunityPanel" parent="UI" unique_id=868963767 instance=ExtResource("28_communitypanel")]
+
+[node name="SettingsPanel" parent="UI" instance=ExtResource("36_settings")]

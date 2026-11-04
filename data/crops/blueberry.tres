@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CropData" format=3]
+﻿[gd_resource type="Resource" script_class="CropData" format=3]
 
 [ext_resource type="Script" path="res://scripts/data/crop_data.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/generated/content_v1/crops/blueberry/sprout.png" id="2"]
@@ -17,3 +17,4 @@ harvest_count = 2
 stage_days = Array[int]([1, 2, 2])
 regrow_days = 2
 visual_scale = 0.5
+seasons = Array[StringName]([&"summer"])

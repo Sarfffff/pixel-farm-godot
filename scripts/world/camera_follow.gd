@@ -106,6 +106,14 @@ func set_view_zoom(value: float, immediate: bool = false, remember: bool = true)
 		preferences.save(PREFERENCES)
 
 
+## 切换世界（进出房屋）时换边界，并让缩放按新地图重新适配。
+func set_world_bounds(bounds: Rect2) -> void:
+	world_bounds = bounds
+	_apply_bounds()
+	set_view_zoom(_desired_zoom, true, false)
+	reset_smoothing()
+
+
 func _on_viewport_resized() -> void:
 	set_view_zoom(_desired_zoom, true, false)
 

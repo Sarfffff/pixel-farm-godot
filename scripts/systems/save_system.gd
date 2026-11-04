@@ -149,7 +149,12 @@ func collect() -> Dictionary:
 		data[&"farm"] = tiller.to_dict()
 	var player := get_tree().get_first_node_in_group(&"player") as CharacterBody2D
 	if player != null:
-		data[&"player"] = {&"x": player.global_position.x, &"y": player.global_position.y}
+		# 人在屋里时记门外坐标，否则读档会落在室内那套偏移坐标上。
+		var spot: Vector2 = player.global_position
+		var house := get_tree().get_first_node_in_group(&"house")
+		if house != null and house.has_method(&"save_position"):
+			spot = house.save_position()
+		data[&"player"] = {&"x": spot.x, &"y": spot.y}
 	# 鸡窝只存地上的蛋；鸡自己在附近随机游走，回来重新出生即可。
 	var coop := get_tree().get_first_node_in_group(&"chicken_coop")
 	if coop != null and coop.has_method(&"to_dict"):
@@ -166,7 +171,7 @@ func collect() -> Dictionary:
 	var stamina := get_tree().get_first_node_in_group(&"stamina")
 	if stamina != null and stamina.has_method(&"to_dict"):
 		data[&"stamina"] = stamina.to_dict()
-	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities"]:
+	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities", &"friendship", &"berry_grove"]:
 		var system := get_tree().get_first_node_in_group(group)
 		if system != null:
 			data[group] = system.to_dict()
@@ -237,7 +242,12 @@ func apply(data: Dictionary) -> void:
 	var stamina_data: Dictionary = data.get("stamina", {})
 	if stamina != null and stamina.has_method(&"from_dict") and not stamina_data.is_empty():
 		stamina.from_dict(stamina_data)
-	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities"]:
+
+	var berries := get_tree().get_first_node_in_group(&"berry_grove")
+	var berry_data: Dictionary = data.get("berries", {})
+	if berries != null and berries.has_method(&"from_dict") and not berry_data.is_empty():
+		berries.from_dict(berry_data)
+	for group: StringName in [&"upgrades", &"tutorial", &"forage", &"farm_activities", &"friendship", &"berry_grove"]:
 		var system := get_tree().get_first_node_in_group(group)
 		if system != null:
 			system.from_dict(data.get(String(group), {}))

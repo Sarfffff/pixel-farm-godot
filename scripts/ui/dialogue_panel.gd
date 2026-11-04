@@ -12,6 +12,10 @@ extends Control
 var _owner: Node
 var _buttons: Array[Button] = []
 var _selected: int = 0
+## 多句台词队列（open_lines 使用）
+var _lines: Array[String] = []
+var _line_index: int = 0
+var _pending_options: Array = []
 
 
 func _ready() -> void:
@@ -36,10 +40,44 @@ func _input(event: InputEvent) -> void:
 ## options 里每项形如 { &"id": StringName, &"text": String }。
 func open_with(speaker: String, text: String, options: Array, owner_node: Node) -> void:
 	_owner = owner_node
+	_lines.clear()
+	_pending_options = []
 	_speaker.text = speaker
 	_text.text = text
 	_build_options(options)
 	set_open(true)
+
+
+## 多句台词：逐句"继续"，最后一句才给出 options（不传就自动给"再见"）。
+func open_lines(speaker: String, lines: Array, owner_node: Node, options: Array = []) -> void:
+	if lines.is_empty():
+		return
+	_owner = owner_node
+	_lines.clear()
+	for line in lines:
+		_lines.append(String(line))
+	_line_index = 0
+	_pending_options = options
+	_speaker.text = speaker
+	_show_current_line()
+	set_open(true)
+
+
+func _show_current_line() -> void:
+	if _lines.is_empty():
+		close()
+		return
+	_text.text = _lines[clampi(_line_index, 0, _lines.size() - 1)]
+	var is_last: bool = _line_index >= _lines.size() - 1
+	var shown: Array = []
+	if not is_last:
+		shown = [{&"id": StringName("__next"), &"text": "继续"}]
+	elif not _pending_options.is_empty():
+		shown = _pending_options
+	else:
+		shown = [{&"id": StringName("__close"), &"text": "再见"}]
+	_build_options(shown)
+	_select(0)
 
 
 func close() -> void:
@@ -55,6 +93,9 @@ func set_open(open: bool) -> void:
 	if toolbar != null and toolbar.has_method(&"set_ui_visible"):
 		toolbar.set_ui_visible(not open)
 	if not open:
+		_lines.clear()
+		_line_index = 0
+		_pending_options.clear()
 		return
 	# 打开对话时收起其他面板，避免两个 UI 抢输入锁。
 	for panel_name: String in ["InventoryPanel", "ShopPanel", "DaySummary", "HelpPanel", "OrderPanel", "CommunityPanel"]:
@@ -82,6 +123,14 @@ func _build_options(options: Array) -> void:
 
 
 func _choose(id: StringName) -> void:
+	# 多句台词的内部选项，不回调 NPC。
+	if id == &"__next":
+		_line_index += 1
+		_show_current_line()
+		return
+	if id == &"__close":
+		close()
+		return
 	var next_text := ""
 	if _owner != null and _owner.has_method(&"on_dialogue_option"):
 		next_text = String(_owner.on_dialogue_option(id))

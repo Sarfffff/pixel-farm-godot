@@ -196,6 +196,11 @@ func _tool_hint(tool: StringName, cell: Vector2i) -> String:
 				return "先用锄头开垦这一格"
 			if _seed_id() == &"":
 				return "背包里没有种子 · 按 B 打开背包"
+			var seed_crop := _seed_crop()
+			if seed_crop != null and not seed_crop.grows_in(_current_season()):
+				return "%s 只在 %s 种，现在是%s季" % [
+					seed_crop.display_name, seed_crop.seasons_text(), _season_name(),
+				]
 			return "播种 %s · 空格 / 左键" % _seed_label()
 		&"axe":
 			if _tree_at(cell) != null:
@@ -578,7 +583,26 @@ func _on_day_advanced() -> void:
 func _can_plant(cell: Vector2i) -> bool:
 	if not _soil_state.has(cell) or _crops.has(cell):
 		return false
-	return _seed_crop() != null
+	var crop_data := _seed_crop()
+	if crop_data == null:
+		return false
+	# 错季不能种：作物数据里写明了生长季节，留空表示四季皆可
+	return crop_data.grows_in(_current_season())
+
+
+## 当前季节；没有时间系统时按春天处理，保证单独测试耕地也能跑。
+func _current_season() -> StringName:
+	var time := get_tree().get_first_node_in_group(&"time")
+	if time != null and time.has_method(&"season"):
+		return StringName(time.call(&"season"))
+	return &"spring"
+
+
+func _season_name() -> String:
+	var time := get_tree().get_first_node_in_group(&"time")
+	if time != null and time.has_method(&"season_name"):
+		return String(time.call(&"season_name"))
+	return "春"
 
 
 func _plant(cell: Vector2i) -> void:

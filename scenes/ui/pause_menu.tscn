@@ -110,6 +110,13 @@ theme_override_fonts/font = SubResource("SystemFont_ui")
 theme_override_font_sizes/font_size = 8
 text = "音效：开"
 
+[node name="SettingsButton" type="Button" parent="Frame/VBox/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "设置"
+
 [node name="Hint" type="Label" parent="Frame/VBox"]
 unique_name_in_owner = true
 layout_mode = 2

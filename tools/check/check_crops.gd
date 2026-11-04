@@ -132,6 +132,29 @@ func _run() -> void:
 	_check(_tiller._crops.has(TEST_CELL), "full bag keeps the crop on the field")
 	_check(_inventory.count_of(&"carrot") == carrot_before, "full bag stores no harvest")
 
+	# —— 季节限制：番茄只在夏天能种 ——
+	var tomato: CropData = load("res://data/crops/tomato.tres")
+	_check(not tomato.grows_in(&"spring") and tomato.grows_in(&"summer"), "tomato is summer only")
+	_check(tomato.seasons_text() == "夏", "season text lists 夏")
+	# 清空背包并把唯一可播种子换成番茄，让 _seed_id() 指向它
+	for index in _inventory.slot_count():
+		var slot: Dictionary = _inventory.item_at(index)
+		if not slot.is_empty():
+			_inventory.remove_item(slot[&"id"], int(slot[&"count"]))
+	_inventory.add_item(&"tomato_seeds", 2)
+	_check(_tiller._seed_id() == &"tomato_seeds", "tomato seeds become the active seed")
+
+	var season_cell: Vector2i = TEST_CELL + Vector2i(1, 0)
+	_tiller._on_use_requested(&"hoe", season_cell)
+	_check(_tiller._soil_state.has(season_cell), "neighbour cell tilled for the season test")
+	time.day = 1
+	_check(_tiller._current_season() == &"spring", "time starts in spring")
+	_check(not _tiller.can_use(&"seeds", season_cell), "tomato is rejected in spring")
+	time.day = 29
+	_check(_tiller._current_season() == &"summer", "day 29 is summer")
+	_check(_tiller.can_use(&"seeds", season_cell), "tomato is accepted in summer")
+	time.day = 1
+
 	print("[crops] %s (%d failures)" % ["PASS" if _failures == 0 else "FAIL", _failures])
 	_main.queue_free()
 	await process_frame

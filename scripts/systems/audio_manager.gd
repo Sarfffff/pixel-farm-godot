@@ -27,6 +27,8 @@ const SFX: Dictionary = {
 	&"coin": "res://assets/audio/sfx/coin.wav",
 	&"ui": "res://assets/audio/sfx/ui.wav",
 	&"sleep": "res://assets/audio/sfx/sleep.wav",
+	&"step": "res://assets/audio/sfx/step.wav",
+	&"door": "res://assets/audio/sfx/door.wav",
 }
 ## 游戏内 BGM 基准音量，偏小一点给音效留空间。
 const VOLUME_DB: float = -10.0
@@ -70,6 +72,8 @@ func _ready() -> void:
 		sfx_player.bus = &"Master"
 		add_child(sfx_player)
 		_sfx_players.append(sfx_player)
+	# 所有按钮入场时自动挂点击音，新增面板不用各自接线。
+	get_tree().node_added.connect(_on_node_added)
 
 
 ## 切到指定曲目；同一首正在放时不会重播。
@@ -125,6 +129,21 @@ func is_music_playing() -> bool:
 	if _players.is_empty():
 		return false
 	return _players[_active].playing and _players[_active].stream != null
+
+
+## 新节点入场：只认按钮，挂上统一的点击音。
+## 放在 autoload 里做，菜单、背包、商店、设置都不用重复写。
+func _on_node_added(node: Node) -> void:
+	var button := node as BaseButton
+	if button == null:
+		return
+	if button.pressed.is_connected(_play_ui_click):
+		return
+	button.pressed.connect(_play_ui_click)
+
+
+func _play_ui_click() -> void:
+	play_sfx(&"ui", randf_range(0.96, 1.04))
 
 
 ## 播一个操作音效；未知名字只警告一次，不会打断音乐。

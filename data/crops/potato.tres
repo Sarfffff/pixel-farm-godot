@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CropData" format=3]
+﻿[gd_resource type="Resource" script_class="CropData" format=3]
 
 [ext_resource type="Script" path="res://scripts/data/crop_data.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/generated/expansion_v1/crops/potato_sprout.png" id="2"]
@@ -16,3 +16,4 @@ harvest_count = 1
 stage_days = Array[int]([1, 1])
 regrow_days = 0
 visual_scale = 0.5
+seasons = Array[StringName]([&"spring", &"summer"])

@@ -15,6 +15,10 @@ const FRICTION: float = 1100.0
 const TOOLS: Array[StringName] = [&"hoe", &"watering_can", &"seeds", &"axe", &"stone_pickaxe"]
 ## 工具 -> 动作动画前缀。素材里还没有单独的播种帧，先复用锄地的弯腰动作。
 const ACTION_ANIMATION: Dictionary[StringName, StringName] = {&"seeds": &"hoe"}
+## 走上多少像素踩一步：72px/s 下约每 0.25 秒一声，接近走路节奏。
+const STEP_DISTANCE: float = 18.0
+## 低于这个速度就不算在走，避免刹车尾巴和静止抖动出脚步声。
+const STEP_MIN_SPEED: float = 12.0
 
 @onready var _sprite: AnimatedSprite2D = %Sprite
 
@@ -28,6 +32,8 @@ var _action_tool: StringName
 var _action_cell: Vector2i
 var _impact_sent: bool = false
 var _inventory: Inventory
+## 距离上一声脚步已经走过的像素
+var _step_travel: float = 0.0
 
 
 func _ready() -> void:
@@ -63,6 +69,7 @@ func _sync_active_item(_id: StringName = &"") -> void:
 func _physics_process(delta: float) -> void:
 	if is_acting or input_locked:
 		velocity = Vector2.ZERO
+		_step_travel = 0.0
 		if not is_acting:
 			_update_animation(false)
 		return
@@ -76,6 +83,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()
 	_update_animation(input_direction != Vector2.ZERO)
+	_advance_footsteps(delta)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -283,6 +291,27 @@ func _on_sprite_animation_finished() -> void:
 		is_acting = false
 		_sync_active_item()
 		_update_animation(false)
+
+
+## 按"走过的距离"而不是固定计时触发脚步：走快走慢节奏都对，
+## 贴着墙推（速度被挡成 0）也不会一直响。
+func _advance_footsteps(delta: float) -> void:
+	var speed: float = velocity.length()
+	if speed < STEP_MIN_SPEED:
+		_step_travel = 0.0
+		return
+	_step_travel += speed * delta
+	if _step_travel < STEP_DISTANCE:
+		return
+	_step_travel -= STEP_DISTANCE
+	_play_step()
+
+
+func _play_step() -> void:
+	var audio := get_node_or_null("/root/AudioManager")
+	if audio == null or not audio.has_method(&"play_sfx"):
+		return
+	audio.call(&"play_sfx", &"step", randf_range(0.92, 1.08))
 
 
 func _resolve_facing(input_direction: Vector2) -> StringName:

@@ -20,6 +20,23 @@ extends Resource
 @export var regrow_days: int = 0
 ## 独立素材的画布大小不同，按地块调节显示比例，脚底锚点保持不变。
 @export_range(0.25, 2.0, 0.05) var visual_scale: float = 1.0
+## 可种植的季节；留空表示四季都能种（兼容旧数据）。
+@export var seasons: Array[StringName] = []
+
+
+## 这个季节能不能种。
+func grows_in(season_id: StringName) -> bool:
+	return seasons.is_empty() or seasons.has(season_id)
+
+
+## 给提示文字用的季节列表，如「春 / 秋」。
+func seasons_text() -> String:
+	if seasons.is_empty():
+		return "四季"
+	var names: Array[String] = []
+	for id: StringName in seasons:
+		names.append(String(TimeSystem.SEASON_NAMES[TimeSystem.SEASONS.find(id)]) if TimeSystem.SEASONS.has(id) else String(id))
+	return " / ".join(names)
 
 
 func days_at_stage(index: int) -> int:

@@ -83,7 +83,14 @@ func _on_stamina_changed(value: int) -> void:
 func _on_time_changed(day: int, minutes: int) -> void:
 	var hour: int = (minutes / 60) % 24
 	var minute: int = minutes % 60
-	_clock.text = "第 %d 天 %02d:%02d" % [day, hour, minute]
+	# 显示「春 3日 06:00」：季节 + 本季第几天，比累计天数更好读
+	var season_name: String = "春"
+	var day_in_season: int = day
+	if _time.has_method(&"season_name"):
+		season_name = String(_time.call(&"season_name"))
+	if _time.has_method(&"day_of_season"):
+		day_in_season = int(_time.call(&"day_of_season"))
+	_clock.text = "%s %d日 %02d:%02d" % [season_name, day_in_season, hour, minute]
 
 
 func _on_coins_changed(coins: int) -> void:

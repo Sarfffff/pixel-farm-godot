@@ -10,6 +10,8 @@ extends SceneTree
 ##   coin     金币：两声叮当
 ##   ui       界面点击：极短提示音
 ##   sleep    入睡：柔和下行三音
+##   step     脚步：极短的低频轻踏（走路每约一格触发一次）
+##   door     开门：木头摩擦的短促"吱呀"
 ##
 ## 运行方式：
 ##   godot --headless --path e:/my-ai-game --script res://tools/build/build_sfx.gd
@@ -31,6 +33,8 @@ func _init() -> void:
 		{"name": "coin", "samples": _coin()},
 		{"name": "ui", "samples": _ui()},
 		{"name": "sleep", "samples": _sleep()},
+		{"name": "step", "samples": _step()},
+		{"name": "door", "samples": _door()},
 	]
 	var failed := false
 	for job in jobs:
@@ -112,6 +116,22 @@ func _sleep() -> PackedFloat32Array:
 	_tone(buf, 0.0, 0.22, 523.0, 523.0, 0.30, 2.4)
 	_tone(buf, 0.16, 0.22, 392.0, 392.0, 0.30, 2.4)
 	_tone(buf, 0.32, 0.28, 294.0, 294.0, 0.32, 2.0)
+	return buf
+
+
+func _step() -> PackedFloat32Array:
+	var buf := _buffer(0.10)
+	# 闷住的噪声当鞋底摩擦，再叠一点低频当落地的"踏"。
+	_noise(buf, 0.0, 0.07, 0.30, 16.0, 0.10)
+	_tone(buf, 0.0, 0.06, 110.0, 78.0, 0.28, 18.0)
+	return buf
+
+
+func _door() -> PackedFloat32Array:
+	var buf := _buffer(0.26)
+	# 木头摩擦：闷噪声慢慢收尾，再叠一个下行的低"吱呀"。
+	_noise(buf, 0.0, 0.22, 0.26, 3.4, 0.06)
+	_tone(buf, 0.02, 0.18, 430.0, 250.0, 0.12, 4.5)
 	return buf
 
 

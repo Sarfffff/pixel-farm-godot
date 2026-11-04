@@ -1,0 +1,139 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_panel.gd" id="1_settings"]
+[ext_resource type="Theme" path="res://assets/generated/ui/inventory/inventory_theme.tres" id="2_theme"]
+
+[sub_resource type="SystemFont" id="SystemFont_ui"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "SimHei")
+
+[node name="SettingsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_settings")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+color = Color(0.05, 0.05, 0.07, 0.6)
+
+[node name="Frame" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -62.0
+offset_right = 96.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Frame"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="Frame/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.74, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 9
+text = "设置"
+horizontal_alignment = 1
+
+[node name="MusicRow" type="HBoxContainer" parent="Frame/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MusicLabel" type="Label" parent="Frame/VBox/MusicRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(42, 0)
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "音乐"
+
+[node name="MusicSlider" type="HSlider" parent="Frame/VBox/MusicRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 100.0
+step = 5.0
+value = 70.0
+
+[node name="MusicValue" type="Label" parent="Frame/VBox/MusicRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(30, 0)
+theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "70%"
+horizontal_alignment = 2
+
+[node name="SfxRow" type="HBoxContainer" parent="Frame/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SfxLabel" type="Label" parent="Frame/VBox/SfxRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(42, 0)
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "音效"
+
+[node name="SfxSlider" type="HSlider" parent="Frame/VBox/SfxRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 100.0
+step = 5.0
+value = 80.0
+
+[node name="SfxValue" type="Label" parent="Frame/VBox/SfxRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(30, 0)
+theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "80%"
+horizontal_alignment = 2
+
+[node name="WindowButton" type="Button" parent="Frame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "窗口模式：窗口"
+
+[node name="CloseButton" type="Button" parent="Frame/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.88, 0.68, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 8
+text = "返回"
+
+[node name="Hint" type="Label" parent="Frame/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.74, 0.56, 1)
+theme_override_fonts/font = SubResource("SystemFont_ui")
+theme_override_font_sizes/font_size = 7
+text = "设置会立即生效并保存在本地"
+horizontal_alignment = 1

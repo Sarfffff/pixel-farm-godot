@@ -41,7 +41,7 @@ func _run() -> void:
 
 	_check(_economy != null, "economy node exists")
 	_check(_economy.coins == Economy.STARTING_COINS, "starting coins")
-	_check(_main.get_node_or_null("Farm/World/Shopkeeper") != null, "shopkeeper placed in world")
+	_check(_main.get_node_or_null("Farm/World/ShopDoor") != null, "shop door placed in world")
 	_check(not _economy.spend(Economy.STARTING_COINS + 1), "cannot spend more than held")
 	_check(_economy.coins == Economy.STARTING_COINS, "failed spend leaves coins unchanged")
 

@@ -48,6 +48,18 @@ func _run() -> void:
 	_check(_inventory.add_item(&"no_such_item", 2) == 2, "unknown id rejected")
 	_check(_inventory.total_items() == 12, "unknown id leaves inventory untouched")
 
+	# 丢弃：面板 Delete 键丢 1 个，工具拒绝丢弃
+	var wood_slot: int = _inventory.find_item(&"wood")
+	var wood_before: int = _inventory.count_of(&"wood")
+	_panel.call("_discard", wood_slot)
+	_check(_inventory.count_of(&"wood") == wood_before - 1, "discard removes exactly one item")
+	var tool_slot: int = _inventory.find_item(&"hoe")
+	_panel.call("_discard", tool_slot)
+	_check(_inventory.count_of(&"hoe") == 1, "permanent tools cannot be discarded")
+	# 还原数量，后面的容量测试仍然按原来的期望值跑
+	_inventory.add_item(&"wood", 1)
+	_check(_inventory.count_of(&"wood") == wood_before, "discard test restores the stack")
+
 	# 超过单格上限时自动开新格：3 + 200 = 203 -> 99 + 99 + 5
 	_check(_inventory.add_item(&"wood", 200) == 0, "wood over one stack accepted")
 	_check(_inventory.count_of(&"wood") == 203, "wood total after overflow into new slots")

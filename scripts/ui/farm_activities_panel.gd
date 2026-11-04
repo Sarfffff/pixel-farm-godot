@@ -230,7 +230,7 @@ func refresh() -> void:
 	_frame.offset_right = 150 if storage_mode else -8
 	_frame.offset_top = -82
 	_frame.offset_bottom = 82
-	title.text = "农场木箱" if storage_mode else "池塘钓鱼"
+	title.text = "木箱 · 24 格仓库" if storage_mode else "池塘钓鱼"
 	if not storage_mode:
 		_refresh_fishing()
 		return

@@ -1,0 +1,226 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/world/interior_room.gd" id="1_fq0mw"]
+[ext_resource type="TileSet" path="res://assets/tilesets/house_terrain.tres" id="2_7d4k0"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/door_mat.png" id="3_2wcc8"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/square_rug.png" id="4_agn0v"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/display_cabinet.png" id="5_icw6d"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/bookcase.png" id="6_73rm3"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/cupboard.png" id="7_r015x"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/round_table.png" id="8_pkwxc"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/oak_chair.png" id="9_1xnk3"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/potted_fern.png" id="10_se01r"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/basket.png" id="11_llro0"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/tall_potted_tree.png" id="12_qv08w"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/wall_clock.png" id="13_sksbm"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/objects/furniture/wall_shelf.png" id="14_l4w4p"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/shopkeeper.tscn" id="15_47xpv"]
+[ext_resource type="Texture2D" path="res://assets/generated/characters/npcs_v1/shopkeeper_walk.png" id="16_01bqu"]
+[ext_resource type="Script" path="res://scripts/npcs/shopkeeper.gd" id="17_nvh0f"]
+[ext_resource type="Script" path="res://scripts/world/house_door.gd" id="18_lgtoy"]
+[ext_resource type="Texture2D" path="res://assets/generated/content_v1/terrain/interiors/door.png" id="19_4qgdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rijfk"]
+size = Vector2(30, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14ej5"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nuow"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0e3l"]
+size = Vector2(28, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07wsf"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjeb2"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvoo5"]
+size = Vector2(288, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgwtq"]
+size = Vector2(16, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57i0w"]
+size = Vector2(16, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qwxe"]
+size = Vector2(288, 16)
+
+[node name="ShopInterior" type="Node2D" unique_id=151311009]
+script = ExtResource("1_fq0mw")
+camera_bounds = Rect2(0, 0, 288, 240)
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=419021772]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAA=")
+tile_set = ExtResource("2_7d4k0")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1930696722]
+z_index = 1
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAwAAAAAAAAABAAAAAgAAAAAAAAABAAEAAQAAAAAAAAABAAIAAwAAAAAAAAACAAAAAgAAAAAAAAACAAEAAQAAAAAAAAACAAIAAwAAAAAAAAADAAAAAgAAAAAAAAADAAEAAQAAAAAAAAADAAIAAwAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAwAAAAAAAAAFAAAAAgAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAwAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAwAAAAAAAAAHAAAAAgAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAwAAAAAAAAAIAAAAAgAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAwAAAAAAAAAJAAAAAgAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAwAAAAAAAAAKAAAAAgAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAwAAAAAAAAALAAAAAgAAAAAAAAALAAEAAQAAAAAAAAALAAIAAwAAAAAAAAAMAAAAAgAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAwAAAAAAAAANAAAAAgAAAAAAAAANAAEAAQAAAAAAAAANAAIAAwAAAAAAAAAOAAAAAgAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAwAAAAAAAAAPAAAAAgAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAwAAAAAAAAAQAAAAAgAAAAAAAAAQAAEAAQAAAAAAAAAQAAIAAwAAAAAAAAARAAAAAgAAAAAAAAARAAEAAQAAAAAAAAARAAIAAwAAAAAAAAAAAAMAAgAAAAAAAAARAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAARAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAARAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAARAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAARAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAARAAgAAgAAAAAAAAAAAAkAAgAAAAAAAAARAAkAAgAAAAAAAAAAAAoAAgAAAAAAAAARAAoAAgAAAAAAAAAAAAsAAgAAAAAAAAABAAsAAgAAAAAAAAACAAsAAgAAAAAAAAADAAsAAgAAAAAAAAAEAAsAAgAAAAAAAAAFAAsAAgAAAAAAAAAGAAsAAgAAAAAAAAAHAAsAAgAAAAAAAAAIAAsAAgAAAAAAAAAJAAsAAgAAAAAAAAAKAAsAAgAAAAAAAAALAAsAAgAAAAAAAAAMAAsAAgAAAAAAAAANAAsAAgAAAAAAAAAOAAsAAgAAAAAAAAAPAAsAAgAAAAAAAAAQAAsAAgAAAAAAAAARAAsAAgAAAAAAAAAAAAwAAgAAAAAAAAABAAwAAgAAAAAAAAACAAwAAgAAAAAAAAADAAwAAgAAAAAAAAAEAAwAAgAAAAAAAAAFAAwAAgAAAAAAAAAGAAwAAgAAAAAAAAAHAAwAAgAAAAAAAAAIAAwAAgAAAAAAAAAJAAwAAgAAAAAAAAAKAAwAAgAAAAAAAAALAAwAAgAAAAAAAAAMAAwAAgAAAAAAAAANAAwAAgAAAAAAAAAOAAwAAgAAAAAAAAAPAAwAAgAAAAAAAAAQAAwAAgAAAAAAAAARAAwAAgAAAAAAAAAAAA0AAgAAAAAAAAABAA0AAgAAAAAAAAACAA0AAgAAAAAAAAADAA0AAgAAAAAAAAAEAA0AAgAAAAAAAAAFAA0AAgAAAAAAAAAGAA0AAgAAAAAAAAAHAA0AAgAAAAAAAAAIAA0AAgAAAAAAAAAJAA0AAgAAAAAAAAAKAA0AAgAAAAAAAAALAA0AAgAAAAAAAAAMAA0AAgAAAAAAAAANAA0AAgAAAAAAAAAOAA0AAgAAAAAAAAAPAA0AAgAAAAAAAAAQAA0AAgAAAAAAAAARAA0AAgAAAAAAAAAAAA4AAgAAAAAAAAABAA4AAgAAAAAAAAACAA4AAgAAAAAAAAADAA4AAgAAAAAAAAAEAA4AAgAAAAAAAAAFAA4AAgAAAAAAAAAGAA4AAgAAAAAAAAAHAA4AAgAAAAAAAAAIAA4AAgAAAAAAAAAJAA4AAgAAAAAAAAAKAA4AAgAAAAAAAAALAA4AAgAAAAAAAAAMAA4AAgAAAAAAAAANAA4AAgAAAAAAAAAOAA4AAgAAAAAAAAAPAA4AAgAAAAAAAAAQAA4AAgAAAAAAAAARAA4AAgAAAAAAAAA=")
+tile_set = ExtResource("2_7d4k0")
+
+[node name="FloorProps" type="Node2D" parent="." unique_id=1639966768]
+z_index = 2
+
+[node name="DoorMat" type="Sprite2D" parent="FloorProps" unique_id=689434619]
+texture_filter = 1
+position = Vector2(136, 168)
+texture = ExtResource("3_2wcc8")
+
+[node name="SquareRug" type="Sprite2D" parent="FloorProps" unique_id=707696321]
+texture_filter = 1
+position = Vector2(192, 168)
+texture = ExtResource("4_agn0v")
+
+[node name="Props" type="Node2D" parent="." unique_id=204491337]
+z_index = 5
+y_sort_enabled = true
+
+[node name="DisplayCabinet" type="Sprite2D" parent="Props" unique_id=1220584869]
+texture_filter = 1
+position = Vector2(136, 122)
+texture = ExtResource("5_icw6d")
+offset = Vector2(0, -16)
+
+[node name="Body" type="StaticBody2D" parent="Props/DisplayCabinet" unique_id=626016107]
+collision_mask = 0
+
+[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="Props/DisplayCabinet/Body" unique_id=692810603]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_rijfk")
+
+[node name="Bookcase" type="Sprite2D" parent="Props" unique_id=67996655]
+texture_filter = 1
+position = Vector2(40, 104)
+texture = ExtResource("6_73rm3")
+offset = Vector2(0, -16)
+
+[node name="Body" type="StaticBody2D" parent="Props/Bookcase" unique_id=1762682163]
+collision_mask = 0
+
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Props/Bookcase/Body" unique_id=1797745908]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_14ej5")
+
+[node name="Cupboard" type="Sprite2D" parent="Props" unique_id=1830024668]
+texture_filter = 1
+position = Vector2(232, 104)
+texture = ExtResource("7_r015x")
+offset = Vector2(0, -16)
+
+[node name="Body" type="StaticBody2D" parent="Props/Cupboard" unique_id=143622951]
+collision_mask = 0
+
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Props/Cupboard/Body" unique_id=1526064254]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_6nuow")
+
+[node name="RoundTable" type="Sprite2D" parent="Props" unique_id=606638458]
+texture_filter = 1
+position = Vector2(200, 156)
+texture = ExtResource("8_pkwxc")
+offset = Vector2(0, -16)
+
+[node name="Body" type="StaticBody2D" parent="Props/RoundTable" unique_id=1788914576]
+collision_mask = 0
+
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Props/RoundTable/Body" unique_id=1970305104]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_n0e3l")
+
+[node name="OakChair" type="Sprite2D" parent="Props" unique_id=1431285940]
+texture_filter = 1
+position = Vector2(174, 158)
+texture = ExtResource("9_1xnk3")
+offset = Vector2(0, -16)
+
+[node name="Body" type="StaticBody2D" parent="Props/OakChair" unique_id=1012518828]
+collision_mask = 0
+
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Props/OakChair/Body" unique_id=231909699]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_07wsf")
+
+[node name="PottedFern" type="Sprite2D" parent="Props" unique_id=1461558124]
+texture_filter = 1
+position = Vector2(32, 168)
+texture = ExtResource("10_se01r")
+offset = Vector2(0, -16)
+
+[node name="Basket" type="Sprite2D" parent="Props" unique_id=1538035861]
+texture_filter = 1
+position = Vector2(72, 168)
+texture = ExtResource("11_llro0")
+offset = Vector2(0, -16)
+
+[node name="TallPottedTree" type="Sprite2D" parent="Props" unique_id=1738413114]
+texture_filter = 1
+position = Vector2(256, 160)
+texture = ExtResource("12_qv08w")
+offset = Vector2(0, -16)
+
+[node name="Body" type="StaticBody2D" parent="Props/TallPottedTree" unique_id=386127854]
+collision_mask = 0
+
+[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Props/TallPottedTree/Body" unique_id=2028047086]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_sjeb2")
+
+[node name="WallClock" type="Sprite2D" parent="Props" unique_id=113562527]
+texture_filter = 1
+position = Vector2(136, 56)
+texture = ExtResource("13_sksbm")
+offset = Vector2(0, -16)
+
+[node name="WallShelf" type="Sprite2D" parent="Props" unique_id=1493387431]
+texture_filter = 1
+position = Vector2(72, 56)
+texture = ExtResource("14_l4w4p")
+offset = Vector2(0, -16)
+
+[node name="Shopkeeper" type="Sprite2D" parent="Props" unique_id=271632011 instance=ExtResource("15_47xpv")]
+texture_filter = 1
+position = Vector2(136, 94)
+texture = ExtResource("16_01bqu")
+offset = Vector2(0, -8)
+hframes = 3
+vframes = 4
+script = ExtResource("17_nvh0f")
+
+[node name="WallBody" type="StaticBody2D" parent="." unique_id=909370616]
+collision_mask = 0
+
+[node name="Wall0" type="CollisionShape2D" parent="WallBody" unique_id=374524457]
+position = Vector2(144, 24)
+shape = SubResource("RectangleShape2D_pvoo5")
+
+[node name="Wall1" type="CollisionShape2D" parent="WallBody" unique_id=388039242]
+position = Vector2(8, 112)
+shape = SubResource("RectangleShape2D_bgwtq")
+
+[node name="Wall2" type="CollisionShape2D" parent="WallBody" unique_id=1599078649]
+position = Vector2(280, 112)
+shape = SubResource("RectangleShape2D_57i0w")
+
+[node name="Wall3" type="CollisionShape2D" parent="WallBody" unique_id=97033104]
+position = Vector2(144, 184)
+shape = SubResource("RectangleShape2D_2qwxe")
+
+[node name="ExitDoor" type="Node2D" parent="." unique_id=1080680967]
+position = Vector2(136, 184)
+script = ExtResource("18_lgtoy")
+mode = "exit"
+
+[node name="Art" type="Sprite2D" parent="ExitDoor" unique_id=41486859]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("19_4qgdg")
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=1954182823]
+position = Vector2(136, 152)

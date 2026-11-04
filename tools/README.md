@@ -25,6 +25,8 @@ godot --headless --path . --script res://tools/<子目录>/<脚本>.gd
 | `build_farm_map.gd` | 从零构建 40×30 农场并覆写 `scenes/world/farm.tscn`（改动布局后跑一次） |
 | `build_player_frames.gd` | 从动作图集切帧，写入 `scenes/player/player_frames.tres` 的 8 个方向动画 |
 | `build_bgm.gd` | 波表合成三首原创循环 BGM（`menu` / `farm_day` / `farm_night`），写入 `assets/audio/bgm/`，WAV 内带 smpl 循环块 |
+| `build_sfx.gd` | 离线合成 10 个操作音效（锄地/浇水/播种/收获/砍树/采矿/金币/UI/入睡/脚步），写入 `assets/audio/sfx/`；**新生成的 wav 需要 `godot --headless --path . --import` 后才可加载** |
+| `build_house_interior.gd` | 生成农舍室内场景 `scenes/world/house_interior.tscn`（27×19 房间、地板/墙层、家具表与家具碰撞、门、床边睡觉点与醒来点） |
 
 ## art · 素材流水线
 
@@ -38,6 +40,7 @@ godot --headless --path . --script res://tools/<子目录>/<脚本>.gd
 | `preview_expansion_art.gd` | 渲染扩展素材的验收页 |
 | `prepare_content_art.gd` | 原创全品类素材：实际网格识别、统一色板、分类切片、图标与 SpriteFrames |
 | `preview_content_art.gd` | 渲染原创全品类素材库的总览和分类页 |
+| `build_npc_walk_frames.gd` | 给 NPC 合成走路帧：源图只有四方向待机姿势，工具只移动脚掌（正视剪刀腿、侧视前后摆，身体不弹跳）生成 3 帧 × 4 方向图集（96×128） |
 
 原始生成图固定在 `assets/generated/sources/`（含 `.gdignore`，不参与引擎导入），脚本用 `Image.load_from_file()` 直接读文件，产物写到 `assets/generated/` 对应子目录。
 
@@ -60,10 +63,15 @@ godot --headless --path . --script res://tools/<子目录>/<脚本>.gd
 | `check_goals.gd` | 每日订单、交付结算、社区阶段上缴、种子解锁、存档往返 |
 | `check_farm_activities.gd` | 木箱、采集、加工、差异作物与复收、社区摆设、基础钓鱼、JSON 存档、模态输入 |
 | `check_animals.gd` | 鸡的游走与每日下蛋、捡蛋、满包保留、存档往返、卖价 |
-| `check_npcs.gd` | 4 位 NPC 的素材与场景（四方向） |
+| `check_npcs.gd` | 4 位 NPC 的素材与场景（3 帧 × 4 方向走路图集）、网格寻路可达性与水面阻挡、村民按日程移动并切换走路帧、多句对话推进 |
+| `check_friendship.gd` | 好感度分档阈值、聊天每天一次、送礼扣物品与喜好加成、工具不能送、存档往返 |
 | `check_pickaxe.gd` | 石镐采矿与岩石四方向表现 |
 | `check_held_tools.gd` | 5 种手持工具 × 4 方向的显示 |
-| `check_pause.gd` | Esc 优先级、暂停/恢复、保存、标题界面继续按钮 |
+| `check_pause.gd` | Esc 优先级、暂停/恢复、保存、设置入口、标题界面继续按钮 |
+| `check_settings.gd` | 音量换算边界、AudioManager 联动、设置写盘重读、设置面板开关与尺寸 |
+| `check_house.gd` | 门口进屋、农场隐藏与室内显示、玩家 reparent 与落点、相机边界切换、存档取门外坐标、出门复原、商店是另一套室内 |
+| `check_interior_layout.gd` | 农舍与商店的家具全量体检：贴图 32×32、脚底在可走地板、碰撞块不重叠不穿墙、地毯在低层级、门口通道不被堵 |
+| `check_release.gd` | 发行就绪：导出预设字段、排除规则、CREDITS 覆盖、版本号、外部素材隔离（无需导出模板） |
 | `check_ui_layout.gd` | 不同比例下的 HUD 与模态窗口布局 |
 | `check_audio.gd` | 曲目加载与循环点、交叉淡入淡出、昼夜换曲、标题曲目、暂停不中断 |
 | `check_content_art.gd` | 原创素材清单到齐、来源约束、唯一 ID、尺寸、透明度与图集像素一致性 |

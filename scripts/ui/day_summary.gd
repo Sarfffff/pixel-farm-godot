@@ -7,15 +7,10 @@ extends Control
 @onready var _lines: Label = %Lines
 @onready var _sleep_button: Button = %SleepButton
 @onready var _overlay: ColorRect = $Overlay
-var _forced: bool = false
-
-
 func _ready() -> void:
 	_overlay.gui_input.connect(_on_overlay_gui_input)
 	_sleep_button.pressed.connect(_sleep)
-	var time := get_tree().get_first_node_in_group(&"time")
-	if time != null:
-		time.day_over.connect(_on_day_over)
+	# 深夜不主动弹窗：02:00 只是把时间卡住，睡不睡由玩家自己走到床边决定。
 	hide()
 
 
@@ -31,8 +26,6 @@ func _input(event: InputEvent) -> void:
 
 
 func set_open(open: bool) -> void:
-	if not open and _forced:
-		return
 	visible = open
 	var player := get_tree().get_first_node_in_group(&"player")
 	if player != null and player.has_method(&"set_input_locked"):
@@ -63,32 +56,106 @@ func _refresh() -> void:
 	var income: int = economy.today_income if economy != null else 0
 	var coins: int = economy.coins if economy != null else 0
 	var collected: int = inventory.today_collected if inventory != null else 0
-	_title.text = "第 %d 天结束" % day
-	_lines.text = "今日收获 %d 件 · 今日收入 %d 金币\n金币余额 %d\n\n明天是第 %d 天，作物会按浇水情况生长一阶。" % [
-		collected, income, coins, day + 1,
-	]
-	var activities: Node = get_tree().get_first_node_in_group(&"farm_activities")
-	if activities != null:
-		_lines.text = "今日收获 %d 件 · 今日收入 %d 金币\n金币余额 %d\n\n%s" % [collected, income, coins, activities.tomorrow_text()]
+	# 白天上床只是小睡到傍晚，晚上上床才算过完这一天。
+	var night: bool = true
+	if time != null and time.has_method(&"is_evening"):
+		night = bool(time.call(&"is_evening"))
+	var clock: String = ""
+	if time != null and time.has_method(&"clock_text"):
+		clock = String(time.call(&"clock_text"))
+
+	if night:
+		_title.text = "第 %d 天结束" % day
+		_sleep_button.text = "睡觉 · 进入第 %d 天" % (day + 1)
+	else:
+		_title.text = "第 %d 天 · %s 还没到晚上" % [day, clock]
+		_sleep_button.text = "小睡到 20:00"
+
+	var headline := "今日收获 %d 件 · 今日收入 %d 金币\n金币余额 %d" % [collected, income, coins]
+	var tail := ""
+	if not night:
+		tail = "现在 %s，睡一觉到 20:00；晚上再睡才算过完这一天。" % clock
+	else:
+		var activities: Node = get_tree().get_first_node_in_group(&"farm_activities")
+		if activities != null:
+			tail = String(activities.tomorrow_text())
+		else:
+			tail = "明天是第 %d 天，作物会按浇水情况生长一阶。" % (day + 1)
+	_lines.text = "%s\n\n%s" % [headline, tail]
 
 
-## 睡觉：推进一天（作物结算）、关面板、自动存档。
+## 睡觉：渐黑 → 角色躺下 → 推进一天 → 存档 → 天亮在床边醒来。
+## 过程中要等黑屏与停留，所以是异步的；按钮回调直接 await 即可。
 func _sleep() -> void:
-	_forced = false
+	_play_sleep_sfx()
 	set_open(false)
+
+	# set_open(false) 会解锁输入，这里立刻锁回去：黑屏期间不许走动。
+	var player := get_tree().get_first_node_in_group(&"player")
+	if player != null and player.has_method(&"set_input_locked"):
+		player.set_input_locked(true)
+
+	var house := get_tree().get_first_node_in_group(&"house")
+	var fade := get_tree().get_first_node_in_group(&"screen_fade")
 	var time := get_tree().get_first_node_in_group(&"time")
-	if time == null or not time.has_method(&"sleep"):
+
+	# 白天小睡到傍晚，18:00 之后上床才算过完这一天。
+	var night: bool = true
+	if time != null and time.has_method(&"is_evening"):
+		night = bool(time.call(&"is_evening"))
+
+	if fade != null:
+		await fade.call(&"fade_out", 0.45)
+	if house != null and house.has_method(&"begin_sleep"):
+		house.call(&"begin_sleep")
+	if fade != null:
+		fade.call(&"show_caption", "晚安 · 第 %d 天" % _day() if night else "小睡一会儿")
+
+	if time == null:
 		return
-	time.sleep()
-	var save := get_tree().get_first_node_in_group(&"save")
-	if save != null and save.has_method(&"save_game"):
-		save.save_game()
+	var advanced: bool = true
+	if time.has_method(&"rest"):
+		advanced = bool(time.call(&"rest"))
+	elif time.has_method(&"sleep"):
+		time.call(&"sleep")
+	else:
+		return
+
+	if advanced:
+		var save := get_tree().get_first_node_in_group(&"save")
+		if save != null and save.has_method(&"save_game"):
+			save.save_game()
+		if fade != null:
+			fade.call(&"show_caption", "第 %d 天 · 早上好" % _day())
+	else:
+		var clock := ""
+		if time.has_method(&"clock_text"):
+			clock = String(time.call(&"clock_text"))
+		if fade != null:
+			fade.call(&"show_caption", "醒来 · 第 %d 天 %s" % [_day(), clock])
+
+	await get_tree().create_timer(0.9).timeout
+	if fade != null:
+		fade.call(&"hide_caption")
+
+	if house != null and house.has_method(&"finish_sleep"):
+		await house.call(&"finish_sleep")
+		return
+	if player != null and player.has_method(&"set_input_locked"):
+		player.set_input_locked(false)
+	if fade != null:
+		await fade.call(&"fade_in", 0.5)
 
 
-func _on_day_over() -> void:
-	_forced = true
-	set_open(true)
-	_title.text = "夜深了 · 该休息了"
+func _day() -> int:
+	var time := get_tree().get_first_node_in_group(&"time")
+	return int(time.day) if time != null else 1
+
+
+func _play_sleep_sfx() -> void:
+	var audio := get_node_or_null("/root/AudioManager")
+	if audio != null:
+		audio.call(&"play_sfx", &"sleep")
 
 
 func _on_overlay_gui_input(event: InputEvent) -> void:

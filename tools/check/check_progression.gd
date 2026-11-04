@@ -19,12 +19,14 @@ func _run() -> void:
 	# 不依赖渲染帧率：完整一分钟，30/60/144 FPS 的结果一致。
 	for fps: int in [30, 60, 144]:
 		var clock := preload("res://scripts/systems/time_system.gd").new()
+		# 速率可配（默认 2 分钟/秒），期望值按当前速率算，不写死
+		var expected: int = 360 + int(round(60.0 * clock.minutes_per_real_second))
 		for frame in fps * 60:
 			clock._process(1.0 / fps)
-		_check(clock.minutes == 600, "one minute advances four hours at %d FPS" % fps)
+		_check(clock.minutes == expected, "one minute matches the configured speed at %d FPS" % fps)
 		clock.running = false
 		clock._process(20.0)
-		_check(clock.minutes == 600, "stopped clock does not accumulate time")
+		_check(clock.minutes == expected, "stopped clock does not accumulate time")
 		clock.free()
 
 	_main = load("res://scenes/main.tscn").instantiate() as Node2D
@@ -136,20 +138,30 @@ func _run() -> void:
 	# 真正补通第一阶段的材料路径。
 	inventory.add_item(&"wood", 15)
 	_check(community.can_donate(), "naturally gathered fiber satisfies community requirement")
-	# 到两点弹出不可取消的收工面板，确认后正常进入新一天。
+	# 02:00 只把时间卡住，不主动弹面板：睡不睡由玩家自己走到床边决定。
 	player.set_input_locked(false)
 	await process_frame
 	time.running = true
 	time.minutes = time.CLOSE_MINUTES - 1
 	time.reset_clock()
-	time._process(0.25)
+	# 时间速率可配（默认 2 分钟/秒），给足 1 秒才会推进到收工时间
+	time._process(1.0)
 	var summary := _main.get_node("UI/DaySummary")
-	_check(summary.visible, "02:00 opens the day summary")
+	_check(not summary.visible, "02:00 does not shove the summary in the player's face")
+	_check(time.minutes == time.CLOSE_MINUTES, "the clock stops at 02:00 until the player sleeps")
+	_check(not bool(player.get("input_locked")), "the player keeps control at 02:00")
+	# 玩家自己去床边睡：面板必须能由玩家关闭
+	summary.set_open(true)
+	await process_frame
+	_check(summary.visible, "the bed still opens the summary on demand")
 	summary.set_open(false)
-	_check(summary.visible, "forced bedtime cannot be dismissed")
+	_check(not summary.visible, "the player can back out of the summary")
 	var before_sleep: int = time.day
+	summary.set_open(true)
 	summary._sleep()
-	_check(time.day == before_sleep + 1 and not summary.visible, "forced sleep completes and dismisses summary")
+	# 睡觉现在带黑屏过场（渐黑 0.45 + 停留 0.9 + 渐亮 0.5），等它跑完再断言。
+	await create_timer(2.2).timeout
+	_check(time.day == before_sleep + 1 and not summary.visible, "sleeping on demand completes")
 	_main.queue_free()
 	await process_frame
 	await process_frame

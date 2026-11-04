@@ -143,6 +143,16 @@ func _run() -> void:
 	await process_frame
 	_check(not mgr.is_music_playing(), "stop_music silences")
 
+	# 10. 按钮点击音：新加入的按钮应自动挂上（autoload 里监听 node_added）
+	var probe := Button.new()
+	root.add_child(probe)
+	await process_frame
+	_check(
+		probe.pressed.is_connected(Callable(mgr, "_play_ui_click")),
+		"buttons auto-hook the ui click sound"
+	)
+	probe.free()
+
 	_finish(main)
 
 

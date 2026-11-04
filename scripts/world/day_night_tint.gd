@@ -8,12 +8,23 @@ const EVENING_START: int = 17 * 60
 const FULL_DARK: int = 21 * 60
 const NIGHT_COLOR := Color(0.58, 0.62, 0.88)
 const MAX_MIX: float = 0.55
+## 室内固定暖色：在屋里时不受夜色影响，和室外区分开。
+const INDOOR_COLOR := Color(0.97, 0.93, 0.85)
+## 季节基色：和昼夜、天气一起做乘法叠加在世界上（不影响 UI）。
+const SEASON_TINTS: Dictionary[StringName, Color] = {
+	&"spring": Color(1.0, 1.0, 1.0),
+	&"summer": Color(1.0, 0.99, 0.93),
+	&"autumn": Color(1.0, 0.93, 0.82),
+	&"winter": Color(0.92, 0.96, 1.0),
+}
 
 var _time: Node
 var _weather: Node
+var _indoor: bool = false
 
 
 func _ready() -> void:
+	add_to_group(&"day_night_tint")
 	_time = get_tree().get_first_node_in_group(&"time")
 	if _time == null:
 		push_warning("[day_night_tint] 未找到 time 组节点，昼夜色调保持白天")
@@ -29,7 +40,17 @@ func _on_time_changed(_day: int, minutes: int) -> void:
 	_apply(minutes)
 
 
+## 进屋/出门时切换：室内常亮，室外按时间与天气变暗。
+func set_indoor(indoor: bool) -> void:
+	_indoor = indoor
+	if _time != null:
+		_apply(int(_time.minutes))
+
+
 func _apply(minutes: int) -> void:
+	if _indoor:
+		color = INDOOR_COLOR
+		return
 	var mix: float = 0.0
 	if minutes >= EVENING_START:
 		if minutes >= FULL_DARK:
@@ -42,4 +63,13 @@ func _apply(minutes: int) -> void:
 		tint = Color(
 			tint.r * weather_tint.r, tint.g * weather_tint.g, tint.b * weather_tint.b, 1.0
 		)
+	var season_tint: Color = SEASON_TINTS.get(_season(), Color.WHITE)
+	tint = Color(tint.r * season_tint.r, tint.g * season_tint.g, tint.b * season_tint.b, 1.0)
 	color = tint
+
+
+## 当前季节（取不到就按春天，不影响原有昼夜表现）。
+func _season() -> StringName:
+	if _time != null and _time.has_method(&"season"):
+		return StringName(_time.call(&"season"))
+	return &"spring"

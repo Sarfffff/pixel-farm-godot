@@ -44,11 +44,15 @@ func _run() -> void:
 		_check(sprite != null, "Sprite2D root")
 		if sprite == null:
 			continue
-		_check(sprite.hframes == 4 and sprite.frame == 0, "four poses, front default")
+		_check(
+			sprite.hframes == 3 and sprite.vframes == 4 and sprite.frame == 0,
+			"three walk frames x four directions, front idle default"
+		)
 		_check(sprite.offset == Vector2(0, -8), "foot origin matches player")
 		_check(sprite.texture_filter == CanvasItem.TEXTURE_FILTER_NEAREST, "nearest filtering")
-		_check(sprite.texture != null and sprite.texture.get_size() == Vector2(128, 32), "direction sheet loads")
+		_check(sprite.texture != null and sprite.texture.get_size() == Vector2(96, 128), "walk sheet loads")
 		sprite.free()
+		_check_walk_sheet(id)
 	var main_packed: PackedScene = load("res://scenes/main.tscn") as PackedScene
 	_check(main_packed != null, "main scene loads")
 	if main_packed == null:
@@ -60,24 +64,50 @@ func _run() -> void:
 	current_scene = main
 	await process_frame
 	await process_frame
-	var boss: Sprite2D = main.get_node_or_null("Farm/World/Shopkeeper") as Sprite2D
-	_check(boss != null, "shopkeeper placed in world")
-	# 老板接管商店后，地上的钱袋子应该移除
+	# 店主已经搬进店里：农场只留店门
+	_check(main.get_node_or_null("Farm/World/Shopkeeper") == null, "keeper moved indoors")
 	_check(main.get_node_or_null("Farm/World/ShopStand") == null, "coin sack removed from the map")
+	var shop_door := main.get_node_or_null("Farm/World/ShopDoor") as Node2D
+	_check(shop_door != null, "shop door placed in world")
+	var player: CharacterBody2D = main.get_node("Farm/World/Player") as CharacterBody2D
+	var dialogue: Control = main.get_node("UI/DialoguePanel") as Control
+	var shop: Control = main.get_node("UI/ShopPanel") as Control
+	var clock := main.get_node("Systems/Time")
+	# 商店有营业时间：先把时钟拨到 10:00
+	clock.set("minutes", 10 * 60)
+	clock.call("reset_clock")
+
+	var boss: Sprite2D
+	if shop_door != null:
+		player.global_position = shop_door.global_position + Vector2(0, 12)
+		_check(bool(shop_door.call("player_in_range", player)), "standing at the shop door is in range")
+		shop_door.call("interact", Vector2i.ZERO)
+		await create_timer(0.9).timeout
+		# 店铺现在有独立的室内场景（ShopInterior），不再复用农舍那间
+		var interior := main.get_node_or_null("ShopInterior") as Node2D
+		_check(interior != null, "shop interior loads")
+		if interior != null:
+			# 店主现在挂在 Y 排序层 Props 里，和柜台一起排序
+			boss = interior.find_child("Shopkeeper", true, false) as Sprite2D
+		if "--preview" in OS.get_cmdline_user_args():
+			await process_frame
+			await RenderingServer.frame_post_draw
+			var shot := root.get_texture().get_image()
+			if shot != null and shot.save_png("res://docs/screenshots/shop-interior.png") == OK:
+				print("[npcs] preview -> res://docs/screenshots/shop-interior.png")
+	_check(boss != null, "shopkeeper stands inside the store")
+
 	if boss != null:
-		var player: CharacterBody2D = main.get_node("Farm/World/Player") as CharacterBody2D
-		var dialogue: Control = main.get_node("UI/DialoguePanel") as Control
-		var shop: Control = main.get_node("UI/ShopPanel") as Control
-		player.global_position = boss.global_position + Vector2(0, 14)
-		_check(bool(boss.call("player_in_range", player)), "standing in front of the keeper is in range")
-		player.global_position = boss.global_position + Vector2(0, 90)
+		player.global_position = boss.global_position + Vector2(0, 22)
+		_check(bool(boss.call("player_in_range", player)), "standing in front of the counter is in range")
+		player.global_position = boss.global_position + Vector2(0, 120)
 		_check(not bool(boss.call("player_in_range", player)), "walking away leaves the interaction range")
-		# 站到侧面也不转向：老板固定朝下守着摊位
+		# 站到侧面也不转向：老板固定朝下守着柜台
 		player.global_position = boss.global_position + Vector2(18, 0)
 		await physics_frame
 		await physics_frame
 		_check(boss.frame == 0, "keeper stays facing down instead of turning")
-		player.global_position = boss.global_position + Vector2(0, 14)
+		player.global_position = boss.global_position + Vector2(0, 22)
 		boss.call("interact", Vector2i.ZERO)
 		_check(dialogue.visible, "talking to the keeper opens the dialogue")
 		_check(not shop.visible, "shop stays closed until you pick the option")
@@ -86,7 +116,90 @@ func _run() -> void:
 		shop.call("set_open", false)
 		var body := boss.get_node_or_null("Body") as StaticBody2D
 		_check(body != null and body.get_node_or_null("Feet") != null, "keeper has a feet collider")
+
+		# 打烊时间（22:00）：只给一句提示，货架不开
+		clock.set("minutes", 22 * 60)
+		clock.call("reset_clock")
+		_check(not bool(boss.call("is_open")), "shop reports closed after hours")
+		_check(String(boss.call("hint")).contains("打烊"), "hint mentions closing time")
+		player.global_position = boss.global_position + Vector2(0, 22)
+		boss.call("interact", Vector2i.ZERO)
+		_check(dialogue.visible, "keeper still talks after hours")
+		_check(not shop.visible, "shop does not open after hours")
+		var line := dialogue.get_node("%Text") as Label
+		_check(line != null and line.text.contains("打烊"), "closed line is shown after hours")
+		dialogue.call("close")
+
+	await _check_navigation(main)
+	await _check_villager_dialogue(main)
 	main.queue_free()
 	await process_frame
 	print("[npcs] 4 characters, 16 poses, shop integration; %d failures" % _failures)
 	quit(0 if _failures == 0 else 1)
+
+
+## 走路图集：帧 1/2 只能动脚，垂直范围必须和待机帧一致，否则看起来像在跳。
+func _check_walk_sheet(id: String) -> void:
+	var image: Image = Image.load_from_file(
+		ProjectSettings.globalize_path(ART + id + "_walk.png")
+	)
+	_check(image != null, id + " walk sheet file exists")
+	if image == null:
+		return
+	for direction: int in 4:
+		var idle: Rect2i = image.get_region(Rect2i(0, direction * 32, 32, 32)).get_used_rect()
+		for column: int in [1, 2]:
+			var step: Rect2i = image.get_region(
+				Rect2i(column * 32, direction * 32, 32, 32)
+			).get_used_rect()
+			_check(
+				step.position.y == idle.position.y and step.end.y == idle.end.y,
+				"%s direction %d step %d keeps body height (no hop)" % [id, direction, column]
+			)
+			_check(step.size.x >= idle.size.x, "%s step %d does not shrink" % [id, column])
+
+
+## 网格寻路：农场有 Nav 节点、可达路径、水面与边界不可走。
+func _check_navigation(main: Node2D) -> void:
+	var nav := main.get_node_or_null("Farm/Nav")
+	_check(nav != null, "farm has a Nav node")
+	if nav == null:
+		return
+	await physics_frame
+	await physics_frame
+	var path: Array = nav.call("find_path_cells", Vector2(312, 248), Vector2(456, 280))
+	_check(path.size() > 2, "path between gardener and fisherman exists (%d cells)" % path.size())
+	_check(not bool(nav.call("is_walkable", Vector2i(29, 21))), "pond cell is not walkable")
+	_check(not bool(nav.call("is_walkable", Vector2i(0, 0))), "map border is not walkable")
+	_check(bool(nav.call("is_walkable", Vector2i(20, 16))), "open grass is walkable")
+
+
+## 村民：会走动、四向帧合法、多句对话能逐句推进。
+func _check_villager_dialogue(main: Node2D) -> void:
+	var gardener := main.get_node_or_null("Farm/World/Gardener") as Sprite2D
+	_check(gardener != null, "gardener placed in world")
+	if gardener == null:
+		return
+	var start: Vector2 = gardener.global_position
+	# 采样帧序号：走路时应该在「待机 / 迈步 A / 迈步 B」之间切换
+	var seen: Dictionary[int, bool] = {}
+	for _i: int in 14:
+		await create_timer(0.1).timeout
+		seen[gardener.frame] = true
+	_check(gardener.global_position.distance_to(start) > 4.0, "gardener walks along its routine")
+	_check(gardener.frame >= 0 and gardener.frame <= 11, "gardener uses a valid walk frame")
+	var steps: Dictionary[int, bool] = {}
+	for frame: int in seen:
+		steps[frame % 3] = true
+	_check(steps.size() >= 2, "gardener animates its legs while walking (frames %s)" % [seen.keys()])
+
+	var dialogue := main.get_node("UI/DialoguePanel") as Control
+	gardener.call("interact", Vector2i.ZERO)
+	_check(dialogue.visible, "talking to the gardener opens the dialogue")
+	var text_label := dialogue.get_node("%Text") as Label
+	var first: String = text_label.text
+	_check(not first.is_empty(), "dialogue shows the first line")
+	dialogue.call("_choose", &"__next")
+	_check(text_label.text != first, "next advances to the second line")
+	dialogue.call("close")
+	_check(not dialogue.visible, "dialogue closes")

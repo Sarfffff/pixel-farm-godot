@@ -53,7 +53,7 @@ func can_pause() -> bool:
 	for panel: Node in get_tree().get_nodes_in_group(&"modal_ui"):
 		if panel is Control and panel.visible:
 			return false
-	for panel_name: String in ["InventoryPanel", "ShopPanel", "DaySummary", "DialoguePanel", "HelpPanel", "OrderPanel", "CommunityPanel"]:
+	for panel_name: String in ["InventoryPanel", "ShopPanel", "DaySummary", "DialoguePanel", "HelpPanel", "OrderPanel", "CommunityPanel", "SettingsPanel"]:
 		var panel := get_node_or_null("../%s" % panel_name) as Control
 		if panel != null and panel.visible:
 			return false
@@ -95,6 +95,7 @@ func _on_button_pressed(index: int) -> void:
 		3: _open_help()
 		4: _toggle_music()
 		5: _toggle_sfx()
+		6: _open_settings()
 
 
 ## 音乐开关：关掉后切场景也不会突然响起来（开关状态只影响本次运行）。
@@ -136,6 +137,16 @@ func _open_help() -> void:
 	var help := get_node_or_null("../HelpPanel") as Control
 	if help != null and help.has_method(&"set_open"):
 		help.call(&"set_open", true)
+
+
+## 设置面板：先藏起暂停菜单再打开，避免两层面板叠着；返回时由设置面板重新打开暂停。
+func _open_settings() -> void:
+	var settings := get_node_or_null("../SettingsPanel") as Control
+	if settings == null or not settings.has_method(&"set_open"):
+		_hint.text = "没有设置面板"
+		return
+	hide()
+	settings.call(&"set_open", true)
 
 
 ## 暂停面板最上面的一行：农场名 · 第几天 · 存档槽位，方便确认自己在玩哪个档。

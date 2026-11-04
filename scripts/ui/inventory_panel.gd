@@ -89,9 +89,36 @@ func _input(event: InputEvent) -> void:
 		_select(_selected + COLUMNS)
 	elif event.is_action_pressed(&"ui_accept"):
 		_equip(_selected)
+	elif event.is_action_pressed(&"discard_item"):
+		_discard(_selected)
 	else:
 		return
 	get_viewport().set_input_as_handled()
+
+
+## 丢弃 1 个（不整摞丢，避免手滑清空背包）；永久工具拒绝丢弃。
+func _discard(index: int) -> void:
+	if _inventory == null or index < 0 or index >= _inventory.slot_count():
+		return
+	var slot: Dictionary = _inventory.item_at(index)
+	if slot.is_empty():
+		return
+	var id: StringName = slot.get(&"id", &"")
+	if id == &"":
+		return
+	if Inventory.TOOL_IDS.has(id):
+		_show_message("工具不能丢")
+		return
+	var item := _inventory.definition(id)
+	if _inventory.remove_item(id, 1):
+		_show_message("丢弃了 1 个 %s" % item.display_name)
+	_refresh()
+
+
+func _show_message(text: String) -> void:
+	var toast := get_node_or_null("../Toast")
+	if toast != null and toast.has_method(&"show_message"):
+		toast.call(&"show_message", text)
 
 
 func set_open(open: bool) -> void:

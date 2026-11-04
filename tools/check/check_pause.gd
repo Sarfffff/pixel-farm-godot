@@ -92,12 +92,24 @@ func _run() -> void:
 		_check(not help.visible and not paused, "closing help resumes the game")
 		# 暂停菜单里的入口
 		_pause.open()
-		_check(_pause._items.size() == 6, "pause menu has help and audio entries")
+		_check(_pause._items.size() == 7, "pause menu has help, audio and settings entries")
 		_pause._on_button_pressed(3)
 		await process_frame
 		_check(help.visible and not _pause.visible, "help opens from the pause menu")
 		help.call(&"set_open", false)
 		await process_frame
+
+	# 设置入口：打开时暂停菜单让位，关闭后回到暂停菜单
+	var settings_panel := _main.get_node("UI/SettingsPanel") as Control
+	_check(settings_panel != null, "settings panel exists")
+	if settings_panel != null:
+		_pause.open()
+		_pause._on_button_pressed(6)
+		await process_frame
+		_check(settings_panel.visible and not _pause.visible, "settings opens from the pause menu")
+		settings_panel.call(&"close")
+		await process_frame
+		_check(not settings_panel.visible and _pause.visible, "closing settings returns to the pause menu")
 
 	# 音乐 / 音效开关
 	var audio := root.get_node_or_null("AudioManager")

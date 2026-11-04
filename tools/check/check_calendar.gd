@@ -49,7 +49,7 @@ func _run() -> void:
 	_check(_time.day == 1, "starts on day 1")
 	_check(_time.minutes == 6 * 60, "starts at 06:00")
 	_check(_time.clock_text() == "06:00", "clock text at 06:00")
-	_check(_main.get_node_or_null("Farm/World/SleepSpot") != null, "sleep spot in world")
+	_check(_main.get_node_or_null("Farm/World/CottageDoor") != null, "cottage door in world")
 	_check(_main.get_node_or_null("UI/DaySummary") != null, "day summary panel exists")
 
 	# 昼夜色调：白天是纯白，入夜变暗
@@ -119,6 +119,33 @@ func _run() -> void:
 	_check(_economy.coins == 42, "partial save applies available fields")
 
 	_save.delete_save()
+
+	# —— 季节：28 天一季度，由天数推导（不需要额外存档字段） ——
+	_time.day = 1
+	_check(_time.season() == &"spring", "day 1 is spring")
+	_check(_time.day_of_season() == 1, "day 1 is the first day of the season")
+	_time.day = 28
+	_check(_time.season() == &"spring" and _time.day_of_season() == 28, "day 28 is the last spring day")
+	var seasons_seen: Array = []
+	var on_season := func(season: StringName, _year: int) -> void: seasons_seen.append(season)
+	_time.season_changed.connect(on_season)
+	_time.day = 29
+	_check(_time.season() == &"summer", "day 29 turns summer")
+	_time.time_changed.emit(_time.day, _time.minutes)
+	await process_frame
+	var hud := _main.get_node_or_null("UI/HUD")
+	var clock_label := hud.find_child("TimeLabel", true, false) as Label if hud != null else null
+	_check(clock_label != null and clock_label.text.contains("夏"), "hud shows the current season")
+	_check(_time.day_of_season() == 1, "summer starts at day 1")
+	_time.sleep()
+	_check(seasons_seen == [], "sleeping within a season does not fire season_changed")
+	_time.day = 56
+	_time.sleep()
+	_check(seasons_seen == [&"autumn"], "crossing 56 days fires season_changed once")
+	_time.season_changed.disconnect(on_season)
+	_time.day = 113
+	_check(_time.season() == &"spring" and _time.year() == 2, "day 113 starts year 2 in spring")
+
 	print("[calendar] %s (%d failures)" % ["PASS" if _failures == 0 else "FAIL", _failures])
 	_main.queue_free()
 	await process_frame

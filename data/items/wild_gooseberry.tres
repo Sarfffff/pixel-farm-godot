@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/generated/items/gooseberry.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"wild_gooseberry"
+display_name = "野醋栗"
+description = "半透明的绿浆果，酸得让人眯眼睛，卖价却是三种野果里最高的。"
+icon = ExtResource("2")
+max_stack = 99
+sell_price = 11
+buy_price = 0
+category = &"forage"
+unlock_stage = 0

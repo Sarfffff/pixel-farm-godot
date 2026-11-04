@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/dialogue_data.gd" id="1_dialogue"]
+
+[resource]
+script = ExtResource("1_dialogue")
+lines = Array[String](["哟，新面孔。这几块地是你翻的吧？", "土翻得不错，就是别忘了浇水——作物只在喝过水的夜里长。", "想快点回本，先种胡萝卜；攒够钱再试土豆，两晚就能收。"])

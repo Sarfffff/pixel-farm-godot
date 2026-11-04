@@ -247,8 +247,9 @@ func _check_inventory() -> void:
 		_fail("main 场景缺少 UI/HUD 金币条")
 	if main.get_node_or_null("UI/ShopPanel") == null:
 		_fail("main 场景缺少 UI/ShopPanel 商店面板")
-	if main.get_node_or_null("Farm/World/Shopkeeper") == null:
-		_fail("main 场景缺少 Farm/World/Shopkeeper 商店老板")
+	# 店主已搬进店内（P0-4），农场侧只保留店门
+	if main.get_node_or_null("Farm/World/ShopDoor") == null:
+		_fail("main 场景缺少 Farm/World/ShopDoor 店门")
 	if main.get_node_or_null("UI/DialoguePanel") == null:
 		_fail("main 场景缺少 UI/DialoguePanel 对话框")
 	if main.get_node_or_null("Systems/Time") == null:
@@ -259,8 +260,10 @@ func _check_inventory() -> void:
 		_fail("main 场景缺少 Systems/Save 存档系统")
 	if main.get_node_or_null("UI/DaySummary") == null:
 		_fail("main 场景缺少 UI/DaySummary 睡前结算面板")
-	if main.get_node_or_null("Farm/World/SleepSpot") == null:
-		_fail("main 场景缺少 Farm/World/SleepSpot 睡觉交互点")
+	if main.get_node_or_null("Farm/World/CottageDoor") == null:
+		_fail("main 场景缺少 Farm/World/CottageDoor 进屋交互点")
+	if main.get_node_or_null("Systems/HouseManager") == null:
+		_fail("main 场景缺少 Systems/HouseManager")
 	if main.get_node_or_null("DayNightTint") == null:
 		_fail("main 场景缺少 DayNightTint 昼夜色调")
 	if main.get_node_or_null("UI/PauseMenu") == null:

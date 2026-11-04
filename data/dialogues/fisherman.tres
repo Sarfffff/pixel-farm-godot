@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/dialogue_data.gd" id="1_dialogue"]
+
+[resource]
+script = ExtResource("1_dialogue")
+lines = Array[String](["池塘今天很静，浮漂动得慢。", "钓鱼这活儿急不得：等浮漂沉下去，那一下再收竿。", "一天别贪多，三次就够；留点力气回家睡觉。"])

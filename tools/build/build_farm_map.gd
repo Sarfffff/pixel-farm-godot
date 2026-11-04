@@ -29,6 +29,8 @@ const TerrainTiles := preload("res://tools/lib/terrain_tiles.gd")
 const OCCLUSION_SCRIPT := "res://scripts/world/occlusion_fader.gd"
 ## 耕地系统脚本与面前格高亮场景
 const TILLER_SCRIPT := "res://scripts/world/farm_tiller.gd"
+## NPC 网格寻路脚本
+const NAV_SCRIPT := "res://scripts/world/nav_grid.gd"
 const CURSOR_SCENE := "res://scenes/world/tile_cursor.tscn"
 ## 耕地与湿土的压暗色调（素材本身偏亮，压一点更融进草地）
 const SOIL_TINT := Color(0.88, 0.82, 0.72)
@@ -96,6 +98,7 @@ const LAYER_SPECS: Array = [
 ## 道具摆放：场景路径 + 脚底坐标（像素）
 const PROP_TABLE: Array = [
 	["res://scenes/world/props/cottage.tscn", Vector2(472, 144)],
+	["res://scenes/world/props/general_store.tscn", Vector2(488, 256)],
 	["res://scenes/world/props/bush.tscn", Vector2(520, 192)],
 	["res://scenes/world/props/mushroom.tscn", Vector2(536, 152)],
 	["res://scenes/world/props/tree_fruit.tscn", Vector2(552, 216)],
@@ -211,7 +214,21 @@ func _build_farm(terrain: TileSet) -> Node2D:
 
 	_add_bounds(farm)
 	_add_tiller(farm)
+	_add_nav(farm)
 	return farm
+
+
+## 网格寻路节点：NPC 用，运行时扫描水面与道具碰撞建 A*。
+func _add_nav(farm: Node2D) -> void:
+	var nav := Node2D.new()
+	nav.name = "Nav"
+	var script := load(NAV_SCRIPT) as Script
+	if script == null:
+		push_warning("[build_farm_map] 缺少寻路脚本 %s" % NAV_SCRIPT)
+	else:
+		nav.set_script(script)
+	farm.add_child(nav)
+	nav.owner = farm
 
 
 ## 耕地系统：Tiller 节点 + 面前格高亮框；已浇水层用压暗色调表示湿土。
