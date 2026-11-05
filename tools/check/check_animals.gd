@@ -43,6 +43,9 @@ func _run() -> void:
 	_check(chickens.size() == 2, "two chickens in the yard")
 	_check(get_nodes_in_group(&"farm_animal").size() == 2, "chickens use the shared animal host")
 	await _check_animal_host(main, chickens[0])
+	_check_chicken_steps(chickens[0])
+	await _check_species_animations(main)
+	await _capture_motion_reference(main)
 
 	# 鸡会自己走动
 	var first := chickens[0] as Node2D
@@ -298,4 +301,121 @@ func _check_generic_animation(main: Node2D) -> void:
 	animal._update_visual(0.1, false)
 	_check(sprite.animation == &"idle_right", "missing sleep animation falls back to directional idle")
 	animal.queue_free()
+	await process_frame
+
+
+func _check_chicken_steps(chicken: Animal) -> void:
+	var sprite := chicken.get_node("Sprite") as Sprite2D
+	var origin: Vector2 = chicken.global_position
+	chicken.set_physics_process(false)
+	# 使用真实宿主移动，位置远离农场障碍；不靠“节点存在”判断行走正确。
+	for direction: Vector2 in [Vector2.RIGHT, Vector2.LEFT, Vector2(1, 1).normalized(), Vector2(-1, -1).normalized()]:
+		chicken.global_position = Vector2(1600, 1600)
+		chicken.brain.setup(chicken.profile, chicken.global_position, 1234)
+		chicken.brain.target = chicken.global_position + direction * 40
+		chicken._update_facing(direction)
+		chicken._update_visual(0.0, false)
+		var mirrored: bool = direction.x < 0
+		_check(sprite.frame == 0 and sprite.flip_h == mirrored, "chicken idle mirrors its single-facing texture toward the destination")
+		var before: Vector2 = chicken.global_position
+		chicken._physics_process(0.01)
+		_check((chicken.global_position - before).dot(direction) > 0.0, "chicken actually moves toward its destination")
+		_check(sprite.frame == 4 and sprite.flip_h == mirrored, "first footstep faces the actual movement instead of walking backwards")
+		for frame: int in [5, 6, 7, 4]:
+			chicken._update_visual(0.24, true)
+			_check(sprite.frame == frame and sprite.flip_h == mirrored, "complete four-frame gait retains its direction and loops")
+		for vertical: Vector2 in [Vector2.UP, Vector2.DOWN]:
+			chicken._update_facing(vertical)
+			chicken._update_visual(0.0, true)
+			_check(sprite.frame == 4 and sprite.flip_h == mirrored, "vertical motion retains the last horizontal walk direction")
+		chicken._update_visual(0.0, false)
+		_check(sprite.frame == 0 and sprite.flip_h == mirrored, "stopping returns to matching idle, never blink/empty cells as a direction")
+	chicken.global_position = origin
+	chicken.brain.setup(chicken.profile, origin, 1234)
+	chicken.set_physics_process(true)
+
+
+func _check_species_animations(main: Node2D) -> void:
+	var animal := Animal.new()
+	animal.profile = Profile.new()
+	var sprite := AnimatedSprite2D.new()
+	sprite.name = "AnimatedSprite2D"
+	animal.add_child(sprite)
+	main.add_child(animal)
+	animal.set_physics_process(false)
+	var species: int = 0
+	for file: String in ResourceLoader.list_directory("res://assets/packs/content_v1/animations/animals/"):
+		if not file.ends_with(".tres"): continue
+		species += 1
+		sprite.sprite_frames = load("res://assets/packs/content_v1/animations/animals/" + file) as SpriteFrames
+		for direction: Vector2 in [Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN]:
+			animal._update_facing(direction)
+			animal._update_visual(0.1, true)
+			_check(String(sprite.animation).begins_with("walk") and sprite.sprite_frames.get_frame_count(sprite.animation) > 1, file + " walks in every direction instead of sliding in idle")
+			_check(sprite.flip_h == (direction.x > 0), file + " mirrors left-only walk for right travel and resets mirror on left travel")
+			animal._update_visual(0.1, false)
+			_check(sprite.animation == StringName("idle_" + String(animal.facing)) and not sprite.flip_h, file + " restores the native idle direction without a stale mirror")
+	_check(species > 0, "all available species animation resources were exercised")
+	print("[animals] checked %d animal animation resources" % species)
+	# 原生四向步行优先于镜像；只有侧向帧的图集，纵向走动沿用最近侧向。
+	var frames := SpriteFrames.new()
+	frames.remove_animation(&"default")
+	var texture: Texture2D = sprite.sprite_frames.get_frame_texture(&"walk_left", 0)
+	for direction: String in ["left", "right", "up", "down"]:
+		var name := StringName("walk_" + direction)
+		frames.add_animation(name)
+		frames.add_frame(name, texture)
+	sprite.sprite_frames = frames
+	for direction: Vector2 in [Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN]:
+		animal._update_facing(direction)
+		animal._update_visual(0.1, true)
+		_check(sprite.animation == StringName("walk_" + String(animal.facing)) and not sprite.flip_h, "native four-direction walk always wins without mirroring")
+	animal.queue_free()
+	await process_frame
+
+
+func _capture_motion_reference(main: Node2D) -> void:
+	if "--preview" not in OS.get_cmdline_user_args() or DisplayServer.get_name() == "headless": return
+	var layer := CanvasLayer.new()
+	layer.layer = 100
+	main.add_child(layer)
+	var background := ColorRect.new()
+	background.size = Vector2(640, 360)
+	background.color = Color("60724b")
+	layer.add_child(background)
+	var title := Label.new()
+	title.text = "Chicken: RIGHT steps / mirrored LEFT steps"
+	title.position = Vector2(24, 12)
+	layer.add_child(title)
+	for index: int in 4:
+		var chicken: Animal = load("res://scenes/world/chicken.tscn").instantiate() as Animal
+		layer.add_child(chicken)
+		chicken.set_physics_process(false)
+		chicken.position = Vector2(96 + index * 144, 125)
+		chicken.scale = Vector2(4, 4)
+		chicken._update_facing(Vector2.RIGHT if index < 2 else Vector2.LEFT)
+		chicken._update_visual(0.24 if index % 2 else 0.0, true)
+	var subtitle := Label.new()
+	subtitle.text = "Other animals: mirrored RIGHT / native LEFT"
+	subtitle.position = Vector2(24, 170)
+	layer.add_child(subtitle)
+	for index: int in 4:
+		var animal := Animal.new()
+		var sprite := AnimatedSprite2D.new()
+		sprite.name = "AnimatedSprite2D"
+		var species: String = "white_cow" if index < 2 else "woolly_sheep"
+		sprite.sprite_frames = load("res://assets/packs/content_v1/animations/animals/" + species + ".tres")
+		animal.add_child(sprite)
+		layer.add_child(animal)
+		animal.set_physics_process(false)
+		animal.position = Vector2(96 + index * 144, 275)
+		animal.scale = Vector2(3, 3)
+		animal._update_facing(Vector2.RIGHT if index % 2 == 0 else Vector2.LEFT)
+		animal._update_visual(0.0, true)
+	for frame: int in 5: await process_frame
+	await RenderingServer.frame_post_draw
+	var path: String = "user://animal_motion_reference.png"
+	_check(root.get_texture().get_image().save_png(path) == OK, "animal movement reference rendered")
+	print("[animals] preview: " + ProjectSettings.globalize_path(path))
+	layer.queue_free()
 	await process_frame

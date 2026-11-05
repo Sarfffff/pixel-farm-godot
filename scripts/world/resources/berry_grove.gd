@@ -5,6 +5,10 @@ extends Node2D
 ## 离得太近的其他浆果丛，都会被跳过。生成结果进存档，读档后位置固定，不会每开一次变一批。
 
 const Bush := preload("res://scripts/world/resources/berry_bush.gd")
+const GroundRules := preload("res://scripts/world/farming/farm_ground_rules.gd")
+const SpriteBounds := preload("res://scripts/presentation/visible_sprite_bounds.gd")
+## 按成株可见叶丛预留空间，额外留2像素河岸/路沿间隔。
+const EDGE_CLEARANCE: float = 2.0
 
 ## 开局撒多少丛、地图上最多同时存在多少丛野生浆果。
 const WILD_START: int = 10
@@ -26,36 +30,34 @@ const SEED_TO_KIND := {
 }
 
 ## 允许生成的矩形（世界坐标）：避开地图边缘与出生点。
-const BOUNDS := Rect2(40, 56, 560, 360)
+const BOUNDS := Rect2(24, 40, 592, 416)
 ## 农场可开垦区（格）：这是玩家的地，野果不长进来，也不许种进来。
 const FARM_PLOT := Rect2i(16, 5, 14, 10)
 ## 两丛之间至少隔这么远，免得挤成一坨。
-const MIN_SPACING: float = 56.0
+const MIN_SPACING: float = 44.0
 ## 与现有道具/建筑保持的距离。
 const PROP_CLEARANCE: float = 18.0
 
 var bushes: Array[Node] = []
+## 极端拥挤旧档暂时没有落点时保留记录，不丢失玩家种下的灌木。
+var _waiting: Array[Dictionary] = []
 
 var _ready_done: bool = false
 var _rng := RandomNumberGenerator.new()
 var _water: TileMapLayer
-## 桥、木板路、坡地也是"铺好的地面"，灌木长上去会压住贴图。
-var _bridges: TileMapLayer
-var _paths: TileMapLayer
-var _hills: TileMapLayer
 var _tiller: Node
 var _last_day: int = 1
 
 
 func _ready() -> void:
 	add_to_group(&"berry_grove")
-	_rng.randomize()
+	_rng.seed = 20261105
 	_initialize.call_deferred()
 
 
 func _initialize() -> void:
 	_ensure_ready()
-	if bushes.is_empty():
+	if bushes.is_empty() and _waiting.is_empty():
 		_scatter(WILD_START)
 
 
@@ -66,9 +68,6 @@ func _ensure_ready() -> void:
 	_ready_done = true
 	var farm := get_parent().get_parent()
 	_water = farm.get_node_or_null("Water") as TileMapLayer
-	_bridges = farm.get_node_or_null("Bridges") as TileMapLayer
-	_paths = farm.get_node_or_null("Paths") as TileMapLayer
-	_hills = farm.get_node_or_null("Hills") as TileMapLayer
 	_tiller = get_tree().get_first_node_in_group(&"farm_tiller")
 	var time := get_tree().get_first_node_in_group(&"time")
 	if time != null:
@@ -84,6 +83,7 @@ func _ensure_ready() -> void:
 func _scatter(count: int) -> void:
 	var placed: int = 0
 	var attempts: int = 0
+	var kind_offset: int = _rng.randi_range(0, KINDS.size() - 1)
 	while placed < count and attempts < count * 60:
 		attempts += 1
 		var point := Vector2(
@@ -92,8 +92,27 @@ func _scatter(count: int) -> void:
 		)
 		if not can_place_at(point):
 			continue
-		_spawn(point, KINDS[_rng.randi() % KINDS.size()], true)
+		if not _spawn_wild_with_reserve(point, KINDS[(kind_offset + placed) % KINDS.size()]):
+			break
 		placed += 1
+	# 随机尝试耗尽后搜索合法种植格；数量受安全空间限制，品种轮换不受拥挤影响。
+	while placed < count:
+		var point: Vector2 = _nearest_clear_point(BOUNDS.get_center(), true)
+		if point == Vector2.ZERO:
+			break
+		if not _spawn_wild_with_reserve(point, KINDS[(kind_offset + placed) % KINDS.size()]):
+			break
+		placed += 1
+
+
+func _spawn_wild_with_reserve(point: Vector2, kind: StringName) -> bool:
+	var bush: Node = _spawn(point, kind, true)
+	# 野果种子需要仍有地方可种，野生补长不能占掉最后一处安全种植格。
+	if _nearest_clear_point(BOUNDS.get_center(), true) == Vector2.ZERO:
+		bushes.erase(bush)
+		bush.queue_free()
+		return false
+	return true
 
 
 func _spawn(point: Vector2, kind: StringName, wild: bool) -> Node:
@@ -111,25 +130,32 @@ func _spawn(point: Vector2, kind: StringName, wild: bool) -> Node:
 
 
 ## 这个位置能不能长浆果：不压水、不压耕地、不贴道具、不挨着别的浆果丛。
-func can_place_at(point: Vector2) -> bool:
-	if not BOUNDS.has_point(point):
+func can_place_at(point: Vector2, check_actors: bool = true) -> bool:
+	_ensure_ready()
+	var area: Rect2 = placement_rect(point)
+	if not BOUNDS.encloses(area):
 		return false
-	var cell := Vector2i((point / 16.0).floor())
 	# 整片种植区都留给庄稼，野果和玩家种的浆果都不进这块。
-	if FARM_PLOT.has_point(cell):
+	var farm: Node2D = get_parent().get_parent() as Node2D
+	var plot: Rect2 = Rect2(Vector2(FARM_PLOT.position * 16), Vector2(FARM_PLOT.size * 16))
+	if (farm.global_transform * plot).intersects(area):
 		return false
-	# 水面、桥面、木板小路、坡地上都不长野果：这几层都有贴图，
-	# 32px 的灌木压上去就是一块绿糊在桥上（玩家报过"穿模"）。
-	for layer: TileMapLayer in [_water, _bridges, _paths, _hills]:
-		if layer != null and layer.get_cell_source_id(cell) != -1:
-			return false
+	if not GroundRules.is_clear(farm, area):
+		return false
+	var cell: Vector2i = _water.local_to_map(_water.to_local(point))
 	if _tiller != null and _tiller.get(&"_soil_state").has(cell):
 		return false
 	if _tiller != null and _tiller.get(&"_crops").has(cell):
 		return false
 	for child in get_parent().get_children():
-		if child == self or bushes.has(child):
+		if child == self or child.is_queued_for_deletion() or bushes.has(child):
 			continue
+		if child.is_in_group(&"world_actor") or child is CharacterBody2D:
+			if check_actors and child is Node2D and (child as Node2D).global_position.distance_to(point) < 24.0:
+				return false
+			continue
+		if _overlaps_prop(child, area):
+			return false
 		if child is Node2D and (child as Node2D).global_position.distance_to(point) < PROP_CLEARANCE:
 			return false
 	for bush: Node in bushes:
@@ -138,10 +164,33 @@ func can_place_at(point: Vector2) -> bool:
 	return true
 
 
+func _overlaps_prop(node: Node, area: Rect2) -> bool:
+	if node.is_queued_for_deletion() or (node is CanvasItem and not (node as CanvasItem).visible):
+		return false
+	if node is Sprite2D:
+		var sprite: Sprite2D = node as Sprite2D
+		if (sprite.global_transform * SpriteBounds.local_rect(sprite)).grow(EDGE_CLEARANCE).intersects(area):
+			return true
+	# 鸡舍等容器把贴图放在内部，不能只检查World第一层的脚底坐标。
+	for child: Node in node.get_children():
+		if _overlaps_prop(child, area):
+			return true
+	return false
+
+
+static func placement_rect(point: Vector2) -> Rect2:
+	var footprint: Rect2 = Bush.growth_rect()
+	return Rect2(point + footprint.position, footprint.size).grow(EDGE_CLEARANCE)
+
+
 func _on_day_started(day: int) -> void:
 	if day <= _last_day:
 		return
 	_last_day = day
+	if not _waiting.is_empty():
+		var pending: Array[Dictionary] = _waiting.duplicate(true)
+		_waiting.clear()
+		_restore_rows(pending)
 	var wild_count: int = 0
 	for bush: Node in bushes:
 		if bool(bush.get(&"wild")):
@@ -168,6 +217,8 @@ func can_plant_at(cell: Vector2i) -> bool:
 
 func plant_at(cell: Vector2i, kind: StringName) -> void:
 	var center := Vector2(cell) * 16.0 + Vector2(8, 14)
+	if not KINDS.has(kind) or not can_place_at(center):
+		return
 	var bush := _spawn(center, kind, false)
 	bush.call(&"plant", kind, COLORS.get(kind, Color("3b2a45")))
 
@@ -194,6 +245,7 @@ func to_dict() -> Dictionary:
 	for bush: Node in bushes:
 		if is_instance_valid(bush):
 			rows.append(bush.call(&"to_dict"))
+	rows.append_array(_waiting.duplicate(true))
 	return {&"bushes": rows}
 
 
@@ -203,11 +255,42 @@ func from_dict(data: Dictionary) -> void:
 		if is_instance_valid(bush):
 			bush.queue_free()
 	bushes.clear()
-	for row in data.get(&"bushes", []):
+	_waiting.clear()
+	var safe: Array = []
+	var misplaced: Array = []
+	for row: Dictionary in data.get(&"bushes", []):
+		var point: Vector2 = Vector2(float(row.get(&"x", 0.0)), float(row.get(&"y", 0.0)))
+		(safe if can_place_at(point, false) else misplaced).append(row)
+	# 先占住全部合法旧位置，避免较早出现的坏坐标挤走后面的正常灌木。
+	_restore_rows(safe, true)
+	_restore_rows(misplaced, true)
+
+
+func _restore_rows(rows: Array, restoring: bool = false) -> void:
+	for row in rows:
 		var entry: Dictionary = row
 		var kind := StringName(String(entry.get(&"kind", "wild_blackberry")))
 		var point := Vector2(float(entry.get(&"x", 0.0)), float(entry.get(&"y", 0.0)))
 		if point == Vector2.ZERO:
 			continue
+		if not can_place_at(point, not restoring):
+			point = _nearest_clear_point(point, not restoring)
+		if point == Vector2.ZERO:
+			_waiting.append(entry.duplicate(true))
+			continue
 		var bush := _spawn(point, kind, bool(entry.get(&"wild", true)))
 		bush.call(&"from_dict", entry)
+
+
+## 旧档只移动不安全的灌木；最近草地搜索固定顺序，不重新抽品种或生长日期。
+func _nearest_clear_point(origin: Vector2, check_actors: bool = true) -> Vector2:
+	var closest: Vector2 = Vector2.ZERO
+	var distance: float = INF
+	for y: int in range(4, 28):
+		for x: int in range(2, 38):
+			var point: Vector2 = Vector2(x * 16 + 8, y * 16 + 14)
+			var candidate_distance: float = point.distance_squared_to(origin)
+			if candidate_distance < distance and can_place_at(point, check_actors):
+				closest = point
+				distance = candidate_distance
+	return closest

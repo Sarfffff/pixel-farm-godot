@@ -4,7 +4,8 @@ param(
 	[ValidateRange(1, 3600)][int]$TimeoutSeconds = 180,
 	[switch]$Windowed,
 	[switch]$Preview,
-	[switch]$Packaged
+	[switch]$Packaged,
+	[switch]$EnableDevTools
 )
 $ErrorActionPreference = 'Stop'
 
@@ -50,7 +51,7 @@ $sourceBefore = Get-SourceFingerprint $projectRoot
 foreach ($folder in @('scripts', 'scenes', 'data', 'assets', 'art', 'addons', 'tools')) {
 	Copy-CheckTree (Join-Path $projectRoot $folder) (Join-Path $auditRoot $folder)
 }
-foreach ($file in @('icon.svg', 'export_presets.cfg', 'CREDITS.md', 'README.md')) {
+foreach ($file in @('icon.svg', 'export_presets.cfg', 'CREDITS.md', 'README.md', 'project.godot')) {
 	if (Test-Path -LiteralPath (Join-Path $projectRoot $file)) {
 		Copy-Item -LiteralPath (Join-Path $projectRoot $file) -Destination (Join-Path $auditRoot $file)
 	}
@@ -61,7 +62,41 @@ foreach ($cache in @('global_script_class_cache.cfg', 'uid_cache.bin')) {
 	Copy-Item -LiteralPath (Join-Path $projectRoot ('.godot/' + $cache)) -Destination (Join-Path $auditRoot ('.godot/' + $cache))
 }
 $sourceAfter = Get-SourceFingerprint $projectRoot
-if ($sourceBefore -ne $sourceAfter) { throw 'Source files changed during snapshot creation; rerun after the current edits finish.' }
+if ($sourceBefore -ne $sourceAfter) {
+	# 并行工作区只同步已变化的文件，再验证完整指纹；不放宽固定快照要求。
+	Write-Output 'Source changed while copying; synchronizing changed files before freezing snapshot.'
+	$matched = $false
+	for ($attempt = 0; $attempt -lt 3; $attempt++) {
+		$snapshotFingerprint = Get-SourceFingerprint $auditRoot
+		$sourceAfter = Get-SourceFingerprint $projectRoot
+		if ($snapshotFingerprint -eq $sourceAfter) { $matched = $true; break }
+		$sourceRecords = @{}
+		foreach ($line in ($sourceAfter -split "`n")) {
+			$separator = $line.LastIndexOf(':')
+			$sourceRecords[$line.Substring(0, $separator)] = $line.Substring($separator + 1)
+		}
+		$snapshotRecords = @{}
+		foreach ($line in ($snapshotFingerprint -split "`n")) {
+			$separator = $line.LastIndexOf(':')
+			$name = $line.Substring(0, $separator)
+			if (-not $sourceRecords.ContainsKey($name)) { throw 'Files were removed during snapshot creation; rerun to create a fresh snapshot.' }
+			$snapshotRecords[$name] = $line.Substring($separator + 1)
+		}
+		foreach ($name in $sourceRecords.Keys) {
+			if ($snapshotRecords[$name] -eq $sourceRecords[$name]) { continue }
+			$destination = Join-Path $auditRoot $name
+			New-Item -ItemType Directory -Path (Split-Path $destination) -Force | Out-Null
+			Copy-Item -LiteralPath (Join-Path $projectRoot $name) -Destination $destination
+		}
+	}
+	# 最后一轮同步后仍完整核对，持续写入不能让混合快照进入验证。
+	if (-not $matched) {
+		$snapshotFingerprint = Get-SourceFingerprint $auditRoot
+		$sourceAfter = Get-SourceFingerprint $projectRoot
+		$matched = $snapshotFingerprint -eq $sourceAfter
+	}
+	if (-not $matched) { throw 'Source files kept changing during snapshot creation; rerun after the current edits finish.' }
+}
 [IO.File]::WriteAllText((Join-Path $auditRoot 'source_manifest.txt'), $sourceAfter)
 $config = [IO.File]::ReadAllText((Join-Path $projectRoot 'project.godot'))
 $config = $config -replace '(?m)^enabled=PackedStringArray\(.*\)$', 'enabled=PackedStringArray()'
@@ -104,6 +139,7 @@ foreach ($check in $checks) {
 	$runtimeMode = if ($Windowed) { '--rendering-method gl_compatibility' } else { '--headless' }
 	$info.Arguments = $runtimeMode + ' --path "' + $auditRoot + '" --script res://tools/check/' + $check.Name
 	if ($Preview) { $info.Arguments += ' -- --preview' }
+	if ($EnableDevTools) { $info.Arguments += $(if ($Preview) { ' --enable-dev-tools' } else { ' -- --enable-dev-tools' }) }
 	$info.UseShellExecute = $false
 	$info.CreateNoWindow = $true
 	$info.RedirectStandardOutput = $true
@@ -145,7 +181,7 @@ if ($runPackaged) {
 		} else {
 			$mode = if ($Windowed) { '--rendering-method gl_compatibility' } else { '--headless' }
 			$packInfo.WorkingDirectory = $packRuntimeRoot
-			$packInfo.Arguments = $mode + ' --path "' + $packRuntimeRoot + '" --main-pack "' + $packPath + '" --script "' + (Join-Path $auditRoot 'tools/lib/packaged_smoke.gd') + '"'
+			$packInfo.Arguments = $mode + ' --path "' + $packRuntimeRoot + '" --main-pack "' + $packPath + '" --script "' + (Join-Path $auditRoot 'tools/lib/packaged_smoke.gd') + '" -- --enable-dev-tools'
 		}
 		$packInfo.UseShellExecute = $false
 		$packInfo.CreateNoWindow = $true

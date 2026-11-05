@@ -22,7 +22,7 @@
 
 所有图片都已保存在本目录，原素材 `assets/textures/base/` 未覆盖。角色、作物和物品采用内置 **image_gen** 生成，再由 `tools/art/prepare_farm_art.gd` 完成技术整理。完整提示词保存在 [prompts.json](../../assets/textures/prompts.json)，切片配置保存在 [manifest.json](../../assets/textures/manifest.json)。
 
-[素材预览](../../docs/screenshots/farm-assets-preview.png) 展示当前接入的两套动作和后续储备的作物、物品。可用 `godot --path . --script res://tools/preview/preview_farm_art.gd` 重新渲染。
+历史素材预览路径为 `docs/screenshots/farm-assets-preview.png`，属于未随当前工作区保留的生成产物。可用 `godot --path . --script res://tools/preview/preview_farm_art.gd` 重新渲染；该截图不作为当前接入状态依据。
 
 ## 当前使用与后续储备
 

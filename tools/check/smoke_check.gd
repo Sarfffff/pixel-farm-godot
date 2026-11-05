@@ -308,7 +308,7 @@ func _check_inventory() -> void:
 		for node_name: String in ["ContinueButton", "NewButton", "QuitButton"]:
 			if menu.get_node_or_null("MainFrame/VBox/%s" % node_name) == null:
 				_fail("标题界面缺少按钮 %s" % node_name)
-		if menu.get_node_or_null("SlotFrame/VBox/SlotList") == null:
+		if not menu.get_node_or_null("%SlotList") is Container:
 			_fail("标题界面缺少存档槽位列表")
 		menu.free()
 

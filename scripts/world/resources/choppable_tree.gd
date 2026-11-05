@@ -11,6 +11,7 @@ var hits_remaining: int
 var is_felled: bool = false
 var stump_hits_remaining: int
 var _motion: Tween
+var _falling: bool = false
 
 
 func _ready() -> void:
@@ -19,10 +20,30 @@ func _ready() -> void:
 	add_to_group(&"choppable")
 
 
-func chop(direction: Vector2i) -> void:
+func blocked_reason() -> String:
+	if _falling:
+		return "树正在倒下 · 稍等片刻"
+	if is_queued_for_deletion() or get_meta(&"cleared", false):
+		return ""
+	var remaining: int = stump_hits_remaining if is_felled else hits_remaining
+	if remaining == 1:
+		var bag := get_tree().get_first_node_in_group(&"inventory") as Inventory
+		var amount: int = 1 if is_felled else hits_required
+		if bag == null or not bag.has_space_for(&"wood", amount):
+			return "背包空间不足 · 腾出空间再砍最后一下"
+	return ""
+
+
+func can_chop() -> bool:
+	return not is_queued_for_deletion() and not get_meta(&"cleared", false) and (stump_hits_remaining if is_felled else hits_remaining) > 0 and blocked_reason().is_empty()
+
+
+func chop(direction: Vector2i) -> bool:
+	if not can_chop():
+		return false
 	if is_felled:
 		_chop_stump(direction)
-		return
+		return true
 	hits_remaining -= 1
 	if _motion != null and _motion.is_valid():
 		_motion.kill()
@@ -34,10 +55,14 @@ func chop(direction: Vector2i) -> void:
 		_motion.tween_property(self, "rotation", 0.0, 0.10)
 	else:
 		is_felled = true
+		_falling = true
+		# 状态和收益同帧提交；动画期间保存也不会丢失或重复发木材。
+		_drop_wood(hits_required)
 		# Y 排序节点不移动；绕脚底转动树冠。
 		_motion.tween_property(self, "rotation", -side * 0.08, 0.08)
 		_motion.tween_property(self, "rotation", side * 1.45, 0.32).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		_motion.tween_callback(_leave_stump)
+	return true
 
 
 ## 砍树桩：先晃两下，最后一击连根拔起。
@@ -53,12 +78,14 @@ func _chop_stump(direction: Vector2i) -> void:
 		_motion.tween_property(self, "offset:x", side * 1.0, 0.05)
 		_motion.tween_property(self, "offset:x", 0.0, 0.08)
 	else:
+		_commit_stump_clear()
 		_motion.tween_property(self, "scale", Vector2(1.15, 0.85), 0.08)
 		_motion.tween_property(self, "modulate:a", 0.0, 0.14)
 		_motion.tween_callback(_clear_stump)
 
 
-func _leave_stump(drop_wood: bool = true) -> void:
+func _leave_stump() -> void:
+	_falling = false
 	rotation = 0.0
 	# 使用同一图集中已有的树桩，避免裁切树根成为一条平面色块。
 	region_rect = Rect2(48 if hits_required == 2 else 64, 32, 16, 16)
@@ -72,21 +99,28 @@ func _leave_stump(drop_wood: bool = true) -> void:
 		collision.shape = shape
 		collision.position = Vector2(0, -3)
 	set_meta(&"felled", true)
-	if drop_wood:
-		_drop_wood(hits_required)
 	_obstacle_changed()
 
 
 ## 树桩被清掉：撤掉碰撞、掉落一根木材，脚下恢复成可开垦的草地。
 func _clear_stump() -> void:
+	if not get_meta(&"cleared", false):
+		if not can_chop():
+			return
+		_commit_stump_clear()
+	queue_free()
+
+
+func _commit_stump_clear() -> void:
 	set_meta(&"cleared", true)
 	stump_hits_remaining = 0
 	var body := get_node_or_null("Body") as StaticBody2D
 	if body != null:
+		body.collision_layer = 0
+		body.collision_mask = 0
 		body.queue_free()
 	_drop_wood(1)
 	_obstacle_changed()
-	queue_free()
 
 
 func persistence_id() -> StringName:
@@ -104,7 +138,7 @@ func from_dict(state: Dictionary) -> void:
 	stump_hits_remaining = clampi(int(state.get("stump_hits", stump_hits_required)), 0, stump_hits_required)
 	is_felled = bool(state.get("felled", false))
 	if is_felled:
-		_leave_stump(false)
+		_leave_stump()
 	_obstacle_changed()
 
 
@@ -112,16 +146,9 @@ func _obstacle_changed() -> void:
 	obstacle_changed.emit()
 
 
-## 砍倒给一批木料、清桩再给一根，都直接进背包（背包满时记一条警告）。
+## 调用前已校验整批容量，没有跨帧等待。
 func _drop_wood(count: int) -> void:
 	var inventory := get_tree().get_first_node_in_group(&"inventory") as Inventory
 	if inventory == null:
 		return
-	var overflow: int = inventory.add_item(&"wood", count)
-	if overflow <= 0:
-		return
-	push_warning("[choppable_tree] 背包已满，%d 根木材没能放下" % overflow)
-	# 只写警告玩家看不到，补一条飘字；树已经倒了，木材只能损失这一部分。
-	var toast := get_tree().current_scene.get_node_or_null("UI/Toast")
-	if toast != null and toast.has_method(&"show_message"):
-		toast.show_message("背包已满 · %d 根木材没能带走" % overflow)
+	inventory.add_item(&"wood", count)

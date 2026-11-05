@@ -129,7 +129,7 @@ func begin_sleep() -> void:
 
 
 ## 睡醒：角色出现在床边、显形，再淡入并交还操作权。
-func finish_sleep() -> void:
+func prepare_wake() -> void:
 	if _inside and _player != null:
 		var wake := _interior.get_node_or_null("WakeSpot") as Node2D
 		var bed := _interior.get_node_or_null("BedSpot") as Node2D
@@ -143,6 +143,11 @@ func finish_sleep() -> void:
 			_camera.global_position = (_player.get_parent() as Node2D).global_position + target
 	if _player != null:
 		_player.visible = true
+
+
+## 旧入口保留；新休息控制器分开安排落点、保存和淡入。
+func finish_sleep() -> void:
+	prepare_wake()
 	var fade := get_tree().get_first_node_in_group(&"screen_fade")
 	if fade != null:
 		fade.call(&"hide_caption")

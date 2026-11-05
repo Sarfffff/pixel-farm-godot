@@ -32,6 +32,8 @@ func _run() -> void:
 	await physics_frame
 	await create_timer(0.2).timeout
 	var farm: Node2D = _main.get_node("Farm") as Node2D
+	_check_terrain_atlases(farm)
+	_check_static_plants(farm)
 	var water: TileMapLayer = farm.get_node("Water") as TileMapLayer
 	var collision: TileMapLayer = farm.get_node("WaterCollision") as TileMapLayer
 	var cells: Dictionary[Vector2i, bool] = Landscape.water_cells()
@@ -71,6 +73,47 @@ func _run() -> void:
 	_main.queue_free()
 	await process_frame
 	preload("res://tools/lib/check_lifecycle.gd").finish(self, 0 if _failures == 0 else 1)
+
+
+func _check_terrain_atlases(farm: Node2D) -> void:
+	var paths: TileMapLayer = farm.get_node("Paths") as TileMapLayer
+	var source: TileSetAtlasSource = paths.tile_set.get_source(4) as TileSetAtlasSource
+	_check(source != null, "road atlas source exists")
+	if source == null:
+		return
+	_check(source.texture != null, "road atlas texture loads")
+	if source.texture == null:
+		return
+	# 道路的四邻接掩码覆盖 4×4 格，缺少贴图或少一行都不能算场景可用。
+	_check(source.texture.get_size() == Vector2(64, 64), "road atlas covers all sixteen adjacency variants")
+	for y: int in 4:
+		for x: int in 4:
+			_check(source.has_tile(Vector2i(x, y)), "road atlas tile exists: %s" % Vector2i(x, y))
+	for child: Node in farm.get_children():
+		var layer: TileMapLayer = child as TileMapLayer
+		if layer == null:
+			continue
+		for cell: Vector2i in layer.get_used_cells():
+			_check(layer.get_cell_tile_data(cell) != null, "terrain cell resolves: %s %s" % [layer.name, cell])
+	print("[farm_terrain] road atlas and every painted terrain cell checked")
+
+
+func _check_static_plants(farm: Node2D) -> void:
+	for child: Node in farm.get_node("World").get_children():
+		var sprite: Sprite2D = child as Sprite2D
+		if sprite == null or not (String(sprite.name).begins_with("Bush") or String(sprite.name).begins_with("Mushroom") or String(sprite.name).begins_with("Forage")):
+			continue
+		var image: Image = sprite.texture.get_image()
+		if sprite.region_enabled:
+			image = image.get_region(Rect2i(sprite.region_rect))
+		var used: Rect2i = image.get_used_rect()
+		var area: Rect2 = sprite.global_transform * Rect2(sprite.get_rect().position + Vector2(used.position), Vector2(used.size))
+		for name: String in ["Water", "Paths", "Bridges"]:
+			var layer: TileMapLayer = farm.get_node(name) as TileMapLayer
+			for cell: Vector2i in layer.get_used_cells():
+				var tile: Rect2 = Rect2(layer.to_global(layer.map_to_local(cell)) - Vector2(8, 8), Vector2(16, 16))
+				_check(not area.intersects(tile), "static plant avoids %s: %s" % [name, sprite.name])
+	print("[farm_terrain] decorative bushes and mushrooms checked against water, paths and bridges")
 
 
 func _solid(point: Vector2) -> bool:

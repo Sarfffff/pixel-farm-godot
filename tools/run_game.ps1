@@ -1,6 +1,7 @@
 param(
     [string]$GodotPath = "",
-    [switch]$ContinueFarm
+    [switch]$ContinueFarm,
+    [switch]$EnableDevTools
 )
 
 # 直接启动独立窗口，避开编辑器嵌入预览的尺寸限制。
@@ -23,6 +24,9 @@ if ([string]::IsNullOrWhiteSpace($GodotPath) -or -not (Test-Path -LiteralPath $G
 $gameArguments = '--path "' + $projectRoot + '"'
 if ($ContinueFarm) {
     $gameArguments += ' --scene res://scenes/main.tscn'
+}
+if ($EnableDevTools) {
+    $gameArguments += ' -- --enable-dev-tools'
 }
 # ShellExecute 在某些桌面环境中会等待 Shell 代理，直接创建进程避免启动器卡住。
 $engineStart = New-Object System.Diagnostics.ProcessStartInfo

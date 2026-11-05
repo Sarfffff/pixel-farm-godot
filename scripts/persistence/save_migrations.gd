@@ -42,7 +42,7 @@ static func migrate(document: Dictionary) -> Dictionary:
 			_clean_pairs(result.farm, key)
 		_clean_records(result.farm, "crops")
 		for record: Dictionary in result.farm.get("crops", []):
-			_clean_fields(record, {"id": TYPE_STRING, "x": TYPE_INT, "y": TYPE_INT, "stage": TYPE_INT, "stage_age": TYPE_INT, "watered": TYPE_BOOL, "regrowing": TYPE_BOOL})
+			_clean_fields(record, {"id": TYPE_STRING, "x": TYPE_INT, "y": TYPE_INT, "stage": TYPE_INT, "stage_age": TYPE_INT, "watered": TYPE_BOOL, "regrowing": TYPE_BOOL, "withered": TYPE_BOOL})
 		_clean_number_map(result.farm, "rocks")
 	if result.has("coop"):
 		_clean_pairs(result.coop, "eggs")

@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-05",
+  "task": "A0-04 followup: wooden fences along both bridges",
+  "player_effect": "Posts and connected beams visible along both sides of the horizontal and vertical bridge; entrances stay open.",
+  "implementation": {
+    "renderer": "scripts/presentation/bridge_fences.gd",
+    "texture": "assets/textures/base/tilesets/fences.png",
+    "geometry": "Read the four existing BridgeRails rectangle colliders; no duplicate bridge coordinates.",
+    "post_spacing_pixels": 16,
+    "z_index": 8,
+    "map_builder": "tools/lib/farm_landscape.gd attaches the same renderer."
+  },
+  "save_impact": "None; existing collision widths, persistent identities and save schema unchanged. Player slots not accessed.",
+  "validation": {
+    "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_farm_terrain -Packaged",
+    "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_40e17c4e78bd4f2eabaa386ff68bf82e",
+    "results": [
+      {
+        "Suite": "check_farm_terrain",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_packaged_runtime",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ],
+    "strict_log_errors": 0,
+    "layout_audit": {
+      "passed": true,
+      "text_files_checked": 4050,
+      "literal_resource_paths_checked": 17984,
+      "script_uids_checked": 192,
+      "files_by_area_without_sidecars": {
+        "art": 782,
+        "assets": 3728,
+        "scripts": 118,
+        "scenes": 45,
+        "data": 91,
+        "tools": 81
+      },
+      "repaired_files": [],
+      "errors": []
+    }
+  },
+  "native_render": {
+    "backend": "D3D12 Forward+",
+    "log": "build/bridge-fences/preview.log",
+    "exit_code": 0,
+    "visually_reviewed": [
+      "build/bridge-fences/horizontal-bridge.png",
+      "build/bridge-fences/vertical-bridge.png"
+    ]
+  },
+  "manual_acceptance": "Rendered screenshots inspected; user style approval and extended keyboard/mouse playthrough remain pending."
+}

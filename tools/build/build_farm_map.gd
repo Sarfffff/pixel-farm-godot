@@ -130,9 +130,9 @@ const PROP_TABLE: Array = [
 	["res://scenes/world/props/tree_small.tscn", Vector2(304, 464), &"farm/tree/304/464"],
 	["res://scenes/world/props/log.tscn", Vector2(488, 456)],
 	["res://scenes/world/props/rock.tscn", Vector2(376, 288), &"farm/rock/376/288"],
-	["res://scenes/world/props/mushroom.tscn", Vector2(392, 424)],
-	["res://scenes/world/props/bush.tscn", Vector2(560, 432)],
-	["res://scenes/world/props/mushroom.tscn", Vector2(280, 296)],
+	["res://scenes/world/props/mushroom.tscn", Vector2(264, 456)],
+	["res://scenes/world/props/bush.tscn", Vector2(592, 312)],
+	["res://scenes/world/props/mushroom.tscn", Vector2(312, 296)],
 	["res://scenes/world/props/bush.tscn", Vector2(104, 320)],
 	["res://scenes/world/props/tree_small.tscn", Vector2(64, 120), &"farm/tree/64/120"],
 ]

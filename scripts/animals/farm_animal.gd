@@ -11,6 +11,7 @@ const Brain := preload("res://scripts/animals/animal_state_machine.gd")
 
 var brain := Brain.new()
 var facing: StringName = &"down"
+var _side_facing: StringName = &"right"
 var _time: Node
 var _player: Node
 
@@ -41,12 +42,14 @@ func _physics_process(delta: float) -> void:
 	velocity = brain.desired_velocity
 	var before: Vector2 = global_position
 	if not velocity.is_zero_approx():
-		_update_facing(velocity)
 		move_and_slide()
 		if get_slide_collision_count() > 0:
 			brain.notify_blocked()
 			velocity = Vector2.ZERO
-	var moving: bool = brain.state == Brain.State.WANDER and global_position.distance_squared_to(before) > 0.0001
+	var displacement: Vector2 = global_position - before
+	if not displacement.is_zero_approx():
+		_update_facing(displacement)
+	var moving: bool = brain.state == Brain.State.WANDER and displacement.length_squared() > 0.0001
 	_update_visual(delta, moving)
 
 
@@ -55,6 +58,8 @@ func _is_interrupted() -> bool:
 
 
 func _update_facing(direction: Vector2) -> void:
+	if not is_zero_approx(direction.x):
+		_side_facing = &"right" if direction.x > 0.0 else &"left"
 	if absf(direction.x) >= absf(direction.y):
 		facing = &"right" if direction.x > 0.0 else &"left"
 	else:
@@ -62,7 +67,7 @@ func _update_facing(direction: Vector2) -> void:
 
 
 ## 动画命名：walk/idle/graze/sleep 加 _down/_up/_left/_right，或单独动作名。
-## 缺少觅食/睡眠动画时回退到站姿，避免播放不存在的动画报错。
+## 单侧步行图先镜像补齐另一侧；纯纵向移动保持最近侧向步态，缺失动作才回退站姿。
 func _update_visual(_delta: float, moving: bool) -> void:
 	var sprite := get_node_or_null(animated_sprite_path) as AnimatedSprite2D
 	if sprite == null or sprite.sprite_frames == null:
@@ -72,12 +77,28 @@ func _update_visual(_delta: float, moving: bool) -> void:
 		action = "graze"
 	elif not _is_interrupted() and brain.state == Brain.State.SLEEP:
 		action = "sleep"
-	var candidates: Array[StringName] = [
-		StringName(action + "_" + String(facing)), StringName(action),
-		StringName("idle_" + String(facing)), &"idle",
-	]
-	for animation: StringName in candidates:
-		if sprite.sprite_frames.has_animation(animation):
-			sprite.play(animation)
-			return
+	if _play_directional(sprite, action, facing) or _play_animation(sprite, StringName(action)):
+		return
+	if facing in [&"up", &"down"] and _play_directional(sprite, action, _side_facing):
+		return
+	if _play_directional(sprite, "idle", facing) or _play_animation(sprite, &"idle"):
+		return
+	sprite.flip_h = false
 	sprite.stop()
+
+
+func _play_directional(sprite: AnimatedSprite2D, action: String, direction: StringName) -> bool:
+	if _play_animation(sprite, StringName(action + "_" + String(direction))):
+		return true
+	if direction in [&"left", &"right"]:
+		var opposite: String = "left" if direction == &"right" else "right"
+		return _play_animation(sprite, StringName(action + "_" + opposite), true)
+	return false
+
+
+func _play_animation(sprite: AnimatedSprite2D, animation: StringName, mirrored: bool = false) -> bool:
+	if not sprite.sprite_frames.has_animation(animation):
+		return false
+	sprite.flip_h = mirrored
+	sprite.play(animation)
+	return true

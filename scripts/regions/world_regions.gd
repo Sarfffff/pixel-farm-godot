@@ -59,11 +59,7 @@ func configure(host: Node2D, actor: CharacterBody2D, farm: Node2D, field: Node, 
 	_interaction.manager = self
 	_interaction.player = actor
 	add_child(_interaction)
-	# 原农场继续使用原工具实现，但跨区后的信号必须只交给当前区域。
-	player.action_started.disconnect(field._on_action_started)
-	player.use_requested.disconnect(field._on_use_requested)
-	player.action_started.connect(_action_started)
-	player.use_requested.connect(_use_requested)
+	# 工具信号由GameSession接线，区域只通过公开操作端口委派。
 	_roots["home"] = farm
 	for index: int in Layout.REGION_IDS.size():
 		var id: String = Layout.REGION_IDS[index]
@@ -230,13 +226,13 @@ func _refresh_region(region: StringName) -> void:
 		layer.add_child(sprite)
 
 
-func _action_started(tool: StringName, cell: Vector2i) -> void:
-	if active_region == &"home": _field._on_action_started(tool, cell)
+func begin_tool_action(tool: StringName, cell: Vector2i) -> void:
+	if active_region == &"home": _field.begin_tool_action(tool, cell)
 	else: _interaction.lock_target(tool, cell)
 
 
-func _use_requested(tool: StringName, cell: Vector2i) -> void:
-	if active_region == &"home": _field._on_use_requested(tool, cell)
+func commit_tool_action(tool: StringName, cell: Vector2i) -> void:
+	if active_region == &"home": _field.commit_tool_action(tool, cell)
 	else: _interaction.commit(tool, cell)
 
 

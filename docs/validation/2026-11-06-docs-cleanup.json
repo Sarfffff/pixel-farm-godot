@@ -1,0 +1,216 @@
+{
+  "date": "2026-11-06",
+  "scope": "Documentation consolidation only; no gameplay, asset, save, or stage acceptance changes.",
+  "active_root_docs_before": 11,
+  "active_root_docs_after": 7,
+  "archives": [
+    {
+      "source": "docs/01-开发流程与路线图.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/01-开发流程与路线图.md",
+      "original_sha256": "9107da257b22aa08831def5ddebecb47db587dd6eed26bb6647328ebbea0179c",
+      "operation": "archive legacy document"
+    },
+    {
+      "source": "docs/01-游戏开发全流程.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/01-游戏开发全流程.md",
+      "original_sha256": "55f958cccabcae62f024192b919ce5ea4ec5eab74bcf2c86ca6779c874c9ca9f",
+      "operation": "archive legacy document"
+    },
+    {
+      "source": "docs/02-可玩版本演进路线图.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/02-可玩版本演进路线图.md",
+      "original_sha256": "a496413b16cb1fdca371241dc41b0c8aaebc5fc3d100d9bc4b7832a589e3fe30",
+      "operation": "archive legacy document"
+    },
+    {
+      "source": "docs/03-参考项目技术对照.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/03-参考项目技术对照.md",
+      "original_sha256": "7ecfeab9ad51e784db3a7ab1c054391cdb4593639671ab784a44182c47ac76b6",
+      "operation": "archive legacy document"
+    },
+    {
+      "source": "docs/02-系统设计.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/02-系统设计.md",
+      "original_sha256": "01d357cce4d4ea3691efa3c4b148c5577cd2d4032448f3a2abff34cbb0f0a643",
+      "operation": "preserve historical detail before consolidation"
+    },
+    {
+      "source": "docs/03-素材与资产.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/03-素材与资产.md",
+      "original_sha256": "b50a757a8a1aa07f60fd907387afcb0cfc73fae14b54523c360d9e914f38a57b",
+      "operation": "preserve historical detail before consolidation"
+    },
+    {
+      "source": "CODEBUDDY.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/CODEBUDDY.md",
+      "original_sha256": "249580875382048b46af5b94a977271355a4e8352cf61daf15566aa2f52e0891",
+      "operation": "preserve historical detail before consolidation"
+    }
+  ],
+  "evidence_json_files_edited": [],
+  "validation": {
+    "status": "passed",
+    "local_markdown_links": {
+      "files": 35,
+      "local_links": 173,
+      "errors": [],
+      "historical_generated_outputs": []
+    },
+    "layout_audit": {
+      "passed": true,
+      "text_files_checked": 4055,
+      "literal_resource_paths_checked": 17988,
+      "script_uids_checked": 194,
+      "files_by_area_without_sidecars": {
+        "art": 782,
+        "assets": 3728,
+        "scripts": 121,
+        "scenes": 45,
+        "data": 91,
+        "tools": 83
+      },
+      "repaired_files": [],
+      "errors": []
+    },
+    "archive_original_bodies": "7/7 preserved; only relative link destinations and archive banners adjusted",
+    "diff_check": "git diff --check passed for changed tracked documentation"
+  },
+  "runtime_regression_rerun": false,
+  "runtime_regression_note": "Documentation-only change; validate local links, anchors, directory boundaries and diff whitespace instead of rerunning gameplay.",
+  "archive_content_verification": [
+    {
+      "source": "docs/01-开发流程与路线图.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/01-开发流程与路线图.md",
+      "body_preserved_except_rebased_links": true
+    },
+    {
+      "source": "docs/01-游戏开发全流程.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/01-游戏开发全流程.md",
+      "body_preserved_except_rebased_links": true
+    },
+    {
+      "source": "docs/02-可玩版本演进路线图.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/02-可玩版本演进路线图.md",
+      "body_preserved_except_rebased_links": true
+    },
+    {
+      "source": "docs/03-参考项目技术对照.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/03-参考项目技术对照.md",
+      "body_preserved_except_rebased_links": true
+    },
+    {
+      "source": "docs/02-系统设计.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/02-系统设计.md",
+      "body_preserved_except_rebased_links": true
+    },
+    {
+      "source": "docs/03-素材与资产.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/03-素材与资产.md",
+      "body_preserved_except_rebased_links": true
+    },
+    {
+      "source": "CODEBUDDY.md",
+      "archive": "archive/docs/2026-11-06-before-consolidation/CODEBUDDY.md",
+      "body_preserved_except_rebased_links": true
+    }
+  ],
+  "task_section_16": {
+    "task_ids_preserved": true,
+    "cleanup_changed_task_statuses": [],
+    "concurrent_workspace_updates_retained": [
+      {
+        "id": "B1-05",
+        "before": "| B1-05 | 模态输入、退出资源与调试开关 | B0-04 | 不锁死，正常流程无脚本错误 | 待自动验收：模态/退出已验证；开发快捷键发行隔离已实现 |",
+        "retained_current": "| B1-05 | 模态输入、退出资源与调试开关 | B0-04 | 不锁死，正常流程无脚本错误 | 待人工验收（调试隔离、模态及退出自动验证通过） |"
+      }
+    ]
+  },
+  "current_docs": {
+    "docs/02-系统设计.md": {
+      "bytes": 16100,
+      "lines": 167
+    },
+    "docs/03-素材与资产.md": {
+      "bytes": 4295,
+      "lines": 42
+    },
+    "docs/04-后续开发总纲.md": {
+      "bytes": 43794,
+      "lines": 546
+    },
+    "docs/05-地图类型与地面资源.md": {
+      "bytes": 16324,
+      "lines": 208
+    },
+    "docs/06-架构与开发规范.md": {
+      "bytes": 16525,
+      "lines": 161
+    },
+    "docs/07-目录与资源规范.md": {
+      "bytes": 7320,
+      "lines": 92
+    },
+    "docs/README.md": {
+      "bytes": 3181,
+      "lines": 34
+    }
+  },
+  "consolidation": {
+    "current_system_design_before_lines": 1732,
+    "current_system_design_after_lines": 167,
+    "current_assets_before_lines": 395,
+    "current_assets_after_lines": 42,
+    "future_roadmap": "Detailed B0-B8 scope and task identifiers retained; delivery history moved into docs/history/开发记录.md."
+  },
+  "existing_gameplay_reports": [
+    {
+      "path": "docs/validation/2026-11-04-solid.json",
+      "sha256": "b92321ba7f4a4d7096db7361860da69b90055e688f5f93b3e3c8ca531098b90b"
+    },
+    {
+      "path": "docs/validation/2026-11-05-animal-motion.json",
+      "sha256": "053b15d872af83b3d63a9010f3e6035e3c602572e72847d17f0e9b79eea5da1c"
+    },
+    {
+      "path": "docs/validation/2026-11-05-bridge-fences.json",
+      "sha256": "0e8398911566ecede756fe59b0aefbaeefa8511ed1bc1780a328b4b88d7a2d84"
+    },
+    {
+      "path": "docs/validation/2026-11-05-layered-mvp.json",
+      "sha256": "e2781318d14217e82f6663c4edaf7cd0fabc6eef1ba1494a0de12af933dce06c"
+    },
+    {
+      "path": "docs/validation/2026-11-05-layout.json",
+      "sha256": "eaeb46c1c1341d1a334b639abe615fbf82418fbdfc903ee4796d156c09ef496d"
+    },
+    {
+      "path": "docs/validation/2026-11-05-path-atlas-fix.json",
+      "sha256": "a3506c48971520b6083ff32c062c51315430ce71b3afb36c8e39268a2e561820"
+    },
+    {
+      "path": "docs/validation/2026-11-05-regions.json",
+      "sha256": "9b15cf34c13926f9bd39033edcf6afcbff8959a48472c7c1b63a8337d94cfd73"
+    },
+    {
+      "path": "docs/validation/2026-11-05-resource-safety.json",
+      "sha256": "24d46969b0bdd512163e0f0234019b63dd0774943ba4219718866c5bccb170d1"
+    },
+    {
+      "path": "docs/validation/2026-11-05-terrain-v2.json",
+      "sha256": "c2c7b4223a80e8395ede39e70e600cbeabfaa51a67287f91cb6120a5f81086d3"
+    },
+    {
+      "path": "docs/validation/b1-05-development-controls.json",
+      "sha256": "9e8c8f524c734523e049d67e220dd9a5d7099860cea7d0bb5820669d58d72df3"
+    },
+    {
+      "path": "docs/validation/latest-assurance.json",
+      "sha256": "afb7808eac9f2c1920eb5e2154862bcefceb7f0435f5103aa27e43270d25d571"
+    }
+  ],
+  "concurrent_workspace_work": {
+    "task": "B1-05",
+    "action": "Retained the independently updated task row and delivery text, moved delivery into shared history, included its current behavior and report in the consolidated documentation.",
+    "report": "docs/validation/b1-05-development-controls.json"
+  }
+}

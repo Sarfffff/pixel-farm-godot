@@ -12,9 +12,9 @@
 | `resources_atlas.png` | 6×4地面资源图集，192×128像素，不含四种树木 |
 | `transition_atlas.png` | 16种底面×16种邻面×16个四向边缘掩码，共4096种组合；1024×1024像素 |
 | `catalog.json` | 图像数量、尺寸、来源与技术处理清单 |
-| `previews/` | 六张真实渲染截图、地图总览及资源标注页；带`.gdignore`不参与导入 |
+| `art/previews/world_regions_v1/`（项目根目录起） | 六张真实渲染截图、地图总览及资源标注页；不参与导入 |
 
-原始生成图与完整提示词在 [`../sources/world_regions_v1/`](../../../art/sources/world_regions_v1)。原图只作可重建来源，不直接用于游戏，也不参与Godot导入。
+原始生成图与完整提示词在 [art/sources/world_regions_v1](../../../art/sources/world_regions_v1)。原图只作可重建来源，不直接用于游戏，也不参与Godot导入。
 
 区域生成源为 `tools/lib/world_region_catalog.gd`；输出为 `data/maps/*.tres`、`data/ground_resources/*.tres` 和 `scenes/maps/*_preview.tscn`。修改输出配置后再次运行生成器会覆盖，因此要长期保存的布局调整应回写生成源。
 

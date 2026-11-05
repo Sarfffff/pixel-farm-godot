@@ -1,7 +1,12 @@
 extends "res://scripts/ui/common/modal_panel.gd"
 ## 木箱与钓鱼共用小面板；走现有玩家输入锁，时间随之暂停。
 
-var manager: Node
+signal opened(mode: StringName)
+signal closed(mode: StringName)
+signal refresh_requested
+signal deposit_requested(id: StringName, all: bool)
+signal withdraw_requested(id: StringName, all: bool)
+signal fish_requested
 var mode: StringName = &"storage"
 var title: Label
 var note: Label
@@ -125,8 +130,6 @@ func _ready() -> void:
 	var instructions: Label = _label("看到咬钩提示再收杆；等待时提前按键不会钓到鱼。", 6)
 	instructions.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	fish_box.add_child(instructions)
-	manager.changed.connect(refresh)
-	manager.inventory.changed.connect(refresh)
 	hide()
 
 
@@ -162,10 +165,8 @@ func _list_column(parent: HBoxContainer, text: String) -> ItemList:
 
 func open(next_mode: StringName) -> void:
 	mode = next_mode
-	manager.message = ""
 	_set_modal_open(true)
-	var toast: Node = get_parent().get_node_or_null("Toast")
-	if toast != null: toast.clear()
+	opened.emit(mode)
 	refresh()
 	if mode == &"storage":
 		bag.grab_focus()
@@ -177,8 +178,7 @@ func close() -> void:
 	if not visible:
 		return
 	_set_modal_open(false)
-	if mode == &"fishing":
-		manager.cancel_fishing()
+	closed.emit(mode)
 
 
 func set_open(value: bool) -> void:
@@ -192,7 +192,7 @@ func _process(_delta: float) -> void:
 	if not visible:
 		return
 	if mode == &"fishing":
-		_refresh_fishing()
+		refresh()
 
 
 func _input(event: InputEvent) -> void:
@@ -207,8 +207,11 @@ func _input(event: InputEvent) -> void:
 
 
 func refresh() -> void:
-	if title == null or not visible:
-		return
+	if title != null and visible: refresh_requested.emit()
+
+
+func render(data: Dictionary) -> void:
+	if title == null or not visible: return
 	var storage_mode: bool = mode == &"storage"
 	_overlay.color.a = 0.5 if storage_mode else 0.2
 	lists.visible = storage_mode
@@ -222,7 +225,10 @@ func refresh() -> void:
 	_frame.offset_bottom = 82
 	title.text = "木箱 · 24 格仓库" if storage_mode else "池塘钓鱼"
 	if not storage_mode:
-		_refresh_fishing()
+		note.text = String(data.get("fishing_note", ""))
+		fish_status.text = String(data.get("fishing_text", ""))
+		fish_progress.value = float(data.get("fishing_progress", 0.0))
+		fish_button.text = String(data.get("fishing_button", ""))
 		return
 	var selected_bag: int = bag.get_selected_items()[0] if not bag.get_selected_items().is_empty() else 0
 	var selected_chest: int = chest.get_selected_items()[0] if not chest.get_selected_items().is_empty() else 0
@@ -230,46 +236,35 @@ func refresh() -> void:
 	chest.clear()
 	bag_ids.clear()
 	chest_ids.clear()
-	for item: ItemData in manager.inventory.definitions():
-		var owned: int = manager.inventory.count_of(item.id)
-		if owned > 0 and item.category != &"tool":
-			bag.add_item("%s ×%d" % [item.display_name, owned], item.icon)
-			bag_ids.append(item.id)
-		var stored: int = manager.storage.count_of(item.id)
-		if stored > 0:
-			chest.add_item("%s ×%d" % [item.display_name, stored], item.icon)
-			chest_ids.append(item.id)
-	if bag.item_count > 0:
-		bag.select(mini(selected_bag, bag.item_count - 1))
-	if chest.item_count > 0:
-		chest.select(mini(selected_chest, chest.item_count - 1))
-	note.text = manager.message if not manager.message.is_empty() else "选中物品后存取；箱满/包满时保留放不下的部分。"
+	for entry: Dictionary in data.get("bag", []):
+		bag.add_item(entry.text, entry.icon)
+		bag_ids.append(StringName(entry.id))
+	for entry: Dictionary in data.get("chest", []):
+		chest.add_item(entry.text, entry.icon)
+		chest_ids.append(StringName(entry.id))
+	if bag.item_count > 0: bag.select(mini(selected_bag, bag.item_count - 1))
+	if chest.item_count > 0: chest.select(mini(selected_chest, chest.item_count - 1))
+	var message: String = String(data.get("message", ""))
+	note.text = message if not message.is_empty() else "选中物品后存取；箱满/包满时保留放不下的部分。"
 
 
 func _deposit(all: bool) -> void:
 	if bag.get_selected_items().is_empty():
 		return
 	var id: StringName = bag_ids[bag.get_selected_items()[0]]
-	manager.deposit(id, mini(manager.inventory.definition(id).max_stack, manager.inventory.count_of(id)) if all else 1)
+	deposit_requested.emit(id, all)
 
 
 func _withdraw(all: bool) -> void:
 	if chest.get_selected_items().is_empty():
 		return
 	var id: StringName = chest_ids[chest.get_selected_items()[0]]
-	manager.withdraw(id, mini(manager.inventory.definition(id).max_stack, manager.storage.count_of(id)) if all else 1)
+	withdraw_requested.emit(id, all)
 
 
 func _fish_action() -> void:
-	manager.fishing_action()
+	fish_requested.emit()
 	refresh()
-
-
-func _refresh_fishing() -> void:
-	note.text = "每日投竿 %d/%d · 消耗体力 %d · 可按 Fsc 结束" % [manager.casts_today, manager.settings.fishing_limit, manager.settings.fishing_cost]
-	fish_status.text = manager.fishing_text()
-	fish_progress.value = manager.fishing_progress() * 100.0
-	fish_button.text = "收杆！ [E / 空格]" if manager.fishing_state == &"bite" else "等待咬钩…" if manager.fishing_state == &"waiting" else "领取鱼获" if manager.pending_fish != &"" else "投竿 [E / 空格]"
 
 
 func _on_overlay_input(event: InputEvent) -> void:

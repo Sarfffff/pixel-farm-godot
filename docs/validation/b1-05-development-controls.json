@@ -1,0 +1,261 @@
+{
+  "task": "B1-05 development input isolation",
+  "save_version": 2,
+  "compiled_scripts": 349,
+  "player_save_slots_used": false,
+  "runs": {
+    "full": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_e141264ac4a14ad786351478b3d10728",
+      "results": [
+        {
+          "Suite": "check_animals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_architecture",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_audio",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_basic_loop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_berries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_calendar",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_compilation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_content_art",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_crops",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_development_controls",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_activities",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_interactions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_terrain",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_friendship",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_goals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_held_tools",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_house",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_interior_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory_hotbar_camera",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_layer_boundaries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_npcs",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pause",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pickaxe",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_presentation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_progression",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_region_gameplay",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_release",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_resource_safety",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_save_validation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_settings",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_shop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_survival",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_ui_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_world_regions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "smoke_check",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_packaged_runtime",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ],
+      "passed": 37,
+      "manifest_sha256": "8580db1b037eaaf3f65914ed2a084aff5df3a6c05e7b7b737cbbb4ec3ef77364"
+    },
+    "native_opt_in": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_306a8fc680c048a0b1ab7d16ed1887aa",
+      "results": [
+        {
+          "Suite": "check_development_controls",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ],
+      "passed": 1,
+      "manifest_sha256": "8580db1b037eaaf3f65914ed2a084aff5df3a6c05e7b7b737cbbb4ec3ef77364"
+    }
+  },
+  "production_probe": "Actual PCK carries farm_release; forced --enable-dev-tools and N input denied; 24 package assertions pass.",
+  "commands": [
+    "pwsh -NoProfile -File tools/run_checks.ps1",
+    "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_development_controls -EnableDevTools -Windowed"
+  ],
+  "remaining": [
+    "B0 real new-player playthrough",
+    "B1 manual acceptance",
+    "B1-06 seasons",
+    "B8 standalone EXE"
+  ]
+}

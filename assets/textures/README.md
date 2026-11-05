@@ -10,7 +10,7 @@
 | `items/` | 种子、材料、果实与工具图标 |
 | `buildings/` | 住宅和设施外观储备、图标、catalog |
 | `trees/` | 树木、果树、生长与季节图集 |
-| `terrain/` | 耕地与地形图集 |
+| `terrain/` | 耕地、岸线与地形图集；当前木桥/土路规格见 `path_bridge_catalog.json` |
 | `field/` | 农田摆设 |
 | `manifest.json` | 基础动作、作物与物品图集排列 |
 | `prompts.json` | 对应生成记录 |

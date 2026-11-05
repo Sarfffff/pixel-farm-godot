@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-05",
+  "task": "A0-02 followup: missing farm road atlas",
+  "cause": "farm.tscn referenced nonexistent assets/textures/terrain/farm_path_atlas.png after bridge regeneration",
+  "fix": "Restore existing assets/textures/base/objects/paths.png, matching terrain_tiles.gd; validate all 16 road tiles and painted terrain cells.",
+  "player_effect": "Farm scene loads and paths render again.",
+  "save_impact": "None; isolated regression user directories only.",
+  "commands": [
+    "python tools/maintenance/audit_project_layout.py --report build/path-atlas-fix/layout.json",
+    "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_farm_terrain,smoke_check,check_basic_loop -Packaged",
+    "pwsh -NoProfile -File tools/run_checks.ps1 -Suites smoke_check"
+  ],
+  "first_snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_40fb482bea4e41148067d2223a3e42a9",
+  "first_results": [
+    {
+      "Suite": "check_basic_loop",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_farm_terrain",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "smoke_check",
+      "Passed": false,
+      "ExitCode": 1,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_packaged_runtime",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    }
+  ],
+  "first_failure": "smoke_check used an obsolete title slot list hierarchy; updated to the existing unique node name %SlotList.",
+  "followup_snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_9f50bbe1c3124b28a4306e6624b9cced",
+  "latest_results": [
+    {
+      "Suite": "check_basic_loop",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_farm_terrain",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "smoke_check",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_packaged_runtime",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    }
+  ],
+  "layout_audit": {
+    "passed": true,
+    "text_files_checked": 4034,
+    "literal_resource_paths_checked": 17969,
+    "script_uids_checked": 179,
+    "files_by_area_without_sidecars": {
+      "art": 778,
+      "assets": 3725,
+      "scripts": 109,
+      "scenes": 45,
+      "data": 91,
+      "tools": 76
+    },
+    "repaired_files": [],
+    "errors": []
+  },
+  "native_render": {
+    "backend": "D3D12 Forward+",
+    "exit_code": 0,
+    "captures": 20,
+    "log": "build/path-atlas-fix/preview.log",
+    "visually_reviewed": [
+      "build/presentation-preview/02-overview.png"
+    ]
+  },
+  "manual_status": "Visual screenshot inspected; live user editor unavailable via MCP; full keyboard/mouse playthrough not performed."
+}

@@ -10,6 +10,7 @@
 | `sources/presentation_v3/` | 当前建筑、家具、头像和地表原图及完整提示词 | 对应 `assets/packs/presentation_v3/` |
 | `sources/world_regions_v1/` | 区域地表与资源原图、提示词 | 对应 `assets/packs/world_regions_v1/` |
 | `sources/npc_v1/` | NPC 原始生成图 | 对应 `assets/textures/characters/npcs_v1/` |
+| `sources/terrain_v2/` | 木桥与土路的原创原图、提示词与整理说明 | 对应 `assets/textures/terrain/path_bridge_catalog.json` |
 | `previews/` | 放大总览、带标签的验收页 | 按素材类别或批次归档；由 `tools/preview/` 或切片工具输出，不是游戏精灵 |
 | `reference/stardew_valley/` | 原有星露谷资源及目录结构 | 仅作内容清单对照，不作为本项目图片来源 |
 

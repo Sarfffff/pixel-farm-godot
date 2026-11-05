@@ -6,8 +6,6 @@ signal action_started(tool: StringName, cell: Vector2i)
 signal use_requested(tool: StringName, cell: Vector2i)
 ## 交互键（E）：收获等不走工具动画的即时操作。
 signal interact_requested(cell: Vector2i)
-## 调试键（N）：推进一天。V0.7 接入时间系统后由它接管，这里只是临时入口。
-signal day_advanced
 
 const WALK_SPEED: float = 72.0
 const ACCELERATION: float = 900.0
@@ -91,7 +89,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_echo() or input_locked:
 		return
-	# interact 与 tool_next 共用 E：面前有可交互对象时优先交互，否则才切换工具。
+	# F 交互，Q/E 切换工具；开发快捷键由独立组件处理。
 	if event.is_action_pressed(&"interact") and _try_interact():
 		return
 	if event.is_action_pressed(&"tool_next"):
@@ -100,8 +98,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"tool_prev"):
 		if not _cycle_seed(-1):
 			_cycle_hotbar(-1)
-	elif event.is_action_pressed(&"next_day"):
-		day_advanced.emit()
 	else:
 		for index in Inventory.HOTBAR_SIZE:
 			if event.is_action_pressed(StringName("tool_%d" % (index + 1))):

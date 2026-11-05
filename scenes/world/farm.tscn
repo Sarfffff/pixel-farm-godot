@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" path="res://assets/textures/terrain/river_shore_atlas.png" id="4_mrr1a"]
 [ext_resource type="Texture2D" path="res://assets/textures/terrain/farm_path_atlas.png" id="5_x1w4o"]
 [ext_resource type="Texture2D" path="res://assets/textures/base/tilesets/hills.png" id="6_okm01"]
-[ext_resource type="Texture2D" path="res://assets/textures/terrain/river_bridge_atlas.png" id="7_jnifl"]
+[ext_resource type="Texture2D" path="res://assets/textures/terrain/river_bridge_atlas_v2.png" id="7_jnifl"]
 [ext_resource type="Script" path="res://scripts/presentation/occlusion_fader.gd" id="8_tux60"]
 [ext_resource type="PackedScene" path="res://scenes/world/props/cottage.tscn" id="9_xkwga"]
 [ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/structures/farmhouse.png" id="10_p5gyy"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://scripts/world/farming/farm_tiller.gd" id="23_mva5p"]
 [ext_resource type="PackedScene" path="res://scenes/world/tile_cursor.tscn" id="24_bdt7l"]
 [ext_resource type="Script" path="res://scripts/world/navigation/nav_grid.gd" id="25_e3cdh"]
+[ext_resource type="Script" path="res://scripts/presentation/bridge_fences.gd" id="26_bridge_fences"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57n3t"]
 texture = ExtResource("1_21ed0")
@@ -542,7 +543,7 @@ collision_enabled = false
 
 [node name="Paths" type="TileMapLayer" parent="." unique_id=2048172321]
 z_index = 4
-tile_map_data = PackedByteArray("AAAFABAABAACAAAAAAAGABAABAACAAIAAAAHABAABAACAAIAAAAIABAABAAAAAIAAAARABAABAACAAAAAAASABAABAACAAIAAAATABAABAACAAIAAAAUABAABAACAAIAAAAVABAABAACAAIAAAAWABAABAACAAIAAAAXABAABAACAAIAAAAYABAABAACAAIAAAAZABAABAACAAIAAAAaABAABAACAAIAAAAbABAABAACAAIAAAAcABAABAACAAIAAAAdABAABAABAAMAAAAdAAoABAAAAAEAAAAdAAsABAABAAEAAAAdAAwABAABAAEAAAAdAA0ABAABAAEAAAAdAA4ABAABAAEAAAAdAA8ABAABAAEAAAAdABEABAABAAEAAAAdABIABAABAAAAAAAVABIABAACAAEAAAAWABIABAAAAAMAAAAVABMABAADAAEAAAAWABMABAABAAMAAAAVABQABAADAAAAAAAWABQABAABAAIAAAAVABoABAACAAEAAAAWABoABAACAAMAAAAXABoABAACAAMAAAAYABoABAACAAMAAAAZABoABAAAAAMAAAAVABsABAADAAEAAAAWABsABAADAAMAAAAXABsABAADAAMAAAAYABsABAADAAMAAAAZABsABAADAAMAAAAaABsABAACAAMAAAAbABsABAACAAMAAAAcABsABAAAAAMAAAAVABwABAADAAAAAAAWABwABAADAAIAAAAXABwABAADAAIAAAAYABwABAADAAIAAAAZABwABAADAAIAAAAaABwABAADAAIAAAAbABwABAADAAIAAAAcABwABAABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAFABAABAACAAAAAAAGABAABAACAAIAAAAHABAABAACAAIAAAAIABAABAACAAIAAAARABAABAACAAIAAAASABAABAACAAIAAAATABAABAACAAIAAAAUABAABAACAAIAAAAVABAABAACAAIAAAAWABAABAACAAIAAAAXABAABAACAAIAAAAYABAABAACAAIAAAAZABAABAACAAIAAAAaABAABAACAAIAAAAbABAABAACAAIAAAAcABAABAACAAIAAAAdABAABAABAAMAAAAdAAoABAAAAAEAAAAdAAsABAABAAEAAAAdAAwABAABAAEAAAAdAA0ABAABAAEAAAAdAA4ABAABAAEAAAAdAA8ABAABAAEAAAAdABEABAABAAEAAAAdABIABAABAAAAAAAVABIABAACAAEAAAAWABIABAAAAAMAAAAVABMABAADAAEAAAAWABMABAABAAMAAAAVABQABAADAAEAAAAWABQABAABAAMAAAAVABoABAADAAEAAAAWABoABAADAAMAAAAXABoABAACAAMAAAAYABoABAACAAMAAAAZABoABAAAAAMAAAAVABsABAADAAEAAAAWABsABAADAAMAAAAXABsABAADAAMAAAAYABsABAADAAMAAAAZABsABAADAAMAAAAaABsABAACAAMAAAAbABsABAACAAMAAAAcABsABAAAAAMAAAAVABwABAADAAAAAAAWABwABAADAAIAAAAXABwABAADAAIAAAAYABwABAADAAIAAAAZABwABAADAAIAAAAaABwABAADAAIAAAAbABwABAADAAIAAAAcABwABAABAAIAAAA=")
 tile_set = SubResource("TileSet_fyqhe")
 collision_enabled = false
 
@@ -872,21 +873,21 @@ script = ExtResource("20_okik1")
 persistent_id = &"farm/rock/376/288"
 
 [node name="Mushroom33" type="Sprite2D" parent="World" unique_id=735111767 instance=ExtResource("15_pqgjg")]
-position = Vector2(392, 424)
+position = Vector2(264, 456)
 texture = ExtResource("14_molt4")
 offset = Vector2(0, -8)
 region_enabled = true
 region_rect = Rect2(112, 0, 32, 16)
 
 [node name="Bush34" type="Sprite2D" parent="World" unique_id=344332077 instance=ExtResource("13_fqg11")]
-position = Vector2(560, 432)
+position = Vector2(592, 312)
 texture = ExtResource("14_molt4")
 offset = Vector2(0, -8)
 region_enabled = true
 region_rect = Rect2(0, 48, 32, 16)
 
 [node name="Mushroom35" type="Sprite2D" parent="World" unique_id=268730515 instance=ExtResource("15_pqgjg")]
-position = Vector2(280, 296)
+position = Vector2(312, 296)
 texture = ExtResource("14_molt4")
 offset = Vector2(0, -8)
 region_enabled = true
@@ -937,6 +938,8 @@ z_index = 20
 script = ExtResource("25_e3cdh")
 
 [node name="BridgeRails" type="StaticBody2D" parent="." unique_id=1581643314]
+z_index = 8
+script = ExtResource("26_bridge_fences")
 
 [node name="@CollisionShape2D@2" type="CollisionShape2D" parent="BridgeRails" unique_id=372489531]
 position = Vector2(208, 241)

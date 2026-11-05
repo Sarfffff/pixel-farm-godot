@@ -61,6 +61,17 @@ func _exercise_loop() -> void:
 	var save: Node = _main.get_node("Systems/Save")
 	var trade: Node = get_first_node_in_group(&"trade")
 	time.running = false
+	_check(OS.has_feature("farm_release"), "actual pack carries production feature")
+	_check("--enable-dev-tools" in OS.get_cmdline_user_args(), "pack probe intentionally requests development tools")
+	var controls: Node = _main.get_node("Systems/DevelopmentControls")
+	var before_day: int = time.day
+	_check(not controls.enabled and not controls.request_advance(), "pack denies explicit development activation")
+	var skip_day := InputEventAction.new()
+	skip_day.action = &"next_day"
+	skip_day.pressed = true
+	Input.parse_input_event(skip_day)
+	await process_frame
+	_check(time.day == before_day, "pack input cannot advance the day")
 	_main.get_node("Systems/Weather").lock(&"sunny")
 	_check(inventory.definitions().size() >= 41, "logical item resources load from PCK")
 	_check(tiller.crop_definitions().size() >= 6, "logical crop resources load from PCK")
@@ -86,4 +97,13 @@ func _exercise_loop() -> void:
 	economy.spend(10)
 	_check(save.load_game(3), "packaged game reloads save")
 	_check(inventory.count_of(&"carrot_seeds") == expected_seeds and economy.coins == 551, "save restores inventory and wallet")
+	time.from_dict({"day": 28, "minutes": 360})
+	tiller.commit_tool_action(&"seeds", CELLS[0])
+	time.sleep()
+	var seasonal: Dictionary = tiller.to_dict()
+	_check(time.day == 29 and seasonal.crops.size() == 1 and bool(seasonal.crops[0].withered), "pack applies seasonal withering at the new dawn")
+	_check(save.save_game() and save.load_game(3) and bool(tiller.to_dict().crops[0].withered), "pack preserves dead crops through disk save")
+	_check(_main.get_node("UI/ShopPanel").seed_information.call(&"carrot_seeds").contains("当前季节不可播种"), "pack exposes real seasonal shop information")
+	tiller.interact(CELLS[0])
+	_check(tiller.to_dict().crops.is_empty(), "pack clears dead crop through normal interaction port")
 	await process_frame

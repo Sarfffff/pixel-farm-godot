@@ -2,13 +2,17 @@ extends Node
 ## 新活动统一接入旧交互、背包、时间、社区和存档；不另建金币或日历。
 
 signal changed
+signal panel_requested(mode: StringName)
+signal reset_requested
+signal notified(text: String)
 
 const FishingSession := preload("res://scripts/activities/fishing_session.gd")
 const Settings = preload("res://scripts/data/farm_activities_data.gd")
 const Recipe = preload("res://scripts/data/processing_recipe_data.gd")
 const Store = preload("res://scripts/inventory/stack_store.gd")
 const Prop = preload("res://scripts/world/interactions/activity_prop.gd")
-const ActivityPanel = preload("res://scripts/ui/panels/farm_activities_panel.gd")
+const Processing = preload("res://scripts/activities/processing_session.gd")
+const Transfer = preload("res://scripts/inventory/storage_transfer_service.gd")
 const CommunityVisuals = preload("res://scripts/presentation/community_visuals.gd")
 const SETTINGS: Settings = preload("res://data/activities/farm_activities.tres")
 const RECIPE: Recipe = preload("res://data/recipes/pickled_tomato.tres")
@@ -25,12 +29,24 @@ var settings: Settings = SETTINGS
 var inventory: Inventory
 var player: CharacterBody2D
 var storage: Store
-var panel: ActivityPanel
+var _panel_ref: WeakRef
+## 历史访问别名，仅用于旧交互和检查；业务不依赖界面。
+var panel: Node:
+	get: return _panel_ref.get_ref() if _panel_ref != null else null
+var _clock_node: Node
+var _energy: Node
+var _save: Callable
+var _harvest_count: Callable
+var _storage_open: bool = false
+var processing := Processing.new()
+var transfer := Transfer.new()
 var visuals: CommunityVisuals
 var pickups: Array[Prop] = []
 var depleted: Array[int] = []
 var last_day: int = 1
-var processing_ready_day: int = 0
+var processing_ready_day: int:
+	get: return processing.ready_day
+	set(value): processing.ready_day = value
 var fishing := FishingSession.new()
 ## 旧调用入口保留为适配属性；状态只有 FishingSession 一份。
 var casts_today: int:
@@ -58,12 +74,19 @@ var _visual_age: float = 0.0
 func _ready() -> void:
 	add_to_group(&"farm_activities")
 	_rng.randomize()
-	inventory = get_tree().get_first_node_in_group(&"inventory") as Inventory
-	player = get_tree().get_first_node_in_group(&"player") as CharacterBody2D
 	storage = Store.new(settings.storage_capacity)
-	var main: Node = get_parent().get_parent()
-	var world: Node2D = main.get_node("Farm/World") as Node2D
-	var ui: Node = main.get_node("UI")
+
+
+func configure(bag: Inventory, actor: CharacterBody2D, clock: Node, energy: Node, save: Callable, harvest_count: Callable, world: Node2D, community_visuals: CommunityVisuals) -> void:
+	inventory = bag
+	player = actor
+	_clock_node = clock
+	_energy = energy
+	_save = save
+	_harvest_count = harvest_count
+	visuals = community_visuals
+	transfer.bag = bag
+	transfer.storage = storage
 	_chest = _prop(world, &"storage", -1, settings.chest_position, CHEST_ART, true)
 	var machine: Prop = _prop(world, &"processing", -1, settings.machine_position, MACHINE_ART, true)
 	_machine = machine
@@ -86,14 +109,6 @@ func _ready() -> void:
 		var item: ItemData = inventory.definition(settings.forage_items[index])
 		if item != null:
 			pickups.append(_prop(world, &"forage", index, settings.forage_positions[index], item.icon, false))
-	visuals = CommunityVisuals.new()
-	visuals.world = world
-	add_child(visuals)
-	panel = ActivityPanel.new()
-	panel.name = "FarmActivitiesPanel"
-	panel.manager = self
-	ui.add_child(panel)
-	panel.visibility_changed.connect(_refresh_world)
 	_rod = Sprite2D.new()
 	_rod.texture = ROD_ART
 	_rod.position = Vector2(5, -9)
@@ -122,7 +137,6 @@ func _ready() -> void:
 	_line.add_to_group(&"water_visual")
 	world.add_child(_line)
 	_set_fishing_visual(false)
-	var clock: Node = _clock()
 	if clock != null:
 		last_day = int(clock.day)
 		clock.day_started.connect(on_day_started)
@@ -175,7 +189,7 @@ func interact_activity(kind: StringName, key: int = -1) -> void:
 	match kind:
 		&"storage":
 			message = ""
-			panel.open(&"storage")
+			panel_requested.emit(&"storage")
 		&"processing": use_processing()
 		&"forage": collect_forage(key)
 		&"fishing":
@@ -183,7 +197,7 @@ func interact_activity(kind: StringName, key: int = -1) -> void:
 				_notify("先去商店买竹鱼竿 · 80 金币")
 				return
 			message = ""
-			panel.open(&"fishing")
+			panel_requested.emit(&"fishing")
 
 
 func deposit(id: StringName, amount: int) -> int:
@@ -197,9 +211,8 @@ func deposit(id: StringName, amount: int) -> int:
 	if moved <= 0:
 		_notify("木箱已满 · 物品仍在背包")
 		return 0
-	if not inventory.remove_item(id, moved):
-		return 0
-	storage.add(id, moved, item.max_stack)
+	moved = transfer.deposit(id, moved)
+	if moved == 0: return 0
 	_notify("存入%s ×%d" % [item.display_name, moved])
 	_persist()
 	return moved
@@ -213,9 +226,8 @@ func withdraw(id: StringName, amount: int) -> int:
 	if moved <= 0:
 		_notify("背包已满 · 物品仍在木箱")
 		return 0
-	if not storage.remove(id, moved):
-		return 0
-	inventory.add_item(id, moved, &"transfer")
+	moved = transfer.withdraw(id, moved)
+	if moved == 0: return 0
 	_notify("取出%s ×%d" % [item.display_name, moved])
 	_persist()
 	return moved
@@ -257,14 +269,12 @@ func use_processing() -> bool:
 		if not inventory.has_space_for(RECIPE.product, RECIPE.product_count):
 			_notify("背包已满 · 腌菜保留在加工台")
 			return false
-		inventory.add_item(RECIPE.product, RECIPE.product_count)
-		processing_ready_day = 0
+		if not processing.collect(today(), inventory, RECIPE): return false
 		_notify("领取%s ×%d" % [RECIPE.display_name, RECIPE.product_count])
 	else:
-		if not inventory.remove_item(RECIPE.ingredient, RECIPE.ingredient_count):
+		if not processing.start(today(), inventory, RECIPE):
 			_notify("需要番茄 ×%d · 收获后再来腌制" % RECIPE.ingredient_count)
 			return false
-		processing_ready_day = today() + maxi(1, RECIPE.days)
 		_notify("已投入番茄 · 第 %d 天腌制完成" % processing_ready_day)
 	_refresh_world()
 	_persist()
@@ -382,13 +392,13 @@ func _refresh_world() -> void:
 	if is_instance_valid(_machine_status):
 		_machine_status.text = "可领取" if processing_ready_day > 0 and processing_ready_day <= today() else "腌制中" if processing_ready_day > 0 else "腌制台"
 	if is_instance_valid(_chest):
-		_chest.texture = CHEST_OPEN_ART if is_instance_valid(panel) and panel.visible and panel.mode == &"storage" else CHEST_ART
+		_chest.texture = CHEST_OPEN_ART if _storage_open else CHEST_ART
 	if is_instance_valid(_machine):
 		_machine.texture = MACHINE_ART if processing_ready_day == 0 else MACHINE_READY_ART if processing_ready_day <= today() else MACHINE_WORKING_ART
 
 
 func _clock() -> Node:
-	return get_tree().get_first_node_in_group(&"time")
+	return _clock_node
 
 
 func today() -> int:
@@ -400,8 +410,7 @@ func tomorrow_text() -> String:
 	var parts: Array[String] = []
 	if processing_ready_day > 0 and processing_ready_day <= today() + 1:
 		parts.append("腌菜可领取")
-	var tiller: Node = get_tree().get_first_node_in_group(&"farm_tiller")
-	var ready: int = tiller.tomorrow_harvest_count() if tiller != null else 0
+	var ready: int = int(_harvest_count.call()) if _harvest_count.is_valid() else 0
 	if ready > 0:
 		parts.append("预计 %d 株成熟" % ready)
 	if not depleted.is_empty():
@@ -411,8 +420,7 @@ func tomorrow_text() -> String:
 
 
 func _spend(amount: int) -> bool:
-	var stamina: Node = get_tree().get_first_node_in_group(&"stamina")
-	if stamina != null and not stamina.spend(amount):
+	if _energy != null and not _energy.spend(amount):
 		_notify("体力不够 · 回屋睡一觉")
 		return false
 	return true
@@ -420,16 +428,21 @@ func _spend(amount: int) -> bool:
 
 func _notify(text: String) -> void:
 	message = text
-	var toast: Node = get_tree().current_scene.get_node_or_null("UI/Toast")
-	if toast != null and not panel.visible:
-		toast.show_message(text)
+	notified.emit(text)
 	changed.emit()
 
 
 func _persist() -> void:
-	var save: Node = get_tree().get_first_node_in_group(&"save")
-	if save != null:
-		save.save_game()
+	if _save.is_valid(): _save.call()
+
+
+func attach_panel(view: Node) -> void:
+	_panel_ref = weakref(view)
+
+
+func set_storage_open(open: bool) -> void:
+	_storage_open = open
+	_refresh_world()
 
 
 func to_dict() -> Dictionary:
@@ -438,7 +451,8 @@ func to_dict() -> Dictionary:
 
 
 func from_dict(data: Dictionary) -> void:
-	panel.close()
+	reset_requested.emit()
+	_storage_open = false
 	storage.restore(data.get("slots", []), inventory)
 	depleted.clear()
 	for value: Variant in data.get("depleted", []):

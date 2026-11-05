@@ -1,10 +1,11 @@
 # 历史归档
 
-这个目录不被 Godot 导入或导出，也不作为开发入口。
+本目录不被Godot导入或导出，只作追溯。当前开发入口为[项目文档](../docs/README.md)，运行/重建/回归入口为[工具索引](../tools/README.md)。
 
 | 目录 | 内容 |
 | --- | --- |
-| `tools/` | 原来直接放在 tools 根目录的三份过时工具：地图生成、玩家动画生成、冒烟检查 |
-| `docs/` | 旧的 generated 素材总说明，保留生成过程和历史规格供追溯 |
+| `tools/` | 早期根目录地图、动画和冒烟工具，已停止维护；不要执行这些历史脚本 |
+| [docs/2026-11-06-before-consolidation](docs/2026-11-06-before-consolidation/README.md) | 旧流程、版本路线、系统/素材长文与旧协作说明 |
+| [docs/generated_assets_history.md](docs/generated_assets_history.md) | 旧generated素材批次说明与制作历史 |
 
-当前唯一入口：`tools/build/build_farm_map.gd`、`tools/build/build_player_frames.gd`、`tools/run_checks.ps1 -Suites smoke_check`。不要执行这里的旧脚本；它们不代表当前地图、保存协议或校验规范。当前目录规则见 [目录与资源规范](../docs/07-目录与资源规范.md)。
+当前目录和来源边界见[目录规范](../docs/07-目录与资源规范.md)。未来任务状态只在正式总纲维护，不能用旧目录名、版本号或历史PASS推断现状。

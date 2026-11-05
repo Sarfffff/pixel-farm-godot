@@ -25,6 +25,12 @@ var _selected: int = 0
 var _idle_style: StyleBox
 var _active_style: StyleBox
 var _font: Font
+## 组合根装配Presenter提供只读文字；View不计算生长和季末规则。
+var seed_information: Callable
+
+
+func refresh_offers() -> void:
+	_rebuild()
 
 
 func _ready() -> void:
@@ -122,7 +128,9 @@ func _rebuild() -> void:
 
 func _add_row(parent: VBoxContainer, item: ItemData, buy: bool, price: int, owned: int) -> void:
 	var row := Panel.new()
-	row.custom_minimum_size = Vector2(84, 18)
+	var farming_text: String = seed_information.call(item.id) if buy and seed_information.is_valid() else ""
+	row.custom_minimum_size = Vector2(84, 48 if not farming_text.is_empty() else 18)
+	row.tooltip_text = farming_text
 	row.mouse_filter = Control.MOUSE_FILTER_STOP
 	row.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	if _idle_style != null:
@@ -156,12 +164,31 @@ func _add_row(parent: VBoxContainer, item: ItemData, buy: bool, price: int, owne
 	price_label.add_theme_color_override("font_color", Color("796040"))
 	price_label.text = str(price) if buy else "%d×%d" % [price, owned]
 	row.add_child(price_label)
+	if not farming_text.is_empty():
+		var details := Label.new()
+		details.name = "SeedInformation"
+		details.position = Vector2(3, 17)
+		details.size = Vector2(78, 30)
+		details.add_theme_font_override("font", _font)
+		details.add_theme_font_size_override("font_size", 6)
+		details.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		details.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		details.text = farming_text
+		row.add_child(details)
+		details.minimum_size_changed.connect(_fit_seed_row.bind(row, details))
+		_fit_seed_row.call_deferred(row, details)
 
 	var index: int = _rows.size()
 	_rows.append({&"id": item.id, &"buy": buy, &"price": price, &"name": item.display_name})
 	_row_nodes.append(row)
 	row.gui_input.connect(_on_row_gui_input.bind(index))
 	parent.add_child(row)
+
+
+func _fit_seed_row(row: Panel, details: Label) -> void:
+	if row.is_queued_for_deletion(): return
+	var height: float = maxf(details.size.y, details.get_combined_minimum_size().y)
+	row.custom_minimum_size = Vector2(84, maxf(48, details.position.y + height + 3))
 
 
 ## 买入列表末尾的一行灰字：还有几种种子没解锁，去修社区中心。

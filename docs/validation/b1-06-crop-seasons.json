@@ -1,0 +1,551 @@
+{
+  "task": "B1-06 crop season rules and seed information",
+  "schema_version": 2,
+  "compiled_scripts": 352,
+  "player_save_slots_used": false,
+  "policy": {
+    "out_of_season": "wither including mature unharvested/regrowing crops",
+    "multi_season": "retain growth while suitable",
+    "dead_clear": "F; free; no yield; keep tilled soil",
+    "late_purchase": "allowed in season with risk warning",
+    "greenhouse": "not implemented; protected-area policy extension only"
+  },
+  "runs": {
+    "full": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_bd02e708bbf74d8b9dee9793b7f23a92",
+      "passed": 38,
+      "results": [
+        {
+          "Suite": "check_animals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_architecture",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_audio",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_basic_loop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_berries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_calendar",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_compilation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_content_art",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_crop_seasons",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_crops",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_development_controls",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_activities",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_interactions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_terrain",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_friendship",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_goals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_held_tools",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_house",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_interior_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory_hotbar_camera",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_layer_boundaries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_npcs",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pause",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pickaxe",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_presentation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_progression",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_region_gameplay",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_release",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_resource_safety",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_save_validation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_settings",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_shop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_survival",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_ui_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_world_regions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "smoke_check",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_packaged_runtime",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ],
+      "log_evidence": {
+        "check_animals": {
+          "sha256": "f3ea1fbf22f128808c02f52bba1ece06e4f44d9f83e7a1f2f30896557f5a8e82",
+          "terminal_lines": [
+            "[animals] shared state machine, chickens, eggs, save round trip; 546 checks, 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_architecture": {
+          "sha256": "981c0a96fdfe831a7cfcc13e1062d7b6625d3121d4280db453010556d86ad18e",
+          "terminal_lines": [
+            "[architecture] 44 checks, 0 failures; reached end=true",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_audio": {
+          "sha256": "8e89be9b8ee66da28d74abf414e80b003de7a82eb85326b7ea50b2f62bb3e900",
+          "terminal_lines": [
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_basic_loop": {
+          "sha256": "6f298590054a162d07455915e23f7b30b76778deaae3eac6fa8ed663f686f747",
+          "terminal_lines": [
+            "[basic_loop] PASS; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_berries": {
+          "sha256": "3f0ee16c228c84b89332bc0d8cd248d8f0ab69af6d32f7154129a94df038ce89",
+          "terminal_lines": [
+            "[berries] random scatter, seeds, planting, save round trip; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_calendar": {
+          "sha256": "db73e177c7fc5d981494de9d392c7c3571d293f6a9cd36f430098dadd1513419",
+          "terminal_lines": [
+            "[calendar] PASS (0 failures)",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_compilation": {
+          "sha256": "ca7b95de7aaf3b1c818541b50ffc6f04f264749cd581c54f3d6d45ecb3256cf7",
+          "terminal_lines": [
+            "[compilation] 352 scripts compiled, 0 failures; reached end",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_content_art": {
+          "sha256": "f8378c841e6811ab8e8f17f6aa441c577bcee9e1eeab28045eed6a77c24f5300",
+          "terminal_lines": [
+            "[check_content_art] PASS: 2452 sprites / 2452 planned, 0 errors",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_crop_seasons": {
+          "sha256": "50a89a820371c14d2bd8a9650083b66c4f563da82153776ccc8bf0072d5032a1",
+          "terminal_lines": [
+            "[crop_seasons] 30 checks, 0 failures; reached end; PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_crops": {
+          "sha256": "9166a56817dc9e2684486bf6d20f404933e5fd4fdac27e43b3f8f63588b036a9",
+          "terminal_lines": [
+            "[crops] PASS (0 failures)",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_development_controls": {
+          "sha256": "3124f16061396172a81a3b599611e89886fb98e0a54434b8074e6f2c3d706212",
+          "terminal_lines": [
+            "[development_controls] 20 checks, 0 failures; reached end; PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_farm_activities": {
+          "sha256": "680b06c4ab090c186ce36256cf36bb26ee25bb6ffebdce0aa1532010f2486c65",
+          "terminal_lines": [
+            "[activities] 122 checks, 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_farm_interactions": {
+          "sha256": "7bb149ae099480dbcae9a1525e930979a6ff75059c510e90e600b779534aa90a",
+          "terminal_lines": [
+            "[farm_interactions] PASS (0 failures, 27 impacts)",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_farm_terrain": {
+          "sha256": "2a4d8e8f9eb6d2d34817b9ee34653286449c07b048cd7f762ce270d82bd418b2",
+          "terminal_lines": [
+            "[farm_terrain] PASS (0 failures; 222 water cells)",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_friendship": {
+          "sha256": "da25d4530e0d985076f1b354ea5d421c3a0b2084f96d54ffa10313d3ed611e8b",
+          "terminal_lines": [
+            "[friendship] PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_goals": {
+          "sha256": "937e83890659a5e4b497f96cf46f29f56ab7f80bff0d1c32aa020dc6feb46599",
+          "terminal_lines": [
+            "[goals] orders, community stages, unlocks; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_held_tools": {
+          "sha256": "6c365dd6835450912a6b5c5e073eea947c28eaa0d299ec115922d8d1e37426f2",
+          "terminal_lines": [
+            "[held_tools] PASS; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_house": {
+          "sha256": "a603282ddbcd193ab2981ea1f2d9343289d3d0793c42ec78eb6d6d57793084c0",
+          "terminal_lines": [
+            "[house] PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_interior_layout": {
+          "sha256": "88caf9aba0bf29401a07bbc2712804e75d2949b2051d76d6c51380c62764c5a9",
+          "terminal_lines": [
+            "[interior] PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_inventory_hotbar_camera": {
+          "sha256": "43b825c1847bbac5abc34693e2abc1594a63ad4d1b04ca68371d8584a171c921",
+          "terminal_lines": [
+            "[hotbar_camera] shared items, categories, drag/drop, migration, camera; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_inventory": {
+          "sha256": "62e8addf0bb719b1e124dc9b1a703bfcee99df7c77636742e792366074c61147",
+          "terminal_lines": [
+            "[inventory] PASS (0 failures)",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_layer_boundaries": {
+          "sha256": "bf2c693dccfb8ef7bfc9191bda84a20306efcac029a7980ad094cc03c67509e3",
+          "terminal_lines": [
+            "[layer_boundaries] 34 checks, 0 failures; reached end",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_npcs": {
+          "sha256": "9981967e712e9f3d83bce161d63a084877f7f2ec993243643a92436b264c6249",
+          "terminal_lines": [
+            "[npcs] 4 characters, 12 directional walk cycles, idle/dialogue/resume, shop integration; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_pause": {
+          "sha256": "d4b26d5cf458972d3ce2682d95638da43cde42e099583d02a6afe71acaf84c00",
+          "terminal_lines": [
+            "[pause] PASS (0 failures)",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_pickaxe": {
+          "sha256": "7aedac29387bc609dbd310817e586c7c168b4d3ea21f867b0ab1462b45c3bf35",
+          "terminal_lines": [
+            "[pickaxe] PASS; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_presentation": {
+          "sha256": "6eb938291f4689d43a7f5382090c4260cfad941772b8e989a1a892b09ed7b0fb",
+          "terminal_lines": [
+            "[presentation] 83 checks, 0 failures; reached end",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_progression": {
+          "sha256": "5d0e3847ea9f2b24da4dcff28e35e712fd6326adb14f4b655de4b2e8187393f3",
+          "terminal_lines": [
+            "[progression] clock, forage, deadlines, guide, upgrades, saves, bedtime; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_region_gameplay": {
+          "sha256": "5efd6b9d00f5a030da83488fe4bfde36dd54d0a29e37a14e5161ac3053cfd18e",
+          "terminal_lines": [
+            "[region_gameplay] PASS; 330 checks; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_release": {
+          "sha256": "bd7ddf3f0f25421d5fe27d43aa9dfb50d1289910151e2ccc9cb42ba780308849",
+          "terminal_lines": [
+            "[release] PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_resource_safety": {
+          "sha256": "03445abcbfdabc2571662c33e69a4e0b775ba95219c65fd076bdbe800d45b654",
+          "terminal_lines": [
+            "[resource_safety] 173 checks, 0 failures; reached end; PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_save_validation": {
+          "sha256": "e3519f538eceb46364e58f80f867623be575e0e366ca9011ab0ead1fe4d23cfa",
+          "terminal_lines": [
+            "[save_validation] 21 checks, 0 failures; reached end",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_settings": {
+          "sha256": "3ceb995996539ba1b5348e1111f21e35aeece89fe8bc4e6969465aba5d4efe51",
+          "terminal_lines": [
+            "[settings] PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_shop": {
+          "sha256": "e8e8bf82e0e030fddb8a5cef5d33e78bae70c7e04b433fd5f8ded2e3142d0c1b",
+          "terminal_lines": [
+            "[shop] PASS (0 failures)",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_survival": {
+          "sha256": "2308107e0c5a906fdbf2d9d9c0739f6a6084801eaf5802961e698ef25d22c73e",
+          "terminal_lines": [
+            "[survival] stamina, weather, rain watering; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_ui_layout": {
+          "sha256": "f5aa8808542b0cdd8d9caaf7fb05ed03171890d18c798dca313805dd4a442417",
+          "terminal_lines": [
+            "[ui_layout] HUD, journal, modal panels, three resolutions; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_world_regions": {
+          "sha256": "d5b7e65486c8b716619753b15f1dd3df476dc7d0e2cd884471978212df111cf2",
+          "terminal_lines": [
+            "[world_regions] PASS; 0 failures",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "smoke_check": {
+          "sha256": "c696e15b4d51803c23a51ab7e05c6bc698a23503f6d581b90cd5e86731497fce",
+          "terminal_lines": [
+            "[smoke_check] PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        },
+        "check_packaged_runtime": {
+          "sha256": "a548e0510e91df0dcd38d360a81c2558f48892afddead498c5bb7ee1c13fdcc0",
+          "terminal_lines": [
+            "[packaged_runtime] 28 checks, 0 failures; PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        }
+      },
+      "manifest_sha256": "fd21a9b41f74d2dcf035988e88dbf96fcc0e1fa8460d0a6a627ad8ac2e3cfe18",
+      "changes_since_snapshot": [
+        "tools/check/check_crop_seasons.gd"
+      ]
+    },
+    "native_final": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_8b329db52f7e4b3b93e136dc48b449ee",
+      "passed": 1,
+      "results": [
+        {
+          "Suite": "check_crop_seasons",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ],
+      "log_evidence": {
+        "check_crop_seasons": {
+          "sha256": "5771dd9cd11c3f7fc37655ce8cfc89a8929246640b6277a111718cc087ac4817",
+          "terminal_lines": [
+            "[crop_seasons] 31 checks, 0 failures; reached end; PASS",
+            "[checks] lifecycle complete; exit=0"
+          ]
+        }
+      },
+      "manifest_sha256": "c41904f9c79676840a48c53746737263db021f3d4423c8702e77bac3226dad5a",
+      "changes_since_snapshot": []
+    }
+  },
+  "verification_method": "Complete frozen-snapshot 38-suite run followed by native final test-fixture refresh through SaveSystem; production sources unchanged. 30 source assertions, 31 native assertions including screenshot, and 28 packaged assertions.",
+  "screenshot": "build/b1-06-seasonal-shop.png",
+  "screenshot_review": "Spring day28 10:00, seed information and risk fully within each row; actual OpenGL 3.3 Compatibility rendering.",
+  "remaining": [
+    "B0 new-player keyboard/mouse playthrough",
+    "B1 manual stage acceptance and seasonal risk usability",
+    "B8 standalone Windows EXE distribution acceptance"
+  ]
+}

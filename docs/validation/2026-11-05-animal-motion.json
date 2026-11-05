@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-05",
+  "task": "A0-03",
+  "player_behavior": "Chicken uses the complete four-frame gait and mirrors leftward movement; generic animals mirror missing horizontal animation and retain an animated side gait for vertical movement.",
+  "root_cause": "Single-facing sheet was treated as two-facing: idle 0/1 is normal/blink, walk 4..7 is one four-frame cycle, not opposite directions.",
+  "save_impact": "No schema, section, item identity, egg production or slot changes.",
+  "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_animals,check_compilation,check_basic_loop -Windowed -Preview -Packaged -TimeoutSeconds 180",
+  "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_446aa33488a4411d9d1520a0399c3543",
+  "results": [
+    {
+      "Suite": "check_animals",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_basic_loop",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_compilation",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_packaged_runtime",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    }
+  ],
+  "animal_checks": 547,
+  "animation_resources": 32,
+  "scripts_compiled": 337,
+  "packaged_runtime_checks": 20,
+  "additional_architecture": {
+    "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_d81dce25b04648fbb6b0d6ff91595e4c",
+    "checks": 44,
+    "result": "PASS",
+    "note": "Same final farm_animal.gd; chicken-specific four-frame/mirror correction validated by the final run."
+  },
+  "visual_review": {
+    "screenshot": "docs/screenshots/animals/animal_motion_reference.png",
+    "verified": [
+      "rightward chicken gait",
+      "mirrored leftward chicken gait",
+      "cow right/left fallback",
+      "sheep right/left fallback"
+    ],
+    "mode": "Native OpenGL Compatibility render; automated physical movement and pose samples, not long keyboard/mouse play"
+  },
+  "layout_audit": "PASS: 4040 text files, 17972 paths, 182 script UIDs, 0 errors",
+  "real_player_slots_accessed": false,
+  "limitations": [
+    "Only two chickens currently exist as live farm animals; the other 32 animation resources are tested as reusable adapters, not released husbandry systems.",
+    "Expansion pack animals with only static idle poses still need walk frames before gameplay integration.",
+    "Long keyboard/mouse observation remains separate from automated and rendered checks."
+  ]
+}

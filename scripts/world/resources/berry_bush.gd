@@ -15,6 +15,8 @@ const STAMINA_COST: int = 1
 const REGROW_DAYS: int = 2
 ## 种下到第一次结果。
 const GROW_DAYS: int = 2
+const DRAW_OFFSET: Vector2 = Vector2(-16, -32)
+static var _growth_bounds: Rect2 = Rect2()
 ## 每个品种按幼苗、采后、结果排列；沿用地图灌木的柔和鼠尾草绿。
 const ART: Dictionary = {
 	&"wild_blackberry": [preload("res://assets/packs/farm_style_v2/berries/blackberry/sprout.png"), preload("res://assets/packs/farm_style_v2/berries/blackberry/bare.png"), preload("res://assets/packs/farm_style_v2/berries/blackberry/ripe.png")],
@@ -205,5 +207,17 @@ func visual_texture() -> Texture2D:
 	return frames[0 if not is_mature() else 2 if has_berries() else 1] as Texture2D
 
 
+## 预留所有品种成株的可见像素，不把32px画布里的透明留白也算成植物。
+static func growth_rect() -> Rect2:
+	if _growth_bounds.size == Vector2.ZERO:
+		for frames: Array in ART.values():
+			for index: int in [1, 2]:
+				var texture: Texture2D = frames[index] as Texture2D
+				var used: Rect2 = Rect2(texture.get_image().get_used_rect())
+				used.position += DRAW_OFFSET
+				_growth_bounds = used if _growth_bounds.size == Vector2.ZERO else _growth_bounds.merge(used)
+	return _growth_bounds
+
+
 func _draw() -> void:
-	draw_texture(visual_texture(), Vector2(-16, -32))
+	draw_texture(visual_texture(), DRAW_OFFSET)

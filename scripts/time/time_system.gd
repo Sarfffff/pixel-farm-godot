@@ -16,7 +16,7 @@ signal season_changed(season: StringName, year: int)
 ## 06:00 起床。
 const START_MINUTES: int = 6 * 60
 ## 26:00 = 次日 02:00：星露谷式的"累倒线"。
-## 到点时间停住并发一次 day_over，由 DaySummary 执行累倒（扣钱、半体力、次日清晨醒来）。
+## 到点停住并发一次day_over，由组合根注入的RestController/RestService执行累倒。
 const CLOSE_MINUTES: int = 26 * 60
 ## 星露谷节奏：10 游戏分钟 / 7 现实秒 ≈ 1.43 分钟每秒。
 ## 06:00 → 02:00 共 1200 分钟 ≈ 14 分钟真实时间（与星露谷一致）。

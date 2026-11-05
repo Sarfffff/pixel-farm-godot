@@ -65,6 +65,7 @@ func _check_presets() -> void:
 		return
 	var platform: String = String(config.get_value("preset.0", "platform", ""))
 	_check(platform == "Windows Desktop", "preset targets Windows Desktop (got %s)" % platform)
+	_check(String(config.get_value("preset.0", "custom_features", "")).split(",").has("farm_release"), "export always carries production guard feature")
 	var export_path: String = String(config.get_value("preset.0", "export_path", ""))
 	_check(export_path.ends_with(".exe"), "export path ends with .exe (%s)" % export_path)
 

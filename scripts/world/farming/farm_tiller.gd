@@ -95,9 +95,6 @@ func _ready() -> void:
 	_player = _world.get_node_or_null("Player") as CharacterBody2D
 	if _player != null:
 		_player.interaction = self
-		_player.action_started.connect(_on_action_started)
-		_player.use_requested.connect(_on_use_requested)
-		_player.day_advanced.connect(_on_day_advanced)
 
 
 func _physics_process(_delta: float) -> void:
@@ -147,6 +144,9 @@ func interaction_hint(tool: StringName) -> String:
 			&"watering_can": return "正在浇水…"
 			&"axe": return "正在砍伐…"
 			&"stone_pickaxe": return "正在挥镐碎石…"
+	var faced_crop: Crop = _crops.get(target_cell()) as Crop
+	if faced_crop != null and faced_crop.withered:
+		return "%s 已枯萎 · 按 F 免费清理" % faced_crop.data.display_name
 	if not _has_stamina(tool):
 		return "体力不够 · 按 F 回屋睡觉"
 	var cell: Vector2i = resolve_target(tool)
@@ -161,6 +161,8 @@ func interaction_hint(tool: StringName) -> String:
 		crop = _crops.get(cell) as Crop
 	if crop != null:
 		var crop_name: String = crop.data.display_name if crop.data != null else "作物"
+		if crop.withered:
+			return "%s 已枯萎 · 按 F 免费清理" % crop_name
 		if crop.is_mature():
 			return "%s 已成熟 · 按 F 收获" % crop_name
 		if crop.data.regrow_days > 0 or not crop.data.stage_days.is_empty():
@@ -204,6 +206,9 @@ func _tool_hint(tool: StringName, cell: Vector2i) -> String:
 				]
 			return "播种 %s · 空格 / 左键" % _seed_label()
 		&"axe":
+			var tree: Sprite2D = _axe_target(cell)
+			if tree != null and not tree.blocked_reason().is_empty():
+				return tree.blocked_reason()
 			if _tree_at(cell) != null:
 				return "可以砍树 · 空格 / 左键"
 			if _stump_at(cell) != null:
@@ -280,13 +285,14 @@ func can_use(tool: StringName, cell: Vector2i) -> bool:
 		&"watering_can":
 			for target: Vector2i in watering_cells(cell):
 				var crop: Crop = _crops.get(target) as Crop
-				if crop != null and not crop.watered and not crop.is_mature():
+				if crop != null and not crop.withered and not crop.watered and not crop.is_mature():
 					return true
 			return false
 		&"seeds":
 			return _can_plant(cell)
 		&"axe":
-			return _axe_target(cell) != null
+			var tree: Sprite2D = _axe_target(cell)
+			return tree != null and tree.can_chop()
 		&"stone_pickaxe":
 			var rock: Sprite2D = MiningInteraction.rock_at(get_tree(), _soil.to_global(_soil.map_to_local(cell)))
 			return rock != null and rock.can_mine()
@@ -407,6 +413,10 @@ func _choppable_at(cell: Vector2i, want_stump: bool) -> Sprite2D:
 
 
 func _on_action_started(tool: StringName, cell: Vector2i) -> void:
+	begin_tool_action(tool, cell)
+
+
+func begin_tool_action(tool: StringName, cell: Vector2i) -> void:
 	_locked_cell = cell
 	_locked_tree = _axe_target(cell) if tool == &"axe" else null
 	if tool == &"stone_pickaxe":
@@ -414,7 +424,14 @@ func _on_action_started(tool: StringName, cell: Vector2i) -> void:
 
 
 func _on_use_requested(tool: StringName, cell: Vector2i) -> void:
+	commit_tool_action(tool, cell)
+
+
+func commit_tool_action(tool: StringName, cell: Vector2i) -> void:
 	if not can_use(tool, cell):
+		return
+	# 命中前背包或目标可能变化，再校验锁定的实际目标，不为失败砍伐扣体力。
+	if tool == &"axe" and (not is_instance_valid(_locked_tree) or not _locked_tree.can_chop()):
 		return
 	if not _spend_stamina(tool):
 		return
@@ -473,7 +490,7 @@ func _spawn_effect(cell: Vector2i, tool: StringName) -> void:
 ## 交互键能否接管这一格：只有成熟作物才算，其余情况让按键回落给工具切换。
 func can_interact(cell: Vector2i) -> bool:
 	var crop: Crop = _crops.get(cell) as Crop
-	return crop != null and crop.is_mature() and _has_stamina(&"harvest")
+	return crop != null and (crop.withered or (crop.is_mature() and _has_stamina(&"harvest")))
 
 
 ## 交互键（E）收获：只摘成熟作物；背包放不下时保留作物，避免凭空消失。
@@ -481,6 +498,13 @@ func interact(cell: Vector2i) -> void:
 	if not can_interact(cell):
 		return
 	var crop: Crop = _crops[cell] as Crop
+	if crop.withered:
+		_crops.erase(cell)
+		crop.queue_free()
+		_soil_state[cell] = false
+		_refresh_cell(cell)
+		_show_toast("已清理枯株 · 耕地保留，可播种当季种子")
+		return
 	var inventory := _inventory()
 	if inventory == null or not inventory.has_space_for(crop.harvest_item_id(), crop.harvest_amount()):
 		_show_toast("背包已满 · 腾出空间再收获")
@@ -524,6 +548,7 @@ func finish_day(rainy: bool) -> void:
 func begin_day(rainy: bool) -> void:
 	for crop: Crop in _crops.values():
 		crop.begin_day()
+		crop.apply_season(_current_season())
 		if rainy:
 			crop.water()
 	for cell: Vector2i in _soil_state:
@@ -552,6 +577,10 @@ func harvest_info(cell: Vector2i) -> Dictionary:
 
 func has_watered_crop(cell: Vector2i) -> bool:
 	return _crops.has(cell) and bool(_soil_state.get(cell, false))
+
+
+func has_tilled_soil(cell: Vector2i) -> bool:
+	return _soil_state.has(cell)
 
 
 func tomorrow_harvest_count() -> int:
@@ -616,16 +645,6 @@ func _spend_stamina(tool: StringName) -> bool:
 		return true
 	_show_toast("体力不够了 · 回屋睡一觉")
 	return false
-
-
-## 调试键 N：直接睡到第二天（等 V0.7 的床铺交互接入后改为走睡觉流程）。
-func _on_day_advanced() -> void:
-	# 用组查找而不是 TimeSystem 类型，避免类缓存失效时整个脚本解析失败。
-	var time := get_tree().get_first_node_in_group(&"time")
-	if time != null and time.has_method(&"sleep"):
-		time.sleep()
-		return
-	begin_new_day()
 
 
 func _can_plant(cell: Vector2i) -> bool:
@@ -822,6 +841,7 @@ func from_dict(data: Dictionary) -> void:
 		var cell := Vector2i(int(record.x), int(record.y))
 		var crop: Crop = _spawn_crop(cell, _crop_definitions[StringName(record.id)], 0, false)
 		crop.restore_growth(record)
+		crop.apply_season(_current_season())
 	for cell: Vector2i in _soil_state:
 		_refresh_cell(cell)
 

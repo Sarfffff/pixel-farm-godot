@@ -1,0 +1,246 @@
+{
+  "date": "2026-11-05",
+  "task": "A0-04 bridges, path style and vegetation placement",
+  "player_changes": [
+    "Light honey wood bridges with fine side rails and a quiet sandy path; bridge approach tiles join the deck.",
+    "Mushrooms, shrubs and two forage points moved off water or paths; original forage indexes and harvested state retained.",
+    "Whole mature foliage avoids terrain and nested building artwork, including when the farm is hidden during indoor rest."
+  ],
+  "save_compatibility": {
+    "version": 2,
+    "section": "berries.bushes",
+    "behavior": "Restore safe positions first; relocate invalid positions nearby while keeping kind, ownership, stage and absolute grow/regrow days. Unplaced records stay saved and retry when space is available. No player slots read or written."
+  },
+  "art": {
+    "generator": "built-in image_gen",
+    "source": "art/sources/terrain_v2/bridges_and_path.png",
+    "full_prompt": "art/sources/terrain_v2/prompt.txt",
+    "prepare": "tools/art/prepare_path_bridge_art.gd",
+    "catalog": "assets/textures/terrain/path_bridge_catalog.json",
+    "runtime_assets": {
+      "assets/textures/terrain/farm_path_atlas.png": {
+        "dimensions": [
+          64,
+          64
+        ],
+        "sha256": "f318b534d4b8cbba892cc3f76f2a51eee820d4100dc316541768eef3117d390c"
+      },
+      "assets/textures/terrain/river_bridge_atlas_v2.png": {
+        "dimensions": [
+          80,
+          48
+        ],
+        "sha256": "888069da35dcf2da5803dc2a04e29fb679520d1dca7096b02674781e90a74cfa"
+      }
+    }
+  },
+  "automated_validation": {
+    "latest_results": [
+      {
+        "Suite": "check_basic_loop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_berries",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_activities",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_terrain",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_presentation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_region_gameplay",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_packaged_runtime",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ],
+    "passing_runs": [
+      {
+        "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_a53f3d289cfc46589e13643f1419bae9",
+        "log": "build/terrain-v2/checks-final.log",
+        "results": [
+          {
+            "Suite": "check_basic_loop",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_berries",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_farm_activities",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_farm_terrain",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_presentation",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_region_gameplay",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_packaged_runtime",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          }
+        ]
+      },
+      {
+        "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_f39edbf3c5b94937a8d5c3102c26cb5b",
+        "log": "build/terrain-v2/checks-complete.log",
+        "results": [
+          {
+            "Suite": "check_basic_loop",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_berries",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_farm_activities",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_packaged_runtime",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          }
+        ]
+      },
+      {
+        "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_ae192837a0f14555bea4db567d2adca5",
+        "log": "build/terrain-v2/checks-forage-final.log",
+        "results": [
+          {
+            "Suite": "check_farm_activities",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_farm_terrain",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          },
+          {
+            "Suite": "check_packaged_runtime",
+            "Passed": true,
+            "ExitCode": 0,
+            "ExitResourceWarning": false
+          }
+        ]
+      }
+    ],
+    "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites <listed suites> -Packaged",
+    "strict_logs": "No SCRIPT ERROR, engine errors, assertion failures or exit leaks in the passing run results.",
+    "issues_found_and_fixed": [
+      "Transparent canvas over-reserved berry space; reserve the merged mature visible foliage instead.",
+      "Static south shore bush overlapped shore tiles; final east grass position also preserves full-map physical reachability.",
+      "The old berry test only searched part of the planting bounds; enumerate the real bounds.",
+      "Validate nested coop art and retain occupancy while the farm is hidden.",
+      "Validate a bad leading save row cannot displace later safe bushes.",
+      "Two forage resource positions were on paths; corrected positions with original index order."
+    ]
+  },
+  "layout_audit": {
+    "passed": true,
+    "text_files_checked": 4049,
+    "literal_resource_paths_checked": 17982,
+    "script_uids_checked": 184,
+    "files_by_area_without_sidecars": {
+      "art": 782,
+      "assets": 3728,
+      "scripts": 116,
+      "scenes": 45,
+      "data": 91,
+      "tools": 81
+    },
+    "repaired_files": [],
+    "errors": []
+  },
+  "native_render": {
+    "backend": "D3D12 Forward+",
+    "exit_code": 0,
+    "log": "build/terrain-v2/preview.log",
+    "captures": [
+      "horizontal-bridge",
+      "vertical-bridge",
+      "path",
+      "farm",
+      "legacy-save-repaired"
+    ],
+    "visually_reviewed": true
+  },
+  "delivery_hashes": {
+    "scenes/world/farm.tscn": "dec8e8a3e11debc3856cd585dcfd5699b97dc20b8b44620e01a922de6abaf9c5",
+    "assets/tilesets/farm_terrain.tres": "88017899c245d6decbc4a8f4b8911958ac55e3d9f436abee705381d2265e5e56",
+    "assets/textures/terrain/farm_path_atlas.png": "f318b534d4b8cbba892cc3f76f2a51eee820d4100dc316541768eef3117d390c",
+    "assets/textures/terrain/river_bridge_atlas_v2.png": "888069da35dcf2da5803dc2a04e29fb679520d1dca7096b02674781e90a74cfa",
+    "data/activities/farm_activities.tres": "1457e2be2f2dda8fa7d54ebc9147d97c0b33e3ebd340d274f970d2c88fed1dc3",
+    "scripts/world/resources/berry_grove.gd": "27ff6bd9853b99d73fc6312c824bfcb35eec73584ba2be4a8888023186dc320c",
+    "scripts/world/resources/berry_bush.gd": "59f4b2368a8e77f5649000e4bad431e4964397d1413e397840ab011570411af2",
+    "scripts/world/resources/forage.gd": "cafb1e2f8034a3362993914438364a12dfa8690645537eba51c12ef2ec31856c",
+    "scripts/world/farming/farm_ground_rules.gd": "2fceaeaf596066df2d15d661ab560d2a3d2a29cd3f407d740a81b9de6a8c29e7",
+    "scripts/presentation/ground_decor.gd": "14235a6341ff494ba259e725b8ef377ba7d54185ebd88da0da0bf01712aa055d",
+    "tools/lib/farm_landscape.gd": "40daa45dde28aa9cb4a616c5559429a4fcdf09476e53356138ccdc8604e2dc43",
+    "tools/lib/terrain_tiles.gd": "f4466d6f6aff39adf5cab803708cb9aeadbae9b6515e6421431ab6d135079267",
+    "tools/build/build_farm_map.gd": "4395e44003b678c5a0c307d542bdb54e4398bb93c37a208384043ba6eb106b5e",
+    "tools/art/prepare_path_bridge_art.gd": "90917a3271514cd5626723bb082f3c29c2dee04272ab61be6a0b85578d116d32",
+    "tools/build/refresh_farm_paths.gd": "0c1ff0025624bd449bfcd9db4978248dba7153fe2ed7912cee1a3a71d2d9bafe",
+    "tools/check/check_farm_terrain.gd": "aa05949e50d0906b8802c5a146098ace5ca3b6b36be84bb35644ed177cd16964",
+    "tools/check/check_berries.gd": "38dac59fe8cad169da713010e540b96c8a927c5038107c50512ff1fde53e4278"
+  },
+  "manual_acceptance": "Screenshots inspected. User style approval and extended keyboard/mouse playthrough remain pending; B0-B8 gates unchanged."
+}

@@ -1,0 +1,24 @@
+{
+  "generator": "built-in image_gen",
+  "source": "res://art/sources/terrain_v2/bridges_and_path.png",
+  "prompt": "art/sources/terrain_v2/prompt.txt",
+  "prepare": "tools/art/prepare_path_bridge_art.gd",
+  "filter": "nearest",
+  "alpha": "binary 0/255",
+  "bridge": {
+    "path": "res://assets/textures/terrain/river_bridge_atlas_v2.png",
+    "size": [80, 48],
+    "tile": [16, 16],
+    "horizontal_columns": ["left", "repeat", "right"],
+    "horizontal_rows_used": [0, 1],
+    "vertical_columns": [3, 4],
+    "vertical_rows": ["top", "repeat", "bottom"]
+  },
+  "path": {
+    "path": "res://assets/textures/terrain/farm_path_atlas.png",
+    "size": [64, 64],
+    "tile": [16, 16],
+    "mask_bits": {"up": 1, "right": 2, "down": 4, "left": 8},
+    "coordinate": "(mask % 4, mask / 4)"
+  }
+}

@@ -53,14 +53,14 @@ static func paint(farm: Node2D) -> void:
 				# 陆地边缘使用原草地的外角/内角，下方垫水避免透明角露出草底。
 				water.set_cell(cell, 2, Vector2i.ZERO)
 				shore.set_cell(cell, 3, Vector2i(mask % 16, mask / 16))
-	_paint_paths(farm.get_node("Paths") as TileMapLayer, cells)
+	paint_paths(farm.get_node("Paths") as TileMapLayer, cells)
 	_paint_bridges(farm)
 	_paint_bluff(farm)
 
 
-static func _paint_paths(paths: TileMapLayer, water: Dictionary[Vector2i, bool]) -> void:
-	# 先收集路网格子，再按四邻接挑图块：图集是 4×4 的连续栈道，
-	# 单格自己带路沿与草地过渡，斜着排也不会拼成「一截截木板」。
+static func paint_paths(paths: TileMapLayer, water: Dictionary[Vector2i, bool]) -> void:
+	# 4×4土路图集按上/右/下/左掩码排列，外露边缘才有草地过渡。
+	paths.clear()
 	var cells: Dictionary[Vector2i, bool] = {}
 	for x: int in range(5, 30):
 		if x >= 9 and x <= 16:
@@ -81,16 +81,14 @@ static func _paint_paths(paths: TileMapLayer, water: Dictionary[Vector2i, bool])
 	for cell: Vector2i in cells:
 		var mask: int = 0
 		for index: int in 4:
-			if cells.has(cell + NEIGHBORS[index]):
+			if cells.has(cell + NEIGHBORS[index]) or on_bridge(cell + NEIGHBORS[index]):
 				mask |= 1 << index
 		paths.set_cell(cell, 4, Vector2i(mask % 4, mask / 4))
 
 
 static func _paint_bridges(farm: Node2D) -> void:
 	var bridge: TileMapLayer = farm.get_node("Bridges") as TileMapLayer
-	# 图集（80×48）的真实布局：左边三列是横向桥（左端 / 中段 / 右端），
-	# 右边两列是纵向桥的左右两条；每一列的三行分别是上沿栏杆、桥面、下沿栏杆。
-	# 原先横向桥取列 2/3/4、纵向桥取列 0/1，等于把竖桥的瓦片横着铺，桥面才看着乱七八糟。
+	# 80×48：横桥用左三列的前两行（上/下半桥面），竖桥用右两列的三行（入口/中段/出口）。
 	for y: int in range(HORIZONTAL_BRIDGE.position.y, HORIZONTAL_BRIDGE.end.y):
 		for x: int in range(HORIZONTAL_BRIDGE.position.x, HORIZONTAL_BRIDGE.end.x):
 			var column: int = 0 if x == HORIZONTAL_BRIDGE.position.x else 2 if x == HORIZONTAL_BRIDGE.end.x - 1 else 1
@@ -102,6 +100,8 @@ static func _paint_bridges(farm: Node2D) -> void:
 	# 桥上水碰撞挖空后，用护栏防止玩家从侧面踏进河里。
 	var rails: StaticBody2D = StaticBody2D.new()
 	rails.name = "BridgeRails"
+	rails.z_index = 8
+	rails.set_script(preload("res://scripts/presentation/bridge_fences.gd"))
 	farm.add_child(rails)
 	rails.owner = farm
 	var horizontal: Rect2 = Rect2(Vector2(HORIZONTAL_BRIDGE.position * 16), Vector2(HORIZONTAL_BRIDGE.size * 16))

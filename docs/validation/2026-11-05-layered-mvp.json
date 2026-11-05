@@ -1,0 +1,352 @@
+{
+  "date": "2026-11-05",
+  "task": "B1-08",
+  "architecture": "Business-module layered architecture with application services, MVP views and native Godot scene components",
+  "reason": "Reuse existing state, Resources, composition root, transaction and save ports; keep presentation and asynchronous engine orchestration out of business rules.",
+  "framework_reference": "https://docs.godotengine.org/en/stable/tutorials/best_practices/scene_organization.html",
+  "full": {
+    "command": "pwsh -NoProfile -File tools/run_checks.ps1 -TimeoutSeconds 180",
+    "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_f0df41837dd84fe3b2c823617edbd411",
+    "passed": 36,
+    "failed": 0,
+    "scripts_compiled": 346,
+    "layer_contract_checks": 34,
+    "packaged_runtime_checks": 20,
+    "results": [
+      {
+        "Suite": "check_animals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_architecture",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_audio",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_basic_loop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_berries",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_calendar",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_compilation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_content_art",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_crops",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_activities",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_interactions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_farm_terrain",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_friendship",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_goals",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_held_tools",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_house",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_interior_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory_hotbar_camera",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_inventory",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_layer_boundaries",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_npcs",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pause",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_pickaxe",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_presentation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_progression",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_region_gameplay",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_release",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_resource_safety",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_save_validation",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_settings",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_shop",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_survival",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_ui_layout",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_world_regions",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "smoke_check",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_packaged_runtime",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ]
+  },
+  "native": {
+    "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_house,check_farm_activities,check_layer_boundaries -Windowed -Preview -TimeoutSeconds 180",
+    "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_9a6126afc417439580e572e1a55d4a0d",
+    "results": [
+      {
+        "Suite": "check_farm_activities",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_house",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      },
+      {
+        "Suite": "check_layer_boundaries",
+        "Passed": true,
+        "ExitCode": 0,
+        "ExitResourceWarning": false
+      }
+    ],
+    "activity_checks": 121,
+    "layer_contract_checks": 34,
+    "screenshots": [
+      "docs/screenshots/layered-mvp/summary_nap.png",
+      "docs/screenshots/layered-mvp/summary_night.png",
+      "docs/screenshots/layered-mvp/activities-storage.png",
+      "docs/screenshots/layered-mvp/activities-fishing.png"
+    ],
+    "visual_review": "Four actual Godot viewport captures inspected; native script-driven interaction, not full keyboard/mouse play."
+  },
+  "lifecycle_contracts": [
+    "RefCounted presenter explicitly owned by composition root",
+    "Independent UI replacement and removal",
+    "Detached presenter stops forwarding intents and disconnects service bindings",
+    "Repeated rest requests settle once",
+    "Save failure releases input and reports failure",
+    "Destroying rest controller during fade or timer clears input/curtain without leaking"
+  ],
+  "runtime_snapshot_matches": [
+    {
+      "file": "scripts/core/game_session.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/time/rest_service.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/time/rest_controller.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/ui/presenters/day_summary_presenter.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/ui/presenters/farm_activities_presenter.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/ui/hud/day_summary.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/ui/panels/farm_activities_panel.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/activities/farm_activities.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/activities/processing_session.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/inventory/storage_transfer_service.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/world/farming/farm_tiller.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/regions/world_regions.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/world/interiors/house_manager.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/world/interiors/sleep_spot.gd",
+      "matches_full_snapshot": true
+    },
+    {
+      "file": "scripts/time/time_system.gd",
+      "matches_full_snapshot": true
+    }
+  ],
+  "save_impact": {
+    "version": 2,
+    "new_sections": [],
+    "existing_fields_unchanged": true,
+    "transient_services_persisted": false,
+    "restore_grants_rewards": false,
+    "real_player_slots_accessed": false,
+    "behavior_fix": "Final wake position prepared before saving the completed rest."
+  },
+  "limitations": [
+    "Initial migration covers rest, activity views, storage/processing transactions and public farm tool ports; legacy FarmTiller facade remains.",
+    "Dynamic animal/device identity, placement and quest production systems still follow the roadmap.",
+    "Manual long keyboard/mouse play and standalone EXE release acceptance remain open."
+  ],
+  "verification_note": "Initial compilation/name conflict and presenter ownership regression were corrected; final results are from fresh immutable snapshots, with zero script/engine errors or exit leaks."
+}

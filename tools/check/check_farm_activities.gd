@@ -170,6 +170,9 @@ func _test_crops() -> void:
 		check(first.is_mature() == (day == 1), "potato matures in two watered nights")
 	tiller.interact(Vector2i(18, 6))
 	check(inventory.count_of(&"potato") == 1 and not tiller._crops.has(Vector2i(18, 6)), "potato is single harvest")
+	# 蓝莓属于夏季；本用例验证生长/复收，换季失败路径由check_crop_seasons覆盖。
+	clock.from_dict({"day": 29, "minutes": 360})
+	check(clock.season() == &"summer", "blueberry regrowth fixture uses its actual growing season")
 	var crop: Crop = tiller._spawn_crop(Vector2i(19, 6), blueberry, 0, false)
 	check(crop.scale == Vector2.ONE and crop.texture.get_size() == Vector2(32, 32), "new crop art shares native pixel density with existing crops")
 	check(crop.watered_nights_remaining() == 5, "blueberry displays actual first-harvest duration")

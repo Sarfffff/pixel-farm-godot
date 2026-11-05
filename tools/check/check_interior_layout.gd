@@ -116,10 +116,8 @@ func _audit(path: String) -> void:
 		if box == null:
 			continue
 		# 碰撞块是家具的子节点，会跟着家具一起缩放
-		var rect := Rect2(
-			sprite.position + shape.position * sprite.scale,
-			box.size * sprite.scale
-		)
+		# RectangleShape2D 以中心为原点；纳入父级变换，不能把中心误当左上角。
+		var rect: Rect2 = sprite.transform * body.transform * shape.transform * Rect2(-box.size * 0.5, box.size)
 		_check(
 			floor_rect.encloses(rect),
 			"%s/%s blocker stays inside the floor" % [tag, sprite.name]

@@ -149,6 +149,7 @@ func _run() -> void:
 		_check(bool(player.get("input_locked")), "summary locks the player")
 		var nap_button := summary.get_node_or_null("%SleepButton") as Button
 		_check(nap_button != null and nap_button.text.contains("小睡"), "daytime summary offers a nap")
+		if _preview: await _save_summary_preview("nap")
 		summary.call("_sleep")
 		await create_timer(SLEEP_WAIT).timeout
 
@@ -173,6 +174,7 @@ func _run() -> void:
 		await process_frame
 		var night_button := summary.get_node_or_null("%SleepButton") as Button
 		_check(night_button != null and night_button.text.contains("睡觉"), "night summary offers sleeping")
+		if _preview: await _save_summary_preview("night")
 		summary.call("_sleep")
 		await create_timer(SLEEP_WAIT).timeout
 
@@ -250,6 +252,13 @@ func _run() -> void:
 
 
 ## 有窗口运行时截一张室内图，便于人工核对家具与床的位置。
+func _save_summary_preview(mode: String) -> void:
+	await RenderingServer.frame_post_draw
+	var path: String = "user://summary_%s.png" % mode
+	_check(root.get_texture().get_image().save_png(path) == OK, "summary preview renders")
+	print("[house] summary preview -> " + ProjectSettings.globalize_path(path))
+
+
 func _save_preview() -> void:
 	await process_frame
 	await RenderingServer.frame_post_draw

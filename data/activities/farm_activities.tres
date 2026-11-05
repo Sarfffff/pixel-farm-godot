@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1")
-forage_positions = Array[Vector2]([Vector2(80, 216), Vector2(176, 400), Vector2(400, 448), Vector2(96, 272), Vector2(224, 448), Vector2(568, 288)])
+forage_positions = Array[Vector2]([Vector2(80, 216), Vector2(176, 400), Vector2(280, 432), Vector2(80, 288), Vector2(224, 448), Vector2(568, 288)])
 forage_items = Array[StringName]([&"wild_mushroom", &"wild_flower", &"wild_blackberry", &"wild_mushroom", &"wild_flower", &"wild_blackberry"])
