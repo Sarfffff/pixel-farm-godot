@@ -269,12 +269,12 @@ func _test_modals() -> void:
 	player.global_position = activities.settings.chest_position + Vector2(0, 12)
 	check(player.nearby_interactable().kind == &"storage", "chest is nearest reachable interaction")
 	var interact: InputEventKey = InputEventKey.new()
-	interact.keycode = KEY_E
-	interact.physical_keycode = KEY_E
+	interact.keycode = KEY_F
+	interact.physical_keycode = KEY_F
 	interact.pressed = true
 	root.push_input(interact)
 	await settle()
-	check(panel.visible and player.input_locked and not main.get_node("UI/PauseMenu").can_pause(), "real E opens chest, locks movement, blocks nested pause")
+	check(panel.visible and player.input_locked and not main.get_node("UI/PauseMenu").can_pause(), "real F opens chest, locks movement, blocks nested pause")
 	check(not main.get_node("UI/HelpPanel")._can_open(), "help cannot pause over activity modal")
 	clock.running = true
 	var minutes: int = clock.minutes

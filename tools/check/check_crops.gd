@@ -101,22 +101,23 @@ func _run() -> void:
 	player.set("_facing", &"up")
 	await physics_frame
 	_check(_tiller.target_cell() == TEST_CELL, "player faces the crop cell")
-	_check(_tiller.interaction_hint(&"hoe").contains("E 收获"), "hint offers harvest key")
+	_check(_tiller.interaction_hint(&"hoe").contains("F 收获"), "hint offers harvest key")
 
-	# 收获：走真实 E 键。E 同时绑定 tool_next，交互必须优先于切工具。
+	# 收获：走真实 F 键（交互键）。F 不参与工具切换，按下只收获不换工具。
 	var harvest_before: int = _inventory.count_of(&"carrot")
 	var tool_before: StringName = player.current_tool
-	player._unhandled_input(_key_event(KEY_E))
-	_check(player.current_tool == tool_before, "E harvests instead of switching tool")
+	player._unhandled_input(_key_event(KEY_F))
+	_check(player.current_tool == tool_before, "F harvests instead of switching tool")
 	_check(_inventory.count_of(&"carrot") == harvest_before + 1, "harvest lands in bag")
 	_check(not _tiller._crops.has(TEST_CELL), "harvested cell cleared")
 	_check(_tiller.can_use(&"seeds", TEST_CELL), "cleared cell can be replanted")
 
-	# 身边一圈没有可收获对象时，E 应回落成切换工具
+	# 交互键已经独立成 F，E 只负责切工具
 	var tool_after: StringName = player.current_tool
-	_check(_key_event(KEY_E).is_action_pressed(&"tool_next"), "E is also bound to tool_next")
+	_check(_key_event(KEY_E).is_action_pressed(&"tool_next"), "E is still bound to tool_next")
+	_check(not _key_event(KEY_E).is_action_pressed(&"interact"), "E no longer triggers interaction")
 	player._unhandled_input(_key_event(KEY_E))
-	_check(player.current_tool != tool_after, "E still cycles tools with nothing to harvest")
+	_check(player.current_tool != tool_after, "E cycles tools with nothing to harvest")
 
 	# 背包满时收获失败，但作物保留在格子上
 	_tiller._on_use_requested(&"seeds", TEST_CELL)
