@@ -59,34 +59,46 @@ static func paint(farm: Node2D) -> void:
 
 
 static func _paint_paths(paths: TileMapLayer, water: Dictionary[Vector2i, bool]) -> void:
+	# 先收集路网格子，再按四邻接挑图块：图集是 4×4 的连续栈道，
+	# 单格自己带路沿与草地过渡，斜着排也不会拼成「一截截木板」。
+	var cells: Dictionary[Vector2i, bool] = {}
 	for x: int in range(5, 30):
 		if x >= 9 and x <= 16:
 			continue
-		paths.set_cell(Vector2i(x, 16), 4, Vector2i(1 + (x % 3), 3))
+		cells[Vector2i(x, 16)] = true
 	for y: int in range(10, 19):
-		paths.set_cell(Vector2i(29, y), 4, Vector2i(0, y % 3))
+		cells[Vector2i(29, y)] = true
 	# 南北桥的引路与桥面同宽（两格），否则 2 格宽的桥接在 1 格宽的小路上会偏半个身位。
-	# 南北走向的路要用第 0 列的横板图块，用水平路的竖板图块会拼成一截截错开的木棍。
 	for y: int in range(VERTICAL_BRIDGE.position.y - 3, VERTICAL_BRIDGE.position.y):
 		for x: int in range(VERTICAL_BRIDGE.position.x, VERTICAL_BRIDGE.end.x):
-			if not water.has(Vector2i(x, y)):
-				paths.set_cell(Vector2i(x, y), 4, Vector2i(0, y % 3))
+			cells[Vector2i(x, y)] = true
 	for y: int in range(VERTICAL_BRIDGE.end.y, 29):
 		for x: int in range(VERTICAL_BRIDGE.position.x, 29):
-			if not water.has(Vector2i(x, y)):
-				paths.set_cell(Vector2i(x, y), 4, Vector2i(1 + (x % 3), 3))
+			cells[Vector2i(x, y)] = true
+	for cell: Vector2i in cells.keys():
+		if water.has(cell):
+			cells.erase(cell)
+	for cell: Vector2i in cells:
+		var mask: int = 0
+		for index: int in 4:
+			if cells.has(cell + NEIGHBORS[index]):
+				mask |= 1 << index
+		paths.set_cell(cell, 4, Vector2i(mask % 4, mask / 4))
 
 
 static func _paint_bridges(farm: Node2D) -> void:
 	var bridge: TileMapLayer = farm.get_node("Bridges") as TileMapLayer
+	# 图集（80×48）的真实布局：左边三列是横向桥（左端 / 中段 / 右端），
+	# 右边两列是纵向桥的左右两条；每一列的三行分别是上沿栏杆、桥面、下沿栏杆。
+	# 原先横向桥取列 2/3/4、纵向桥取列 0/1，等于把竖桥的瓦片横着铺，桥面才看着乱七八糟。
 	for y: int in range(HORIZONTAL_BRIDGE.position.y, HORIZONTAL_BRIDGE.end.y):
 		for x: int in range(HORIZONTAL_BRIDGE.position.x, HORIZONTAL_BRIDGE.end.x):
-			var column: int = 2 if x == HORIZONTAL_BRIDGE.position.x else 4 if x == HORIZONTAL_BRIDGE.end.x - 1 else 3
+			var column: int = 0 if x == HORIZONTAL_BRIDGE.position.x else 2 if x == HORIZONTAL_BRIDGE.end.x - 1 else 1
 			bridge.set_cell(Vector2i(x, y), 6, Vector2i(column, y - HORIZONTAL_BRIDGE.position.y))
 	for y: int in range(VERTICAL_BRIDGE.position.y, VERTICAL_BRIDGE.end.y):
 		for x: int in range(VERTICAL_BRIDGE.position.x, VERTICAL_BRIDGE.end.x):
 			var row: int = 0 if y == VERTICAL_BRIDGE.position.y else 2 if y == VERTICAL_BRIDGE.end.y - 1 else 1
-			bridge.set_cell(Vector2i(x, y), 6, Vector2i(x - VERTICAL_BRIDGE.position.x, row))
+			bridge.set_cell(Vector2i(x, y), 6, Vector2i(3 + (x - VERTICAL_BRIDGE.position.x), row))
 	# 桥上水碰撞挖空后，用护栏防止玩家从侧面踏进河里。
 	var rails: StaticBody2D = StaticBody2D.new()
 	rails.name = "BridgeRails"
