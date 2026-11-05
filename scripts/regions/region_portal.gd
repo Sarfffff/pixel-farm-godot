@@ -12,6 +12,16 @@ func _ready() -> void:
 	var sprite := Sprite2D.new()
 	sprite.texture = load("res://assets/packs/content_v1/objects/craftables/sign_board.png")
 	sprite.offset = Vector2(0, -14)
+	# 路标牌是实体：脚底一条碰撞，玩家站到旁边按 F，而不是踩在牌子上穿过去
+	var body := StaticBody2D.new()
+	body.name = "FootCollision"
+	var shape := CollisionShape2D.new()
+	var rect := RectangleShape2D.new()
+	rect.size = Vector2(12, 6)
+	shape.shape = rect
+	shape.position = Vector2(0, -2)
+	body.add_child(shape)
+	sprite.add_child(body)
 	add_child(sprite)
 	var label := Label.new()
 	label.text = destination_name
