@@ -8,6 +8,7 @@ script = ExtResource("1_0h8rb")
 id = &"berry_bush"
 display_name = "野浆果丛"
 texture = ExtResource("2_bk8ap")
+visual_scale = 0.65
 blocks_movement = true
 tool_hint = "采摘"
 planned_drop = &"wild_blackberry"

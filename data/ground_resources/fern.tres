@@ -8,6 +8,7 @@ script = ExtResource("1_fss58")
 id = &"fern"
 display_name = "林地蕨草"
 texture = ExtResource("2_isuw1")
+visual_scale = 0.85
 tool_hint = "清理"
 planned_drop = &"fiber"
 region_tags = Array[StringName]([&"forest"])

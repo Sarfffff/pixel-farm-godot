@@ -8,6 +8,7 @@ script = ExtResource("1_tv2kc")
 id = &"wild_root"
 display_name = "野生根菜"
 texture = ExtResource("2_m2jpw")
+visual_scale = 0.85
 tool_hint = "拾取"
 planned_drop = &"wild_root"
 region_tags = Array[StringName]([&"forest", &"wetland"])

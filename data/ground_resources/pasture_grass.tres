@@ -8,6 +8,7 @@ script = ExtResource("1_v0e2h")
 id = &"pasture_grass"
 display_name = "牧草"
 texture = ExtResource("2_x3ry1")
+visual_scale = 0.85
 tool_hint = "收割"
 planned_drop = &"hay"
 region_tags = Array[StringName]([&"farm", &"village", &"wetland"])

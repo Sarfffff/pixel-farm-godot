@@ -9,6 +9,7 @@ id = &"boulder"
 display_name = "大岩石"
 texture = ExtResource("2_hj2ou")
 footprint = Vector2i(2, 2)
+visual_scale = 0.75
 blocks_movement = true
 tool_hint = "升级石镐"
 planned_drop = &"stone"

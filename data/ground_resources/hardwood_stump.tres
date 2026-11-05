@@ -9,6 +9,7 @@ id = &"hardwood_stump"
 display_name = "硬木树桩"
 texture = ExtResource("2_t6pga")
 footprint = Vector2i(2, 2)
+visual_scale = 0.75
 blocks_movement = true
 tool_hint = "升级斧头"
 planned_drop = &"hardwood"
