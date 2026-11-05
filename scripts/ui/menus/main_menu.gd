@@ -7,11 +7,19 @@ extends Control
 enum Mode { CONTINUE, NEW }
 
 const GAME_SCENE: String = "res://scenes/main.tscn"
+## 存档卡片的缩略图直接裁标题背景图的局部：没有存档截图也不会空着。
+const MENU_BG: Texture2D = preload("res://assets/ui/menu_background.png")
+## 三个槽位各取农场不同角落（像素坐标，背景图 640×360）。
+const THUMB_REGIONS: Array[Rect2] = [
+	Rect2(150, 120, 200, 120),
+	Rect2(330, 40, 200, 120),
+	Rect2(60, 180, 200, 120),
+]
 
 @onready var _main_frame: PanelContainer = %MainFrame
 @onready var _slot_frame: PanelContainer = %SlotFrame
 @onready var _slot_title: Label = %SlotTitle
-@onready var _slot_list: VBoxContainer = %SlotList
+@onready var _slot_list: HBoxContainer = %SlotList
 @onready var _name_frame: PanelContainer = %NameFrame
 @onready var _name_input: LineEdit = %NameInput
 @onready var _name_confirm: Button = %NameConfirm
@@ -62,15 +70,20 @@ func _input(event: InputEvent) -> void:
 
 func _open_slots(mode: int) -> void:
 	_mode = mode
-	_main_frame.visible = false
+	# 左侧品牌与菜单常驻，右侧弹出存档卡片
 	_slot_frame.visible = true
-	_slot_title.text = "继续哪个存档？" if mode == Mode.CONTINUE else "存到哪个槽位？"
+	_slot_title.text = "选择农场" if mode == Mode.CONTINUE else "新农场放到哪块地？"
 	_rebuild_slots()
+	# 弹出卡片时把焦点交给第一张可用卡片，键盘也能直接选
+	if _slot_list.get_child_count() > 0:
+		var first_card := _slot_list.get_child(0) as Control
+		var action := first_card.get_node_or_null("VBox/Buttons/Action") as Button
+		if action != null and not action.disabled:
+			action.grab_focus()
 
 
 func _close_slots() -> void:
 	_slot_frame.visible = false
-	_main_frame.visible = true
 	# 可能刚删完存档，回到主面板时重新判断「继续」是否还能点。
 	_continue_button.disabled = not _save.any_save()
 	(_continue_button if not _continue_button.disabled else _new_button).grab_focus()
@@ -81,44 +94,159 @@ func _rebuild_slots() -> void:
 		child.queue_free()
 	_delete_buttons.clear()
 	_pending_delete = 0
-	var first_enabled: Button
+	var first_action: Button
 	for slot in range(1, _save.SLOT_COUNT + 1):
 		var summary: Dictionary = _save.slot_summary(slot)
 		var exists: bool = bool(summary.get(&"exists", false))
-		var row := HBoxContainer.new()
-		row.add_theme_constant_override("separation", 3)
-
-		var button := Button.new()
-		button.text = _slot_text(slot, summary, exists)
-		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		# 继续模式不能选空槽位；新游戏模式任意槽位都能点（有档即覆盖）。
-		button.disabled = _mode == Mode.CONTINUE and (not exists or not bool(summary.get("compatible", true)))
-		button.pressed.connect(_on_slot_pressed.bind(slot))
-		_style_button(button)
-		row.add_child(button)
-
-		# 空槽位没有改名/删除入口，避免出现"操作空存档"这种多余按钮。
-		if exists:
-			var rename_button := Button.new()
-			rename_button.text = "改名"
-			rename_button.pressed.connect(_on_rename_pressed.bind(slot))
-			_style_button(rename_button)
-			row.add_child(rename_button)
-
-			var delete_button := Button.new()
-			delete_button.text = "删除"
-			delete_button.pressed.connect(_on_delete_pressed.bind(slot))
-			_style_button(delete_button)
-			row.add_child(delete_button)
-			_delete_buttons[slot] = delete_button
-
-		_slot_list.add_child(row)
-		if first_enabled == null and not button.disabled:
-			first_enabled = button
-	if first_enabled != null:
-		first_enabled.grab_focus()
+		var card := _make_card(slot, summary, exists)
+		_slot_list.add_child(card)
+		var action := card.get_node("VBox/Buttons/Action") as Button
+		if first_action == null and not action.disabled:
+			first_action = action
+	if first_action != null:
+		first_action.grab_focus()
 	else:
 		_back_button.grab_focus()
+
+
+## 一张存档卡：缩略色块 + 农场名 + 进度 + 底部三个按钮。
+func _make_card(slot: int, summary: Dictionary, exists: bool) -> PanelContainer:
+	var font := _slot_title.get_theme_font("font")
+	var card := PanelContainer.new()
+	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	card.add_theme_stylebox_override("panel", _card_style(exists))
+
+	var box := VBoxContainer.new()
+	box.name = "VBox"
+	box.add_theme_constant_override("separation", 3)
+	card.add_child(box)
+
+	# 缩略图：有档就裁一块农场实景，空档画个灰底加号
+	if exists:
+		var preview := TextureRect.new()
+		preview.name = "Thumb"
+		var atlas := AtlasTexture.new()
+		atlas.atlas = MENU_BG
+		atlas.region = THUMB_REGIONS[(slot - 1) % THUMB_REGIONS.size()]
+		preview.texture = atlas
+		preview.custom_minimum_size = Vector2(0, 42)
+		preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		box.add_child(preview)
+	else:
+		var thumb := Panel.new()
+		thumb.name = "Thumb"
+		thumb.custom_minimum_size = Vector2(0, 42)
+		thumb.add_theme_stylebox_override("panel", _thumb_style(slot, false))
+		var plus := Label.new()
+		plus.text = "＋"
+		plus.add_theme_font_override("font", font)
+		plus.add_theme_font_size_override("font_size", 12)
+		plus.add_theme_color_override("font_color", Color(0.62, 0.61, 0.56))
+		plus.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		plus.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		plus.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		thumb.add_child(plus)
+		box.add_child(thumb)
+
+	var name_label := Label.new()
+	name_label.name = "NameLabel"
+	name_label.text = String(summary.get(&"name", "我的农场")) if exists else "空着的第 %d 块" % slot
+	name_label.add_theme_font_override("font", font)
+	name_label.add_theme_font_size_override("font_size", 7)
+	name_label.add_theme_color_override("font_color", Color("3a3327") if exists else Color("8b8676"))
+	name_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	box.add_child(name_label)
+
+	var info := Label.new()
+	info.name = "Info"
+	if exists:
+		info.text = "第 %d 天 · %d 金币\n%s" % [
+			int(summary.get(&"day", 1)),
+			int(summary.get(&"coins", 0)),
+			_format_time(int(summary.get(&"saved_at", 0))),
+		]
+	else:
+		info.text = "一块还没开垦的林地"
+	info.add_theme_font_override("font", font)
+	info.add_theme_font_size_override("font_size", 6)
+	info.add_theme_color_override("font_color", Color("6d6757"))
+	box.add_child(info)
+
+	var buttons := HBoxContainer.new()
+	buttons.name = "Buttons"
+	buttons.add_theme_constant_override("separation", 2)
+	box.add_child(buttons)
+
+	var action := Button.new()
+	action.name = "Action"
+	action.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	# 新游戏模式点有档的卡片是"覆盖"，得说清楚，别让玩家以为能续玩
+	action.text = ("覆盖" if _mode == Mode.NEW else "进入") if exists else "新建"
+	# 继续模式不能选空档；新游戏模式任意槽位都能点（有档即覆盖）。
+	action.disabled = _mode == Mode.CONTINUE and (not exists or not bool(summary.get("compatible", true)))
+	action.add_theme_font_override("font", font)
+	action.add_theme_font_size_override("font_size", 7)
+	for state: String in ["normal", "hover", "pressed", "focus"]:
+		action.add_theme_stylebox_override(state, _action_style(exists))
+	action.add_theme_color_override("font_color", Color("1d3630") if exists else Color("8b8676"))
+	action.pressed.connect(_on_slot_pressed.bind(slot))
+	buttons.add_child(action)
+
+	# 空槽位没有改名/删除入口，避免出现"操作空存档"这种多余按钮。
+	if exists:
+		var rename_button := Button.new()
+		rename_button.name = "Rename"
+		rename_button.text = "✎"
+		rename_button.tooltip_text = "改个名字"
+		rename_button.add_theme_font_override("font", font)
+		rename_button.add_theme_font_size_override("font_size", 7)
+		rename_button.pressed.connect(_on_rename_pressed.bind(slot))
+		buttons.add_child(rename_button)
+
+		var delete_button := Button.new()
+		delete_button.name = "Delete"
+		delete_button.text = "✕"
+		delete_button.tooltip_text = "删除存档"
+		delete_button.add_theme_font_override("font", font)
+		delete_button.add_theme_font_size_override("font_size", 7)
+		delete_button.pressed.connect(_on_delete_pressed.bind(slot))
+		buttons.add_child(delete_button)
+		_delete_buttons[slot] = delete_button
+	return card
+
+
+## 卡片底：有档用纸色，空档更淡。
+func _card_style(exists: bool) -> StyleBoxFlat:
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.97, 0.95, 0.89, 1) if exists else Color(0.93, 0.92, 0.87, 1)
+	style.border_color = Color(0.78, 0.74, 0.64, 1) if exists else Color(0.85, 0.84, 0.79, 1)
+	style.set_border_width_all(1)
+	style.set_corner_radius_all(4)
+	style.set_content_margin_all(5)
+	return style
+
+
+## 缩略图占位：三块地各有色调，空档是浅灰。
+func _thumb_style(slot: int, exists: bool) -> StyleBoxFlat:
+	var style := StyleBoxFlat.new()
+	if not exists:
+		style.bg_color = Color(0.88, 0.88, 0.84, 1)
+	else:
+		var tints: Array[Color] = [Color("8fbf74"), Color("7fb2c9"), Color("c9a878")]
+		style.bg_color = tints[(slot - 1) % tints.size()]
+	style.set_corner_radius_all(3)
+	return style
+
+
+## 主按钮：有档是浅青胶囊，空档是灰面。
+func _action_style(exists: bool) -> StyleBoxFlat:
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.62, 0.85, 0.8, 1) if exists else Color(0.86, 0.85, 0.8, 1)
+	style.set_corner_radius_all(6)
+	style.content_margin_top = 3.0
+	style.content_margin_bottom = 3.0
+	return style
 
 
 func _style_button(button: Button) -> void:

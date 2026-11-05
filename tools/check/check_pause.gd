@@ -94,7 +94,8 @@ func _run() -> void:
 		_check(not help.visible and not paused, "closing help resumes the game")
 		# 暂停菜单里的入口
 		_pause.open()
-		_check(_pause._items.size() == 7, "pause menu has help, audio and settings entries")
+		# 音频开关已并入设置面板，入口收敛为五项：继续/保存/标题/帮助/设置
+		_check(_pause._items.size() == 5, "pause menu has help and settings entries")
 		_pause._on_button_pressed(3)
 		await process_frame
 		_check(help.visible and not _pause.visible, "help opens from the pause menu")
@@ -106,29 +107,21 @@ func _run() -> void:
 	_check(settings_panel != null, "settings panel exists")
 	if settings_panel != null:
 		_pause.open()
-		_pause._on_button_pressed(6)
+		_pause._on_button_pressed(4)
 		await process_frame
 		_check(settings_panel.visible and not _pause.visible, "settings opens from the pause menu")
 		settings_panel.call(&"close")
 		await process_frame
 		_check(not settings_panel.visible and _pause.visible, "closing settings returns to the pause menu")
 
-	# 音乐 / 音效开关
-	var audio := root.get_node_or_null("AudioManager")
-	_check(audio != null, "AudioManager autoload present")
-	if audio != null:
-		_pause.open()
-		_check(_pause._music_button.text.contains("开"), "music label starts on")
-		_pause._on_button_pressed(4)
-		_check(not bool(audio.get(&"music_enabled")), "music toggles off")
-		_check(_pause._music_button.text.contains("关"), "music label follows")
-		_pause._on_button_pressed(4)
-		_check(bool(audio.get(&"music_enabled")), "music toggles back on")
-		_pause._on_button_pressed(5)
-		_check(not bool(audio.get(&"sfx_enabled")), "sfx toggles off")
-		_pause._on_button_pressed(5)
-		_check(bool(audio.get(&"sfx_enabled")), "sfx toggles back on")
-		_pause.close()
+	# 音频开关已经并进设置面板，暂停菜单不再重复一份，只剩五个入口
+	_check(_pause._items.size() == 5, "pause menu has five entries after removing duplicate audio toggles")
+	_check(
+		_pause.get_node_or_null("Frame/VBox/Buttons/MusicButton") == null
+			and _pause.get_node_or_null("Frame/VBox/Buttons/SfxButton") == null,
+		"pause menu no longer duplicates audio toggles"
+	)
+	_pause.close()
 
 	# 标题界面：无档时「继续」置灰，有档时可点
 	_save.delete_all()
@@ -150,26 +143,32 @@ func _run() -> void:
 	var main_frame := menu.get_node("MainFrame") as Control
 	menu.call(&"_open_slots", 0)
 	await process_frame
-	_check(slot_frame.visible and not main_frame.visible, "continue opens the slot picker")
-	var slot_list := menu.get_node("SlotFrame/VBox/SlotList") as VBoxContainer
+	# 新布局里左侧品牌与菜单常驻，右侧弹出存档卡片
+	_check(slot_frame.visible, "continue opens the slot card panel")
+	_check(main_frame.visible, "brand and menu stay visible under the card")
+	var slot_list := menu.get_node("SlotFrame/Margin/VBox/SlotList") as HBoxContainer
 	_check(slot_list.get_child_count() == 3, "three save slots listed")
-	var row_one := slot_list.get_child(0) as HBoxContainer
-	_check(not (row_one.get_child(0) as Button).disabled, "slot 1 selectable with a save")
-	var row_two := slot_list.get_child(1) as HBoxContainer
-	_check((row_two.get_child(0) as Button).disabled, "empty slot disabled in continue mode")
-	_check(row_two.get_child_count() == 1, "empty slot has no rename or delete button")
-	_check(row_one.get_child_count() == 3, "occupied slot offers rename and delete")
+	var card_one := slot_list.get_child(0) as PanelContainer
+	var action_one := card_one.get_node("VBox/Buttons/Action") as Button
+	_check(not action_one.disabled, "slot 1 selectable with a save")
+	var card_two := slot_list.get_child(1) as PanelContainer
+	var action_two := card_two.get_node("VBox/Buttons/Action") as Button
+	_check(action_two.disabled, "empty slot disabled in continue mode")
+	_check(card_two.get_node_or_null("VBox/Buttons/Rename") == null, "empty slot has no rename or delete button")
+	_check((card_one.get_node("VBox/Buttons") as HBoxContainer).get_child_count() == 3, "occupied slot offers rename and delete")
 
 	# 新游戏模式：空槽位也能点，占用槽位提示将覆盖
 	menu.call(&"_open_slots", 1)
 	await process_frame
-	row_one = slot_list.get_child(0) as HBoxContainer
-	row_two = slot_list.get_child(1) as HBoxContainer
-	_check(not (row_two.get_child(0) as Button).disabled, "new game allows empty slots")
-	_check(String((row_one.get_child(0) as Button).text).contains("将覆盖"), "occupied slot warns about overwrite")
+	card_one = slot_list.get_child(0) as PanelContainer
+	card_two = slot_list.get_child(1) as PanelContainer
+	action_one = card_one.get_node("VBox/Buttons/Action") as Button
+	action_two = card_two.get_node("VBox/Buttons/Action") as Button
+	_check(not action_two.disabled, "new game allows empty slots")
+	_check(String(action_one.text).contains("覆盖"), "occupied slot warns about overwrite")
 
 	# 新游戏选完槽位先起名，取消则回到槽位列表
-	(row_two.get_child(0) as Button).pressed.emit()
+	action_two.pressed.emit()
 	await process_frame
 	var name_frame := menu.get_node("NameFrame") as Control
 	_check(name_frame.visible and not slot_frame.visible, "new game asks for a farm name")
@@ -189,8 +188,8 @@ func _run() -> void:
 	# 改名：只重写 name，不动进度
 	menu.call(&"_open_slots", 0)
 	await process_frame
-	row_one = slot_list.get_child(0) as HBoxContainer
-	var rename_button := row_one.get_child(1) as Button
+	card_one = slot_list.get_child(0) as PanelContainer
+	var rename_button := card_one.get_node("VBox/Buttons/Rename") as Button
 	rename_button.pressed.emit()
 	await process_frame
 	_check(name_frame.visible, "rename opens the name entry")
@@ -204,8 +203,8 @@ func _run() -> void:
 	# 删除要按两次：第一次只确认
 	menu.call(&"_open_slots", 0)
 	await process_frame
-	row_one = slot_list.get_child(0) as HBoxContainer
-	var delete_button := row_one.get_child(2) as Button
+	card_one = slot_list.get_child(0) as PanelContainer
+	var delete_button := card_one.get_node("VBox/Buttons/Delete") as Button
 	delete_button.pressed.emit()
 	_check(delete_button.text == "确认?", "delete asks for confirmation first")
 	_check(FileAccess.file_exists(SLOT_ONE), "first click keeps the save")
@@ -214,7 +213,10 @@ func _run() -> void:
 	_check(_save.has_save(2), "deleting slot 1 leaves slot 2 alone")
 	# 旧行是 queue_free，等一帧再检查重建后的列表
 	await process_frame
-	_check((slot_list.get_child(0) as HBoxContainer).get_child_count() == 1, "deleted slot loses its delete button")
+	var card_after := slot_list.get_child(0) as PanelContainer
+	_check(card_after.get_node_or_null("VBox/Buttons/Delete") == null, "deleted slot loses its delete button")
+	var buttons_after := card_after.get_node_or_null("VBox/Buttons") as HBoxContainer
+	_check(buttons_after != null and buttons_after.get_child_count() == 1, "deleted slot only keeps the action button")
 	menu.queue_free()
 	await process_frame
 	_save.delete_all()

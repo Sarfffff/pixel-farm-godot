@@ -35,6 +35,11 @@ func _init() -> void:
 		{"name": "sleep", "samples": _sleep()},
 		{"name": "step", "samples": _step()},
 		{"name": "door", "samples": _door()},
+		# 界面专用：悬停/点击/确认/返回，比游戏内音效更轻更短
+		{"name": "ui_hover", "samples": _ui_hover()},
+		{"name": "ui_click", "samples": _ui_click()},
+		{"name": "ui_confirm", "samples": _ui_confirm()},
+		{"name": "ui_back", "samples": _ui_back()},
 	]
 	var failed := false
 	for job in jobs:
@@ -102,6 +107,41 @@ func _coin() -> PackedFloat32Array:
 	var buf := _buffer(0.34)
 	_tone(buf, 0.0, 0.10, 1318.5, 1318.5, 0.40, 5.0)
 	_tone(buf, 0.06, 0.22, 1760.0, 1760.0, 0.42, 3.5)
+	return buf
+
+
+# --------------------------------------------------------------------------
+# 界面音效：比游戏内音效更短更轻，垫在 BGM 上不抢戏
+# --------------------------------------------------------------------------
+
+## 悬停：一声极轻的高频短滴，只提示"焦点到这里了"。
+func _ui_hover() -> PackedFloat32Array:
+	var buf := _buffer(0.055)
+	_tone(buf, 0.0, 0.05, 1320.0, 1180.0, 0.16, 14.0)
+	return buf
+
+
+## 点击：干净的短促咔哒，中频偏硬。
+func _ui_click() -> PackedFloat32Array:
+	var buf := _buffer(0.085)
+	_tone(buf, 0.0, 0.06, 760.0, 620.0, 0.34, 16.0)
+	_noise(buf, 0.0, 0.02, 0.20, 22.0, 0.18)
+	return buf
+
+
+## 确认：两段上行，用在"进入游戏/存档"这种正向动作。
+func _ui_confirm() -> PackedFloat32Array:
+	var buf := _buffer(0.24)
+	_tone(buf, 0.0, 0.09, 620.0, 700.0, 0.30, 9.0)
+	_tone(buf, 0.08, 0.13, 880.0, 990.0, 0.28, 7.0)
+	return buf
+
+
+## 返回：两段下行，用在关闭面板/退出。
+func _ui_back() -> PackedFloat32Array:
+	var buf := _buffer(0.22)
+	_tone(buf, 0.0, 0.09, 700.0, 620.0, 0.28, 9.0)
+	_tone(buf, 0.08, 0.12, 520.0, 430.0, 0.24, 8.0)
 	return buf
 
 
