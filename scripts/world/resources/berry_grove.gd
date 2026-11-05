@@ -39,6 +39,10 @@ var bushes: Array[Node] = []
 var _ready_done: bool = false
 var _rng := RandomNumberGenerator.new()
 var _water: TileMapLayer
+## 桥、木板路、坡地也是"铺好的地面"，灌木长上去会压住贴图。
+var _bridges: TileMapLayer
+var _paths: TileMapLayer
+var _hills: TileMapLayer
 var _tiller: Node
 var _last_day: int = 1
 
@@ -62,6 +66,9 @@ func _ensure_ready() -> void:
 	_ready_done = true
 	var farm := get_parent().get_parent()
 	_water = farm.get_node_or_null("Water") as TileMapLayer
+	_bridges = farm.get_node_or_null("Bridges") as TileMapLayer
+	_paths = farm.get_node_or_null("Paths") as TileMapLayer
+	_hills = farm.get_node_or_null("Hills") as TileMapLayer
 	_tiller = get_tree().get_first_node_in_group(&"farm_tiller")
 	var time := get_tree().get_first_node_in_group(&"time")
 	if time != null:
@@ -111,8 +118,11 @@ func can_place_at(point: Vector2) -> bool:
 	# 整片种植区都留给庄稼，野果和玩家种的浆果都不进这块。
 	if FARM_PLOT.has_point(cell):
 		return false
-	if _water != null and _water.get_cell_source_id(cell) != -1:
-		return false
+	# 水面、桥面、木板小路、坡地上都不长野果：这几层都有贴图，
+	# 32px 的灌木压上去就是一块绿糊在桥上（玩家报过"穿模"）。
+	for layer: TileMapLayer in [_water, _bridges, _paths, _hills]:
+		if layer != null and layer.get_cell_source_id(cell) != -1:
+			return false
 	if _tiller != null and _tiller.get(&"_soil_state").has(cell):
 		return false
 	if _tiller != null and _tiller.get(&"_crops").has(cell):
