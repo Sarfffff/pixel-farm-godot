@@ -1,5 +1,5 @@
 extends SceneTree
-## 生成农舍室内场景：一间 15×11 格的木屋内部。
+## 生成农舍室内场景：一间 27×14 格的木屋内部（含顶部墙面刚好一屏）。
 ##
 ## 室内不切换场景，而是作为 Main 的子节点放在远处（HouseManager 负责显隐），
 ## 这样时间、背包、存档等 Systems 不会因为进出屋被重建。
@@ -12,24 +12,31 @@ const TILESET := "res://assets/tilesets/house_terrain.tres"
 const ART := "res://assets/packs/content_v1/"
 const PRESENTATION_ART := "res://assets/packs/presentation_v3/"
 
-## 房屋尺寸（格）。27×19 = 432×304：
-## 宽度刚好卡住相机的最小缩放（zoom≈1.5），高度比画面高一点，
-## 于是相机能上下轻微滚动——站在门口时门不会被底部工具栏挡住。
+## 房屋尺寸（格）。27×15 + 1 排补墙 = 432×256：
+## 相机最小缩放 = 640/432 ≈ 1.48，可视区域 432×243，整间屋连同顶部墙面一屏装完。
+## 墙面留 4 排（64px）才看得出是"墙"——只留 1 排时整屏都是地板，像仓库。
 const ROOM_W: int = 27
-const ROOM_H: int = 19
+const ROOM_H: int = 15
 ## 可走的地板范围（含端点）
-const FLOOR_MIN := Vector2i(1, 3)
-const FLOOR_MAX := Vector2i(25, 17)
+const FLOOR_MIN := Vector2i(1, 4)
+const FLOOR_MAX := Vector2i(25, 13)
 ## 门开在底部墙的这列：门贴图 16×16 正好一格
 const DOOR_COLUMNS: Array[int] = [13]
 ## 底部墙再往下补几排：让相机能滚过墙底，
 ## 站在门口时门不会被底部工具栏盖住（多出来的部分是实心墙，不是空地）。
-const EXTRA_WALL_ROWS: int = 3
+const EXTRA_WALL_ROWS: int = 1
+## 顶部墙面用掉的行数：0 横梁、1–2 壁纸、3 踢脚线，地板从第 4 行开始
+const WALL_ROWS: int = 4
 
 const SRC_FLOOR := 0
 const SRC_WALLPAPER := 1
 const SRC_WOOD := 2
 const SRC_TRIM := 3
+## 墙面三件套：竖纹壁纸 / 竖木板 / 错缝砖。
+## 原先整面墙都用"上浅下深"的 wood_wall 平铺，每格重复同一条横带，看着像平铺的条纹。
+const SRC_PAPER := 4
+const SRC_PLANKS := 5
+const SRC_BRICK := 6
 const TILE := Vector2i(0, 0)
 
 ## 家具缩放：素材 32×32、可见内容约 28px，玩家只有 16×20。
@@ -37,42 +44,67 @@ const TILE := Vector2i(0, 0)
 const FURNITURE_SCALE: float = 0.75
 
 ## 家具：[贴图路径, 脚底中心, 碰撞尺寸]；碰撞尺寸为 Vector2.ZERO 表示不挡路。
-## 床靠左墙、壁炉靠上墙、衣柜靠右墙，中间留出从门口到床边的走道。
+## 五段式平面：卧室（左）→ 起居（中左）→ 餐厅（中右）→ 厨房（右）→ 储物（下方）。
+## 大件一律贴墙背朝外，中间留一条从门口直通床边的走道；
+## 家具之间保持 8px 以上间隔，避免碰撞块重叠。
 const FURNITURE: Array = [
-	# —— 卧室（左上）——
-	["objects/furniture/single_bed.png", Vector2(56, 96), Vector2(30, 28)],
-	["objects/furniture/bedside_table.png", Vector2(88, 96), Vector2(26, 16)],
-	["objects/furniture/wardrobe.png", Vector2(392, 96), Vector2(28, 20)],
-	["objects/furniture/potted_fern.png", Vector2(40, 176), Vector2(14, 10)],
-	["objects/furniture/armchair.png", Vector2(112, 232), Vector2(28, 16)],
-	# —— 起居（中上）：壁炉 + 书柜 + 摇椅 ——
-	["objects/furniture/brick_fireplace.png", Vector2(256, 72), Vector2(30, 22)],
-	["objects/furniture/bookcase.png", Vector2(352, 72), Vector2(28, 20)],
-	["objects/furniture/floor_lamp.png", Vector2(312, 84), Vector2(10, 6)],
-	["objects/furniture/rocking_chair.png", Vector2(150, 150), Vector2(24, 16)],
-	["objects/furniture/wood_stool.png", Vector2(108, 150), Vector2(18, 10)],
-	["objects/furniture/coffee_table.png", Vector2(192, 168), Vector2(26, 16)],
-	["objects/furniture/wall_clock.png", Vector2(330, 56), Vector2.ZERO],
-	# —— 餐厅（中）——
-	["objects/furniture/dining_table.png", Vector2(240, 214), Vector2(26, 16)],
-	["objects/furniture/oak_chair.png", Vector2(212, 212), Vector2(16, 10)],
-	["objects/furniture/oak_chair.png", Vector2(268, 212), Vector2(16, 10)],
-	# —— 厨房（右下）——
-	["objects/furniture/refrigerator.png", Vector2(384, 236), Vector2(28, 22)],
-	["objects/furniture/cupboard.png", Vector2(344, 214), Vector2(28, 20)],
-	["objects/furniture/kitchen_table.png", Vector2(312, 252), Vector2(26, 16)],
-	["objects/furniture/basket.png", Vector2(392, 268), Vector2(18, 10)],
-	# —— 储物（Chest 交互点见 _add_chest）——
-	["objects/craftables/wood_chest.png", Vector2(152, 262), Vector2(28, 20)],
+	# —— 北墙一排（背靠墙，脚底离地约 2 格）——
+	["objects/furniture/wardrobe.png", Vector2(44, 96), Vector2(28, 20)],
+	["objects/furniture/brick_fireplace.png", Vector2(136, 96), Vector2(30, 22)],
+	["objects/furniture/bookcase.png", Vector2(176, 96), Vector2(28, 20)],
+	["objects/furniture/floor_lamp.png", Vector2(208, 88), Vector2(10, 6)],
+	["objects/furniture/cupboard.png", Vector2(352, 96), Vector2(28, 20)],
+	["objects/furniture/refrigerator.png", Vector2(392, 96), Vector2(28, 22)],
+	# —— 卧室（左侧，床与床头柜一组）——
+	["objects/furniture/single_bed.png", Vector2(52, 140), Vector2(30, 28)],
+	["objects/furniture/bedside_table.png", Vector2(84, 140), Vector2(26, 16)],
+	["objects/furniture/potted_fern.png", Vector2(28, 168), Vector2(14, 10)],
+	# —— 起居（中左，茶几 + 摇椅 + 扶手椅围成小圈）——
+	["objects/furniture/coffee_table.png", Vector2(152, 156), Vector2(26, 16)],
+	["objects/furniture/rocking_chair.png", Vector2(120, 168), Vector2(24, 16)],
+	["objects/furniture/armchair.png", Vector2(184, 168), Vector2(28, 16)],
+	["objects/furniture/wood_stool.png", Vector2(152, 190), Vector2(18, 10)],
+	["objects/furniture/potted_fern.png", Vector2(216, 120), Vector2(14, 10)],
+	# —— 餐厅（中右，两把椅子夹一张餐桌）——
+	["objects/furniture/dining_table.png", Vector2(280, 156), Vector2(26, 16)],
+	["objects/furniture/oak_chair.png", Vector2(256, 160), Vector2(16, 10)],
+	["objects/furniture/oak_chair.png", Vector2(304, 160), Vector2(16, 10)],
+	# —— 厨房（右侧，灶台区靠东墙）——
+	["objects/furniture/kitchen_table.png", Vector2(368, 176), Vector2(26, 16)],
+	["objects/furniture/basket.png", Vector2(336, 192), Vector2(18, 10)],
+	["objects/furniture/tall_potted_tree.png", Vector2(398, 192), Vector2(20, 12)],
+	# —— 储物与边角 ——
+	["objects/craftables/wood_chest.png", Vector2(96, 200), Vector2(28, 20)],
+	["objects/furniture/tall_potted_tree.png", Vector2(32, 208), Vector2(20, 12)],
 ]
 
 ## 平铺在地上：单独一层、压在角色脚下，不参与 Y 排序，
 ## 否则站在毯子北侧时会被毯子盖住脚。
+## 地毯只摆在"家具下方"，别单独扔在空地中央，否则像一块绿色色块。
 const FLOOR_PROPS: Array = [
-	["objects/furniture/square_rug.png", Vector2(96, 200)],
-	["objects/furniture/oval_rug.png", Vector2(112, 248)],
-	["objects/furniture/square_rug.png", Vector2(240, 206)],
-	["objects/furniture/door_mat.png", Vector2(208, 272)],
+	["objects/furniture/square_rug.png", Vector2(152, 156)],
+	["objects/furniture/oval_rug.png", Vector2(280, 156)],
+	["objects/furniture/square_rug.png", Vector2(52, 148)],
+	["objects/furniture/door_mat.png", Vector2(216, 208)],
+]
+
+## 墙面装饰：挂在壁纸那一行（y=16..48），只做视觉、不参与碰撞。
+## 不进 Props 有两个原因：Props 有"家具必须 32×32 且脚底落在地板内"的体检规则，
+## 而墙件是 16×16 且本来就在地板之上。
+## 每项：[贴图相对路径, 中心/脚底位置, 缩放]；32×32 挂件用 0.75 缩放并向上提 16px。
+const WALL_DECOR: Array = [
+	# 窗：第 2 排壁纸（y=32..48），左右各挂两扇，旁边配窗帘
+	["res://assets/packs/content_v1/terrain/interiors/window.png", Vector2(88, 40), 1.0],
+	["res://assets/packs/content_v1/terrain/interiors/window.png", Vector2(104, 40), 1.0],
+	["res://assets/packs/content_v1/terrain/interiors/curtain.png", Vector2(72, 40), 1.0],
+	["res://assets/packs/content_v1/terrain/interiors/curtain.png", Vector2(120, 40), 1.0],
+	["res://assets/packs/content_v1/terrain/interiors/window.png", Vector2(312, 40), 1.0],
+	["res://assets/packs/content_v1/terrain/interiors/window.png", Vector2(328, 40), 1.0],
+	["res://assets/packs/content_v1/terrain/interiors/curtain.png", Vector2(296, 40), 1.0],
+	["res://assets/packs/content_v1/terrain/interiors/curtain.png", Vector2(344, 40), 1.0],
+	# 挂件：时钟与搁板挂在壁纸下沿（脚底贴 y=64 的地面线）
+	["res://assets/packs/presentation_v3/furniture/wall_clock.png", Vector2(176, 64), FURNITURE_SCALE],
+	["res://assets/packs/presentation_v3/furniture/wall_shelf.png", Vector2(240, 64), FURNITURE_SCALE],
 ]
 
 
@@ -99,6 +131,10 @@ func _build() -> Node2D:
 	var floor_props := Node2D.new()
 	floor_props.name = "FloorProps"
 	floor_props.z_index = 2
+	# 墙件（窗、窗帘）压在地板之上、家具之下，站在墙根时不会盖住角色
+	var wall_decor := Node2D.new()
+	wall_decor.name = "WallDecor"
+	wall_decor.z_index = 3
 	var props := Node2D.new()
 	props.name = "Props"
 	props.y_sort_enabled = true
@@ -107,14 +143,16 @@ func _build() -> Node2D:
 	room.add_child(floor_layer)
 	room.add_child(wall_layer)
 	room.add_child(floor_props)
+	room.add_child(wall_decor)
 	room.add_child(props)
-	for child: Node in [floor_layer, wall_layer, floor_props, props]:
+	for child: Node in [floor_layer, wall_layer, floor_props, wall_decor, props]:
 		child.owner = room
 
 	_paint_floor(floor_layer)
 	_paint_walls(wall_layer)
 	_add_wall_body(room)
 	_add_flat_props(floor_props, room)
+	_add_wall_decor(wall_decor, room)
 	_add_furniture(props, room)
 	_add_door(room)
 	_add_sleep_spot(room)
@@ -128,8 +166,8 @@ func _add_chest(room: Node2D) -> void:
 	var chest := Node2D.new()
 	chest.name = "Chest"
 	chest.set_script(load("res://scripts/world/interiors/chest_access.gd") as Script)
-	# 木箱贴图在 (152, 262)，交互点落在箱子上
-	chest.position = Vector2(152, 254)
+	# 木箱贴图在 (96, 200)，交互点落在箱子上
+	chest.position = Vector2(96, 192)
 	room.add_child(chest)
 	chest.owner = room
 
@@ -139,14 +177,14 @@ func _add_sleep_spot(room: Node2D) -> void:
 	var spot := Node2D.new()
 	spot.name = "BedSpot"
 	spot.set_script(load("res://scripts/world/interiors/sleep_spot.gd") as Script)
-	# 床在 (56, 96)，脚底往下 10px 就是床脚站位（半径 24，离开床头就睡不了）
-	spot.position = Vector2(56, 106)
+	# 床在 (52, 140)，脚底往下 10px 就是床脚站位（半径 24，离开床头就睡不了）
+	spot.position = Vector2(52, 150)
 	room.add_child(spot)
 	spot.owner = room
 
 	var wake := Marker2D.new()
 	wake.name = "WakeSpot"
-	wake.position = Vector2(80, 114)
+	wake.position = Vector2(76, 158)
 	room.add_child(wake)
 	wake.owner = room
 
@@ -167,23 +205,25 @@ func _paint_floor(layer: TileMapLayer) -> void:
 
 
 func _paint_walls(layer: TileMapLayer) -> void:
-	# 顶墙：最上一行深色木墙，第二行壁纸，第三行当踢脚线
+	# 顶墙四段：砖横梁 → 竖纹壁纸 ×2 → 木护墙板。
+	# 三种材质各管一段，横向不再整片重复同一条色带。
 	for x in ROOM_W:
-		layer.set_cell(Vector2i(x, 0), SRC_WOOD, TILE)
-		layer.set_cell(Vector2i(x, 1), SRC_WALLPAPER, TILE)
-		layer.set_cell(Vector2i(x, 2), SRC_TRIM, TILE)
-	# 左右墙
-	for y in range(3, ROOM_H - 1):
-		layer.set_cell(Vector2i(0, y), SRC_WOOD, TILE)
-		layer.set_cell(Vector2i(ROOM_W - 1, y), SRC_WOOD, TILE)
+		layer.set_cell(Vector2i(x, 0), SRC_BRICK, TILE)
+		layer.set_cell(Vector2i(x, 1), SRC_PAPER, TILE)
+		layer.set_cell(Vector2i(x, 2), SRC_PAPER, TILE)
+		layer.set_cell(Vector2i(x, 3), SRC_PLANKS, TILE)
+	# 左右墙用竖木板：纹理朝上走，和正墙的横带区分开。
+	for y in range(WALL_ROWS, ROOM_H - 1):
+		layer.set_cell(Vector2i(0, y), SRC_PLANKS, TILE)
+		layer.set_cell(Vector2i(ROOM_W - 1, y), SRC_PLANKS, TILE)
 	# 底墙整行铺满（含门柱列）：门是贴在墙上的贴图，
 	# 留空洞会露出引擎黑底，显得门悬在黑洞里。
 	for x in ROOM_W:
-		layer.set_cell(Vector2i(x, ROOM_H - 1), SRC_WOOD, TILE)
+		layer.set_cell(Vector2i(x, ROOM_H - 1), SRC_PLANKS, TILE)
 	# 门洞下方补实心墙（相机可以滚到这里，工具栏就不会挡住门）
 	for y in range(ROOM_H, ROOM_H + EXTRA_WALL_ROWS):
 		for x in ROOM_W:
-			layer.set_cell(Vector2i(x, y), SRC_WOOD, TILE)
+			layer.set_cell(Vector2i(x, y), SRC_PLANKS, TILE)
 
 
 ## 四面墙的碰撞：房间必须是个封闭盒子，玩家不能走进虚空。
@@ -247,6 +287,32 @@ func _add_flat_props(layer: Node2D, room: Node2D) -> void:
 		sprite.offset = Vector2.ZERO
 		sprite.scale = Vector2.ONE * FURNITURE_SCALE
 		sprite.position = entry[1]
+		layer.add_child(sprite)
+		sprite.owner = room
+
+
+## 墙件：窗和窗帘按 16×16 原尺寸贴到壁纸那一行（y=24 即第 2 行）。
+## 不做缩放——墙件要跟 16px 地砖严格对齐，缩放会出现半像素缝。
+## 32×32 的挂件（钟、搁板）仍按 0.75 缩放，脚底贴 (x, 48) 即地面线。
+func _add_wall_decor(layer: Node2D, room: Node2D) -> void:
+	for index: int in WALL_DECOR.size():
+		var entry: Array = WALL_DECOR[index]
+		var sprite := Sprite2D.new()
+		var path: String = String(entry[0])
+		sprite.name = "Decor%d%s" % [
+			index, String(entry[0]).get_file().get_basename().to_pascal_case()
+		]
+		sprite.texture = load(path) as Texture2D
+		if sprite.texture == null:
+			push_warning("[build_house_interior] 缺少墙件贴图 %s" % path)
+			continue
+		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		var decor_scale: float = float(entry[2])
+		sprite.scale = Vector2.ONE * decor_scale
+		sprite.position = entry[1]
+		# 32×32 的挂件以脚底为锚点，向上长
+		if sprite.texture.get_height() > 16:
+			sprite.offset = Vector2(0, -sprite.texture.get_height() * 0.5)
 		layer.add_child(sprite)
 		sprite.owner = room
 

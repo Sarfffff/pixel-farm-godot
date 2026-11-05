@@ -1,5 +1,5 @@
 extends Node2D
-## 房门：屋外按 E 进屋，屋内按 E 出门。
+## 房门：屋外按 F 进屋，屋内按 F 出门。
 ##
 ## 过渡按常见农场游戏的做法：一声开门 → 画面渐黑 → 换世界 → 渐亮。
 ## 过渡期间锁玩家输入，避免"黑屏里还能走动"。
@@ -29,7 +29,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "按 E 出门" if mode == "exit" else "按 E 进屋"
+	return "按 F 出门" if mode == "exit" else "按 F 进屋"
 
 
 func interact(_cell: Vector2i) -> void:

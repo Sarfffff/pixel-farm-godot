@@ -76,13 +76,13 @@ func has_harvest_target() -> bool:
 
 func interaction_hint(tool: StringName) -> String:
 	var drop: String = manager.nearby_drop()
-	if not drop.is_empty(): return "[E] 拾取地面掉落物"
+	if not drop.is_empty(): return "[F] 拾取地面掉落物"
 	var id: String = manager.resource_at(resolve_target(tool))
 	if id.is_empty():
-		if tool in [&"hoe", &"seeds", &"watering_can"]: return "种植照料请回农舍农场 · 路标 [E] 切换区域"
-		return "面向资源使用工具 · 植物和散石按 [E] 采集"
+		if tool in [&"hoe", &"seeds", &"watering_can"]: return "种植照料请回农舍农场 · 路标 [F] 切换区域"
+		return "面向资源使用工具 · 植物和散石按 [F] 采集"
 	var state: Dictionary = manager.ledger.object(manager.active_region, id)
 	var rule: Dictionary = manager.ledger.rules[state.kind]
-	var required: String = "[E] 采集" if String(rule.tool).is_empty() else ("斧头" if rule.tool == "axe" else "石镐")
+	var required: String = "[F] 采集" if String(rule.tool).is_empty() else ("斧头" if rule.tool == "axe" else "石镐")
 	if not manager.stamina.can_spend(int(rule.cost)): return "体力不足 · 沿路标回农舍休息"
 	return "%s · 还需%d次 · 体力%d" % [required, int(state.hits), int(rule.cost)]

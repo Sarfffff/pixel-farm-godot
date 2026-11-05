@@ -1,7 +1,7 @@
 extends Node2D
-## 床边：站在这儿按 E 打开睡前结算，确认后黑屏过夜、天亮在床边醒来。
+## 床边：站在这儿按 F 打开睡前结算，确认后黑屏过夜、天亮在床边醒来。
 ##
-## 与门、商店同属 interactable 组，玩家按 E 时取最近的一个。
+## 与门、商店同属 interactable 组，玩家按 F 时取最近的一个。
 ## 真正的换天、黑屏、起床在 DaySummary + HouseManager 里做，这里只负责"发起"。
 
 ## 只有贴着床才允许睡：半径收紧到 24px（床宽 2 格，站在床脚/床边刚好够）
@@ -17,7 +17,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "按 E 上床睡觉"
+	return "按 F 上床睡觉"
 
 
 func interact(_cell: Vector2i) -> void:

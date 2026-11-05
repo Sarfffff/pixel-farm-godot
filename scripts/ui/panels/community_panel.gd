@@ -67,7 +67,7 @@ func _refresh() -> void:
 	var ready: bool = community.can_donate()
 	_donate.disabled = not ready
 	_donate.text = "上缴" if ready else "材料不够"
-	_message.text = "按 E 或点按钮上缴" if ready else ""
+	_message.text = "按 F 或点按钮上缴" if ready else ""
 
 
 func _clear_needs() -> void:

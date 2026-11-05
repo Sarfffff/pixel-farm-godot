@@ -1,9 +1,6 @@
-[gd_resource type="Resource" script_class="RockData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="RockData" format=3 uid="uid://dmj3p7l6qgna1"]
 
-[ext_resource type="Script" path="res://scripts/data/rock_data.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://ckl0lpflfdvd2" path="res://scripts/data/rock_data.gd" id="1_script"]
 
 [resource]
 script = ExtResource("1_script")
-hits_required = 3
-drop_item_id = &"stone"
-drop_amount = 3

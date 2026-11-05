@@ -245,7 +245,7 @@ func _harvest_feedback(region: StringName, id: String, finished: bool) -> void:
 	var tool: String = String(ledger.rules[state.kind].tool)
 	var audio := get_node_or_null("/root/AudioManager")
 	if audio != null: audio.play_sfx(&"chop" if tool == "axe" else (&"mine" if tool == "stone_pickaxe" else &"harvest"))
-	if finished: _message("资源已掉落 · 靠近按 [E] 拾取")
+	if finished: _message("资源已掉落 · 靠近按 [F] 拾取")
 
 
 func _message(text: String) -> void:
@@ -253,7 +253,7 @@ func _message(text: String) -> void:
 
 
 func _update_name() -> void:
-	if _name_label != null: _name_label.text = region_name(active_region) + (" · 东侧路标通往荒地" if active_region == &"home" else " · 路标 [E] 通往相邻区域")
+	if _name_label != null: _name_label.text = region_name(active_region) + (" · 东侧路标通往荒地" if active_region == &"home" else " · 路标 [F] 通往相邻区域")
 
 
 func _gate_position(id: String, side: StringName) -> Vector2:

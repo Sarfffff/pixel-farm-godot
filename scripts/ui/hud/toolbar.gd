@@ -56,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 	var ambient: String = _player.nearby_hint()
 	var tiller: Node = _player.interaction if is_instance_valid(_player.interaction) else null
 	if tiller != null and tiller.has_harvest_target():
-		ambient = "[E] 收获成熟作物"
+		ambient = "[F] 收获成熟作物"
 	var text: String = ambient
 	if text.is_empty():
 		if tiller != null and _player.current_tool != &"none":

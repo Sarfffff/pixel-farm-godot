@@ -50,7 +50,7 @@ func _refresh() -> void:
 	_reward.text = "报酬 %d 金币 · 含今天剩 %d 天" % [int(orders.reward()), int(orders.days_left())]
 	_deliver.disabled = not orders.can_deliver()
 	_deliver.text = "交付" if not _deliver.disabled else "货物不够"
-	_message.text = "" if _deliver.disabled else "按 E 或点按钮交付"
+	_message.text = "" if _deliver.disabled else "按 F 或点按钮交付"
 
 
 func _show_empty(text: String) -> void:

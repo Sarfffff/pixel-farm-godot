@@ -1,9 +1,11 @@
-[gd_resource type="TileSet" load_steps=6 format=3]
+[gd_resource type="TileSet" format=3 uid="uid://egffptk4gbwf"]
 
-[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wood_floor.png" id="1_floor"]
-[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wallpaper.png" id="2_wallpaper"]
-[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wood_wall.png" id="3_wood"]
-[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wood_wall.png" id="4_trim"]
+[ext_resource type="Texture2D" uid="uid://7204p7i7jm0s" path="res://assets/packs/presentation_v3/tiles/wood_floor.png" id="1_floor"]
+[ext_resource type="Texture2D" uid="uid://be76hc0u8m2tx" path="res://assets/packs/presentation_v3/tiles/wallpaper.png" id="2_wallpaper"]
+[ext_resource type="Texture2D" uid="uid://bd7omldubnc0o" path="res://assets/packs/presentation_v3/tiles/wood_wall.png" id="4_trim"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wall_paper.png" id="5_paper"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wall_planks.png" id="6_planks"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/tiles/wall_brick.png" id="7_brick"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_floor"]
 texture = ExtResource("1_floor")
@@ -14,16 +16,30 @@ texture = ExtResource("2_wallpaper")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wood"]
-texture = ExtResource("3_wood")
+texture = ExtResource("4_trim")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trim"]
 texture = ExtResource("4_trim")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paper"]
+texture = ExtResource("5_paper")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_planks"]
+texture = ExtResource("6_planks")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brick"]
+texture = ExtResource("7_brick")
+0:0/0 = 0
+
 [resource]
-tile_size = Vector2i(16, 16)
 sources/0 = SubResource("TileSetAtlasSource_floor")
 sources/1 = SubResource("TileSetAtlasSource_wallpaper")
 sources/2 = SubResource("TileSetAtlasSource_wood")
 sources/3 = SubResource("TileSetAtlasSource_trim")
+sources/4 = SubResource("TileSetAtlasSource_paper")
+sources/5 = SubResource("TileSetAtlasSource_planks")
+sources/6 = SubResource("TileSetAtlasSource_brick")

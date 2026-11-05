@@ -1,6 +1,6 @@
 class_name VillageNpc
 extends Sprite2D
-## 会走路的村民：按日程在格坐标之间寻路，走到玩家身边按 E 多句对话。
+## 会走路的村民：按日程在格坐标之间寻路，走到玩家身边按 F 多句对话。
 ##
 ## 贴图是 3 列 × 4 行：列为站姿/左脚/右脚，行为下/上/左/右。
 ## 移动不走物理：沿 A* 路径逐点靠拢，避免静态碰撞体被"拖着走"造成推挤。
@@ -163,7 +163,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "按 E 和%s聊聊" % display_name
+	return "按 F 和%s聊聊" % display_name
 
 
 func interact(_cell: Vector2i) -> void:

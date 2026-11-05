@@ -1,5 +1,5 @@
 extends Sprite2D
-## 地上的鸡蛋：靠近按 E 捡进背包；背包满了就留在地上，不会凭空消失。
+## 地上的鸡蛋：靠近按 F 捡进背包；背包满了就留在地上，不会凭空消失。
 
 const INTERACT_RADIUS: float = 20.0
 
@@ -17,7 +17,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "按 E 捡起鸡蛋"
+	return "按 F 捡起鸡蛋"
 
 
 func interact(_cell: Vector2i) -> void:

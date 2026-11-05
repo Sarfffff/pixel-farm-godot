@@ -158,16 +158,16 @@ func _process(delta: float) -> void:
 
 func activity_hint(kind: StringName, key: int = -1) -> String:
 	match kind:
-		&"storage": return "[E] 农场木箱 · 存取物品"
+		&"storage": return "[F] 农场木箱 · 存取物品"
 		&"processing":
 			if processing_ready_day == 0:
-				return "[E] 腌制台 · 番茄 ×3 → 腌菜 ×1 / 过夜完成"
-			return "[E] 领取番茄腌菜" if processing_ready_day <= today() else "腌制中 · 第 %d 天可领取" % processing_ready_day
+				return "[F] 腌制台 · 番茄 ×3 → 腌菜 ×1 / 过夜完成"
+			return "[F] 领取番茄腌菜" if processing_ready_day <= today() else "腌制中 · 第 %d 天可领取" % processing_ready_day
 		&"forage":
 			if key >= 0 and key < settings.forage_items.size():
-				return "[E] 采集%s · 体力 1" % inventory.definition(settings.forage_items[key]).display_name
+				return "[F] 采集%s · 体力 1" % inventory.definition(settings.forage_items[key]).display_name
 		&"fishing":
-			return "[E] 领取寄存鱼获" if pending_fish != &"" else "[E] 池塘钓鱼 · 竹鱼竿 / 每天三次"
+			return "[F] 领取寄存鱼获" if pending_fish != &"" else "[F] 池塘钓鱼 · 竹鱼竿 / 每天三次"
 	return ""
 
 
@@ -318,7 +318,7 @@ func tick_fishing(delta: float) -> void:
 	var previous: StringName = fishing_state
 	if fishing.tick(delta, settings.fish_bite_window):
 		cancel_fishing()
-		_notify("鱼溜走了 · 咬钩时按 E 或空格收杆")
+		_notify("鱼溜走了 · 咬钩时按 F 或空格收杆")
 	elif fishing_state == &"bite":
 		_bobber.position.y = settings.fishing_target.y + (2 if int(fishing.bite_elapsed * 8) % 2 == 0 else 0)
 	if previous != fishing_state:

@@ -32,7 +32,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "[E] 打开木箱"
+	return "[F] 打开木箱"
 
 
 func interact(_cell: Vector2i) -> void:

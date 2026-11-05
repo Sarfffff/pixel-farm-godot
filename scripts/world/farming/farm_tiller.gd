@@ -148,7 +148,7 @@ func interaction_hint(tool: StringName) -> String:
 			&"axe": return "正在砍伐…"
 			&"stone_pickaxe": return "正在挥镐碎石…"
 	if not _has_stamina(tool):
-		return "体力不够 · 按 E 回屋睡觉"
+		return "体力不够 · 按 F 回屋睡觉"
 	var cell: Vector2i = resolve_target(tool)
 	var upgrades := get_tree().get_first_node_in_group(&"upgrades")
 	if tool == &"watering_can" and upgrades != null and upgrades.watering_level > 0 and can_use(tool, cell):
@@ -162,7 +162,7 @@ func interaction_hint(tool: StringName) -> String:
 	if crop != null:
 		var crop_name: String = crop.data.display_name if crop.data != null else "作物"
 		if crop.is_mature():
-			return "%s 已成熟 · 按 E 收获" % crop_name
+			return "%s 已成熟 · 按 F 收获" % crop_name
 		if crop.data.regrow_days > 0 or not crop.data.stage_days.is_empty():
 			return "%s · %s还需 %d 晚 · %s" % [crop_name, "复收" if crop.regrowing else "成熟", crop.watered_nights_remaining(), "今天已浇水" if crop.watered else "切换水壶浇水"]
 		if tool == &"watering_can":

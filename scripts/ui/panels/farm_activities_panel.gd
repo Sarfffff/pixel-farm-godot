@@ -266,7 +266,7 @@ func _fish_action() -> void:
 
 
 func _refresh_fishing() -> void:
-	note.text = "每日投竿 %d/%d · 消耗体力 %d · 可按 Esc 结束" % [manager.casts_today, manager.settings.fishing_limit, manager.settings.fishing_cost]
+	note.text = "每日投竿 %d/%d · 消耗体力 %d · 可按 Fsc 结束" % [manager.casts_today, manager.settings.fishing_limit, manager.settings.fishing_cost]
 	fish_status.text = manager.fishing_text()
 	fish_progress.value = manager.fishing_progress() * 100.0
 	fish_button.text = "收杆！ [E / 空格]" if manager.fishing_state == &"bite" else "等待咬钩…" if manager.fishing_state == &"waiting" else "领取鱼获" if manager.pending_fish != &"" else "投竿 [E / 空格]"

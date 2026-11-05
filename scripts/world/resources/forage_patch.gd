@@ -15,7 +15,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "[E] 清理杂草 · 纤维 ×2 · 体力 2"
+	return "[F] 清理杂草 · 纤维 ×2 · 体力 2"
 
 
 func interact(_cell: Vector2i) -> void:

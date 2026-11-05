@@ -70,7 +70,7 @@ func hint() -> String:
 	if not is_mature():
 		return "%s幼苗 · 再过 %d 天结果" % [_display_name, days_until_mature()]
 	if has_berries():
-		var text := "[E] 采%s ×%d · 体力 %d" % [_display_name, YIELD, STAMINA_COST]
+		var text := "[F] 采%s ×%d · 体力 %d" % [_display_name, YIELD, STAMINA_COST]
 		if wild:
 			text += " · 顺带收种子"
 		return text

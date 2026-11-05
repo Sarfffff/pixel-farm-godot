@@ -7,6 +7,17 @@ param(
 	[switch]$Packaged
 )
 $ErrorActionPreference = 'Stop'
+
+# Windows PowerShell 5.1 lacks [IO.Path]::GetRelativePath (that is .NET Core only),
+# so trim the root prefix instead. Works on both 5.1 and pwsh.
+function Get-RelativePath([string]$root, [string]$full) {
+	$prefix = $root.TrimEnd('\', '/') + [IO.Path]::DirectorySeparatorChar
+	if ($full.StartsWith($prefix, [StringComparison]::OrdinalIgnoreCase)) {
+		return $full.Substring($prefix.Length).Replace('\', '/')
+	}
+	return $full
+}
+
 $Suites = @($Suites | ForEach-Object { $_ -split ',' })
 $runPackaged = $Packaged -or $Suites.Count -eq 0
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
@@ -14,7 +25,7 @@ function Get-SourceFingerprint([string]$root) {
 	$records = foreach ($folder in @('scripts', 'scenes', 'data', 'tools', 'assets', 'addons')) {
 		Get-ChildItem -LiteralPath (Join-Path $root $folder) -Recurse -File |
 			Where-Object { $_.Extension -in @('.gd', '.tscn', '.tres', '.ps1', '.py', '.gdshader', '.cfg', '.png', '.svg', '.wav', '.ogg', '.ttf', '.otf', '.json', '.uid', '.import') } |
-			ForEach-Object { ([IO.Path]::GetRelativePath($root, $_.FullName)) + ':' + (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
+			ForEach-Object { (Get-RelativePath $root $_.FullName) + ':' + (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
 	}
 	foreach ($file in @('project.godot', 'export_presets.cfg', 'CREDITS.md')) {
 		$records += $file + ':' + (Get-FileHash -LiteralPath (Join-Path $root $file) -Algorithm SHA256).Hash

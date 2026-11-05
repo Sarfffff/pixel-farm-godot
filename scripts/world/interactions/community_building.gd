@@ -1,5 +1,5 @@
 extends Node2D
-## 社区中心：靠近按 E 打开上缴面板，逐阶段修好可以解锁新种子。
+## 社区中心：靠近按 F 打开上缴面板，逐阶段修好可以解锁新种子。
 
 const INTERACT_RADIUS: float = 40.0
 
@@ -15,10 +15,10 @@ func player_in_range(player: Node2D) -> bool:
 func hint() -> String:
 	var community := get_tree().get_first_node_in_group(&"community")
 	if community == null or not community.has_method(&"stage_count"):
-		return "按 E 进社区中心"
+		return "按 F 进社区中心"
 	if community.is_finished():
-		return "按 E 进社区中心（已全部修好）"
-	return "按 E 进社区中心（%d/%d）" % [int(community.stage), int(community.stage_count())]
+		return "按 F 进社区中心（已全部修好）"
+	return "按 F 进社区中心（%d/%d）" % [int(community.stage), int(community.stage_count())]
 
 
 func interact(_cell: Vector2i) -> void:

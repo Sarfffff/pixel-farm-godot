@@ -28,7 +28,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "[E] 前往" + destination_name
+	return "[F] 前往" + destination_name
 
 
 func interact(_cell: Vector2i) -> void:
