@@ -6,6 +6,7 @@
 
 | 报告 | 适用内容 |
 | --- | --- |
+| [2026-11-06-b2-quests.json](2026-11-06-b2-quests.json) | 章节任务模型/事务、39套全量（含包内运行）、重入与写档失败；不含玩家可见界面 |
 | [2026-11-06-docs-cleanup.json](2026-11-06-docs-cleanup.json) | 本次文档整理、归档来源、链接和目录检查；不是玩法复测 |
 | [b1-05-development-controls.json](b1-05-development-controls.json) | 开发输入默认关闭、显式启用和发行隔离；本次整理期间新增的并行验证记录 |
 | [2026-11-05-layered-mvp.json](2026-11-05-layered-mvp.json) | 分层/MVP首批改造、36套全量与窗口检查、界面替身和异步生命周期 |

@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/quest_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/data/quest_step.gd" id="2_step"]
+[ext_resource type="Script" path="res://scripts/data/quest_reward.gd" id="3_reward"]
+
+[sub_resource type="Resource" id="Resource_step_egg"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"egg"
+count = 4
+text = "交付 4 颗鸡蛋"
+
+[sub_resource type="Resource" id="Resource_step_wood"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"wood"
+count = 10
+text = "交付 10 根木材"
+
+[sub_resource type="Resource" id="Resource_reward"]
+script = ExtResource("3_reward")
+item_id = &"tomato_seeds"
+count = 2
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch1_06_lamps"
+chapter = 1
+order = 60
+title = "把灯点起来"
+summary = "花坛砌好只差灯：灯一亮，集市就算重新开门。"
+giver = &"shopkeeper"
+giver_name = "杂货铺老板"
+requires = Array[StringName]([&"ch1_05_flowerbed"])
+steps = Array[ExtResource("2_step")]([SubResource("Resource_step_egg"), SubResource("Resource_step_wood")])
+reward_coins = 400
+reward_items = Array[ExtResource("3_reward")]([SubResource("Resource_reward")])
+offer_lines = Array[String](["花坛砌好了，就剩灯。", "四颗蛋、十根木头，我今晚就把灯挂上去。"])
+progress_lines = Array[String](["鸡窝每天下一颗蛋，别急着全卖了。"])
+done_lines = Array[String](["灯亮了。从今晚起，这条街不再黑着。", "下一步该有间像样的工作间了——那是以后的事。"])

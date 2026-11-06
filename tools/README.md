@@ -115,6 +115,7 @@ pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_region_gameplay,check_b
 | `check_progression.gd` | 采集、订单期限、引导、铜水壶三格浇水、旧档兼容（会写测试存档） |
 | `check_survival.gd` | 体力扣减与拦截、睡醒回满、雨天自动浇水、HUD 联动、存档往返 |
 | `check_goals.gd` | 每日订单、交付结算、社区阶段上缴、种子解锁、存档往返 |
+| `check_quests.gd` | 章节任务：模型状态机与编解码、数据契约、交付事务、满包阻塞、观察者重入、写档失败与磁盘往返 |
 | `check_farm_activities.gd` | 木箱、采集、加工、差异作物与复收、社区摆设、基础钓鱼、JSON 存档、模态输入 |
 | `check_architecture.gd` | 动物状态/快照/交易策略扩展契约、原子存储故障、天气日期、世界恢复、模态锁与导航增删 |
 | `check_animals.gd` | 动物状态循环、鸡实际位移/四步循环/左右镜像、斜向/纵向/停步、全部备用动物动画的镜像与四向回退、作息/碰撞/模态、每日下蛋与蛋存档；`-Windowed -Preview` 输出步态对照图 |

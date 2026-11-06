@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/quest_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/data/quest_step.gd" id="2_step"]
+[ext_resource type="Script" path="res://scripts/data/quest_reward.gd" id="3_reward"]
+
+[sub_resource type="Resource" id="Resource_step"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"common_carp"
+count = 2
+text = "交付 2 条鲤鱼"
+
+[sub_resource type="Resource" id="Resource_reward"]
+script = ExtResource("3_reward")
+item_id = &"fertilizer"
+count = 2
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch1_04_river"
+chapter = 1
+order = 40
+title = "河湾的鱼"
+summary = "光有菜不成，集市还得有点荤腥。"
+giver = &"fisherman"
+giver_name = "渔夫 老周"
+requires = Array[StringName]([&"ch1_03_timber"])
+steps = Array[ExtResource("2_step")]([SubResource("Resource_step")])
+reward_coins = 200
+reward_items = Array[ExtResource("3_reward")]([SubResource("Resource_reward")])
+offer_lines = Array[String](["集市要重开，光有菜不成。", "两条鲤鱼。我顺便告诉你哪段河湾出鱼，肥料也算我的。"])
+progress_lines = Array[String](["钓鱼要有耐心，浮标沉下去再提。"])
+done_lines = Array[String](["嚯，这条够肥。肥料拿去，土松了才长得好。"])

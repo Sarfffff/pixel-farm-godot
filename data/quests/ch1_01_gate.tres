@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/quest_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/data/quest_step.gd" id="2_step"]
+[ext_resource type="Script" path="res://scripts/data/quest_reward.gd" id="3_reward"]
+
+[sub_resource type="Resource" id="Resource_step"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"fiber"
+count = 6
+text = "交付 6 份纤维（农场杂草就能割）"
+
+[sub_resource type="Resource" id="Resource_reward"]
+script = ExtResource("3_reward")
+item_id = &"carrot_seeds"
+count = 3
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch1_01_gate"
+chapter = 1
+order = 10
+title = "修好摊位的门板"
+summary = "集市停了三年，杂货铺老板想先修好自家门板，看看你还愿不愿意留下。"
+giver = &"shopkeeper"
+giver_name = "杂货铺老板"
+steps = Array[ExtResource("2_step")]([SubResource("Resource_step")])
+reward_coins = 120
+reward_items = Array[ExtResource("3_reward")]([SubResource("Resource_reward")])
+offer_lines = Array[String](["你就是接手北边那块地的人？", "集市停了三年，门板都朽了。帮我凑 6 份纤维，种子我给你补上。"])
+progress_lines = Array[String](["纤维农场边上就有，割够了再来。"])
+done_lines = Array[String](["门板换上新面了。这点金币和种子，算我预付的。"])

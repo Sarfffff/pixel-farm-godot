@@ -1,0 +1,268 @@
+{
+    "task":  "B2-01 / B2-02 chapter quests and quest service",
+    "save_version":  2,
+    "player_save_slots_used":  false,
+    "run":  {
+                "command":  "powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_checks.ps1",
+                "snapshot":  "C:\\Users\\leohujiang\\AppData\\Local\\Temp\\PixelFarmChecks_054ee29542e54aba97351c8ad8f4b13d",
+                "manifest_sha256":  "c9df16c9891cd40740a8e9519d896e345cbaf7b72e2052caac81e31114cce093",
+                "passed":  39,
+                "results":  [
+                                {
+                                    "Suite":  "check_animals",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_architecture",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_audio",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_basic_loop",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_berries",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_calendar",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_compilation",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_content_art",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_crop_seasons",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_crops",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_development_controls",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_farm_activities",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_farm_interactions",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_farm_terrain",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_friendship",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_goals",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_held_tools",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_house",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_interior_layout",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_inventory",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_inventory_hotbar_camera",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_layer_boundaries",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_npcs",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_pause",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_pickaxe",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_presentation",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_progression",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_quests",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_region_gameplay",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_release",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_resource_safety",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_save_validation",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_settings",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_shop",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_survival",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_ui_layout",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_world_regions",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "smoke_check",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                },
+                                {
+                                    "Suite":  "check_packaged_runtime",
+                                    "Passed":  true,
+                                    "ExitCode":  0,
+                                    "ExitResourceWarning":  false
+                                }
+                            ]
+            },
+    "quest_design":  {
+                         "model":  "scripts/progression/quest_log.gd",
+                         "service":  "scripts/progression/quest_service.gd",
+                         "resources":  "scripts/data/quest_data.gd, quest_step.gd, quest_reward.gd",
+                         "data":  "data/quests/ch1_01 .. ch1_06",
+                         "save_section":  "quests (accepted/completed day tables)"
+                     },
+    "notes":  [
+                  "No player-facing quest UI yet; log, dialogue and cutscenes belong to B2-03..B2-06",
+                  "Delivery pre-checks progress and reward capacity, then commits the model before the bag notification",
+                  "Reentrancy guard rejects delivery requests made from observer callbacks",
+                  "Save failure is reported through the save_failed signal and bound to the HUD toast",
+                  "tools/run_checks.ps1 and run_game.ps1 were saved as UTF-8 without BOM; Windows PowerShell 5.1 parsed the Chinese comments as GBK and failed to run any suite, so both files now carry a BOM with unchanged content"
+              ],
+    "remaining":  [
+                      "B2-03 quest log and target tracking",
+                      "B2-04 conditional events and skip",
+                      "B2-05 mailbox",
+                      "B2-06 chapter integration",
+                      "B0-04 real keyboard/mouse playthrough"
+                  ]
+}

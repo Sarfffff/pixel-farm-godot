@@ -1,4 +1,4 @@
-param(
+﻿param(
 	[string]$GodotPath = '',
 	[string[]]$Suites = @(),
 	[ValidateRange(1, 3600)][int]$TimeoutSeconds = 180,

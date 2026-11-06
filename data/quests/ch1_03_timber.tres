@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/quest_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/data/quest_step.gd" id="2_step"]
+[ext_resource type="Script" path="res://scripts/data/quest_reward.gd" id="3_reward"]
+
+[sub_resource type="Resource" id="Resource_step"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"wood"
+count = 12
+text = "交付 12 根木材"
+
+[sub_resource type="Resource" id="Resource_reward"]
+script = ExtResource("3_reward")
+item_id = &"hardwood"
+count = 2
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch1_03_timber"
+chapter = 1
+order = 30
+title = "给阿木的木料"
+summary = "木匠答应替集市重做柜台，但要先看见木料。"
+giver = &"carpenter"
+giver_name = "木匠 阿木"
+requires = Array[StringName]([&"ch1_02_basket"])
+steps = Array[ExtResource("2_step")]([SubResource("Resource_step")])
+reward_coins = 180
+reward_items = Array[ExtResource("3_reward")]([SubResource("Resource_reward")])
+offer_lines = Array[String](["老板说你要修仓库？", "十二根木头，我给你留两段硬木，做梁不打弯。"])
+progress_lines = Array[String](["树就在农场里，挑大的砍。"])
+done_lines = Array[String](["够了。这截硬木你拿去，别当柴烧。"])

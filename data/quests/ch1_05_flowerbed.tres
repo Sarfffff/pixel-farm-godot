@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/quest_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/data/quest_step.gd" id="2_step"]
+[ext_resource type="Script" path="res://scripts/data/quest_reward.gd" id="3_reward"]
+
+[sub_resource type="Resource" id="Resource_step_stone"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"stone"
+count = 8
+text = "交付 8 块石头"
+
+[sub_resource type="Resource" id="Resource_step_flower"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"wild_flower"
+count = 3
+text = "交付 3 朵野花"
+
+[sub_resource type="Resource" id="Resource_reward"]
+script = ExtResource("3_reward")
+item_id = &"blueberry_seeds"
+count = 2
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch1_05_flowerbed"
+chapter = 1
+order = 50
+title = "广场的花坛"
+summary = "园艺师想把广场中间那块空地变成花坛，先要石头打边。"
+giver = &"gardener"
+giver_name = "园艺师 琳"
+requires = Array[StringName]([&"ch1_04_river"])
+steps = Array[ExtResource("2_step")]([SubResource("Resource_step_stone"), SubResource("Resource_step_flower")])
+reward_coins = 240
+reward_items = Array[ExtResource("3_reward")]([SubResource("Resource_reward")])
+offer_lines = Array[String](["广场中间那块地，空着太可惜了。", "八块石头打个边，三朵野花先顶着，蓝莓种子归你。"])
+progress_lines = Array[String](["石头在采石区，野花农场外圈就有。"])
+done_lines = Array[String](["边砌齐了。等花开，这条街就有颜色了。"])

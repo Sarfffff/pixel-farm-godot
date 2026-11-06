@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/quest_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/data/quest_step.gd" id="2_step"]
+[ext_resource type="Script" path="res://scripts/data/quest_reward.gd" id="3_reward"]
+
+[sub_resource type="Resource" id="Resource_step"]
+script = ExtResource("2_step")
+kind = &"deliver"
+item_id = &"carrot"
+count = 5
+text = "交付 5 份胡萝卜"
+
+[sub_resource type="Resource" id="Resource_reward"]
+script = ExtResource("3_reward")
+item_id = &"turnip_seeds"
+count = 2
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch1_02_basket"
+chapter = 1
+order = 20
+title = "第一筐收成"
+summary = "集市得先有一筐像样的货，老板才敢重新挂招牌。"
+giver = &"shopkeeper"
+giver_name = "杂货铺老板"
+requires = Array[StringName]([&"ch1_01_gate"])
+steps = Array[ExtResource("2_step")]([SubResource("Resource_step")])
+reward_coins = 150
+reward_items = Array[ExtResource("3_reward")]([SubResource("Resource_reward")])
+offer_lines = Array[String](["门板修好，就该有货了。", "给我五份胡萝卜——集市总得先摆出一筐东西。"])
+progress_lines = Array[String](["田里那几株该熟了吧？浇水别偷懒。"])
+done_lines = Array[String](["像样了。白萝卜的种你收着，季节合适就下地。"])

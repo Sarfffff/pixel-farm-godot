@@ -16,10 +16,12 @@ const ActivitiesPresenter := preload("res://scripts/ui/presenters/farm_activitie
 const CommunityVisuals := preload("res://scripts/presentation/community_visuals.gd")
 const DevelopmentControls := preload("res://scripts/platform/development_controls.gd")
 const SeedInformationPresenter := preload("res://scripts/ui/presenters/seed_information_presenter.gd")
+const QuestService := preload("res://scripts/progression/quest_service.gd")
 
 var daily_cycle: RefCounted
 var world_objects := WorldObjects.new()
 var regions: Node
+var quests: RefCounted
 var _summary_presenter: RefCounted
 
 
@@ -54,6 +56,8 @@ func _ready() -> void:
 			economy.coins = maxi(0, coins)
 			economy.changed.emit(economy.coins), TYPE_INT)
 	registry.register_section(&"inventory", get_node("Systems/Inventory").to_dict, get_node("Systems/Inventory").from_dict)
+	_configure_quests(economy, clock, save)
+	registry.register_section(&"quests", quests.encode, quests.restore, TYPE_DICTIONARY, true)
 	registry.register_section(&"world_objects", world_objects.to_dict, world_objects.from_dict, TYPE_DICTIONARY, true)
 	var field: Node = get_node("Farm/Tiller")
 	registry.register_section(&"farm", func() -> Dictionary:
@@ -109,6 +113,9 @@ func _exit_tree() -> void:
 	daily_cycle.clear()
 	daily_cycle = null
 	_summary_presenter = null
+	if quests != null:
+		quests.clear()
+	quests = null
 
 
 func _bind_obstacle(object: Node2D) -> void:
@@ -132,6 +139,14 @@ func _enter_tree() -> void:
 	trade.configure(get_node("Systems/Inventory"), get_node("Systems/Economy"))
 	trade.add_purchase_rule(_purchase_rule)
 	get_node("Systems").add_child(trade)
+
+
+## 章节任务：定义来自 data/quests，事实归 QuestLog，事务与重入由 QuestService 负责。
+func _configure_quests(economy: Economy, clock: Node, save: Node) -> void:
+	quests = QuestService.new()
+	quests.start()
+	quests.configure(get_node("Systems/Inventory"), economy, func() -> int: return int(clock.day), save.save_game)
+	quests.save_failed.connect(get_node("UI/Toast").show_message.bind("任务已结算，但存档失败 · 请手动重试保存"))
 
 
 func _purchase_rule(item: ItemData) -> String:

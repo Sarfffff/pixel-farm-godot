@@ -9,7 +9,7 @@
 | `time/` | 日期、时钟与天气 |
 | `economy/` | 金币与交易用例；面板不自行实现扣款 |
 | `inventory/` | 背包、堆叠及仓库数据结构 |
-| `progression/` | 引导、订单、社区、好感和工具升级 |
+| `progression/` | 引导、订单、社区、好感和工具升级；`quest_log.gd` 是章节任务事实，`quest_service.gd` 是接受/进度/交付用例 |
 | `activities/` | 农场活动入口和独立钓鱼会话 |
 | `animals/` | 动物适配、鸡舍、蛋和状态机；`states/` 存可注册状态 |
 | `player/` | 玩家移动、工具动作和体力 |
