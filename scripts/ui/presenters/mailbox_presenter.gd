@@ -81,7 +81,8 @@ func _claim(id: StringName) -> void:
 
 
 func _retry() -> void:
-	_message = "保存成功" if _service.retry_save() else "保存失败，请稍后重试"
+	# 未保存提示由服务快照统一提供，其他入口保存成功后不会残留旧错误。
+	_message = "保存成功" if _service.retry_save() else ""
 	refresh()
 
 

@@ -3,6 +3,7 @@ extends Node
 ## 由组合根显式持有/挂树，地点文案由组合根注入，不查 NPC 或 SceneTree。
 
 const Status := preload("res://scripts/progression/quest_log.gd").Status
+const SAVE_FAILURE_MESSAGE: String = "任务已结算，但存档失败 · 请手动重试保存"
 
 signal tracking_changed(id: StringName)
 
@@ -18,7 +19,7 @@ var _message: String = ""
 var _refresh_pending: bool = false
 
 
-## Views 须已 ready；save 可选，提供 restored 信号。location_text(giver_id) -> String。
+## Views 须已 ready；save 可选，提供 restored/saved(slot) 信号。location_text(giver_id) -> String。
 func configure(service: RefCounted, inventory: Inventory, panel: Control, hud: Control = null, save: Node = null, location_text: Callable = Callable()) -> void:
 	_unbind()
 	_service = service
@@ -30,7 +31,9 @@ func configure(service: RefCounted, inventory: Inventory, panel: Control, hud: C
 	_service.changed.connect(_on_changed)
 	_service.save_failed.connect(_on_save_failed)
 	_inventory.changed.connect(_on_changed)
-	if is_instance_valid(_save): _save.restored.connect(_on_restored)
+	if is_instance_valid(_save):
+		_save.restored.connect(_on_restored)
+		_save.saved.connect(_on_saved)
 	if is_instance_valid(_panel):
 		_panel.selection_requested.connect(_select)
 		_panel.accept_requested.connect(_accept)
@@ -207,7 +210,14 @@ func _on_restored() -> void:
 
 
 func _on_save_failed() -> void:
-	_message = "任务已结算，但存档失败 · 请手动重试保存"
+	_message = SAVE_FAILURE_MESSAGE
+	refresh()
+
+
+func _on_saved(_slot: int) -> void:
+	# 保存成功只确认保存失败提示，不覆盖材料不足等其他操作反馈。
+	if _message != SAVE_FAILURE_MESSAGE: return
+	_message = ""
 	refresh()
 
 
@@ -259,7 +269,9 @@ func _unbind() -> void:
 		if _service.changed.is_connected(_on_changed): _service.changed.disconnect(_on_changed)
 		if _service.save_failed.is_connected(_on_save_failed): _service.save_failed.disconnect(_on_save_failed)
 	if is_instance_valid(_inventory) and _inventory.changed.is_connected(_on_changed): _inventory.changed.disconnect(_on_changed)
-	if is_instance_valid(_save) and _save.restored.is_connected(_on_restored): _save.restored.disconnect(_on_restored)
+	if is_instance_valid(_save):
+		if _save.restored.is_connected(_on_restored): _save.restored.disconnect(_on_restored)
+		if _save.saved.is_connected(_on_saved): _save.saved.disconnect(_on_saved)
 	_service = null
 	_inventory = null
 	_save = null

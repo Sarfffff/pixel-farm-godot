@@ -3,6 +3,7 @@ extends PanelContainer
 
 const ItemSlot := preload("res://scripts/ui/common/item_slot.gd")
 const SLOT_NAMES: Array[String] = ["Hoe", "WateringCan", "Seeds", "Axe", "StonePickaxe", "Slot6", "Slot7", "Slot8"]
+const TIP_TEXT_WIDTH: float = 180.0
 var _inventory: Inventory
 var _player: CharacterBody2D
 var _hint: Label
@@ -96,10 +97,8 @@ func _show_tip(index: int) -> void:
 	var id: StringName = _inventory.hotbar[index]
 	var item: ItemData = _inventory.definition(id)
 	_tip.text = "%s · %s" % [_inventory.item_name(id), item.description] if item != null else "空快捷位 · 打开背包，拖入物品或按数字绑定"
-	_tip.custom_minimum_size = Vector2(180, 0)
-	_tip.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_tip_panel.reset_size()
-	_tip_panel.position = Vector2(roundf((get_viewport_rect().size.x - _tip_panel.size.x) * 0.5), get_global_rect().position.y - _tip_panel.size.y - 4)
+	_position_tip()
 	_tip_panel.show()
 	_tip_panel.modulate.a = 1.0
 	if _tip_tween != null and _tip_tween.is_valid():
@@ -108,6 +107,10 @@ func _show_tip(index: int) -> void:
 	_tip_tween.tween_interval(3.0)
 	_tip_tween.tween_property(_tip_panel, "modulate:a", 0.0, 0.25)
 	_tip_tween.tween_callback(_tip_panel.hide)
+
+
+func _position_tip() -> void:
+	_tip_panel.position = Vector2(roundf((get_viewport_rect().size.x - _tip_panel.size.x) * 0.5), get_global_rect().position.y - _tip_panel.size.y - 4)
 
 
 func _label() -> Label:
@@ -123,7 +126,12 @@ func _build_ui() -> void:
 	_hint = _label()
 	_hint_panel = _wrap(_hint)
 	_tip = _label()
+	# 隐藏的Label尚未经过Container布局，先给定换行宽度，避免首次按零宽逐字计算高度。
+	_tip.custom_minimum_size.x = TIP_TEXT_WIDTH
+	_tip.size.x = TIP_TEXT_WIDTH
+	_tip.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_tip_panel = _wrap(_tip)
+	_tip_panel.resized.connect(_position_tip)
 	_tool_name = _label()
 	_tool_name.add_theme_color_override("font_color", Color("fff1d0"))
 	_tool_name.add_theme_color_override("font_outline_color", Color("47334f"))

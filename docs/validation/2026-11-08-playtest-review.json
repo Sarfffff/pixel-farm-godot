@@ -1,0 +1,433 @@
+{
+  "date": "2026-11-08",
+  "base_commit": "9a37caec961ee48fd31f50b7e8b52775419043b9",
+  "scope": "B0/B1/B2 acceptance review, existing-feature fixes and gated B3 assignments",
+  "save_version": 2,
+  "new_save_sections": [],
+  "player_save_slots_used": false,
+  "playtest": {
+    "project": "C:/Users/86156/AppData/Local/Temp/PixelFarmPlaytest_b2429b5ff4244342a90b59c4c6a7c03b",
+    "user_dir": "PixelFarmPlaytest_b2429b5ff4244342a90b59c4c6a7c03b",
+    "mode": "Agent-operated UI through native Windows input, then Godot runtime key/mouse input; not a human/new-player acceptance",
+    "development_controls_enabled": false,
+    "gameplay_state_injection": false,
+    "read_only_snapshot_inspection": true,
+    "started_with": {
+      "day": 1,
+      "coins": 500,
+      "carrot_seeds": 5
+    },
+    "observed": [
+      "Created a new farm through the title/slot UI in an isolated user directory",
+      "Opened and closed the backpack through B using runtime keyboard input",
+      "Walked onto an existing field; an attempted hoe use did not need to create new soil",
+      "Selected seeds, planted one carrot and watered it using normal tool keys and Space",
+      "Clicked the seed hotbar slot and observed the corrected compact multiline item description",
+      "Opened K journal, accepted the first quest through its actual button and observed automatic tracking",
+      "Walked to the world mailbox and opened it with F; read the welcome letter",
+      "Used the pause-menu Save and return to title button, selected the same slot and continued"
+    ],
+    "after_reload": {
+      "coins": 500,
+      "day": 1,
+      "minutes_at_save": 1255,
+      "carrot_seeds": 4,
+      "stamina": 96,
+      "crop": {
+        "id": "carrot",
+        "cell": [
+          23,
+          11
+        ],
+        "stage": 0,
+        "watered": true
+      },
+      "accepted_quest": "ch1_01_gate",
+      "tracked_quest": "ch1_01_gate",
+      "welcome_letter_read": true
+    },
+    "input_limitations": [
+      "The Windows control helper injected KEY_PAUSE as physical_keycode for B and Left; a passive temporary input probe confirmed this. Production bindings were not changed",
+      "A task-launched on-screen keyboard did not provide usable input; Windows denied automatic cleanup of that protected process",
+      "Godot's runtime key and mouse adapter supplied working input without changing inventory, money, time, player position or gameplay rules"
+    ],
+    "not_verified": [
+      "Human keyboard/mouse completion of both production cycles and the permanent upgrade",
+      "A new player independently identifying the next goal",
+      "Normal resource acquisition, six-quest chapter pacing and complete chapter playthrough",
+      "Human acceptance of resource exhaustion, full backpack, rain and closed-shop recovery"
+    ]
+  },
+  "fixes": [
+    "Initialize item-tip wrapping width before hidden Label layout; reanchor after panel resize",
+    "A successful manual save clears quest-journal save-failure feedback; saved/restored subscriptions unbind on replacement/disposal",
+    "Harvest commits inventory, stamina and crop reset/removal before synchronous notifications, rejects same/cross-cell reentry and retains a temporary compatibility receipt",
+    "A refused mailbox open does not mark mail read; successful saves acknowledge mail through GameSession without repeating rewards"
+  ],
+  "preliminary_runs": [
+    {
+      "snapshot": "C:/Users/86156/AppData/Local/Temp/PixelFarmChecks_ee0a0d8da71142a9814c7fdc7d601438",
+      "suite": "check_ui_layout",
+      "exit_code": 1,
+      "expected_regression_failure": "First-click tip rect was (225,-106,190,423), exceeding the 640x360 logical viewport"
+    },
+    {
+      "snapshot": "C:/Users/86156/AppData/Local/Temp/PixelFarmChecks_98c73bde9e764eb79d6fb0eb4d14565f",
+      "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_ui_layout,check_layer_boundaries,check_inventory_hotbar_camera -Windowed -Packaged",
+      "exit_code": 0,
+      "passed_suites": 4,
+      "packaged_assertions": 70,
+      "limitation": "UI fix snapshot before the subsequent journal/harvest/mail fixes and expanded preview evidence"
+    }
+  ],
+  "final_runs": {
+    "full": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_253e38108bb049779815674d8a70745e",
+      "command": "pwsh -NoProfile -File tools/run_checks.ps1",
+      "exit_code": 0,
+      "source_manifest_sha256": "7c301b958b826485b4cbfb115e7d12d4748e72b005983f1b95ee4e5dbc0dfc4e",
+      "source_records_checked": 8132,
+      "current_source_matches": true,
+      "passed_suites": 43,
+      "failed_suites": 0,
+      "script_engine_errors_or_exit_leaks": [],
+      "results": [
+        {
+          "Suite": "check_animals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_architecture",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_audio",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_basic_loop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_berries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_calendar",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_compilation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_content_art",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_crop_seasons",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_crops",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_development_controls",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_activities",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_interactions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_terrain",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_friendship",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_goals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_held_tools",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_house",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_interior_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory_hotbar_camera",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_layer_boundaries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_mailbox",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_npcs",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pause",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pickaxe",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_presentation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_progression",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quest_integration",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quest_journal",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quests",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_region_gameplay",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_release",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_resource_safety",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_save_validation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_settings",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_shop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_story_events",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_survival",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_ui_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_world_regions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "smoke_check",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_packaged_runtime",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ]
+    },
+    "native": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_6499a061917b4b84a1d7cef0cee54963",
+      "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_ui_layout,check_quest_journal,check_mailbox,check_crops,check_quest_integration,check_layer_boundaries -Windowed -Preview",
+      "exit_code": 0,
+      "source_manifest_sha256": "7c301b958b826485b4cbfb115e7d12d4748e72b005983f1b95ee4e5dbc0dfc4e",
+      "source_records_checked": 8132,
+      "current_source_matches": true,
+      "passed_suites": 6,
+      "failed_suites": 0,
+      "script_engine_errors_or_exit_leaks": [],
+      "results": [
+        {
+          "Suite": "check_crops",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_layer_boundaries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_mailbox",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quest_integration",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quest_journal",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_ui_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ]
+    }
+  },
+  "stage_decision": "B0/B1/B2 human gates remain open; B3 module interfaces and owners assigned, no B3 gameplay code started",
+  "assignment_source": "docs/04-后续开发总纲.md section 16.2",
+  "existing_chats_contacted": [
+    "AgentA",
+    "AgentB",
+    "AgentC"
+  ],
+  "compiled_scripts": 388,
+  "native_assertions": {
+    "crops": 415,
+    "quest_journal": 101,
+    "mailbox": 62,
+    "quest_integration": 163,
+    "layer_boundaries": 34
+  },
+  "packaged_assertions": 70,
+  "first_click_tip_rect_after_fix": {
+    "x": 225,
+    "y": 290,
+    "width": 190,
+    "height": 27
+  },
+  "layout_audit": {
+    "command": "python tools/maintenance/audit_project_layout.py --report build/playtest-review/layout.json",
+    "exit_code": 0,
+    "errors": 0
+  },
+  "native_preview": "build/playtest-review/toolbar-tip.png"
+}

@@ -105,8 +105,9 @@ func _label(text: String) -> Label:
 
 
 func set_open(value: bool) -> void:
+	var was_open: bool = visible
 	_set_modal_open(value)
-	if value:
+	if value and visible and not was_open:
 		opened.emit()
 		mail_list.grab_focus()
 

@@ -11,6 +11,8 @@ signal rejected
 const MAX_VALUE: int = 100
 
 var value: int = MAX_VALUE
+var _update_depth: int = 0
+var _pending_changed: bool = false
 
 
 func _ready() -> void:
@@ -33,22 +35,42 @@ func spend(amount: int) -> bool:
 		rejected.emit()
 		return false
 	value -= amount
-	changed.emit(value)
+	_notify_changed()
 	return true
+
+
+## 与库存相同的嵌套批量边界：数值立即提交，最外层结束时同步通知最终值。
+func begin_update() -> void:
+	_update_depth += 1
+
+
+func end_update() -> void:
+	if _update_depth == 0: return
+	_update_depth -= 1
+	if _update_depth > 0 or not _pending_changed: return
+	_pending_changed = false
+	changed.emit(value)
+
+
+func _notify_changed() -> void:
+	if _update_depth > 0:
+		_pending_changed = true
+	else:
+		changed.emit(value)
 
 
 func refill() -> void:
 	if value == MAX_VALUE:
 		return
 	value = MAX_VALUE
-	changed.emit(value)
+	_notify_changed()
 
 
 ## 累倒醒来（星露谷规则）：当天只恢复一半体力。
 ## 必须在 day_started 的回满之后调用。
 func wake_weary() -> void:
 	value = maxi(1, MAX_VALUE / 2)
-	changed.emit(value)
+	_notify_changed()
 
 
 func ratio() -> float:
@@ -61,4 +83,4 @@ func to_dict() -> Dictionary:
 
 func from_dict(data: Dictionary) -> void:
 	value = clampi(int(data.get(&"value", MAX_VALUE)), 0, MAX_VALUE)
-	changed.emit(value)
+	_notify_changed()

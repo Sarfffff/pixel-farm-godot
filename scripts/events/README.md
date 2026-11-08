@@ -7,7 +7,7 @@
 - `scripts/data/story_event.gd`：`StoryEvent` 定义稳定的 `id`、标题、同步结果 `outcome`、AND 条件和表现指令。所有事件一次性；注册时深复制配置，拒绝重复 ID。
 - `story_condition.gd`：地点、日期闭区间、分钟闭区间（支持跨午夜）、天气、关系值和任务状态。类别用 `allowed`，数字用 `minimum/maximum`，所有外部事实每次经查询端口读取；缺失/类型错误拒绝触发。
 - `story_cue.gd`：`line/move/face/camera/fade_out/fade_in/choice/wait`。位置均为世界坐标，duration 为秒。数据需经 `is_valid`，不接受负数、非有限值或未知指令。
-- `data/events/market_memory.tres`：农场 + 第一章末任务已完成条件下的纯对话样本，无奖励；未挂入正式触发器。添加事件不改服务分支，目录扫描使用 `ResourceLoader.list_directory`，支持 PCK。
+- `data/events/market_memory.tres`：农场 + 第一章末任务已完成条件下的纯对话事件，无额外奖励；已由ChapterFlow在章节完成后的正常玩法边界触发。添加事件不改服务分支，目录扫描使用 `ResourceLoader.list_directory`，支持 PCK。
 - `event_state.gd`：只保存 `{version: 1, completed: {event_id: 完成日}}`。保留未知内容 ID 防止暂时下线后重复结算；丢弃非法记录。外部任务、好感、背包、金币不复制。
 
 ## 服务接口

@@ -28,6 +28,10 @@ class HudDouble extends Control:
 	var data: Dictionary = {}
 	func render(snapshot: Dictionary) -> void: data = snapshot
 
+class FailingInstallStore extends "res://scripts/persistence/json_save_store.gd":
+	func _install(_temp: String, _destination: String) -> Error:
+		return ERR_CANT_CREATE
+
 var _checks: int = 0
 var _failures: int = 0
 var _stage: Control
@@ -199,13 +203,32 @@ func _check_capacity_and_save_failure() -> void:
 	_check(_wallet.coins == coins and _service.status_of(SECOND) == 2 and _bag.count_of(&"carrot") == 5, "full reward capacity is refused by the service without partial delivery")
 	_check(not _panel._message.text.is_empty(), "service rejection is visible")
 	_bag.remove_item(&"stone", _bag.count_of(&"stone"))
-	_service.configure(_bag, _wallet, Callable(), func() -> bool: return false)
+	var original_store := _save.storage
+	_save.storage = FailingInstallStore.new()
+	print("[quest_journal] expected fault: isolated JSON store refuses installation")
 	_panel.deliver_requested.emit(SECOND)
 	await _settle()
 	_check(_service.status_of(SECOND) == 3 and _wallet.coins == coins + 150, "failed save preserves exactly one settled delivery")
 	_check(_panel._message.text.contains("存档失败") and _hud._body.text.contains("存档失败"), "failed save is visible in panel and HUD")
+	_check(_save.storage.last_error == ERR_CANT_CREATE, "delivery uses the real SaveSystem and reports the storage installation failure")
 	_check(not _service.busy, "failed save returns control to the player")
-	_service.configure(_bag, _wallet, Callable(), _save.save_game)
+	_save.storage = original_store
+	_check(_save.save_game(), "manual retry writes the settled delivery to the isolated save")
+	_check(_panel._message.text.is_empty() and not _hud._body.text.contains("存档失败"), "successful manual save clears the failure in panel and HUD")
+	var written: Dictionary = _save.storage.read(_save.save_path())
+	_check(int(written.get("coins", -1)) == coins + 150 and _wallet.coins == coins + 150, "manual retry persists the reward without granting it again")
+	_save.storage = FailingInstallStore.new()
+	_check(_service.accept(&"ch1_03_timber"), "another accepted quest settles despite the expected save fault")
+	_check(_panel._message.text.contains("存档失败"), "a later failed write shows the failure again")
+	_save.storage = original_store
+	_check(_save.load_game(), "the prior successful save can be loaded after a later failure")
+	await _settle()
+	_check(_panel._message.text.is_empty() and not _hud._body.text.contains("存档失败"), "disk restore clears stale save-failure feedback in both views")
+	_panel.deliver_requested.emit(SECOND)
+	var rejection: String = _panel._message.text
+	_check(not rejection.is_empty() and not rejection.contains("存档失败"), "a completed quest still reports a separate operation rejection")
+	_check(_save.save_game(), "saving after an unrelated rejection succeeds")
+	_check(_panel._message.text == rejection and _hud._body.text.contains(rejection), "successful saving does not erase unrelated operation feedback")
 	_service.restore({"accepted": {String(FIRST): 1}})
 	_presenter.track(FIRST)
 	await _settle()
@@ -273,7 +296,6 @@ func _check_input_and_layout() -> void:
 
 
 func _check_lifecycle() -> void:
-	_save.snapshots.clear()
 	_panel.open()
 	_panel.queue_free()
 	await _settle()
@@ -284,19 +306,32 @@ func _check_lifecycle() -> void:
 	var replacement_hud := HudDouble.new()
 	_stage.add_child(replacement)
 	_stage.add_child(replacement_hud)
-	_presenter.configure(_service, _bag, replacement, replacement_hud, _save)
+	for attempt in 2:
+		_presenter.configure(_service, _bag, replacement, replacement_hud, _save)
 	_check(_hud.journal_requested.get_connections().is_empty(), "reconfigure removes old HUD intent")
+	_check(_count_bindings(_save.saved, _presenter._on_saved) == 1 and _count_bindings(_save.restored, _presenter._on_restored) == 1, "repeated configure keeps exactly one saved and restored subscription")
 	_presenter.track(FIRST)
 	_check(replacement.data.detail.location.contains("地点线索待补充"), "missing location uses honest exploration hint")
+	var before_failure: int = replacement.renders
+	var former_hud_text: String = _hud._body.text
+	_service.save_failed.emit()
+	_check(replacement.renders == before_failure + 1, "repeated configure handles a save failure once")
+	var before_save: int = replacement.renders
+	_check(_save.save_game(), "manual save succeeds with replacement views")
+	_check(replacement.renders == before_save + 1 and String(replacement.data.message).is_empty() and String(replacement_hud.data.message).is_empty(), "saved notification refreshes replacement views once and clears the failure")
+	_check(_hud._body.text == former_hud_text, "former HUD receives no save-failure or success rendering after replacement")
 	var renders: int = replacement.renders
 	_hud.journal_requested.emit()
 	_check(replacement.renders == renders, "old HUD cannot call new panel")
+	_save.snapshots.clear()
 	_stage.remove_child(_presenter)
 	_check(replacement.accept_requested.get_connections().is_empty() and replacement_hud.journal_requested.get_connections().is_empty(), "presenter exit disconnects every view intention")
 	_check(not _service.changed.is_connected(_presenter._on_changed) and not _service.save_failed.is_connected(_presenter._on_save_failed), "presenter exit disconnects service bindings")
 	_check(not _bag.changed.is_connected(_presenter._on_changed) and not _save.restored.is_connected(_presenter._on_restored), "presenter exit disconnects inventory and save bindings")
+	_check(not _save.saved.is_connected(_presenter._on_saved), "presenter exit disconnects successful-save confirmation")
 	_bag.add_item(&"fiber", 1)
 	_save.restored.emit()
+	_save.saved.emit(_save.current_slot)
 	_service.changed.emit()
 	replacement.accept_requested.emit(SECOND)
 	_check(replacement.renders == renders and _service.status_of(SECOND) != 2, "detached presenter cannot render or submit operations")
@@ -309,9 +344,28 @@ func _check_lifecycle() -> void:
 	replacement_hud.queue_free()
 	await _settle()
 	_check(not _service.changed.is_connected(_presenter._on_changed) and not _bag.changed.is_connected(_presenter._on_changed), "destroying both views releases remaining source subscriptions")
+	_check(not _save.saved.is_connected(_presenter._on_saved) and not _save.restored.is_connected(_presenter._on_restored), "destroying both views releases saved and restored bindings")
+	var disposable := PanelDouble.new()
+	var disposable_hud := HudDouble.new()
+	_stage.add_child(disposable)
+	_stage.add_child(disposable_hud)
+	_presenter.configure(_service, _bag, disposable, disposable_hud, _save)
+	_service.save_failed.emit()
+	var before_dispose: int = disposable.renders
 	_presenter.dispose()
 	_presenter.dispose()
-	_check(true, "explicit disposal is idempotent")
+	_check(not _save.saved.is_connected(_presenter._on_saved) and not _save.restored.is_connected(_presenter._on_restored), "explicit disposal removes both save subscriptions and is idempotent")
+	_save.saved.emit(_save.current_slot)
+	_save.restored.emit()
+	_service.save_failed.emit()
+	_check(disposable.renders == before_dispose and disposable.accept_requested.get_connections().is_empty() and disposable_hud.journal_requested.get_connections().is_empty(), "disposed presenter neither renders save notifications nor retains view intentions")
+
+
+func _count_bindings(event: Signal, callback: Callable) -> int:
+	var count: int = 0
+	for binding: Dictionary in event.get_connections():
+		if binding.callable == callback: count += 1
+	return count
 
 
 func _press(key: Key) -> void:

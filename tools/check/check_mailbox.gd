@@ -17,7 +17,10 @@ class ReplacementView extends Control:
 	signal claim_requested(id: StringName)
 	signal retry_save_requested
 	var data: Dictionary = {}
-	func render(snapshot: Dictionary) -> void: data = snapshot
+	var renders: int = 0
+	func render(snapshot: Dictionary) -> void:
+		data = snapshot
+		renders += 1
 	func set_open(value: bool) -> void:
 		visible = value
 		if value: opened.emit()
@@ -77,6 +80,7 @@ func _run() -> void:
 	_check(_mail.unread_count() == 0, "mail definition alone does not trigger plot delivery")
 	_check_transactions()
 	_check_capacity()
+	_check_open_guard()
 	await _check_view_and_save()
 	await _check_presenter_lifecycle()
 	await _check_disk_and_legacy()
@@ -159,6 +163,45 @@ func _check_capacity() -> void:
 	_check(not _mail.claim(&"stack"), "duplicate attachment lines combine before capacity validation")
 
 
+func _check_open_guard() -> void:
+	var view: Control = _main.get_node("UI/MailboxPanel")
+	var presenter: Node = _main.get_node("Systems/MailboxPresenter")
+	var player: Node = _main.get_node("Farm/World/Player")
+	var box: Node = _main.get_node("Farm/World/Mailbox")
+	var selected: StringName = presenter.snapshot().selected
+	var initial: Dictionary = _mail.encode()
+	initial.letters[String(selected)].read = false
+	_mail.restore(initial)
+	var calls: Dictionary = {"opened": 0, "read": 0, "save": 0}
+	var on_opened := func() -> void: calls.opened += 1
+	var on_read := func(_id: StringName) -> void: calls.read += 1
+	view.opened.connect(on_opened)
+	_mail.read.connect(on_read)
+	_mail.configure(_bag, _wallet, func() -> int: return 7, func() -> bool:
+		calls.save += 1
+		return true)
+	var before: Dictionary = _mail.encode()
+	var unread: int = _mail.unread_count()
+	var focus: Control = root.gui_get_focus_owner()
+	_check(player.acquire_input_lease(&"mailbox_check"), "real player lease blocks gameplay modal opening")
+	box.interact(Vector2i.ZERO)
+	box.interact(Vector2i.ZERO)
+	_check(not view.visible and not paused and player.has_input_leases(), "rejected mailbox leaves world pause and the story lease unchanged")
+	_check(calls.opened == 0 and calls.read == 0 and calls.save == 0 and _mail.encode() == before and _mail.unread_count() == unread, "real modal rejection emits no opened, read or save and preserves unread facts")
+	_check(root.gui_get_focus_owner() == focus, "rejected mailbox does not steal focus")
+	player.release_input_lease(&"mailbox_check")
+	box.interact(Vector2i.ZERO)
+	box.interact(Vector2i.ZERO)
+	_check(view.visible and paused and calls.opened == 1 and calls.read == 1 and calls.save == 1, "accepted opening reads once and repeated open calls emit no duplicate intent")
+	view.set_open(false)
+	view.set_open(true)
+	_check(calls.opened == 2 and calls.read == 1 and calls.save == 1 and _mail.unread_count() == unread - 1, "reopening a read letter emits only the actual opening without another write")
+	view.set_open(false)
+	view.opened.disconnect(on_opened)
+	_mail.read.disconnect(on_read)
+	_mail.configure(_bag, _wallet, func() -> int: return 7, func() -> bool: return true)
+
+
 func _check_view_and_save() -> void:
 	_set_free_slots(26)
 	var box: Node = _main.get_node("Farm/World/Mailbox")
@@ -180,6 +223,11 @@ func _check_view_and_save() -> void:
 	_check((_main.get_node("UI/Toast") as Label).text.contains("保存失败"), "composition root also exposes save failure as a toast")
 	view.claim_requested.emit(&"write_failure")
 	_check(_wallet.coins == before + 10, "retrying a failed-save claim cannot grant twice")
+	view.retry_save_requested.emit()
+	_check(_mail.save_pending and view.note.text.contains("尚未保存"), "failed retry keeps the canonical unsaved message")
+	_check_external_save_confirmation(view)
+	_mail.register_definition(_letter(&"retry_failure"))
+	_mail.deliver(&"retry_failure")
 	_mail.configure(_bag, _wallet, func() -> int: return 8, func() -> bool: return true)
 	view.retry_save_requested.emit()
 	_check(not _mail.save_pending and not view.retry_button.visible and _wallet.coins == before + 10, "retry only saves and does not re-award the parcel")
@@ -190,10 +238,42 @@ func _check_view_and_save() -> void:
 	await process_frame
 
 
+func _check_external_save_confirmation(view: Control) -> void:
+	var events: Dictionary = {"changed": 0, "delivered": 0, "read": 0, "claimed": 0}
+	var on_changed := func() -> void: events.changed += 1
+	var on_delivered := func(_id: StringName) -> void: events.delivered += 1
+	var on_read := func(_id: StringName) -> void: events.read += 1
+	var on_claimed := func(_id: StringName) -> void: events.claimed += 1
+	var on_saved := func(_slot: int) -> void: _mail.confirm_saved()
+	var connections: int = _save.saved.get_connections().size()
+	_mail.changed.connect(on_changed)
+	_mail.delivered.connect(on_delivered)
+	_mail.read.connect(on_read)
+	_mail.claimed.connect(on_claimed)
+	# 接线属于整合层；这里显式验证公开端口，也兼容组合根已经绑定的情况。
+	_save.saved.connect(on_saved)
+	var mail: Dictionary = _mail.encode()
+	var bag: Dictionary = _bag.to_dict()
+	var coins: int = _wallet.coins
+	_check(_save.save_game(), "another entry point successfully writes the real isolated snapshot")
+	_check(not _mail.save_pending and not view.retry_button.visible and not view.note.text.contains("保存失败") and not view.note.text.contains("尚未保存"), "external save confirmation clears pending state and the failed-retry message")
+	_mail.confirm_saved()
+	_mail.confirm_saved()
+	_check(events.changed == 1 and events.delivered == 0 and events.read == 0 and events.claimed == 0, "repeated confirmation refreshes once without delivery, reading or rewards")
+	_check(_mail.encode() == mail and _bag.to_dict() == bag and _wallet.coins == coins, "save acknowledgement never changes mail facts, inventory or coins")
+	_save.saved.disconnect(on_saved)
+	_mail.changed.disconnect(on_changed)
+	_mail.delivered.disconnect(on_delivered)
+	_mail.read.disconnect(on_read)
+	_mail.claimed.disconnect(on_claimed)
+	_check(_save.saved.get_connections().size() == connections, "temporary successful-save adapter releases its binding")
+
+
 func _check_presenter_lifecycle() -> void:
 	_mail.register_definition(_letter(&"replacement_only", [[&"wood", 1]]))
 	_mail.deliver(&"replacement_only")
 	var connections: int = _mail.changed.get_connections().size()
+	var bag_connections: int = _bag.changed.get_connections().size()
 	var presenter := Presenter.new()
 	var first := ReplacementView.new()
 	root.add_child(first)
@@ -205,15 +285,23 @@ func _check_presenter_lifecycle() -> void:
 	var replacement := ReplacementView.new()
 	root.add_child(replacement)
 	presenter.configure(_mail, _bag, replacement)
+	_check(first.opened.get_connections().is_empty() and first.selected.get_connections().is_empty() and first.claim_requested.get_connections().is_empty() and first.retry_save_requested.get_connections().is_empty(), "replaced view releases every intent binding")
 	first.claim_requested.emit(&"replacement_only")
 	_check(not _mail.status(&"replacement_only").claimed, "replaced view cannot claim an otherwise eligible attachment")
+	var old_renders: int = first.renders
+	_mail.configure(_bag, _wallet, func() -> int: return 8, func() -> bool: return false)
+	_mail.retry_save()
+	var renders: int = replacement.renders
+	_mail.confirm_saved()
+	_check(first.renders == old_renders and replacement.renders == renders + 1 and not replacement.data.save_pending, "save confirmation refreshes only the currently bound view")
+	_mail.configure(_bag, _wallet, func() -> int: return 8, func() -> bool: return true)
 	first.queue_free()
 	replacement.queue_free()
 	await process_frame
 	_mail.mark_read(&"stack")
 	presenter.queue_free()
 	await process_frame
-	_check(_mail.changed.get_connections().size() == connections, "presenter and deleted view release their bindings")
+	_check(_mail.changed.get_connections().size() == connections and _bag.changed.get_connections().size() == bag_connections, "presenter and deleted view release service and inventory bindings")
 
 
 func _check_disk_and_legacy() -> void:

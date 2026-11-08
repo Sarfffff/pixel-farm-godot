@@ -68,6 +68,11 @@ var _selected_seed: StringName = &""
 var _query_shape: RectangleShape2D
 var _show_area: bool = false
 var _water_previews: Array[Line2D] = []
+## 收获提交和所有同步通知共享一把锁，不能在观察者中换格再次收获。
+var _harvest_busy: bool = false
+var _harvest_cell: Vector2i
+## action_completed 的兼容查询回执，不是作物状态，也不编码到快照。
+var _harvest_result: Dictionary = {}
 
 
 func _ready() -> void:
@@ -428,7 +433,7 @@ func _on_use_requested(tool: StringName, cell: Vector2i) -> void:
 
 
 func commit_tool_action(tool: StringName, cell: Vector2i) -> void:
-	if not can_use(tool, cell):
+	if _harvest_busy or not can_use(tool, cell):
 		return
 	# 命中前背包或目标可能变化，再校验锁定的实际目标，不为失败砍伐扣体力。
 	if tool == &"axe" and (not is_instance_valid(_locked_tree) or not _locked_tree.can_chop()):
@@ -493,8 +498,16 @@ func can_interact(cell: Vector2i) -> bool:
 	return crop != null and (crop.withered or (crop.is_mature() and _has_stamina(&"harvest")))
 
 
-## 交互键（E）收获：只摘成熟作物；背包放不下时保留作物，避免凭空消失。
+## 交互键（F）收获：核心状态同帧完整提交后才同步通知观察者。
 func interact(cell: Vector2i) -> void:
+	if _harvest_busy: return
+	_harvest_busy = true
+	_commit_crop_interaction(cell)
+	_harvest_result.clear()
+	_harvest_busy = false
+
+
+func _commit_crop_interaction(cell: Vector2i) -> void:
 	if not can_interact(cell):
 		return
 	var crop: Crop = _crops[cell] as Crop
@@ -506,14 +519,21 @@ func interact(cell: Vector2i) -> void:
 		_show_toast("已清理枯株 · 耕地保留，可播种当季种子")
 		return
 	var inventory := _inventory()
-	if inventory == null or not inventory.has_space_for(crop.harvest_item_id(), crop.harvest_amount()):
+	var item_id: StringName = crop.harvest_item_id()
+	var amount: int = crop.harvest_amount()
+	if inventory == null or item_id == &"" or amount <= 0 or not inventory.has_space_for(item_id, amount):
 		_show_toast("背包已满 · 腾出空间再收获")
 		return
+	var stamina: Node = _stamina()
+	inventory.begin_update()
+	if stamina != null: stamina.begin_update()
 	if not _spend_stamina(&"harvest"):
+		inventory.end_update()
+		if stamina != null: stamina.end_update()
 		return
-	if inventory.add_item(crop.harvest_item_id(), crop.harvest_amount()) > 0:
-		return
-	action_completed.emit(&"harvest", cell)
+	# 预检后没有 await 或外部通知；批量提交期间容量不会被观察者抢占。
+	var remaining: int = inventory.add_item(item_id, amount)
+	assert(remaining == 0, "harvest capacity must remain valid through synchronous commit")
 	if not crop.regrow_after_harvest():
 		_crops.erase(cell)
 		crop.play_harvest()
@@ -522,6 +542,11 @@ func interact(cell: Vector2i) -> void:
 		_refresh_cell(cell)
 		_spawn_effect(cell, &"seeds")
 		_play_action_sfx(&"harvest")
+	_harvest_cell = cell
+	_harvest_result = {&"id": String(item_id), &"count": amount}
+	inventory.end_update()
+	if stamina != null: stamina.end_update()
+	action_completed.emit(&"harvest", cell)
 
 
 ## 新的一天：浇过水的作物统一长一阶，然后清掉浇水标记、土变干。
@@ -571,6 +596,8 @@ func crop_definitions() -> Array[CropData]:
 
 
 func harvest_info(cell: Vector2i) -> Dictionary:
+	if _harvest_busy and cell == _harvest_cell and not _harvest_result.is_empty():
+		return _harvest_result.duplicate()
 	var crop: Crop = _crops.get(cell)
 	return {&"id": String(crop.harvest_item_id()), &"count": crop.harvest_amount()} if crop != null else {}
 

@@ -56,6 +56,23 @@ func _run() -> void:
 		_fits(toolbar, "toolbar fits at %s" % resolution)
 		var width: float = toolbar.get_viewport_rect().size.x
 		_check(absf(toolbar.get_global_rect().get_center().x - width / 2.0) < 0.5, "toolbar stays horizontally centered")
+		var tip_click_count: int = 0
+		for slot_index: int in [2, 0, 7, 2]:
+			tip_click_count += 1
+			toolbar._on_slot_selected(slot_index)
+			await _settle()
+			_fits(toolbar._tip_panel, "item tip fits at %s" % resolution)
+			_check(toolbar._tip_panel.size.y < 48.0, "item tip remains compact on first/repeated clicks")
+			_check(toolbar._tip_panel.get_global_rect().end.y <= toolbar.get_global_rect().position.y, "item tip stays above toolbar")
+			if tip_click_count == 1:
+				print("[ui_layout] first-click tip at %s: %s" % [resolution, toolbar._tip_panel.get_global_rect()])
+			if tip_click_count == 1 and resolution == Vector2i(1280, 720) and "--preview" in OS.get_cmdline_user_args():
+				var capture: String = "user://ui_layout_previews/toolbar_tip.png"
+				DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(capture.get_base_dir()))
+				await RenderingServer.frame_post_draw
+				_check(root.get_texture().get_image().save_png(capture) == OK, "toolbar tip preview saved")
+				print("[ui_layout] capture: " + ProjectSettings.globalize_path(capture))
+		toolbar.set_ui_visible(true)
 		var full_height: float = hud.get_node("Journal").size.y
 		hud._toggle_journal()
 		await _settle()

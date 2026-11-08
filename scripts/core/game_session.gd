@@ -338,6 +338,7 @@ func _configure_mail(economy: Economy, clock: Node, save: Node, modals: Node) ->
 	var bag: Inventory = get_node("Systems/Inventory")
 	mail.configure(bag, economy, func() -> int: return int(clock.day), save.save_game)
 	mail.save_failed.connect(get_node("UI/Toast").show_message.bind("信箱进度保存失败 · 已领取附件不会重发，请重试保存"))
+	save.saved.connect(func(_slot: int) -> void: mail.confirm_saved())
 	var view := MailboxPanel.new()
 	view.name = "MailboxPanel"
 	get_node("UI").add_child(view)

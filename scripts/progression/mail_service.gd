@@ -132,6 +132,13 @@ func retry_save() -> bool:
 	return not save_pending
 
 
+## 由整合层在完整快照成功写入后调用；不重试业务或再次发放附件。
+func confirm_saved() -> void:
+	if not save_pending: return
+	save_pending = false
+	changed.emit()
+
+
 func encode() -> Dictionary:
 	return _state.encode()
 

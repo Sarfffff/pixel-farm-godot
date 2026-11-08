@@ -44,6 +44,7 @@ func _run() -> void:
 	_main.get_node("Systems/Time").running = false
 	_initial = _save.collect().duplicate(true)
 	_check_accept_and_notifications()
+	_check_mail_save_confirmation()
 	_check_batch_and_duplicate_requirements()
 	await _check_npc_chapter()
 	await _check_chapter_integration()
@@ -94,6 +95,21 @@ func _check_accept_and_notifications() -> void:
 	for repeat: int in 3:
 		_save.apply(settled)
 	_check(_wallet.coins == 620 and _bag.count_of(&"carrot_seeds") == 8, "three restores produce no extra rewards")
+
+
+func _check_mail_save_confirmation() -> void:
+	_reset()
+	var mail: RefCounted = _main.mail
+	mail.restore({})
+	mail.configure(_bag, _wallet, func() -> int: return 1, func() -> bool: return false)
+	_check(mail.deliver(&"farm_welcome") and mail.save_pending, "failed mail persistence exposes the unsaved state")
+	var mail_before: Dictionary = mail.encode().duplicate(true)
+	var bag_before: Dictionary = _bag.to_dict().duplicate(true)
+	mail.configure(_bag, _wallet, func() -> int: return 1, _save.save_game)
+	_check(_save.save_game() and not mail.save_pending, "manual save acknowledges mail through the real composition root")
+	_check(mail.encode() == mail_before and _bag.to_dict() == bag_before, "successful save acknowledgement changes neither letter facts nor goods")
+	_check(_save.save_game() and not mail.save_pending, "repeated manual save is an idempotent mail acknowledgement")
+	_reset()
 
 
 func _check_batch_and_duplicate_requirements() -> void:
