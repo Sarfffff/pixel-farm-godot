@@ -6,5 +6,8 @@
 script = ExtResource("1")
 id = &"carrot_seed_pack"
 title = "胡萝卜种子包"
+purpose = "将收成留种，产出的种子可直接播种，投入下一轮经营。"
+unlock_source = "完成第一章「把灯点起来」"
+requires_chapter = true
 ingredients = Dictionary[StringName, int]({&"carrot": 1, &"fiber": 2})
 products = Dictionary[StringName, int]({&"carrot_seeds": 4})

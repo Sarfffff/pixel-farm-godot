@@ -108,6 +108,7 @@ pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_region_gameplay,check_b
 | `check_farm_interactions.gd` | 目标锁定、动画命中时序、障碍阻挡、浇水、倒树碰撞 |
 | `check_farm_terrain.gd` | 地形分层、水体格子、岸线与桥梁数据一致性、坡地与全图可达性 |
 | `check_inventory.gd` | 堆叠、溢出、取出、满包、面板开关与输入锁 |
+| `check_inventory_exchange.gd` | B3扣料后净容量、多产物共享槽位、失败无改、外层提交与通知重入、非法数量及JSON往返 |
 | `check_inventory_hotbar_camera.gd` | 分类映射、快捷位引用与拖放、种子耗尽、旧档迁移、镜头缩放边界 |
 | `check_crops.gd` | 播种、浇水推进、成熟、收获、满包保留 |
 | `check_shop.gd` | 初始金币、买卖结算、金币不足、背包满、面板与 HUD 同步 |

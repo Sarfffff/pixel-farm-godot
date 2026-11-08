@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-08",
+  "scope": "Root verification of completed standalone Agent A/B/C B3 modules",
+  "agents": {
+    "AgentA": {
+      "module": "B3-01 skills",
+      "chat_completed": true,
+      "tested_delivery_files_match": 11,
+      "module_complete": true,
+      "integration_complete": false
+    },
+    "AgentB": {
+      "module": "B3-02 batch crafting",
+      "chat_completed": true,
+      "tested_delivery_files_match": 13,
+      "module_complete": true,
+      "integration_complete": false
+    },
+    "AgentC": {
+      "module": "B3-03 placement and per-instance storage",
+      "chat_completed": true,
+      "tested_delivery_files_match": 16,
+      "module_complete": true,
+      "integration_complete": false
+    }
+  },
+  "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_compilation,check_skills,check_crafting,check_placement,check_layer_boundaries,check_inventory_exchange,check_quest_integration -TimeoutSeconds 300",
+  "process_environment": {
+    "TEMP": "build/agent-delivery-audit-temp",
+    "TMP": "build/agent-delivery-audit-temp",
+    "APPDATA": "build/agent-delivery-audit-temp/userdata",
+    "global_environment_changed": false
+  },
+  "snapshot": "E:\\Godot\\pixel-farm-godot\\build\\agent-delivery-audit-temp\\PixelFarmChecks_73189efff4394650b54620e8b93ec886",
+  "evidence": "build/agent-delivery-audit",
+  "current_source_records_checked": 8186,
+  "current_source_matches": true,
+  "compiled_scripts": 410,
+  "results": [
+    {
+      "Suite": "check_compilation",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_crafting",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_inventory_exchange",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_layer_boundaries",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_placement",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_quest_integration",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_skills",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    }
+  ],
+  "log_summaries": {
+    "check_compilation.log": [
+      "[compilation] 410 scripts compiled, 0 failures; reached end"
+    ],
+    "check_crafting.log": [
+      "[crafting] 114 checks, 0 failures; reached end; PASS"
+    ],
+    "check_inventory_exchange.log": [
+      "[inventory_exchange] 63 checks, 0 failures; reached end; PASS"
+    ],
+    "check_layer_boundaries.log": [
+      "[layer_boundaries] 34 checks, 0 failures; reached end"
+    ],
+    "check_placement.log": [
+      "[placement] 72 checks; 0 failures; PASS"
+    ],
+    "check_quest_integration.log": [
+      "[quest_integration] 160 checks, 0 failures; PASS"
+    ],
+    "check_skills.log": [
+      "[skills] reached end; 267 checks, 0 failures; PASS"
+    ],
+    "import.log": []
+  },
+  "script_engine_errors_or_exit_leaks": [],
+  "formal_game_gaps": [
+    "GameSession does not create skills or placement services or their Views",
+    "No real labor receipts, stamina/fishing capability or night-summary wiring",
+    "No skills/devices snapshot registration and load-failure handling",
+    "Crafting configure still receives only its three legacy arguments; skill eligibility and product_available are not injected",
+    "No real world placement query/input/factory/navigation integration"
+  ],
+  "not_verified": [
+    "Whole B3 integration",
+    "Full regression and PCK for B3",
+    "Human playtest; explicitly deferred by user"
+  ],
+  "player_save_slots_used": false,
+  "save_impact": "This audit changes no gameplay/save code; skills/devices partitions are not registered in the formal game yet",
+  "cleanup": {
+    "completed": false,
+    "evidence_preserved": true,
+    "status": "Automatic safety review rejected native PowerShell cleanup of the verified task-owned snapshot and isolated user directories",
+    "reason_returned": "blocked by policy; no further reason supplied",
+    "full_snapshot_retained": true,
+    "other_agent_snapshots_touched": false
+  }
+}

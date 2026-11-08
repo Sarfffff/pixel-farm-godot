@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/objects/chest_closed.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"storage_crate"
+display_name = "储物箱"
+description = "独立保存24格物品的木箱，清空后可移动或拆回背包。"
+icon = ExtResource("2")
+max_stack = 99
+category = &"material"

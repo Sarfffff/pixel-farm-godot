@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-08",
+  "scope": "B3 shared Inventory exchange port; module integration pending",
+  "user_scope_adjustment": "User explicitly allowed parallel B3 development with human acceptance deferred",
+  "save_version": 2,
+  "new_save_fields": [],
+  "player_save_slots_used": false,
+  "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_inventory_exchange,check_inventory,check_layer_boundaries",
+  "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_5da95bd85d2c4441ba3bf298933a156d",
+  "results": [
+    {
+      "Suite": "check_inventory_exchange",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_inventory",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_layer_boundaries",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    }
+  ],
+  "exchange_assertions": 63,
+  "files": {
+    "scripts/inventory/inventory.gd": "4b0956dee0d37f6a3f634cda0a942cb7593bc27c2ac40a698274f0cc93741a77",
+    "scripts/inventory/inventory_exchange.gd": "f6727eb4bde0769351e39b4c3c1407f5b0eb6ea38dc19c6691bb15dea3aa7e89",
+    "scripts/inventory/inventory_exchange.gd.uid": "ac5a6521f5ee56bf1b3795445b343e1355dea44ec4bdd07657b4cbf9538c3e2d",
+    "tools/check/check_inventory_exchange.gd": "76b543ed1e1d6e8de56ea14d18bbe3c301f899e48bc2aa6aecf97b6a9d6f82a8",
+    "tools/check/check_inventory_exchange.gd.uid": "724314048089d66b299237f746acc86d08174d2a42c0d314660f7b38ca638603"
+  },
+  "script_engine_errors_or_exit_leaks": 0,
+  "not_verified": [
+    "B3 skills/crafting/placement formal integration",
+    "Whole B3 regression and PCK after integration",
+    "Human acceptance remains deferred, not passed"
+  ]
+}

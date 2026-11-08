@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DeviceDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/device_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/packs/content_v1/terrain/town/spring/wood_fence.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"wood_fence"
+placement_item_id = &"wood_fence"
+title = "木围栏"
+texture = ExtResource("2")
+visual_scale = Vector2(0.5, 0.5)

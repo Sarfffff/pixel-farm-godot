@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DeviceDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/device_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/packs/presentation_v3/objects/chest_closed.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"storage_crate"
+placement_item_id = &"storage_crate"
+title = "储物箱"
+texture = ExtResource("2")
+storage_capacity = 24

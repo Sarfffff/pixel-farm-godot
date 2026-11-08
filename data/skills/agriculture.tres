@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="SkillDefinition" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/skill_level_reward.gd" id="2"]
+
+[sub_resource type="Resource" id="Level1"]
+script = ExtResource("2")
+description = "收获体力减少1（2→1）"
+stamina_reductions = Dictionary[StringName, int]({&"harvest": 1})
+
+[sub_resource type="Resource" id="Level2"]
+script = ExtResource("2")
+description = "播种体力减少1（2→1）"
+stamina_reductions = Dictionary[StringName, int]({&"seeds": 1})
+
+[sub_resource type="Resource" id="Level3"]
+script = ExtResource("2")
+description = "锄地体力减少1（4→3）"
+stamina_reductions = Dictionary[StringName, int]({&"hoe": 1})
+
+[sub_resource type="Resource" id="Level4"]
+script = ExtResource("2")
+description = "浇水体力减少1（普通2→1，铜壶3→2）"
+stamina_reductions = Dictionary[StringName, int]({&"watering_can": 1})
+
+[sub_resource type="Resource" id="Level5"]
+script = ExtResource("2")
+description = "锄地再减少1体力（3→2）"
+stamina_reductions = Dictionary[StringName, int]({&"hoe": 1})
+
+[resource]
+script = ExtResource("1")
+id = &"agriculture"
+display_name = "农业"
+order = 1
+labor_hint = "成功收获作物 +8经验；锄地、播种、浇水和清枯株不计经验。"
+cumulative_xp = PackedInt32Array(24, 64, 120, 200, 320)
+experience_for = Dictionary[StringName, int]({&"harvest": 8})
+levels = Array[ExtResource("2")]([SubResource("Level1"), SubResource("Level2"), SubResource("Level3"), SubResource("Level4"), SubResource("Level5")])

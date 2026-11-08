@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/crafting_recipe_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"storage_crate"
+title = "储物箱"
+purpose = "放置后打开农场共用仓储，方便在不同工作点存取物资。放置能力开放后才可制作。"
+unlock_source = "采集技能与农场放置能力"
+requires_chapter = false
+requires_placement = true
+ingredients = Dictionary[StringName, int]({&"wood": 20})
+products = Dictionary[StringName, int]({&"storage_crate": 1})

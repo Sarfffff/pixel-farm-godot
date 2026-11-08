@@ -12,6 +12,7 @@ signal hotbar_changed
 signal active_item_changed(id: StringName)
 
 const ITEM_DIR: String = "res://data/items"
+const Exchange := preload("res://scripts/inventory/inventory_exchange.gd")
 const SLOT_COUNT: int = 30
 const HOTBAR_SIZE: int = 8
 const TOOL_IDS: Array[StringName] = [&"hoe", &"watering_can", &"axe", &"stone_pickaxe"]
@@ -29,6 +30,7 @@ var active_slot: int = 0
 var _update_depth: int = 0
 var _pending_changed: bool = false
 var _pending_additions: Array[Dictionary] = []
+var _exchange_busy: bool = false
 
 
 func _ready() -> void:
@@ -137,6 +139,8 @@ func end_update() -> void:
 		item_added.emit(entry.id, entry.count)
 	if notify:
 		changed.emit()
+	# 外层批量操作可能同时提交设备等事实；在最终通知全部返回后才释放交换锁。
+	_exchange_busy = false
 
 
 func _notify_changed() -> void:
@@ -144,6 +148,29 @@ func _notify_changed() -> void:
 		_pending_changed = true
 	else:
 		changed.emit()
+
+
+## 按扣料后的实际槽位预演净容量；失败与成功查询都不改背包或发通知。
+func preview_exchange_batch(consumed: Dictionary, produced: Dictionary) -> Dictionary:
+	if _exchange_busy: return {&"ok": false, &"reason": "背包正在结算，请稍候"}
+	var result: Dictionary = Exchange.plan(_slots, _definitions, TOOL_IDS, consumed, produced)
+	return {&"ok": bool(result.ok), &"reason": String(result.reason)}
+
+
+## 制作/摆放/拆除共用整批交换。可嵌套begin_update以便调用者先提交自己的模型事实。
+func exchange_batch(consumed: Dictionary, produced: Dictionary, source: StringName = &"crafting") -> bool:
+	if _exchange_busy: return false
+	var result: Dictionary = Exchange.plan(_slots, _definitions, TOOL_IDS, consumed, produced)
+	if not result.ok: return false
+	_exchange_busy = true
+	begin_update()
+	_slots.assign(result.slots)
+	for addition: Dictionary in result.additions:
+		_pending_additions.append(addition)
+		if source == &"collection": today_collected += int(addition.count)
+	_notify_changed()
+	end_update()
+	return true
 
 
 func has_space_for(id: StringName, count: int) -> bool:

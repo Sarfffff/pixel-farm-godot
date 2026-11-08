@@ -6,6 +6,9 @@
 
 | 报告 | 适用内容 |
 | --- | --- |
+| [2026-11-08-b3-module-upload.json](2026-11-08-b3-module-upload.json) | 三Agent独立模块上传前47套全量、410脚本、实际PCK70项及目录审计；正式B3整合和真人验收仍待完成 |
+| [2026-11-08-b3-agent-delivery-audit.json](2026-11-08-b3-agent-delivery-audit.json) | 核对A/B/C独立模块交付与文件指纹；当前合并工作区410脚本编译及7套专项通过；正式B3接线、全量/PCK及人工未验收 |
+| [2026-11-08-b3-inventory-foundation.json](2026-11-08-b3-inventory-foundation.json) | B3共用库存净容量/整批交换端口63项、库存与分层定向检查；不代表三个模块接线或B3全量/PCK通过 |
 | [2026-11-08-playtest-review.json](2026-11-08-playtest-review.json) | 隔离新槽的引擎输入试玩、说明框/收获重入/保存反馈/拒开信箱修复、完整回归及B3分工；未替代真人两轮经营和新玩家验收 |
 | [2026-11-08-b2-chapter-integration.json](2026-11-08-b2-chapter-integration.json) | 第一章正式接线、NPC六任务链、K日志、邮件/过场/独立输入租约、可用工作台；43套全量、原生159项、实际PCK70项及失败修复记录 |
 | [2026-11-08-b2-events.json](2026-11-08-b2-events.json) | B2-04条件事件/独立过场，83项专项、84项窗口、43套全量/PCK；不代表正式章节接线或人工试玩完成 |

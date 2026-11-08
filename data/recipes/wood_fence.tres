@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/crafting_recipe_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"wood_fence"
+title = "木围栏"
+purpose = "在农场放置围栏，划分田地与通行路线。放置能力开放后才可制作。"
+unlock_source = "采集技能与农场放置能力"
+requires_chapter = false
+requires_placement = true
+ingredients = Dictionary[StringName, int]({&"wood": 4})
+products = Dictionary[StringName, int]({&"wood_fence": 1})

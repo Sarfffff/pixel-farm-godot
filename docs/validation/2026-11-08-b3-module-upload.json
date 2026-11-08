@@ -1,0 +1,378 @@
+{
+  "date": "2026-11-08",
+  "base_commit": "0d8c304b87954d0199b49e139f844ddf0f9e57db",
+  "scope": "Pre-upload full regression of delivered standalone B3 modules; formal B3 integration remains pending",
+  "command": "pwsh -NoProfile -File tools/run_checks.ps1 -TimeoutSeconds 300",
+  "process_only_environment": {
+    "TEMP": "build/b3-upload-temp",
+    "TMP": "build/b3-upload-temp",
+    "APPDATA": "build/b3-upload-temp/userdata"
+  },
+  "snapshot": "E:\\Godot\\pixel-farm-godot\\build\\b3-upload-temp\\PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711",
+  "evidence": "build/b3-upload",
+  "compiled_scripts": 410,
+  "passed_suites": 47,
+  "failed_suites": 0,
+  "exit_code": 0,
+  "actual_pck_export_and_empty_directory_run": true,
+  "packaged_assertions": 70,
+  "source_records_checked": 8186,
+  "current_source_matches": true,
+  "source_manifest_sha256": "377b18d106a5d729cac2b6abcdcd86945c29441154d4b86f7fea4cb39baa30fe",
+  "script_engine_errors_or_exit_leaks": [],
+  "results": [
+    {
+      "Suite": "check_animals",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_architecture",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_audio",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_basic_loop",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_berries",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_calendar",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_compilation",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_content_art",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_crafting",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_crop_seasons",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_crops",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_development_controls",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_farm_activities",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_farm_interactions",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_farm_terrain",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_friendship",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_goals",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_held_tools",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_house",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_interior_layout",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_inventory_exchange",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_inventory_hotbar_camera",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_inventory",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_layer_boundaries",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_mailbox",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_npcs",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_pause",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_pickaxe",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_placement",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_presentation",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_progression",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_quest_integration",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_quest_journal",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_quests",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_region_gameplay",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_release",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_resource_safety",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_save_validation",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_settings",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_shop",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_skills",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_story_events",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_survival",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_ui_layout",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_world_regions",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "smoke_check",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_packaged_runtime",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    }
+  ],
+  "layout_audit": {
+    "passed": true,
+    "errors": 0,
+    "report": "build/agent-delivery-audit/upload-layout.json"
+  },
+  "save_impact": "Formal save stays v2. Crafting uses existing inventory. Skill/device codecs are not registered in GameSession yet.",
+  "player_save_slots_used": false,
+  "not_verified": [
+    "Formal B3 labor/abilities/placement/persistence integration",
+    "Human acceptance explicitly deferred by user"
+  ],
+  "next_work_source": "docs/04-后续开发总纲.md section 16.3, 2026-11-09",
+  "cleanup": {
+    "completed": false,
+    "status": "Automatic safety review rejected deletion of the verified inactive task-owned full snapshot; snapshot and isolated user directories retained",
+    "owned_user_directories": [
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_animals",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_architecture",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_audio",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_basic_loop",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_berries",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_calendar",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_compilation",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_content_art",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_crafting",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_crops",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_crop_seasons",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_development_controls",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_farm_activities",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_farm_interactions",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_farm_terrain",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_friendship",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_goals",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_held_tools",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_house",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_interior_layout",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_inventory",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_inventory_exchange",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_inventory_hotbar_camera",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_layer_boundaries",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_mailbox",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_npcs",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_pause",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_pickaxe",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_placement",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_presentation",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_progression",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_quests",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_quest_integration",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_quest_journal",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_region_gameplay",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_release",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_resource_safety",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_save_validation",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_settings",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_shop",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_skills",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_story_events",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_survival",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_ui_layout",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_check_world_regions",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_import",
+      "PixelFarmChecks_1f40b4eaa8d745fd89509e91c6620711_smoke_check"
+    ],
+    "other_appdata_subdirectories_preserved": [
+      "Godot"
+    ],
+    "reason_returned": "blocked by policy; no more specific reason supplied",
+    "full_snapshot_retained": true,
+    "other_agent_snapshots_touched": false
+  }
+}

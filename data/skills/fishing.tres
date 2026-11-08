@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="SkillDefinition" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/skill_level_reward.gd" id="2"]
+
+[sub_resource type="Resource" id="Level1"]
+script = ExtResource("2")
+description = "投竿体力减少1（4→3）"
+stamina_reductions = Dictionary[StringName, int]({&"fishing": 1})
+
+[sub_resource type="Resource" id="Level2"]
+script = ExtResource("2")
+description = "咬钩前等待时间缩短20%"
+fishing_wait_scale = 0.8
+
+[sub_resource type="Resource" id="Level3"]
+script = ExtResource("2")
+description = "投竿再减少1体力（3→2）"
+stamina_reductions = Dictionary[StringName, int]({&"fishing": 1})
+
+[sub_resource type="Resource" id="Level4"]
+script = ExtResource("2")
+description = "收竿咬钩窗口增加0.5秒（2→2.5秒）"
+fishing_bite_window_bonus = 0.5
+
+[sub_resource type="Resource" id="Level5"]
+script = ExtResource("2")
+description = "投竿再减少1体力（2→1）"
+stamina_reductions = Dictionary[StringName, int]({&"fishing": 1})
+
+[resource]
+script = ExtResource("1")
+id = &"fishing"
+display_name = "钓鱼"
+order = 3
+labor_hint = "成功领取真实鱼获 +10经验；投竿、取消、逃鱼和满包领取失败不计。"
+cumulative_xp = PackedInt32Array(20, 50, 90, 140, 200)
+experience_for = Dictionary[StringName, int]({&"catch_fish": 10})
+levels = Array[ExtResource("2")]([SubResource("Level1"), SubResource("Level2"), SubResource("Level3"), SubResource("Level4"), SubResource("Level5")])
