@@ -14,6 +14,10 @@ const SPEAKER: String = "杂货铺老板"
 const OPEN_MINUTES: int = 9 * 60
 const CLOSE_MINUTES: int = 17 * 60
 const CLOSED_LINE: String = "今天打烊了，明天 9 点再来吧。"
+@export var npc_id: StringName = &"shopkeeper"
+
+var quest_options: Callable
+var quest_response: Callable
 
 
 func _ready() -> void:
@@ -44,16 +48,23 @@ func interact(_cell: Vector2i) -> void:
 	var panel := get_tree().current_scene.get_node_or_null("UI/DialoguePanel")
 	if panel == null or not panel.has_method(&"open_with"):
 		return
-	if not is_open():
-		panel.open_with(SPEAKER, CLOSED_LINE, [
-			{&"id": &"leave", &"text": "知道了"},
-		], self)
-		return
-	panel.open_with(SPEAKER, IDLE_LINE, [
-		{&"id": &"shop", &"text": "看看今天的货"},
-		{&"id": &"chat", &"text": "最近生意怎么样？"},
-		{&"id": &"leave", &"text": "先不买了"},
-	], self)
+	var options: Array = []
+	if is_open():
+		options.append({&"id": &"shop", &"text": "看看今天的货"})
+		options.append({&"id": &"chat", &"text": "最近生意怎么样？"})
+	if quest_options.is_valid():
+		options.append_array(quest_options.call())
+	options.append({&"id": &"leave", &"text": "先走了"})
+	panel.open_with(SPEAKER, IDLE_LINE if is_open() else CLOSED_LINE, options, self)
+
+
+func configure_quest_dialogue(options: Callable, response: Callable) -> void:
+	quest_options = options
+	quest_response = response
+
+
+func on_dialogue_response(id: StringName) -> Dictionary:
+	return quest_response.call(id) if quest_response.is_valid() else {}
 
 
 ## 对话面板回调：返回非空字符串表示"换一句台词继续聊"，返回空串表示结束对话。

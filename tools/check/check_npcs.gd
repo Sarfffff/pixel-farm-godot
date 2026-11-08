@@ -98,8 +98,9 @@ func _run() -> void:
 			await process_frame
 			await RenderingServer.frame_post_draw
 			var shot := root.get_texture().get_image()
-			if shot != null and shot.save_png("res://docs/screenshots/shop-interior.png") == OK:
-				print("[npcs] preview -> res://docs/screenshots/shop-interior.png")
+			var path: String = "user://shop-interior.png"
+			_check(shot != null and shot.save_png(path) == OK, "isolated shop preview is saved")
+			print("[npcs] preview -> " + ProjectSettings.globalize_path(path))
 	_check(boss != null, "shopkeeper stands inside the store")
 
 	if boss != null:

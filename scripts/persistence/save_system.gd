@@ -8,6 +8,8 @@ extends Node
 signal saved(slot: int)
 signal load_failed(reason: String)
 signal restored
+## 合法快照恢复前取消瞬时表现，避免旧过场继续操作新世界。
+signal restoring
 
 const SLOT_COUNT: int = 3
 const SAVE_PATH_FORMAT: String = "user://save_%d.json"
@@ -159,6 +161,7 @@ func apply(data: Dictionary) -> void:
 	var migrated: Dictionary = Migrations.migrate(data)
 	if migrated.is_empty():
 		return
+	restoring.emit()
 	var loaded_name := String(migrated.get("name", "")).strip_edges()
 	if not loaded_name.is_empty():
 		save_name = loaded_name

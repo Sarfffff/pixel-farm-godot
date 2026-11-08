@@ -10,7 +10,10 @@
 | `economy/` | 金币与交易用例；面板不自行实现扣款 |
 | `inventory/` | 背包、堆叠及仓库数据结构 |
 | `progression/` | 引导、订单、社区、好感和工具升级；`quest_log.gd` 是章节任务事实，`quest_service.gd` 是接受/进度/交付用例 |
+| `progression/mailbox_state.gd`、`progression/mail_service.gd` | 邮件投递/阅读/附件事实、整批领取与保存端口；通过 `GameSession.mail` 供整合层调用 |
+| `progression/chapter_flow.gd`、`progression/crafting_service.gd` | 第一章正常玩法边界、来信与事件安排；固定工作台即时制作，复用唯一库存与章节资格 |
 | `activities/` | 农场活动入口和独立钓鱼会话 |
+| `events/` | B2-04 一次性条件事件、同步结果用例、独立过场与对话；输入租约、相机和保存接线见[模块契约](events/README.md) |
 | `animals/` | 动物适配、鸡舍、蛋和状态机；`states/` 存可注册状态 |
 | `player/` | 玩家移动、工具动作和体力 |
 | `npcs/` | 村民与店主的场景适配 |

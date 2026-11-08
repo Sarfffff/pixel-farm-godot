@@ -6,6 +6,9 @@
 
 | 报告 | 适用内容 |
 | --- | --- |
+| [2026-11-08-b2-chapter-integration.json](2026-11-08-b2-chapter-integration.json) | 第一章正式接线、NPC六任务链、K日志、邮件/过场/独立输入租约、可用工作台；43套全量、原生159项、实际PCK70项及失败修复记录 |
+| [2026-11-08-b2-events.json](2026-11-08-b2-events.json) | B2-04条件事件/独立过场，83项专项、84项窗口、43套全量/PCK；不代表正式章节接线或人工试玩完成 |
+| [2026-11-08-b2-mailbox.json](2026-11-08-b2-mailbox.json) | B2-05邮件状态/整批附件、防重入、保存失败、模态与View替换、真实窗口和PCK |
 | [2026-11-06-b2-quests.json](2026-11-06-b2-quests.json) | 章节任务模型/事务、39套全量（含包内运行）、重入与写档失败；不含玩家可见界面 |
 | [2026-11-06-docs-cleanup.json](2026-11-06-docs-cleanup.json) | 本次文档整理、归档来源、链接和目录检查；不是玩法复测 |
 | [b1-05-development-controls.json](b1-05-development-controls.json) | 开发输入默认关闭、显式启用和发行隔离；本次整理期间新增的并行验证记录 |

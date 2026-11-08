@@ -2,6 +2,7 @@ extends Node
 ## 模态生命周期唯一所有者。注册新面板即可扩展，不在玩家和快捷栏维护名称表。
 
 var switching: bool = false
+var opening_allowed: Callable
 var _panels: Array[Control] = []
 var _lock_input: Callable
 var _show_toolbar: Callable
@@ -37,6 +38,8 @@ func unregister_panel(panel: Control) -> void:
 
 
 func set_panel_open(panel: Control, open: bool) -> void:
+	if open and opening_allowed.is_valid() and not bool(opening_allowed.call()):
+		return
 	if switching:
 		panel.visible = open
 		return
@@ -62,6 +65,10 @@ func set_panel_open(panel: Control, open: bool) -> void:
 
 func has_open_panel() -> bool:
 	return _panels.any(func(panel: Control) -> bool: return is_instance_valid(panel) and panel.visible)
+
+
+func can_open_panel() -> bool:
+	return not has_open_panel() and (not opening_allowed.is_valid() or bool(opening_allowed.call()))
 
 
 func _sync() -> void:

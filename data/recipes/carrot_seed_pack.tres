@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CraftingRecipeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/crafting_recipe_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"carrot_seed_pack"
+title = "胡萝卜种子包"
+ingredients = Dictionary[StringName, int]({&"carrot": 1, &"fiber": 2})
+products = Dictionary[StringName, int]({&"carrot_seeds": 4})

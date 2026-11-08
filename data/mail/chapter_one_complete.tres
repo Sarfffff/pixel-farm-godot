@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MailData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/mail_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"chapter_one_complete"
+sender = "杂货铺老板"
+title = "灯亮以后"
+body = "门板、货物、花坛和灯，都已准备好了。集市终于可以重新迎人。\n\n农舍里的木桌已经收拾成种子工作台。带一份胡萝卜和两份纤维，可以做成四袋胡萝卜种子，留给下一轮播种。\n\n接下来，我们该看看通往采石区的旧山路了。"
+order = 10

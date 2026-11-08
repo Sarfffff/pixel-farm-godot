@@ -1,0 +1,170 @@
+{
+  "scope": "B2-05 mail, attachments and mailbox MVP",
+  "date": "2026-11-08",
+  "engine": "Godot 4.7.2",
+  "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_02649f35cec843b9b1497e72da60f37e",
+  "files": {
+    "scripts/data/mail_attachment.gd": "a4b9060bbcbb009a8fd8a6e347cb5226309028f02d7b2a36f08ab0a705e1decb",
+    "scripts/data/mail_data.gd": "29a3131799c843d6ca74840d7ad60205aacecd0cb7cc44829cc592bd23e99ccc",
+    "scripts/progression/mailbox_state.gd": "eed362fcfd32d85ba3698fae1a3ec4093b5fd02af96b5bc341b21b2cadbe4197",
+    "scripts/progression/mail_service.gd": "f4d3af88d87089cbee21b68f62a6fc3197dcae3c2b7744d950f12f735a48e0d8",
+    "scripts/ui/panels/mailbox_panel.gd": "1267d13efaca77c417d59f45e61bb72309739918335cb8602b776619c3f23e99",
+    "scripts/ui/presenters/mailbox_presenter.gd": "1dae4a11e64461e6ee2d427b02ebc9c26ba751770b7849f64593712df3c62f03",
+    "scripts/world/interactions/mailbox.gd": "bada2cf422b44dc112d4aa339734b8da50518ffa4b2f3a31eeadd0ad0666822d",
+    "data/mail/farm_welcome.tres": "c2a19dded78a824770ff3cc1d0cef6c0365ec7d119585c571939de0e14737078",
+    "tools/check/check_mailbox.gd": "ec327eca7f9a6981bb1e9357121d3336bb0dcc463f7b9c9b22382406af609cff"
+  },
+  "production_version": 2,
+  "optional_save_section": "mail",
+  "save_semantics": "Delivery/read/claimed facts persisted by stable ID; legacy missing section resets empty; restoration never grants rewards. Save failure retains the in-memory commit and remains visible until retry succeeds.",
+  "story_integration": "No automatic story delivery. Integration layer calls GameSession.mail.deliver(id).",
+  "public_ports": [
+    "deliver(id)",
+    "mark_read(id)",
+    "claim(id)",
+    "claim_hint(id)",
+    "unread_count()",
+    "letters()",
+    "definition(id)",
+    "status(id)",
+    "encode()",
+    "restore(data)",
+    "retry_save()",
+    "register_definition(MailData)"
+  ],
+  "modal": "MailboxPanel extends ModalPanel, pauses_world=true, registered via GameSession with ModalCoordinator.register_panel; world interaction emits open_requested.",
+  "first_run": {
+    "snapshot": "C:/Users/86156/AppData/Local/Temp/PixelFarmChecks_463c0ac1ec69438ca7f792a79d711534",
+    "failure": "One test compared raw StringName-key dictionaries against parsed JSON dictionaries; changed to assertions on the decoded read/claim/day facts."
+  },
+  "validation_runs": [
+    {
+      "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_mailbox,check_layer_boundaries,check_quests -Windowed -Preview -Packaged",
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_e6462fb4c935449dad8d4ac7c2c6715f",
+      "results": [
+        {
+          "Suite": "check_layer_boundaries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_mailbox",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quests",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_packaged_runtime",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ]
+    },
+    {
+      "command": "pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_mailbox,check_farm_terrain -Windowed -Preview -Packaged",
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_02649f35cec843b9b1497e72da60f37e",
+      "results": [
+        {
+          "Suite": "check_farm_terrain",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_mailbox",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_packaged_runtime",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ]
+    }
+  ],
+  "latest_results": [
+    {
+      "Suite": "check_layer_boundaries",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_mailbox",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_quests",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_packaged_runtime",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    },
+    {
+      "Suite": "check_farm_terrain",
+      "Passed": true,
+      "ExitCode": 0,
+      "ExitResourceWarning": false
+    }
+  ],
+  "assertions": {
+    "mailbox": 48,
+    "layer_boundaries": 34,
+    "latest_packaged_runtime": 51
+  },
+  "coverage": [
+    "duplicate definition and delivery",
+    "read/unread JSON restoration including attachment-free letters",
+    "same-ID and mixed-item batch capacity sharing a last slot",
+    "coin-only claim with a full bag",
+    "wallet and bag observers see the complete transaction",
+    "reentrant delivery, claim and restore blocked",
+    "save failure and visible retry do not re-award attachments",
+    "real isolated disk save/load and legacy missing section",
+    "world interaction, modal exclusivity, pause/input ownership",
+    "old replacement view cannot claim eligible attachments",
+    "destroyed presenter releases bindings",
+    "actual PCK mail discovery, mailbox view claim and save/load"
+  ],
+  "layout_audit": {
+    "passed": true,
+    "text_files_checked": 4095,
+    "literal_resource_paths_checked": 18034,
+    "script_uids_checked": 227,
+    "files_by_area_without_sidecars": {
+      "art": 782,
+      "assets": 3728,
+      "scripts": 146,
+      "scenes": 48,
+      "data": 99,
+      "tools": 89
+    },
+    "repaired_files": [],
+    "errors": []
+  },
+  "visual_check": {
+    "renderer": "OpenGL Compatibility actual window",
+    "source": "C:/Users/86156/AppData/Roaming/PixelFarmChecks_02649f35cec843b9b1497e72da60f37e_check_mailbox/mailbox_previews/mailbox.png",
+    "reviewed": true,
+    "artifact": "build/mailbox/mailbox.png"
+  },
+  "manual_acceptance": "Real rendered panel inspected; complete keyboard/mouse new-player playthrough and B2-06 plot delivery wiring remain pending."
+}

@@ -12,6 +12,7 @@ hframes = 3
 vframes = 4
 script = ExtResource("2_npc")
 display_name = "渔夫 老周"
+npc_id = &"fisherman"
 dialogue = ExtResource("3_dialogue")
 routine = Array[Vector2i]([Vector2i(26, 17), Vector2i(30, 17), Vector2i(28, 18)])
 home_cell = Vector2i(28, 17)

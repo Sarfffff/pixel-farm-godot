@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MailData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/mail_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/mail_attachment.gd" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"farm_welcome"
+sender = "园艺师"
+title = "写给新农场主"
+body = "欢迎来到农场。\n\n门前的土地已经整理好，播下种子、浇水，再好好休息，收成会慢慢到来。需要种子或出售收成时，记得到杂货店找店主。\n\n愿你在这里度过踏实的每一天。"
+order = 0
+attachments = Array[ExtResource("2")]([])

@@ -44,6 +44,8 @@ var _rng := RandomNumberGenerator.new()
 var _facing: int = FRAME_DOWN
 var _walk_distance: float = 0.0
 var _walking: bool = false
+var quest_options: Callable
+var quest_response: Callable
 
 
 func _ready() -> void:
@@ -158,6 +160,16 @@ func is_walking() -> bool:
 	return _walking
 
 
+func face_direction(direction: StringName) -> void:
+	match direction:
+		&"down": _facing = FRAME_DOWN
+		&"up": _facing = FRAME_UP
+		&"left": _facing = FRAME_LEFT
+		&"right": _facing = FRAME_RIGHT
+		_: return
+	_stop_walking()
+
+
 func player_in_range(player: Node2D) -> bool:
 	return player.global_position.distance_to(global_position) <= INTERACT_RADIUS
 
@@ -177,6 +189,8 @@ func interact(_cell: Vector2i) -> void:
 	var gift_id: StringName = _giftable_item()
 	if gift_id != &"":
 		options.append({&"id": &"gift", &"text": "送点东西（%s）" % _item_name(gift_id)})
+	if quest_options.is_valid():
+		options.append_array(quest_options.call())
 	if not options.is_empty():
 		options.append({&"id": &"leave", &"text": "再见"})
 
@@ -191,6 +205,15 @@ func on_dialogue_option(id: StringName) -> String:
 	if id == &"gift":
 		return _give_gift()
 	return ""
+
+
+func configure_quest_dialogue(options: Callable, response: Callable) -> void:
+	quest_options = options
+	quest_response = response
+
+
+func on_dialogue_response(id: StringName) -> Dictionary:
+	return quest_response.call(id) if quest_response.is_valid() else {}
 
 
 ## 今天第一次聊天加好感（每人每天一次，跨天由 Friendship 清空）。

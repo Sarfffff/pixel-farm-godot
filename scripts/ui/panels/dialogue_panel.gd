@@ -19,6 +19,7 @@ var _selected: int = 0
 var _lines: Array[String] = []
 var _line_index: int = 0
 var _pending_options: Array = []
+var _option_ids: Array[StringName] = []
 
 
 func _ready() -> void:
@@ -92,9 +93,11 @@ func close() -> void:
 func set_open(open: bool) -> void:
 	_set_modal_open(open)
 	if not open:
+		_owner = null
 		_lines.clear()
 		_line_index = 0
 		_pending_options.clear()
+		_option_ids.clear()
 		return
 	_select(0)
 
@@ -103,8 +106,10 @@ func _build_options(options: Array) -> void:
 	for child in _options.get_children():
 		child.queue_free()
 	_buttons.clear()
+	_option_ids.clear()
 	for option in options:
 		var record: Dictionary = option
+		_option_ids.append(StringName(record.get(&"id", "")))
 		var button := Button.new()
 		button.text = String(record.get(&"text", "…"))
 		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
@@ -117,6 +122,8 @@ func _build_options(options: Array) -> void:
 
 
 func _choose(id: StringName) -> void:
+	if not visible or not _option_ids.has(id):
+		return
 	# 多句台词的内部选项，不回调 NPC。
 	if id == &"__next":
 		_line_index += 1
@@ -125,8 +132,14 @@ func _choose(id: StringName) -> void:
 	if id == &"__close":
 		close()
 		return
+	# 通用响应端口：只渲染显示快照，不解释任务、交易或奖励规则。
+	if is_instance_valid(_owner) and _owner.has_method(&"on_dialogue_response"):
+		var response: Dictionary = _owner.on_dialogue_response(id)
+		if not response.is_empty():
+			open_lines(_speaker.text, response.get(&"lines", []), _owner, response.get(&"options", []))
+			return
 	var next_text := ""
-	if _owner != null and _owner.has_method(&"on_dialogue_option"):
+	if is_instance_valid(_owner) and _owner.has_method(&"on_dialogue_option"):
 		next_text = String(_owner.on_dialogue_option(id))
 	if next_text.is_empty():
 		# owner 可能已经自己关掉对话去开商店了，重复 close 会把工具栏又放出来。

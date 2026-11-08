@@ -26,6 +26,7 @@ var is_acting: bool = false
 var input_locked: bool = false
 var _manual_input_locked: bool = false
 var _modal_input_locked: bool = false
+var _input_leases: Dictionary[StringName, bool] = {}
 var interaction: Node
 var _facing: StringName = &"down"
 var _action_tool: StringName
@@ -120,11 +121,39 @@ func set_modal_input_locked(locked: bool) -> void:
 
 
 func _apply_input_lock() -> void:
-	input_locked = _manual_input_locked or _modal_input_locked
+	input_locked = _manual_input_locked or _modal_input_locked or not _input_leases.is_empty()
 	if input_locked:
 		velocity = Vector2.ZERO
 		if not is_acting:
 			_update_animation(false)
+
+
+## 过场等异步组件独占租约；释放自己的租约不清除休息或模态锁。
+func acquire_input_lease(owner: StringName) -> bool:
+	if owner == &"" or input_locked or is_acting:
+		return false
+	_input_leases[owner] = true
+	_apply_input_lock()
+	return true
+
+
+func release_input_lease(owner: StringName) -> void:
+	_input_leases.erase(owner)
+	_apply_input_lock()
+
+
+func has_input_leases() -> bool:
+	return not _input_leases.is_empty()
+
+
+func can_open_gameplay_ui() -> bool:
+	return not _manual_input_locked and _input_leases.is_empty() and not is_acting
+
+
+func face_direction(direction: StringName) -> void:
+	if direction in [&"up", &"down", &"left", &"right"] and not is_acting:
+		_facing = direction
+		_update_animation(false)
 
 
 func _refresh_modal_lock() -> void:

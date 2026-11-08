@@ -1,0 +1,396 @@
+{
+  "date": "2026-11-08",
+  "task": "B2-06 first chapter integration with Agents A/B/C; minimal usable seed workbench",
+  "save_version": 2,
+  "optional_sections": [
+    "quests",
+    "quest_tracking",
+    "mail",
+    "events"
+  ],
+  "player_save_slots_used": false,
+  "behavior": [
+    "Six authored quests through existing four NPCs; K journal and one tracked HUD target",
+    "Acceptance and delivery save immediately; whole reward capacity and callback reentrancy guarded",
+    "Welcome/completion letters, one-time event, owned input lease and skip/full-view equivalence",
+    "Farmhouse table crafts carrot x1 + fiber x2 into carrot seeds x4 after the final quest",
+    "Market presentation derives from quests without changing community level",
+    "Restore cancels old cutscene before model changes and does not play events or deliver letters"
+  ],
+  "compiled_scripts": 388,
+  "native_assertions": 159,
+  "latest_pack_assertions": 70,
+  "runs": {
+    "full": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_eb034e9d66ec4c0fbab23762a4f829e1",
+      "manifest_sha256": "991c1456b6996b81c90cc6abc6ac4c1dc9657191c000a94868c113ad75114a70",
+      "passed": 43,
+      "failed": 0,
+      "results": [
+        {
+          "Suite": "check_animals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_architecture",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_audio",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_basic_loop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_berries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_calendar",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_compilation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_content_art",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_crop_seasons",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_crops",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_development_controls",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_activities",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_interactions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_farm_terrain",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_friendship",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_goals",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_held_tools",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_house",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_interior_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory_hotbar_camera",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_inventory",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_layer_boundaries",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_mailbox",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_npcs",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pause",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_pickaxe",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_presentation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_progression",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quest_integration",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quest_journal",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_quests",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_region_gameplay",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_release",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_resource_safety",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_save_validation",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_settings",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_shop",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_story_events",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_survival",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_ui_layout",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_world_regions",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "smoke_check",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_packaged_runtime",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ]
+    },
+    "native_final": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_f4b7cfdebb094d13883c53fc1a49d1a6",
+      "manifest_sha256": "756287b68c8590fa0075ff160939e3183e4d957f6e8928dd48f1c40c9f152ec8",
+      "passed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "Suite": "check_quest_integration",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ]
+    },
+    "packaged_ui_followup": {
+      "snapshot": "C:\\Users\\86156\\AppData\\Local\\Temp\\PixelFarmChecks_19f2eb3c15cf467c92611ed7548a2b6d",
+      "manifest_sha256": "3997b87269a12b3b44bef3860822a9060ac1055c1960a755590536517865d4ac",
+      "passed": 2,
+      "failed": 0,
+      "results": [
+        {
+          "Suite": "check_quest_integration",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        },
+        {
+          "Suite": "check_packaged_runtime",
+          "Passed": true,
+          "ExitCode": 0,
+          "ExitResourceWarning": false
+        }
+      ]
+    }
+  },
+  "production_fingerprints_match_full": true,
+  "production_files_matched": 448,
+  "focused_production_hashes": {
+    "scripts/core/game_session.gd": "49ab141c65ff97d53a20a66f044f6e5516e3591ca697da39a31bbc5faf86648e",
+    "scripts/inventory/inventory.gd": "94ca4762735947be8d2ef8ec8e5e7c309d27084f91864014d3e5b3900b1313a1",
+    "scripts/npcs/npc.gd": "05f4351acb7b6e2aac611b4a648659ba332293524778004746760fd25a1f53e6",
+    "scripts/npcs/shopkeeper.gd": "00aeb507a2c7bba2cbeb99c869eb32d5eeaa9460753d6fca1e90e2321564399a",
+    "scripts/persistence/save_system.gd": "1a7beea41486170a6687ea7b3d8b31f3195a24721b8e9d6ee8a6d82af31eaa64",
+    "scripts/player/player.gd": "4999708aa654fffcc945249a9ebefd166fce8bda4fbc894983b92dcabba6003d",
+    "scripts/presentation/community_visuals.gd": "2e18c18b97092326bbbe1c0050aba8c4f965b97381ca68ae83bb70a917f3f41a",
+    "scripts/progression/quest_service.gd": "0dab0843e0e589b6c52622fdae605f71f4249a57b5edd3d9619356a0063e0532",
+    "scripts/progression/chapter_flow.gd": "e172cc2f5a70e83e7f175012087ca7dac351877045593c2ff1a0d3016690ba78",
+    "scripts/progression/crafting_service.gd": "cece13a8c2eadf33fab06cbaa764a7329b704bd1cc2e1237d4f3dcd5f722dd57",
+    "scripts/ui/common/modal_coordinator.gd": "8f9609905272053fa78a25c42cf2b4967528e48a014a741bbb1ceb42c6fffc7c",
+    "scripts/ui/common/modal_panel.gd": "100ba7bff9ba8d8d7828da0e1958b91e487e695a473076bc53ef652914f3697b",
+    "scripts/ui/panels/dialogue_panel.gd": "cb0141eed9fc05658bfe10527b6f4d2841bddd9bc176da0253b614669a84331f",
+    "scripts/ui/panels/quest_journal_panel.gd": "eb0439b89792451407a030a5be3ae885ce84d0d05586491c7ea45feb6623cd00",
+    "scripts/ui/panels/workbench_panel.gd": "4b10d9741080d0331c866d8aaf5d0666f2e6e50f257bc7ba8e423d637e0ed985",
+    "scripts/ui/presenters/quest_dialogue_presenter.gd": "a462c4f9de968151595f2f3057acc4824d8bdbdd3e5aae82d11ed41eb5e772d0",
+    "scripts/ui/presenters/workbench_presenter.gd": "a4502b3f42cb2f13046487f573eb2f739aeb6f2a90311e1979f80826b0933e80",
+    "scripts/world/interactions/workbench.gd": "902047c5a1d5cdd67717e9eb79a700b88107232222733b7ce9d91a85bcbc7c95",
+    "scripts/world/interiors/house_manager.gd": "6208679229b8896384732194be4ae9d2e74928d3ba5bf5a1aae3d203fa960594",
+    "scripts/data/crafting_recipe_data.gd": "c842d5764be90b78b2e2a4214b241d04130356a9098f32b6492d6f6824bfae44",
+    "data/recipes/carrot_seed_pack.tres": "5eeef3a295540eb6b1050402bad81a64e5f7f1773c2857b662e1830b96dcf5f5",
+    "data/mail/chapter_one_complete.tres": "d6927bb8bc12df0cb79cfd1dd77b16def615ab75ef3ebe43dc71f5bee328dd44",
+    "project.godot": "897c9ed9f8fceb77d4c7bf000af3a78a2067b1ff862882140387904856dfc2d0",
+    "export_presets.cfg": "c342a2ef4738df330b3c7cfb670961818a2dee62991d0b8c04f3270f934c4ed4"
+  },
+  "verification_only_changes_after_full": [
+    "tools/check/check_quest_integration.gd: consistent night HUD fixture and workbench View replacement checks; rerun natively",
+    "tools/lib/packaged_smoke.gd: actual exported farmhouse/runtime table/craft button; rerun from actual PCK"
+  ],
+  "checks": [
+    "Passing runs contain no script/engine errors or exit leaks",
+    "Giver identity, immediate acceptance persistence, batch rewards, repeated requirements, full-bag refusal and complete observer state",
+    "Six NPC button paths, K input, actual F table interaction, crafted inventory and no harvest inflation",
+    "Watch/skip same event/mail facts, preserved foreign input lock, modal rejection and load cancellation",
+    "Craft save failure retains products; later manual save clears pending flag; View destruction unbinds and replacement binds once"
+  ],
+  "earlier_failures_preserved": [
+    {
+      "snapshot": "PixelFarmChecks_f4680756d66a4e97accccb715caca661",
+      "reason": "Missing authored carpenter/fisherman npc_id; fixed scene identities"
+    },
+    {
+      "snapshot": "PixelFarmChecks_cc5c0797839943d8b054e2957fdc4323",
+      "reason": "Fixture must advance ordinary NPC lines; old preview wrote to missing docs folder; fixed fixture and isolated screenshot path"
+    },
+    {
+      "snapshot": "PixelFarmChecks_860cd73e74c04265a487a2e569ec5a2a",
+      "reason": "Mail JSON representation comparison failed; Agent C corrected semantic assertions"
+    },
+    {
+      "snapshot": "PixelFarmChecks_5c294fe3301a492fb0145c110c85d467",
+      "reason": "Exit callback reached detached visuals; test re-added existing action; fixed disconnect and isolated test action"
+    },
+    {
+      "snapshot": "PixelFarmChecks_4fcf342345d74a31b9c42737c67b1f94",
+      "reason": "Queued welcome delivery ignored late autoload disable; deferred entry now rechecks flag"
+    }
+  ],
+  "layout_audit": {
+    "errors": 0,
+    "script_uids": 233
+  },
+  "limits": [
+    "Chapter fixtures inject materials; no claim of a new-player gathering playthrough",
+    "B0/B1 and complete chapter manual acceptance remain open",
+    "One fixed workbench/recipe only; full B3 skills, recipes, placement and automation remain later",
+    "PCK validation does not replace standalone Windows EXE release acceptance"
+  ]
+}

@@ -17,4 +17,4 @@ func _set_modal_open(open: bool) -> void:
 
 
 func _can_open_modal() -> bool:
-	return not is_instance_valid(modal_coordinator) or not modal_coordinator.has_open_panel()
+	return not is_instance_valid(modal_coordinator) or modal_coordinator.can_open_panel()

@@ -8,6 +8,7 @@ extends Node
 ## 玩家会 reparent 到当前世界的节点下，这样 Y 排序与可见性都跟着世界走。
 
 const INTERIOR_ORIGIN: Vector2 = Vector2(0, 2000)
+signal location_changed
 
 @export var player_path: NodePath
 @export var farm_path: NodePath
@@ -114,6 +115,7 @@ func exit_house() -> void:
 		camera_follow_reset()
 	if _player is CharacterBody2D:
 		(_player as CharacterBody2D).velocity = Vector2.ZERO
+	location_changed.emit()
 
 
 ## 睡觉开始：角色躺到床上并藏起来，黑屏期间看不到"人还站着"。

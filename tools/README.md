@@ -116,6 +116,9 @@ pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_region_gameplay,check_b
 | `check_survival.gd` | 体力扣减与拦截、睡醒回满、雨天自动浇水、HUD 联动、存档往返 |
 | `check_goals.gd` | 每日订单、交付结算、社区阶段上缴、种子解锁、存档往返 |
 | `check_quests.gd` | 章节任务：模型状态机与编解码、数据契约、交付事务、满包阻塞、观察者重入、写档失败与磁盘往返 |
+| `check_story_events.gd` | B2-04 六类条件、同步一次性提交、完整观看/跳过、重复读档、替代对话/解绑、输入与相机交接、淡出/等待/走位中销毁；`-Windowed -Preview` 输出选项实景 |
+| `check_mailbox.gd` | 邮件投递/阅读、整批附件容量、防重入、保存失败重试、旧档/磁盘恢复、模态与Presenter替换；`-Windowed -Preview` 输出信箱实景 |
+| `check_quest_integration.gd` | 六任务NPC按钮链、延迟室内绑定、整批奖励与重入、K日志、真实F木桌制作、章节来信、过场租约/跳过/完整观看/读档取消、保存失败与销毁；`-Windowed -Preview`输出交付/工作台/集市截图 |
 | `check_farm_activities.gd` | 木箱、采集、加工、差异作物与复收、社区摆设、基础钓鱼、JSON 存档、模态输入 |
 | `check_architecture.gd` | 动物状态/快照/交易策略扩展契约、原子存储故障、天气日期、世界恢复、模态锁与导航增删 |
 | `check_animals.gd` | 动物状态循环、鸡实际位移/四步循环/左右镜像、斜向/纵向/停步、全部备用动物动画的镜像与四向回退、作息/碰撞/模态、每日下蛋与蛋存档；`-Windowed -Preview` 输出步态对照图 |
@@ -139,6 +142,7 @@ pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_region_gameplay,check_b
 | --- | --- |
 | `check_lifecycle.gd` | 检查结束后的场景与音频退出清理 |
 | `check_safety.gd` | 回归独立user目录保护 |
+| `packaged_story_events.gd` | 由包外 packaged_smoke 驱动，从实际PCK加载事件/子资源/独立对话，验证跳过、一次性提交和磁盘恢复 |
 | `world_region_catalog.gd` | 区域地表/资源与原图排列对应 |
 | `farm_landscape.gd` | 河流、池塘、岸线、桥、草坡的格子数据，保证画面与碰撞同源 |
 | `terrain_tiles.gd` | 岸线/桥梁图集的拼接算法与输出路径 |

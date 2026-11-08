@@ -171,6 +171,28 @@ func count_of(id: StringName) -> int:
 	return total
 
 
+## 整批入包预检，共享空格只计算一次；不修改库存或发出通知。
+func has_space_for_batch(items: Dictionary) -> bool:
+	var empty_slots: int = 0
+	for slot: Dictionary in _slots:
+		if slot.is_empty():
+			empty_slots += 1
+	for raw_id: Variant in items:
+		var id := StringName(str(raw_id))
+		var count: int = int(items[raw_id])
+		var item: ItemData = definition(id)
+		if count < 0 or item == null or item.max_stack <= 0:
+			return false
+		for slot: Dictionary in _slots:
+			if not slot.is_empty() and slot[&"id"] == id:
+				count -= maxi(0, item.max_stack - int(slot[&"count"]))
+		if count > 0:
+			empty_slots -= ceili(float(count) / item.max_stack)
+		if empty_slots < 0:
+			return false
+	return true
+
+
 ## 当前放入的物品总数（按数量累计），用于判断背包是否为空。
 func total_items() -> int:
 	var total: int = 0

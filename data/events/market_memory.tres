@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="StoryEvent" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/story_event.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/story_condition.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/story_cue.gd" id="3"]
+
+[sub_resource type="Resource" id="Location"]
+script = ExtResource("2")
+kind = "location"
+allowed = Array[StringName]([&"home"])
+
+[sub_resource type="Resource" id="Quest"]
+script = ExtResource("2")
+kind = "quest"
+key = &"ch1_06_lamps"
+allowed = Array[StringName]([&"completed"])
+
+[sub_resource type="Resource" id="Line"]
+script = ExtResource("3")
+speaker = "园艺师"
+text = "灯亮了。等到下一次集市，大家就能在这里相聚。"
+
+[sub_resource type="Resource" id="Choice"]
+script = ExtResource("3")
+kind = "choice"
+text = "你望着亮起的灯，想起了第一批收成。"
+options = Array[String](["明天再多种一些。", "先好好看看今晚的灯。"])
+
+[sub_resource type="Resource" id="LastLine"]
+script = ExtResource("3")
+speaker = "园艺师"
+text = "这只是开始。农场的明天，还是由你来决定。"
+
+[resource]
+script = ExtResource("1")
+id = &"ch1_market_memory"
+title = "集市的灯"
+conditions = Array[ExtResource("2")]([SubResource("Location"), SubResource("Quest")])
+cues = Array[ExtResource("3")]([SubResource("Line"), SubResource("Choice"), SubResource("LastLine")])

@@ -9,6 +9,9 @@ var fences: Array[Sprite2D] = []
 var stalls: Array[Sprite2D] = []
 var sign: Sprite2D
 var applied_stage: int = -1
+var chapter_stage: int = 0
+var _chapter_progress: Callable
+var _lamps: Array[Sprite2D] = []
 
 
 func _ready() -> void:
@@ -25,6 +28,15 @@ func _ready() -> void:
 		table.add_child(goods)
 	# 招牌也是实体，玩家不能从牌子里穿过去
 	sign = _sprite(SIGN, Vector2(616, 88), 1.0, Vector2(12, 6))
+	for point: Vector2 in [Vector2(80, 368), Vector2(112, 368)]:
+		var lamp: Sprite2D = _sprite(preload("res://assets/packs/content_v1/terrain/town/spring/lamp_post.png"), point + Vector2(0, -8), 0.5)
+		var light := PointLight2D.new()
+		light.texture = preload("res://assets/packs/content_v1/effects/lighting/lantern_glow.png")
+		light.color = Color(1.0, 0.82, 0.5)
+		light.energy = 0.6
+		light.position = Vector2(0, -20)
+		lamp.add_child(light)
+		_lamps.append(lamp)
 	var community: Node = get_tree().get_first_node_in_group(&"community")
 	if community != null:
 		community.changed.connect(refresh)
@@ -59,17 +71,30 @@ func _foot_body(footprint: Vector2) -> StaticBody2D:
 
 
 func refresh() -> void:
+	if not is_inside_tree(): return
 	var community: Node = get_tree().get_first_node_in_group(&"community")
 	applied_stage = int(community.stage) if community != null else 0
+	chapter_stage = int(_chapter_progress.call()) if _chapter_progress.is_valid() else 0
 	for index: int in fences.size():
 		var fence: Sprite2D = fences[index]
 		fence.visible = applied_stage >= 1 or index == 0 or index == 3
 		# 还没修好的栅栏是隐藏的，不能留下隐形墙
 		_set_collider_enabled(fence, fence.visible)
 	for stall: Sprite2D in stalls:
-		stall.visible = applied_stage >= 2
-	sign.visible = applied_stage >= 3
+		stall.visible = applied_stage >= 2 or chapter_stage >= 2
+	sign.visible = applied_stage >= 3 or chapter_stage >= 1
 	_set_collider_enabled(sign, sign.visible)
+	for lamp: Sprite2D in _lamps:
+		lamp.visible = chapter_stage >= 3
+
+
+func configure_chapter(progress: Callable) -> void:
+	_chapter_progress = progress
+	refresh()
+
+
+func _exit_tree() -> void:
+	_chapter_progress = Callable()
 
 
 ## 隐藏的装饰不该继续挡路。
