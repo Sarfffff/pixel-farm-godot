@@ -81,6 +81,9 @@ func _slot(index: int) -> Panel:
 
 
 func set_ui_visible(shown: bool) -> void:
+	# 场景退出时面板可能仍在收尾关闭；此时不能再查询模态组。
+	if not is_inside_tree():
+		return
 	var modals := get_tree().get_first_node_in_group(&"modal_coordinator")
 	if shown and modals != null and modals.has_open_panel():
 		shown = false

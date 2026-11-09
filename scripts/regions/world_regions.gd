@@ -30,6 +30,8 @@ var _loot_nodes: Dictionary = {}
 var _home_return: Vector2 = Vector2(580, 176)
 var _busy: bool = false
 var _name_label: Label
+## 技能端口（可选）：采集体力价与成功劳动凭据由组合根注入。
+var _labor: Node
 
 
 func _ready() -> void:
@@ -100,6 +102,30 @@ func configure(host: Node2D, actor: CharacterBody2D, farm: Node2D, field: Node, 
 	_name_label.add_theme_constant_override("outline_size", 2)
 	_host.get_node("UI").add_child(_name_label)
 	_update_name()
+
+
+## 组合根注入技能端口：区域采集的体力价与劳动凭据统一走同一服务。
+func configure_labor(port: Node) -> void:
+	_labor = port
+	if port == null:
+		harvest.cost_of = Callable()
+		harvest.record_labor = Callable()
+		return
+	harvest.cost_of = func(rule_tool: StringName, _used: StringName, base: int) -> int:
+		return int(port.stamina_cost(_skill_action(rule_tool), base))
+	harvest.record_labor = port.record
+
+
+## 采集预检与提示共用；规则工具决定技能动作，未覆盖的工具按原价。
+func harvest_cost(rule: Dictionary, tool: StringName) -> int:
+	return harvest.stamina_cost(rule, tool)
+
+
+func _skill_action(rule_tool: StringName) -> StringName:
+	match String(rule_tool):
+		"axe": return &"axe"
+		"stone_pickaxe": return &"stone_pickaxe"
+	return &"forage"
 
 
 func region_name(id: StringName) -> String:

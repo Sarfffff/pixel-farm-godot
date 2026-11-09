@@ -52,6 +52,8 @@ func _run() -> void:
 	_tiller = _main.get_node("Farm/Tiller") as Node2D
 	_inventory = _main.get_node("Systems/Inventory") as Inventory
 	_main.get_node("Systems/Time").running = false
+	# 本套只验证作物事务与体力原子性；技能减免由 check_b3_integration 覆盖。
+	_tiller.call(&"configure_labor", null)
 
 	_check(_tiller._crop_definitions.size() >= 2, "crop definitions loaded")
 	_check(_tiller._seed_id() == &"carrot_seeds", "first seed in bag is picked")

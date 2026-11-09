@@ -34,7 +34,7 @@ func can_use(tool: StringName, cell: Vector2i) -> bool:
 	var id: String = manager.resource_at(cell)
 	if id.is_empty() or not manager.harvest.can_hit(manager.active_region, id, tool): return false
 	var state: Dictionary = manager.ledger.object(manager.active_region, id)
-	return manager.stamina.can_spend(int(manager.ledger.rules[state.kind].cost))
+	return manager.stamina.can_spend(manager.harvest_cost(manager.ledger.rules[state.kind], tool))
 
 
 func can_interact(cell: Vector2i) -> bool:
@@ -84,5 +84,6 @@ func interaction_hint(tool: StringName) -> String:
 	var state: Dictionary = manager.ledger.object(manager.active_region, id)
 	var rule: Dictionary = manager.ledger.rules[state.kind]
 	var required: String = "[F] 采集" if String(rule.tool).is_empty() else ("斧头" if rule.tool == "axe" else "石镐")
-	if not manager.stamina.can_spend(int(rule.cost)): return "体力不足 · 沿路标回农舍休息"
-	return "%s · 还需%d次 · 体力%d" % [required, int(state.hits), int(rule.cost)]
+	var cost: int = manager.harvest_cost(rule, tool)
+	if not manager.stamina.can_spend(cost): return "体力不足 · 沿路标回农舍休息"
+	return "%s · 还需%d次 · 体力%d" % [required, int(state.hits), cost]

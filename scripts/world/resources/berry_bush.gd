@@ -72,7 +72,7 @@ func hint() -> String:
 	if not is_mature():
 		return "%s幼苗 · 再过 %d 天结果" % [_display_name, days_until_mature()]
 	if has_berries():
-		var text := "[F] 采%s ×%d · 体力 %d" % [_display_name, YIELD, STAMINA_COST]
+		var text := "[F] 采%s ×%d · 体力 %d" % [_display_name, YIELD, _stamina_cost()]
 		if wild:
 			text += " · 顺带收种子"
 		return text
@@ -95,7 +95,7 @@ func interact(_cell: Vector2i) -> void:
 		_message("背包已满 · 腾出空间再来采")
 		return
 	var stamina := get_tree().get_first_node_in_group(&"stamina")
-	if stamina != null and not stamina.spend(STAMINA_COST):
+	if stamina != null and not stamina.spend(_stamina_cost()):
 		_message("体力不够 · 回屋睡一觉")
 		return
 	inventory.add_item(kind, YIELD)
@@ -104,6 +104,10 @@ func interact(_cell: Vector2i) -> void:
 	var audio := get_node_or_null("/root/AudioManager")
 	if audio != null and audio.has_method(&"play_sfx"):
 		audio.call(&"play_sfx", &"harvest", randf_range(0.98, 1.06))
+	# 物品与灌木状态都已提交；凭据按位置和日期唯一，重复采同一丛不会重复计经验。
+	var labor := _labor()
+	if labor != null:
+		labor.record(&"forage", "forage:home:berry:%d:%d:%d" % [roundi(global_position.x), roundi(global_position.y), int(labor.today())])
 	if seeds > 0:
 		_message("采到 %s ×%d，还收到 %d 颗种子" % [_display_name, YIELD, seeds])
 	else:
@@ -111,6 +115,16 @@ func interact(_cell: Vector2i) -> void:
 	_harvest()
 	if manager != null and manager.has_method(&"on_bush_changed"):
 		manager.call(&"on_bush_changed")
+
+
+## 技能端口由组合根挂到 labor 组的节点；未接入时保持原价。
+func _labor() -> Node:
+	return get_tree().get_first_node_in_group(&"labor")
+
+
+func _stamina_cost() -> int:
+	var labor := _labor()
+	return int(labor.stamina_cost(&"forage", STAMINA_COST)) if labor != null else STAMINA_COST
 
 
 ## 玩家用种子种下：进入幼苗期，过 GROW_DAYS 天结果。

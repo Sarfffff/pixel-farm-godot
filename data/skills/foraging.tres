@@ -10,7 +10,7 @@ stamina_reductions = Dictionary[StringName, int]({&"axe": 1})
 
 [sub_resource type="Resource" id="Level2"]
 script = ExtResource("2")
-description = "斧头再减少1体力（7→6）；徒手采集减少1，最低1"
+description = "斧头再减少1体力（7→6）；徒手采集减少1（杂草/纤维2→1，1体力目标保持1）"
 stamina_reductions = Dictionary[StringName, int]({&"axe": 1, &"forage": 1})
 
 [sub_resource type="Resource" id="Level3"]

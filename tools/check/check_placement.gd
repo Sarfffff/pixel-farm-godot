@@ -9,6 +9,20 @@ const StorageView := preload("res://scripts/ui/panels/device_storage_panel.gd")
 const StoragePresenter := preload("res://scripts/ui/presenters/device_storage_presenter.gd")
 const Preview := preload("res://scripts/world/interactions/placement_preview.gd")
 const Modals := preload("res://scripts/ui/common/modal_coordinator.gd")
+const Instance := preload("res://scripts/world/interactions/device_instance.gd")
+## 主农场端口契约镜像：与 game_session.gd::_placement_query 一一对应。
+## 地表（水面/耕地/桥面/道路/无地面）、门口、静态物件在 restoring 时仍拒绝；
+## 只有临时人物格在 restoring 时被忽略。
+const FARM_BLOCKED: Dictionary = {
+	Vector2i(1, 1): "水面",
+	Vector2i(2, 1): "耕地",
+	Vector2i(3, 1): "人物",
+	Vector2i(4, 1): "门口",
+	Vector2i(5, 1): "道路",
+	Vector2i(6, 1): "静态物件",
+	Vector2i(7, 1): "桥面",
+	Vector2i(8, 1): "无地面",
+}
 var _checks: int = 0
 var _failures: int = 0
 var _scene: Node2D
@@ -62,10 +76,13 @@ func _run() -> void:
 	_bag.add_item(&"storage_crate", 3, &"crafting")
 	_check_rules()
 	_check_transactions()
+	await _check_farm_port_contract()
 	_check_storage()
 	_check_failures()
 	await _check_views()
+	await _check_hints()
 	_check_restoration()
+	await _check_lock_provider()
 	await process_frame
 	_check(_world.get_child_count() == _service.instances().size(), "final live projection matches exactly the authoritative instances")
 	_check(true, "all placement, storage, persistence and lifecycle probes reached their end")
@@ -82,12 +99,14 @@ func _position(cell: Vector2i) -> Vector2:
 	return Vector2(cell * 16) + Vector2(8, 8)
 
 
-func _query(space: StringName, cells: Array[Vector2i], _ignore: String, _restoring: bool) -> Dictionary:
+func _query(space: StringName, cells: Array[Vector2i], _ignore: String, restoring: bool) -> Dictionary:
 	if space != &"home": return {"ok": false, "reason": "区域未开放"}
-	var blocked: Dictionary = {Vector2i(1, 1): "水面", Vector2i(2, 1): "作物", Vector2i(3, 1): "人物", Vector2i(4, 1): "门口", Vector2i(5, 1): "出口通道", Vector2i(6, 1): "静态物件"}
 	for cell: Vector2i in cells:
 		if not Rect2i(0, 0, 12, 12).has_point(cell): return {"ok": false, "reason": "地图边界"}
-		if blocked.has(cell): return {"ok": false, "reason": blocked[cell]}
+		if not FARM_BLOCKED.has(cell): continue
+		var reason: String = FARM_BLOCKED[cell]
+		if restoring and reason == "人物": continue
+		return {"ok": false, "reason": reason}
 	return {"ok": true, "reason": ""}
 
 
@@ -104,9 +123,10 @@ func _check_rules() -> void:
 	_check(_catalog.size() == 2 and _service.type_for_item(&"wood_fence") == &"wood_fence" and _service.type_for_item(&"storage_crate") == &"storage_crate", "trusted authored catalog maps actual craftable item IDs")
 	_check(not _service.preview(&"unknown", &"home", Vector2i.ZERO, 0).ok and not _service.preview(&"wood_fence", &"forest", Vector2i.ZERO, 0).ok, "unknown types and unopened regions reject")
 	_check(not _service.preview(&"wood_fence", &"home", Vector2i.ZERO, -1).ok and not _service.preview(&"wood_fence", &"home", Vector2i.ZERO, 4).ok, "invalid orientations reject")
-	for x: int in range(1, 7):
-		var result: Dictionary = _service.preview(&"wood_fence", &"home", Vector2i(x, 1), 0)
-		_check(not result.ok and not result.reason.is_empty(), "world port rejects blocked terrain %d with an explanation" % x)
+	for cell: Vector2i in FARM_BLOCKED:
+		var blocked_reason: String = FARM_BLOCKED[cell]
+		var result: Dictionary = _service.preview(&"wood_fence", &"home", cell, 0)
+		_check(not result.ok and String(result.reason).contains(blocked_reason), "world port rejects %s with a matching explanation" % blocked_reason)
 	var wide: Resource = _catalog[0].duplicate()
 	wide.id = &"wide_fixture"
 	wide.footprint = Vector2i(2, 1)
@@ -172,6 +192,7 @@ func _check_storage() -> void:
 	_bag.changed.disconnect(listener)
 	_check(observed.size() == 1 and not observed.has(false) and _service.storage_count(_other_crate, &"wood") == 0, "both sides commit before notifications and separate crates do not share contents")
 	_check(not _service.dismantle(_crate) and not _service.move(_crate, &"home", Vector2i(7, 7), 0), "nonempty box cannot be moved or destroyed")
+	_check(not _service.last_rejection.is_empty() and _service.storage_count(_crate, &"wood") == 3 and not _service.instance(_other_crate).is_empty() and _factory.node_for(_other_crate) != null, "nonempty box rejection is explained and leaves both crates intact")
 	_check(_service.withdraw(_crate, &"wood", 1) == 1 and _service.storage_count(_crate, &"wood") == 2 and _bag.today_collected == collected, "withdrawal is a transfer and creates no harvest credit")
 	var filled: Array = []
 	for id: StringName in Inventory.TOOL_IDS: filled.append({"id": String(id), "count": 1})
@@ -184,6 +205,7 @@ func _check_storage() -> void:
 	_bag.from_dict(bag)
 	_check(_service.dismantle(_other_crate) and not _service.dismantle(_other_crate), "empty box dismantles once and cannot refund twice")
 	_check(_factory.node_for(_other_crate) == null and _service.instance(_other_crate).is_empty(), "dismantling immediately removes both instance and collision projection")
+	_check(_factory.node_for(_crate) != null and _service.storage_count(_crate, &"wood") == 2, "dismantling the empty crate never touches the other crate's node or contents")
 
 
 func _check_failures() -> void:
@@ -196,6 +218,8 @@ func _check_failures() -> void:
 	var bag: Dictionary = _bag.to_dict()
 	var nodes: int = _world.get_child_count()
 	_check(_service.place(&"wood_fence", &"home", Vector2i(9, 9), 0).is_empty() and _world.get_child_count() == nodes and _service.encode() == devices and _bag.to_dict() == bag, "failed factory cleans half-created nodes without consuming item or stable ID")
+	var attempted_id: String = "device_%012d" % int(devices.next_id)
+	_check(not _service.last_rejection.is_empty() and _factory.node_for(attempted_id) == null and int(_service.encode().next_id) == int(devices.next_id), "failed create explains itself, leaves no ghost collision and does not advance the stable ID")
 	ports = _ports.duplicate()
 	ports.update = func(_record: Dictionary) -> bool: return false
 	_service.configure(_bag, _catalog, ports)
@@ -302,7 +326,13 @@ func _check_restoration() -> void:
 	var ports: Dictionary = _ports.duplicate()
 	ports.restore = func(_definitions: Dictionary, _records: Array) -> bool: return false
 	_service.configure(_bag, _catalog, ports)
+	var live_node: Node2D = _factory.node_for(_crate)
+	var notices: Array[String] = []
+	var on_failed := func(why: String) -> void: notices.append(why)
+	_service.restore_failed.connect(on_failed)
 	_check(not _service.restore(snapshot) and _service.encode() == expected and _world.get_child_count() == snapshot.instances.size(), "failed restore factory preserves both current model and live nodes")
+	_check(notices.size() == 1 and not notices[0].is_empty() and _factory.node_for(_crate) == live_node and _service.storage_count(_crate, &"wood") == 1, "failed restore explains itself and keeps the very same crate node and contents")
+	_service.restore_failed.disconnect(on_failed)
 	_service.configure(_bag, _catalog, _ports)
 	for phase: String in ["processing", "ready"]:
 		var working: Dictionary = snapshot.duplicate(true)
@@ -321,3 +351,153 @@ func _check_restoration() -> void:
 	legacy.erase("devices")
 	_save.apply(legacy)
 	_check(_service.instances().is_empty() and _world.get_child_count() == 0 and _bag.to_dict() == bag, "old v2 save missing devices initializes empty without touching fixed storage or player bag")
+
+
+## 主农场端口契约回归：独立实例，不干扰主流程的状态与保存计数。
+## 镜像 game_session.gd::_placement_query 的八类拒绝，并验证服务传入的
+## space/footprint/ignore_id/restoring 参数及 restoring 时只忽略临时人物。
+## 与正式端口的一致性由主线程 check_b3_integration 在真实场景验证；
+## 本检查只用行为断言，不以核心脚本源码文本存在性充当验收依据。
+func _check_farm_port_contract() -> void:
+	var parent := Node2D.new()
+	_scene.add_child(parent)
+	var bag := Inventory.new()
+	_scene.add_child(bag)
+	bag.add_item(&"wood_fence", 2, &"crafting")
+	var factory := World.new()
+	factory.configure(parent, _position)
+	var service := Service.new()
+	var calls: Array[Dictionary] = []
+	var recording := func(space: StringName, cells: Array[Vector2i], ignore: String, restoring: bool) -> Dictionary:
+		calls.append({"space": space, "cells": cells.duplicate(), "ignore": ignore, "restoring": restoring})
+		return _query(space, cells, ignore, restoring)
+	var ports: Dictionary = {
+		"query": recording,
+		"allowed": func(_item: StringName) -> bool: return true,
+		"create": factory.create,
+		"update": factory.update_instance,
+		"remove": factory.remove_instance,
+		"restore": factory.restore_instances,
+		"save": func() -> bool: return true,
+	}
+	service.configure(bag, _catalog, ports)
+	for cell: Vector2i in FARM_BLOCKED:
+		var blocked_reason: String = FARM_BLOCKED[cell]
+		calls.clear()
+		var result: Dictionary = service.preview(&"wood_fence", &"home", cell, 0)
+		_check(not result.ok and String(result.reason).contains(blocked_reason), "main-farm port refuses %s with a non-empty reason" % blocked_reason)
+		_check(calls.size() == 1 and calls[0].space == &"home" and not bool(calls[0].restoring) and calls[0].ignore == "" and calls[0].cells.size() == 1 and calls[0].cells[0] == cell, "preview sends the exact footprint in normal mode: %s" % blocked_reason)
+	var id: String = service.place(&"wood_fence", &"home", Vector2i(9, 4), 0)
+	_check(not id.is_empty(), "contract fixture places a live device on free ground")
+	calls.clear()
+	_check(service.move(id, &"home", Vector2i(9, 5), 0), "contract fixture moves its device to another free cell")
+	_check(calls.size() == 1 and calls[0].ignore == id and not bool(calls[0].restoring), "move forwards the stable id so the port can ignore the device's own collider")
+	var baseline: Dictionary = service.encode()
+	var player: Dictionary = baseline.duplicate(true)
+	player.instances[0].cell = [3, 1]
+	calls.clear()
+	_check(service.restore(player), "restoring ignores the temporary player cell")
+	_check(calls.size() == 1 and bool(calls[0].restoring) and calls[0].ignore == "", "service restores through the farm port with restoring=true")
+	_check(service.restore(baseline), "contract fixture returns to its baseline before rejection probes")
+	for cell: Vector2i in FARM_BLOCKED:
+		var blocked_reason: String = FARM_BLOCKED[cell]
+		if blocked_reason == "人物": continue
+		var rejected: Dictionary = baseline.duplicate(true)
+		rejected.instances[0].cell = [cell.x, cell.y]
+		var notices: Array[String] = []
+		var listener := func(why: String) -> void: notices.append(why)
+		service.restore_failed.connect(listener)
+		_check(not service.restore(rejected) and String(service.last_rejection).contains(blocked_reason), "restoring still refuses %s" % blocked_reason)
+		_check(notices.size() == 1 and not notices[0].is_empty() and service.encode() == baseline, "failed restore explains itself and preserves the previous state: %s" % blocked_reason)
+		service.restore_failed.disconnect(listener)
+	service.release()
+	factory.release()
+	parent.queue_free()
+	bag.queue_free()
+	await process_frame
+	_check(not is_instance_valid(parent) and not is_instance_valid(bag), "contract fixture releases its isolated nodes")
+
+
+## hint() 与实际 [F] 入口：箱子→储物箱面板，围栏→移动/拆除面板。
+func _check_hints() -> void:
+	var crate: Resource = _service.definition(&"storage_crate")
+	var fence: Resource = _service.definition(&"wood_fence")
+	var crate_node := Instance.new()
+	var fence_node := Instance.new()
+	_scene.add_child(crate_node)
+	_scene.add_child(fence_node)
+	crate_node.configure(crate, {"id": "hint_crate", "facing": 0}, Vector2.ZERO)
+	fence_node.configure(fence, {"id": "hint_fence", "facing": 0}, Vector2.ZERO)
+	var crate_hint: String = crate_node.hint()
+	var fence_hint: String = fence_node.hint()
+	_check(int(crate.storage_capacity) > 0 and crate_hint.begins_with("[F]") and crate_hint.contains("储物箱"), "crate hint routes [F] to the per-instance storage panel")
+	_check(int(fence.storage_capacity) == 0 and fence_hint.begins_with("[F]") and fence_hint.contains("移动") and fence_hint.contains("拆除"), "fence hint routes [F] to move and dismantle")
+	var routed: Array[String] = []
+	crate_node.interacted.connect(func(emitted: String) -> void: routed.append(emitted))
+	fence_node.interacted.connect(func(emitted: String) -> void: routed.append(emitted))
+	crate_node.interact(Vector2i.ZERO)
+	fence_node.interact(Vector2i.ZERO)
+	_check(routed.size() == 2 and routed[0] == "hint_crate" and routed[1] == "hint_fence", "both hinted nodes emit their own stable id to the formal dispatcher")
+	var sprite: Sprite2D = fence_node.get_child(0) as Sprite2D
+	var idle_texture: Texture2D = fence.texture
+	var active_texture := GradientTexture2D.new()
+	fence_node.set_state({"phase": &"working", "label": "加工中", "texture": active_texture})
+	var tag: Label = fence_node.get_node_or_null("StateLabel") as Label
+	_check(sprite.texture == active_texture and fence_node.hint().contains("加工中") and tag != null and tag.text == "加工中", "working state switches texture, hint and optional label")
+	fence_node.set_state({"phase": &"ready"})
+	_check(sprite.texture == idle_texture and fence_node.hint().contains("可领取") and fence_node.get_node_or_null("StateLabel") == null, "ready state falls back to idle texture and clears the label")
+	fence_node.set_state({"phase": &"bogus", "label": "忽略"})
+	_check(sprite.texture == idle_texture and fence_node.hint() == fence_hint, "invalid phase falls back to idle presentation")
+	crate_node.set_state({"phase": &"ready"})
+	_check(crate_node.hint().contains("储物箱") and crate_node.hint().contains("可领取"), "crate keeps its storage-panel entry while reflecting the phase")
+	fence_node.configure(fence, {"id": "hint_fence", "facing": 0}, Vector2.ZERO)
+	_check(sprite.texture == idle_texture and fence_node.hint() == fence_hint and fence_node.get_node_or_null("StateLabel") == null, "reconfiguration clears all visual state")
+	crate_node.queue_free()
+	fence_node.queue_free()
+	await process_frame
+	_check(not is_instance_valid(crate_node) and not is_instance_valid(fence_node), "hint fixture releases its temporary device nodes")
+
+
+## 外部锁端口：拒绝/放行、异常收敛、拆回物品与存档、任务/事件进程不受影响。
+func _check_lock_provider() -> void:
+	var parent := Node2D.new()
+	_scene.add_child(parent)
+	var bag := Inventory.new()
+	_scene.add_child(bag)
+	bag.add_item(&"wood_fence", 3, &"crafting")
+	bag.add_item(&"storage_crate", 1, &"crafting")
+	var factory := World.new()
+	factory.configure(parent, _position)
+	var service := Service.new()
+	var ports: Dictionary = {"query": _query, "allowed": func(_item: StringName) -> bool: return true, "create": factory.create, "update": factory.update_instance, "remove": factory.remove_instance, "restore": factory.restore_instances, "save": func() -> bool: return true}
+	service.configure(bag, _catalog, ports)
+	var fence: String = service.place(&"wood_fence", &"home", Vector2i(9, 4), 0)
+	var crate: String = service.place(&"storage_crate", &"home", Vector2i(9, 5), 0)
+	_check(not fence.is_empty() and not crate.is_empty(), "lock fixture places two live devices")
+	var plain: Dictionary = service.encode()
+	var bag_before: Dictionary = bag.to_dict()
+	var lock_reason: String = "加工任务进行中"
+	service.set_lock_provider(func(id: String) -> String: return lock_reason if id == fence else "")
+	_check(service.encode() == plain and not service.move(fence, &"home", Vector2i(8, 4), 0) and service.last_rejection == lock_reason, "provider blocks move, exposes its reason and never persists")
+	_check(not service.dismantle(fence) and service.last_rejection == lock_reason and service.encode() == plain and bag.to_dict() == bag_before, "provider blocks dismantle without refunding items or changing the snapshot")
+	_check(service.move(crate, &"home", Vector2i(8, 5), 0), "provider allows other devices and leaves no busy lock")
+	service.set_lock_provider(func(_id: String) -> Variant: return 123)
+	_check(not service.move(fence, &"home", Vector2i(8, 4), 0) and service.last_rejection == "设备状态不可用" and not service.busy, "non-string provider result refuses safely without leaking busy")
+	service.set_lock_provider(func(_id: String) -> Variant: return null)
+	_check(not service.dismantle(fence) and service.last_rejection == "设备状态不可用" and not service.busy, "provider failure is reported as unavailable state")
+	service.set_lock_provider(Callable())
+	_check(service.move(fence, &"home", Vector2i(8, 4), 0) and service.instance(fence).cell == [8, 4], "unset or invalid provider keeps existing move behaviour")
+	var refund: int = bag.count_of(&"wood_fence")
+	var snapshot: Dictionary = service.encode()
+	_check(service.dismantle(fence) and bag.count_of(&"wood_fence") == refund + 1 and service.instance(fence).is_empty(), "dismantle refunds exactly one item when no provider blocks it")
+	_check(service.restore(snapshot) and service.encode() == snapshot, "device snapshot restores after the refund without provider residue")
+	service.set_lock_provider(func(id: String) -> String: return lock_reason if id == fence else "")
+	var working: Dictionary = service.encode().duplicate(true)
+	working.instances[0].operation.merge({"phase": "processing", "recipe_id": "quest_recipe", "inputs": {"wood": 1}, "pending_outputs": {"stone": 1}}, true)
+	_check(service.restore(working) and service.encode().instances[0].operation.recipe_id == "quest_recipe" and service.last_rejection.is_empty(), "quest/event operation facts restore intact with a lock provider installed")
+	service.release()
+	factory.release()
+	parent.queue_free()
+	bag.queue_free()
+	await process_frame
+	_check(not is_instance_valid(parent) and not is_instance_valid(bag), "lock fixture releases its isolated nodes")

@@ -12,6 +12,8 @@
 | `progression/` | 引导、订单、社区、好感和工具升级；`quest_log.gd` 是章节任务事实，`quest_service.gd` 是接受/进度/交付用例 |
 | `progression/mailbox_state.gd`、`progression/mail_service.gd` | 邮件投递/阅读/附件事实、整批领取与保存端口；通过 `GameSession.mail` 供整合层调用 |
 | `progression/chapter_flow.gd`、`progression/crafting_service.gd` | 第一章正常玩法边界、来信与事件安排；固定工作台即时制作，复用唯一库存与章节资格 |
+| `progression/skill_service.gd`、`progression/skill_state.gd` | 三技能经验、等级与凭据去重的唯一事实；`progression/labor_port.gd` 把能力查询与成功凭据转发给真实劳动节点，不保存第二份经验 |
+| `placement/` | 设备放置/移动/拆除与每实例仓储用例、稳定实例编解码和可信表现工厂；`placement_input.gd` 负责暂停期间的地图选点，规则仍归服务 |
 | `activities/` | 农场活动入口和独立钓鱼会话 |
 | `events/` | B2-04 一次性条件事件、同步结果用例、独立过场与对话；输入租约、相机和保存接线见[模块契约](events/README.md) |
 | `animals/` | 动物适配、鸡舍、蛋和状态机；`states/` 存可注册状态 |

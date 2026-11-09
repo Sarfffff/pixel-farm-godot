@@ -19,6 +19,7 @@ var _bag: Inventory
 var _definitions: Dictionary[StringName, Resource] = {}
 var _ports: Dictionary = {}
 var _state := Registry.new()
+var _lock_provider: Callable = Callable()
 
 
 func configure(bag: Inventory, catalog: Array, ports: Dictionary) -> void:
@@ -29,6 +30,11 @@ func configure(bag: Inventory, catalog: Array, ports: Dictionary) -> void:
 	for definition: Resource in catalog:
 		if definition is Definition and definition.is_valid() and not _definitions.has(definition.id):
 			_definitions[definition.id] = definition
+
+
+## 外部状态锁端口：由组合根接线，device_id -> 非空原因表示禁止移动/拆除。
+func set_lock_provider(provider: Callable) -> void:
+	_lock_provider = provider
 
 
 func definitions() -> Array[Resource]:
@@ -249,6 +255,7 @@ func confirm_saved() -> void:
 func release() -> void:
 	if busy: return
 	_ports.clear()
+	_lock_provider = Callable()
 	_bag = null
 
 
@@ -270,7 +277,16 @@ func _locked_reason(record: Dictionary) -> String:
 	if not record.operation.inputs.is_empty(): return "请先清空设备投入物"
 	for slot: Dictionary in record.slots:
 		if not slot.is_empty(): return "请先清空储物箱"
-	return ""
+	return _external_lock_reason(String(record.get("id", "")))
+
+
+## 隔离调用外部端口：任何非 String 结果（含运行时错误导致的空返回）收敛为固定原因，
+## 保证 move/dismantle 的校验阶段始终正常返回，不半途退出事务或泄漏 busy。
+func _external_lock_reason(device_id: String) -> String:
+	if not _lock_provider.is_valid(): return ""
+	var outcome: Variant = _lock_provider.call(device_id)
+	if outcome is String: return outcome
+	return "设备状态不可用"
 
 
 func _factory_ready() -> bool:

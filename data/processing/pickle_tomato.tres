@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProcessingDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/processing_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"pickle_tomato"
+device_types = Array[StringName]([&"preserves_jar"])
+ingredients = Dictionary[StringName, int]({&"tomato": 3})
+products = Dictionary[StringName, int]({&"pickled_tomato": 1})
+days = 1

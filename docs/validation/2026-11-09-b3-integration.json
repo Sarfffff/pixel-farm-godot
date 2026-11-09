@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-09",
+  "scope": "B3-01/02/03 formal session integration plus the three agents' follow-up hardening",
+  "players_visible": [
+    "C opens the read-only skill panel; agriculture/foraging/fishing show XP, level and active effects",
+    "Harvest, felling, stump clearing, farm/region forage and claimed fish grant experience once per committed labor",
+    "Stamina prices use the upgraded tool base plus skill reductions; fishing uses the parameters fixed at cast",
+    "Night summary lists real level-ups and confirms them only after the panel is closed",
+    "Workbench gates storage_crate at foraging level 2 and wood_fence at level 1; gated rows show 未满足 and the reason tooltip",
+    "Qualification refresh keeps the selected recipe, batch count and keyboard focus instead of rebuilding the list",
+    "G with a device in the active hotbar opens placement; water, road, tilled soil, doors and static objects are refused with a reason",
+    "Placed storage crates keep independent 24-slot stores; non-empty devices cannot be moved or dismantled"
+  ],
+  "save_impact": {
+    "format": "v2 unchanged; new optional sections skills/devices with schema 1",
+    "order": "time/coins/inventory/skills -> world_objects/farm/regions -> devices -> quests/events",
+    "missing_section": "old saves default to empty skills/devices without refunds, rewards or production",
+    "restore": "three consecutive restores add no experience, items or devices; rejected partitions keep live state"
+  },
+  "command_full": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_checks.ps1 -TimeoutSeconds 1800",
+  "command_focused": "tools/run_checks.ps1 -Suites check_skills,check_crafting,check_placement,check_b3_integration,check_layer_boundaries",
+  "command_windowed": "tools/run_checks.ps1 -Suites check_skills,check_crafting,check_placement,check_b3_integration -Windowed",
+  "process_environment": {
+    "TEMP": "e:/my-ai-game/build/tmp",
+    "TMP": "e:/my-ai-game/build/tmp",
+    "global_environment_changed": false
+  },
+  "compiled_scripts": 414,
+  "new_check": {
+    "suite": "check_b3_integration",
+    "checks": 76,
+    "failures": 0,
+    "covers": [
+      "composition root owns skills/labor/placement panels and sections",
+      "skill panel opens/closes by action without leaving input lock",
+      "real harvest, felling and stump clearing grant exactly one receipt each",
+      "buying/storing items grant no experience; duplicate receipt refused",
+      "level 1/2 change axe 8->7->6, forage 2->1 and fishing 4->3",
+      "crafting gate opens after levels and consumes 44 wood for three recipes",
+      "water/road/tilled soil reject with a non-empty reason; place/move/dismantle and two independent stores",
+      "three restores keep XP, wood and device count unchanged",
+      "night summary lists upgrades and acknowledge clears them"
+    ]
+  },
+  "agent_followups": {
+    "AgentA": {
+      "files": ["data/skills/README.md", "data/skills/foraging.tres", "tools/check/check_skills.gd", "tools/lib/skills_contracts.gd"],
+      "checks_before": 267,
+      "checks_after": 385,
+      "covers": [
+        "five-level rewards compared against the real FarmTiller/resource_rules/watering_can/fishing baselines read from gameplay files",
+        "receipt matrix: same id across actions/days, max level, busy reentry, restore-then-replay",
+        "labor port contract: max(1, base-reduction), zero baseline stays zero, one sampling per cast, no cached stale bounds"
+      ],
+      "review_fix": "the README baseline table attributed fishing values to data/activities/farm_activities.tres; they are script defaults in scripts/data/farm_activities_data.gd and the .tres only overrides forage positions/items, so the row was corrected"
+    },
+    "AgentB": {
+      "files": ["scripts/ui/panels/workbench_panel.gd", "scripts/ui/presenters/workbench_presenter.gd", "tools/check/check_crafting.gd"],
+      "checks_before": 114,
+      "checks_after": 157,
+      "covers": [
+        "access refresh rewrites availability only; selected recipe, batch count and focus survive",
+        "gated row keeps rendering 未满足 with the gate reason tooltip; the focused craft button is disabled without moving focus",
+        "a revoked recipe keeps its row instead of jumping to another recipe, and requalification restores crafting"
+      ],
+      "review_note": "the panel now keeps a currently selected recipe row even when the catalog hides it (known=false) to avoid a live list jump; the real access port always returns known=true, so no unseen recipe is revealed during normal play"
+    },
+    "AgentC": {
+      "files": ["scripts/placement/README.md", "tools/check/check_placement.gd"],
+      "checks_before": 72,
+      "checks_after": 119,
+      "covers": [
+        "main-farm port contract mirror: water/tilled soil/bridge/road/no-ground/door/player/static reject with reasons, restoring ignores only the temporary player",
+        "port call parameters: preview passes the full footprint with restoring=false, move passes the stable ignore id, restore passes restoring=true",
+        "factory atomicity: failed create leaves no ghost collision and does not advance the next id; failed restore keeps the previous nodes and emits restore_failed",
+        "device_instance hint routes crates to the storage panel and fences to move/dismantle, emitting their own stable ids"
+      ],
+      "review_note": "the mirror is a fixture, not the production query; real-scene consistency is asserted by check_b3_integration, which also now requires a non-empty rejection reason"
+    }
+  },
+  "suite_results": [
+    {"suite": "check_b3_integration", "checks": 76, "failures": 0, "note": "new formal session integration"},
+    {"suite": "check_skills", "checks": 385, "failures": 0},
+    {"suite": "check_crafting", "checks": 157, "failures": 0},
+    {"suite": "check_placement", "checks": 119, "failures": 0},
+    {"suite": "check_layer_boundaries", "checks": 34, "failures": 0},
+    {"suite": "check_quest_integration", "checks": 160, "failures": 0},
+    {"suite": "check_crops", "checks": 415, "failures": 0, "note": "fixture detaches the labor port so crop atomicity stays independent of skill levels"},
+    {"suite": "check_region_gameplay", "checks": 330, "failures": 0},
+    {"suite": "check_farm_activities", "checks": 122, "failures": 0},
+    {"suite": "check_basic_loop", "failures": 0},
+    {"suite": "smoke_check", "failures": 0}
+  ],
+  "full_regression": {
+    "suites": 48,
+    "failures": 0,
+    "packaged_export": "PASS",
+    "packaged_runtime_checks": 70,
+    "script_errors": 0,
+    "engine_errors": 0,
+    "known_expected_warning": "check_skills deliberately triggers a refused isolated save write; warning is part of that fault test"
+  },
+  "windowed": {
+    "suites": 4,
+    "failures": 0,
+    "renderer": "gl_compatibility actual window"
+  },
+  "fixes": [
+    "recipe_access port receives the recipe id, not the resource",
+    "toolbar.set_ui_visible returns before querying the modal group when the scene is leaving the tree",
+    "check_crops detaches the labor port so its stamina expectation does not drift with skill levels",
+    "check_b3_integration now asserts non-empty rejection reasons for water/road/tilled soil"
+  ],
+  "not_verified": [
+    "human keyboard/mouse playthrough of craft -> place -> store -> move -> dismantle",
+    "long-run stamina economy and skill pacing across days",
+    "B3-04 sprinklers and B3-05 multi-device processing remain unstarted"
+  ],
+  "logs": "build/tmp/PixelFarmChecks_d4c441b93bcc498fb6d6d45377bb4983 (full, after agent follow-ups), build/tmp/PixelFarmChecks_bbe96310172a4a7384dec88f8d3f1761 (windowed 4 suites), build/tmp/PixelFarmChecks_6ceb6171ba304a3a988b94027312f1ae (focused 5 suites), build/tmp/PixelFarmChecks_b4cc16a15cfd4fbe8809c30225ab994e (first full run that exposed the check_crops drift)"
+}

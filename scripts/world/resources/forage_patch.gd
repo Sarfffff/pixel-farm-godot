@@ -15,7 +15,7 @@ func player_in_range(player: Node2D) -> bool:
 
 
 func hint() -> String:
-	return "[F] 清理杂草 · 纤维 ×2 · 体力 2"
+	return "[F] 清理杂草 · 纤维 ×2 · 体力 %d" % _stamina_cost()
 
 
 func interact(_cell: Vector2i) -> void:
@@ -24,11 +24,24 @@ func interact(_cell: Vector2i) -> void:
 	if inventory == null or not inventory.has_space_for(&"fiber", 2):
 		_message("背包已满 · 腾出空间再清理")
 		return
-	if stamina != null and not stamina.spend(2):
+	if stamina != null and not stamina.spend(_stamina_cost()):
 		_message("体力不够 · 回屋睡一觉")
 		return
 	inventory.add_item(&"fiber", 2)
 	manager.remove_patch(patch_id)
+	var labor := _labor()
+	if labor != null:
+		labor.record(&"forage", "forage:home:patch:%d:%d" % [patch_id, int(labor.today())])
+
+
+## 技能端口由组合根挂到 labor 组的节点；未接入时保持原价。
+func _labor() -> Node:
+	return get_tree().get_first_node_in_group(&"labor")
+
+
+func _stamina_cost() -> int:
+	var labor := _labor()
+	return int(labor.stamina_cost(&"forage", 2)) if labor != null else 2
 
 
 func _message(text: String) -> void:

@@ -73,6 +73,13 @@ var _harvest_busy: bool = false
 var _harvest_cell: Vector2i
 ## action_completed 的兼容查询回执，不是作物状态，也不编码到快照。
 var _harvest_result: Dictionary = {}
+## 技能端口（可选）：只读能力查询与成功劳动凭据；未注入时保持原价、不记经验。
+var _labor: Node
+
+
+## 由组合根注入；本节点不查找技能系统，也不自行发放经验。
+func configure_labor(port: Node) -> void:
+	_labor = port
 
 
 func _ready() -> void:
@@ -456,8 +463,12 @@ func commit_tool_action(tool: StringName, cell: Vector2i) -> void:
 		&"axe":
 			# 树干和树桩都走同一个命中入口：树桩由 chop() 内部转成清桩逻辑。
 			if is_instance_valid(_locked_tree) and not _locked_tree.get_meta(&"cleared", false):
-				_locked_tree.chop(_player.facing_vector())
-				_spawn_effect(cell, tool)
+				var was_felled: bool = _locked_tree.is_felled
+				var hits_before: int = int(_locked_tree.hits_remaining)
+				var stump_before: int = int(_locked_tree.stump_hits_remaining)
+				if _locked_tree.chop(_player.facing_vector()):
+					_report_wood_labor(_locked_tree, was_felled, hits_before, stump_before)
+					_spawn_effect(cell, tool)
 		&"stone_pickaxe":
 			if is_instance_valid(_locked_tree) and _locked_tree.mine(_player.facing_vector()):
 				_spawn_effect(cell, tool)
@@ -546,6 +557,9 @@ func _commit_crop_interaction(cell: Vector2i) -> void:
 	_harvest_result = {&"id": String(item_id), &"count": amount}
 	inventory.end_update()
 	if stamina != null: stamina.end_update()
+	# 物品、体力与作物状态都已提交后才上报劳动；满包和枯株在上方已返回。
+	if is_instance_valid(_labor):
+		_labor.record(&"harvest", "harvest:%d:%d:%d" % [int(_labor.today()), cell.x, cell.y])
 	action_completed.emit(&"harvest", cell)
 
 
@@ -557,16 +571,21 @@ func begin_new_day() -> void:
 	begin_day(rainy)
 
 
-## 结算结束的那一天，只使用当天的雨水与劳动记录。
-func finish_day(rainy: bool) -> void:
+## 结算结束的那一天，只使用当天的雨水、洒水器覆盖与劳动记录。
+## sprinkled 是设备当夜实际覆盖的格子；与手浇/雨水一样只作用于未成熟作物。
+func finish_day(rainy: bool, sprinkled: Array[Vector2i] = []) -> void:
 	var grown: int = 0
+	var sprinkled_count: int = 0
 	for cell: Vector2i in _crops:
 		var crop: Crop = _crops[cell]
-		if rainy and not crop.is_mature():
-			crop.water()
+		if not crop.is_mature():
+			if rainy:
+				crop.water()
+			elif sprinkled.has(cell) and crop.water():
+				sprinkled_count += 1
 		if crop.grow_if_watered():
 			grown += 1
-	_show_toast(_day_summary_text(rainy, grown))
+	_show_toast(_day_summary_text(rainy, grown, sprinkled_count))
 
 
 ## 新日天气只影响新一天的浇水状态，不能补长前一晚的作物。
@@ -621,11 +640,13 @@ func tomorrow_harvest_count() -> int:
 	return ready
 
 
-func _day_summary_text(rainy: bool, grown: int) -> String:
+func _day_summary_text(rainy: bool, grown: int, sprinkled: int = 0) -> String:
 	if rainy and grown > 0:
 		return "下雨了 · %d 株作物喝饱水长大一阶" % grown
 	if rainy:
 		return "下雨了 · 今天不用浇水"
+	if grown > 0 and sprinkled > 0:
+		return "新的一天 · 洒水器浇了 %d 株，共 %d 株长大一阶" % [sprinkled, grown]
 	if grown > 0:
 		return "新的一天 · %d 株作物长大了一阶" % grown
 	return "新的一天 · 记得给作物浇水"
@@ -672,6 +693,17 @@ func _spend_stamina(tool: StringName) -> bool:
 		return true
 	_show_toast("体力不够了 · 回屋睡一觉")
 	return false
+
+
+## 倒树/清桩是完整劳动：只在目标状态已提交后上报，凭据按目标唯一状态生成。
+func _report_wood_labor(tree: Sprite2D, was_felled: bool, hits_before: int, stump_before: int) -> void:
+	if not is_instance_valid(_labor) or not is_instance_valid(tree):
+		return
+	var identity: String = String(tree.persistence_id())
+	if not was_felled and tree.is_felled:
+		_labor.record(&"chop_tree", "chop:%s:%d" % [identity, hits_before])
+	elif was_felled and stump_before > 0 and bool(tree.get_meta(&"cleared", false)):
+		_labor.record(&"clear_stump", "stump:%s" % identity)
 
 
 func _can_plant(cell: Vector2i) -> bool:
@@ -755,11 +787,15 @@ func watering_cells(cell: Vector2i) -> Array[Vector2i]:
 	return result
 
 
+## 预检、实扣与提示共用这一处价格：先取工具升级后的基准，再叠加技能减免。
 func tool_cost(tool: StringName) -> int:
+	var base: int = int(STAMINA_COST.get(tool, 0))
 	var upgrades := get_tree().get_first_node_in_group(&"upgrades")
 	if tool == &"watering_can" and upgrades != null and upgrades.watering_level > 0:
-		return int(upgrades.WATERING.stamina_cost)
-	return int(STAMINA_COST.get(tool, 0))
+		base = int(upgrades.WATERING.stamina_cost)
+	if is_instance_valid(_labor):
+		return int(_labor.stamina_cost(tool, base))
+	return base
 
 
 ## 种子袋槽位没有子选择，直接取背包里第一种种子（按格子顺序）。

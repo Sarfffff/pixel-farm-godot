@@ -48,6 +48,10 @@ var processing_ready_day: int:
 	get: return processing.ready_day
 	set(value): processing.ready_day = value
 var fishing := FishingSession.new()
+## 技能端口（可选）：体力价、钓鱼参数与成功鱼获凭据；组合根注入。
+var labor: Node
+## 本次投竿固定的咬钩窗口，避免中途改参数造成收取不一致。
+var _bite_window: float = 0.0
 ## 旧调用入口保留为适配属性；状态只有 FishingSession 一份。
 var casts_today: int:
 	get: return fishing.casts_today
@@ -75,6 +79,11 @@ func _ready() -> void:
 	add_to_group(&"farm_activities")
 	_rng.randomize()
 	storage = Store.new(settings.storage_capacity)
+
+
+## 技能只作为可选端口注入；未注入时钓鱼与采集沿用配置原价。
+func configure_labor(port: Node) -> void:
+	labor = port
 
 
 func configure(bag: Inventory, actor: CharacterBody2D, clock: Node, energy: Node, save: Callable, harvest_count: Callable, world: Node2D, community_visuals: CommunityVisuals) -> void:
@@ -251,12 +260,14 @@ func collect_forage(index: int) -> bool:
 	if not inventory.has_space_for(id, 1):
 		_notify("背包已满 · 采集物留在原地")
 		return false
-	if not _spend(1):
+	if not _spend(&"forage", 1):
 		return false
 	inventory.add_item(id, 1)
 	depleted.append(index)
 	_refresh_world()
 	_notify("采到%s" % inventory.definition(id).display_name)
+	if labor != null:
+		labor.record(&"forage", "forage:home:activity:%d:%d" % [index, today()])
 	_persist()
 	return true
 
@@ -307,9 +318,12 @@ func start_fishing() -> bool:
 	if not inventory.has_space_for(candidate, 1):
 		_notify("背包已满 · 先腾出一个鱼获位置")
 		return false
-	if not _spend(settings.fishing_cost):
+	if not _spend(&"fishing", settings.fishing_cost):
 		return false
-	fishing.start(candidate, _rng.randf_range(settings.fish_wait_min, settings.fish_wait_max))
+	# 每次投竿只取一次技能参数，浮漂等待与咬钩窗口在本次投竿内固定。
+	var params: Dictionary = _fishing_parameters()
+	_bite_window = float(params.bite_window)
+	fishing.start(candidate, _rng.randf_range(float(params.wait_min), float(params.wait_max)))
 	message = ""
 	player.set("_facing", &"down")
 	_set_fishing_visual(true)
@@ -326,7 +340,7 @@ func start_fishing() -> bool:
 
 func tick_fishing(delta: float) -> void:
 	var previous: StringName = fishing_state
-	if fishing.tick(delta, settings.fish_bite_window):
+	if fishing.tick(delta, _active_bite_window()):
 		cancel_fishing()
 		_notify("鱼溜走了 · 咬钩时按 F 或空格收杆")
 	elif fishing_state == &"bite":
@@ -345,12 +359,16 @@ func claim_fish() -> bool:
 	var id: StringName = fishing.claim()
 	inventory.add_item(id, 1)
 	_notify("钓到%s！可去商店出售" % inventory.definition(id).display_name)
+	# 鱼已入包、寄存已清空后才上报；同一天同一投竿序号只计一次。
+	if labor != null:
+		labor.record(&"catch_fish", "fish:%d:%d" % [today(), casts_today])
 	_persist()
 	return true
 
 
 func cancel_fishing() -> void:
 	if _cast_tween != null and _cast_tween.is_valid(): _cast_tween.kill()
+	_bite_window = 0.0
 	fishing.cancel()
 	_set_fishing_visual(false)
 	changed.emit()
@@ -364,7 +382,7 @@ func fishing_text() -> String:
 
 
 func fishing_progress() -> float:
-	return fishing.progress(settings.fish_bite_window)
+	return fishing.progress(_active_bite_window())
 
 
 func _set_fishing_visual(shown: bool) -> void:
@@ -419,11 +437,23 @@ func tomorrow_text() -> String:
 	return "明日：" + " · ".join(parts)
 
 
-func _spend(amount: int) -> bool:
-	if _energy != null and not _energy.spend(amount):
+## 技能减免后的实际价；未注入劳动端口时保持配置原价。
+func _spend(action: StringName, amount: int) -> bool:
+	var cost: int = int(labor.stamina_cost(action, amount)) if labor != null else amount
+	if _energy != null and not _energy.spend(cost):
 		_notify("体力不够 · 回屋睡一觉")
 		return false
 	return true
+
+
+func _fishing_parameters() -> Dictionary:
+	if labor != null:
+		return labor.fishing_parameters(settings.fish_wait_min, settings.fish_wait_max, settings.fish_bite_window)
+	return {"wait_min": settings.fish_wait_min, "wait_max": settings.fish_wait_max, "bite_window": settings.fish_bite_window}
+
+
+func _active_bite_window() -> float:
+	return _bite_window if _bite_window > 0.0 else settings.fish_bite_window
 
 
 func _notify(text: String) -> void:

@@ -39,7 +39,18 @@ save.snapshots.register_section(&"skills", skills.encode, skills.restore, TYPE_D
 - `fishing_parameters(wait_min: float, wait_max: float, bite_window: float) -> Dictionary`：返回同名三键；每次投竿开始时查询并固定本次参数，不能每帧重复相乘或改写共享配置 Resource。
 - `changed`、`level_advanced(skill: StringName, old_level: int, new_level: int)`：经验、凭据、全部跨级能力和通知记录提交后发出。通知期间拒绝重入授予、恢复、确认、重配及 release。
 
-每级实际收益：农业1收获2→1，2播种2→1，3锄地4→3，4普通壶2→1/铜壶3→2，5锄地3→2；采集每级斧头减1（农场8→7→6→5→4→3），2级另减徒手采集1；钓鱼1投竿4→3，2等待×0.8，3投竿3→2，4咬钩窗口+0.5秒，5投竿2→1。低基准动作受最低1限制，每个等级仍有至少一个当前可执行动作的明确收益。
+每级实际收益：农业1收获2→1，2播种2→1，3锄地4→3，4普通壶2→1/铜壶3→2，5锄地3→2；采集每级斧头减1（农场8→7→6→5→4→3），2级另减徒手采集1（杂草/纤维2→1，1体力目标保持1）；钓鱼1投竿4→3，2等待×0.8，3投竿3→2，4咬钩窗口+0.5秒，5投竿2→1。低基准动作受最低1限制，每个等级仍有至少一个当前可执行动作的明确收益。
+
+基准对齐（`check_skills` 直接读取，不写死第二套数值）：
+
+| 基准来源 | 值 | 对应收益 |
+| --- | --- | --- |
+| `FarmTiller.STAMINA_COST` | hoe4 / watering_can2 / seeds2 / axe8 / harvest2 / stone_pickaxe6 | 农业1–5、采集斧头五级 |
+| `data/upgrades/watering_can.tres` | stamina_cost 3 | 农业4铜壶3→2 |
+| `data/maps/resource_rules.tres` | 树8、杂草/蕨2、浆果1 | 采集斧头、徒手采集（1体力节点保持1） |
+| `scripts/data/farm_activities_data.gd` 默认值（`data/activities/farm_activities.tres` 只覆盖落点与物品） | fishing_cost4、等待1.5–3.0、咬钩2.0 | 钓鱼1/3/5投竿、2等待1.2–2.4、4窗口2.5 |
+
+改写这四份玩法配置时，`check_skills` 会失败并指出哪一级“只有描述、没有可执行变化”；改数值后必须同步本表与三份 `.tres` 描述。
 
 ## 夜间与保存
 
@@ -61,7 +72,9 @@ save.snapshots.register_section(&"skills", skills.encode, skills.restore, TYPE_D
 
 ## 专属检查
 
-`pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_skills -TimeoutSeconds 300`。支持 `-Windowed -Preview` 输出技能原生截图。仅独立测试目录写盘，使用 check_lifecycle 退出。最终结果见模块交付答复；全量与 PCK 由主线程执行。
+`pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_skills -TimeoutSeconds 300`（本机未装 pwsh 时用 `powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_checks.ps1 ...`）。支持 `-Windowed -Preview` 输出技能原生截图。仅独立测试目录写盘，使用 check_lifecycle 退出。最终结果见模块交付答复；全量与 PCK 由主线程执行。
+
+八个断言组：`catalog`（含基准对齐）、`receipts`、`matrix`（同ID换动作/换日/重放、满级、busy 重入、restore 后旧凭据）、`port`（LaborPort 契约与投竿参数只取样一次）、`atomic`、`summary`、`producer`、`mvp`。
 
 遵守新增的 AGENTS 临时目录规则：在本轮进程中先设置 `TEMP`/`TMP` 到 `build/skills-checks-temp/`，再调用上述统一入口。本轮专属检查还把进程内 `APPDATA` 设置到 `build/skills-checks-userdata/`，Godot 的导入缓存、隔离存档和截图均落在 E 盘；不修改全局环境。已结束副本的递归清理被工具安全策略拒绝时必须如实保留路径，不宣称已清理。
 
@@ -84,3 +97,15 @@ save.snapshots.register_section(&"skills", skills.encode, skills.restore, TYPE_D
 文件清单：`scripts/data/skill_definition.gd`、`scripts/data/skill_level_reward.gd`、三份 `data/skills/*.tres`、`scripts/progression/skill_state.gd`、`scripts/progression/skill_service.gd`、`scripts/ui/presenters/skill_presenter.gd`、`scripts/ui/panels/skill_panel.gd`、`scenes/ui/skill_panel.tscn`、`tools/check/check_skills.gd`、本说明及7份脚本UID。额外依用户新指令修改根 `AGENTS.md` 的临时目录和清理规则；未修改组合根、主场景、project.godot及其他共享业务文件，保留其他Agent并行修改。
 
 整合提醒：`record_labor` 返回false也可能只是满级/重复凭据，不能回滚已成功劳动；错误来源请查 `last_rejection`。能力查询应在本次操作预检时固定，升级对下一笔劳动生效；`skills.changed` 可由组合根刷新工具提示和制作资格View，但技能服务不持有制作服务。未来skills分区被拒绝时应由整合层阻止随后覆盖该档，并提示不兼容原因。
+
+### 2026-11-09 基准对齐与劳动端口/凭据矩阵
+
+| 项目 | 结果 |
+| --- | --- |
+| 命令 | `powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_checks.ps1 -Suites check_skills,check_layer_boundaries -TimeoutSeconds 300`（本机无 pwsh，脚本本身兼容 5.1） |
+| 结果 | check_skills 385项0失败、check_layer_boundaries 34项0失败；资源预导入 PASS，无 SCRIPT ERROR、引擎错误与退出资源泄漏 |
+| 日志 | `e:/my-ai-game/build/skills-checks-temp/PixelFarmChecks_6e74155f70484537999b1641487809a1/` |
+| 本轮改动 | `data/skills/foraging.tres` 2级描述补充“杂草/纤维2→1，1体力目标保持1”；`tools/check/check_skills.gd` 增加基准对齐、labor_port 契约与凭据矩阵断言（三个新组拆到 `tools/lib/skills_contracts.gd`，保持单文件<500行）；本说明 |
+| 未改动 | `game_session.gd`、`project.godot`、`farm_tiller.gd`、`farm_activities.gd`、`regions/*`、`labor_port.gd` |
+
+契约结论：`SkillService.stamina_cost` 对正基准等于 `max(1, base-累计减免)`，base≤0 返回0。`LaborPort` 对0返回0；负基准目前原样透传（正式玩法只传非负基准），若要端口也归零，需要主线程在 `labor_port.gd` 改一行，本轮未越界修改。

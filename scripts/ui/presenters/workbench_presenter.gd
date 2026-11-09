@@ -40,9 +40,14 @@ func refresh() -> void:
 	if _refreshing or not is_instance_valid(_view) or _service == null or _service.busy: return
 	_refreshing = true
 	var rows: Array[Dictionary] = _service.catalog()
-	if not rows.any(func(row: Dictionary) -> bool: return row.id == _selected):
-		_selected = rows[0].id if not rows.is_empty() else &""
 	var detail: Dictionary = _service.preview(_selected, _batches)
+	if not rows.any(func(row: Dictionary) -> bool: return row.id == _selected):
+		# 资格刷新只改 known/available，仍存在的配方继续保持选中，不重置批数与焦点。
+		if String(detail.title).is_empty():
+			_selected = rows[0].id if not rows.is_empty() else &""
+			detail = _service.preview(_selected, _batches)
+		else:
+			rows.append({"id": _selected, "title": detail.title, "purpose": detail.purpose, "unlock_source": detail.unlock_source, "known": detail.known, "available": detail.available, "reason": detail.reason})
 	var limits: Dictionary = _service.limits(_selected)
 	var materials: PackedStringArray = []
 	var products: PackedStringArray = []

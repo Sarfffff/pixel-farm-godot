@@ -46,3 +46,30 @@ service.configure(bag, definitions, {
 该成绩覆盖独立工厂、库存、仓储、模态及真实SaveSystem磁盘往返。正式主世界的地表/人物/门口/出口查询、输入与GameSession注册由整合线程接入后另行验收；未执行全量、原生窗口、PCK或人工试玩，不据此关闭B3整合门槛。
 
 临时完整副本的清理命令被自动审批以`blocked by policy`拒绝；未删除项目素材，测试副本尚保留，交由整合线程统一回收。
+
+## 2026-11-09 主农场端口契约补强
+
+主线程已在 `game_session.gd::_placement_query` 接入真实地表（Ground/Water/Bridges/Paths）、耕地、门口±1×±2、玩家格与层1物理静态碰撞（移动时忽略目标设备自身），并注册 `devices` 分区；正式接线由主线程 `check_b3_integration` 覆盖。本专项不加载主场景，改用与正式端口一一对应的契约镜像回归服务侧行为：
+
+- 水面/道路/耕地/门口/人物/静态物件（另含桥面、无地面）一律拒绝且 `reason` 非空；`restoring=true` 只忽略临时人物，地表、门口与静态物件仍拒绝。
+- 端口参数契约：`preview` 传完整占地且 `restoring=false`；`move` 传稳定 `ignore_id`；`restore` 传 `restoring=true`。契约镜像与正式实现的一致性由主线程 `check_b3_integration` 在真实场景兜底；按 `AGENTS.md` 第20条与 `docs/06` 第33/67条，不用源码文本、节点数量或类数量代替行为验证，本检查也不读取 `game_session.gd` 源码文本（避免导出包中无 `.gd` 原文时误报）。
+- 原子性复核：create 失败清理半成品、无幽灵碰撞、ID 不推进且原因可见；restore 失败保留旧节点、同一引用与内容并发 `restore_failed`；非空箱移动/拆除被拒且不影响另一箱；双箱存储与节点互不影响。
+- `device_instance.hint()` 与正式 `[F]` 分派一致：箱子→储物箱面板，围栏→移动/拆除面板；已固化为断言。
+
+玩家行为变化：无（仅新增自动回归断言）。存档影响：无（检查只写隔离 `user://`，不触碰真实玩家槽位，`devices` 分区字段未变）。
+
+运行（本机无 `pwsh`，使用兼容的 Windows PowerShell 5.1）：`powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_checks.ps1 -Suites check_placement,check_inventory_exchange -TimeoutSeconds 300`。首次快照因并行工作区改动被入口以 `Files were removed during snapshot creation` 拒绝，按 `docs/06` 第156条保留失败记录后重新生成固定快照，未以忽略指纹方式运行混合版本。复测结果：`check_placement` 119 项（较 72 项基线新增 47 项）、`check_inventory_exchange` 63 项，均 0 failures、`[checks] lifecycle complete; exit=0`、`ExitResourceWarning=false`，日志无 `SCRIPT ERROR`/`ERROR`/`FAIL`。仅本次进程设置 TEMP/TMP 到 E 盘，未改全局环境变量或真实玩家槽位。
+
+证据保留在 `build/placement-contract-checks/2026-11-09/`（两份原始日志、`results.json`、`import.log`、`source_manifest.txt` 指纹、本轮 `check_placement.gd` 及快照失败记录 `snapshot-failure-1.txt`）；本轮两份完整副本（`PixelFarmChecks_af2ea6e646394abf9a6a317868b87578` 失败副本、`PixelFarmChecks_91f56d61ea064fa49af08d41ecfb5a10` 成功副本）均已回收。按 `AGENTS.md` 第13条，详细交付记录与验证索引应由主线程汇总到 `docs/history/开发记录.md`、`docs/validation/`，总纲任务状态亦由主线程维护；本轮因用户限定的维护范围只落在模块 README 与 `build/` 证据目录。全量、原生窗口、PCK 与真人键鼠流程仍由主线程验收，本轮不据此关闭 B3-03 人工门槛。
+
+## 外部状态锁与三态表现端口（2026-11-09）
+
+`placement_service.set_lock_provider(provider: Callable)` 由主线程接线，签名为 `provider(device_id: String) -> String`。服务在既有内锁 `_locked_reason`（operation/slots）**之后**追加一次调用：返回非空 String 即拒绝 `move`/`dismantle`，并以该原因写入 `last_rejection`；未注入或 `Callable.is_valid() == false` 时保持现行为。调用被隔离在 `_external_lock_reason()`：任何非 String 结果（含运行时错误导致的空返回）统一收敛为 `设备状态不可用`，校验阶段始终正常返回，不半途退出事务、不泄漏 `busy`。GDScript 无 try/catch，专项用返回 `null`/非 String 的替身覆盖该路径，避免制造引擎 `SCRIPT ERROR`。provider 不进入 `encode()` 快照，不影响拆回物品、存档与 `restore()`；`release()` 清空该 Callable。加工状态的事实来自 AgentB 的加工服务，本模块只提供锁端口，不判断能否领取、不推进任务/事件进程。
+
+`device_instance.set_state(state: Dictionary)` 接受 `{phase: StringName("idle|working|ready"), label: String}`，可选 `texture: Texture2D`（亦兼容未来定义上的 `<phase>_texture` 属性）。只改 Sprite2D 贴图、`hint()` 与可选 `StateLabel` 小标签，不读写库存、存档或 operation；缺贴图或非法 phase 一律回退 idle 原图与现有文案。`configure()` 重建与 `_exit_tree()` 释放时由 `clear_state()` 清空表现状态。hint：idle 为现有 `[F]` 文案，working 追加 `· 加工中`，ready 追加 `· 可领取`；箱子始终保留 `[F] 打开储物箱` 入口，`interacted(id)` 与按 `storage_capacity` 的分派不变。
+
+专项新增 16 项断言：锁提供者拒绝移动/拆除与放行、provider 不进存档、异常（非 String/null）收敛且不泄漏 busy、放行后拆回物品与快照往返、带 provider 时任务/事件 operation 事实完整恢复、三态贴图/hint/小标签、缺图回退、非法 phase 回退、箱子入口不变、重建清空。既有 119 项断言全部保留。
+
+验证命令：`powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_checks.ps1 -Suites check_placement,check_inventory_exchange -TimeoutSeconds 300`（本机无 `pwsh`，用兼容的 Windows PowerShell 5.1）。首次运行因一条新增断言误把移动后快照与移动前比较而 FAIL，已修正断言并保留失败证据后复测通过：`check_placement` 135 项、`check_inventory_exchange` 63 项，均 0 failures、`[checks] lifecycle complete; exit=0`、`ExitResourceWarning=false`，日志无 `SCRIPT ERROR`/`ERROR`/`FAIL`。玩家行为变化：无（默认未注入 provider 时行为完全一致）；存档影响：无（`devices` 分区字段未变）。仅本次进程设置 TEMP/TMP 到 E 盘，未改全局环境变量或真实玩家槽位。
+
+本轮证据：`build/placement-contract-checks/2026-11-09-lock-state/`（成功运行日志、`results.json`、`import.log`、`source_manifest.txt` 指纹、四个改动源码副本与 `failed-run-1-*` 首次失败证据）；两份完整副本（`PixelFarmChecks_b6420e5856494affab76646072c56154` 失败、`PixelFarmChecks_9646be87bf7441fe8a5cb1139ccaec55` 成功）均已回收。按 `AGENTS.md` 第13条，详细交付记录与验证索引仍由主线程汇总到 `docs/history/开发记录.md`、`docs/validation/`，总纲任务状态由主线程维护。真实接线、全量、原生窗口、PCK 与真人键鼠仍待主线程验收，本轮不据此关闭 B3-03 门槛。

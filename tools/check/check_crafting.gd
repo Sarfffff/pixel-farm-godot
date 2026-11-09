@@ -2,9 +2,14 @@ extends SceneTree
 ## B3-02：真实库存净容量/非单调批数、冻结Resource、资格、原子通知和MVP解绑。
 
 const Service := preload("res://scripts/progression/crafting_service.gd")
+const SkillService := preload("res://scripts/progression/skill_service.gd")
 const Presenter := preload("res://scripts/ui/presenters/workbench_presenter.gd")
 const WorkbenchView := preload("res://scripts/ui/panels/workbench_panel.gd")
 const SEEDS: StringName = &"carrot_seed_pack"
+## 与组合根 RECIPE_SKILL_GATE 相同的正式门槛；技能状态仍只由 SkillService 持有。
+const SKILL_GATE := {&"wood_fence": [&"foraging", 1], &"storage_crate": [&"foraging", 2]}
+const FENCE: StringName = &"wood_fence"
+const CRATE: StringName = &"storage_crate"
 
 class ExchangeFailure extends Inventory:
 	func exchange_batch(_consumed: Dictionary, _produced: Dictionary, _source: StringName = &"crafting") -> bool:
@@ -35,6 +40,7 @@ var _usable: bool = false
 var _save_ok: bool = true
 var _writes: int = 0
 var _access: Dictionary = {}
+var _skills: RefCounted
 var _probe_busy: bool = false
 var _end: bool = false
 
@@ -66,7 +72,9 @@ func _run() -> void:
 	_service = Service.new()
 	_configure()
 	_check_definitions_and_access()
+	_check_skill_qualification()
 	_check_quantities_and_capacity()
+	_check_limits_match_actual_craft()
 	_check_atomic_observers()
 	_check_save_failures()
 	_check_exchange_failure()
@@ -154,6 +162,56 @@ func _check_definitions_and_access() -> void:
 	_configure()
 
 
+func _skill_access(id: StringName) -> Dictionary:
+	var gate: Array = SKILL_GATE.get(id, [])
+	if gate.is_empty(): return _recipe_access(id)
+	var required: int = int(gate[1])
+	var level: int = _skills.level_of(gate[0]) if _skills != null else 0
+	if level >= required: return {"known": true, "available": true, "reason": ""}
+	return {"known": true, "available": false, "reason": "采集达到%d级后可制作" % required}
+
+
+## 章节已解锁、技能不足：同一服务实例在技能信号到达后立即可制作。
+func _check_skill_qualification() -> void:
+	_chapter = true
+	_usable = true
+	_set_items({&"wood": 40, &"carrot": 1, &"fiber": 2})
+	_skills = SkillService.new()
+	_check(_skills.configure(func() -> int: return 1), "real skill catalog configures the qualification probe")
+	_skills.changed.connect(_service.refresh_access)
+	_service.configure(_bag, func() -> bool: return _chapter, _persist, _skill_access, func(_item: StringName) -> bool: return _usable)
+	_check(_service.preview(SEEDS).available, "chapter-unlocked seed workbench stays open while device tiers are skill-gated")
+	var locked: Dictionary = _service.preview(FENCE)
+	_check(locked.known and not locked.available and locked.reason == "采集达到1级后可制作", "chapter-unlocked fence is known but skill-gated with a visible reason")
+	_check(_service.hint(FENCE) == locked.reason, "hint reuses the same qualification reason")
+	var rows: Array[Dictionary] = _service.catalog().filter(func(row: Dictionary) -> bool: return row.id == FENCE)
+	_check(rows.size() == 1 and rows[0].known and not rows[0].available and rows[0].reason == locked.reason, "known but unavailable recipe remains in the player catalog with its reason")
+	_check(_service.limits(FENCE).max_material == 10 and _service.limits(FENCE).max_craftable == 0, "material bound stays visible while the qualification limit is zero")
+	var baseline: Dictionary = _bag.to_dict()
+	_check(not _service.preview(FENCE).ok and not _service.craft(FENCE) and _bag.to_dict() == baseline, "unqualified craft consumes nothing and writes nothing")
+	var guard: int = 0
+	while _skills.level_of(&"foraging") < 1 and guard < 64:
+		_check(_skills.record_labor(&"chop_tree", {"id": "gate/fence/%d" % guard, "day": 1}), "recorded labor changes the single skill state")
+		guard += 1
+	_check(_skills.level_of(&"foraging") == 1, "foraging reaches level one through the real service")
+	_check(_service.preview(FENCE).ok and _service.limits(FENCE).max_craftable == 10, "the same service instance becomes craftable on the skill signal")
+	var crate: Dictionary = _service.preview(CRATE)
+	_check(crate.known and not crate.available and crate.reason == "采集达到2级后可制作", "the second device tier still requires level two")
+	_check(_service.craft(FENCE) and _bag.count_of(FENCE) == 1 and _bag.count_of(&"wood") == 36, "qualified craft delivers exactly one inventory item")
+	_check(_bag.definition(FENCE) != null, "the product is a real definition in the only inventory")
+	guard = 0
+	while _skills.level_of(&"foraging") < 2 and guard < 64:
+		_check(_skills.record_labor(&"chop_tree", {"id": "gate/crate/%d" % guard, "day": 1}), "continued labor advances the same skill")
+		guard += 1
+	_check(_skills.level_of(&"foraging") == 2 and _service.preview(CRATE).ok, "level two qualifies the storage crate immediately")
+	_check(_service.craft(CRATE) and _bag.count_of(CRATE) == 1 and _bag.count_of(&"wood") == 16, "storage crate settles exactly once")
+	_skills.changed.disconnect(_service.refresh_access)
+	_skills.release()
+	_skills = null
+	_usable = false
+	_configure()
+
+
 func _check_quantities_and_capacity() -> void:
 	_set_items({&"carrot": 3, &"fiber": 6})
 	var baseline: Dictionary = _bag.to_dict()
@@ -201,6 +259,43 @@ func _check_quantities_and_capacity() -> void:
 	_service.preview(SEEDS)
 	_check(not access_reentry.is_empty() and not access_reentry.has(true), "read-only qualification query also blocks synchronous mutation reentry")
 	_configure()
+
+
+func _counts(ids: Array) -> Dictionary:
+	var result: Dictionary = {}
+	for id: StringName in ids: result[id] = _bag.count_of(id)
+	return result
+
+
+func _selected_row_text(list: ItemList) -> String:
+	var selected: PackedInt32Array = list.get_selected_items()
+	return "" if selected.is_empty() else list.get_item_text(selected[0])
+
+
+## limits/preview 与真实提交必须给出同一份净结果，连续提交每次只结算一次。
+func _check_limits_match_actual_craft() -> void:
+	var probe := _recipe(&"limits_probe", {&"wood": 1}, {&"fiber": 1})
+	_service.register_recipe(probe)
+	_set_items({&"wood": 7})
+	var ids: Array = [&"wood", &"fiber"]
+	_check(_service.limits(probe.id).max_craftable == 7 and _service.preview(probe.id, 7).ok and not _service.preview(probe.id, 8).ok, "reported limit is exactly the largest accepted batch")
+	var plan: Dictionary = _service.preview(probe.id, 7)
+	var before: Dictionary = _counts(ids)
+	_check(_service.craft(probe.id, 7), "the reported limit is directly craftable")
+	var after: Dictionary = _counts(ids)
+	_check(int(after[&"wood"]) == int(before[&"wood"]) - int(plan.consumed[&"wood"]) and int(after[&"fiber"]) == int(before[&"fiber"]) + int(plan.produced[&"fiber"]), "settled inventory delta equals the previewed plan")
+	_set_items({&"wood": 3})
+	var writes_before: int = _writes
+	for index: int in 3:
+		_check(_service.craft(probe.id) and _bag.count_of(&"fiber") == index + 1 and _bag.count_of(&"wood") == 2 - index and not _service.busy, "consecutive submission %d settles exactly once" % (index + 1))
+	_check(_writes == writes_before + 3 and _service.last_rejection.is_empty(), "every consecutive submission writes once and clears the rejection text")
+	_check(not _service.craft(probe.id) and _bag.count_of(&"fiber") == 3, "an exhausted repeat adds no extra product")
+	var full := _recipe(&"limits_full", {&"wood": 1}, {&"fiber": 1})
+	_service.register_recipe(full)
+	_set_items({&"wood": 2}, true)
+	var maximum: int = int(_service.limits(full.id).max_craftable)
+	_check(maximum == 2 and _service.preview(full.id, maximum).ok, "full bag limit matches the batch that frees its material slot")
+	_check(_service.craft(full.id, maximum) and _bag.count_of(&"wood") == 0 and _bag.count_of(&"fiber") == 2, "full-bag limit settles the same net result as the preview")
 
 
 func _observe(source: String, context: Dictionary) -> void:
@@ -264,6 +359,13 @@ func _check_save_failures() -> void:
 	var before: int = _writes
 	_check(_service.retry_save() and _writes == before and failures[0] == 2, "duplicate successful retry performs no extra write or settlement")
 	_service.save_failed.disconnect(failed)
+	# 待保存期间继续提交另一批：每批只结算一次，重试只写盘不回放产物。
+	_set_items({&"carrot": 4, &"fiber": 8})
+	_save_ok = false
+	_check(_service.craft(SEEDS) and _service.craft(SEEDS) and _bag.count_of(&"carrot_seeds") == 8 and _service.save_pending, "a pending save does not block the next distinct batch")
+	var pending: Dictionary = _bag.to_dict()
+	_save_ok = true
+	_check(_service.retry_save() and not _service.save_pending and _bag.to_dict() == pending, "retry after consecutive failed saves persists existing products only once")
 
 
 func _check_exchange_failure() -> void:
@@ -350,6 +452,45 @@ func _check_presenter_and_view() -> void:
 	button.pressed.emit()
 	_check(_bag.count_of(&"carrot_seeds") == 8 and _bag.count_of(&"carrot") == 3, "native craft button emits exactly one batch request")
 	_check(button.has_focus() and not button.disabled and spin.value == 2, "completed crafting keeps keyboard focus and selected batches when another batch fits")
+	# 资格刷新只改可用性：选中配方、批数与焦点保持原样。
+	_usable = true
+	_access[FENCE] = {"known": true, "available": true, "reason": ""}
+	_service.configure(_bag, func() -> bool: return true, _persist, _recipe_access, func(_item: StringName) -> bool: return _usable)
+	_set_items({&"wood": 40, &"carrot": 5, &"fiber": 10})
+	_service.refresh_access()
+	var list: ItemList = native.find_child("Recipes", true, false)
+	var fence_index: int = native._ids.find(FENCE)
+	_check(fence_index >= 0 and list.item_count == native._ids.size(), "the placement-qualified device recipe is listed once")
+	if fence_index >= 0:
+		list.select(fence_index)
+		list.item_selected.emit(fence_index)
+	spin.value = 3
+	var spin_edit: Control = spin.get_line_edit()
+	spin_edit.grab_focus()
+	var focus_owner: Control = root.gui_get_focus_owner()
+	_check(native._selected == FENCE and presenter._batches == 3 and focus_owner == spin_edit, "selection, batch count and focus are established before refresh")
+	_access[FENCE] = {"known": true, "available": false, "reason": "采集达到1级后可制作"}
+	_service.refresh_access()
+	_check(native._selected == FENCE and presenter._batches == 3 and spin.value == 3, "skill refresh keeps the selected recipe and batch count")
+	_check(_selected_row_text(list).contains("木围栏") and _selected_row_text(list).contains("未满足"), "skill refresh keeps the same row selected and marks it unavailable")
+	_check(root.gui_get_focus_owner() == spin_edit and button.disabled and button.tooltip_text == "采集达到1级后可制作", "skill refresh keeps focus while the gate reason stays visible")
+	_access[FENCE] = {"known": false, "available": false, "reason": "资格已退回"}
+	_service.refresh_access()
+	_check(native._selected == FENCE and presenter._batches == 3 and _selected_row_text(list).contains("木围栏"), "a revoked recipe stays selected instead of jumping to another row")
+	_access[FENCE] = {"known": true, "available": true, "reason": ""}
+	_service.refresh_access()
+	_check(not button.disabled and spin.value == 3 and root.gui_get_focus_owner() == spin_edit, "requalification restores crafting without resetting the open view")
+	# 资格刷新同时覆盖“聚焦控件被禁用”：焦点仍留在原控件，不跳回面板根部。
+	button.grab_focus()
+	_access[FENCE] = {"known": true, "available": false, "reason": "技能暂未达到"}
+	_service.refresh_access()
+	_check(button.has_focus() and button.disabled and button.tooltip_text == "技能暂未达到", "gated refresh disables the focused craft button without moving focus")
+	_access[FENCE] = {"known": true, "available": true, "reason": ""}
+	_service.refresh_access()
+	_check(button.has_focus() and not button.disabled, "requalification re-enables the same focused button")
+	_access.clear()
+	_usable = false
+	_service.refresh_access()
 	native.queue_free()
 	await process_frame
 	_check(not _service.changed.is_connected(presenter.refresh), "destroying the replacement native View unbinds its Presenter")

@@ -6,6 +6,8 @@ const Presenter := preload("res://scripts/ui/presenters/skill_presenter.gd")
 const SkillScene := preload("res://scenes/ui/skill_panel.tscn")
 const FishingSession := preload("res://scripts/activities/fishing_session.gd")
 const Modals := preload("res://scripts/ui/common/modal_coordinator.gd")
+## 基准对齐、凭据矩阵与劳动端口契约在独立工具类中；这里只注入断言与夹具。
+const Contracts := preload("res://tools/lib/skills_contracts.gd")
 
 class Clock extends Node:
 	var day: int = 5
@@ -34,6 +36,7 @@ var _bag: Inventory
 var _energy: Node
 var _save: SaveSystem
 var _service: RefCounted
+var _contracts: RefCounted
 var _producer_busy: bool = false
 var _harvested: Dictionary = {}
 var _completed_groups: Array[StringName] = []
@@ -72,6 +75,8 @@ func _run() -> void:
 	_save.autoload_enabled = false
 	for node: Node in [_clock, _bag, _energy, _save]: _stage.add_child(node)
 	_service = _new_service()
+	_contracts = Contracts.new()
+	_contracts.configure(func(condition: bool, message: String) -> void: _check(condition, message), _clock, _stage, _new_service)
 	_save.snapshots.register_section(&"time", _clock.to_dict, _clock.from_dict)
 	_save.snapshots.register_section(&"inventory", _bag.to_dict, _bag.from_dict)
 	_save.snapshots.register_section(&"stamina", _energy.to_dict, _energy.from_dict)
@@ -79,11 +84,15 @@ func _run() -> void:
 	await _settle()
 	_check_catalog_and_every_level()
 	_check_receipts_and_configuration()
+	_contracts.run_receipt_matrix()
+	_completed_groups.append(&"matrix")
+	_contracts.run_labor_port()
+	_completed_groups.append(&"port")
 	_check_atomic_notifications()
 	_check_summary_and_restore()
 	await _check_producer_boundary_and_disk()
 	await _check_mvp()
-	_check(_completed_groups == [&"catalog", &"receipts", &"atomic", &"summary", &"producer", &"mvp"], "all six scenario groups reached their final assertions")
+	_check(_completed_groups == [&"catalog", &"receipts", &"matrix", &"port", &"atomic", &"summary", &"producer", &"mvp"], "all eight scenario groups reached their final assertions")
 	_save.snapshots.clear()
 	_service.release()
 	_service = null
@@ -99,6 +108,7 @@ func _check_catalog_and_every_level() -> void:
 	var definitions: Array[SkillDefinition] = service.definitions()
 	_check(definitions.size() == 3, "three configured skills ship")
 	_check(definitions[0].id == &"agriculture" and definitions[1].id == &"foraging" and definitions[2].id == &"fishing", "catalog order and stable IDs are deterministic")
+	_contracts.run_alignment(definitions)
 	var actions: Dictionary = {&"agriculture": &"harvest", &"foraging": &"chop_tree", &"fishing": &"catch_fish"}
 	var sequence: int = 0
 	for definition: SkillDefinition in definitions:
@@ -133,11 +143,12 @@ func _check_catalog_and_every_level() -> void:
 
 
 func _actual_capabilities(service: RefCounted) -> Dictionary:
+	var bases: Dictionary = Contracts.baseline_costs()
 	var result: Dictionary = {}
-	for action: StringName in [&"hoe", &"watering_can", &"seeds", &"axe", &"harvest", &"forage", &"fishing"]:
-		var costs: Dictionary = {&"hoe": 4, &"watering_can": 2, &"seeds": 2, &"axe": 8, &"harvest": 2, &"forage": 2, &"fishing": 4}
-		result[action] = service.stamina_cost(action, costs[action])
-	result["timing"] = service.fishing_parameters(1.5, 3.0, 2.0)
+	for key: StringName in bases:
+		result[key] = service.stamina_cost(Contracts.action_of(key), int(bases[key]))
+	var timing: Dictionary = Contracts.fishing_bases()
+	result["timing"] = service.fishing_parameters(float(timing.wait_min), float(timing.wait_max), float(timing.bite_window))
 	return result
 
 

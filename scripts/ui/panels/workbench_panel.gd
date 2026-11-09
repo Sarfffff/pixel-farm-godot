@@ -116,13 +116,23 @@ func render(data: Dictionary) -> void:
 	if _list == null: return
 	_rendering = true
 	_selected = StringName(data.get("selected", ""))
-	_ids.clear()
-	_list.clear()
-	for row: Dictionary in data.get("recipes", []):
-		_ids.append(StringName(row.id))
-		_list.add_item(String(row.title) + ("" if row.available else " · 未满足"))
-		_list.set_item_tooltip(_ids.size() - 1, String(row.reason))
-		if row.id == _selected: _list.select(_ids.size() - 1)
+	var rows: Array[Dictionary] = []
+	for row: Dictionary in data.get("recipes", []): rows.append(row)
+	var ids: Array[StringName] = []
+	for row: Dictionary in rows: ids.append(StringName(row.id))
+	# 配方集合不变时原地刷新文字，避免资格刷新清空列表而丢失选中项、滚动与焦点。
+	if ids == _ids:
+		for index: int in ids.size():
+			_list.set_item_text(index, _item_text(rows[index]))
+			_list.set_item_tooltip(index, String(rows[index].reason))
+	else:
+		_ids = ids
+		_list.clear()
+		for row: Dictionary in rows:
+			_list.add_item(_item_text(row))
+			_list.set_item_tooltip(_list.item_count - 1, String(row.reason))
+	var index: int = _ids.find(_selected)
+	if index >= 0: _list.select(index)
 	var detail: Dictionary = data.get("detail", {})
 	_status.text = String(data.get("message", ""))
 	_title.text = String(detail.get("title", "暂无已知配方"))
@@ -140,6 +150,10 @@ func render(data: Dictionary) -> void:
 	_craft_button.tooltip_text = String(detail.get("reason", ""))
 	_retry.visible = bool(data.get("save_pending", false))
 	_rendering = false
+
+
+func _item_text(row: Dictionary) -> String:
+	return String(row.title) + ("" if row.available else " · 未满足")
 
 
 func _select(index: int) -> void:

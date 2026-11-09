@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-09",
+  "scope": "B3-04 sprinkler daily plan and B3-05 multi-device processing modules delivered by the three agents; not yet wired into the formal session",
+  "players_visible": [
+    "none yet; no device type, item, recipe, panel or daily-settlement hook is registered in the formal game",
+    "FarmTiller.finish_day(rainy, sprinkled) already accepts a cell list but the composition root passes nothing"
+  ],
+  "modules": {
+    "AgentA": {
+      "task": "B3-04 sprinkler coverage plan",
+      "files": [
+        "scripts/progression/sprinkler_service.gd",
+        "scripts/data/sprinkler_rule.gd",
+        "data/sprinklers/basic_sprinkler.tres",
+        "tools/check/check_sprinklers.gd"
+      ],
+      "checks": 78,
+      "failures": 0,
+      "covers": [
+        "configure rejects empty/duplicate/oversized rules and keeps the previous rules on failure",
+        "plan rotates offsets by facing, swaps footprint for odd facings and never emits the device's own cells",
+        "two overlapping sprinklers emit each cell once; unknown types and foreign spaces are skipped and counted",
+        "malformed cells, bool/string coordinates, oversized anchors and non-home spaces are refused without side effects",
+        "no scene, inventory, save or signal dependencies; repeated plans are identical"
+      ]
+    },
+    "AgentB": {
+      "task": "B3-05 per-instance processing",
+      "files": [
+        "scripts/activities/device_processing_service.gd",
+        "scripts/data/processing_definition.gd",
+        "data/processing/pickle_tomato.tres",
+        "data/processing/make_mayonnaise.tres",
+        "tools/check/check_device_processing.gd"
+      ],
+      "checks": 99,
+      "failures": 0,
+      "covers": [
+        "multi-ingredient batch preview then exchange; failure keeps materials and leaves no record",
+        "recipe restricted by bound device type; unbound or unknown instances refused",
+        "collect before ready_day fails and keeps outputs; full bag keeps outputs; repeat collect adds nothing",
+        "two devices are independent; encode/restore is per instance id and three restores add no products",
+        "future schema, unknown recipe, mismatched device type or overlong id reject the whole section and keep live state",
+        "lock_reason reports working/ready so placement can block move and dismantle"
+      ]
+    },
+    "AgentC": {
+      "task": "B3-04/05 placement lock port and three-state visuals",
+      "files": [
+        "scripts/placement/placement_service.gd",
+        "scripts/world/interactions/device_instance.gd",
+        "scripts/placement/README.md",
+        "tools/check/check_placement.gd"
+      ],
+      "checks": 135,
+      "failures": 0,
+      "covers": [
+        "set_lock_provider appends after the built-in locks; empty reason keeps the current behaviour and release clears it",
+        "non-string provider results and errors become a fixed rejection instead of escaping the transaction",
+        "set_state switches idle/working/ready textures with fallback to the authored texture and clears on configure/exit",
+        "hint reflects the visual phase while crates keep routing to the storage panel"
+      ]
+    }
+  },
+  "commands": {
+    "focused": "tools/run_checks.ps1 -Suites check_sprinklers,check_device_processing,check_placement,check_crafting,check_skills,check_b3_integration",
+    "windowed": "tools/run_checks.ps1 -Suites check_sprinklers,check_device_processing,check_placement -Windowed",
+    "full": "tools/run_checks.ps1 -TimeoutSeconds 1800"
+  },
+  "full_regression": {
+    "suites": 50,
+    "failures": 0,
+    "compiled_scripts": 420,
+    "packaged_export": "PASS",
+    "packaged_runtime_checks": 70,
+    "script_errors": 0,
+    "engine_errors": 0
+  },
+  "windowed": {
+    "suites": 3,
+    "failures": 0,
+    "renderer": "gl_compatibility actual window"
+  },
+  "not_wired": [
+    "no basic_sprinkler / preserves_jar / mayonnaise_machine device, item or crafting recipe exists in data/",
+    "no mayonnaise item, so make_mayonnaise is inert",
+    "processing section, daily settlement order, lock provider, panels and [F] dispatch are not registered in GameSession",
+    "human craft -> place -> overnight -> collect flow is not verified"
+  ],
+  "logs": "build/tmp/PixelFarmChecks_b8fdfddce56646a083a3f16279f8fa97 (full), build/tmp/PixelFarmChecks_0de8d3ed28ea40e798f087fe6b6cd8f4 (windowed), build/tmp/PixelFarmChecks_0af5d060e16c43b5ab882248318f82e6 (focused)"
+}
