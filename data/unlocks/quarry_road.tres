@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="RegionUnlockData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/region_unlock_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"quarry_road"
+stages = Array[Dictionary]([{
+"cost": {
+&"stone": 8,
+&"wood": 20
+},
+"label": "未修",
+"unlock_region": &""
+}, {
+"cost": {
+&"stone": 12,
+&"wood": 16
+},
+"label": "材料已交",
+"unlock_region": &""
+}, {
+"cost": {},
+"label": "通路",
+"unlock_region": &"quarry"
+}])

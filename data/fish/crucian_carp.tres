@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FishSpeciesData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/fish_species_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"crucian_carp"
+display_name = "鲫鱼"
+regions = Array[StringName]([&"home", &"wetland"])
+seasons = Array[StringName]([&"spring", &"summer", &"autumn"])
+weathers = Array[StringName]([&"sunny", &"cloudy", &"rainy"])
+min_rod_level = 1
+weight = 3.0
+min_minute = 360
+max_minute = 1080

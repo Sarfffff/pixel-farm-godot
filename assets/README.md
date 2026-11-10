@@ -9,7 +9,7 @@
 | `ui/` | 当前共享主题 `farm_hud.tres`、控件纹理与滑块图标 |
 | `tilesets/` | Godot TileSet 资源；引用 textures/packs 中的图片 |
 | `shaders/` | 地表与植被的季节材质 |
-| `audio/bgm/`、`audio/sfx/` | 音乐和操作音效 |
+| `audio/bgm/`、`audio/sfx/`、`audio/ambient/` | 循环音乐、操作音效与区域环境音（环境音尚未接入游戏） |
 
 ## 找图入口
 

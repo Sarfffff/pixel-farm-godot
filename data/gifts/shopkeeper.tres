@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GiftPreference" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/gift_preference.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+npc_id = &"shopkeeper"
+liked = Array[StringName]([&"egg", &"wheat", &"tomato"])
+neutral = Array[StringName]([&"wood", &"stone"])
+disliked = Array[StringName]([&"coal", &"wild_mushroom"])
+weekly_limit = 2

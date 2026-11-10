@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GiftPreference" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/gift_preference.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+npc_id = &"gardener"
+liked = Array[StringName]([&"carrot", &"turnip", &"wild_flower", &"wild_raspberry"])
+neutral = Array[StringName]([&"potato", &"tomato"])
+disliked = Array[StringName]([&"wild_root"])
+weekly_limit = 2

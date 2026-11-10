@@ -1,0 +1,14 @@
+﻿[
+    {
+        "Suite":  "check_audio",
+        "Passed":  true,
+        "ExitCode":  0,
+        "ExitResourceWarning":  false
+    },
+    {
+        "Suite":  "check_compilation",
+        "Passed":  true,
+        "ExitCode":  0,
+        "ExitResourceWarning":  false
+    }
+]

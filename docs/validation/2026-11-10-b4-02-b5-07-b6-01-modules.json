@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-10",
+  "scope": "B4-02 road repair, B5-07 fishing rules and B6-01 gifts/conditions delivered as standalone modules; none is wired into the formal session",
+  "players_visible": [
+    "none yet: quarry is still open without the road chain, the pond still ignores region/season/weather/rod, and NPC gifting still uses the old unlimited Friendship.gift path"
+  ],
+  "modules": {
+    "AgentA": {
+      "task": "B4-02 road repair and quarry unlock",
+      "files": [
+        "scripts/progression/road_repair_service.gd",
+        "scripts/data/region_unlock_data.gd",
+        "data/unlocks/quarry_road.tres",
+        "tools/check/check_road_repair.gd"
+      ],
+      "checks": 99,
+      "failures": 0,
+      "covers": [
+        "configure validates and normalizes stages, keeps previous state on failure",
+        "requirement/requirements_met only compare counts, final stage has no requirement",
+        "advance moves one stage, is idempotent at the last stage and cannot skip",
+        "unlocked_regions deduplicates in stage order and excludes the current stage's empty unlock",
+        "encode/restore schema 1, empty section resets to stage 0, bad/future data keeps live state"
+      ]
+    },
+    "AgentB": {
+      "task": "B5-07 fish conditions and gear growth",
+      "files": [
+        "scripts/activities/fishing_rule_service.gd",
+        "scripts/data/fish_species_data.gd",
+        "scripts/data/fishing_gear_data.gd",
+        "data/fish/crucian_carp.tres",
+        "data/fish/common_carp.tres",
+        "data/gear/bamboo_rod.tres",
+        "tools/check/check_fishing_rules.gd"
+      ],
+      "checks": 81,
+      "failures": 0,
+      "covers": [
+        "candidates filter by region/season/weather/minute/rod level and reject malformed contexts",
+        "pick is deterministic for the same context and seed, weights are normalized with gear bonus",
+        "unknown gear falls back to level 0 and stamina scale 1.0",
+        "missing context keys, wrong types and empty candidate sets return explicit reasons",
+        "configure rejects duplicate ids and invalid data while keeping the previous catalog"
+      ]
+    },
+    "AgentC": {
+      "task": "B6-01 weekly gift limits, preferences and dialogue conditions",
+      "files": [
+        "scripts/progression/gift_service.gd",
+        "scripts/progression/dialogue_conditions.gd",
+        "scripts/data/gift_preference.gd",
+        "data/gifts/shopkeeper.tres",
+        "data/gifts/carpenter.tres",
+        "data/gifts/fisherman.tres",
+        "data/gifts/gardener.tres",
+        "tools/check/check_gifts.gd"
+      ],
+      "checks": 142,
+      "failures": 0,
+      "covers": [
+        "can_gift is read-only and reports the weekly limit before the caller consumes the item",
+        "gift commits the weekly count then requests points through the injected port; zero or invalid grants never roll back the count",
+        "week_key is stable across days and resets counts on a new week; NPCs count independently",
+        "preference_of distinguishes liked/neutral/disliked/unknown and unconfigured NPCs",
+        "encode/restore schema 1 with bounded counts; bad rows or unknown NPCs reject the whole section",
+        "dialogue_conditions evaluates friendship/quest/day/weather/flag and fails closed on unknown keys or wrong types"
+      ]
+    }
+  },
+  "commands": {
+    "focused": "tools/run_checks.ps1 -Suites check_road_repair,check_fishing_rules,check_gifts,check_compilation,check_layer_boundaries",
+    "full": "tools/run_checks.ps1 -TimeoutSeconds 1800"
+  },
+  "full_regression": {
+    "suites": 53,
+    "failures": 0,
+    "compiled_scripts": 433,
+    "packaged_export": "PASS",
+    "packaged_runtime_checks": 70,
+    "script_errors": 0,
+    "engine_errors": 0
+  },
+  "transient_failure": "one full run aborted at resource preflight while the Godot editor was re-importing the project; rerun after the editor was idle passed all 53 suites, no source change was needed",
+  "review_findings": [
+    "gift_service duplicates the 10/10 point constants of friendship.gd; integrate by injecting the base points or add an equality assertion",
+    "only the two existing fish and the level-1 bamboo rod are configured, so no new fish or gear tier is observable until the main thread adds items",
+    "quarry_road totals 36 wood and 20 stone across two stages; needs a pacing review against current gathering speed, not declared balanced",
+    "restore requires the service to be configured first (stages/preferences), so the composition root must configure before the save section restores"
+  ],
+  "not_wired": [
+    "quarry has no lock: the region portal opens without the road chain",
+    "FarmActivities still picks fish at random from settings.fish_items and ignores rod level",
+    "NPC gift interaction still calls Friendship.gift directly without weekly limits or preferences",
+    "no save sections for unlock stage, gift counts or conditions are registered"
+  ],
+  "logs": "build/tmp/PixelFarmChecks_adabbe1c97514e8a8782e790be21bf55 (full, 53 suites), build/tmp/PixelFarmChecks_f59a0122c9d34e71a02eda67dab4fcee (focused)"
+}

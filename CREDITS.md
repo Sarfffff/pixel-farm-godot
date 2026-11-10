@@ -37,12 +37,15 @@
 
 ## 三、音频
 
-`assets/audio/` 下 **13 个 WAV 全部由本项目的离线合成脚本生成**，没有任何采样或第三方音源：
+`assets/audio/` 下 **21 个 WAV 全部由本项目的离线合成脚本生成**，没有任何采样或第三方音源：
 
 | 文件 | 数量 | 生成脚本 |
 | --- | --- | --- |
-| `audio/bgm/menu.wav`、`farm_day.wav`、`farm_night.wav` | 3 首循环 BGM | `tools/build/build_bgm.gd`（波表合成，WAV 内带 smpl 循环块） |
-| `audio/sfx/*.wav` | 10 个操作音效：锄地 / 浇水 / 播种 / 收获 / 砍树 / 采矿 / 金币 / 界面点击 / 入睡 / 脚步 | `tools/build/build_sfx.gd`（正弦 + 噪声合成） |
+| `audio/bgm/menu.wav`、`farm_day.wav`、`farm_night.wav` | 3 首循环 BGM，44.1kHz 立体声，木吉他 / 木琴 / 竖琴 / 弦乐垫 / 手风琴编曲，WAV 内带 smpl 循环块 | `tools/build/build_bgm.gd` |
+| `audio/sfx/*.wav` | 15 个操作音效：锄地 / 浇水 / 播种 / 收获 / 砍树 / 采矿 / 金币 / 脚步 / 开门 / 入睡 / 界面点击 / 悬停 / 确认 / 返回 / 通用提示 | `tools/build/build_sfx.gd` |
+| `audio/ambient/*.wav` | 3 段区域环境音：白天鸟鸣 / 水流 / 夜晚虫鸣；当前未接入游戏 | 早期离线合成的保留素材，接入时复用 |
+
+两类脚本共用同一套合成内核：`tools/lib/audio_synth.gd`（Karplus-Strong 拨弦、FM 木琴/钟琴、木管、簧片、弦乐垫、噪声打击）与 `tools/lib/audio_mixer.gd`（Schroeder 混响、高频收敛、去直流、软限幅、WAV 编码），因此音乐与音效出自同一音色体系。
 
 重新生成：
 
@@ -84,6 +87,6 @@ godot --headless --path . --import
 发行前请确认：
 
 - [ ] 导出包内不含 `art/reference/stardew_valley/`、`tools/`、`docs/`
-- [ ] `assets/audio/` 只有本文件第三节列出的 13 个 WAV
+- [ ] `assets/audio/` 只有本文件第三节列出的 21 个 WAV
 - [ ] 本文件随发行包一起分发
 - [ ] 版本号与 `project.godot` 的 `config/version`、`export_presets.cfg` 的 `application/product_version` 一致

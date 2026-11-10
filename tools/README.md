@@ -45,8 +45,8 @@ pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_region_gameplay,check_b
 | `refresh_farm_paths.gd` | 只刷新现有农场的道路格子与桥/路贴图引用，保留道具、实例和持久身份 |
 | `build_region_previews.gd` | 从首批地形和资源创建独立TileSet、六区域配置、28资源定义及六张原生地图样板；不覆盖主农场 |
 | `build_player_frames.gd` | 从动作图集切帧，写入 `scenes/player/player_frames.tres` 的 8 个方向动画 |
-| `build_bgm.gd` | 波表合成三首原创循环 BGM（`menu` / `farm_day` / `farm_night`），写入 `assets/audio/bgm/`，WAV 内带 smpl 循环块 |
-| `build_sfx.gd` | 离线合成 10 个操作音效（锄地/浇水/播种/收获/砍树/采矿/金币/UI/入睡/脚步），写入 `assets/audio/sfx/`；**新生成的 wav 需要 `godot --headless --path . --import` 后才可加载** |
+| `build_bgm.gd` | 合成三首原创循环 BGM（`menu` / `farm_day` / `farm_night`）：木吉他分解、木琴旋律、竖琴琶音、弦乐垫与手风琴，44.1kHz 立体声 + 混响，写入 `assets/audio/bgm/`，WAV 内带 smpl 循环块 |
+| `build_sfx.gd` | 合成 15 个操作音效（锄地/浇水/播种/收获/砍树/采矿/金币/脚步/开门/入睡/界面四个/通用提示），分层材质与音量分级，写入 `assets/audio/sfx/`；**新生成的 wav 需要 `godot --headless --path . --import` 后才可加载** |
 | `build_house_interior.gd` | 生成农舍室内场景 `scenes/world/house_interior.tscn`（27×19 房间、地板/墙层、家具表与家具碰撞、门、床边睡觉点与醒来点） |
 
 ## art · 素材流水线
@@ -148,6 +148,8 @@ pwsh -NoProfile -File tools/run_checks.ps1 -Suites check_region_gameplay,check_b
 | `farm_landscape.gd` | 河流、池塘、岸线、桥、草坡的格子数据，保证画面与碰撞同源 |
 | `terrain_tiles.gd` | 岸线/桥梁图集的拼接算法与输出路径 |
 | `content_art_utils.gd` | 独立生成图的网格定位、去杂边、最近邻整理与 48 色统一色板 |
+| `audio_synth.gd` | 音频合成内核：Karplus-Strong 拨弦、FM 木琴/钟琴/暖钢琴、木管、簧片、弦乐垫、噪声打击、低频冲击，统一 44.1kHz 双声道工作缓冲 |
+| `audio_mixer.gd` | 音频混音与导出：Schroeder 混响、高频收敛、去直流、软限幅、归一化与 WAV 编码（可选 smpl 循环块） |
 
 ## 常用组合
 

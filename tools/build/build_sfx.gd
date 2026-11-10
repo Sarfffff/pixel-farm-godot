@@ -1,53 +1,58 @@
 extends SceneTree
 ## 操作音效生成器
-## 离线合成一组原创短音效（无第三方素材），写成 22050Hz / 16bit / 单声道 WAV：
-##   hoe      锄地：低频闷响 + 一点土块噪声
-##   water    浇水：低通噪声的水流声
-##   plant    播种：两声轻点
-##   harvest  收获：三个上行短音
-##   chop     砍树：木质冲击
-##   mine     碎石：碎裂噪声 + 高频
-##   coin     金币：两声叮当
-##   ui       界面点击：极短提示音
-##   sleep    入睡：柔和下行三音
-##   step     脚步：极短的低频轻踏（走路每约一格触发一次）
-##   door     开门：木头摩擦的短促"吱呀"
 ##
-## 运行方式：
-##   godot --headless --path e:/my-ai-game --script res://tools/build/build_sfx.gd
+## 和 `build_bgm.gd` 共用 `tools/lib/audio_synth.gd`，音色统一成"土、木、金属、布"的真实材质感，
+## 而不是单薄的正弦波提示音——这是农场游戏里最影响"手感"的一层：
+##   hoe      锄地：铲刃入土的低频 + 翻起的土块
+##   water    浇水：水柱冲出壶口，落到地面
+##   plant    播种：三粒种子落进松土
+##   harvest  收获：木琴三连上行，清脆但温暖
+##   chop     砍树：刀刃入木的闷响 + 木质共鸣 + 木屑
+##   mine     采矿：镐头击石 + 碎石散落
+##   coin     金币：经典双音叮当
+##   step     脚步：草地轻踏
+##   door     开门：木门吱呀 + 门闩
+##   sleep    入睡：柔和下行三音
+##   ui*      界面：木质轻敲与短促确认
+##
+## 运行：
+##   godot --headless --path . --script res://tools/build/build_sfx.gd
 
-const SAMPLE_RATE: int = 22050
+const Synth := preload("res://tools/lib/audio_synth.gd")
+const Mixer := preload("res://tools/lib/audio_mixer.gd")
+
 const OUT_DIR: String = "res://assets/audio/sfx"
-const PEAK: float = 0.82
 
 
 func _init() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT_DIR))
 	var jobs: Array[Dictionary] = [
-		{"name": "hoe", "samples": _hoe()},
-		{"name": "water", "samples": _water()},
-		{"name": "plant", "samples": _plant()},
-		{"name": "harvest", "samples": _harvest()},
-		{"name": "chop", "samples": _chop()},
-		{"name": "mine", "samples": _mine()},
-		{"name": "coin", "samples": _coin()},
-		{"name": "ui", "samples": _ui()},
-		{"name": "sleep", "samples": _sleep()},
-		{"name": "step", "samples": _step()},
-		{"name": "door", "samples": _door()},
-		# 界面专用：悬停/点击/确认/返回，比游戏内音效更轻更短
-		{"name": "ui_hover", "samples": _ui_hover()},
-		{"name": "ui_click", "samples": _ui_click()},
-		{"name": "ui_confirm", "samples": _ui_confirm()},
-		{"name": "ui_back", "samples": _ui_back()},
+		{"name": "hoe", "peak": 0.88, "samples": _hoe()},
+		{"name": "water", "peak": 0.72, "samples": _water()},
+		{"name": "plant", "peak": 0.66, "samples": _plant()},
+		{"name": "harvest", "peak": 0.84, "samples": _harvest()},
+		{"name": "chop", "peak": 0.88, "samples": _chop()},
+		{"name": "mine", "peak": 0.86, "samples": _mine()},
+		{"name": "coin", "peak": 0.82, "samples": _coin()},
+		{"name": "step", "peak": 0.45, "samples": _step()},
+		{"name": "door", "peak": 0.7, "samples": _door()},
+		{"name": "sleep", "peak": 0.72, "samples": _sleep()},
+		{"name": "ui", "peak": 0.62, "samples": _ui()},
+		{"name": "ui_hover", "peak": 0.3, "samples": _ui_hover()},
+		{"name": "ui_click", "peak": 0.55, "samples": _ui_click()},
+		{"name": "ui_confirm", "peak": 0.66, "samples": _ui_confirm()},
+		{"name": "ui_back", "peak": 0.58, "samples": _ui_back()},
 	]
-	var failed := false
+	var failed: bool = false
 	for job in jobs:
-		var name: String = String(job[&"name"])
-		var data: PackedFloat32Array = _normalize(job[&"samples"], PEAK)
+		var name: String = String(job["name"])
+		var samples: PackedFloat32Array = job["samples"]
+		Mixer.normalize_mono(samples, float(job["peak"]))
 		var path := "%s/%s.wav" % [OUT_DIR, name]
-		if _write_wav(path, data):
-			print("[build_sfx] %s  %.2fs  %d samples" % [path, float(data.size()) / SAMPLE_RATE, data.size()])
+		if Mixer.write_mono(path, samples, false):
+			print("[build_sfx] %s  %.3fs  %d frames" % [
+				path, float(samples.size()) / float(Synth.SAMPLE_RATE), samples.size(),
+			])
 		else:
 			printerr("[build_sfx] 写入失败：%s" % path)
 			failed = true
@@ -56,235 +61,224 @@ func _init() -> void:
 
 
 # --------------------------------------------------------------------------
-# 音效
+# 农事
 # --------------------------------------------------------------------------
 
 func _hoe() -> PackedFloat32Array:
-	var buf := _buffer(0.20)
-	_tone(buf, 0.0, 0.18, 120.0, 70.0, 0.75, 5.0)
-	_noise(buf, 0.0, 0.07, 0.35, 8.0, 0.25)
-	return buf
+	var left := Synth.make_buffer(_frames(0.30))
+	var right := Synth.make_buffer(left.size())
+	# 铲刃入土：低频下坠 + 一点金属/木柄的撞击感
+	Synth.thump(left, right, 0, _frames(0.26), 0.85,
+		{"from_hz": 175.0, "to_hz": 58.0, "decay": 14.0, "click": 0.32})
+	# 翻起的土块：低通噪声，衰减很快
+	Synth.noise_hit(left, right, 0, _frames(0.22), 0.5,
+		{"lowpass": 0.3, "highpass": 0.12, "decay": 15.0})
+	# 散落的碎土粒
+	Synth.noise_hit(left, right, _frames(0.03), _frames(0.12), 0.16,
+		{"lowpass": 0.6, "highpass": 0.4, "decay": 32.0})
+	return _finish(left, right)
 
 
 func _water() -> PackedFloat32Array:
-	var buf := _buffer(0.38)
-	_noise(buf, 0.0, 0.36, 0.35, 2.2, 0.12)
-	_tone(buf, 0.02, 0.30, 520.0, 380.0, 0.12, 3.0)
-	return buf
+	var left := Synth.make_buffer(_frames(0.48))
+	var right := Synth.make_buffer(left.size())
+	# 水柱：带宽较窄的噪声，慢慢起、慢慢收
+	Synth.noise_hit(left, right, 0, _frames(0.48), 0.55,
+		{"lowpass": 0.44, "highpass": 0.2, "decay": 4.6, "attack": 0.06, "sweep": 0.45})
+	# 落地水花
+	Synth.noise_hit(left, right, _frames(0.02), _frames(0.34), 0.26,
+		{"lowpass": 0.72, "highpass": 0.46, "decay": 7.5, "attack": 0.03})
+	# 一两颗水滴
+	Synth.fm_tone(left, right, _frames(0.14), _frames(0.16), 1180.0, 0.09,
+		{"ratio": 2.0, "index": 0.7, "index_decay": 8.0, "decay": 26.0})
+	return _finish(left, right)
 
 
 func _plant() -> PackedFloat32Array:
-	var buf := _buffer(0.22)
-	_noise(buf, 0.0, 0.05, 0.30, 10.0, 0.40)
-	_noise(buf, 0.08, 0.05, 0.24, 10.0, 0.40)
-	_tone(buf, 0.0, 0.10, 320.0, 260.0, 0.18, 6.0)
-	return buf
+	var left := Synth.make_buffer(_frames(0.30))
+	var right := Synth.make_buffer(left.size())
+	# 三粒种子先后落进松土
+	Synth.noise_hit(left, right, 0, _frames(0.07), 0.32,
+		{"lowpass": 0.24, "decay": 42.0})
+	Synth.noise_hit(left, right, _frames(0.07), _frames(0.07), 0.28,
+		{"lowpass": 0.26, "decay": 40.0})
+	Synth.noise_hit(left, right, _frames(0.15), _frames(0.07), 0.22,
+		{"lowpass": 0.3, "decay": 46.0})
+	# 手按进土里的闷声
+	Synth.thump(left, right, _frames(0.01), _frames(0.14), 0.3,
+		{"from_hz": 230.0, "to_hz": 110.0, "decay": 34.0})
+	return _finish(left, right)
 
 
 func _harvest() -> PackedFloat32Array:
-	var buf := _buffer(0.30)
-	_tone(buf, 0.0, 0.09, 660.0, 660.0, 0.35, 4.0)
-	_tone(buf, 0.07, 0.09, 880.0, 880.0, 0.35, 4.0)
-	_tone(buf, 0.14, 0.13, 1046.0, 1046.0, 0.40, 3.0)
-	return buf
+	var left := Synth.make_buffer(_frames(0.38))
+	var right := Synth.make_buffer(left.size())
+	# 木琴三连上行：C6 - E6 - G6，收获的奖励感靠这三个音
+	var notes: Array[Array] = [[0.0, 1046.5], [0.075, 1318.5], [0.15, 1568.0]]
+	for item in notes:
+		Synth.fm_tone(left, right, _frames(float(item[0])), _frames(0.24), float(item[1]), 0.42,
+			{"ratio": 3.0, "index": 1.6, "index_decay": 5.0, "decay": 8.5, "release": 0.04})
+	# 采下来的轻微"啵"
+	Synth.thump(left, right, 0, _frames(0.09), 0.22,
+		{"from_hz": 320.0, "to_hz": 190.0, "decay": 40.0})
+	return _finish(left, right)
 
 
 func _chop() -> PackedFloat32Array:
-	var buf := _buffer(0.24)
-	_tone(buf, 0.0, 0.20, 160.0, 90.0, 0.70, 6.0)
-	_noise(buf, 0.0, 0.09, 0.40, 9.0, 0.30)
-	return buf
+	var left := Synth.make_buffer(_frames(0.32))
+	var right := Synth.make_buffer(left.size())
+	# 斧刃入木
+	Synth.thump(left, right, 0, _frames(0.26), 0.8,
+		{"from_hz": 245.0, "to_hz": 92.0, "decay": 15.0, "click": 0.42})
+	Synth.noise_hit(left, right, 0, _frames(0.18), 0.48,
+		{"lowpass": 0.4, "highpass": 0.1, "decay": 18.0})
+	# 木头的空腔共鸣
+	Synth.fm_tone(left, right, _frames(0.006), _frames(0.22), 196.0, 0.26,
+		{"ratio": 1.5, "index": 0.9, "index_decay": 6.0, "decay": 22.0, "release": 0.05})
+	# 崩开的木屑
+	Synth.noise_hit(left, right, _frames(0.05), _frames(0.12), 0.14,
+		{"lowpass": 0.9, "highpass": 0.58, "decay": 30.0})
+	return _finish(left, right)
 
 
 func _mine() -> PackedFloat32Array:
-	var buf := _buffer(0.22)
-	_noise(buf, 0.0, 0.16, 0.50, 7.0, 0.60)
-	_tone(buf, 0.0, 0.14, 1250.0, 900.0, 0.30, 7.0)
-	return buf
+	var left := Synth.make_buffer(_frames(0.34))
+	var right := Synth.make_buffer(left.size())
+	# 镐头撞石
+	Synth.noise_hit(left, right, 0, _frames(0.14), 0.55,
+		{"lowpass": 0.88, "highpass": 0.5, "decay": 27.0})
+	# 金属镐的锐利泛音
+	Synth.fm_tone(left, right, 0, _frames(0.2), 1760.0, 0.2,
+		{"ratio": 3.3, "index": 2.2, "index_decay": 7.0, "decay": 19.0})
+	Synth.thump(left, right, 0, _frames(0.2), 0.42,
+		{"from_hz": 185.0, "to_hz": 80.0, "decay": 21.0})
+	# 碎石散落
+	for i in 4:
+		Synth.noise_hit(left, right, _frames(0.06 + float(i) * 0.045), _frames(0.08),
+			0.13 - float(i) * 0.02,
+			{"lowpass": 0.62, "highpass": 0.36, "decay": 38.0})
+	return _finish(left, right)
 
+
+# --------------------------------------------------------------------------
+# 反馈与界面
+# --------------------------------------------------------------------------
 
 func _coin() -> PackedFloat32Array:
-	var buf := _buffer(0.34)
-	_tone(buf, 0.0, 0.10, 1318.5, 1318.5, 0.40, 5.0)
-	_tone(buf, 0.06, 0.22, 1760.0, 1760.0, 0.42, 3.5)
-	return buf
-
-
-# --------------------------------------------------------------------------
-# 界面音效：比游戏内音效更短更轻，垫在 BGM 上不抢戏
-# --------------------------------------------------------------------------
-
-## 悬停：一声极轻的高频短滴，只提示"焦点到这里了"。
-func _ui_hover() -> PackedFloat32Array:
-	var buf := _buffer(0.055)
-	_tone(buf, 0.0, 0.05, 1320.0, 1180.0, 0.16, 14.0)
-	return buf
-
-
-## 点击：干净的短促咔哒，中频偏硬。
-func _ui_click() -> PackedFloat32Array:
-	var buf := _buffer(0.085)
-	_tone(buf, 0.0, 0.06, 760.0, 620.0, 0.34, 16.0)
-	_noise(buf, 0.0, 0.02, 0.20, 22.0, 0.18)
-	return buf
-
-
-## 确认：两段上行，用在"进入游戏/存档"这种正向动作。
-func _ui_confirm() -> PackedFloat32Array:
-	var buf := _buffer(0.24)
-	_tone(buf, 0.0, 0.09, 620.0, 700.0, 0.30, 9.0)
-	_tone(buf, 0.08, 0.13, 880.0, 990.0, 0.28, 7.0)
-	return buf
-
-
-## 返回：两段下行，用在关闭面板/退出。
-func _ui_back() -> PackedFloat32Array:
-	var buf := _buffer(0.22)
-	_tone(buf, 0.0, 0.09, 700.0, 620.0, 0.28, 9.0)
-	_tone(buf, 0.08, 0.12, 520.0, 430.0, 0.24, 8.0)
-	return buf
-
-
-func _ui() -> PackedFloat32Array:
-	var buf := _buffer(0.08)
-	_tone(buf, 0.0, 0.06, 1800.0, 1500.0, 0.30, 9.0)
-	return buf
-
-
-func _sleep() -> PackedFloat32Array:
-	var buf := _buffer(0.62)
-	_tone(buf, 0.0, 0.22, 523.0, 523.0, 0.30, 2.4)
-	_tone(buf, 0.16, 0.22, 392.0, 392.0, 0.30, 2.4)
-	_tone(buf, 0.32, 0.28, 294.0, 294.0, 0.32, 2.0)
-	return buf
+	var left := Synth.make_buffer(_frames(0.34))
+	var right := Synth.make_buffer(left.size())
+	# 经典金币双音：B5 → E6，金属味靠 ratio 2 的调制
+	Synth.fm_tone(left, right, 0, _frames(0.12), 987.77, 0.45,
+		{"ratio": 2.0, "index": 1.2, "index_decay": 4.0, "decay": 8.0})
+	Synth.fm_tone(left, right, _frames(0.055), _frames(0.28), 1318.51, 0.5,
+		{"ratio": 2.0, "index": 1.1, "index_decay": 3.5, "decay": 6.5, "release": 0.06})
+	return _finish(left, right)
 
 
 func _step() -> PackedFloat32Array:
-	var buf := _buffer(0.10)
-	# 闷住的噪声当鞋底摩擦，再叠一点低频当落地的"踏"。
-	_noise(buf, 0.0, 0.07, 0.30, 16.0, 0.10)
-	_tone(buf, 0.0, 0.06, 110.0, 78.0, 0.28, 18.0)
-	return buf
+	var left := Synth.make_buffer(_frames(0.14))
+	var right := Synth.make_buffer(left.size())
+	# 草地：闷噪声当鞋底，低频当落地
+	Synth.noise_hit(left, right, 0, _frames(0.11), 0.45,
+		{"lowpass": 0.3, "highpass": 0.06, "decay": 38.0, "attack": 0.002})
+	Synth.thump(left, right, 0, _frames(0.09), 0.24,
+		{"from_hz": 132.0, "to_hz": 82.0, "decay": 45.0})
+	return _finish(left, right)
 
 
 func _door() -> PackedFloat32Array:
-	var buf := _buffer(0.26)
-	# 木头摩擦：闷噪声慢慢收尾，再叠一个下行的低"吱呀"。
-	_noise(buf, 0.0, 0.22, 0.26, 3.4, 0.06)
-	_tone(buf, 0.02, 0.18, 430.0, 250.0, 0.12, 4.5)
-	return buf
+	var left := Synth.make_buffer(_frames(0.45))
+	var right := Synth.make_buffer(left.size())
+	# 木头摩擦的底噪
+	Synth.noise_hit(left, right, 0, _frames(0.4), 0.28,
+		{"lowpass": 0.16, "highpass": 0.04, "decay": 4.2, "attack": 0.05})
+	# 吱呀：颤音制造干涩的摩擦感
+	Synth.fm_tone(left, right, _frames(0.03), _frames(0.34), 392.0, 0.12,
+		{"ratio": 2.4, "index": 2.4, "index_decay": 6.0, "decay": 5.0,
+		"vibrato_rate": 9.0, "vibrato_depth": 0.018, "release": 0.06})
+	# 门板轻撞门框
+	Synth.thump(left, right, _frames(0.02), _frames(0.16), 0.3,
+		{"from_hz": 165.0, "to_hz": 88.0, "decay": 26.0})
+	return _finish(left, right)
+
+
+func _sleep() -> PackedFloat32Array:
+	var left := Synth.make_buffer(_frames(0.95))
+	var right := Synth.make_buffer(left.size())
+	# 柔和下行三音：C5 - G4 - C4，上行是奖励，下行是放松
+	var notes: Array[Array] = [[0.0, 523.25], [0.22, 392.0], [0.46, 261.63]]
+	for item in notes:
+		Synth.fm_tone(left, right, _frames(float(item[0])), _frames(0.5), float(item[1]), 0.4,
+			{"ratio": 1.0, "index": 0.5, "index_decay": 1.5, "decay": 1.6,
+			"attack": 0.02, "release": 0.3})
+	Mixer.reverb(left, right, 0.3, 0.82)
+	return _finish(left, right)
+
+
+func _ui() -> PackedFloat32Array:
+	var left := Synth.make_buffer(_frames(0.12))
+	var right := Synth.make_buffer(left.size())
+	# 木质轻敲，不再是尖细的电子"滴"
+	Synth.fm_tone(left, right, 0, _frames(0.1), 920.0, 0.5,
+		{"ratio": 1.5, "index": 0.7, "index_decay": 9.0, "decay": 26.0, "release": 0.02})
+	Synth.noise_hit(left, right, 0, _frames(0.025), 0.12,
+		{"lowpass": 0.55, "highpass": 0.3, "decay": 60.0})
+	return _finish(left, right)
+
+
+func _ui_hover() -> PackedFloat32Array:
+	var left := Synth.make_buffer(_frames(0.07))
+	var right := Synth.make_buffer(left.size())
+	Synth.fm_tone(left, right, 0, _frames(0.06), 1180.0, 0.45,
+		{"ratio": 1.4, "index": 0.5, "index_decay": 12.0, "decay": 45.0, "release": 0.015})
+	return _finish(left, right)
+
+
+func _ui_click() -> PackedFloat32Array:
+	var left := Synth.make_buffer(_frames(0.1))
+	var right := Synth.make_buffer(left.size())
+	# 更硬的一点木块声，和悬停的轻触区分开
+	Synth.fm_tone(left, right, 0, _frames(0.08), 760.0, 0.45,
+		{"ratio": 1.6, "index": 0.9, "index_decay": 10.0, "decay": 34.0, "release": 0.02})
+	Synth.noise_hit(left, right, 0, _frames(0.02), 0.16,
+		{"lowpass": 0.7, "highpass": 0.35, "decay": 70.0})
+	return _finish(left, right)
+
+
+func _ui_confirm() -> PackedFloat32Array:
+	var left := Synth.make_buffer(_frames(0.28))
+	var right := Synth.make_buffer(left.size())
+	var notes: Array[Array] = [[0.0, 659.26], [0.09, 880.0]]
+	for item in notes:
+		Synth.fm_tone(left, right, _frames(float(item[0])), _frames(0.18), float(item[1]), 0.4,
+			{"ratio": 3.0, "index": 1.2, "index_decay": 5.0, "decay": 10.0, "release": 0.04})
+	return _finish(left, right)
+
+
+func _ui_back() -> PackedFloat32Array:
+	var left := Synth.make_buffer(_frames(0.26))
+	var right := Synth.make_buffer(left.size())
+	var notes: Array[Array] = [[0.0, 880.0], [0.085, 659.26]]
+	for item in notes:
+		Synth.fm_tone(left, right, _frames(float(item[0])), _frames(0.17), float(item[1]), 0.38,
+			{"ratio": 3.0, "index": 1.1, "index_decay": 5.0, "decay": 11.0, "release": 0.04})
+	return _finish(left, right)
 
 
 # --------------------------------------------------------------------------
-# 合成工具
+# 工具
 # --------------------------------------------------------------------------
 
-func _buffer(duration: float) -> PackedFloat32Array:
-	var buf := PackedFloat32Array()
-	buf.resize(maxi(int(duration * SAMPLE_RATE), 1))
-	return buf
+func _frames(seconds: float) -> int:
+	return maxi(int(round(seconds * float(Synth.SAMPLE_RATE))), 1)
 
 
-## 叠加一段带指数衰减的正弦，频率从 f0 线性滑到 f1。
-func _tone(
-	buf: PackedFloat32Array, start: float, duration: float, f0: float, f1: float, amp: float, decay: float
-) -> void:
-	var from := int(start * SAMPLE_RATE)
-	var count := maxi(int(duration * SAMPLE_RATE), 1)
-	var phase := 0.0
-	for i in count:
-		var progress := float(i) / float(count)
-		phase += TAU * lerpf(f0, f1, progress) / float(SAMPLE_RATE)
-		var index := from + i
-		if index < 0 or index >= buf.size():
-			continue
-		buf[index] += sin(phase) * amp * exp(-decay * progress)
-
-
-## 叠加一段衰减噪声；lowpass 越大越闷。
-func _noise(
-	buf: PackedFloat32Array, start: float, duration: float, amp: float, decay: float, lowpass: float = 0.0
-) -> void:
-	var from := int(start * SAMPLE_RATE)
-	var count := maxi(int(duration * SAMPLE_RATE), 1)
-	var last := 0.0
-	for i in count:
-		var white := randf() * 2.0 - 1.0
-		if lowpass > 0.0:
-			last = lerpf(last, white, lowpass)
-			white = last
-		var index := from + i
-		if index < 0 or index >= buf.size():
-			continue
-		var progress := float(i) / float(count)
-		buf[index] += white * amp * exp(-decay * progress)
-
-
-## 把峰值缩放到指定大小，避免削波也避免太轻。
-func _normalize(samples: PackedFloat32Array, peak: float) -> PackedFloat32Array:
-	var loudest := 0.0
-	for value in samples:
-		loudest = maxf(loudest, absf(value))
-	if loudest <= 0.0001:
-		return samples
-	var scale := peak / loudest
-	var out := PackedFloat32Array()
-	out.resize(samples.size())
-	for i in samples.size():
-		out[i] = samples[i] * scale
-	return out
-
-
-# --------------------------------------------------------------------------
-# WAV 写出（音效不需要循环块）
-# --------------------------------------------------------------------------
-
-func _write_wav(path: String, samples: PackedFloat32Array) -> bool:
-	var file := FileAccess.open(path, FileAccess.WRITE)
-	if file == null:
-		return false
-	file.store_buffer(_wav_bytes(samples))
-	file.close()
-	return true
-
-
-func _wav_bytes(samples: PackedFloat32Array) -> PackedByteArray:
-	var pcm := PackedByteArray()
-	pcm.resize(samples.size() * 2)
-	for i in samples.size():
-		pcm.encode_s16(i * 2, int(round(clampf(samples[i], -1.0, 1.0) * 32767.0)))
-
-	var fmt := PackedByteArray()
-	fmt.resize(16)
-	fmt.encode_u16(0, 1)                       # PCM
-	fmt.encode_u16(2, 1)                       # 单声道
-	fmt.encode_u32(4, SAMPLE_RATE)
-	fmt.encode_u32(8, SAMPLE_RATE * 2)         # byte rate
-	fmt.encode_u16(12, 2)                      # block align
-	fmt.encode_u16(14, 16)                     # bit depth
-
-	var body := PackedByteArray()
-	body.append_array(_chunk("fmt ", fmt))
-	body.append_array(_chunk("data", pcm))
-
-	var out := PackedByteArray()
-	out.append_array("RIFF".to_ascii_buffer())
-	out.append_array(_le32(4 + body.size()))
-	out.append_array("WAVE".to_ascii_buffer())
-	out.append_array(body)
-	return out
-
-
-func _chunk(tag: String, payload: PackedByteArray) -> PackedByteArray:
-	var chunk := PackedByteArray()
-	chunk.append_array(tag.to_ascii_buffer())
-	chunk.append_array(_le32(payload.size()))
-	chunk.append_array(payload)
-	return chunk
-
-
-func _le32(value: int) -> PackedByteArray:
-	var bytes := PackedByteArray()
-	bytes.resize(4)
-	bytes.encode_u32(0, value)
-	return bytes
+## 双声道工作缓冲收成单声道音效，并淡入淡出 1ms，避免首尾爆音。
+func _finish(left: PackedFloat32Array, right: PackedFloat32Array) -> PackedFloat32Array:
+	var mono: PackedFloat32Array = Mixer.mix_down(left, right)
+	var fade: int = mini(_frames(0.001), mono.size() / 4)
+	for i in fade:
+		var gain: float = float(i) / float(fade)
+		mono[i] *= gain
+		mono[mono.size() - 1 - i] *= gain
+	return mono
