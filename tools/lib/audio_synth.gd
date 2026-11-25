@@ -127,7 +127,7 @@ static func fm_tone(left: PackedFloat32Array, right: PackedFloat32Array,
 			bend += vib_depth * sin(TAU * vib_phase) * minf(t * 3.0, 1.0)
 		var current_depth: float = depth * exp(-depth_decay * t)
 		var mod: float = sin(TAU * mod_phase) * current_depth
-		var sample: float = sin(TAU * (phase + mod))
+		var sample: float = sin(TAU * phase + mod)
 		var env: float = exp(-decay * t)
 		if i < attack:
 			env *= float(i) / float(attack)

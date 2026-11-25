@@ -141,6 +141,25 @@ static func normalize_stereo(left: PackedFloat32Array, right: PackedFloat32Array
 		right[i] *= gain
 
 
+static func balance_stereo(left: PackedFloat32Array, right: PackedFloat32Array,
+		target_rms: float, peak: float) -> void:
+	var frames: int = mini(left.size(), right.size())
+	if frames == 0:
+		return
+	var energy: float = 0.0
+	var loudest: float = 0.0
+	for i in frames:
+		energy += float(left[i]) * float(left[i]) + float(right[i]) * float(right[i])
+		loudest = maxf(loudest, maxf(absf(left[i]), absf(right[i])))
+	var rms: float = sqrt(energy / float(frames * 2))
+	if rms <= 0.00001 or loudest <= 0.00001:
+		return
+	var gain: float = minf(maxf(target_rms, 0.0) / rms, clampf(peak, 0.0, 1.0) / loudest)
+	for i in frames:
+		left[i] *= gain
+		right[i] *= gain
+
+
 static func normalize_mono(buffer: PackedFloat32Array, peak: float = 0.92) -> void:
 	var loudest: float = 0.0
 	for value in buffer:

@@ -41,7 +41,7 @@
 
 | 文件 | 数量 | 生成脚本 |
 | --- | --- | --- |
-| `audio/bgm/menu.wav`、`farm_day.wav`、`farm_night.wav` | 3 首循环 BGM，44.1kHz 立体声，木吉他 / 木琴 / 竖琴 / 弦乐垫 / 手风琴编曲，WAV 内带 smpl 循环块 | `tools/build/build_bgm.gd` |
+| `audio/bgm/menu.wav`、`farm_day.wav`、`farm_night.wav` | 3首原创温暖休闲循环BGM，44.1kHz立体声，指弹木吉他 / 毡音钢琴 / 轻木管配器，72/78/56 BPM，WAV内带smpl循环块 | `tools/build/build_bgm.gd` |
 | `audio/sfx/*.wav` | 15 个操作音效：锄地 / 浇水 / 播种 / 收获 / 砍树 / 采矿 / 金币 / 脚步 / 开门 / 入睡 / 界面点击 / 悬停 / 确认 / 返回 / 通用提示 | `tools/build/build_sfx.gd` |
 | `audio/ambient/*.wav` | 3 段区域环境音：白天鸟鸣 / 水流 / 夜晚虫鸣；当前未接入游戏 | 早期离线合成的保留素材，接入时复用 |
 

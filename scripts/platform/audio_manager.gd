@@ -308,6 +308,8 @@ func is_sfx_enabled() -> bool:
 
 ## 音效流缓存：第一次用到才 load，之后复用。
 func _sfx_stream(name: StringName) -> AudioStreamWAV:
+	if name == &"step" or name == &"door":
+		return null
 	if _sfx_streams.has(name):
 		return _sfx_streams[name] as AudioStreamWAV
 	var path: String = str(SFX.get(name, ""))

@@ -35,7 +35,9 @@ func _run() -> void:
 		if stream == null:
 			continue
 		var length: float = stream.get_length()
-		_check(length > 8.0 and length < 40.0, "%s length sane (%.1fs)" % [key, length])
+		_check(length > 45.0 and length < 75.0, "%s full relaxed phrase (%.1fs)" % [key, length])
+		_check(stream.stereo and stream.mix_rate == 44100, "%s stereo 44.1kHz" % key)
+		_check_music_signal(String(tracks[key]), String(key))
 		_check(stream.loop_mode == AudioStreamWAV.LOOP_FORWARD, "%s loops forward" % key)
 		_check(stream.loop_end > stream.loop_begin, "%s has a loop range" % key)
 		_check(stream.loop_end >= int(round(length * float(stream.mix_rate))) - 1,
@@ -122,6 +124,7 @@ func _run() -> void:
 		var sfx_length: float = sfx.get_length()
 		_check(sfx_length > 0.04 and sfx_length < 1.2, "%s sfx length sane (%.2fs)" % [key, sfx_length])
 		_check(sfx.loop_mode == AudioStreamWAV.LOOP_DISABLED, "%s sfx does not loop" % key)
+		_check_sfx_signal(String(sfx_names[key]), String(key))
 
 	mgr.play_sfx(&"hoe")
 	await process_frame
@@ -139,6 +142,7 @@ func _run() -> void:
 	_check(not mgr.is_sfx_enabled(), "sfx can be muted")
 	mgr.set_sfx_enabled(true)
 	_check(mgr.is_sfx_enabled(), "sfx can be turned back on")
+	_check_silent_navigation(mgr)
 
 	# 9. 停止
 	mgr.stop_music(0.0)
@@ -158,6 +162,22 @@ func _run() -> void:
 	_finish(main)
 
 
+func _check_silent_navigation(mgr: Node) -> void:
+	var players: Array[AudioStreamPlayer] = []
+	for child in mgr.get_children():
+		var player: AudioStreamPlayer = child as AudioStreamPlayer
+		if player != null and String(player.name).begins_with("Sfx"):
+			player.stop()
+			players.append(player)
+	var names: Array[StringName] = [&"step", &"door"]
+	for name in names:
+		mgr.call(&"play_sfx", name)
+		mgr.call(&"play_sfx_at", name, -5.0)
+		for player in players:
+			_check(not player.playing, "%s stays silent through both audio ports" % name)
+	_check(mgr.get(&"current_track") == &"menu", "silent navigation preserves BGM")
+
+
 ## 只看音乐播放器的音量，音效池在响也不影响判断。
 func _active_volume(mgr: Node) -> float:
 	var music: Array[AudioStreamPlayer] = []
@@ -169,6 +189,65 @@ func _active_volume(mgr: Node) -> float:
 		if player.playing:
 			return player.volume_db
 	return music[0].volume_db if not music.is_empty() else 0.0
+
+
+func _wave_pcm(path: String) -> PackedByteArray:
+	var wave: PackedByteArray = FileAccess.get_file_as_bytes(path)
+	var cursor: int = 12
+	while cursor + 8 <= wave.size():
+		var tag: String = wave.slice(cursor, cursor + 4).get_string_from_ascii()
+		var size: int = wave.decode_u32(cursor + 4)
+		var start: int = cursor + 8
+		if start + size > wave.size():
+			break
+		if tag == "data":
+			return wave.slice(start, start + size)
+		cursor = start + size + size % 2
+	_check(false, "PCM data chunk exists: %s" % path)
+	return PackedByteArray()
+
+
+func _signal_levels(pcm: PackedByteArray) -> Vector2:
+	var peak: float = 0.0
+	var energy: float = 0.0
+	var count: int = pcm.size() / 2
+	if count == 0:
+		return Vector2.ZERO
+	for i in count:
+		var sample: float = float(pcm.decode_s16(i * 2)) / 32767.0
+		peak = maxf(peak, absf(sample))
+		energy += sample * sample
+	return Vector2(peak, sqrt(energy / float(count)))
+
+
+func _check_music_signal(path: String, name: String) -> void:
+	var pcm: PackedByteArray = _wave_pcm(path)
+	var levels: Vector2 = _signal_levels(pcm)
+	_check(levels.x > 0.1 and levels.x <= 0.66, "%s music headroom (%.3f)" % [name, levels.x])
+	_check(levels.y >= 0.075 and levels.y <= 0.135, "%s balanced RMS (%.3f)" % [name, levels.y])
+	if pcm.size() < 8:
+		return
+	for channel in 2:
+		var first: float = float(pcm.decode_s16(channel * 2)) / 32767.0
+		var last: float = float(pcm.decode_s16(pcm.size() - 4 + channel * 2)) / 32767.0
+		_check(absf(first - last) < 0.01, "%s smooth loop seam channel %d" % [name, channel])
+	print("[audio] %s peak=%.3f rms=%.3f" % [name, levels.x, levels.y])
+
+
+func _check_sfx_signal(path: String, name: String) -> void:
+	var limits: Dictionary = {"hoe": 0.47, "water": 0.33, "plant": 0.31,
+		"harvest": 0.39, "chop": 0.51, "mine": 0.47, "step": 0.15}
+	if not limits.has(name):
+		return
+	var pcm: PackedByteArray = _wave_pcm(path)
+	var levels: Vector2 = _signal_levels(pcm)
+	_check(levels.x > 0.02 and levels.x <= float(limits[name]), "%s gentle peak (%.3f)" % [name, levels.x])
+	if pcm.size() >= 4:
+		_check(pcm.decode_s16(0) == 0 and pcm.decode_s16(pcm.size() - 2) == 0,
+			"%s faded sample boundaries" % name)
+	if name == "step":
+		_check(levels.y < 0.04, "footsteps sit under tools and music")
+	print("[audio] %s peak=%.3f rms=%.3f" % [name, levels.x, levels.y])
 
 
 func _finish(main: Node = null) -> void:

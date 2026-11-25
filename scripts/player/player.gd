@@ -339,10 +339,10 @@ func _advance_footsteps(delta: float) -> void:
 
 
 func _play_step() -> void:
-	var audio := get_node_or_null("/root/AudioManager")
+	var audio: Node = get_node_or_null("/root/AudioManager")
 	if audio == null or not audio.has_method(&"play_sfx"):
 		return
-	audio.call(&"play_sfx", &"step", randf_range(0.92, 1.08))
+	audio.call(&"play_sfx", &"step", randf_range(0.97, 1.03))
 
 
 func _resolve_facing(input_direction: Vector2) -> StringName:
